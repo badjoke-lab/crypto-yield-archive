@@ -1,0 +1,11 @@
+{
+  "name": "crypto-yield-archive",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Evidence-based historical registry of crypto lending, Earn, and yield platforms.",
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate-data.mjs",
+    "test": "node scripts/validate-data.mjs"
+  }
+}
