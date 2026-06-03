@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { allPlatforms, getEvents, getEvidence, getOutcome, getProducts, getTermsRisk } from '../../lib/data';
+
+export function getStaticPaths() {
+  return allPlatforms.map((platform) => ({ params: { slug: platform.slug }, props: { platform } }));
+}
+
+const { platform } = Astro.props;
+const events = getEvents(platform.id);
+const evidence = getEvidence(platform.id);
+const outcome = getOutcome(platform.id);
+const products = getProducts(platform.id);
+const terms = getTermsRisk(platform.id);
+---
+<BaseLayout title={`${platform.canonical_name} | Crypto Yield Archive`} description={platform.summary}>
+  <section class="panel hero-panel">
+    <p class="eyebrow">Platform dossier</p>
+    <h1>{platform.canonical_name}</h1>
+    <p>{platform.summary}</p>
+    <div>
+      <span class="chip">{platform.type}</span>
+      <span class="chip">{platform.status}</span>
+      <span class="chip">{platform.failure_reason || 'unknown'}</span>
+    </div>
+  </section>
+
+  <section class="grid two-col" style="margin-top:18px;">
+    <div class="detail-stack">
+      <section class="panel card"><h2>What happened?</h2><p>{platform.what_happened || platform.summary}</p></section>
+      <section class="panel card"><h2>Customer funds</h2><p>{outcome?.notes || 'Customer outcome has not been researched yet.'}</p></section>
+      <section class="panel card"><h2>Terms risk</h2><p>{terms?.notes || 'Terms risk has not been researched yet.'}</p></section>
+      <section class="panel card"><h2>Uncertainty</h2><p>{platform.uncertainty_notes || 'Uncertainty notes have not been added yet.'}</p></section>
+
+      <section class="panel card">
+        <h2>Timeline</h2>
+        {events.length ? events.map((event) => (
+          <div class="fact" style="margin-bottom:10px;">
+            <div class="k">{event.event_date} · {event.event_type}</div>
+            <div class="v"><strong>{event.title}</strong><p>{event.description}</p></div>
+          </div>
+        )) : <p>No events yet.</p>}
+      </section>
+
+      <section class="panel card">
+        <h2>Evidence dossier</h2>
+        {evidence.length ? evidence.map((source) => (
+          <div class="fact" style="margin-bottom:10px;">
+            <div class="k">{source.source_type} · {source.reliability}</div>
+            <div class="v"><a class="archive-link" href={source.url}>{source.title}</a><p>{source.publisher}</p></div>
+          </div>
+        )) : <p>No evidence yet.</p>}
+      </section>
+    </div>
+
+    <aside class="panel card">
+      <h2>Facts</h2>
+      <div class="fact-grid">
+        <div class="fact"><div class="k">Launch</div><div class="v">{platform.launch_date || '—'}</div></div>
+        <div class="fact"><div class="k">End</div><div class="v">{platform.end_date || '—'}</div></div>
+        <div class="fact"><div class="k">Origin</div><div class="v">{platform.country_or_origin || '—'}</div></div>
+        <div class="fact"><div class="k">Confidence</div><div class="v">{platform.confidence || '—'}</div></div>
+        <div class="fact"><div class="k">Domain</div><div class="v">{platform.official_domain_original || '—'}</div></div>
+        <div class="fact"><div class="k">URL status</div><div class="v">{platform.official_url_status || '—'}</div></div>
+      </div>
+      <h3 style="margin-top:18px;">Products</h3>
+      {products.length ? products.map((product) => <p>{product.product_name} · {product.product_type}</p>) : <p>No product profiles yet.</p>}
+    </aside>
+  </section>
+</BaseLayout>
