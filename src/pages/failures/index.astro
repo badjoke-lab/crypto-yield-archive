@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { allPlatforms, getOutcome } from '../../lib/data';
+
+const groups = Array.from(new Set(allPlatforms.map((platform) => platform.failure_reason || 'unknown')))
+  .sort()
+  .map((reason) => ({
+    reason,
+    platforms: allPlatforms.filter((platform) => (platform.failure_reason || 'unknown') === reason),
+  }));
+---
+<BaseLayout title="Failure reasons | Crypto Yield Archive" description="Cross-platform failure reason groups for crypto lending and yield platforms.">
+  <section class="panel hero-panel">
+    <p class="eyebrow">Cross-platform view</p>
+    <h1>Failure reasons</h1>
+    <p>Group platforms by the primary reason currently assigned in the registry. These labels summarize the main historical driver, not the full failure chain.</p>
+    <div class="summary-grid">
+      <div class="stat"><div class="label">Reason groups</div><div class="value">{groups.length}</div></div>
+      <div class="stat"><div class="label">Platforms</div><div class="value">{allPlatforms.length}</div></div>
+    </div>
+  </section>
+
+  <section class="grid" style="margin-top:18px;">
+    {groups.map(({ reason, platforms }) => (
+      <section class="panel card">
+        <div class="section-heading">
+          <h2>{reason}</h2>
+          <span class="chip">{platforms.length} platforms</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Name</th><th>Status</th><th>Outcome</th><th>Confidence</th></tr></thead>
+            <tbody>
+              {platforms.map((platform) => {
+                const outcome = getOutcome(platform.id);
+                return (
+                  <tr>
+                    <td data-label="Name" class="name-cell"><a href={`/platform/${platform.slug}/`}><strong>{platform.canonical_name}</strong></a><small>{platform.slug}</small></td>
+                    <td data-label="Status"><span class="chip">{platform.status}</span></td>
+                    <td data-label="Outcome"><span class="chip">{outcome?.outcome_status || 'unknown'}</span></td>
+                    <td data-label="Confidence"><span class={`chip ${platform.confidence || ''}`}>{platform.confidence || 'unknown'}</span></td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    ))}
+  </section>
+</BaseLayout>
