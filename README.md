@@ -51,17 +51,67 @@ Not included in v0:
 - product profile
 - terms risk
 
-## Operating model
+## Current stack
 
-The project is designed for zero-cost operation:
+The project uses Astro as a static site generator with repo-local JSON data.
 
-- Cloudflare Pages
+- Astro static build
+- Cloudflare Pages target
 - GitHub repository
-- static JSON
+- static JSON data files
 - no database in v0
 - no backend in v0
 - no authentication in v0
 
+## Local commands
+
+```bash
+npm install
+npm run validate
+npm run build
+npm test
+```
+
+`npm test` runs validation and the Astro build.
+
+## Data files
+
+Canonical data currently lives in:
+
+```text
+data/platforms.json
+data/events.json
+data/events-batch-03.json
+data/evidence.json
+data/evidence-batch-03.json
+data/outcomes.json
+data/products.json
+data/terms-risk.json
+```
+
+## Pages
+
+Astro generates:
+
+- `/`
+- `/platform/[slug]/`
+- `/outcomes/`
+- `/bankruptcy-cases/`
+- `/source-quality/`
+- `/methodology/`
+- `/about/`
+
+## Cloudflare Pages settings
+
+Use these after the Astro build is confirmed:
+
+```text
+Framework preset: Astro
+Build command: npm run build
+Build output directory: dist
+Production branch: main
+```
+
 ## Current status
 
-Foundation stage. No production launch claim.
+Astro migration stage. No production launch claim.
