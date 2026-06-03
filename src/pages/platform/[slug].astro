@@ -14,6 +14,8 @@ const products = getProducts(platform.id);
 const terms = getTermsRisk(platform.id);
 
 const evidenceById = new Map(evidence.map((source) => [source.id, source]));
+const lowEvidence = evidence.filter((source) => source.reliability === 'low');
+const pendingEvidence = evidence.filter((source) => String(source.notes || '').toLowerCase().includes('pending'));
 ---
 <BaseLayout title={`${platform.canonical_name} | Crypto Yield Archive`} description={platform.summary}>
   <section class="panel hero-panel">
@@ -24,9 +26,20 @@ const evidenceById = new Map(evidence.map((source) => [source.id, source]));
       <span class="chip">{platform.type}</span>
       <span class="chip">{platform.status}</span>
       <span class="chip">{platform.failure_reason || 'unknown'}</span>
-      <span class="chip">confidence: {platform.confidence || 'unknown'}</span>
+      <span class={`chip ${platform.confidence || ''}`}>confidence: {platform.confidence || 'unknown'}</span>
     </div>
   </section>
+
+  {(lowEvidence.length || pendingEvidence.length) ? (
+    <section class="panel card warning-card" style="margin-top:18px;">
+      <h2>Source quality notice</h2>
+      <p>This record includes evidence marked as low reliability or pending verification. Treat those items as research leads, not final proof.</p>
+      <div class="chip-row">
+        <span class="chip low">low reliability: {lowEvidence.length}</span>
+        <span class="chip medium">pending notes: {pendingEvidence.length}</span>
+      </div>
+    </section>
+  ) : null}
 
   <section class="grid two-col" style="margin-top:18px;">
     <div class="detail-stack">
@@ -47,7 +60,7 @@ const evidenceById = new Map(evidence.map((source) => [source.id, source]));
               <div class="fact"><div class="k">Estimated recovery</div><div class="v">{outcome.estimated_recovery_rate || '—'}</div></div>
               <div class="fact"><div class="k">Repayment started</div><div class="v">{outcome.repayment_started_at || '—'}</div></div>
               <div class="fact"><div class="k">Repayment completed</div><div class="v">{outcome.repayment_completed_at || '—'}</div></div>
-              <div class="fact"><div class="k">Confidence</div><div class="v">{outcome.confidence || '—'}</div></div>
+              <div class="fact"><div class="k">Confidence</div><div class="v"><span class={`chip ${outcome.confidence || ''}`}>{outcome.confidence || '—'}</span></div></div>
             </div>
             {outcome.claim_process_url && <p><a class="archive-link" href={outcome.claim_process_url}>Claim / case process link</a></p>}
           </>
@@ -64,7 +77,7 @@ const evidenceById = new Map(evidence.map((source) => [source.id, source]));
             <p>{terms.notes}</p>
             <div class="fact-grid compact-facts">
               <div class="fact"><div class="k">Affected product</div><div class="v">{terms.affected_product || '—'}</div></div>
-              <div class="fact"><div class="k">Confidence</div><div class="v">{terms.confidence || '—'}</div></div>
+              <div class="fact"><div class="k">Confidence</div><div class="v"><span class={`chip ${terms.confidence || ''}`}>{terms.confidence || '—'}</span></div></div>
             </div>
             {terms.asset_ownership_interpretation && <p>{terms.asset_ownership_interpretation}</p>}
             {terms.source_evidence_id && evidenceById.has(terms.source_evidence_id) && (
@@ -90,7 +103,7 @@ const evidenceById = new Map(evidence.map((source) => [source.id, source]));
                   <div class="chip-row small-gap">
                     <span class="chip">{event.event_type}</span>
                     {event.impact_level && <span class="chip">impact: {event.impact_level}</span>}
-                    {event.confidence && <span class="chip">confidence: {event.confidence}</span>}
+                    {event.confidence && <span class={`chip ${event.confidence}`}>confidence: {event.confidence}</span>}
                   </div>
                   <h3>{event.title}</h3>
                   <p>{event.description}</p>
@@ -104,13 +117,14 @@ const evidenceById = new Map(evidence.map((source) => [source.id, source]));
 
       <section class="panel card">
         <h2>Evidence dossier</h2>
+        <p class="muted detail-note">Reliability labels describe source strength for this registry entry. Low items are kept as research leads until replaced or verified.</p>
         {evidence.length ? (
           <div class="evidence-list">
             {evidence.map((source) => (
-              <article class="evidence-item">
+              <article class={`evidence-item evidence-${source.reliability || 'unknown'}`}>
                 <div class="chip-row small-gap">
                   <span class="chip">{source.source_type}</span>
-                  <span class="chip">{source.reliability}</span>
+                  <span class={`chip ${source.reliability || ''}`}>reliability: {source.reliability}</span>
                   {source.claim_scope && <span class="chip">{source.claim_scope}</span>}
                 </div>
                 <h3><a class="archive-link" href={source.url}>{source.title}</a></h3>
@@ -130,7 +144,7 @@ const evidenceById = new Map(evidence.map((source) => [source.id, source]));
         <div class="fact"><div class="k">Launch</div><div class="v">{platform.launch_date || '—'}</div></div>
         <div class="fact"><div class="k">End</div><div class="v">{platform.end_date || '—'}</div></div>
         <div class="fact"><div class="k">Origin</div><div class="v">{platform.country_or_origin || '—'}</div></div>
-        <div class="fact"><div class="k">Confidence</div><div class="v">{platform.confidence || '—'}</div></div>
+        <div class="fact"><div class="k">Confidence</div><div class="v"><span class={`chip ${platform.confidence || ''}`}>{platform.confidence || '—'}</span></div></div>
         <div class="fact"><div class="k">Domain</div><div class="v">{platform.official_domain_original || '—'}</div></div>
         <div class="fact"><div class="k">URL status</div><div class="v">{platform.official_url_status || '—'}</div></div>
       </div>
