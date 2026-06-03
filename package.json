@@ -9,7 +9,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "validate": "node scripts/validate-data.mjs",
-    "test": "npm run validate && npm run build"
+    "quality": "node scripts/data-quality-report.mjs",
+    "test": "npm run validate && npm run quality && npm run build"
   },
   "dependencies": {
     "astro": "^5.0.0"
