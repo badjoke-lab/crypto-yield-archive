@@ -1,10 +1,38 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { groupsByOutcome } from '../../lib/data';
+
+const groups = groupsByOutcome();
 ---
-<BaseLayout title="Outcomes | Crypto Yield Archive">
+<BaseLayout title="Outcomes | Crypto Yield Archive" description="Cross-platform customer outcome comparison for crypto lending and yield platforms.">
   <section class="panel hero-panel">
-    <p class="eyebrow">Registry view</p>
-    <h1>Outcomes</h1>
-    <p>This page will show grouped platform status records.</p>
+    <p class="eyebrow">Customer outcome view</p>
+    <h1>Customer outcomes</h1>
+    <p>Compare what happened to customer funds across crypto lending, Earn, and yield platform cases. Unknown values are kept instead of forcing guesses.</p>
+  </section>
+
+  <section class="grid" style="margin-top:18px;">
+    {groups.map(({ group, platforms }) => (
+      <section class="panel card">
+        <h2>{group}</h2>
+        {platforms.length ? (
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Name</th><th>Status</th><th>Failure reason</th><th>Domain</th></tr></thead>
+              <tbody>
+                {platforms.map((platform) => (
+                  <tr>
+                    <td class="name-cell"><a href={`/platform/${platform.slug}/`}><strong>{platform.canonical_name}</strong></a><small>{platform.slug}</small></td>
+                    <td><span class="chip">{platform.status}</span></td>
+                    <td><span class="chip">{platform.failure_reason || 'unknown'}</span></td>
+                    <td>{platform.official_domain_original || '—'}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        ) : <p>No records yet.</p>}
+      </section>
+    ))}
   </section>
 </BaseLayout>
