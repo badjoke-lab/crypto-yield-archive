@@ -5,7 +5,14 @@
   "description": "Evidence-based historical registry of crypto lending, Earn, and yield platforms.",
   "type": "module",
   "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
     "validate": "node scripts/validate-data.mjs",
-    "test": "node scripts/validate-data.mjs"
-  }
+    "test": "npm run validate && npm run build"
+  },
+  "dependencies": {
+    "astro": "^5.0.0"
+  },
+  "devDependencies": {}
 }
