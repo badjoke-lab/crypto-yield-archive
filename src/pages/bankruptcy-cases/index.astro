@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { bankruptcyPlatforms, getOutcome } from '../../lib/data';
+
+const platforms = bankruptcyPlatforms();
+---
+<BaseLayout title="Bankruptcy cases | Crypto Yield Archive" description="Bankruptcy and restructuring-heavy crypto lending and yield platform records.">
+  <section class="panel hero-panel">
+    <p class="eyebrow">Bankruptcy & restructuring</p>
+    <h1>Bankruptcy cases</h1>
+    <p>Major restructuring, bankruptcy, liquidation, and creditor-process cases in crypto lending and yield history.</p>
+  </section>
+
+  <section class="panel card" style="margin-top:18px;">
+    {platforms.length ? (
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Name</th><th>Status</th><th>Failure reason</th><th>Customer outcome</th><th>Domain</th></tr></thead>
+          <tbody>
+            {platforms.map((platform) => {
+              const outcome = getOutcome(platform.id);
+              return (
+                <tr>
+                  <td class="name-cell"><a href={`/platform/${platform.slug}/`}><strong>{platform.canonical_name}</strong></a><small>{platform.slug}</small></td>
+                  <td><span class="chip">{platform.status}</span></td>
+                  <td><span class="chip">{platform.failure_reason || 'unknown'}</span></td>
+                  <td><span class="chip">{outcome?.outcome_status || 'unknown'}</span></td>
+                  <td>{platform.official_domain_original || '—'}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    ) : <p>No bankruptcy or restructuring records yet.</p>}
+  </section>
+</BaseLayout>
