@@ -1,1 +1,50 @@
-[]
+[
+  {
+    "platform_id": "cya_plat_000001",
+    "product_type": "interest_account",
+    "product_name": "Celsius Earn",
+    "custody_model": "custodial",
+    "yield_source": "platform-managed lending and yield activities",
+    "risk_notes": "Earn account treatment became central to the Celsius bankruptcy customer-outcome and terms-risk analysis."
+  },
+  {
+    "platform_id": "cya_plat_000001",
+    "product_type": "borrow_lend_platform",
+    "product_name": "Celsius Borrow",
+    "custody_model": "custodial_collateral",
+    "yield_source": "secured borrowing and collateralized lending activity",
+    "risk_notes": "Borrow-related claims and collateral treatment may differ from Earn claims."
+  },
+  {
+    "platform_id": "cya_plat_000002",
+    "product_type": "interest_account",
+    "product_name": "BlockFi Interest Account",
+    "custody_model": "custodial",
+    "yield_source": "platform-managed lending activity",
+    "risk_notes": "Product was subject to regulatory action before BlockFi's later bankruptcy."
+  },
+  {
+    "platform_id": "cya_plat_000002",
+    "product_type": "borrow_lend_platform",
+    "product_name": "BlockFi loans",
+    "custody_model": "custodial_collateral",
+    "yield_source": "secured crypto lending",
+    "risk_notes": "Borrower and collateral treatment may differ from interest account outcomes."
+  },
+  {
+    "platform_id": "cya_plat_000003",
+    "product_type": "centralized_yield",
+    "product_name": "Voyager rewards program",
+    "custody_model": "custodial_platform_account",
+    "yield_source": "platform-managed rewards and lending-related activity",
+    "risk_notes": "Rewards and yield-like balances were affected by the platform suspension and bankruptcy process."
+  },
+  {
+    "platform_id": "cya_plat_000003",
+    "product_type": "borrow_lend_platform",
+    "product_name": "Voyager lending exposure",
+    "custody_model": "platform_counterparty_exposure",
+    "yield_source": "counterparty lending and platform treasury activity",
+    "risk_notes": "Three Arrows Capital exposure was a key failure-chain factor."
+  }
+]
