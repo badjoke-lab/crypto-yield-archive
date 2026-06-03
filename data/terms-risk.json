@@ -1,1 +1,29 @@
-[]
+[
+  {
+    "platform_id": "cya_plat_000001",
+    "terms_status": "varies_by_product",
+    "asset_ownership_interpretation": "Celsius Earn account assets were treated differently from some other product categories in bankruptcy-related analysis and rulings.",
+    "affected_product": "Celsius Earn and other Celsius account categories",
+    "source_evidence_id": "cya_src_000005",
+    "notes": "Celsius is a core terms-risk case because account/product category affected asset treatment and customer outcome. This seed should later be upgraded with direct court order citations.",
+    "confidence": "medium"
+  },
+  {
+    "platform_id": "cya_plat_000002",
+    "terms_status": "varies_by_product",
+    "asset_ownership_interpretation": "BlockFi customer outcomes and treatment varied across wallet, interest account, loan, and estate claim categories.",
+    "affected_product": "BlockFi Interest Account, Wallet, loans, and related account categories",
+    "source_evidence_id": "cya_src_000007",
+    "notes": "BlockFi requires product-by-product treatment in later research. This seed records the risk class but does not yet parse the full plan documents.",
+    "confidence": "medium"
+  },
+  {
+    "platform_id": "cya_plat_000003",
+    "terms_status": "varies_by_product",
+    "asset_ownership_interpretation": "Voyager customer treatment depended on estate assets, account balances, recovery process, and litigation recoveries after the platform entered wind-down.",
+    "affected_product": "Voyager customer account balances and rewards-related balances",
+    "source_evidence_id": "cya_src_000012",
+    "notes": "Voyager terms and customer recovery should be upgraded with direct plan and distribution documents. Current record is conservative.",
+    "confidence": "medium"
+  }
+]
