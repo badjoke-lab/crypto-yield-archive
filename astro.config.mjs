@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://crypto-yield-archive.pages.dev',
+  site: 'https://cya.badjoke-lab.com',
   trailingSlash: 'always',
 });
