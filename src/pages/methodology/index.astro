@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Methodology | Crypto Yield Archive" description="How Crypto Yield Archive classifies, verifies, and presents crypto lending and yield platform history.">
+  <section class="panel hero-panel">
+    <p class="eyebrow">Definitions & limits</p>
+    <h1>Methodology</h1>
+    <p>Crypto Yield Archive is a historical registry, not a live APY ranking, investment recommendation, or real-time dashboard.</p>
+  </section>
+
+  <section class="grid" style="margin-top:18px;">
+    <section class="panel card">
+      <h2>Core principles</h2>
+      <p>CYA records platform history, customer outcome, terms risk, failure chain, and evidence. Unknown values are preserved instead of forcing guesses.</p>
+    </section>
+
+    <section class="panel card">
+      <h2>v0 scope</h2>
+      <p>v0 includes CeFi lending platforms, crypto interest accounts, centralized yield platforms, and borrowing/lending services.</p>
+      <p>Exchange Earn, DeFi lending protocols, yield aggregators, pool-level records, deployment-level records, real-time APY, and real-time TVL are deferred.</p>
+    </section>
+
+    <section class="panel card">
+      <h2>Counting unit</h2>
+      <p>v0 counts platform entities. Products, pools, vaults, chain deployments, and individual claim classes are not separate platform records.</p>
+    </section>
+
+    <section class="panel card">
+      <h2>Record model</h2>
+      <div class="fact-grid">
+        <div class="fact"><div class="k">platform_entity</div><div class="v">The platform or historically meaningful yield service.</div></div>
+        <div class="fact"><div class="k">platform_event</div><div class="v">Timeline events such as withdrawal pauses, bankruptcy filings, restructuring, and distributions.</div></div>
+        <div class="fact"><div class="k">platform_evidence</div><div class="v">Sources backing entity, event, outcome, terms-risk, or URL-history claims.</div></div>
+        <div class="fact"><div class="k">customer_outcome</div><div class="v">What happened to user funds, including partial repayment, ongoing claims, or unknown outcomes.</div></div>
+      </div>
+    </section>
+
+    <section class="panel card">
+      <h2>Evidence and reliability</h2>
+      <p>Preferred sources include official statements, court documents, bankruptcy documents, regulatory notices, archived pages, and reputable reporting.</p>
+      <p>Reliability is marked as high, medium, or low. Low-confidence records should not be treated as definitive.</p>
+    </section>
+
+    <section class="panel card">
+      <h2>URL handling</h2>
+      <p>Original URLs are preserved as historical records. For ended or repurposed platforms, archived URLs should be preferred and unsafe domains should not be treated as normal outbound links.</p>
+    </section>
+
+    <section class="panel card">
+      <h2>Corrections</h2>
+      <p>A good correction should include the platform name, CYA page URL, the field or claim that appears wrong, source links, and a short explanation.</p>
+    </section>
+  </section>
+</BaseLayout>
