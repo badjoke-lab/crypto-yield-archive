@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { allPlatforms, allEvents, allEvidence, allOutcomes, allProducts, allTermsRisk } from '../../lib/data';
+
+function countBy(records, field) {
+  const map = new Map();
+  for (const record of records) {
+    const value = record[field] || 'unknown';
+    map.set(value, (map.get(value) || 0) + 1);
+  }
+  return Array.from(map.entries()).sort((a, b) => b[1] - a[1]);
+}
+
+const statusCounts = countBy(allPlatforms, 'status');
+const failureCounts = countBy(allPlatforms, 'failure_reason');
+const outcomeCounts = countBy(allOutcomes, 'outcome_status');
+const termsCounts = countBy(allTermsRisk, 'terms_status');
+const evidenceReliabilityCounts = countBy(allEvidence, 'reliability');
+const eventTypeCounts = countBy(allEvents, 'event_type');
+---
+<BaseLayout title="Stats | Crypto Yield Archive" description="Registry statistics for Crypto Yield Archive seed records.">
+  <section class="panel hero-panel">
+    <p class="eyebrow">Registry stats</p>
+    <h1>Stats</h1>
+    <p>Seed registry counts for platform records, events, evidence, outcomes, products, and terms-risk records.</p>
+    <div class="summary-grid">
+      <div class="stat"><div class="label">Platforms</div><div class="value">{allPlatforms.length}</div></div>
+      <div class="stat"><div class="label">Events</div><div class="value">{allEvents.length}</div></div>
+      <div class="stat"><div class="label">Evidence</div><div class="value">{allEvidence.length}</div></div>
+      <div class="stat"><div class="label">Outcomes</div><div class="value">{allOutcomes.length}</div></div>
+      <div class="stat"><div class="label">Products</div><div class="value">{allProducts.length}</div></div>
+      <div class="stat"><div class="label">Terms risk</div><div class="value">{allTermsRisk.length}</div></div>
+    </div>
+  </section>
+
+  <section class="grid two-col" style="margin-top:18px;">
+    {[
+      ['Platform status', statusCounts],
+      ['Failure reason', failureCounts],
+      ['Customer outcome', outcomeCounts],
+      ['Terms risk', termsCounts],
+      ['Evidence reliability', evidenceReliabilityCounts],
+      ['Event type', eventTypeCounts],
+    ].map(([title, rows]) => (
+      <section class="panel card">
+        <h2>{title}</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Value</th><th>Count</th></tr></thead>
+            <tbody>
+              {rows.map(([value, count]) => (
+                <tr>
+                  <td data-label="Value"><span class="chip">{value}</span></td>
+                  <td data-label="Count">{count}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    ))}
+  </section>
+</BaseLayout>
