@@ -25,5 +25,23 @@
     "source_evidence_id": "cya_src_000012",
     "notes": "Voyager terms and customer recovery should be upgraded with direct plan and distribution documents. Current record is conservative.",
     "confidence": "medium"
+  },
+  {
+    "platform_id": "cya_plat_000004",
+    "terms_status": "varies_by_product",
+    "asset_ownership_interpretation": "Genesis creditor and Gemini Earn-linked outcomes depended on program structure, claim class, and the bankruptcy plan rather than a single universal customer-ownership rule.",
+    "affected_product": "Genesis lending claims and Gemini Earn-linked claims",
+    "source_evidence_id": "cya_src_000017",
+    "notes": "Genesis terms risk should be read as product- and claim-class dependent. Gemini Earn was connected to Genesis lending but has a separate customer-facing structure.",
+    "confidence": "medium"
+  },
+  {
+    "platform_id": "cya_plat_000005",
+    "terms_status": "unknown",
+    "asset_ownership_interpretation": "Hodlnaut depositor treatment is liquidation-dependent in this seed record and requires direct liquidator or court documents before assigning a stronger ownership interpretation.",
+    "affected_product": "Hodlnaut interest and yield account balances",
+    "source_evidence_id": "cya_src_000020",
+    "notes": "Use unknown rather than forcing a terms conclusion. The platform halt and liquidation are clear, but product-level asset ownership treatment requires deeper source review.",
+    "confidence": "medium"
   }
 ]
