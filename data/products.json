@@ -46,5 +46,37 @@
     "custody_model": "platform_counterparty_exposure",
     "yield_source": "counterparty lending and platform treasury activity",
     "risk_notes": "Three Arrows Capital exposure was a key failure-chain factor."
+  },
+  {
+    "platform_id": "cya_plat_000004",
+    "product_type": "institutional_lending",
+    "product_name": "Genesis lending business",
+    "custody_model": "institutional_counterparty_lending",
+    "yield_source": "institutional lending and counterparty credit activity",
+    "risk_notes": "Genesis lending exposure and redemption halt affected creditors and Gemini Earn users."
+  },
+  {
+    "platform_id": "cya_plat_000004",
+    "product_type": "interest_account",
+    "product_name": "Gemini Earn linked Genesis lending exposure",
+    "custody_model": "custodial_program_linked_to_genesis_lending",
+    "yield_source": "assets lent through Genesis-linked Earn arrangements",
+    "risk_notes": "Gemini Earn was not itself Genesis, but Genesis was central to the customer outcome."
+  },
+  {
+    "platform_id": "cya_plat_000005",
+    "product_type": "interest_account",
+    "product_name": "Hodlnaut interest account",
+    "custody_model": "custodial",
+    "yield_source": "platform-managed lending and yield activity",
+    "risk_notes": "Depositors were affected by the withdrawal halt, judicial management, and liquidation path."
+  },
+  {
+    "platform_id": "cya_plat_000005",
+    "product_type": "centralized_yield",
+    "product_name": "Hodlnaut fixed-term/open-term yield products",
+    "custody_model": "custodial_platform_account",
+    "yield_source": "centralized yield activity",
+    "risk_notes": "Exact recovery and product treatment require liquidator-source review."
   }
 ]
