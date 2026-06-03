@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { allPlatforms, allEvents, allEvidence, allOutcomes, getOutcome } from '../lib/data';
+
+function years(platform) {
+  const start = platform.launch_date ? String(platform.launch_date).slice(0, 4) : '—';
+  const end = platform.end_date ? String(platform.end_date).slice(0, 4) : '';
+  return `${start}${end ? `–${end}` : '–'}`;
+}
+---
+<BaseLayout>
+  <section class="panel hero-panel">
+    <p class="eyebrow">Historical registry · Astro static build</p>
+    <h1>What happened after users deposited assets into crypto yield platforms?</h1>
+    <p>Crypto Yield Archive tracks lending, Earn, and yield platforms by platform history, customer outcome, terms risk, failure chain, and evidence.</p>
+    <div class="summary-grid">
+      <div class="stat"><div class="label">Platforms</div><div class="value">{allPlatforms.length}</div></div>
+      <div class="stat"><div class="label">Events</div><div class="value">{allEvents.length}</div></div>
+      <div class="stat"><div class="label">Evidence</div><div class="value">{allEvidence.length}</div></div>
+      <div class="stat"><div class="label">Outcomes</div><div class="value">{allOutcomes.length}</div></div>
+    </div>
+  </section>
+
+  <section class="panel" style="margin-top:18px;">
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Status</th>
+            <th>Failure reason</th>
+            <th>Customer outcome</th>
+            <th>Years</th>
+            <th>Domain</th>
+            <th>Archive</th>
+          </tr>
+        </thead>
+        <tbody>
+          {allPlatforms.map((platform) => {
+            const outcome = getOutcome(platform.id);
+            return (
+              <tr>
+                <td class="name-cell"><a href={`/platform/${platform.slug}/`}><strong>{platform.canonical_name}</strong></a><small>{(platform.aliases || []).join(', ') || platform.slug}</small></td>
+                <td><span class="chip">{platform.type}</span></td>
+                <td><span class="chip">{platform.status}</span></td>
+                <td><span class="chip">{platform.failure_reason || '—'}</span></td>
+                <td><span class="chip">{outcome?.outcome_status || 'unknown'}</span></td>
+                <td>{years(platform)}</td>
+                <td>{platform.official_domain_original || '—'}</td>
+                <td>{platform.archived_url ? <a class="archive-link" href={platform.archived_url}>Archive</a> : <span class="muted">—</span>}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  </section>
+</BaseLayout>
