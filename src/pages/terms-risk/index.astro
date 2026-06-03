@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { allTermsRisk, allPlatforms } from '../../lib/data';
+
+const platformById = new Map(allPlatforms.map((platform) => [platform.id, platform]));
+const groups = Array.from(new Set(allTermsRisk.map((term) => term.terms_status || 'unknown')))
+  .sort()
+  .map((status) => ({
+    status,
+    records: allTermsRisk.filter((term) => (term.terms_status || 'unknown') === status),
+  }));
+---
+<BaseLayout title="Terms risk | Crypto Yield Archive" description="Asset ownership and terms-risk classifications across crypto lending and yield platforms.">
+  <section class="panel hero-panel">
+    <p class="eyebrow">Cross-platform view</p>
+    <h1>Terms risk</h1>
+    <p>Track whether deposited assets were treated as customer-owned, platform-owned, unclear, product-dependent, or unknown.</p>
+    <div class="summary-grid">
+      <div class="stat"><div class="label">Terms records</div><div class="value">{allTermsRisk.length}</div></div>
+      <div class="stat"><div class="label">Unknown</div><div class="value">{allTermsRisk.filter((term) => term.terms_status === 'unknown').length}</div></div>
+    </div>
+  </section>
+
+  <section class="grid" style="margin-top:18px;">
+    {groups.map(({ status, records }) => (
+      <section class="panel card">
+        <div class="section-heading">
+          <h2>{status}</h2>
+          <span class="chip">{records.length} records</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Platform</th><th>Affected product</th><th>Confidence</th><th>Notes</th></tr></thead>
+            <tbody>
+              {records.map((term) => {
+                const platform = platformById.get(term.platform_id);
+                return (
+                  <tr>
+                    <td data-label="Platform" class="name-cell"><a href={platform ? `/platform/${platform.slug}/` : '#'}><strong>{platform?.canonical_name || term.platform_id}</strong></a><small>{platform?.slug || term.platform_id}</small></td>
+                    <td data-label="Affected product">{term.affected_product || '—'}</td>
+                    <td data-label="Confidence"><span class={`chip ${term.confidence || ''}`}>{term.confidence || 'unknown'}</span></td>
+                    <td data-label="Notes">{term.notes}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    ))}
+  </section>
+</BaseLayout>
