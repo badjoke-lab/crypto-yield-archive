@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { allEvents, allPlatforms } from '../../lib/data';
+
+const platformById = new Map(allPlatforms.map((platform) => [platform.id, platform]));
+const events = [...allEvents].sort((a, b) => String(a.event_date || '').localeCompare(String(b.event_date || '')));
+const criticalEvents = events.filter((event) => event.impact_level === 'critical');
+---
+<BaseLayout title="Timeline | Crypto Yield Archive" description="Chronological event timeline across crypto lending and yield platforms.">
+  <section class="panel hero-panel">
+    <p class="eyebrow">Historical timeline</p>
+    <h1>Timeline</h1>
+    <p>A chronological view of launches, suspensions, bankruptcy filings, restructuring events, and customer repayment milestones.</p>
+    <div class="summary-grid">
+      <div class="stat"><div class="label">Events</div><div class="value">{events.length}</div></div>
+      <div class="stat"><div class="label">Critical</div><div class="value">{criticalEvents.length}</div></div>
+      <div class="stat"><div class="label">Platforms</div><div class="value">{allPlatforms.length}</div></div>
+    </div>
+  </section>
+
+  <section class="panel card" style="margin-top:18px;">
+    <div class="timeline-list">
+      {events.map((event) => {
+        const platform = platformById.get(event.platform_id);
+        return (
+          <article class="timeline-item">
+            <div class="timeline-date">{event.event_date}</div>
+            <div>
+              <div class="chip-row small-gap">
+                <span class="chip">{event.event_type}</span>
+                {event.impact_level && <span class="chip">impact: {event.impact_level}</span>}
+                {event.confidence && <span class={`chip ${event.confidence}`}>confidence: {event.confidence}</span>}
+              </div>
+              <h3>{event.title}</h3>
+              <p><a class="archive-link" href={platform ? `/platform/${platform.slug}/` : '#'}>{platform?.canonical_name || event.platform_id}</a></p>
+              <p>{event.description}</p>
+              {event.notes && <p class="muted detail-note">{event.notes}</p>}
+            </div>
+          </article>
+        );
+      })}
+    </div>
+  </section>
+</BaseLayout>
