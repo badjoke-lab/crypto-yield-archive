@@ -8,6 +8,8 @@ const {
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? 'https://cya.badjoke-lab.com').toString();
 const siteName = 'Crypto Yield Archive';
+const gaMeasurementId = 'G-LWCGTDBY6W';
+const gaTagUrl = `https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`;
 ---
 <!doctype html>
 <html lang="en">
@@ -25,6 +27,15 @@ const siteName = 'Crypto Yield Archive';
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <script async src={gaTagUrl}></script>
+    <script define:vars={{ gaMeasurementId }}>
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function gtag(){
+        window.dataLayer.push(arguments);
+      };
+      window.gtag('js', new Date());
+      window.gtag('config', gaMeasurementId);
+    </script>
   </head>
   <body>
     <div class="shell">
