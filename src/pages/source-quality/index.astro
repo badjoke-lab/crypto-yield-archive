@@ -1,0 +1,131 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { allEvidence, allOutcomes, allPlatforms, allTermsRisk } from '../../lib/data';
+
+const platformById = new Map(allPlatforms.map((platform) => [platform.id, platform]));
+const platformName = (platformId) => platformById.get(platformId)?.canonical_name || platformId;
+const platformSlug = (platformId) => platformById.get(platformId)?.slug;
+const platformLink = (platformId) => platformSlug(platformId) ? `/platform/${platformSlug(platformId)}/` : '#';
+
+const lowEvidence = allEvidence.filter((source) => source.reliability === 'low');
+const mediumEvidence = allEvidence.filter((source) => source.reliability === 'medium');
+const pendingEvidence = allEvidence.filter((source) => String(source.notes || '').toLowerCase().includes('pending') || String(source.notes || '').toLowerCase().includes('replace'));
+const unknownOutcomes = allOutcomes.filter((outcome) => outcome.outcome_status === 'unknown' || outcome.outcome_status === 'claims_ongoing');
+const unknownTerms = allTermsRisk.filter((term) => term.terms_status === 'unknown');
+
+const platformsWithFewEvidence = allPlatforms
+  .map((platform) => ({ platform, evidenceCount: allEvidence.filter((source) => source.platform_id === platform.id).length }))
+  .filter((item) => item.evidenceCount < 3);
+---
+<BaseLayout title="Source quality | Crypto Yield Archive" description="Low reliability, pending verification, and unknown outcome records in Crypto Yield Archive.">
+  <section class="panel hero-panel">
+    <p class="eyebrow">Transparency layer</p>
+    <h1>Source quality</h1>
+    <p>This page lists weak, pending, and unresolved records. Low-reliability items are kept visible as research leads until they are verified, replaced, or removed.</p>
+    <div class="summary-grid">
+      <div class="stat"><div class="label">Low evidence</div><div class="value">{lowEvidence.length}</div></div>
+      <div class="stat"><div class="label">Pending notes</div><div class="value">{pendingEvidence.length}</div></div>
+      <div class="stat"><div class="label">Unknown outcomes</div><div class="value">{unknownOutcomes.length}</div></div>
+      <div class="stat"><div class="label">Unknown terms</div><div class="value">{unknownTerms.length}</div></div>
+    </div>
+  </section>
+
+  <section class="grid" style="margin-top:18px;">
+    <section class="panel card">
+      <h2>Low reliability evidence</h2>
+      <p>These entries should not be treated as final proof. They need verification, archive confirmation, or direct-source replacement.</p>
+      {lowEvidence.length ? (
+        <div class="quality-list">
+          {lowEvidence.map((source) => (
+            <article class="quality-item evidence-low">
+              <div class="chip-row small-gap">
+                <span class="chip low">low</span>
+                <span class="chip">{source.source_type}</span>
+                <span class="chip">{source.claim_scope || 'claim'}</span>
+              </div>
+              <h3><a class="archive-link" href={source.url}>{source.title}</a></h3>
+              <p><a class="archive-link" href={platformLink(source.platform_id)}>{platformName(source.platform_id)}</a> · {source.publisher}</p>
+              {source.notes && <p class="muted detail-note">{source.notes}</p>}
+            </article>
+          ))}
+        </div>
+      ) : <p>No low-reliability evidence records.</p>}
+    </section>
+
+    <section class="panel card">
+      <h2>Pending verification / replacement notes</h2>
+      <p>These records explicitly mention pending verification or source replacement in their notes.</p>
+      {pendingEvidence.length ? (
+        <div class="quality-list">
+          {pendingEvidence.map((source) => (
+            <article class={`quality-item evidence-${source.reliability || 'unknown'}`}>
+              <div class="chip-row small-gap">
+                <span class={`chip ${source.reliability || ''}`}>{source.reliability}</span>
+                <span class="chip">{source.source_type}</span>
+              </div>
+              <h3><a class="archive-link" href={source.url}>{source.title}</a></h3>
+              <p><a class="archive-link" href={platformLink(source.platform_id)}>{platformName(source.platform_id)}</a> · {source.publisher}</p>
+              {source.notes && <p class="muted detail-note">{source.notes}</p>}
+            </article>
+          ))}
+        </div>
+      ) : <p>No pending source notes.</p>}
+    </section>
+
+    <section class="panel card">
+      <h2>Unknown or ongoing customer outcomes</h2>
+      {unknownOutcomes.length ? (
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Platform</th><th>Outcome</th><th>Confidence</th><th>Notes</th></tr></thead>
+            <tbody>
+              {unknownOutcomes.map((outcome) => (
+                <tr>
+                  <td data-label="Platform"><a class="archive-link" href={platformLink(outcome.platform_id)}>{platformName(outcome.platform_id)}</a></td>
+                  <td data-label="Outcome"><span class="chip medium">{outcome.outcome_status}</span></td>
+                  <td data-label="Confidence"><span class={`chip ${outcome.confidence || ''}`}>{outcome.confidence}</span></td>
+                  <td data-label="Notes">{outcome.notes}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      ) : <p>No unknown or ongoing outcomes.</p>}
+    </section>
+
+    <section class="panel card">
+      <h2>Unknown terms-risk records</h2>
+      {unknownTerms.length ? (
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Platform</th><th>Terms status</th><th>Confidence</th><th>Reason</th></tr></thead>
+            <tbody>
+              {unknownTerms.map((term) => (
+                <tr>
+                  <td data-label="Platform"><a class="archive-link" href={platformLink(term.platform_id)}>{platformName(term.platform_id)}</a></td>
+                  <td data-label="Terms"><span class="chip medium">{term.terms_status}</span></td>
+                  <td data-label="Confidence"><span class={`chip ${term.confidence || ''}`}>{term.confidence}</span></td>
+                  <td data-label="Reason">{term.notes}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      ) : <p>No unknown terms-risk records.</p>}
+    </section>
+
+    <section class="panel card">
+      <h2>Platforms with fewer than 3 evidence records</h2>
+      {platformsWithFewEvidence.length ? (
+        <div class="quality-list">
+          {platformsWithFewEvidence.map(({ platform, evidenceCount }) => (
+            <article class="quality-item">
+              <h3><a class="archive-link" href={`/platform/${platform.slug}/`}>{platform.canonical_name}</a></h3>
+              <p>Evidence records: {evidenceCount}</p>
+            </article>
+          ))}
+        </div>
+      ) : <p>Every platform has at least 3 evidence records.</p>}
+    </section>
+  </section>
+</BaseLayout>
