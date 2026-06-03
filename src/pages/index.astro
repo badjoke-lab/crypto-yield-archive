@@ -2,10 +2,28 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { allPlatforms, allEvents, allEvidence, allOutcomes, getOutcome } from '../lib/data';
 
+const statusOptions = Array.from(new Set(allPlatforms.map((platform) => platform.status))).sort();
+const outcomeOptions = Array.from(new Set(allPlatforms.map((platform) => getOutcome(platform.id)?.outcome_status || 'unknown'))).sort();
+
 function years(platform) {
   const start = platform.launch_date ? String(platform.launch_date).slice(0, 4) : '—';
   const end = platform.end_date ? String(platform.end_date).slice(0, 4) : '';
   return `${start}${end ? `–${end}` : '–'}`;
+}
+
+function searchText(platform) {
+  return [
+    platform.canonical_name,
+    platform.slug,
+    platform.type,
+    platform.status,
+    platform.failure_reason,
+    platform.official_domain_original,
+    ...(platform.aliases || []),
+  ]
+    .filter(Boolean)
+    .join(' ')
+    .toLowerCase();
 }
 ---
 <BaseLayout>
@@ -21,9 +39,35 @@ function years(platform) {
     </div>
   </section>
 
-  <section class="panel" style="margin-top:18px;">
+  <section class="panel registry-panel" style="margin-top:18px;">
+    <div class="controls" aria-label="Registry filters">
+      <label class="control-field search-field">
+        <span>Search</span>
+        <input id="registrySearch" type="search" placeholder="Search name, alias, domain, type…" autocomplete="off" />
+      </label>
+      <label class="control-field">
+        <span>Status</span>
+        <select id="statusFilter">
+          <option value="">All status</option>
+          {statusOptions.map((status) => <option value={status}>{status}</option>)}
+        </select>
+      </label>
+      <label class="control-field">
+        <span>Outcome</span>
+        <select id="outcomeFilter">
+          <option value="">All outcomes</option>
+          {outcomeOptions.map((outcome) => <option value={outcome}>{outcome}</option>)}
+        </select>
+      </label>
+      <button id="clearFilters" class="ghost-button" type="button">Clear</button>
+    </div>
+
+    <div class="registry-count" aria-live="polite">
+      Showing <strong id="visibleCount">{allPlatforms.length}</strong> of <strong>{allPlatforms.length}</strong> platforms
+    </div>
+
     <div class="table-wrap">
-      <table>
+      <table id="registryTable">
         <thead>
           <tr>
             <th>Name</th>
@@ -40,20 +84,66 @@ function years(platform) {
           {allPlatforms.map((platform) => {
             const outcome = getOutcome(platform.id);
             return (
-              <tr>
-                <td class="name-cell"><a href={`/platform/${platform.slug}/`}><strong>{platform.canonical_name}</strong></a><small>{(platform.aliases || []).join(', ') || platform.slug}</small></td>
-                <td><span class="chip">{platform.type}</span></td>
-                <td><span class="chip">{platform.status}</span></td>
-                <td><span class="chip">{platform.failure_reason || '—'}</span></td>
-                <td><span class="chip">{outcome?.outcome_status || 'unknown'}</span></td>
-                <td>{years(platform)}</td>
-                <td>{platform.official_domain_original || '—'}</td>
-                <td>{platform.archived_url ? <a class="archive-link" href={platform.archived_url}>Archive</a> : <span class="muted">—</span>}</td>
+              <tr
+                data-row="platform"
+                data-search={searchText(platform)}
+                data-status={platform.status}
+                data-outcome={outcome?.outcome_status || 'unknown'}
+              >
+                <td class="name-cell" data-label="Name"><a href={`/platform/${platform.slug}/`}><strong>{platform.canonical_name}</strong></a><small>{(platform.aliases || []).join(', ') || platform.slug}</small></td>
+                <td data-label="Type"><span class="chip">{platform.type}</span></td>
+                <td data-label="Status"><span class="chip">{platform.status}</span></td>
+                <td data-label="Failure reason"><span class="chip">{platform.failure_reason || '—'}</span></td>
+                <td data-label="Customer outcome"><span class="chip">{outcome?.outcome_status || 'unknown'}</span></td>
+                <td data-label="Years">{years(platform)}</td>
+                <td data-label="Domain">{platform.official_domain_original || '—'}</td>
+                <td data-label="Archive">{platform.archived_url ? <a class="archive-link" href={platform.archived_url}>Archive</a> : <span class="muted">—</span>}</td>
               </tr>
             );
           })}
         </tbody>
       </table>
+      <p id="emptyState" class="empty-state" hidden>No platforms match the current filters.</p>
     </div>
   </section>
+
+  <script is:inline>
+    const searchInput = document.querySelector('#registrySearch');
+    const statusFilter = document.querySelector('#statusFilter');
+    const outcomeFilter = document.querySelector('#outcomeFilter');
+    const clearButton = document.querySelector('#clearFilters');
+    const visibleCount = document.querySelector('#visibleCount');
+    const emptyState = document.querySelector('#emptyState');
+    const rows = Array.from(document.querySelectorAll('[data-row="platform"]'));
+
+    function applyFilters() {
+      const query = searchInput.value.trim().toLowerCase();
+      const status = statusFilter.value;
+      const outcome = outcomeFilter.value;
+      let shown = 0;
+
+      for (const row of rows) {
+        const matchesQuery = !query || row.dataset.search.includes(query);
+        const matchesStatus = !status || row.dataset.status === status;
+        const matchesOutcome = !outcome || row.dataset.outcome === outcome;
+        const isVisible = matchesQuery && matchesStatus && matchesOutcome;
+        row.hidden = !isVisible;
+        if (isVisible) shown += 1;
+      }
+
+      visibleCount.textContent = String(shown);
+      emptyState.hidden = shown !== 0;
+    }
+
+    searchInput.addEventListener('input', applyFilters);
+    statusFilter.addEventListener('change', applyFilters);
+    outcomeFilter.addEventListener('change', applyFilters);
+    clearButton.addEventListener('click', () => {
+      searchInput.value = '';
+      statusFilter.value = '';
+      outcomeFilter.value = '';
+      applyFilters();
+      searchInput.focus();
+    });
+  </script>
 </BaseLayout>
