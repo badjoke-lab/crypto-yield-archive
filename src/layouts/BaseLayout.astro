@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import GoogleAnalytics from '../components/GoogleAnalytics.astro';
 
 const {
   title = 'Crypto Yield Archive',
@@ -25,6 +26,7 @@ const siteName = 'Crypto Yield Archive';
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <GoogleAnalytics />
   </head>
   <body>
     <div class="shell">
