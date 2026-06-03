@@ -2,6 +2,12 @@
 
 Crypto Yield Archive (CYA) is an evidence-based historical registry of crypto lending, Earn, and yield platforms.
 
+Production URL:
+
+```text
+https://cya.badjoke-lab.com/
+```
+
 It records what happened after users deposited assets into yield platforms: launches, withdrawal suspensions, insolvencies, bankruptcies, restructurings, repayments, acquisitions, shutdowns, and customer outcomes.
 
 ## Positioning
@@ -56,12 +62,23 @@ Not included in v0:
 The project uses Astro as a static site generator with repo-local JSON data.
 
 - Astro static build
-- Cloudflare Pages target
+- Cloudflare Pages
+- custom subdomain: `cya.badjoke-lab.com`
 - GitHub repository
 - static JSON data files
 - no database in v0
 - no backend in v0
 - no authentication in v0
+
+## Analytics / Search Console
+
+GA4 is enabled in `src/layouts/BaseLayout.astro`.
+
+```text
+GA4 measurement ID: G-LWCGTDBY6W
+```
+
+Google Search Console verification is pending. Add the `google-site-verification` meta tag later when the token is available.
 
 ## Local commands
 
@@ -103,15 +120,16 @@ Astro generates:
 
 ## Cloudflare Pages settings
 
-Use these after the Astro build is confirmed:
+Current deployment target:
 
 ```text
 Framework preset: Astro
 Build command: npm run build
 Build output directory: dist
 Production branch: main
+Custom domain: cya.badjoke-lab.com
 ```
 
 ## Current status
 
-Astro migration stage. No production launch claim.
+Astro migration and seed-data stage. Public URL exists, but this is not a final v0 launch claim yet.
