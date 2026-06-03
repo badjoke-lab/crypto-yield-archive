@@ -1,62 +1,10 @@
 [
-  {
-    "platform_id": "cya_plat_000001",
-    "outcome_status": "partial_repayment",
-    "estimated_recovery_rate": "varies_by_claim_class",
-    "repayment_started_at": "2024-01-31",
-    "repayment_completed_at": null,
-    "repayment_method": "bankruptcy distributions including crypto and other recovery components",
-    "claim_process_url": "https://cases.stretto.com/celsius/",
-    "affected_products": ["Earn", "Custody", "Borrow", "other Celsius account types"],
-    "notes": "Celsius exited bankruptcy and began creditor distributions. Customer recovery depended on account/product type and claim treatment. This record is intentionally conservative until direct plan documents are parsed.",
-    "confidence": "medium"
-  },
-  {
-    "platform_id": "cya_plat_000002",
-    "outcome_status": "partial_repayment",
-    "estimated_recovery_rate": "varies_by_product_and_estate_recoveries",
-    "repayment_started_at": "2023-10-24",
-    "repayment_completed_at": null,
-    "repayment_method": "bankruptcy wind-down distributions and estate recoveries",
-    "claim_process_url": "https://restructuring.ra.kroll.com/blockfi/",
-    "affected_products": ["BlockFi Interest Account", "Wallet", "loans", "other account types"],
-    "notes": "BlockFi emerged from bankruptcy to wind down and distribute recoveries. Final customer outcome depended on product type and recoveries from related counterparties.",
-    "confidence": "medium"
-  },
-  {
-    "platform_id": "cya_plat_000003",
-    "outcome_status": "partial_repayment",
-    "estimated_recovery_rate": "initial_recovery_plus_possible_future_recoveries",
-    "repayment_started_at": "2023-06-01",
-    "repayment_completed_at": null,
-    "repayment_method": "estate wind-down and direct customer recovery process",
-    "claim_process_url": "https://cases.stretto.com/Voyager/",
-    "affected_products": ["customer crypto balances", "rewards-related balances", "platform account claims"],
-    "notes": "Voyager moved into a direct recovery process after proposed sale paths failed. Recovery was partial and subject to estate assets and litigation recoveries.",
-    "confidence": "medium"
-  },
-  {
-    "platform_id": "cya_plat_000004",
-    "outcome_status": "partial_repayment",
-    "estimated_recovery_rate": "varies_by_creditor_class_with_gemini_earn_in_kind_distribution_reported",
-    "repayment_started_at": "2024-05-29",
-    "repayment_completed_at": null,
-    "repayment_method": "bankruptcy liquidation distributions and Gemini Earn in-kind distributions",
-    "claim_process_url": "https://restructuring.ra.kroll.com/genesis/",
-    "affected_products": ["Genesis lending claims", "Gemini Earn linked claims", "institutional lending claims"],
-    "notes": "Genesis customer outcome is complex. Gemini Earn customers reportedly received substantial in-kind distributions after the Genesis process, while broader Genesis creditor recoveries depended on the liquidation plan and claim class. This seed should be upgraded with direct plan documents.",
-    "confidence": "medium"
-  },
-  {
-    "platform_id": "cya_plat_000005",
-    "outcome_status": "claims_ongoing",
-    "estimated_recovery_rate": "unknown_liquidation_dependent",
-    "repayment_started_at": null,
-    "repayment_completed_at": null,
-    "repayment_method": "liquidation process",
-    "claim_process_url": "https://www.hodlnaut.com/",
-    "affected_products": ["interest account balances", "deposited crypto assets"],
-    "notes": "Hodlnaut was ordered into liquidation after judicial management. Customer recovery remains liquidation-dependent in this seed record and needs direct liquidator-source upgrades.",
-    "confidence": "medium"
-  }
+  {"platform_id":"cya_plat_000001","outcome_status":"partial_repayment","estimated_recovery_rate":"varies_by_claim_class","repayment_started_at":"2024-01-31","repayment_completed_at":null,"repayment_method":"bankruptcy distributions including crypto and other recovery components","claim_process_url":"https://cases.stretto.com/celsius/","affected_products":["Earn","Custody","Borrow","other Celsius account types"],"notes":"Celsius exited bankruptcy and began creditor distributions. Customer recovery depended on account/product type and claim treatment. This record is intentionally conservative until direct plan documents are parsed.","confidence":"medium"},
+  {"platform_id":"cya_plat_000002","outcome_status":"partial_repayment","estimated_recovery_rate":"varies_by_product_and_estate_recoveries","repayment_started_at":"2023-10-24","repayment_completed_at":null,"repayment_method":"bankruptcy wind-down distributions and estate recoveries","claim_process_url":"https://restructuring.ra.kroll.com/blockfi/","affected_products":["BlockFi Interest Account","Wallet","loans","other account types"],"notes":"BlockFi emerged from bankruptcy to wind down and distribute recoveries. Final customer outcome depended on product type and recoveries from related counterparties.","confidence":"medium"},
+  {"platform_id":"cya_plat_000003","outcome_status":"partial_repayment","estimated_recovery_rate":"initial_recovery_plus_possible_future_recoveries","repayment_started_at":"2023-06-01","repayment_completed_at":null,"repayment_method":"estate wind-down and direct customer recovery process","claim_process_url":"https://cases.stretto.com/Voyager/","affected_products":["customer crypto balances","rewards-related balances","platform account claims"],"notes":"Voyager moved into a direct recovery process after proposed sale paths failed. Recovery was partial and subject to estate assets and litigation recoveries.","confidence":"medium"},
+  {"platform_id":"cya_plat_000004","outcome_status":"partial_repayment","estimated_recovery_rate":"varies_by_creditor_class_with_gemini_earn_in_kind_distribution_reported","repayment_started_at":"2024-05-29","repayment_completed_at":null,"repayment_method":"bankruptcy liquidation distributions and Gemini Earn in-kind distributions","claim_process_url":"https://restructuring.ra.kroll.com/genesis/","affected_products":["Genesis lending claims","Gemini Earn linked claims","institutional lending claims"],"notes":"Genesis customer outcome is complex. Gemini Earn customers reportedly received substantial in-kind distributions after the Genesis process, while broader Genesis creditor recoveries depended on the liquidation plan and claim class. This seed should be upgraded with direct plan documents.","confidence":"medium"},
+  {"platform_id":"cya_plat_000005","outcome_status":"claims_ongoing","estimated_recovery_rate":"unknown_liquidation_dependent","repayment_started_at":null,"repayment_completed_at":null,"repayment_method":"liquidation process","claim_process_url":"https://www.hodlnaut.com/","affected_products":["interest account balances","deposited crypto assets"],"notes":"Hodlnaut was ordered into liquidation after judicial management. Customer recovery remains liquidation-dependent in this seed record and needs direct liquidator-source upgrades.","confidence":"medium"},
+  {"platform_id":"cya_plat_000006","outcome_status":"claims_ongoing","estimated_recovery_rate":"unknown_restructuring_dependent","repayment_started_at":null,"repayment_completed_at":null,"repayment_method":"creditor protection and restructuring process","claim_process_url":"https://www.vauld.com/","affected_products":["Vauld customer balances","yield account balances","lending account claims"],"notes":"Vauld customer outcome remains restructuring-dependent in this seed. A later pass should replace this with direct creditor or court-source details.","confidence":"medium"},
+  {"platform_id":"cya_plat_000007","outcome_status":"claims_ongoing","estimated_recovery_rate":"unknown_legal_process_dependent","repayment_started_at":null,"repayment_completed_at":null,"repayment_method":"legal and claims process","claim_process_url":"https://haruinvest.com/","affected_products":["Haru Earn Plus","Haru Wallet","other yield products"],"notes":"Haru Invest customer recovery remains unresolved in this seed. Later records should use direct court, administrator, or official customer-update sources.","confidence":"medium"},
+  {"platform_id":"cya_plat_000008","outcome_status":"unknown","estimated_recovery_rate":"unknown","repayment_started_at":null,"repayment_completed_at":null,"repayment_method":"unknown insolvency or claims process","claim_process_url":"https://coinloan.io/","affected_products":["CoinLoan interest account balances","deposited crypto assets"],"notes":"CoinLoan outcome is not yet sufficiently sourced. Keep as unknown until direct insolvency, administrator, or court documents are collected.","confidence":"low"}
 ]
