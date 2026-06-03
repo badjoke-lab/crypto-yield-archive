@@ -4,7 +4,7 @@ import { allPlatforms } from '../lib/data';
 const SITE = 'https://cya.badjoke-lab.com';
 
 export const GET: APIRoute = () => {
-  const staticPaths = ['', 'outcomes/', 'bankruptcy-cases/', 'methodology/', 'about/'];
+  const staticPaths = ['', 'outcomes/', 'bankruptcy-cases/', 'source-quality/', 'methodology/', 'about/'];
   const platformPaths = allPlatforms.map((platform) => `platform/${platform.slug}/`);
   const urls = [...staticPaths, ...platformPaths]
     .map((path) => `  <url><loc>${SITE}/${path}</loc></url>`)
