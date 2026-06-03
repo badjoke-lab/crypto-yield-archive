@@ -1,47 +1,10 @@
 [
-  {
-    "platform_id": "cya_plat_000001",
-    "terms_status": "varies_by_product",
-    "asset_ownership_interpretation": "Celsius Earn account assets were treated differently from some other product categories in bankruptcy-related analysis and rulings.",
-    "affected_product": "Celsius Earn and other Celsius account categories",
-    "source_evidence_id": "cya_src_000005",
-    "notes": "Celsius is a core terms-risk case because account/product category affected asset treatment and customer outcome. This seed should later be upgraded with direct court order citations.",
-    "confidence": "medium"
-  },
-  {
-    "platform_id": "cya_plat_000002",
-    "terms_status": "varies_by_product",
-    "asset_ownership_interpretation": "BlockFi customer outcomes and treatment varied across wallet, interest account, loan, and estate claim categories.",
-    "affected_product": "BlockFi Interest Account, Wallet, loans, and related account categories",
-    "source_evidence_id": "cya_src_000007",
-    "notes": "BlockFi requires product-by-product treatment in later research. This seed records the risk class but does not yet parse the full plan documents.",
-    "confidence": "medium"
-  },
-  {
-    "platform_id": "cya_plat_000003",
-    "terms_status": "varies_by_product",
-    "asset_ownership_interpretation": "Voyager customer treatment depended on estate assets, account balances, recovery process, and litigation recoveries after the platform entered wind-down.",
-    "affected_product": "Voyager customer account balances and rewards-related balances",
-    "source_evidence_id": "cya_src_000012",
-    "notes": "Voyager terms and customer recovery should be upgraded with direct plan and distribution documents. Current record is conservative.",
-    "confidence": "medium"
-  },
-  {
-    "platform_id": "cya_plat_000004",
-    "terms_status": "varies_by_product",
-    "asset_ownership_interpretation": "Genesis creditor and Gemini Earn-linked outcomes depended on program structure, claim class, and the bankruptcy plan rather than a single universal customer-ownership rule.",
-    "affected_product": "Genesis lending claims and Gemini Earn-linked claims",
-    "source_evidence_id": "cya_src_000017",
-    "notes": "Genesis terms risk should be read as product- and claim-class dependent. Gemini Earn was connected to Genesis lending but has a separate customer-facing structure.",
-    "confidence": "medium"
-  },
-  {
-    "platform_id": "cya_plat_000005",
-    "terms_status": "unknown",
-    "asset_ownership_interpretation": "Hodlnaut depositor treatment is liquidation-dependent in this seed record and requires direct liquidator or court documents before assigning a stronger ownership interpretation.",
-    "affected_product": "Hodlnaut interest and yield account balances",
-    "source_evidence_id": "cya_src_000020",
-    "notes": "Use unknown rather than forcing a terms conclusion. The platform halt and liquidation are clear, but product-level asset ownership treatment requires deeper source review.",
-    "confidence": "medium"
-  }
+  {"platform_id":"cya_plat_000001","terms_status":"varies_by_product","asset_ownership_interpretation":"Celsius Earn account assets were treated differently from some other product categories in bankruptcy-related analysis and rulings.","affected_product":"Celsius Earn and other Celsius account categories","source_evidence_id":"cya_src_000005","notes":"Celsius is a core terms-risk case because account/product category affected asset treatment and customer outcome. This seed should later be upgraded with direct court order citations.","confidence":"medium"},
+  {"platform_id":"cya_plat_000002","terms_status":"varies_by_product","asset_ownership_interpretation":"BlockFi customer outcomes and treatment varied across wallet, interest account, loan, and estate claim categories.","affected_product":"BlockFi Interest Account, Wallet, loans, and related account categories","source_evidence_id":"cya_src_000007","notes":"BlockFi requires product-by-product treatment in later research. This seed records the risk class but does not yet parse the full plan documents.","confidence":"medium"},
+  {"platform_id":"cya_plat_000003","terms_status":"varies_by_product","asset_ownership_interpretation":"Voyager customer treatment depended on estate assets, account balances, recovery process, and litigation recoveries after the platform entered wind-down.","affected_product":"Voyager customer account balances and rewards-related balances","source_evidence_id":"cya_src_000012","notes":"Voyager terms and customer recovery should be upgraded with direct plan and distribution documents. Current record is conservative.","confidence":"medium"},
+  {"platform_id":"cya_plat_000004","terms_status":"varies_by_product","asset_ownership_interpretation":"Genesis creditor and Gemini Earn-linked outcomes depended on program structure, claim class, and the bankruptcy plan rather than a single universal customer-ownership rule.","affected_product":"Genesis lending claims and Gemini Earn-linked claims","source_evidence_id":"cya_src_000017","notes":"Genesis terms risk should be read as product- and claim-class dependent. Gemini Earn was connected to Genesis lending but has a separate customer-facing structure.","confidence":"medium"},
+  {"platform_id":"cya_plat_000005","terms_status":"unknown","asset_ownership_interpretation":"Hodlnaut depositor treatment is liquidation-dependent in this seed record and requires direct liquidator or court documents before assigning a stronger ownership interpretation.","affected_product":"Hodlnaut interest and yield account balances","source_evidence_id":"cya_src_000020","notes":"Use unknown rather than forcing a terms conclusion. The platform halt and liquidation are clear, but product-level asset ownership treatment requires deeper source review.","confidence":"medium"},
+  {"platform_id":"cya_plat_000006","terms_status":"unknown","asset_ownership_interpretation":"Vauld customer treatment depends on the creditor protection and restructuring process. This seed does not yet establish product-level asset ownership treatment.","affected_product":"Vauld customer balances, yield accounts, and lending claims","source_evidence_id":"cya_src_b03_0001","notes":"Keep terms status unknown until direct moratorium, scheme, or creditor process documents are reviewed.","confidence":"medium"},
+  {"platform_id":"cya_plat_000007","terms_status":"unknown","asset_ownership_interpretation":"Haru Invest customer treatment depends on the legal and claims process. Current seed does not establish a reliable ownership classification.","affected_product":"Haru Earn products and custodial balance products","source_evidence_id":"cya_src_b03_0004","notes":"Use unknown because the customer outcome is tied to ongoing or unresolved legal process and direct administrator/court documents are still needed.","confidence":"medium"},
+  {"platform_id":"cya_plat_000008","terms_status":"unknown","asset_ownership_interpretation":"CoinLoan depositor and borrower treatment is not sufficiently sourced in this seed record.","affected_product":"CoinLoan interest accounts, deposits, and loan collateral categories","source_evidence_id":"cya_src_b03_0007","notes":"Keep unknown until direct insolvency, administrator, or court records are collected.","confidence":"low"}
 ]
