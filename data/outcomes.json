@@ -34,5 +34,29 @@
     "affected_products": ["customer crypto balances", "rewards-related balances", "platform account claims"],
     "notes": "Voyager moved into a direct recovery process after proposed sale paths failed. Recovery was partial and subject to estate assets and litigation recoveries.",
     "confidence": "medium"
+  },
+  {
+    "platform_id": "cya_plat_000004",
+    "outcome_status": "partial_repayment",
+    "estimated_recovery_rate": "varies_by_creditor_class_with_gemini_earn_in_kind_distribution_reported",
+    "repayment_started_at": "2024-05-29",
+    "repayment_completed_at": null,
+    "repayment_method": "bankruptcy liquidation distributions and Gemini Earn in-kind distributions",
+    "claim_process_url": "https://restructuring.ra.kroll.com/genesis/",
+    "affected_products": ["Genesis lending claims", "Gemini Earn linked claims", "institutional lending claims"],
+    "notes": "Genesis customer outcome is complex. Gemini Earn customers reportedly received substantial in-kind distributions after the Genesis process, while broader Genesis creditor recoveries depended on the liquidation plan and claim class. This seed should be upgraded with direct plan documents.",
+    "confidence": "medium"
+  },
+  {
+    "platform_id": "cya_plat_000005",
+    "outcome_status": "claims_ongoing",
+    "estimated_recovery_rate": "unknown_liquidation_dependent",
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": "liquidation process",
+    "claim_process_url": "https://www.hodlnaut.com/",
+    "affected_products": ["interest account balances", "deposited crypto assets"],
+    "notes": "Hodlnaut was ordered into liquidation after judicial management. Customer recovery remains liquidation-dependent in this seed record and needs direct liquidator-source upgrades.",
+    "confidence": "medium"
   }
 ]
