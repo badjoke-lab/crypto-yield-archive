@@ -7,53 +7,124 @@ export function getStaticPaths() {
 }
 
 const { platform } = Astro.props;
-const events = getEvents(platform.id);
+const events = getEvents(platform.id).sort((a, b) => String(a.event_date).localeCompare(String(b.event_date)));
 const evidence = getEvidence(platform.id);
 const outcome = getOutcome(platform.id);
 const products = getProducts(platform.id);
 const terms = getTermsRisk(platform.id);
+
+const evidenceById = new Map(evidence.map((source) => [source.id, source]));
 ---
 <BaseLayout title={`${platform.canonical_name} | Crypto Yield Archive`} description={platform.summary}>
   <section class="panel hero-panel">
     <p class="eyebrow">Platform dossier</p>
     <h1>{platform.canonical_name}</h1>
     <p>{platform.summary}</p>
-    <div>
+    <div class="chip-row">
       <span class="chip">{platform.type}</span>
       <span class="chip">{platform.status}</span>
       <span class="chip">{platform.failure_reason || 'unknown'}</span>
+      <span class="chip">confidence: {platform.confidence || 'unknown'}</span>
     </div>
   </section>
 
   <section class="grid two-col" style="margin-top:18px;">
     <div class="detail-stack">
-      <section class="panel card"><h2>What happened?</h2><p>{platform.what_happened || platform.summary}</p></section>
-      <section class="panel card"><h2>Customer funds</h2><p>{outcome?.notes || 'Customer outcome has not been researched yet.'}</p></section>
-      <section class="panel card"><h2>Terms risk</h2><p>{terms?.notes || 'Terms risk has not been researched yet.'}</p></section>
-      <section class="panel card"><h2>Uncertainty</h2><p>{platform.uncertainty_notes || 'Uncertainty notes have not been added yet.'}</p></section>
+      <section class="panel card">
+        <h2>What happened?</h2>
+        <p>{platform.what_happened || platform.summary}</p>
+      </section>
+
+      <section class="panel card">
+        <div class="section-heading">
+          <h2>Customer outcome</h2>
+          <span class="chip">{outcome?.outcome_status || 'unknown'}</span>
+        </div>
+        {outcome ? (
+          <>
+            <p>{outcome.notes}</p>
+            <div class="fact-grid compact-facts">
+              <div class="fact"><div class="k">Estimated recovery</div><div class="v">{outcome.estimated_recovery_rate || '—'}</div></div>
+              <div class="fact"><div class="k">Repayment started</div><div class="v">{outcome.repayment_started_at || '—'}</div></div>
+              <div class="fact"><div class="k">Repayment completed</div><div class="v">{outcome.repayment_completed_at || '—'}</div></div>
+              <div class="fact"><div class="k">Confidence</div><div class="v">{outcome.confidence || '—'}</div></div>
+            </div>
+            {outcome.claim_process_url && <p><a class="archive-link" href={outcome.claim_process_url}>Claim / case process link</a></p>}
+          </>
+        ) : <p>Customer outcome has not been researched yet.</p>}
+      </section>
+
+      <section class="panel card">
+        <div class="section-heading">
+          <h2>Terms risk</h2>
+          <span class="chip">{terms?.terms_status || 'unknown'}</span>
+        </div>
+        {terms ? (
+          <>
+            <p>{terms.notes}</p>
+            <div class="fact-grid compact-facts">
+              <div class="fact"><div class="k">Affected product</div><div class="v">{terms.affected_product || '—'}</div></div>
+              <div class="fact"><div class="k">Confidence</div><div class="v">{terms.confidence || '—'}</div></div>
+            </div>
+            {terms.asset_ownership_interpretation && <p>{terms.asset_ownership_interpretation}</p>}
+            {terms.source_evidence_id && evidenceById.has(terms.source_evidence_id) && (
+              <p><a class="archive-link" href={evidenceById.get(terms.source_evidence_id).url}>Source: {evidenceById.get(terms.source_evidence_id).title}</a></p>
+            )}
+          </>
+        ) : <p>Terms risk has not been researched yet.</p>}
+      </section>
+
+      <section class="panel card">
+        <h2>Uncertainty</h2>
+        <p>{platform.uncertainty_notes || 'Uncertainty notes have not been added yet.'}</p>
+      </section>
 
       <section class="panel card">
         <h2>Timeline</h2>
-        {events.length ? events.map((event) => (
-          <div class="fact" style="margin-bottom:10px;">
-            <div class="k">{event.event_date} · {event.event_type}</div>
-            <div class="v"><strong>{event.title}</strong><p>{event.description}</p></div>
+        {events.length ? (
+          <div class="timeline-list">
+            {events.map((event) => (
+              <article class="timeline-item">
+                <div class="timeline-date">{event.event_date}</div>
+                <div>
+                  <div class="chip-row small-gap">
+                    <span class="chip">{event.event_type}</span>
+                    {event.impact_level && <span class="chip">impact: {event.impact_level}</span>}
+                    {event.confidence && <span class="chip">confidence: {event.confidence}</span>}
+                  </div>
+                  <h3>{event.title}</h3>
+                  <p>{event.description}</p>
+                  {event.notes && <p class="muted detail-note">{event.notes}</p>}
+                </div>
+              </article>
+            ))}
           </div>
-        )) : <p>No events yet.</p>}
+        ) : <p>No events yet.</p>}
       </section>
 
       <section class="panel card">
         <h2>Evidence dossier</h2>
-        {evidence.length ? evidence.map((source) => (
-          <div class="fact" style="margin-bottom:10px;">
-            <div class="k">{source.source_type} · {source.reliability}</div>
-            <div class="v"><a class="archive-link" href={source.url}>{source.title}</a><p>{source.publisher}</p></div>
+        {evidence.length ? (
+          <div class="evidence-list">
+            {evidence.map((source) => (
+              <article class="evidence-item">
+                <div class="chip-row small-gap">
+                  <span class="chip">{source.source_type}</span>
+                  <span class="chip">{source.reliability}</span>
+                  {source.claim_scope && <span class="chip">{source.claim_scope}</span>}
+                </div>
+                <h3><a class="archive-link" href={source.url}>{source.title}</a></h3>
+                <p>{source.publisher}{source.published_at ? ` · ${source.published_at}` : ''}</p>
+                {source.archived_url && <p><a class="archive-link" href={source.archived_url}>Archived version</a></p>}
+                {source.notes && <p class="muted detail-note">{source.notes}</p>}
+              </article>
+            ))}
           </div>
-        )) : <p>No evidence yet.</p>}
+        ) : <p>No evidence yet.</p>}
       </section>
     </div>
 
-    <aside class="panel card">
+    <aside class="panel card sticky-side">
       <h2>Facts</h2>
       <div class="fact-grid">
         <div class="fact"><div class="k">Launch</div><div class="v">{platform.launch_date || '—'}</div></div>
@@ -63,8 +134,25 @@ const terms = getTermsRisk(platform.id);
         <div class="fact"><div class="k">Domain</div><div class="v">{platform.official_domain_original || '—'}</div></div>
         <div class="fact"><div class="k">URL status</div><div class="v">{platform.official_url_status || '—'}</div></div>
       </div>
+
+      <h3 style="margin-top:18px;">URL history</h3>
+      <div class="side-links">
+        {platform.official_url_original && <a class="archive-link" href={platform.official_url_original}>Original URL</a>}
+        {platform.archived_url && <a class="archive-link" href={platform.archived_url}>Web Archive</a>}
+      </div>
+
       <h3 style="margin-top:18px;">Products</h3>
-      {products.length ? products.map((product) => <p>{product.product_name} · {product.product_type}</p>) : <p>No product profiles yet.</p>}
+      {products.length ? (
+        <div class="product-list">
+          {products.map((product) => (
+            <div class="fact">
+              <div class="k">{product.product_type}</div>
+              <div class="v"><strong>{product.product_name}</strong></div>
+              {product.risk_notes && <p>{product.risk_notes}</p>}
+            </div>
+          ))}
+        </div>
+      ) : <p>No product profiles yet.</p>}
     </aside>
   </section>
 </BaseLayout>
