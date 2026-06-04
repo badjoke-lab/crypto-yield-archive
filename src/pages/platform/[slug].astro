@@ -14,8 +14,40 @@ const products = getProducts(platform.id);
 const terms = getTermsRisk(platform.id);
 
 const evidenceById = new Map(evidence.map((source) => [source.id, source]));
+const evidenceByEvent = new Map();
+for (const source of evidence) {
+  if (!source.event_id) continue;
+  const list = evidenceByEvent.get(source.event_id) || [];
+  list.push(source);
+  evidenceByEvent.set(source.event_id, list);
+}
+const evidenceByClaim = Array.from(
+  evidence.reduce((map, source) => {
+    const key = source.claim_scope || 'other';
+    const list = map.get(key) || [];
+    list.push(source);
+    map.set(key, list);
+    return map;
+  }, new Map())
+).sort(([a], [b]) => String(a).localeCompare(String(b)));
+
 const lowEvidence = evidence.filter((source) => source.reliability === 'low');
-const pendingEvidence = evidence.filter((source) => String(source.notes || '').toLowerCase().includes('pending'));
+const pendingEvidence = evidence.filter((source) => String(source.notes || '').toLowerCase().includes('pending') || String(source.notes || '').toLowerCase().includes('replace'));
+
+const relatedPlatforms = allPlatforms
+  .filter((item) => item.id !== platform.id)
+  .map((item) => {
+    let score = 0;
+    if (item.failure_reason && item.failure_reason === platform.failure_reason) score += 3;
+    if (item.status && item.status === platform.status) score += 2;
+    if (item.type && item.type === platform.type) score += 2;
+    if (getOutcome(item.id)?.outcome_status === outcome?.outcome_status) score += 1;
+    if (getTermsRisk(item.id)?.terms_status === terms?.terms_status) score += 1;
+    return { platform: item, score };
+  })
+  .filter((item) => item.score > 0)
+  .sort((a, b) => b.score - a.score || a.platform.canonical_name.localeCompare(b.platform.canonical_name))
+  .slice(0, 5);
 ---
 <BaseLayout title={`${platform.canonical_name} | Crypto Yield Archive`} description={platform.summary}>
   <section class="panel hero-panel">
@@ -96,21 +128,33 @@ const pendingEvidence = evidence.filter((source) => String(source.notes || '').t
         <h2>Timeline</h2>
         {events.length ? (
           <div class="timeline-list">
-            {events.map((event) => (
-              <article class="timeline-item">
-                <div class="timeline-date">{event.event_date}</div>
-                <div>
-                  <div class="chip-row small-gap">
-                    <span class="chip">{event.event_type}</span>
-                    {event.impact_level && <span class="chip">impact: {event.impact_level}</span>}
-                    {event.confidence && <span class={`chip ${event.confidence}`}>confidence: {event.confidence}</span>}
+            {events.map((event) => {
+              const eventEvidence = evidenceByEvent.get(event.id) || [];
+              return (
+                <article class="timeline-item">
+                  <div class="timeline-date">{event.event_date}</div>
+                  <div>
+                    <div class="chip-row small-gap">
+                      <span class="chip">{event.event_type}</span>
+                      {event.impact_level && <span class="chip">impact: {event.impact_level}</span>}
+                      {event.confidence && <span class={`chip ${event.confidence}`}>confidence: {event.confidence}</span>}
+                      <span class="chip">sources: {eventEvidence.length}</span>
+                    </div>
+                    <h3>{event.title}</h3>
+                    <p>{event.description}</p>
+                    {event.notes && <p class="muted detail-note">{event.notes}</p>}
+                    {eventEvidence.length ? (
+                      <div class="nested-evidence">
+                        <strong>Evidence for this event</strong>
+                        {eventEvidence.map((source) => (
+                          <p><a class="archive-link" href={source.url}>{source.title}</a> · {source.publisher} · {source.reliability}</p>
+                        ))}
+                      </div>
+                    ) : <p class="muted detail-note">No direct evidence linked to this event yet.</p>}
                   </div>
-                  <h3>{event.title}</h3>
-                  <p>{event.description}</p>
-                  {event.notes && <p class="muted detail-note">{event.notes}</p>}
-                </div>
-              </article>
-            ))}
+                </article>
+              );
+            })}
           </div>
         ) : <p>No events yet.</p>}
       </section>
@@ -118,24 +162,47 @@ const pendingEvidence = evidence.filter((source) => String(source.notes || '').t
       <section class="panel card">
         <h2>Evidence dossier</h2>
         <p class="muted detail-note">Reliability labels describe source strength for this registry entry. Low items are kept as research leads until replaced or verified.</p>
-        {evidence.length ? (
-          <div class="evidence-list">
-            {evidence.map((source) => (
-              <article class={`evidence-item evidence-${source.reliability || 'unknown'}`}>
-                <div class="chip-row small-gap">
-                  <span class="chip">{source.source_type}</span>
-                  <span class={`chip ${source.reliability || ''}`}>reliability: {source.reliability}</span>
-                  {source.claim_scope && <span class="chip">{source.claim_scope}</span>}
+        {evidenceByClaim.length ? (
+          <div class="evidence-claim-groups">
+            {evidenceByClaim.map(([claim, sources]) => (
+              <section class="claim-group">
+                <div class="section-heading"><h3>{claim}</h3><span class="chip">{sources.length} sources</span></div>
+                <div class="evidence-list">
+                  {sources.map((source) => (
+                    <article class={`evidence-item evidence-${source.reliability || 'unknown'}`}>
+                      <div class="chip-row small-gap">
+                        <span class="chip">{source.source_type}</span>
+                        <span class={`chip ${source.reliability || ''}`}>reliability: {source.reliability}</span>
+                        {source.event_id && <span class="chip">event linked</span>}
+                      </div>
+                      <h3><a class="archive-link" href={source.url}>{source.title}</a></h3>
+                      <p>{source.publisher}{source.published_at ? ` · ${source.published_at}` : ''}</p>
+                      {source.archived_url && <p><a class="archive-link" href={source.archived_url}>Archived version</a></p>}
+                      {source.notes && <p class="muted detail-note">{source.notes}</p>}
+                    </article>
+                  ))}
                 </div>
-                <h3><a class="archive-link" href={source.url}>{source.title}</a></h3>
-                <p>{source.publisher}{source.published_at ? ` · ${source.published_at}` : ''}</p>
-                {source.archived_url && <p><a class="archive-link" href={source.archived_url}>Archived version</a></p>}
-                {source.notes && <p class="muted detail-note">{source.notes}</p>}
-              </article>
+              </section>
             ))}
           </div>
         ) : <p>No evidence yet.</p>}
       </section>
+
+      {relatedPlatforms.length ? (
+        <section class="panel card">
+          <h2>Related platforms</h2>
+          <p class="muted detail-note">Related by shared status, type, failure reason, outcome, or terms-risk classification.</p>
+          <div class="related-grid">
+            {relatedPlatforms.map(({ platform: related, score }) => (
+              <a class="related-card" href={`/platform/${related.slug}/`}>
+                <strong>{related.canonical_name}</strong>
+                <span>{related.status} · {related.failure_reason || 'unknown'}</span>
+                <small>relation score: {score}</small>
+              </a>
+            ))}
+          </div>
+        </section>
+      ) : null}
     </div>
 
     <aside class="panel card sticky-side">
