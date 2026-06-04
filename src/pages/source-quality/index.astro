@@ -8,8 +8,7 @@ const platformSlug = (platformId) => platformById.get(platformId)?.slug;
 const platformLink = (platformId) => platformSlug(platformId) ? `/platform/${platformSlug(platformId)}/` : '#';
 
 const lowEvidence = allEvidence.filter((source) => source.reliability === 'low');
-const mediumEvidence = allEvidence.filter((source) => source.reliability === 'medium');
-const pendingEvidence = allEvidence.filter((source) => String(source.notes || '').toLowerCase().includes('pending') || String(source.notes || '').toLowerCase().includes('replace'));
+const sourceTargets = allEvidence.filter((source) => String(source.notes || '').toLowerCase().includes('verify') || String(source.notes || '').toLowerCase().includes('replace'));
 const unknownOutcomes = allOutcomes.filter((outcome) => outcome.outcome_status === 'unknown' || outcome.outcome_status === 'claims_ongoing');
 const unknownTerms = allTermsRisk.filter((term) => term.terms_status === 'unknown');
 
@@ -17,14 +16,14 @@ const platformsWithFewEvidence = allPlatforms
   .map((platform) => ({ platform, evidenceCount: allEvidence.filter((source) => source.platform_id === platform.id).length }))
   .filter((item) => item.evidenceCount < 3);
 ---
-<BaseLayout title="Source quality | Crypto Yield Archive" description="Low reliability, pending verification, and unknown outcome records in Crypto Yield Archive.">
+<BaseLayout title="Source quality | Crypto Yield Archive" description="Evidence quality and unresolved outcome records in Crypto Yield Archive.">
   <section class="panel hero-panel">
     <p class="eyebrow">Transparency layer</p>
     <h1>Source quality</h1>
-    <p>This page lists weak, pending, and unresolved records. Low-reliability items are kept visible as research leads until they are verified, replaced, or removed.</p>
+    <p>This page lists weak and unresolved records. Low-reliability items are kept visible as research leads until they are verified, replaced, or removed.</p>
     <div class="summary-grid">
       <div class="stat"><div class="label">Low evidence</div><div class="value">{lowEvidence.length}</div></div>
-      <div class="stat"><div class="label">Pending notes</div><div class="value">{pendingEvidence.length}</div></div>
+      <div class="stat"><div class="label">Source targets</div><div class="value">{sourceTargets.length}</div></div>
       <div class="stat"><div class="label">Unknown outcomes</div><div class="value">{unknownOutcomes.length}</div></div>
       <div class="stat"><div class="label">Unknown terms</div><div class="value">{unknownTerms.length}</div></div>
     </div>
@@ -53,11 +52,11 @@ const platformsWithFewEvidence = allPlatforms
     </section>
 
     <section class="panel card">
-      <h2>Pending verification / replacement notes</h2>
-      <p>These records explicitly mention pending verification or source replacement in their notes.</p>
-      {pendingEvidence.length ? (
+      <h2>Source improvement targets</h2>
+      <p>These records mention source verification or replacement in their notes.</p>
+      {sourceTargets.length ? (
         <div class="quality-list">
-          {pendingEvidence.map((source) => (
+          {sourceTargets.map((source) => (
             <article class={`quality-item evidence-${source.reliability || 'unknown'}`}>
               <div class="chip-row small-gap">
                 <span class={`chip ${source.reliability || ''}`}>{source.reliability}</span>
@@ -69,7 +68,7 @@ const platformsWithFewEvidence = allPlatforms
             </article>
           ))}
         </div>
-      ) : <p>No pending source notes.</p>}
+      ) : <p>No source improvement targets.</p>}
     </section>
 
     <section class="panel card">
