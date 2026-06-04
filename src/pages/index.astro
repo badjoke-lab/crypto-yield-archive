@@ -171,21 +171,50 @@ function searchText(platform) {
       return a.dataset.name.localeCompare(b.dataset.name);
     }
 
+    function readControls() {
+      return {
+        q: searchInput.value.trim(),
+        status: statusFilter.value,
+        outcome: outcomeFilter.value,
+        failure: failureFilter.value,
+        terms: termsFilter.value,
+        sort: sortSelect.value,
+      };
+    }
+
+    function writeUrlState(controls) {
+      const params = new URLSearchParams();
+      if (controls.q) params.set('q', controls.q);
+      if (controls.status) params.set('status', controls.status);
+      if (controls.outcome) params.set('outcome', controls.outcome);
+      if (controls.failure) params.set('failure', controls.failure);
+      if (controls.terms) params.set('terms', controls.terms);
+      if (controls.sort && controls.sort !== 'name-asc') params.set('sort', controls.sort);
+      const nextUrl = `${window.location.pathname}${params.toString() ? `?${params.toString()}` : ''}`;
+      window.history.replaceState(null, '', nextUrl);
+    }
+
+    function restoreFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      searchInput.value = params.get('q') || '';
+      statusFilter.value = params.get('status') || '';
+      outcomeFilter.value = params.get('outcome') || '';
+      failureFilter.value = params.get('failure') || '';
+      termsFilter.value = params.get('terms') || '';
+      sortSelect.value = params.get('sort') || 'name-asc';
+    }
+
     function applyFilters() {
-      const query = searchInput.value.trim().toLowerCase();
-      const status = statusFilter.value;
-      const outcome = outcomeFilter.value;
-      const failure = failureFilter.value;
-      const terms = termsFilter.value;
-      const sort = sortSelect.value;
+      const controls = readControls();
+      const query = controls.q.toLowerCase();
       let shown = 0;
 
-      for (const row of [...rows].sort((a, b) => compareRows(a, b, sort))) {
+      for (const row of [...rows].sort((a, b) => compareRows(a, b, controls.sort))) {
         const matchesQuery = !query || row.dataset.search.includes(query);
-        const matchesStatus = !status || row.dataset.status === status;
-        const matchesOutcome = !outcome || row.dataset.outcome === outcome;
-        const matchesFailure = !failure || row.dataset.failure === failure;
-        const matchesTerms = !terms || row.dataset.terms === terms;
+        const matchesStatus = !controls.status || row.dataset.status === controls.status;
+        const matchesOutcome = !controls.outcome || row.dataset.outcome === controls.outcome;
+        const matchesFailure = !controls.failure || row.dataset.failure === controls.failure;
+        const matchesTerms = !controls.terms || row.dataset.terms === controls.terms;
         const isVisible = matchesQuery && matchesStatus && matchesOutcome && matchesFailure && matchesTerms;
         row.hidden = !isVisible;
         tbody.appendChild(row);
@@ -194,6 +223,7 @@ function searchText(platform) {
 
       visibleCount.textContent = String(shown);
       emptyState.hidden = shown !== 0;
+      writeUrlState(controls);
     }
 
     searchInput.addEventListener('input', applyFilters);
@@ -213,6 +243,7 @@ function searchText(platform) {
       searchInput.focus();
     });
 
+    restoreFromUrl();
     applyFilters();
   </script>
 </BaseLayout>
