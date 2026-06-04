@@ -1,9 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { allPlatforms, allEvents, allEvidence, allOutcomes, getOutcome } from '../lib/data';
+import { allPlatforms, allEvents, allEvidence, allOutcomes, getOutcome, getTermsRisk } from '../lib/data';
 
 const statusOptions = Array.from(new Set(allPlatforms.map((platform) => platform.status))).sort();
 const outcomeOptions = Array.from(new Set(allPlatforms.map((platform) => getOutcome(platform.id)?.outcome_status || 'unknown'))).sort();
+const failureOptions = Array.from(new Set(allPlatforms.map((platform) => platform.failure_reason || 'unknown'))).sort();
+const termsOptions = Array.from(new Set(allPlatforms.map((platform) => getTermsRisk(platform.id)?.terms_status || 'unknown'))).sort();
 
 function years(platform) {
   const start = platform.launch_date ? String(platform.launch_date).slice(0, 4) : '—';
@@ -12,6 +14,8 @@ function years(platform) {
 }
 
 function searchText(platform) {
+  const outcome = getOutcome(platform.id);
+  const terms = getTermsRisk(platform.id);
   return [
     platform.canonical_name,
     platform.slug,
@@ -19,6 +23,8 @@ function searchText(platform) {
     platform.status,
     platform.failure_reason,
     platform.official_domain_original,
+    outcome?.outcome_status,
+    terms?.terms_status,
     ...(platform.aliases || []),
   ]
     .filter(Boolean)
@@ -43,7 +49,7 @@ function searchText(platform) {
     <div class="controls" aria-label="Registry filters">
       <label class="control-field search-field">
         <span>Search</span>
-        <input id="registrySearch" type="search" placeholder="Search name, alias, domain, type…" autocomplete="off" />
+        <input id="registrySearch" type="search" placeholder="Search name, alias, domain, type, outcome…" autocomplete="off" />
       </label>
       <label class="control-field">
         <span>Status</span>
@@ -57,6 +63,20 @@ function searchText(platform) {
         <select id="outcomeFilter">
           <option value="">All outcomes</option>
           {outcomeOptions.map((outcome) => <option value={outcome}>{outcome}</option>)}
+        </select>
+      </label>
+      <label class="control-field">
+        <span>Failure</span>
+        <select id="failureFilter">
+          <option value="">All failure reasons</option>
+          {failureOptions.map((failure) => <option value={failure}>{failure}</option>)}
+        </select>
+      </label>
+      <label class="control-field">
+        <span>Terms</span>
+        <select id="termsFilter">
+          <option value="">All terms status</option>
+          {termsOptions.map((term) => <option value={term}>{term}</option>)}
         </select>
       </label>
       <button id="clearFilters" class="ghost-button" type="button">Clear</button>
@@ -75,6 +95,7 @@ function searchText(platform) {
             <th>Status</th>
             <th>Failure reason</th>
             <th>Customer outcome</th>
+            <th>Terms risk</th>
             <th>Years</th>
             <th>Domain</th>
             <th>Archive</th>
@@ -83,18 +104,22 @@ function searchText(platform) {
         <tbody>
           {allPlatforms.map((platform) => {
             const outcome = getOutcome(platform.id);
+            const terms = getTermsRisk(platform.id);
             return (
               <tr
                 data-row="platform"
                 data-search={searchText(platform)}
                 data-status={platform.status}
                 data-outcome={outcome?.outcome_status || 'unknown'}
+                data-failure={platform.failure_reason || 'unknown'}
+                data-terms={terms?.terms_status || 'unknown'}
               >
                 <td class="name-cell" data-label="Name"><a href={`/platform/${platform.slug}/`}><strong>{platform.canonical_name}</strong></a><small>{(platform.aliases || []).join(', ') || platform.slug}</small></td>
                 <td data-label="Type"><span class="chip">{platform.type}</span></td>
                 <td data-label="Status"><span class="chip">{platform.status}</span></td>
                 <td data-label="Failure reason"><span class="chip">{platform.failure_reason || '—'}</span></td>
                 <td data-label="Customer outcome"><span class="chip">{outcome?.outcome_status || 'unknown'}</span></td>
+                <td data-label="Terms risk"><span class="chip">{terms?.terms_status || 'unknown'}</span></td>
                 <td data-label="Years">{years(platform)}</td>
                 <td data-label="Domain">{platform.official_domain_original || '—'}</td>
                 <td data-label="Archive">{platform.archived_url ? <a class="archive-link" href={platform.archived_url}>Archive</a> : <span class="muted">—</span>}</td>
@@ -111,6 +136,8 @@ function searchText(platform) {
     const searchInput = document.querySelector('#registrySearch');
     const statusFilter = document.querySelector('#statusFilter');
     const outcomeFilter = document.querySelector('#outcomeFilter');
+    const failureFilter = document.querySelector('#failureFilter');
+    const termsFilter = document.querySelector('#termsFilter');
     const clearButton = document.querySelector('#clearFilters');
     const visibleCount = document.querySelector('#visibleCount');
     const emptyState = document.querySelector('#emptyState');
@@ -120,13 +147,17 @@ function searchText(platform) {
       const query = searchInput.value.trim().toLowerCase();
       const status = statusFilter.value;
       const outcome = outcomeFilter.value;
+      const failure = failureFilter.value;
+      const terms = termsFilter.value;
       let shown = 0;
 
       for (const row of rows) {
         const matchesQuery = !query || row.dataset.search.includes(query);
         const matchesStatus = !status || row.dataset.status === status;
         const matchesOutcome = !outcome || row.dataset.outcome === outcome;
-        const isVisible = matchesQuery && matchesStatus && matchesOutcome;
+        const matchesFailure = !failure || row.dataset.failure === failure;
+        const matchesTerms = !terms || row.dataset.terms === terms;
+        const isVisible = matchesQuery && matchesStatus && matchesOutcome && matchesFailure && matchesTerms;
         row.hidden = !isVisible;
         if (isVisible) shown += 1;
       }
@@ -138,10 +169,14 @@ function searchText(platform) {
     searchInput.addEventListener('input', applyFilters);
     statusFilter.addEventListener('change', applyFilters);
     outcomeFilter.addEventListener('change', applyFilters);
+    failureFilter.addEventListener('change', applyFilters);
+    termsFilter.addEventListener('change', applyFilters);
     clearButton.addEventListener('click', () => {
       searchInput.value = '';
       statusFilter.value = '';
       outcomeFilter.value = '';
+      failureFilter.value = '';
+      termsFilter.value = '';
       applyFilters();
       searchInput.focus();
     });
