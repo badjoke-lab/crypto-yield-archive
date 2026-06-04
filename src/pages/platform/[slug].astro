@@ -13,6 +13,38 @@ const outcome = getOutcome(platform.id);
 const products = getProducts(platform.id);
 const terms = getTermsRisk(platform.id);
 
+const pageUrl = `https://cya.badjoke-lab.com/platform/${platform.slug}/`;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: `${platform.canonical_name} platform record`,
+  name: platform.canonical_name,
+  description: platform.summary,
+  url: pageUrl,
+  isPartOf: {
+    '@type': 'WebSite',
+    name: 'Crypto Yield Archive',
+    url: 'https://cya.badjoke-lab.com/',
+  },
+  about: {
+    '@type': 'Organization',
+    name: platform.canonical_name,
+    url: platform.official_url_original || undefined,
+    sameAs: platform.archived_url ? [platform.archived_url] : undefined,
+  },
+  dateModified: platform.last_verified_at,
+  keywords: [
+    'crypto lending',
+    'crypto yield',
+    'customer outcome',
+    platform.type,
+    platform.status,
+    platform.failure_reason,
+    outcome?.outcome_status,
+    terms?.terms_status,
+  ].filter(Boolean).join(', '),
+};
+
 const evidenceById = new Map(evidence.map((source) => [source.id, source]));
 const evidenceByEvent = new Map();
 for (const source of evidence) {
@@ -50,6 +82,8 @@ const relatedPlatforms = allPlatforms
   .slice(0, 5);
 ---
 <BaseLayout title={`${platform.canonical_name} | Crypto Yield Archive`} description={platform.summary}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
   <section class="panel hero-panel">
     <p class="eyebrow">Platform dossier</p>
     <h1>{platform.canonical_name}</h1>
