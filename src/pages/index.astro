@@ -13,6 +13,10 @@ function years(platform) {
   return `${start}${end ? `–${end}` : '–'}`;
 }
 
+function platformMeta(platform) {
+  return [platform.type, platform.official_domain_original].filter(Boolean).join(' · ');
+}
+
 function searchText(platform) {
   const outcome = getOutcome(platform.id);
   const terms = getTermsRisk(platform.id);
@@ -101,18 +105,15 @@ function searchText(platform) {
     </div>
 
     <div class="table-wrap">
-      <table id="registryTable">
+      <table id="registryTable" class="registry-table">
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Type</th>
+            <th>Platform</th>
             <th>Status</th>
-            <th>Failure reason</th>
-            <th>Customer outcome</th>
-            <th>Terms risk</th>
-            <th>Years</th>
-            <th>Domain</th>
-            <th>Archive</th>
+            <th>Failure</th>
+            <th>Outcome</th>
+            <th>Terms</th>
+            <th>Years / links</th>
           </tr>
         </thead>
         <tbody id="registryBody">
@@ -131,15 +132,16 @@ function searchText(platform) {
                 data-launch={platform.launch_date || ''}
                 data-confidence={platform.confidence || 'low'}
               >
-                <td class="name-cell" data-label="Name"><a href={`/platform/${platform.slug}/`}><strong>{platform.canonical_name}</strong></a><small>{(platform.aliases || []).join(', ') || platform.slug}</small></td>
-                <td data-label="Type"><span class="chip">{platform.type}</span></td>
+                <td class="name-cell" data-label="Platform"><a href={`/platform/${platform.slug}/`}><strong>{platform.canonical_name}</strong></a><small>{platformMeta(platform)}</small></td>
                 <td data-label="Status"><span class="chip">{platform.status}</span></td>
-                <td data-label="Failure reason"><span class="chip">{platform.failure_reason || '—'}</span></td>
-                <td data-label="Customer outcome"><span class="chip">{outcome?.outcome_status || 'unknown'}</span></td>
-                <td data-label="Terms risk"><span class="chip">{terms?.terms_status || 'unknown'}</span></td>
-                <td data-label="Years">{years(platform)}</td>
-                <td data-label="Domain">{platform.official_domain_original || '—'}</td>
-                <td data-label="Archive">{platform.archived_url ? <a class="archive-link" href={platform.archived_url}>Archive</a> : <span class="muted">—</span>}</td>
+                <td data-label="Failure"><span class="chip">{platform.failure_reason || '—'}</span></td>
+                <td data-label="Outcome"><span class="chip">{outcome?.outcome_status || 'unknown'}</span></td>
+                <td data-label="Terms"><span class="chip">{terms?.terms_status || 'unknown'}</span></td>
+                <td data-label="Years / links" class="links-cell">
+                  <strong>{years(platform)}</strong>
+                  <small>{platform.official_domain_original || '—'}</small>
+                  {platform.archived_url && <a class="archive-link" href={platform.archived_url}>Archive</a>}
+                </td>
               </tr>
             );
           })}
