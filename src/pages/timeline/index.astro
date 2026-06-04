@@ -5,6 +5,11 @@ import { allEvents, allPlatforms } from '../../lib/data';
 const platformById = new Map(allPlatforms.map((platform) => [platform.id, platform]));
 const events = [...allEvents].sort((a, b) => String(a.event_date || '').localeCompare(String(b.event_date || '')));
 const criticalEvents = events.filter((event) => event.impact_level === 'critical');
+const platformOptions = [...allPlatforms].sort((a, b) => a.canonical_name.localeCompare(b.canonical_name));
+const eventTypeOptions = Array.from(new Set(events.map((event) => event.event_type).filter(Boolean))).sort();
+const impactOptions = Array.from(new Set(events.map((event) => event.impact_level).filter(Boolean))).sort();
+const confidenceOptions = Array.from(new Set(events.map((event) => event.confidence).filter(Boolean))).sort();
+const yearOptions = Array.from(new Set(events.map((event) => String(event.event_date || '').slice(0, 4)).filter(Boolean))).sort();
 ---
 <BaseLayout title="Timeline | Crypto Yield Archive" description="Chronological event timeline across crypto lending and yield platforms.">
   <section class="panel hero-panel">
@@ -18,12 +23,65 @@ const criticalEvents = events.filter((event) => event.impact_level === 'critical
     </div>
   </section>
 
+  <section class="panel registry-panel" style="margin-top:18px;">
+    <div class="controls" aria-label="Timeline filters">
+      <label class="control-field">
+        <span>Platform</span>
+        <select id="timelinePlatformFilter">
+          <option value="">All platforms</option>
+          {platformOptions.map((platform) => <option value={platform.id}>{platform.canonical_name}</option>)}
+        </select>
+      </label>
+      <label class="control-field">
+        <span>Event type</span>
+        <select id="timelineEventTypeFilter">
+          <option value="">All event types</option>
+          {eventTypeOptions.map((eventType) => <option value={eventType}>{eventType}</option>)}
+        </select>
+      </label>
+      <label class="control-field">
+        <span>Impact</span>
+        <select id="timelineImpactFilter">
+          <option value="">All impact levels</option>
+          {impactOptions.map((impact) => <option value={impact}>{impact}</option>)}
+        </select>
+      </label>
+      <label class="control-field">
+        <span>Confidence</span>
+        <select id="timelineConfidenceFilter">
+          <option value="">All confidence</option>
+          {confidenceOptions.map((confidence) => <option value={confidence}>{confidence}</option>)}
+        </select>
+      </label>
+      <label class="control-field">
+        <span>Year</span>
+        <select id="timelineYearFilter">
+          <option value="">All years</option>
+          {yearOptions.map((year) => <option value={year}>{year}</option>)}
+        </select>
+      </label>
+      <button id="timelineClearFilters" class="ghost-button" type="button">Clear</button>
+    </div>
+    <div class="registry-count" aria-live="polite">
+      Showing <strong id="timelineVisibleCount">{events.length}</strong> of <strong>{events.length}</strong> events
+    </div>
+  </section>
+
   <section class="panel card" style="margin-top:18px;">
-    <div class="timeline-list">
+    <div class="timeline-list" id="timelineList">
       {events.map((event) => {
         const platform = platformById.get(event.platform_id);
+        const year = String(event.event_date || '').slice(0, 4);
         return (
-          <article class="timeline-item">
+          <article
+            class="timeline-item"
+            data-timeline-event="true"
+            data-platform={event.platform_id}
+            data-event-type={event.event_type || ''}
+            data-impact={event.impact_level || ''}
+            data-confidence={event.confidence || ''}
+            data-year={year}
+          >
             <div class="timeline-date">{event.event_date}</div>
             <div>
               <div class="chip-row small-gap">
@@ -40,5 +98,55 @@ const criticalEvents = events.filter((event) => event.impact_level === 'critical
         );
       })}
     </div>
+    <p id="timelineEmptyState" class="empty-state" hidden>No timeline events match the current filters.</p>
   </section>
+
+  <script is:inline>
+    const platformFilter = document.querySelector('#timelinePlatformFilter');
+    const eventTypeFilter = document.querySelector('#timelineEventTypeFilter');
+    const impactFilter = document.querySelector('#timelineImpactFilter');
+    const confidenceFilter = document.querySelector('#timelineConfidenceFilter');
+    const yearFilter = document.querySelector('#timelineYearFilter');
+    const clearButton = document.querySelector('#timelineClearFilters');
+    const visibleCount = document.querySelector('#timelineVisibleCount');
+    const emptyState = document.querySelector('#timelineEmptyState');
+    const timelineRows = Array.from(document.querySelectorAll('[data-timeline-event="true"]'));
+
+    function applyTimelineFilters() {
+      const platform = platformFilter.value;
+      const eventType = eventTypeFilter.value;
+      const impact = impactFilter.value;
+      const confidence = confidenceFilter.value;
+      const year = yearFilter.value;
+      let shown = 0;
+
+      for (const row of timelineRows) {
+        const matchesPlatform = !platform || row.dataset.platform === platform;
+        const matchesEventType = !eventType || row.dataset.eventType === eventType;
+        const matchesImpact = !impact || row.dataset.impact === impact;
+        const matchesConfidence = !confidence || row.dataset.confidence === confidence;
+        const matchesYear = !year || row.dataset.year === year;
+        const isVisible = matchesPlatform && matchesEventType && matchesImpact && matchesConfidence && matchesYear;
+        row.hidden = !isVisible;
+        if (isVisible) shown += 1;
+      }
+
+      visibleCount.textContent = String(shown);
+      emptyState.hidden = shown !== 0;
+    }
+
+    platformFilter.addEventListener('change', applyTimelineFilters);
+    eventTypeFilter.addEventListener('change', applyTimelineFilters);
+    impactFilter.addEventListener('change', applyTimelineFilters);
+    confidenceFilter.addEventListener('change', applyTimelineFilters);
+    yearFilter.addEventListener('change', applyTimelineFilters);
+    clearButton.addEventListener('click', () => {
+      platformFilter.value = '';
+      eventTypeFilter.value = '';
+      impactFilter.value = '';
+      confidenceFilter.value = '';
+      yearFilter.value = '';
+      applyTimelineFilters();
+    });
+  </script>
 </BaseLayout>
