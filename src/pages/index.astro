@@ -79,6 +79,18 @@ function searchText(platform) {
           {termsOptions.map((term) => <option value={term}>{term}</option>)}
         </select>
       </label>
+      <label class="control-field">
+        <span>Sort</span>
+        <select id="sortSelect">
+          <option value="name-asc">Name A–Z</option>
+          <option value="name-desc">Name Z–A</option>
+          <option value="launch-desc">Launch newest</option>
+          <option value="launch-asc">Launch oldest</option>
+          <option value="status-asc">Status A–Z</option>
+          <option value="outcome-asc">Outcome A–Z</option>
+          <option value="confidence-desc">Confidence high first</option>
+        </select>
+      </label>
       <button id="clearFilters" class="ghost-button" type="button">Clear</button>
     </div>
 
@@ -101,7 +113,7 @@ function searchText(platform) {
             <th>Archive</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody id="registryBody">
           {allPlatforms.map((platform) => {
             const outcome = getOutcome(platform.id);
             const terms = getTermsRisk(platform.id);
@@ -109,10 +121,13 @@ function searchText(platform) {
               <tr
                 data-row="platform"
                 data-search={searchText(platform)}
+                data-name={platform.canonical_name}
                 data-status={platform.status}
                 data-outcome={outcome?.outcome_status || 'unknown'}
                 data-failure={platform.failure_reason || 'unknown'}
                 data-terms={terms?.terms_status || 'unknown'}
+                data-launch={platform.launch_date || ''}
+                data-confidence={platform.confidence || 'low'}
               >
                 <td class="name-cell" data-label="Name"><a href={`/platform/${platform.slug}/`}><strong>{platform.canonical_name}</strong></a><small>{(platform.aliases || []).join(', ') || platform.slug}</small></td>
                 <td data-label="Type"><span class="chip">{platform.type}</span></td>
@@ -138,10 +153,23 @@ function searchText(platform) {
     const outcomeFilter = document.querySelector('#outcomeFilter');
     const failureFilter = document.querySelector('#failureFilter');
     const termsFilter = document.querySelector('#termsFilter');
+    const sortSelect = document.querySelector('#sortSelect');
     const clearButton = document.querySelector('#clearFilters');
     const visibleCount = document.querySelector('#visibleCount');
     const emptyState = document.querySelector('#emptyState');
+    const tbody = document.querySelector('#registryBody');
     const rows = Array.from(document.querySelectorAll('[data-row="platform"]'));
+    const confidenceRank = { high: 3, medium: 2, low: 1 };
+
+    function compareRows(a, b, sort) {
+      if (sort === 'name-desc') return b.dataset.name.localeCompare(a.dataset.name);
+      if (sort === 'launch-desc') return String(b.dataset.launch).localeCompare(String(a.dataset.launch));
+      if (sort === 'launch-asc') return String(a.dataset.launch || '9999').localeCompare(String(b.dataset.launch || '9999'));
+      if (sort === 'status-asc') return a.dataset.status.localeCompare(b.dataset.status) || a.dataset.name.localeCompare(b.dataset.name);
+      if (sort === 'outcome-asc') return a.dataset.outcome.localeCompare(b.dataset.outcome) || a.dataset.name.localeCompare(b.dataset.name);
+      if (sort === 'confidence-desc') return (confidenceRank[b.dataset.confidence] || 0) - (confidenceRank[a.dataset.confidence] || 0) || a.dataset.name.localeCompare(b.dataset.name);
+      return a.dataset.name.localeCompare(b.dataset.name);
+    }
 
     function applyFilters() {
       const query = searchInput.value.trim().toLowerCase();
@@ -149,9 +177,10 @@ function searchText(platform) {
       const outcome = outcomeFilter.value;
       const failure = failureFilter.value;
       const terms = termsFilter.value;
+      const sort = sortSelect.value;
       let shown = 0;
 
-      for (const row of rows) {
+      for (const row of [...rows].sort((a, b) => compareRows(a, b, sort))) {
         const matchesQuery = !query || row.dataset.search.includes(query);
         const matchesStatus = !status || row.dataset.status === status;
         const matchesOutcome = !outcome || row.dataset.outcome === outcome;
@@ -159,6 +188,7 @@ function searchText(platform) {
         const matchesTerms = !terms || row.dataset.terms === terms;
         const isVisible = matchesQuery && matchesStatus && matchesOutcome && matchesFailure && matchesTerms;
         row.hidden = !isVisible;
+        tbody.appendChild(row);
         if (isVisible) shown += 1;
       }
 
@@ -171,14 +201,18 @@ function searchText(platform) {
     outcomeFilter.addEventListener('change', applyFilters);
     failureFilter.addEventListener('change', applyFilters);
     termsFilter.addEventListener('change', applyFilters);
+    sortSelect.addEventListener('change', applyFilters);
     clearButton.addEventListener('click', () => {
       searchInput.value = '';
       statusFilter.value = '';
       outcomeFilter.value = '';
       failureFilter.value = '';
       termsFilter.value = '';
+      sortSelect.value = 'name-asc';
       applyFilters();
       searchInput.focus();
     });
+
+    applyFilters();
   </script>
 </BaseLayout>
