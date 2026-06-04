@@ -63,8 +63,14 @@ const evidenceByClaim = Array.from(
   }, new Map())
 ).sort(([a], [b]) => String(a).localeCompare(String(b)));
 
+const claimOptions = Array.from(new Set(evidence.map((source) => source.claim_scope || 'other'))).sort();
+const reliabilityOptions = Array.from(new Set(evidence.map((source) => source.reliability || 'unknown'))).sort();
+const sourceTypeOptions = Array.from(new Set(evidence.map((source) => source.source_type || 'other'))).sort();
 const lowEvidence = evidence.filter((source) => source.reliability === 'low');
-const pendingEvidence = evidence.filter((source) => String(source.notes || '').toLowerCase().includes('pending') || String(source.notes || '').toLowerCase().includes('replace'));
+const sourceReviewEvidence = evidence.filter((source) => {
+  const notes = String(source.notes || '').toLowerCase();
+  return notes.includes('verify') || notes.includes('replace') || notes.includes('stronger source') || notes.includes('source review');
+});
 
 const relatedPlatforms = allPlatforms
   .filter((item) => item.id !== platform.id)
@@ -96,13 +102,13 @@ const relatedPlatforms = allPlatforms
     </div>
   </section>
 
-  {(lowEvidence.length || pendingEvidence.length) ? (
+  {(lowEvidence.length || sourceReviewEvidence.length) ? (
     <section class="panel card warning-card" style="margin-top:18px;">
       <h2>Source quality notice</h2>
-      <p>This record includes evidence marked as low reliability or pending verification. Treat those items as research leads, not final proof.</p>
+      <p>This record includes evidence that needs stronger sourcing or source review. Treat those items as research leads rather than the strongest proof.</p>
       <div class="chip-row">
         <span class="chip low">low reliability: {lowEvidence.length}</span>
-        <span class="chip medium">pending notes: {pendingEvidence.length}</span>
+        <span class="chip medium">source review: {sourceReviewEvidence.length}</span>
       </div>
     </section>
   ) : null}
@@ -195,7 +201,42 @@ const relatedPlatforms = allPlatforms
 
       <section class="panel card">
         <h2>Evidence dossier</h2>
-        <p class="muted detail-note">Reliability labels describe source strength for this registry entry. Low items are kept as research leads until replaced or verified.</p>
+        <p class="muted detail-note">Reliability labels describe source strength for this registry entry. Use the filters to inspect claim type, reliability, source type, and event-linked evidence.</p>
+        <div class="controls" aria-label="Evidence filters">
+          <label class="control-field">
+            <span>Claim</span>
+            <select id="evidenceClaimFilter">
+              <option value="">All claims</option>
+              {claimOptions.map((claim) => <option value={claim}>{claim}</option>)}
+            </select>
+          </label>
+          <label class="control-field">
+            <span>Reliability</span>
+            <select id="evidenceReliabilityFilter">
+              <option value="">All reliability</option>
+              {reliabilityOptions.map((reliability) => <option value={reliability}>{reliability}</option>)}
+            </select>
+          </label>
+          <label class="control-field">
+            <span>Source type</span>
+            <select id="evidenceSourceTypeFilter">
+              <option value="">All source types</option>
+              {sourceTypeOptions.map((sourceType) => <option value={sourceType}>{sourceType}</option>)}
+            </select>
+          </label>
+          <label class="control-field">
+            <span>Event link</span>
+            <select id="evidenceEventLinkedFilter">
+              <option value="">All evidence</option>
+              <option value="linked">Event-linked only</option>
+              <option value="unlinked">Unlinked only</option>
+            </select>
+          </label>
+          <button id="evidenceClearFilters" class="ghost-button" type="button">Clear</button>
+        </div>
+        <div class="registry-count" aria-live="polite">
+          Showing <strong id="evidenceVisibleCount">{evidence.length}</strong> of <strong>{evidence.length}</strong> evidence records
+        </div>
         {evidenceByClaim.length ? (
           <div class="evidence-claim-groups">
             {evidenceByClaim.map(([claim, sources]) => (
@@ -203,7 +244,14 @@ const relatedPlatforms = allPlatforms
                 <div class="section-heading"><h3>{claim}</h3><span class="chip">{sources.length} sources</span></div>
                 <div class="evidence-list">
                   {sources.map((source) => (
-                    <article class={`evidence-item evidence-${source.reliability || 'unknown'}`}>
+                    <article
+                      class={`evidence-item evidence-${source.reliability || 'unknown'}`}
+                      data-evidence-item="true"
+                      data-claim={source.claim_scope || 'other'}
+                      data-reliability={source.reliability || 'unknown'}
+                      data-source-type={source.source_type || 'other'}
+                      data-event-linked={source.event_id ? 'linked' : 'unlinked'}
+                    >
                       <div class="chip-row small-gap">
                         <span class="chip">{source.source_type}</span>
                         <span class={`chip ${source.reliability || ''}`}>reliability: {source.reliability}</span>
@@ -220,6 +268,7 @@ const relatedPlatforms = allPlatforms
             ))}
           </div>
         ) : <p>No evidence yet.</p>}
+        <p id="evidenceEmptyState" class="empty-state" hidden>No evidence records match the current filters.</p>
       </section>
 
       {relatedPlatforms.length ? (
@@ -270,4 +319,48 @@ const relatedPlatforms = allPlatforms
       ) : <p>No product profiles yet.</p>}
     </aside>
   </section>
+
+  <script is:inline>
+    const evidenceClaimFilter = document.querySelector('#evidenceClaimFilter');
+    const evidenceReliabilityFilter = document.querySelector('#evidenceReliabilityFilter');
+    const evidenceSourceTypeFilter = document.querySelector('#evidenceSourceTypeFilter');
+    const evidenceEventLinkedFilter = document.querySelector('#evidenceEventLinkedFilter');
+    const evidenceClearButton = document.querySelector('#evidenceClearFilters');
+    const evidenceVisibleCount = document.querySelector('#evidenceVisibleCount');
+    const evidenceEmptyState = document.querySelector('#evidenceEmptyState');
+    const evidenceItems = Array.from(document.querySelectorAll('[data-evidence-item="true"]'));
+
+    function applyEvidenceFilters() {
+      const claim = evidenceClaimFilter.value;
+      const reliability = evidenceReliabilityFilter.value;
+      const sourceType = evidenceSourceTypeFilter.value;
+      const eventLinked = evidenceEventLinkedFilter.value;
+      let shown = 0;
+
+      for (const item of evidenceItems) {
+        const matchesClaim = !claim || item.dataset.claim === claim;
+        const matchesReliability = !reliability || item.dataset.reliability === reliability;
+        const matchesSourceType = !sourceType || item.dataset.sourceType === sourceType;
+        const matchesEventLinked = !eventLinked || item.dataset.eventLinked === eventLinked;
+        const isVisible = matchesClaim && matchesReliability && matchesSourceType && matchesEventLinked;
+        item.hidden = !isVisible;
+        if (isVisible) shown += 1;
+      }
+
+      evidenceVisibleCount.textContent = String(shown);
+      evidenceEmptyState.hidden = shown !== 0;
+    }
+
+    evidenceClaimFilter?.addEventListener('change', applyEvidenceFilters);
+    evidenceReliabilityFilter?.addEventListener('change', applyEvidenceFilters);
+    evidenceSourceTypeFilter?.addEventListener('change', applyEvidenceFilters);
+    evidenceEventLinkedFilter?.addEventListener('change', applyEvidenceFilters);
+    evidenceClearButton?.addEventListener('click', () => {
+      evidenceClaimFilter.value = '';
+      evidenceReliabilityFilter.value = '';
+      evidenceSourceTypeFilter.value = '';
+      evidenceEventLinkedFilter.value = '';
+      applyEvidenceFilters();
+    });
+  </script>
 </BaseLayout>
