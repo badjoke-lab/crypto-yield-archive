@@ -2,7 +2,7 @@
 
 Crypto Yield Archive (CYA) is an evidence-based historical registry of crypto lending, Earn, and yield platforms.
 
-Production URL:
+Public site:
 
 ```text
 https://cya.badjoke-lab.com/
@@ -28,18 +28,18 @@ CYA is:
 - a record of platform failures, restructurings, and outcomes
 - a way to compare what happened to customer funds across crypto yield platforms
 
-## v0 Scope
+## Scope
 
-v0 focuses only on CeFi lending and yield platforms.
+CYA focuses on CeFi lending and yield platforms.
 
-Included in v0:
+Included:
 
 - CeFi lending platforms
 - crypto interest accounts
 - centralized yield platforms
 - borrowing/lending services
 
-Not included in v0:
+Not prioritized in the initial registry scope:
 
 - Exchange Earn products
 - DeFi lending protocols
@@ -57,28 +57,13 @@ Not included in v0:
 - product profile
 - terms risk
 
-## Current stack
+## Stack
 
-The project uses Astro as a static site generator with repo-local JSON data.
+The project uses Astro as a static site generator with repository-local JSON data.
 
 - Astro static build
 - Cloudflare Pages
-- custom subdomain: `cya.badjoke-lab.com`
-- GitHub repository
 - static JSON data files
-- no database in v0
-- no backend in v0
-- no authentication in v0
-
-## Analytics / Search Console
-
-GA4 is enabled in `src/layouts/BaseLayout.astro`.
-
-```text
-GA4 measurement ID: G-LWCGTDBY6W
-```
-
-Google Search Console verification is pending. Add the `google-site-verification` meta tag later when the token is available.
 
 ## Local commands
 
@@ -93,7 +78,7 @@ npm test
 
 ## Data files
 
-Canonical data currently lives in:
+Registry data currently lives in:
 
 ```text
 data/platforms.json
@@ -118,18 +103,10 @@ Astro generates:
 - `/methodology/`
 - `/about/`
 
-## Cloudflare Pages settings
-
-Current deployment target:
+## Deployment
 
 ```text
 Framework preset: Astro
 Build command: npm run build
 Build output directory: dist
-Production branch: main
-Custom domain: cya.badjoke-lab.com
 ```
-
-## Current status
-
-Astro migration and seed-data stage. Public URL exists, but this is not a final v0 launch claim yet.
