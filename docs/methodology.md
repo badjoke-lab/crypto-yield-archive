@@ -1,14 +1,12 @@
 # Methodology
 
-Status: draft foundation
-
 Crypto Yield Archive is a historical registry. It is not a live ranking, APY comparison, investment recommendation, or real-time dashboard.
 
 ## Counting unit
 
-v0 counts platform entities. It does not count individual products, pools, vaults, or chain deployments as separate records.
+CYA counts platform entities. It does not count individual products, pools, vaults, or chain deployments as separate records.
 
-## v0 scope
+## Scope
 
 Included:
 
@@ -17,7 +15,7 @@ Included:
 - centralized yield platforms
 - borrowing/lending services
 
-Excluded from v0:
+Not prioritized in the initial registry scope:
 
 - Exchange Earn products
 - DeFi lending protocols
@@ -29,7 +27,7 @@ Excluded from v0:
 
 ## Expansion rule
 
-The archive may expand later, but the order is fixed:
+The archive may expand later in this order:
 
 1. CeFi lending/yield
 2. event-significant Exchange Earn
