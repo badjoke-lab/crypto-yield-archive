@@ -91,11 +91,13 @@ function searchText(platform) {
           <option value="confidence-desc">Confidence high first</option>
         </select>
       </label>
+      <button id="copyCurrentView" class="ghost-button" type="button">Copy view link</button>
       <button id="clearFilters" class="ghost-button" type="button">Clear</button>
     </div>
 
     <div class="registry-count" aria-live="polite">
       Showing <strong id="visibleCount">{allPlatforms.length}</strong> of <strong>{allPlatforms.length}</strong> platforms
+      <span id="copyStatus" class="copy-status" aria-live="polite"></span>
     </div>
 
     <div class="table-wrap">
@@ -154,9 +156,11 @@ function searchText(platform) {
     const failureFilter = document.querySelector('#failureFilter');
     const termsFilter = document.querySelector('#termsFilter');
     const sortSelect = document.querySelector('#sortSelect');
+    const copyButton = document.querySelector('#copyCurrentView');
     const clearButton = document.querySelector('#clearFilters');
     const visibleCount = document.querySelector('#visibleCount');
     const emptyState = document.querySelector('#emptyState');
+    const copyStatus = document.querySelector('#copyStatus');
     const tbody = document.querySelector('#registryBody');
     const rows = Array.from(document.querySelectorAll('[data-row="platform"]'));
     const confidenceRank = { high: 3, medium: 2, low: 1 };
@@ -226,12 +230,26 @@ function searchText(platform) {
       writeUrlState(controls);
     }
 
+    async function copyCurrentView() {
+      writeUrlState(readControls());
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        copyStatus.textContent = 'Copied view link.';
+      } catch {
+        copyStatus.textContent = 'Copy failed. Use the address bar URL.';
+      }
+      window.setTimeout(() => {
+        copyStatus.textContent = '';
+      }, 2200);
+    }
+
     searchInput.addEventListener('input', applyFilters);
     statusFilter.addEventListener('change', applyFilters);
     outcomeFilter.addEventListener('change', applyFilters);
     failureFilter.addEventListener('change', applyFilters);
     termsFilter.addEventListener('change', applyFilters);
     sortSelect.addEventListener('change', applyFilters);
+    copyButton.addEventListener('click', copyCurrentView);
     clearButton.addEventListener('click', () => {
       searchInput.value = '';
       statusFilter.value = '';
