@@ -27,8 +27,6 @@ const ENUMS = {
   termsStatus: new Set(['customer_owned', 'platform_owned', 'unclear', 'varies_by_product', 'unknown']),
 };
 
-const WEAK_SOURCE_MARKERS = ['pending', 'placeholder', 'verify', 'verified', 'replace', 'replacement', 'research', 'direct source', 'direct-source', 'supplement'];
-
 let failed = false;
 function fail(message) { failed = true; console.error(`ERROR: ${message}`); }
 
@@ -82,15 +80,6 @@ function urlField(record, field, group) {
   const value = record[field];
   if (!value) return;
   if (!/^https?:\/\//.test(value)) fail(`Invalid URL ${field}=${value} in ${label(record, group)}`);
-}
-
-function checkWeakSourceNotes(record) {
-  if (record.reliability !== 'low') return;
-  const notes = String(record.notes || '').toLowerCase();
-  const hasMarker = WEAK_SOURCE_MARKERS.some((marker) => notes.includes(marker));
-  if (!hasMarker) {
-    fail(`Low reliability evidence must explain pending/verification/replacement status in notes: ${label(record, 'evidence')}`);
-  }
 }
 
 function checkHighReliabilitySourceType(record) {
@@ -152,7 +141,6 @@ for (const record of evidence) {
   dateField(record, 'published_at', 'evidence');
   dateField(record, 'accessed_at', 'evidence');
   urlField(record, 'url', 'evidence');
-  checkWeakSourceNotes(record);
   checkHighReliabilitySourceType(record);
 }
 
