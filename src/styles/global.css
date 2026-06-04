@@ -145,9 +145,9 @@ tr[hidden] { display: none; }
   .registry-table tr { display: flex; flex-wrap: wrap; gap: 7px; padding: 12px; }
   .registry-table td { display: inline-flex; align-items: center; gap: 5px; width: auto; max-width: 100%; padding: 0; border-bottom: 0; }
   .registry-table td::before { content: none; }
-  .registry-table .name-cell { flex: 1 1 100%; display: block; padding-bottom: 4px; }
-  .registry-table .name-cell strong { font-size: 13px; }
-  .registry-table .name-cell small { margin-top: 2px; font-size: 11px; }
+  .registry-table .name-cell { flex: 1 1 100%; display: block; padding-bottom: 5px; }
+  .registry-table .name-cell strong { display: block; font-size: 16px; line-height: 1.15; font-weight: 800; letter-spacing: -.02em; }
+  .registry-table .name-cell small { margin-top: 3px; font-size: 11px; line-height: 1.35; }
   .registry-table .chip { padding: 4px 8px; font-size: 10px; line-height: 1.1; }
   .registry-table .links-cell { flex: 1 1 100%; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; padding-top: 3px; white-space: normal; color: var(--muted); font-size: 11px; }
   .registry-table .links-cell strong { color: var(--text); font-size: 12px; }
