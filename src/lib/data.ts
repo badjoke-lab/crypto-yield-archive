@@ -7,8 +7,11 @@ import evidenceBase from '../../data/evidence.json';
 import evidenceBatch03 from '../../data/evidence-batch-03.json';
 import evidenceBatch04 from '../../data/evidence-batch-04.json';
 import outcomes from '../../data/outcomes.json';
+import outcomesBatch04 from '../../data/outcomes-batch-04.json';
 import products from '../../data/products.json';
+import productsBatch04 from '../../data/products-batch-04.json';
 import termsRisk from '../../data/terms-risk.json';
+import termsRiskBatch04 from '../../data/terms-risk-batch-04.json';
 
 export type Platform = Record<string, any>;
 export type EventRecord = Record<string, any>;
@@ -20,9 +23,9 @@ export type TermsRisk = Record<string, any>;
 export const allPlatforms = [...platforms, ...platformsBatch04] as Platform[];
 export const allEvents = [...eventsBase, ...eventsBatch03, ...eventsBatch04] as EventRecord[];
 export const allEvidence = [...evidenceBase, ...evidenceBatch03, ...evidenceBatch04] as EvidenceRecord[];
-export const allOutcomes = outcomes as Outcome[];
-export const allProducts = products as Product[];
-export const allTermsRisk = termsRisk as TermsRisk[];
+export const allOutcomes = [...outcomes, ...outcomesBatch04] as Outcome[];
+export const allProducts = [...products, ...productsBatch04] as Product[];
+export const allTermsRisk = [...termsRisk, ...termsRiskBatch04] as TermsRisk[];
 
 export function getPlatformBySlug(slug: string) {
   return allPlatforms.find((platform) => platform.slug === slug);
