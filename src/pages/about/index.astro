@@ -8,25 +8,45 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <p>Crypto Yield Archive is an evidence-based historical registry for crypto lending, Earn, and yield platforms.</p>
   </section>
 
-  <section class="grid" style="margin-top:18px;">
-    <section class="panel card">
-      <h2>What CYA is</h2>
-      <p>CYA tracks what happened after users deposited assets into crypto yield platforms. It focuses on platform history, customer outcome, terms risk, failure chain, and supporting evidence.</p>
-    </section>
+  <section class="grid two-col" style="margin-top:18px;">
+    <div class="detail-stack">
+      <section class="panel card">
+        <h2>What CYA is</h2>
+        <p>CYA tracks what happened after users deposited assets into crypto yield platforms. It focuses on platform history, customer outcome, terms risk, failure chain, and supporting evidence.</p>
+      </section>
 
-    <section class="panel card">
-      <h2>Why it exists</h2>
-      <p>The 2021–2023 crypto lending collapse cycle produced many platform failures, withdrawal pauses, bankruptcies, restructurings, and unresolved customer outcomes. CYA keeps those histories in a structured registry instead of treating them as isolated news events.</p>
-    </section>
+      <section class="panel card">
+        <h2>Why it exists</h2>
+        <p>The 2021–2023 crypto lending collapse cycle produced many platform failures, withdrawal pauses, bankruptcies, restructurings, and unresolved customer outcomes. CYA keeps those histories in a structured registry instead of treating them as isolated news events.</p>
+      </section>
 
-    <section class="panel card">
-      <h2>What CYA is not</h2>
-      <p>CYA is not an APY ranking, yield discovery product, investment recommendation site, trading tool, or real-time TVL dashboard.</p>
-    </section>
+      <section class="panel card">
+        <h2>What CYA is not</h2>
+        <p>CYA is not an APY ranking, yield discovery product, investment recommendation site, trading tool, or real-time TVL dashboard.</p>
+      </section>
 
-    <section class="panel card">
-      <h2>Current state</h2>
-      <p>The current version is a static JSON-backed registry. Records are intentionally conservative, and lower-confidence entries should be upgraded with primary court, bankruptcy, regulatory, or official sources over time.</p>
-    </section>
+      <section class="panel card">
+        <h2>How to read records</h2>
+        <p>Each platform page should be read as a dossier: entity facts, timeline, customer outcome, terms risk, evidence, and uncertainty. A record can be useful even when the outcome is unknown, because unresolved status is part of the history.</p>
+      </section>
+
+      <section class="panel card">
+        <h2>Corrections and source improvements</h2>
+        <p>Good corrections include the platform name, the CYA page URL, the claim that appears wrong, one or more source links, and a short explanation. Official statements, court filings, bankruptcy documents, regulatory notices, and archived pages are preferred.</p>
+      </section>
+    </div>
+
+    <aside class="panel card sticky-side">
+      <h2>Quick links</h2>
+      <div class="side-links">
+        <a class="archive-link" href="/methodology/">Methodology</a>
+        <a class="archive-link" href="/source-quality/">Source quality</a>
+        <a class="archive-link" href="/timeline/">Timeline</a>
+        <a class="archive-link" href="/outcomes/">Customer outcomes</a>
+        <a class="archive-link" href="/stats/">Registry stats</a>
+      </div>
+      <h3 style="margin-top:18px;">Disclaimer</h3>
+      <p>CYA is a historical and educational registry. It does not provide investment, legal, tax, or financial advice.</p>
+    </aside>
   </section>
 </BaseLayout>
