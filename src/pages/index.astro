@@ -7,6 +7,15 @@ const outcomeOptions = Array.from(new Set(allPlatforms.map((platform) => getOutc
 const failureOptions = Array.from(new Set(allPlatforms.map((platform) => platform.failure_reason || 'unknown'))).sort();
 const termsOptions = Array.from(new Set(allPlatforms.map((platform) => getTermsRisk(platform.id)?.terms_status || 'unknown'))).sort();
 
+const entryCards = [
+  { href: '/timeline/', title: 'Timeline', text: 'See launches, withdrawal halts, bankruptcies, restructuring events, and repayment milestones in chronological order.' },
+  { href: '/outcomes/', title: 'Customer outcomes', text: 'Compare whether customer funds were repaid, partially recovered, still in claims, or unresolved.' },
+  { href: '/failures/', title: 'Failure reasons', text: 'Group platforms by insolvency, liquidity crisis, counterparty exposure, misconduct, and other historical drivers.' },
+  { href: '/terms-risk/', title: 'Terms risk', text: 'Check how product terms and legal processes affected asset-treatment uncertainty across platforms.' },
+  { href: '/source-quality/', title: 'Source quality', text: 'Inspect weaker records, unresolved outcomes, unknown terms-risk records, and evidence coverage gaps.' },
+  { href: '/stats/', title: 'Registry stats', text: 'View record counts by status, event type, outcome, terms-risk class, and evidence reliability.' },
+];
+
 function years(platform) {
   const start = platform.launch_date ? String(platform.launch_date).slice(0, 4) : '—';
   const end = platform.end_date ? String(platform.end_date).slice(0, 4) : '';
@@ -47,6 +56,15 @@ function searchText(platform) {
       <div class="stat"><div class="label">Evidence</div><div class="value">{allEvidence.length}</div></div>
       <div class="stat"><div class="label">Outcomes</div><div class="value">{allOutcomes.length}</div></div>
     </div>
+  </section>
+
+  <section class="related-grid" style="margin-top:18px;">
+    {entryCards.map((card) => (
+      <a class="related-card" href={card.href}>
+        <strong>{card.title}</strong>
+        <span>{card.text}</span>
+      </a>
+    ))}
   </section>
 
   <section class="panel registry-panel" style="margin-top:18px;">
