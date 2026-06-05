@@ -2,10 +2,13 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { allPlatforms, allEvents, allEvidence, allOutcomes, allProducts, allTermsRisk } from '../../lib/data';
 
-function countBy(records, field) {
-  const map = new Map();
+type AnyRecord = Record<string, unknown>;
+type CountRow = [string, number];
+
+function countBy(records: AnyRecord[], field: string): CountRow[] {
+  const map = new Map<string, number>();
   for (const record of records) {
-    const value = record[field] || 'unknown';
+    const value = String(record[field] || 'unknown');
     map.set(value, (map.get(value) || 0) + 1);
   }
   return Array.from(map.entries()).sort((a, b) => b[1] - a[1]);
@@ -17,12 +20,20 @@ const outcomeCounts = countBy(allOutcomes, 'outcome_status');
 const termsCounts = countBy(allTermsRisk, 'terms_status');
 const evidenceReliabilityCounts = countBy(allEvidence, 'reliability');
 const eventTypeCounts = countBy(allEvents, 'event_type');
+const sections: [string, CountRow[]][] = [
+  ['Platform status', statusCounts],
+  ['Failure reason', failureCounts],
+  ['Customer outcome', outcomeCounts],
+  ['Terms risk', termsCounts],
+  ['Evidence reliability', evidenceReliabilityCounts],
+  ['Event type', eventTypeCounts],
+];
 ---
-<BaseLayout title="Stats | Crypto Yield Archive" description="Registry statistics for Crypto Yield Archive seed records.">
+<BaseLayout title="Stats | Crypto Yield Archive" description="Registry statistics for Crypto Yield Archive records.">
   <section class="panel hero-panel">
     <p class="eyebrow">Registry stats</p>
     <h1>Stats</h1>
-    <p>Seed registry counts for platform records, events, evidence, outcomes, products, and terms-risk records.</p>
+    <p>Registry counts for platform records, events, evidence, outcomes, products, and terms-risk records.</p>
     <div class="summary-grid">
       <div class="stat"><div class="label">Platforms</div><div class="value">{allPlatforms.length}</div></div>
       <div class="stat"><div class="label">Events</div><div class="value">{allEvents.length}</div></div>
@@ -34,14 +45,7 @@ const eventTypeCounts = countBy(allEvents, 'event_type');
   </section>
 
   <section class="grid two-col" style="margin-top:18px;">
-    {[
-      ['Platform status', statusCounts],
-      ['Failure reason', failureCounts],
-      ['Customer outcome', outcomeCounts],
-      ['Terms risk', termsCounts],
-      ['Evidence reliability', evidenceReliabilityCounts],
-      ['Event type', eventTypeCounts],
-    ].map(([title, rows]) => (
+    {sections.map(([title, rows]) => (
       <section class="panel card">
         <h2>{title}</h2>
         <div class="table-wrap">
