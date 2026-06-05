@@ -99,9 +99,15 @@ Astro generates:
 - `/platform/[slug]/`
 - `/outcomes/`
 - `/bankruptcy-cases/`
+- `/failures/`
+- `/terms-risk/`
+- `/timeline/`
+- `/stats/`
 - `/source-quality/`
 - `/methodology/`
 - `/about/`
+- `/robots.txt`
+- `/sitemap.xml`
 
 ## Deployment
 
