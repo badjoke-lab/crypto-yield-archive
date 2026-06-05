@@ -7,12 +7,12 @@ import outcomes from '../../data/outcomes.json';
 import products from '../../data/products.json';
 import termsRisk from '../../data/terms-risk.json';
 
-export type Platform = typeof platforms[number];
-export type EventRecord = typeof eventsBase[number];
-export type EvidenceRecord = typeof evidenceBase[number];
-export type Outcome = typeof outcomes[number];
-export type Product = typeof products[number];
-export type TermsRisk = typeof termsRisk[number];
+export type Platform = Record<string, any>;
+export type EventRecord = Record<string, any>;
+export type EvidenceRecord = Record<string, any>;
+export type Outcome = Record<string, any>;
+export type Product = Record<string, any>;
+export type TermsRisk = Record<string, any>;
 
 export const allPlatforms = platforms as Platform[];
 export const allEvents = [...eventsBase, ...eventsBatch03] as EventRecord[];
