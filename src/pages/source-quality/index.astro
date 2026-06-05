@@ -21,7 +21,7 @@ const platformsWithFewEvidence = allPlatforms
   <section class="panel hero-panel">
     <p class="eyebrow">Transparency layer</p>
     <h1>Source quality</h1>
-    <p>This page lists weak and unresolved records. Low-reliability items are kept visible as research leads until they are verified, replaced, or removed.</p>
+    <p>This page lists weak and unresolved records. Lower-reliability items are kept visible for transparency until stronger source coverage is available.</p>
     <div class="summary-grid">
       <div class="stat"><div class="label">Low evidence</div><div class="value">{lowEvidence.length}</div></div>
       <div class="stat"><div class="label">Source targets</div><div class="value">{sourceTargets.length}</div></div>
@@ -33,7 +33,7 @@ const platformsWithFewEvidence = allPlatforms
   <section class="grid" style="margin-top:18px;">
     <section class="panel card">
       <h2>Low reliability evidence</h2>
-      <p>These entries should not be treated as final proof. They need verification, archive confirmation, or direct-source replacement.</p>
+      <p>These entries should not be treated as the strongest support for a record. Prefer official, court, regulatory, archived, or high-quality reporting sources when available.</p>
       {lowEvidence.length ? (
         <div class="quality-list">
           {lowEvidence.map((source) => (
