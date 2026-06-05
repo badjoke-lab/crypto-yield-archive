@@ -8,47 +8,62 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <p>Crypto Yield Archive is a historical registry, not a live APY ranking, investment recommendation, or real-time dashboard.</p>
   </section>
 
-  <section class="grid" style="margin-top:18px;">
-    <section class="panel card">
-      <h2>Core principles</h2>
-      <p>CYA records platform history, customer outcome, terms risk, failure chain, and evidence. Unknown values are preserved instead of forcing guesses.</p>
-    </section>
+  <section class="grid two-col" style="margin-top:18px;">
+    <div class="detail-stack">
+      <section class="panel card">
+        <h2>Core principles</h2>
+        <p>CYA records platform history, customer outcome, terms risk, failure chain, and evidence. Unknown values are preserved instead of forcing guesses.</p>
+      </section>
 
-    <section class="panel card">
-      <h2>v0 scope</h2>
-      <p>v0 includes CeFi lending platforms, crypto interest accounts, centralized yield platforms, and borrowing/lending services.</p>
-      <p>Exchange Earn, DeFi lending protocols, yield aggregators, pool-level records, deployment-level records, real-time APY, and real-time TVL are deferred.</p>
-    </section>
+      <section class="panel card">
+        <h2>Scope</h2>
+        <p>The current registry focuses on CeFi lending platforms, crypto interest accounts, centralized yield platforms, and borrowing/lending services.</p>
+        <p>Exchange Earn, DeFi lending protocols, yield aggregators, pool-level records, deployment-level records, real-time APY, and real-time TVL are not prioritized in the initial registry scope.</p>
+      </section>
 
-    <section class="panel card">
-      <h2>Counting unit</h2>
-      <p>v0 counts platform entities. Products, pools, vaults, chain deployments, and individual claim classes are not separate platform records.</p>
-    </section>
+      <section class="panel card">
+        <h2>Counting unit</h2>
+        <p>CYA counts platform entities. Products, pools, vaults, chain deployments, and individual claim classes are not separate platform records unless they become historically meaningful records of their own.</p>
+      </section>
 
-    <section class="panel card">
-      <h2>Record model</h2>
-      <div class="fact-grid">
-        <div class="fact"><div class="k">platform_entity</div><div class="v">The platform or historically meaningful yield service.</div></div>
-        <div class="fact"><div class="k">platform_event</div><div class="v">Timeline events such as withdrawal pauses, bankruptcy filings, restructuring, and distributions.</div></div>
-        <div class="fact"><div class="k">platform_evidence</div><div class="v">Sources backing entity, event, outcome, terms-risk, or URL-history claims.</div></div>
-        <div class="fact"><div class="k">customer_outcome</div><div class="v">What happened to user funds, including partial repayment, ongoing claims, or unknown outcomes.</div></div>
+      <section class="panel card">
+        <h2>Record model</h2>
+        <div class="fact-grid">
+          <div class="fact"><div class="k">platform_entity</div><div class="v">The platform or historically meaningful yield service.</div></div>
+          <div class="fact"><div class="k">platform_event</div><div class="v">Timeline events such as withdrawal pauses, bankruptcy filings, restructuring, and distributions.</div></div>
+          <div class="fact"><div class="k">platform_evidence</div><div class="v">Sources backing entity, event, outcome, terms-risk, or URL-history claims.</div></div>
+          <div class="fact"><div class="k">customer_outcome</div><div class="v">What happened to user funds, including partial repayment, ongoing claims, no recovery, or unknown outcomes.</div></div>
+          <div class="fact"><div class="k">terms_risk</div><div class="v">How platform terms, product category, or legal process affected asset-treatment uncertainty.</div></div>
+          <div class="fact"><div class="k">product_profile</div><div class="v">Interest accounts, lending products, Earn-like products, and other historically relevant yield offerings.</div></div>
+        </div>
+      </section>
+
+      <section class="panel card">
+        <h2>Evidence and reliability</h2>
+        <p>Preferred sources include official statements, court documents, bankruptcy documents, regulatory notices, archived pages, and reputable reporting.</p>
+        <p>Reliability is marked as high, medium, or low. Lower-reliability records are surfaced on the Source quality page and should not be treated as definitive.</p>
+      </section>
+
+      <section class="panel card">
+        <h2>URL handling</h2>
+        <p>Original URLs are preserved as historical records. For ended or repurposed platforms, archived URLs should be preferred and unsafe domains should not be treated as normal outbound links.</p>
+      </section>
+
+      <section class="panel card">
+        <h2>Corrections</h2>
+        <p>A good correction should include the platform name, CYA page URL, the field or claim that appears wrong, source links, and a short explanation.</p>
+      </section>
+    </div>
+
+    <aside class="panel card sticky-side">
+      <h2>Related views</h2>
+      <div class="side-links">
+        <a class="archive-link" href="/source-quality/">Source quality</a>
+        <a class="archive-link" href="/terms-risk/">Terms risk</a>
+        <a class="archive-link" href="/outcomes/">Customer outcomes</a>
+        <a class="archive-link" href="/failures/">Failure reasons</a>
+        <a class="archive-link" href="/stats/">Registry stats</a>
       </div>
-    </section>
-
-    <section class="panel card">
-      <h2>Evidence and reliability</h2>
-      <p>Preferred sources include official statements, court documents, bankruptcy documents, regulatory notices, archived pages, and reputable reporting.</p>
-      <p>Reliability is marked as high, medium, or low. Low-confidence records should not be treated as definitive.</p>
-    </section>
-
-    <section class="panel card">
-      <h2>URL handling</h2>
-      <p>Original URLs are preserved as historical records. For ended or repurposed platforms, archived URLs should be preferred and unsafe domains should not be treated as normal outbound links.</p>
-    </section>
-
-    <section class="panel card">
-      <h2>Corrections</h2>
-      <p>A good correction should include the platform name, CYA page URL, the field or claim that appears wrong, source links, and a short explanation.</p>
-    </section>
+    </aside>
   </section>
 </BaseLayout>
