@@ -1,20 +1,21 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { allEvidence, allOutcomes, allPlatforms, allTermsRisk } from '../../lib/data';
+import type { EvidenceRecord, Outcome, Platform, TermsRisk } from '../../lib/data';
 
-const platformById = new Map(allPlatforms.map((platform) => [platform.id, platform]));
-const platformName = (platformId) => platformById.get(platformId)?.canonical_name || platformId;
-const platformSlug = (platformId) => platformById.get(platformId)?.slug;
-const platformLink = (platformId) => platformSlug(platformId) ? `/platform/${platformSlug(platformId)}/` : '#';
+const platformById = new Map<string, Platform>(allPlatforms.map((platform) => [platform.id, platform]));
+const platformName = (platformId: string) => platformById.get(platformId)?.canonical_name || platformId;
+const platformSlug = (platformId: string) => platformById.get(platformId)?.slug;
+const platformLink = (platformId: string) => platformSlug(platformId) ? `/platform/${platformSlug(platformId)}/` : '#';
 
-const lowEvidence = allEvidence.filter((source) => source.reliability === 'low');
-const sourceTargets = allEvidence.filter((source) => String(source.notes || '').toLowerCase().includes('verify') || String(source.notes || '').toLowerCase().includes('replace'));
-const unknownOutcomes = allOutcomes.filter((outcome) => outcome.outcome_status === 'unknown' || outcome.outcome_status === 'claims_ongoing');
-const unknownTerms = allTermsRisk.filter((term) => term.terms_status === 'unknown');
+const lowEvidence = allEvidence.filter((source: EvidenceRecord) => source.reliability === 'low');
+const sourceTargets = allEvidence.filter((source: EvidenceRecord) => String(source.notes || '').toLowerCase().includes('verify') || String(source.notes || '').toLowerCase().includes('replace'));
+const unknownOutcomes = allOutcomes.filter((outcome: Outcome) => outcome.outcome_status === 'unknown' || outcome.outcome_status === 'claims_ongoing');
+const unknownTerms = allTermsRisk.filter((term: TermsRisk) => term.terms_status === 'unknown');
 
 const platformsWithFewEvidence = allPlatforms
-  .map((platform) => ({ platform, evidenceCount: allEvidence.filter((source) => source.platform_id === platform.id).length }))
-  .filter((item) => item.evidenceCount < 3);
+  .map((platform: Platform) => ({ platform, evidenceCount: allEvidence.filter((source: EvidenceRecord) => source.platform_id === platform.id).length }))
+  .filter((item: { platform: Platform; evidenceCount: number }) => item.evidenceCount < 3);
 ---
 <BaseLayout title="Source quality | Crypto Yield Archive" description="Evidence quality and unresolved outcome records in Crypto Yield Archive.">
   <section class="panel hero-panel">
