@@ -1,0 +1,63 @@
+name: Correction or source improvement
+description: Report an issue with a Crypto Yield Archive record or suggest stronger evidence.
+title: "Correction: "
+labels: [correction]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve Crypto Yield Archive. Please include sources where possible.
+  - type: input
+    id: page_url
+    attributes:
+      label: CYA page URL
+      description: Paste the Crypto Yield Archive page URL related to this correction.
+      placeholder: https://cya.badjoke-lab.com/platform/example/
+    validations:
+      required: true
+  - type: input
+    id: platform_name
+    attributes:
+      label: Platform name
+      description: Which platform record is this about?
+      placeholder: Celsius, BlockFi, Voyager, etc.
+    validations:
+      required: true
+  - type: dropdown
+    id: correction_type
+    attributes:
+      label: Correction type
+      options:
+        - Entity facts
+        - Timeline event
+        - Customer outcome
+        - Terms risk
+        - Evidence/source
+        - URL/archive status
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: issue_description
+    attributes:
+      label: What appears wrong or incomplete?
+      description: Describe the correction or improvement.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Source links
+      description: Official statements, court documents, regulatory notices, archived pages, or reputable reporting are preferred.
+      placeholder: |
+        - https://example.com/source-1
+        - https://web.archive.org/...
+    validations:
+      required: false
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional notes
+      description: Add any context that helps evaluate the correction.
+    validations:
+      required: false
