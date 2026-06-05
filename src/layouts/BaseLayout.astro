@@ -8,6 +8,8 @@ const {
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? 'https://cya.badjoke-lab.com').toString();
 const siteName = 'Crypto Yield Archive';
+const correctionUrl = 'https://github.com/badjoke-lab/crypto-yield-archive/issues/new?template=correction.yml';
+const repoUrl = 'https://github.com/badjoke-lab/crypto-yield-archive';
 const gaMeasurementId = 'G-LWCGTDBY6W';
 const gaTagUrl = `https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`;
 ---
@@ -57,6 +59,7 @@ const gaTagUrl = `https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}
           <a href="/source-quality/">Source quality</a>
           <a href="/methodology/">Methodology</a>
           <a href="/about/">About</a>
+          <a class="utility-link" href={correctionUrl}>Submit correction</a>
         </nav>
       </header>
       <main>
@@ -64,6 +67,12 @@ const gaTagUrl = `https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}
       </main>
       <footer class="site-footer">
         <p>Crypto Yield Archive is a historical registry, not an investment recommendation, APY ranking, or real-time dashboard.</p>
+        <div class="footer-links">
+          <a href={correctionUrl}>Submit correction</a>
+          <a href={repoUrl}>GitHub</a>
+          <a href="/methodology/">Methodology</a>
+          <a href="/source-quality/">Source quality</a>
+        </div>
       </footer>
     </div>
   </body>
