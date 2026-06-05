@@ -1,7 +1,6 @@
 name: Correction or source improvement
 description: Report an issue with a Crypto Yield Archive record or suggest stronger evidence.
 title: "Correction: "
-labels: [correction]
 body:
   - type: markdown
     attributes:
