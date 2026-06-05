@@ -2,6 +2,7 @@ import platforms from '../../data/platforms.json';
 import platformsBatch04 from '../../data/platforms-batch-04.json';
 import eventsBase from '../../data/events.json';
 import eventsBatch03 from '../../data/events-batch-03.json';
+import eventsBatch04 from '../../data/events-batch-04.json';
 import evidenceBase from '../../data/evidence.json';
 import evidenceBatch03 from '../../data/evidence-batch-03.json';
 import outcomes from '../../data/outcomes.json';
@@ -16,7 +17,7 @@ export type Product = Record<string, any>;
 export type TermsRisk = Record<string, any>;
 
 export const allPlatforms = [...platforms, ...platformsBatch04] as Platform[];
-export const allEvents = [...eventsBase, ...eventsBatch03] as EventRecord[];
+export const allEvents = [...eventsBase, ...eventsBatch03, ...eventsBatch04] as EventRecord[];
 export const allEvidence = [...evidenceBase, ...evidenceBatch03] as EvidenceRecord[];
 export const allOutcomes = outcomes as Outcome[];
 export const allProducts = products as Product[];
