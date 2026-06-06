@@ -1,0 +1,3 @@
+[
+  {"platform_id":"cya_plat_000013","terms_status":"varies_by_product","asset_ownership_interpretation":"Abra customer treatment varied by product, jurisdiction, and regulatory process rather than a single bankruptcy-style claim class.","affected_product":"Abra Earn, Abra Boost, and U.S. retail crypto account balances","source_evidence_id":"cya_src_b05_0002","notes":"Use product-dependent classification because the record is based on regulatory settlement and refund obligations, not a platform bankruptcy estate.","confidence":"high"}
+]
