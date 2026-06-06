@@ -1,0 +1,3 @@
+[
+  {"platform_id":"cya_plat_000014","product_type":"exchange_earn","product_name":"Gemini Earn","custody_model":"exchange_linked_lending_program","yield_source":"customer assets lent to Genesis Global Capital through Earn arrangements","risk_notes":"Earn customer outcome depended on Genesis lending exposure, Genesis bankruptcy, regulatory settlements, and Gemini customer distribution process."}
+]
