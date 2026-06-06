@@ -1,0 +1,3 @@
+[
+  {"platform_id":"cya_plat_000014","outcome_status":"full_repayment","estimated_recovery_rate":"in_kind_asset_return_reported","repayment_started_at":"2024-05-29","repayment_completed_at":null,"repayment_method":"Genesis bankruptcy process and Gemini Earn in-kind distributions","claim_process_url":"https://www.gemini.com/earn","affected_products":["Gemini Earn customer balances","Genesis-linked lending claims"],"notes":"Gemini announced in-kind digital asset returns for Earn users after the Genesis bankruptcy process. Treat as Earn-specific recovery, not a universal Genesis creditor outcome.","confidence":"high"}
+]
