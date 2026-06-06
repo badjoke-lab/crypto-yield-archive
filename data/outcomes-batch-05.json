@@ -1,0 +1,3 @@
+[
+  {"platform_id":"cya_plat_000013","outcome_status":"partial_repayment","estimated_recovery_rate":"settlement_refund_obligation","repayment_started_at":"2024-06-26","repayment_completed_at":null,"repayment_method":"multi-state settlement and customer refund process","claim_process_url":"https://www.csbs.org/newsroom/state-regulators-settle-abra-over-unlicensed-crypto-activity","affected_products":["Abra Earn","Abra Boost","U.S. retail crypto account balances"],"notes":"Abra reached a multi-state settlement requiring customer repayment. This is a regulatory refund case rather than a bankruptcy distribution case.","confidence":"high"}
+]
