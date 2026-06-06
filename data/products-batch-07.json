@@ -1,0 +1,3 @@
+[
+  {"platform_id":"cya_plat_000015","product_type":"exchange_earn","product_name":"Kraken Staking Program","custody_model":"exchange_linked_staking_service","yield_source":"staking rewards through exchange-managed staking service","risk_notes":"U.S. staking-as-a-service availability was affected by the 2023 SEC settlement and later redesigned product availability."}
+]
