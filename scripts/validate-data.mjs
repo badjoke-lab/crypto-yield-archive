@@ -2,17 +2,17 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const FILE_GROUPS = {
-  platforms: ['data/platforms.json'],
-  events: ['data/events.json', 'data/events-batch-03.json'],
-  evidence: ['data/evidence.json', 'data/evidence-batch-03.json'],
-  outcomes: ['data/outcomes.json'],
-  products: ['data/products.json'],
-  termsRisk: ['data/terms-risk.json'],
+  platforms: ['data/platforms.json', 'data/platforms-batch-04.json'],
+  events: ['data/events.json', 'data/events-batch-03.json', 'data/events-batch-04.json'],
+  evidence: ['data/evidence.json', 'data/evidence-batch-03.json', 'data/evidence-batch-04.json'],
+  outcomes: ['data/outcomes.json', 'data/outcomes-batch-04.json'],
+  products: ['data/products.json', 'data/products-batch-04.json'],
+  termsRisk: ['data/terms-risk.json', 'data/terms-risk-batch-04.json'],
 };
 
 const ENUMS = {
   platformStatus: new Set(['active', 'limited', 'withdrawals_suspended', 'restructuring', 'bankrupt', 'acquired', 'rebranded', 'operations_ended', 'inactive', 'unknown']),
-  platformType: new Set(['cefi_lending', 'crypto_interest_account', 'centralized_yield', 'borrow_lend_platform', 'exchange_earn', 'defi_lending', 'yield_aggregator', 'structured_yield', 'unknown']),
+  platformType: new Set(['cefi_lending', 'crypto_interest_account', 'centralized_yield', 'borrow_lend_platform', 'institutional_lending', 'exchange_earn', 'defi_lending', 'yield_aggregator', 'structured_yield', 'unknown']),
   failureReason: new Set(['insolvency', 'liquidity_crisis', 'counterparty_exposure', 'misconduct', 'regulatory_action', 'market_collapse', 'risk_mismanagement', 'voluntary_shutdown', 'acquisition', 'restructuring', 'unknown']),
   confidence: new Set(['high', 'medium', 'low']),
   officialUrlStatus: new Set(['live_verified', 'live_unverified', 'dead_domain', 'redirected', 'repurposed', 'unsafe', 'unknown']),
