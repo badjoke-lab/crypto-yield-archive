@@ -1,0 +1,4 @@
+[
+  {"platform_id":"cya_plat_000013","product_type":"interest_account","product_name":"Abra Earn","custody_model":"custodial_platform_account","yield_source":"crypto account and yield-like product activity","risk_notes":"Abra Earn was part of state regulatory actions and later settlement context."},
+  {"platform_id":"cya_plat_000013","product_type":"structured_yield","product_name":"Abra Boost","custody_model":"custodial_platform_account","yield_source":"yield-like crypto account product","risk_notes":"Abra Boost was referenced in regulatory action over crypto investment products."}
+]
