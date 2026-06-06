@@ -2,12 +2,12 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const FILE_GROUPS = {
-  platforms: ['data/platforms.json'],
-  events: ['data/events.json', 'data/events-batch-03.json'],
-  evidence: ['data/evidence.json', 'data/evidence-batch-03.json'],
-  outcomes: ['data/outcomes.json'],
-  products: ['data/products.json'],
-  termsRisk: ['data/terms-risk.json'],
+  platforms: ['data/platforms.json', 'data/platforms-batch-04.json'],
+  events: ['data/events.json', 'data/events-batch-03.json', 'data/events-batch-04.json'],
+  evidence: ['data/evidence.json', 'data/evidence-batch-03.json', 'data/evidence-batch-04.json'],
+  outcomes: ['data/outcomes.json', 'data/outcomes-batch-04.json'],
+  products: ['data/products.json', 'data/products-batch-04.json'],
+  termsRisk: ['data/terms-risk.json', 'data/terms-risk-batch-04.json'],
 };
 
 function readArray(filePath) {
