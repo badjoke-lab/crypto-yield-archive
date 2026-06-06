@@ -1,0 +1,3 @@
+[
+  {"platform_id":"cya_plat_000014","terms_status":"varies_by_product","asset_ownership_interpretation":"Gemini Earn customer treatment depended on the Earn program structure, Genesis lending exposure, and the Genesis bankruptcy distribution path rather than a standalone exchange-account treatment.","affected_product":"Gemini Earn customer balances","source_evidence_id":"cya_src_b06_0003","notes":"Use product-dependent classification because Gemini Earn was exchange-linked but relied on Genesis lending arrangements and a separate bankruptcy-driven recovery path.","confidence":"high"}
+]
