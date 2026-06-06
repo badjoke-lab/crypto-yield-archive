@@ -1,0 +1,3 @@
+[
+  {"platform_id":"cya_plat_000015","outcome_status":"not_applicable","estimated_recovery_rate":"not_applicable","repayment_started_at":null,"repayment_completed_at":null,"repayment_method":"regulatory product shutdown rather than insolvency recovery","claim_process_url":"https://www.sec.gov/newsroom/press-releases/2023-25","affected_products":["Kraken U.S. staking-as-a-service program"],"notes":"Kraken Staking is tracked as a regulatory product-change record. It is not a customer insolvency or bankruptcy-recovery case.","confidence":"high"}
+]
