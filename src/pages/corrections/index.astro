@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const issueUrl = 'https://github.com/badjoke-lab/crypto-yield-archive/issues/new?template=correction.yml';
+const repoUrl = 'https://github.com/badjoke-lab/crypto-yield-archive';
+---
+<BaseLayout title="Corrections | Crypto Yield Archive" description="How to report corrections and source improvements for Crypto Yield Archive records.">
+  <section class="panel hero-panel">
+    <p class="eyebrow">Corrections</p>
+    <h1>Submit a correction</h1>
+    <p>Crypto Yield Archive is evidence-based. Corrections are most useful when they include a page URL, platform name, the disputed claim, and source links.</p>
+    <div class="chip-row">
+      <a class="ghost-button" href={issueUrl}>Open correction issue</a>
+      <a class="ghost-button" href={repoUrl}>View GitHub repository</a>
+    </div>
+  </section>
+
+  <section class="grid two-col" style="margin-top:18px;">
+    <div class="detail-stack">
+      <section class="panel card">
+        <h2>What to include</h2>
+        <div class="fact-grid">
+          <div class="fact"><div class="k">Page URL</div><div class="v">The CYA page where the issue appears.</div></div>
+          <div class="fact"><div class="k">Platform name</div><div class="v">The platform record affected by the correction.</div></div>
+          <div class="fact"><div class="k">Claim</div><div class="v">The date, status, outcome, terms-risk, event, or source that appears wrong or incomplete.</div></div>
+          <div class="fact"><div class="k">Sources</div><div class="v">Official statements, court documents, regulatory notices, archived pages, or reputable reporting.</div></div>
+        </div>
+      </section>
+
+      <section class="panel card">
+        <h2>Preferred sources</h2>
+        <p>Official statements, court documents, bankruptcy documents, regulatory notices, archived website captures, and high-quality reporting are preferred over unsourced summaries or social posts.</p>
+      </section>
+
+      <section class="panel card">
+        <h2>What CYA may change</h2>
+        <p>A correction can update entity facts, timeline events, customer outcome, terms risk, URL/archive status, evidence links, reliability labels, or uncertainty notes.</p>
+      </section>
+
+      <section class="panel card">
+        <h2>Uncertainty is allowed</h2>
+        <p>If the available sources do not support a final conclusion, CYA should keep the record marked as unknown, unresolved, or medium confidence rather than forcing a stronger claim.</p>
+      </section>
+    </div>
+
+    <aside class="panel card sticky-side">
+      <h2>Related pages</h2>
+      <div class="side-links">
+        <a class="archive-link" href="/source-quality/">Source quality</a>
+        <a class="archive-link" href="/methodology/">Methodology</a>
+        <a class="archive-link" href="/stats/">Registry stats</a>
+        <a class="archive-link" href="/timeline/">Timeline</a>
+      </div>
+    </aside>
+  </section>
+</BaseLayout>
