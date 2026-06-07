@@ -1,0 +1,5 @@
+[
+  {"platform_id":"cya_plat_000017","product_type":"centralized_yield","product_name":"BitConnect Lending Program","custody_model":"platform_custodied_deposit_program","yield_source":"purported proprietary trading bot and volatility software","risk_notes":"Promised high returns and later became a major fraud and enforcement case."},
+  {"platform_id":"cya_plat_000018","product_type":"borrow_lend_platform","product_name":"BTCJam P2P Bitcoin Loans","custody_model":"peer_to_peer_marketplace_with_platform_accounting","yield_source":"borrower interest payments on bitcoin-denominated loans","risk_notes":"Peer-to-peer credit risk, borrower default risk, and wind-down uncertainty rather than platform bankruptcy classification."},
+  {"platform_id":"cya_plat_000019","product_type":"exchange_earn","product_name":"Crypto.com Earn","custody_model":"exchange_linked_yield_product","yield_source":"product-dependent rewards on supported crypto assets","risk_notes":"Reward rates, eligible assets, limits, terms, and jurisdictional access can change over time."}
+]
