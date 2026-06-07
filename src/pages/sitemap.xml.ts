@@ -13,6 +13,7 @@ const staticPaths = [
   '/source-quality/',
   '/methodology/',
   '/about/',
+  '/corrections/',
 ];
 
 function buildUrl(path: string, priority: string, changefreq: string) {
