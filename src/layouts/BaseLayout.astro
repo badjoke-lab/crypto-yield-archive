@@ -8,10 +8,11 @@ const {
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? 'https://cya.badjoke-lab.com').toString();
 const siteName = 'Crypto Yield Archive';
-const correctionUrl = 'https://github.com/badjoke-lab/crypto-yield-archive/issues/new?template=correction.yml';
+const correctionUrl = '/corrections/';
 const repoUrl = 'https://github.com/badjoke-lab/crypto-yield-archive';
 const gaMeasurementId = 'G-LWCGTDBY6W';
 const gaTagUrl = `https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`;
+const isPlatformPage = Astro.url.pathname.startsWith('/platform/');
 ---
 <!doctype html>
 <html lang="en">
@@ -64,6 +65,15 @@ const gaTagUrl = `https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}
       </header>
       <main>
         <slot />
+        {isPlatformPage && (
+          <section class="panel card" style="margin-top:18px;">
+            <div class="section-heading">
+              <h2>Report this record</h2>
+              <a class="ghost-button" href={correctionUrl}>Submit correction</a>
+            </div>
+            <p class="muted detail-note">Report incorrect dates, status, customer outcome, terms-risk interpretation, URL history, or missing evidence for this platform record.</p>
+          </section>
+        )}
       </main>
       <footer class="site-footer">
         <p>Crypto Yield Archive is a historical registry, not an investment recommendation, APY ranking, or real-time dashboard.</p>
