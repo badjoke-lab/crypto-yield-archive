@@ -1,0 +1,3 @@
+[
+  {"platform_id":"cya_plat_000016","outcome_status":"not_applicable","estimated_recovery_rate":"not_applicable","repayment_started_at":null,"repayment_completed_at":null,"repayment_method":"regulatory product-risk record rather than insolvency recovery case","claim_process_url":"https://www.sec.gov/newsroom/press-releases/2025-47","affected_products":["Coinbase staking services"],"notes":"Coinbase Staking is tracked as a regulatory product-risk record, not a customer insolvency or bankruptcy-recovery case.","confidence":"high"}
+]
