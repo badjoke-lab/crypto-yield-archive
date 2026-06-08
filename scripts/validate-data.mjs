@@ -1,13 +1,20 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+function listFiles(prefix) {
+  return fs.readdirSync('data')
+    .filter((name) => name === `${prefix}.json` || name.startsWith(`${prefix}-batch-`))
+    .sort((a, b) => a.localeCompare(b))
+    .map((name) => `data/${name}`);
+}
+
 const FILE_GROUPS = {
-  platforms: ['data/platforms.json', 'data/platforms-batch-04.json', 'data/platforms-batch-05.json', 'data/platforms-batch-06.json', 'data/platforms-batch-07.json', 'data/platforms-batch-08.json', 'data/platforms-batch-09.json', 'data/platforms-batch-10.json'],
-  events: ['data/events.json', 'data/events-batch-03.json', 'data/events-batch-04.json', 'data/events-batch-05.json', 'data/events-batch-06.json', 'data/events-batch-07.json', 'data/events-batch-08.json', 'data/events-batch-09.json', 'data/events-batch-10.json'],
-  evidence: ['data/evidence.json', 'data/evidence-batch-03.json', 'data/evidence-batch-04.json', 'data/evidence-batch-05.json', 'data/evidence-batch-06.json', 'data/evidence-batch-07.json', 'data/evidence-batch-08.json', 'data/evidence-batch-09.json', 'data/evidence-batch-10.json'],
-  outcomes: ['data/outcomes.json', 'data/outcomes-batch-04.json', 'data/outcomes-batch-05.json', 'data/outcomes-batch-06.json', 'data/outcomes-batch-07.json', 'data/outcomes-batch-08.json', 'data/outcomes-batch-09.json', 'data/outcomes-batch-10.json'],
-  products: ['data/products.json', 'data/products-batch-04.json', 'data/products-batch-05.json', 'data/products-batch-06.json', 'data/products-batch-07.json', 'data/products-batch-08.json', 'data/products-batch-09.json', 'data/products-batch-10.json'],
-  termsRisk: ['data/terms-risk.json', 'data/terms-risk-batch-04.json', 'data/terms-risk-batch-05.json', 'data/terms-risk-batch-06.json', 'data/terms-risk-batch-07.json', 'data/terms-risk-batch-08.json', 'data/terms-risk-batch-09.json', 'data/terms-risk-batch-10.json'],
+  platforms: listFiles('platforms'),
+  events: listFiles('events'),
+  evidence: listFiles('evidence'),
+  outcomes: listFiles('outcomes'),
+  products: listFiles('products'),
+  termsRisk: listFiles('terms-risk'),
 };
 
 const ENUMS = {
@@ -29,6 +36,8 @@ const ENUMS = {
 
 let failed = false;
 function fail(message) { failed = true; console.error(`ERROR: ${message}`); }
+function label(record, group) { return `${group} ${record.__file}#${record.__index}`; }
+function ids(records) { return new Set(records.map((record) => record.id).filter(Boolean)); }
 
 function readJsonArray(filePath) {
   const absolutePath = path.resolve(filePath);
@@ -44,10 +53,6 @@ function readJsonArray(filePath) {
 }
 
 function loadGroup(files) { return files.flatMap((file) => readJsonArray(file)); }
-function label(record, group) { return `${group} ${record.__file}#${record.__index}`; }
-function clean(record) { delete record.__file; delete record.__index; return record; }
-function ids(records) { return new Set(records.map((r) => r.id).filter(Boolean)); }
-
 function checkDuplicate(records, field, group) {
   const seen = new Map();
   for (const record of records) {
@@ -57,36 +62,27 @@ function checkDuplicate(records, field, group) {
     else seen.set(value, label(record, group));
   }
 }
-
 function required(record, fields, group) {
-  for (const field of fields) {
-    if (record[field] === undefined || record[field] === null || record[field] === '') fail(`Missing ${field} in ${label(record, group)}`);
-  }
+  for (const field of fields) if (record[field] === undefined || record[field] === null || record[field] === '') fail(`Missing ${field} in ${label(record, group)}`);
 }
-
 function enumField(record, field, allowed, group, allowEmpty = false) {
   const value = record[field];
   if ((value === undefined || value === null || value === '') && allowEmpty) return;
   if (!allowed.has(value)) fail(`Invalid ${field}=${value} in ${label(record, group)}`);
 }
-
 function dateField(record, field, group) {
   const value = record[field];
-  if (!value) return;
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) fail(`Invalid date ${field}=${value} in ${label(record, group)}; expected YYYY-MM-DD`);
+  if (value && !/^\d{4}-\d{2}-\d{2}$/.test(value)) fail(`Invalid date ${field}=${value} in ${label(record, group)}`);
 }
-
 function urlField(record, field, group) {
   const value = record[field];
-  if (!value) return;
-  if (!/^https?:\/\//.test(value)) fail(`Invalid URL ${field}=${value} in ${label(record, group)}`);
+  if (value && !/^https?:\/\//.test(value)) fail(`Invalid URL ${field}=${value} in ${label(record, group)}`);
 }
-
 function checkHighReliabilitySourceType(record) {
   if (record.reliability !== 'high') return;
-  const highAllowed = new Set(['official_statement', 'court_document', 'bankruptcy_document', 'regulatory_notice', 'archive_capture']);
-  if (!highAllowed.has(record.source_type) && !String(record.publisher || '').toLowerCase().includes('reuters')) {
-    fail(`High reliability evidence needs a strong source_type or publisher justification: ${label(record, 'evidence')}`);
+  const allowed = new Set(['official_statement', 'court_document', 'bankruptcy_document', 'regulatory_notice', 'archive_capture']);
+  if (!allowed.has(record.source_type) && !String(record.publisher || '').toLowerCase().includes('reuters')) {
+    fail(`High reliability evidence needs a stronger source type or publisher justification: ${label(record, 'evidence')}`);
   }
 }
 
@@ -120,7 +116,6 @@ for (const record of platforms) {
   dateField(record, 'last_verified_at', 'platforms');
   urlField(record, 'official_url_original', 'platforms');
 }
-
 for (const record of events) {
   required(record, ['id', 'platform_id', 'event_type', 'event_date', 'title', 'description', 'confidence'], 'events');
   if (!platformIds.has(record.platform_id)) fail(`Invalid platform_id=${record.platform_id} in ${label(record, 'events')}`);
@@ -130,7 +125,6 @@ for (const record of events) {
   enumField(record, 'confidence', ENUMS.confidence, 'events');
   dateField(record, 'event_date', 'events');
 }
-
 for (const record of evidence) {
   required(record, ['id', 'platform_id', 'source_type', 'title', 'url', 'publisher', 'reliability'], 'evidence');
   if (!platformIds.has(record.platform_id)) fail(`Invalid platform_id=${record.platform_id} in ${label(record, 'evidence')}`);
@@ -143,7 +137,6 @@ for (const record of evidence) {
   urlField(record, 'url', 'evidence');
   checkHighReliabilitySourceType(record);
 }
-
 for (const record of outcomes) {
   required(record, ['platform_id', 'outcome_status', 'notes', 'confidence'], 'outcomes');
   if (!platformIds.has(record.platform_id)) fail(`Invalid platform_id=${record.platform_id} in ${label(record, 'outcomes')}`);
@@ -153,13 +146,11 @@ for (const record of outcomes) {
   dateField(record, 'repayment_completed_at', 'outcomes');
   urlField(record, 'claim_process_url', 'outcomes');
 }
-
 for (const record of products) {
   required(record, ['platform_id', 'product_type', 'product_name'], 'products');
   if (!platformIds.has(record.platform_id)) fail(`Invalid platform_id=${record.platform_id} in ${label(record, 'products')}`);
   enumField(record, 'product_type', ENUMS.productType, 'products');
 }
-
 for (const record of termsRisk) {
   required(record, ['platform_id', 'terms_status', 'notes', 'confidence'], 'terms-risk');
   if (!platformIds.has(record.platform_id)) fail(`Invalid platform_id=${record.platform_id} in ${label(record, 'terms-risk')}`);
@@ -167,8 +158,6 @@ for (const record of termsRisk) {
   enumField(record, 'terms_status', ENUMS.termsStatus, 'terms-risk');
   enumField(record, 'confidence', ENUMS.confidence, 'terms-risk');
 }
-
-for (const records of [platforms, events, evidence, outcomes, products, termsRisk]) records.forEach(clean);
 
 if (failed) process.exit(1);
 console.log(`CYA data validation passed: ${platforms.length} platforms, ${events.length} events, ${evidence.length} evidence records.`);
