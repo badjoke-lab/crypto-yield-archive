@@ -1,13 +1,20 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+function listFiles(prefix) {
+  return fs.readdirSync('data')
+    .filter((name) => name === `${prefix}.json` || name.startsWith(`${prefix}-batch-`))
+    .sort((a, b) => a.localeCompare(b))
+    .map((name) => `data/${name}`);
+}
+
 const FILE_GROUPS = {
-  platforms: ['data/platforms.json', 'data/platforms-batch-04.json', 'data/platforms-batch-05.json', 'data/platforms-batch-06.json', 'data/platforms-batch-07.json', 'data/platforms-batch-08.json', 'data/platforms-batch-09.json', 'data/platforms-batch-10.json'],
-  events: ['data/events.json', 'data/events-batch-03.json', 'data/events-batch-04.json', 'data/events-batch-05.json', 'data/events-batch-06.json', 'data/events-batch-07.json', 'data/events-batch-08.json', 'data/events-batch-09.json', 'data/events-batch-10.json'],
-  evidence: ['data/evidence.json', 'data/evidence-batch-03.json', 'data/evidence-batch-04.json', 'data/evidence-batch-05.json', 'data/evidence-batch-06.json', 'data/evidence-batch-07.json', 'data/evidence-batch-08.json', 'data/evidence-batch-09.json', 'data/evidence-batch-10.json'],
-  outcomes: ['data/outcomes.json', 'data/outcomes-batch-04.json', 'data/outcomes-batch-05.json', 'data/outcomes-batch-06.json', 'data/outcomes-batch-07.json', 'data/outcomes-batch-08.json', 'data/outcomes-batch-09.json', 'data/outcomes-batch-10.json'],
-  products: ['data/products.json', 'data/products-batch-04.json', 'data/products-batch-05.json', 'data/products-batch-06.json', 'data/products-batch-07.json', 'data/products-batch-08.json', 'data/products-batch-09.json', 'data/products-batch-10.json'],
-  termsRisk: ['data/terms-risk.json', 'data/terms-risk-batch-04.json', 'data/terms-risk-batch-05.json', 'data/terms-risk-batch-06.json', 'data/terms-risk-batch-07.json', 'data/terms-risk-batch-08.json', 'data/terms-risk-batch-09.json', 'data/terms-risk-batch-10.json'],
+  platforms: listFiles('platforms'),
+  events: listFiles('events'),
+  evidence: listFiles('evidence'),
+  outcomes: listFiles('outcomes'),
+  products: listFiles('products'),
+  termsRisk: listFiles('terms-risk'),
 };
 
 function readArray(filePath) {
@@ -24,13 +31,6 @@ function load(files) {
 
 function recordLabel(record) {
   return `${record.__file}#${record.__index}`;
-}
-
-function clean(record) {
-  const copy = { ...record };
-  delete copy.__file;
-  delete copy.__index;
-  return copy;
 }
 
 const platforms = load(FILE_GROUPS.platforms);
@@ -63,7 +63,7 @@ const platformsWithFewEvidence = platforms.filter((platform) => (evidenceByPlatf
 const report = [];
 report.push('# CYA Data Quality Report');
 report.push('');
-report.push(`Generated from local JSON files.`);
+report.push('Generated from local JSON files.');
 report.push('');
 report.push('## Counts');
 report.push('');
