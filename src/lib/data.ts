@@ -4,8 +4,7 @@ type JsonModule = {
   default: JsonRecord[];
 };
 
-function loadJsonGroup(pattern: string) {
-  const modules = import.meta.glob<JsonModule>(pattern, { eager: true });
+function loadModules(modules: Record<string, JsonModule>) {
   return Object.entries(modules)
     .sort(([a], [b]) => a.localeCompare(b))
     .flatMap(([, module]) => module.default);
@@ -18,12 +17,12 @@ export type Outcome = JsonRecord;
 export type Product = JsonRecord;
 export type TermsRisk = JsonRecord;
 
-export const allPlatforms = loadJsonGroup('../../data/platforms*.json') as Platform[];
-export const allEvents = loadJsonGroup('../../data/events*.json') as EventRecord[];
-export const allEvidence = loadJsonGroup('../../data/evidence*.json') as EvidenceRecord[];
-export const allOutcomes = loadJsonGroup('../../data/outcomes*.json') as Outcome[];
-export const allProducts = loadJsonGroup('../../data/products*.json') as Product[];
-export const allTermsRisk = loadJsonGroup('../../data/terms-risk*.json') as TermsRisk[];
+export const allPlatforms = loadModules(import.meta.glob<JsonModule>('../../data/platforms*.json', { eager: true })) as Platform[];
+export const allEvents = loadModules(import.meta.glob<JsonModule>('../../data/events*.json', { eager: true })) as EventRecord[];
+export const allEvidence = loadModules(import.meta.glob<JsonModule>('../../data/evidence*.json', { eager: true })) as EvidenceRecord[];
+export const allOutcomes = loadModules(import.meta.glob<JsonModule>('../../data/outcomes*.json', { eager: true })) as Outcome[];
+export const allProducts = loadModules(import.meta.glob<JsonModule>('../../data/products*.json', { eager: true })) as Product[];
+export const allTermsRisk = loadModules(import.meta.glob<JsonModule>('../../data/terms-risk*.json', { eager: true })) as TermsRisk[];
 
 export function getPlatformBySlug(slug: string) {
   return allPlatforms.find((platform) => platform.slug === slug);
