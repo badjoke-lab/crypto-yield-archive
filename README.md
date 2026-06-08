@@ -38,10 +38,11 @@ Included:
 - crypto interest accounts
 - centralized yield platforms
 - borrowing/lending services
+- historically significant Earn or staking products when they have major regulatory, suspension, outcome, or failure relevance
 
 Not prioritized in the initial registry scope:
 
-- Exchange Earn products
+- generic Exchange Earn products without major historical events
 - DeFi lending protocols
 - yield aggregators
 - pool-level records
@@ -70,6 +71,7 @@ The project uses Astro as a static site generator with repository-local JSON dat
 ```bash
 npm install
 npm run validate
+npm run quality
 npm run build
 npm test
 ```
@@ -78,18 +80,28 @@ npm test
 
 ## Data files
 
-Registry data currently lives in:
+Registry data currently lives in base files plus batch files under `data/`.
+
+Core groups:
 
 ```text
-data/platforms.json
-data/events.json
-data/events-batch-03.json
-data/evidence.json
-data/evidence-batch-03.json
-data/outcomes.json
-data/products.json
-data/terms-risk.json
+data/platforms*.json
+data/events*.json
+data/evidence*.json
+data/outcomes*.json
+data/products*.json
+data/terms-risk*.json
 ```
+
+Current batch files are wired through:
+
+```text
+src/lib/data.ts
+scripts/validate-data.mjs
+scripts/data-quality-report.mjs
+```
+
+When adding a new batch, update all three files so the site, validator, and quality report read the same dataset.
 
 ## Pages
 
@@ -106,8 +118,17 @@ Astro generates:
 - `/source-quality/`
 - `/methodology/`
 - `/about/`
+- `/corrections/`
 - `/robots.txt`
 - `/sitemap.xml`
+
+## v0 readiness
+
+The v0 readiness checklist is maintained at:
+
+```text
+docs/v0-readiness-checklist.md
+```
 
 ## Deployment
 
