@@ -1,0 +1,3 @@
+[
+  {"platform_id":"cya_plat_000021","terms_status":"unclear","asset_ownership_interpretation":"Public sources do not yet provide a complete customer-asset treatment or final claim-class interpretation for BlockFills client balances.","affected_product":"BlockFills institutional lending and client balance services","source_evidence_id":"cya_src_b11_0001","notes":"Use unclear classification while the case remains ongoing and public recovery details are incomplete.","confidence":"medium"}
+]
