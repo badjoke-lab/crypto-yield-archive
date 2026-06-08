@@ -1,0 +1,3 @@
+[
+  {"platform_id":"cya_plat_000020","terms_status":"varies_by_product","asset_ownership_interpretation":"Nexo Earn customer treatment varies by product terms, asset, jurisdiction, and regulatory period rather than a single insolvency claim process.","affected_product":"Nexo Earn Interest Product","source_evidence_id":"cya_src_b10_0001","notes":"Use product-dependent classification because this is a regulatory interest-product record, not a platform bankruptcy case.","confidence":"medium"}
+]
