@@ -2,12 +2,12 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const FILE_GROUPS = {
-  platforms: ['data/platforms.json', 'data/platforms-batch-04.json', 'data/platforms-batch-05.json', 'data/platforms-batch-06.json', 'data/platforms-batch-07.json', 'data/platforms-batch-08.json', 'data/platforms-batch-09.json'],
-  events: ['data/events.json', 'data/events-batch-03.json', 'data/events-batch-04.json', 'data/events-batch-05.json', 'data/events-batch-06.json', 'data/events-batch-07.json', 'data/events-batch-08.json', 'data/events-batch-09.json'],
-  evidence: ['data/evidence.json', 'data/evidence-batch-03.json', 'data/evidence-batch-04.json', 'data/evidence-batch-05.json', 'data/evidence-batch-06.json', 'data/evidence-batch-07.json', 'data/evidence-batch-08.json', 'data/evidence-batch-09.json'],
-  outcomes: ['data/outcomes.json', 'data/outcomes-batch-04.json', 'data/outcomes-batch-05.json', 'data/outcomes-batch-06.json', 'data/outcomes-batch-07.json', 'data/outcomes-batch-08.json', 'data/outcomes-batch-09.json'],
-  products: ['data/products.json', 'data/products-batch-04.json', 'data/products-batch-05.json', 'data/products-batch-06.json', 'data/products-batch-07.json', 'data/products-batch-08.json', 'data/products-batch-09.json'],
-  termsRisk: ['data/terms-risk.json', 'data/terms-risk-batch-04.json', 'data/terms-risk-batch-05.json', 'data/terms-risk-batch-06.json', 'data/terms-risk-batch-07.json', 'data/terms-risk-batch-08.json', 'data/terms-risk-batch-09.json'],
+  platforms: ['data/platforms.json', 'data/platforms-batch-04.json', 'data/platforms-batch-05.json', 'data/platforms-batch-06.json', 'data/platforms-batch-07.json', 'data/platforms-batch-08.json', 'data/platforms-batch-09.json', 'data/platforms-batch-10.json'],
+  events: ['data/events.json', 'data/events-batch-03.json', 'data/events-batch-04.json', 'data/events-batch-05.json', 'data/events-batch-06.json', 'data/events-batch-07.json', 'data/events-batch-08.json', 'data/events-batch-09.json', 'data/events-batch-10.json'],
+  evidence: ['data/evidence.json', 'data/evidence-batch-03.json', 'data/evidence-batch-04.json', 'data/evidence-batch-05.json', 'data/evidence-batch-06.json', 'data/evidence-batch-07.json', 'data/evidence-batch-08.json', 'data/evidence-batch-09.json', 'data/evidence-batch-10.json'],
+  outcomes: ['data/outcomes.json', 'data/outcomes-batch-04.json', 'data/outcomes-batch-05.json', 'data/outcomes-batch-06.json', 'data/outcomes-batch-07.json', 'data/outcomes-batch-08.json', 'data/outcomes-batch-09.json', 'data/outcomes-batch-10.json'],
+  products: ['data/products.json', 'data/products-batch-04.json', 'data/products-batch-05.json', 'data/products-batch-06.json', 'data/products-batch-07.json', 'data/products-batch-08.json', 'data/products-batch-09.json', 'data/products-batch-10.json'],
+  termsRisk: ['data/terms-risk.json', 'data/terms-risk-batch-04.json', 'data/terms-risk-batch-05.json', 'data/terms-risk-batch-06.json', 'data/terms-risk-batch-07.json', 'data/terms-risk-batch-08.json', 'data/terms-risk-batch-09.json', 'data/terms-risk-batch-10.json'],
 };
 
 function readArray(filePath) {
