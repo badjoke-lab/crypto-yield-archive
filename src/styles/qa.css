@@ -1,0 +1,71 @@
+/* Cross-page responsive, accessibility, and interaction hardening. */
+[hidden] { display: none !important; }
+[id] { scroll-margin-top: 128px; }
+img, svg, video, canvas { max-width: 100%; height: auto; }
+a, button, input, select { touch-action: manipulation; }
+a, p, dd, td, th, strong, small, code { overflow-wrap: anywhere; }
+button, input, select { min-height: 44px; }
+.site-nav a, .footer-links a, .document-nav a, .sidebar-links a, .not-found-links a { min-height: 44px; display: flex; align-items: center; }
+.text-action, .archive-link { text-underline-offset: 3px; }
+.control-field input:focus, .control-field select:focus { border-color: var(--ink); }
+.control-field input::placeholder { color: #77746b; opacity: 1; }
+.table-wrap { scrollbar-width: thin; scrollbar-color: var(--line-strong) transparent; }
+.table-wrap:focus-within { outline: 1px solid var(--line-strong); outline-offset: 2px; }
+.site-nav { overscroll-behavior-inline: contain; }
+.document-prose, .platform-main, .timeline-record-main, .registry-group, .breakdown-block { min-width: 0; }
+
+@media (hover: hover) {
+  a:hover { text-decoration-line: underline; text-underline-offset: 3px; }
+  .brand:hover, .site-nav a:hover, .editorial-directory a:hover, .related-card:hover, .registry-index a:hover, .timeline-year-index a:hover { text-decoration: none; }
+}
+
+@media (max-width: 480px) {
+  .shell { width: min(calc(100% - 20px), 1460px); }
+  .masthead-row { gap: 10px; }
+  .brand { gap: 8px; }
+  .brand strong { font-size: 12px; letter-spacing: .045em; }
+  .brand-mark { width: 32px; height: 32px; flex-basis: 32px; }
+  .masthead-meta a { font-size: 8px; }
+  .site-nav { margin-inline: -10px; padding-inline: 10px; }
+  .site-nav a { min-height: 42px; padding-inline: 8px; }
+  h1 { font-size: clamp(34px, 12vw, 46px); line-height: .98; }
+  .lede { font-size: 15px; }
+  .home-facts, .platform-status-grid, .analytics-kpis, .registry-page-facts, .timeline-page-facts, .document-facts { grid-template-columns: 1fr 1fr; }
+  .home-facts div, .platform-status-grid div, .analytics-kpis > div, .registry-page-facts div, .timeline-page-facts div, .document-facts div { min-height: 86px; padding: 10px; }
+  .platform-record-strip, .timeline-range { grid-template-columns: 1fr; }
+  .editorial-directory a { grid-template-columns: 34px minmax(0,1fr) auto; gap: 9px; padding: 13px 10px; }
+  .directory-copy strong { font-size: 18px; }
+  .record-section { margin-bottom: 28px; padding-bottom: 28px; }
+  .record-section-head h2, .document-section h2 { font-size: 27px; }
+  .bar-row { grid-template-columns: 92px minmax(0,1fr) 34px; gap: 7px; }
+  .timeline-year-index { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  td { grid-template-columns: 86px minmax(0,1fr); gap: 8px; }
+  .record-report { gap: 14px; }
+  .record-report .text-action { min-height: 44px; display: flex; align-items: center; }
+}
+
+@media (max-width: 340px) {
+  .shell { width: min(calc(100% - 16px), 1460px); }
+  .brand-copy { max-width: 150px; }
+  .masthead-meta { display: none; }
+  .home-facts, .platform-status-grid, .analytics-kpis, .registry-page-facts, .timeline-page-facts, .document-facts { grid-template-columns: 1fr; }
+  .summary-grid { grid-template-columns: 1fr; }
+  td { grid-template-columns: 74px minmax(0,1fr); }
+  .editorial-directory a { grid-template-columns: 28px minmax(0,1fr); }
+  .editorial-directory a > :last-child { display: none; }
+}
+
+@media (forced-colors: active) {
+  * { forced-color-adjust: auto; }
+  .brand-mark, .ghost-button, .button { border: 1px solid ButtonText; }
+  .bar-track span { background: CanvasText; }
+}
+
+@media print {
+  [id] { scroll-margin-top: 0; }
+  body { color: #000; font-size: 10pt; }
+  h1, h2, h3 { break-after: avoid; }
+  table, .record-section, .timeline-year-section, .breakdown-block, .quality-record { break-inside: avoid; }
+  .site-nav, .document-nav, .timeline-year-index, .registry-index, .document-actions { display: none !important; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 8pt; overflow-wrap: anywhere; }
+}
