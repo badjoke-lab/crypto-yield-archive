@@ -6,14 +6,20 @@ const statusOptions = Array.from(new Set(allPlatforms.map((platform) => platform
 const outcomeOptions = Array.from(new Set(allPlatforms.map((platform) => getOutcome(platform.id)?.outcome_status || 'unknown'))).sort();
 const failureOptions = Array.from(new Set(allPlatforms.map((platform) => platform.failure_reason || 'unknown'))).sort();
 const termsOptions = Array.from(new Set(allPlatforms.map((platform) => getTermsRisk(platform.id)?.terms_status || 'unknown'))).sort();
+const claimsOngoing = allOutcomes.filter((outcome) => outcome.outcome_status === 'claims_ongoing').length;
+const latestVerified = allPlatforms
+  .map((platform) => platform.last_verified_at)
+  .filter(Boolean)
+  .sort()
+  .at(-1) || '—';
 
 const entryCards = [
-  { href: '/timeline/', title: 'Timeline', text: 'See launches, withdrawal halts, bankruptcies, restructuring events, and repayment milestones in chronological order.' },
-  { href: '/outcomes/', title: 'Customer outcomes', text: 'Compare whether customer funds were repaid, partially recovered, still in claims, or unresolved.' },
-  { href: '/failures/', title: 'Failure reasons', text: 'Group platforms by insolvency, liquidity crisis, counterparty exposure, misconduct, and other historical drivers.' },
-  { href: '/terms-risk/', title: 'Terms risk', text: 'Check how product terms and legal processes affected asset-treatment uncertainty across platforms.' },
-  { href: '/source-quality/', title: 'Source quality', text: 'Inspect weaker records, unresolved outcomes, unknown terms-risk records, and evidence coverage gaps.' },
-  { href: '/stats/', title: 'Registry stats', text: 'View record counts by status, event type, outcome, terms-risk class, and evidence reliability.' },
+  { href: '/outcomes/', number: '01', title: 'Customer outcomes', text: 'Repayment, partial recovery, ongoing claims, unresolved balances, and non-applicable active comparators.' },
+  { href: '/failures/', number: '02', title: 'Failure reasons', text: 'Liquidity crises, insolvency, counterparty exposure, misconduct, regulation, and other historical drivers.' },
+  { href: '/terms-risk/', number: '03', title: 'Terms risk', text: 'How platform terms and legal processes affected asset-treatment uncertainty.' },
+  { href: '/timeline/', number: '04', title: 'Historical timeline', text: 'Launches, withdrawal halts, bankruptcy filings, restructurings, and repayment milestones.' },
+  { href: '/source-quality/', number: '05', title: 'Source quality', text: 'Evidence coverage, weaker records, unknowns, and source-quality limitations.' },
+  { href: '/stats/', number: '06', title: 'Registry statistics', text: 'Status, outcome, event, evidence, failure, and terms-risk distributions.' },
 ];
 
 function years(platform) {
@@ -23,7 +29,7 @@ function years(platform) {
 }
 
 function platformMeta(platform) {
-  return [platform.type, platform.official_domain_original].filter(Boolean).join(' · ');
+  return [platform.type, platform.country_or_origin].filter(Boolean).join(' · ');
 }
 
 function searchText(platform) {
@@ -39,133 +45,149 @@ function searchText(platform) {
     outcome?.outcome_status,
     terms?.terms_status,
     ...(platform.aliases || []),
-  ]
-    .filter(Boolean)
-    .join(' ')
-    .toLowerCase();
+  ].filter(Boolean).join(' ').toLowerCase();
 }
 ---
 <BaseLayout>
-  <section class="panel hero-panel">
-    <p class="eyebrow">Historical registry · Astro static build</p>
-    <h1>What happened after users deposited assets into crypto yield platforms?</h1>
-    <p>Crypto Yield Archive tracks lending, Earn, and yield platforms by platform history, customer outcome, terms risk, failure chain, and evidence.</p>
-    <div class="summary-grid">
-      <div class="stat"><div class="label">Platforms</div><div class="value">{allPlatforms.length}</div></div>
-      <div class="stat"><div class="label">Events</div><div class="value">{allEvents.length}</div></div>
-      <div class="stat"><div class="label">Evidence</div><div class="value">{allEvidence.length}</div></div>
-      <div class="stat"><div class="label">Outcomes</div><div class="value">{allOutcomes.length}</div></div>
+  <section class="home-intro" aria-labelledby="home-title">
+    <div class="home-intro-copy">
+      <p class="kicker">Crypto lending history</p>
+      <h1 id="home-title">The historical record of crypto lending, Earn products, and customer outcomes.</h1>
+      <p class="lede">Crypto Yield Archive documents what happened after users deposited assets into centralized lending and yield platforms. It connects platform history, customer outcome, terms risk, failure chain, and evidence.</p>
+    </div>
+    <dl class="home-facts" aria-label="Registry summary">
+      <div><dt>Platforms</dt><dd>{allPlatforms.length}</dd></div>
+      <div><dt>Events</dt><dd>{allEvents.length}</dd></div>
+      <div><dt>Evidence</dt><dd>{allEvidence.length}</dd></div>
+      <div><dt>Claims ongoing</dt><dd>{claimsOngoing}</dd></div>
+    </dl>
+  </section>
+
+  <section class="archive-note" aria-label="Registry scope note">
+    <span>Evidence-based static registry</span>
+    <span>Last verified {latestVerified}</span>
+    <span>Not an APY ranking</span>
+  </section>
+
+  <section class="directory-section" aria-labelledby="directory-title">
+    <div class="section-heading">
+      <div>
+        <p class="kicker">Archive directory</p>
+        <h2 id="directory-title">Explore the record</h2>
+      </div>
+      <p>Cross-platform views separate historical outcomes, causes, terms, events, and evidence quality.</p>
+    </div>
+    <div class="editorial-directory">
+      {entryCards.map((card) => (
+        <a href={card.href}>
+          <span class="directory-number">{card.number}</span>
+          <span class="directory-copy"><strong>{card.title}</strong><small>{card.text}</small></span>
+          <span aria-hidden="true">→</span>
+        </a>
+      ))}
     </div>
   </section>
 
-  <section class="related-grid" style="margin-top:18px;">
-    {entryCards.map((card) => (
-      <a class="related-card" href={card.href}>
-        <strong>{card.title}</strong>
-        <span>{card.text}</span>
-      </a>
-    ))}
-  </section>
-
-  <section class="panel registry-panel" style="margin-top:18px;">
-    <div class="controls" aria-label="Registry filters">
-      <label class="control-field search-field">
-        <span>Search</span>
-        <input id="registrySearch" type="search" placeholder="Search name, alias, domain, type, outcome…" autocomplete="off" />
-      </label>
-      <label class="control-field">
-        <span>Status</span>
-        <select id="statusFilter">
-          <option value="">All status</option>
-          {statusOptions.map((status) => <option value={status}>{status}</option>)}
-        </select>
-      </label>
-      <label class="control-field">
-        <span>Outcome</span>
-        <select id="outcomeFilter">
-          <option value="">All outcomes</option>
-          {outcomeOptions.map((outcome) => <option value={outcome}>{outcome}</option>)}
-        </select>
-      </label>
-      <label class="control-field">
-        <span>Failure</span>
-        <select id="failureFilter">
-          <option value="">All failure reasons</option>
-          {failureOptions.map((failure) => <option value={failure}>{failure}</option>)}
-        </select>
-      </label>
-      <label class="control-field">
-        <span>Terms</span>
-        <select id="termsFilter">
-          <option value="">All terms status</option>
-          {termsOptions.map((term) => <option value={term}>{term}</option>)}
-        </select>
-      </label>
-      <label class="control-field">
-        <span>Sort</span>
-        <select id="sortSelect">
-          <option value="name-asc">Name A–Z</option>
-          <option value="name-desc">Name Z–A</option>
-          <option value="launch-desc">Launch newest</option>
-          <option value="launch-asc">Launch oldest</option>
-          <option value="status-asc">Status A–Z</option>
-          <option value="outcome-asc">Outcome A–Z</option>
-          <option value="confidence-desc">Confidence high first</option>
-        </select>
-      </label>
-      <button id="copyCurrentView" class="ghost-button" type="button">Copy view link</button>
-      <button id="clearFilters" class="ghost-button" type="button">Clear</button>
+  <section class="registry-section" aria-labelledby="registry-title">
+    <div class="section-heading">
+      <div>
+        <p class="kicker">Platform registry</p>
+        <h2 id="registry-title">Browse all records</h2>
+      </div>
+      <p>Search and filter the complete platform-level registry. Current view state remains shareable by URL.</p>
     </div>
 
-    <div class="registry-count" aria-live="polite">
-      Showing <strong id="visibleCount">{allPlatforms.length}</strong> of <strong>{allPlatforms.length}</strong> platforms
-      <span id="copyStatus" class="copy-status" aria-live="polite"></span>
-    </div>
+    <div class="registry-panel">
+      <div class="controls" aria-label="Registry filters">
+        <label class="control-field search-field">
+          <span>Search</span>
+          <input id="registrySearch" type="search" placeholder="Name, alias, domain, type, outcome…" autocomplete="off" />
+        </label>
+        <label class="control-field">
+          <span>Status</span>
+          <select id="statusFilter"><option value="">All status</option>{statusOptions.map((status) => <option value={status}>{status}</option>)}</select>
+        </label>
+        <label class="control-field">
+          <span>Outcome</span>
+          <select id="outcomeFilter"><option value="">All outcomes</option>{outcomeOptions.map((outcome) => <option value={outcome}>{outcome}</option>)}</select>
+        </label>
+        <label class="control-field">
+          <span>Failure</span>
+          <select id="failureFilter"><option value="">All failure reasons</option>{failureOptions.map((failure) => <option value={failure}>{failure}</option>)}</select>
+        </label>
+        <label class="control-field">
+          <span>Terms</span>
+          <select id="termsFilter"><option value="">All terms status</option>{termsOptions.map((term) => <option value={term}>{term}</option>)}</select>
+        </label>
+        <label class="control-field">
+          <span>Sort</span>
+          <select id="sortSelect">
+            <option value="name-asc">Name A–Z</option>
+            <option value="name-desc">Name Z–A</option>
+            <option value="launch-desc">Launch newest</option>
+            <option value="launch-asc">Launch oldest</option>
+            <option value="status-asc">Status A–Z</option>
+            <option value="outcome-asc">Outcome A–Z</option>
+            <option value="confidence-desc">Confidence high first</option>
+          </select>
+        </label>
+        <button id="copyCurrentView" class="ghost-button" type="button">Copy view link</button>
+        <button id="clearFilters" class="ghost-button" type="button">Clear</button>
+      </div>
 
-    <div class="table-wrap">
-      <table id="registryTable" class="registry-table">
-        <thead>
-          <tr>
-            <th>Platform</th>
-            <th>Status</th>
-            <th>Failure</th>
-            <th>Outcome</th>
-            <th>Terms</th>
-            <th>Years / links</th>
-          </tr>
-        </thead>
-        <tbody id="registryBody">
-          {allPlatforms.map((platform) => {
-            const outcome = getOutcome(platform.id);
-            const terms = getTermsRisk(platform.id);
-            return (
-              <tr
-                data-row="platform"
-                data-search={searchText(platform)}
-                data-name={platform.canonical_name}
-                data-status={platform.status}
-                data-outcome={outcome?.outcome_status || 'unknown'}
-                data-failure={platform.failure_reason || 'unknown'}
-                data-terms={terms?.terms_status || 'unknown'}
-                data-launch={platform.launch_date || ''}
-                data-confidence={platform.confidence || 'low'}
-              >
-                <td class="name-cell" data-label="Platform"><a href={`/platform/${platform.slug}/`}><strong>{platform.canonical_name}</strong></a><small>{platformMeta(platform)}</small></td>
-                <td data-label="Status"><span class="chip">{platform.status}</span></td>
-                <td data-label="Failure"><span class="chip">{platform.failure_reason || '—'}</span></td>
-                <td data-label="Outcome"><span class="chip">{outcome?.outcome_status || 'unknown'}</span></td>
-                <td data-label="Terms"><span class="chip">{terms?.terms_status || 'unknown'}</span></td>
-                <td data-label="Years / links" class="links-cell">
-                  <strong>{years(platform)}</strong>
-                  <small>{platform.official_domain_original || '—'}</small>
-                  {platform.archived_url && <a class="archive-link" href={platform.archived_url}>Archive</a>}
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
-      <p id="emptyState" class="empty-state" hidden>No platforms match the current filters.</p>
+      <div class="registry-count" aria-live="polite">
+        Showing <strong id="visibleCount">{allPlatforms.length}</strong> of <strong>{allPlatforms.length}</strong> platforms
+        <span id="copyStatus" class="copy-status" aria-live="polite"></span>
+      </div>
+
+      <div class="table-wrap">
+        <table id="registryTable" class="registry-table">
+          <thead>
+            <tr>
+              <th>Platform</th>
+              <th>Status</th>
+              <th>Outcome</th>
+              <th>Failure</th>
+              <th>Terms</th>
+              <th>Years</th>
+              <th>Evidence / links</th>
+            </tr>
+          </thead>
+          <tbody id="registryBody">
+            {allPlatforms.map((platform) => {
+              const outcome = getOutcome(platform.id);
+              const terms = getTermsRisk(platform.id);
+              const evidenceCount = allEvidence.filter((item) => item.platform_id === platform.id).length;
+              return (
+                <tr
+                  data-row="platform"
+                  data-search={searchText(platform)}
+                  data-name={platform.canonical_name}
+                  data-status={platform.status}
+                  data-outcome={outcome?.outcome_status || 'unknown'}
+                  data-failure={platform.failure_reason || 'unknown'}
+                  data-terms={terms?.terms_status || 'unknown'}
+                  data-launch={platform.launch_date || ''}
+                  data-confidence={platform.confidence || 'low'}
+                >
+                  <td class="name-cell" data-label="Platform"><a href={`/platform/${platform.slug}/`}><strong>{platform.canonical_name}</strong></a><small>{platformMeta(platform)}</small></td>
+                  <td data-label="Status"><span class="chip">{platform.status}</span></td>
+                  <td data-label="Outcome"><span class="chip">{outcome?.outcome_status || 'unknown'}</span></td>
+                  <td data-label="Failure"><span class="chip">{platform.failure_reason || '—'}</span></td>
+                  <td data-label="Terms"><span class="chip">{terms?.terms_status || 'unknown'}</span></td>
+                  <td data-label="Years"><strong>{years(platform)}</strong></td>
+                  <td data-label="Evidence / links" class="links-cell">
+                    <strong>{evidenceCount} sources</strong>
+                    <small>{platform.official_domain_original || 'No domain recorded'}</small>
+                    {platform.archived_url && <a class="archive-link" href={platform.archived_url}>Archive</a>}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+        <p id="emptyState" class="empty-state" hidden>No platforms match the current filters.</p>
+      </div>
     </div>
   </section>
 
@@ -196,14 +218,7 @@ function searchText(platform) {
     }
 
     function readControls() {
-      return {
-        q: searchInput.value.trim(),
-        status: statusFilter.value,
-        outcome: outcomeFilter.value,
-        failure: failureFilter.value,
-        terms: termsFilter.value,
-        sort: sortSelect.value,
-      };
+      return { q: searchInput.value.trim(), status: statusFilter.value, outcome: outcomeFilter.value, failure: failureFilter.value, terms: termsFilter.value, sort: sortSelect.value };
     }
 
     function writeUrlState(controls) {
@@ -232,19 +247,12 @@ function searchText(platform) {
       const controls = readControls();
       const query = controls.q.toLowerCase();
       let shown = 0;
-
       for (const row of [...rows].sort((a, b) => compareRows(a, b, controls.sort))) {
-        const matchesQuery = !query || row.dataset.search.includes(query);
-        const matchesStatus = !controls.status || row.dataset.status === controls.status;
-        const matchesOutcome = !controls.outcome || row.dataset.outcome === controls.outcome;
-        const matchesFailure = !controls.failure || row.dataset.failure === controls.failure;
-        const matchesTerms = !controls.terms || row.dataset.terms === controls.terms;
-        const isVisible = matchesQuery && matchesStatus && matchesOutcome && matchesFailure && matchesTerms;
+        const isVisible = (!query || row.dataset.search.includes(query)) && (!controls.status || row.dataset.status === controls.status) && (!controls.outcome || row.dataset.outcome === controls.outcome) && (!controls.failure || row.dataset.failure === controls.failure) && (!controls.terms || row.dataset.terms === controls.terms);
         row.hidden = !isVisible;
         tbody.appendChild(row);
         if (isVisible) shown += 1;
       }
-
       visibleCount.textContent = String(shown);
       emptyState.hidden = shown !== 0;
       writeUrlState(controls);
@@ -258,9 +266,7 @@ function searchText(platform) {
       } catch {
         copyStatus.textContent = 'Copy failed. Use the address bar URL.';
       }
-      window.setTimeout(() => {
-        copyStatus.textContent = '';
-      }, 2200);
+      window.setTimeout(() => { copyStatus.textContent = ''; }, 2200);
     }
 
     searchInput.addEventListener('input', applyFilters);
