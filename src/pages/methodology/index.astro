@@ -1,69 +1,26 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/documents.css';
 ---
 <BaseLayout title="Methodology | Crypto Yield Archive" description="How Crypto Yield Archive classifies, verifies, and presents crypto lending and yield platform history.">
-  <section class="panel hero-panel">
-    <p class="eyebrow">Definitions & limits</p>
-    <h1>Methodology</h1>
-    <p>Crypto Yield Archive is a historical registry, not a live APY ranking, investment recommendation, or real-time dashboard.</p>
-  </section>
+  <header class="document-head">
+    <div><p class="kicker">Definitions and limits</p><h1>Methodology</h1><p class="lede">How CYA defines its scope, counts platforms, connects events and evidence, and preserves uncertainty without forcing conclusions.</p></div>
+    <dl class="document-facts"><div><dt>Registry type</dt><dd>Historical</dd></div><div><dt>Counting unit</dt><dd>Platform entity</dd></div><div><dt>Evidence model</dt><dd>Claim-linked</dd></div><div><dt>Update model</dt><dd>Reviewed JSON</dd></div></dl>
+  </header>
 
-  <section class="grid two-col" style="margin-top:18px;">
-    <div class="detail-stack">
-      <section class="panel card">
-        <h2>Core principles</h2>
-        <p>CYA records platform history, customer outcome, terms risk, failure chain, and evidence. Unknown values are preserved instead of forcing guesses.</p>
-      </section>
-
-      <section class="panel card">
-        <h2>Scope</h2>
-        <p>The current registry focuses on CeFi lending platforms, crypto interest accounts, centralized yield platforms, and borrowing/lending services.</p>
-        <p>Exchange Earn, DeFi lending protocols, yield aggregators, pool-level records, deployment-level records, real-time APY, and real-time TVL are not prioritized in the initial registry scope.</p>
-      </section>
-
-      <section class="panel card">
-        <h2>Counting unit</h2>
-        <p>CYA counts platform entities. Products, pools, vaults, chain deployments, and individual claim classes are not separate platform records unless they become historically meaningful records of their own.</p>
-      </section>
-
-      <section class="panel card">
-        <h2>Record model</h2>
-        <div class="fact-grid">
-          <div class="fact"><div class="k">platform_entity</div><div class="v">The platform or historically meaningful yield service.</div></div>
-          <div class="fact"><div class="k">platform_event</div><div class="v">Timeline events such as withdrawal pauses, bankruptcy filings, restructuring, and distributions.</div></div>
-          <div class="fact"><div class="k">platform_evidence</div><div class="v">Sources backing entity, event, outcome, terms-risk, or URL-history claims.</div></div>
-          <div class="fact"><div class="k">customer_outcome</div><div class="v">What happened to user funds, including partial repayment, ongoing claims, no recovery, or unknown outcomes.</div></div>
-          <div class="fact"><div class="k">terms_risk</div><div class="v">How platform terms, product category, or legal process affected asset-treatment uncertainty.</div></div>
-          <div class="fact"><div class="k">product_profile</div><div class="v">Interest accounts, lending products, Earn-like products, and other historically relevant yield offerings.</div></div>
-        </div>
-      </section>
-
-      <section class="panel card">
-        <h2>Evidence and reliability</h2>
-        <p>Preferred sources include official statements, court documents, bankruptcy documents, regulatory notices, archived pages, and reputable reporting.</p>
-        <p>Reliability is marked as high, medium, or low. Lower-reliability records are surfaced on the Source quality page and should not be treated as definitive.</p>
-      </section>
-
-      <section class="panel card">
-        <h2>URL handling</h2>
-        <p>Original URLs are preserved as historical records. For ended or repurposed platforms, archived URLs should be preferred and unsafe domains should not be treated as normal outbound links.</p>
-      </section>
-
-      <section class="panel card">
-        <h2>Corrections</h2>
-        <p>A good correction should include the platform name, CYA page URL, the field or claim that appears wrong, source links, and a short explanation.</p>
-      </section>
-    </div>
-
-    <aside class="panel card sticky-side">
-      <h2>Related views</h2>
-      <div class="side-links">
-        <a class="archive-link" href="/source-quality/">Source quality</a>
-        <a class="archive-link" href="/terms-risk/">Terms risk</a>
-        <a class="archive-link" href="/outcomes/">Customer outcomes</a>
-        <a class="archive-link" href="/failures/">Failure reasons</a>
-        <a class="archive-link" href="/stats/">Registry stats</a>
-      </div>
-    </aside>
-  </section>
+  <div class="document-layout">
+    <nav class="document-nav" aria-label="Methodology sections">
+      <a href="#principles">Core principles</a><a href="#scope">Scope</a><a href="#counting">Counting unit</a><a href="#model">Record model</a><a href="#evidence">Evidence</a><a href="#urls">URL handling</a><a href="#uncertainty">Uncertainty</a><a href="#corrections">Corrections</a>
+    </nav>
+    <article class="document-prose">
+      <section id="principles" class="document-section"><p class="kicker">01</p><h2>Core principles</h2><p>Crypto Yield Archive is a historical registry, not a live APY ranking, investment recommendation, trading tool, or real-time dashboard. It records platform history, customer outcome, terms risk, failure chain, products, and supporting evidence.</p><p>Unknown values are kept visible. A missing answer is preferable to an unsupported answer.</p></section>
+      <section id="scope" class="document-section"><p class="kicker">02</p><h2>Scope</h2><p>The current registry focuses on CeFi lending platforms, crypto interest accounts, centralized yield platforms, and borrowing or lending services.</p><h3>Not prioritized in the current scope</h3><ul><li>Pool- and vault-level records</li><li>Chain deployment records</li><li>Real-time APY or TVL tracking</li><li>General exchanges with no meaningful Earn or lending context</li><li>Ordinary staking products without a relevant historical case</li></ul></section>
+      <section id="counting" class="document-section"><p class="kicker">03</p><h2>Counting unit</h2><p>CYA counts platform entities. Products, pools, vaults, deployments, and individual claim classes do not become separate platform records unless they are historically meaningful entities of their own.</p></section>
+      <section id="model" class="document-section"><p class="kicker">04</p><h2>Record model</h2><dl class="definition-ledger"><div><dt>platform_entity</dt><dd>The platform or historically meaningful yield service.</dd></div><div><dt>platform_event</dt><dd>Launches, withdrawal pauses, bankruptcy filings, restructurings, distributions, and other meaningful changes.</dd></div><div><dt>platform_evidence</dt><dd>Sources supporting entity, event, outcome, terms-risk, ownership, status, or URL-history claims.</dd></div><div><dt>customer_outcome</dt><dd>What happened to user funds, including repayment, ongoing claims, no recovery, or unknown outcomes.</dd></div><div><dt>terms_risk</dt><dd>How terms, product category, or legal process affected asset-treatment uncertainty.</dd></div><div><dt>product_profile</dt><dd>Interest accounts, lending products, Earn-like products, and other historically relevant offerings.</dd></div></dl></section>
+      <section id="evidence" class="document-section"><p class="kicker">05</p><h2>Evidence and reliability</h2><p>Preferred sources include official statements, court and bankruptcy documents, regulatory notices, archived pages, and reputable reporting. Evidence is linked to the claim it supports whenever possible.</p><p>Reliability is marked high, medium, or low. A low-reliability item can remain visible as a research lead, but it should not be treated as definitive proof.</p><p><a class="archive-link" href="/source-quality/">Review the public source-quality queue →</a></p></section>
+      <section id="urls" class="document-section"><p class="kicker">06</p><h2>URL handling</h2><p>Original URLs are preserved as historical records. For ended, dead, or repurposed platforms, archived URLs should be preferred. Unsafe, expired, or unrelated domains must not be treated as normal outbound destinations.</p></section>
+      <section id="uncertainty" class="document-section"><p class="kicker">07</p><h2>Uncertainty</h2><p>Dates may be approximate, legal outcomes may remain unresolved, and customer recovery can differ by claim class. Confidence labels and known-unknown notes are used to expose those limits rather than hide them.</p></section>
+      <section id="corrections" class="document-section"><p class="kicker">08</p><h2>Corrections</h2><p>A useful correction includes the platform name, CYA page URL, the disputed or missing claim, source links, and a short explanation.</p><div class="document-actions"><a class="ghost-button" href="/corrections/">Submit correction</a><a class="text-action" href="/stats/">Registry statistics →</a></div></section>
+    </article>
+  </div>
 </BaseLayout>
