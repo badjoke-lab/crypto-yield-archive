@@ -1,38 +1,43 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { groupsByOutcome } from '../../lib/data';
+import { groupsByOutcome, allPlatforms, getOutcome } from '../../lib/data';
 
 const groups = groupsByOutcome();
+const assigned = allPlatforms.filter((platform) => getOutcome(platform.id)).length;
+const unknown = groups.find(({ group }) => group === 'unknown')?.platforms.length || 0;
 ---
 <BaseLayout title="Outcomes | Crypto Yield Archive" description="Cross-platform customer outcome comparison for crypto lending and yield platforms.">
-  <section class="panel hero-panel">
-    <p class="eyebrow">Customer outcome view</p>
-    <h1>Customer outcomes</h1>
-    <p>Compare what happened to customer funds across crypto lending, Earn, and yield platform cases. Unknown values are kept instead of forcing guesses.</p>
-  </section>
+  <header class="registry-page-head">
+    <div>
+      <p class="kicker">Customer result ledger</p>
+      <h1>Customer outcomes</h1>
+      <p class="lede">Compare what happened to customer funds across crypto lending, Earn, and yield platform cases. Unknown values remain visible instead of being forced into a conclusion.</p>
+    </div>
+    <dl class="registry-page-facts">
+      <div><dt>Outcome classes</dt><dd>{groups.length}</dd></div>
+      <div><dt>Platforms</dt><dd>{allPlatforms.length}</dd></div>
+      <div><dt>Classified</dt><dd>{assigned}</dd></div>
+      <div><dt>Unknown</dt><dd>{unknown}</dd></div>
+    </dl>
+  </header>
 
-  <section class="grid" style="margin-top:18px;">
+  <nav class="registry-index" aria-label="Outcome groups">
+    {groups.map(({ group, platforms }, index) => <a href={`#outcome-${group}`}><span>{String(index + 1).padStart(2, '0')}</span><strong>{group}</strong><em>{platforms.length}</em></a>)}
+  </nav>
+
+  <div class="registry-groups">
     {groups.map(({ group, platforms }) => (
-      <section class="panel card">
-        <h2>{group}</h2>
+      <section id={`outcome-${group}`} class="registry-group">
+        <header class="registry-group-head"><div><p class="kicker">Outcome class</p><h2>{group}</h2></div><strong>{platforms.length} platforms</strong></header>
         {platforms.length ? (
-          <div class="table-wrap">
-            <table>
-              <thead><tr><th>Name</th><th>Status</th><th>Failure reason</th><th>Domain</th></tr></thead>
-              <tbody>
-                {platforms.map((platform) => (
-                  <tr>
-                    <td class="name-cell"><a href={`/platform/${platform.slug}/`}><strong>{platform.canonical_name}</strong></a><small>{platform.slug}</small></td>
-                    <td><span class="chip">{platform.status}</span></td>
-                    <td><span class="chip">{platform.failure_reason || 'unknown'}</span></td>
-                    <td>{platform.official_domain_original || '—'}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <div class="table-wrap"><table class="cross-ledger"><thead><tr><th>Platform</th><th>Status</th><th>Failure reason</th><th>Confidence</th><th>Domain</th></tr></thead><tbody>
+            {platforms.map((platform) => {
+              const outcome = getOutcome(platform.id);
+              return <tr><td data-label="Platform" class="name-cell"><a href={`/platform/${platform.slug}/`}><strong>{platform.canonical_name}</strong></a><small>{platform.type} · {platform.country_or_origin || 'origin unknown'}</small></td><td data-label="Status">{platform.status}</td><td data-label="Failure">{platform.failure_reason || '—'}</td><td data-label="Confidence">{outcome?.confidence || platform.confidence || 'unknown'}</td><td data-label="Domain">{platform.official_domain_original || '—'}</td></tr>;
+            })}
+          </tbody></table></div>
         ) : <p>No records yet.</p>}
       </section>
     ))}
-  </section>
+  </div>
 </BaseLayout>
