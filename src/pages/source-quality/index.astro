@@ -1,131 +1,24 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/analytics.css';
 import { allEvidence, allOutcomes, allPlatforms, allTermsRisk } from '../../lib/data';
-import type { EvidenceRecord, Outcome, Platform, TermsRisk } from '../../lib/data';
-
-const platformById = new Map<string, Platform>(allPlatforms.map((platform) => [platform.id, platform]));
-const platformName = (platformId: string) => platformById.get(platformId)?.canonical_name || platformId;
-const platformSlug = (platformId: string) => platformById.get(platformId)?.slug;
-const platformLink = (platformId: string) => platformSlug(platformId) ? `/platform/${platformSlug(platformId)}/` : '#';
-
-const lowEvidence = allEvidence.filter((source: EvidenceRecord) => source.reliability === 'low');
-const sourceTargets = allEvidence.filter((source: EvidenceRecord) => String(source.notes || '').toLowerCase().includes('verify') || String(source.notes || '').toLowerCase().includes('replace'));
-const unknownOutcomes = allOutcomes.filter((outcome: Outcome) => outcome.outcome_status === 'unknown' || outcome.outcome_status === 'claims_ongoing');
-const unknownTerms = allTermsRisk.filter((term: TermsRisk) => term.terms_status === 'unknown');
-
-const platformsWithFewEvidence = allPlatforms
-  .map((platform: Platform) => ({ platform, evidenceCount: allEvidence.filter((source: EvidenceRecord) => source.platform_id === platform.id).length }))
-  .filter((item: { platform: Platform; evidenceCount: number }) => item.evidenceCount < 3);
+const byId=new Map(allPlatforms.map(p=>[p.id,p]));
+const link=id=>byId.get(id)?`/platform/${byId.get(id).slug}/`:'#';
+const name=id=>byId.get(id)?.canonical_name||id;
+const low=allEvidence.filter(s=>s.reliability==='low');
+const targets=allEvidence.filter(s=>/verify|replace|stronger source|source review/i.test(String(s.notes||'')));
+const outcomes=allOutcomes.filter(o=>['unknown','claims_ongoing'].includes(o.outcome_status));
+const terms=allTermsRisk.filter(t=>t.terms_status==='unknown');
+const thin=allPlatforms.map(p=>({p,n:allEvidence.filter(s=>s.platform_id===p.id).length})).filter(x=>x.n<3).sort((a,b)=>a.n-b.n||a.p.canonical_name.localeCompare(b.p.canonical_name));
+const high=allEvidence.filter(s=>s.reliability==='high').length;
 ---
-<BaseLayout title="Source quality | Crypto Yield Archive" description="Evidence quality and unresolved outcome records in Crypto Yield Archive.">
-  <section class="panel hero-panel">
-    <p class="eyebrow">Transparency layer</p>
-    <h1>Source quality</h1>
-    <p>This page lists weak and unresolved records. Lower-reliability items are kept visible for transparency until stronger source coverage is available.</p>
-    <div class="summary-grid">
-      <div class="stat"><div class="label">Low evidence</div><div class="value">{lowEvidence.length}</div></div>
-      <div class="stat"><div class="label">Source targets</div><div class="value">{sourceTargets.length}</div></div>
-      <div class="stat"><div class="label">Unknown outcomes</div><div class="value">{unknownOutcomes.length}</div></div>
-      <div class="stat"><div class="label">Unknown terms</div><div class="value">{unknownTerms.length}</div></div>
-    </div>
-  </section>
-
-  <section class="grid" style="margin-top:18px;">
-    <section class="panel card">
-      <h2>Low reliability evidence</h2>
-      <p>These entries should not be treated as the strongest support for a record. Prefer official, court, regulatory, archived, or high-quality reporting sources when available.</p>
-      {lowEvidence.length ? (
-        <div class="quality-list">
-          {lowEvidence.map((source) => (
-            <article class="quality-item evidence-low">
-              <div class="chip-row small-gap">
-                <span class="chip low">low</span>
-                <span class="chip">{source.source_type}</span>
-                <span class="chip">{source.claim_scope || 'claim'}</span>
-              </div>
-              <h3><a class="archive-link" href={source.url}>{source.title}</a></h3>
-              <p><a class="archive-link" href={platformLink(source.platform_id)}>{platformName(source.platform_id)}</a> · {source.publisher}</p>
-              {source.notes && <p class="muted detail-note">{source.notes}</p>}
-            </article>
-          ))}
-        </div>
-      ) : <p>No low-reliability evidence records.</p>}
-    </section>
-
-    <section class="panel card">
-      <h2>Source improvement targets</h2>
-      <p>These records mention source verification or replacement in their notes.</p>
-      {sourceTargets.length ? (
-        <div class="quality-list">
-          {sourceTargets.map((source) => (
-            <article class={`quality-item evidence-${source.reliability || 'unknown'}`}>
-              <div class="chip-row small-gap">
-                <span class={`chip ${source.reliability || ''}`}>{source.reliability}</span>
-                <span class="chip">{source.source_type}</span>
-              </div>
-              <h3><a class="archive-link" href={source.url}>{source.title}</a></h3>
-              <p><a class="archive-link" href={platformLink(source.platform_id)}>{platformName(source.platform_id)}</a> · {source.publisher}</p>
-              {source.notes && <p class="muted detail-note">{source.notes}</p>}
-            </article>
-          ))}
-        </div>
-      ) : <p>No source improvement targets.</p>}
-    </section>
-
-    <section class="panel card">
-      <h2>Unknown or ongoing customer outcomes</h2>
-      {unknownOutcomes.length ? (
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>Platform</th><th>Outcome</th><th>Confidence</th><th>Notes</th></tr></thead>
-            <tbody>
-              {unknownOutcomes.map((outcome) => (
-                <tr>
-                  <td data-label="Platform"><a class="archive-link" href={platformLink(outcome.platform_id)}>{platformName(outcome.platform_id)}</a></td>
-                  <td data-label="Outcome"><span class="chip medium">{outcome.outcome_status}</span></td>
-                  <td data-label="Confidence"><span class={`chip ${outcome.confidence || ''}`}>{outcome.confidence}</span></td>
-                  <td data-label="Notes">{outcome.notes}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      ) : <p>No unknown or ongoing outcomes.</p>}
-    </section>
-
-    <section class="panel card">
-      <h2>Unknown terms-risk records</h2>
-      {unknownTerms.length ? (
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>Platform</th><th>Terms status</th><th>Confidence</th><th>Reason</th></tr></thead>
-            <tbody>
-              {unknownTerms.map((term) => (
-                <tr>
-                  <td data-label="Platform"><a class="archive-link" href={platformLink(term.platform_id)}>{platformName(term.platform_id)}</a></td>
-                  <td data-label="Terms"><span class="chip medium">{term.terms_status}</span></td>
-                  <td data-label="Confidence"><span class={`chip ${term.confidence || ''}`}>{term.confidence}</span></td>
-                  <td data-label="Reason">{term.notes}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      ) : <p>No unknown terms-risk records.</p>}
-    </section>
-
-    <section class="panel card">
-      <h2>Platforms with fewer than 3 evidence records</h2>
-      {platformsWithFewEvidence.length ? (
-        <div class="quality-list">
-          {platformsWithFewEvidence.map(({ platform, evidenceCount }) => (
-            <article class="quality-item">
-              <h3><a class="archive-link" href={`/platform/${platform.slug}/`}>{platform.canonical_name}</a></h3>
-              <p>Evidence records: {evidenceCount}</p>
-            </article>
-          ))}
-        </div>
-      ) : <p>Every platform has at least 3 evidence records.</p>}
-    </section>
-  </section>
+<BaseLayout title="Source quality | Crypto Yield Archive" description="Evidence quality and unresolved records in Crypto Yield Archive.">
+<header class="analytics-head"><div><p class="kicker">Transparency and maintenance</p><h1>Source quality</h1><p class="lede">Weak, unresolved, and thin records remain visible so uncertainty is not hidden. This page turns those gaps into a public review queue.</p></div><dl class="analytics-meta"><div><dt>Evidence</dt><dd>{allEvidence.length}</dd></div><div><dt>High reliability</dt><dd>{high}</dd></div><div><dt>Platforms</dt><dd>{allPlatforms.length}</dd></div><div><dt>Review mode</dt><dd>Open queue</dd></div></dl></header>
+<section class="analytics-kpis"><div><span>Low reliability</span><strong>{low.length}</strong><small>evidence records</small></div><div><span>Source targets</span><strong>{targets.length}</strong><small>verify or replace</small></div><div><span>Unknown / ongoing outcomes</span><strong>{outcomes.length}</strong><small>customer-result records</small></div><div><span>Unknown terms</span><strong>{terms.length}</strong><small>terms-risk records</small></div><div><span>Thin platforms</span><strong>{thin.length}</strong><small>fewer than 3 sources</small></div><div><span>High-reliability share</span><strong>{allEvidence.length?Math.round(high/allEvidence.length*100):0}%</strong><small>{high} / {allEvidence.length}</small></div></section>
+<section class="quality-pipeline"><div class="section-heading"><div><p class="kicker">Review pipeline</p><h2>How records improve</h2></div></div><ol><li><span>01</span><strong>Source discovery</strong></li><li><span>02</span><strong>Claim extraction</strong></li><li><span>03</span><strong>Evidence review</strong></li><li><span>04</span><strong>Record normalization</strong></li><li><span>05</span><strong>Public registry</strong></li></ol></section>
+<section class="quality-register"><div class="registry-group-head"><div><p class="kicker">Priority queue</p><h2>Low-reliability evidence</h2></div><strong>{low.length} records</strong></div>{low.length?<div class="quality-ledger">{low.map(s=><article class="quality-record quality-low"><div class="quality-record-meta"><span>low</span><span>{s.source_type}</span><span>{s.claim_scope||'claim'}</span></div><h3><a href={s.url}>{s.title}</a></h3><p><a href={link(s.platform_id)}>{name(s.platform_id)}</a> · {s.publisher}</p>{s.notes&&<p class="muted detail-note">{s.notes}</p>}</article>)}</div>:<p>No low-reliability evidence records.</p>}</section>
+<section class="quality-register"><div class="registry-group-head"><div><p class="kicker">Maintenance queue</p><h2>Source improvement targets</h2></div><strong>{targets.length} records</strong></div>{targets.length?<div class="quality-ledger">{targets.map(s=><article class={`quality-record quality-${s.reliability||'unknown'}`}><div class="quality-record-meta"><span>{s.reliability}</span><span>{s.source_type}</span></div><h3><a href={s.url}>{s.title}</a></h3><p><a href={link(s.platform_id)}>{name(s.platform_id)}</a> · {s.publisher}</p>{s.notes&&<p class="muted detail-note">{s.notes}</p>}</article>)}</div>:<p>No source improvement targets.</p>}</section>
+<section class="quality-register"><div class="registry-group-head"><div><p class="kicker">Outcome queue</p><h2>Unknown or ongoing outcomes</h2></div><strong>{outcomes.length} records</strong></div><div class="table-wrap"><table class="coverage-ledger"><thead><tr><th>Platform</th><th>Outcome</th><th>Confidence</th><th>Notes</th></tr></thead><tbody>{outcomes.map(o=><tr><td data-label="Platform"><a href={link(o.platform_id)}>{name(o.platform_id)}</a></td><td data-label="Outcome">{o.outcome_status}</td><td data-label="Confidence">{o.confidence}</td><td data-label="Notes">{o.notes}</td></tr>)}</tbody></table></div></section>
+<section class="quality-register"><div class="registry-group-head"><div><p class="kicker">Terms queue</p><h2>Unknown terms-risk records</h2></div><strong>{terms.length} records</strong></div><div class="table-wrap"><table class="coverage-ledger"><thead><tr><th>Platform</th><th>Terms</th><th>Confidence</th><th>Reason</th></tr></thead><tbody>{terms.map(t=><tr><td data-label="Platform"><a href={link(t.platform_id)}>{name(t.platform_id)}</a></td><td data-label="Terms">{t.terms_status}</td><td data-label="Confidence">{t.confidence}</td><td data-label="Reason">{t.notes}</td></tr>)}</tbody></table></div></section>
+<section class="quality-register"><div class="registry-group-head"><div><p class="kicker">Coverage queue</p><h2>Platforms with fewer than 3 evidence records</h2></div><strong>{thin.length} platforms</strong></div><div class="thin-platform-ledger">{thin.map(({p,n})=><a href={`/platform/${p.slug}/`}><strong>{p.canonical_name}</strong><span>{p.status}</span><em>{n} evidence</em></a>)}</div></section>
 </BaseLayout>
