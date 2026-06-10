@@ -1,52 +1,22 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/documents.css';
 ---
 <BaseLayout title="About | Crypto Yield Archive" description="Why Crypto Yield Archive exists and what it does not try to be.">
-  <section class="panel hero-panel">
-    <p class="eyebrow">About</p>
-    <h1>About Crypto Yield Archive</h1>
-    <p>Crypto Yield Archive is an evidence-based historical registry for crypto lending, Earn, and yield platforms.</p>
-  </section>
+  <header class="document-head">
+    <div><p class="kicker">About the archive</p><h1>Crypto Yield Archive</h1><p class="lede">An evidence-based historical registry for crypto lending, Earn, and yield platforms.</p></div>
+    <dl class="document-facts"><div><dt>Focus</dt><dd>History</dd></div><div><dt>Primary view</dt><dd>Platform dossier</dd></div><div><dt>Evidence</dt><dd>Visible</dd></div><div><dt>Uncertainty</dt><dd>Preserved</dd></div></dl>
+  </header>
 
-  <section class="grid two-col" style="margin-top:18px;">
-    <div class="detail-stack">
-      <section class="panel card">
-        <h2>What CYA is</h2>
-        <p>CYA tracks what happened after users deposited assets into crypto yield platforms. It focuses on platform history, customer outcome, terms risk, failure chain, and supporting evidence.</p>
-      </section>
-
-      <section class="panel card">
-        <h2>Why it exists</h2>
-        <p>The 2021–2023 crypto lending collapse cycle produced many platform failures, withdrawal pauses, bankruptcies, restructurings, and unresolved customer outcomes. CYA keeps those histories in a structured registry instead of treating them as isolated news events.</p>
-      </section>
-
-      <section class="panel card">
-        <h2>What CYA is not</h2>
-        <p>CYA is not an APY ranking, yield discovery product, investment recommendation site, trading tool, or real-time TVL dashboard.</p>
-      </section>
-
-      <section class="panel card">
-        <h2>How to read records</h2>
-        <p>Each platform page should be read as a dossier: entity facts, timeline, customer outcome, terms risk, evidence, and uncertainty. A record can be useful even when the outcome is unknown, because unresolved status is part of the history.</p>
-      </section>
-
-      <section class="panel card">
-        <h2>Corrections and source improvements</h2>
-        <p>Good corrections include the platform name, the CYA page URL, the claim that appears wrong, one or more source links, and a short explanation. Official statements, court filings, bankruptcy documents, regulatory notices, and archived pages are preferred.</p>
-      </section>
-    </div>
-
-    <aside class="panel card sticky-side">
-      <h2>Quick links</h2>
-      <div class="side-links">
-        <a class="archive-link" href="/methodology/">Methodology</a>
-        <a class="archive-link" href="/source-quality/">Source quality</a>
-        <a class="archive-link" href="/timeline/">Timeline</a>
-        <a class="archive-link" href="/outcomes/">Customer outcomes</a>
-        <a class="archive-link" href="/stats/">Registry stats</a>
-      </div>
-      <h3 style="margin-top:18px;">Disclaimer</h3>
-      <p>CYA is a historical and educational registry. It does not provide investment, legal, tax, or financial advice.</p>
-    </aside>
-  </section>
+  <div class="document-layout">
+    <nav class="document-nav" aria-label="About sections"><a href="#what">What CYA is</a><a href="#why">Why it exists</a><a href="#not">What it is not</a><a href="#records">How to read records</a><a href="#improvements">Corrections</a><a href="#disclaimer">Disclaimer</a></nav>
+    <article class="document-prose">
+      <section id="what" class="document-section"><p class="kicker">01</p><h2>What CYA is</h2><p>CYA tracks what happened after users deposited assets into crypto yield platforms. It focuses on platform history, customer outcome, terms risk, failure chain, products, and supporting evidence.</p><p>Each platform page is intended to function as a dossier rather than a promotional profile.</p></section>
+      <section id="why" class="document-section"><p class="kicker">02</p><h2>Why it exists</h2><p>The 2021–2023 crypto lending collapse cycle produced withdrawal pauses, insolvencies, bankruptcies, restructurings, asset-sale attempts, and unresolved customer outcomes across many platforms.</p><p>Those histories are often scattered across news articles, court documents, company notices, and archived pages. CYA brings them into one structured record system.</p></section>
+      <section id="not" class="document-section"><p class="kicker">03</p><h2>What CYA is not</h2><ul><li>Not an APY ranking</li><li>Not a yield discovery product</li><li>Not an investment recommendation site</li><li>Not a trading tool</li><li>Not a real-time TVL or market dashboard</li></ul></section>
+      <section id="records" class="document-section"><p class="kicker">04</p><h2>How to read records</h2><p>A platform page combines entity facts, chronology, customer outcome, terms risk, evidence, and known uncertainty. An unresolved record can still be useful because the unresolved state is itself part of the historical record.</p><p><a class="archive-link" href="/timeline/">Browse the historical timeline →</a></p></section>
+      <section id="improvements" class="document-section"><p class="kicker">05</p><h2>Corrections and source improvements</h2><p>Good corrections identify the affected page and claim, explain what appears wrong or incomplete, and include one or more sources. Official statements, court filings, bankruptcy documents, regulatory notices, and archived pages are preferred.</p><div class="document-actions"><a class="ghost-button" href="/corrections/">Submit correction</a><a class="text-action" href="/source-quality/">Source quality →</a></div></section>
+      <section id="disclaimer" class="document-section"><p class="kicker">06</p><h2>Disclaimer</h2><p>CYA is a historical and educational registry. It does not provide investment, legal, tax, or financial advice.</p></section>
+    </article>
+  </div>
 </BaseLayout>
