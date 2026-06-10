@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/analytics.css';
 import { allPlatforms, allEvents, allEvidence, allOutcomes, allProducts, allTermsRisk } from '../../lib/data';
 
 type AnyRecord = Record<string, unknown>;
@@ -11,57 +12,112 @@ function countBy(records: AnyRecord[], field: string): CountRow[] {
     const value = String(record[field] || 'unknown');
     map.set(value, (map.get(value) || 0) + 1);
   }
-  return Array.from(map.entries()).sort((a, b) => b[1] - a[1]);
+  return Array.from(map.entries()).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+}
+
+function pct(count: number, total: number) {
+  return total ? Math.round((count / total) * 100) : 0;
 }
 
 const statusCounts = countBy(allPlatforms, 'status');
+const typeCounts = countBy(allPlatforms, 'type');
 const failureCounts = countBy(allPlatforms, 'failure_reason');
 const outcomeCounts = countBy(allOutcomes, 'outcome_status');
 const termsCounts = countBy(allTermsRisk, 'terms_status');
 const evidenceReliabilityCounts = countBy(allEvidence, 'reliability');
 const eventTypeCounts = countBy(allEvents, 'event_type');
-const sections: [string, CountRow[]][] = [
-  ['Platform status', statusCounts],
-  ['Failure reason', failureCounts],
-  ['Customer outcome', outcomeCounts],
-  ['Terms risk', termsCounts],
-  ['Evidence reliability', evidenceReliabilityCounts],
-  ['Event type', eventTypeCounts],
+const sourceTypeCounts = countBy(allEvidence, 'source_type');
+const confidenceCounts = countBy(allPlatforms, 'confidence');
+const archiveCount = allPlatforms.filter((platform) => platform.archived_url).length;
+const knownOriginCount = allPlatforms.filter((platform) => platform.country_or_origin).length;
+const highConfidenceCount = allPlatforms.filter((platform) => platform.confidence === 'high').length;
+const latestVerified = allPlatforms.map((platform) => platform.last_verified_at).filter(Boolean).sort().at(-1) || '—';
+
+const sections: { title: string; rows: CountRow[]; total: number; note: string }[] = [
+  { title: 'Platform status', rows: statusCounts, total: allPlatforms.length, note: 'Current registry state assigned to each platform.' },
+  { title: 'Platform type', rows: typeCounts, total: allPlatforms.length, note: 'Service category used by the current entity model.' },
+  { title: 'Failure reason', rows: failureCounts, total: allPlatforms.length, note: 'Primary historical driver, including unknown values.' },
+  { title: 'Customer outcome', rows: outcomeCounts, total: allOutcomes.length, note: 'Outcome records across repayment, claims, and non-applicable cases.' },
+  { title: 'Terms risk', rows: termsCounts, total: allTermsRisk.length, note: 'How deposited assets and contractual treatment are currently classified.' },
+  { title: 'Evidence reliability', rows: evidenceReliabilityCounts, total: allEvidence.length, note: 'Source-strength labels assigned to evidence records.' },
+  { title: 'Event type', rows: eventTypeCounts, total: allEvents.length, note: 'Recorded historical event categories.' },
+  { title: 'Source type', rows: sourceTypeCounts, total: allEvidence.length, note: 'Distribution of official, regulatory, court, archive, and reporting sources.' },
 ];
 ---
 <BaseLayout title="Stats | Crypto Yield Archive" description="Registry statistics for Crypto Yield Archive records.">
-  <section class="panel hero-panel">
-    <p class="eyebrow">Registry stats</p>
-    <h1>Stats</h1>
-    <p>Registry counts for platform records, events, evidence, outcomes, products, and terms-risk records.</p>
-    <div class="summary-grid">
-      <div class="stat"><div class="label">Platforms</div><div class="value">{allPlatforms.length}</div></div>
-      <div class="stat"><div class="label">Events</div><div class="value">{allEvents.length}</div></div>
-      <div class="stat"><div class="label">Evidence</div><div class="value">{allEvidence.length}</div></div>
-      <div class="stat"><div class="label">Outcomes</div><div class="value">{allOutcomes.length}</div></div>
-      <div class="stat"><div class="label">Products</div><div class="value">{allProducts.length}</div></div>
-      <div class="stat"><div class="label">Terms risk</div><div class="value">{allTermsRisk.length}</div></div>
+  <header class="analytics-head">
+    <div>
+      <p class="kicker">Registry analysis</p>
+      <h1>Stats</h1>
+      <p class="lede">A measured view of registry scale, composition, evidence coverage, and classification quality. Counts are generated directly from the current canonical JSON.</p>
+    </div>
+    <dl class="analytics-meta">
+      <div><dt>Last verified</dt><dd>{latestVerified}</dd></div>
+      <div><dt>Unit</dt><dd>Platform entity</dd></div>
+      <div><dt>Source</dt><dd>Canonical JSON</dd></div>
+      <div><dt>Mode</dt><dd>Static snapshot</dd></div>
+    </dl>
+  </header>
+
+  <section class="analytics-kpis" aria-label="Registry totals">
+    <div><span>Platforms</span><strong>{allPlatforms.length}</strong><small>canonical entities</small></div>
+    <div><span>Events</span><strong>{allEvents.length}</strong><small>historical records</small></div>
+    <div><span>Evidence</span><strong>{allEvidence.length}</strong><small>source records</small></div>
+    <div><span>Outcomes</span><strong>{allOutcomes.length}</strong><small>customer outcomes</small></div>
+    <div><span>Products</span><strong>{allProducts.length}</strong><small>product profiles</small></div>
+    <div><span>Terms risk</span><strong>{allTermsRisk.length}</strong><small>terms records</small></div>
+    <div><span>Archive coverage</span><strong>{pct(archiveCount, allPlatforms.length)}%</strong><small>{archiveCount} / {allPlatforms.length}</small></div>
+    <div><span>High confidence</span><strong>{pct(highConfidenceCount, allPlatforms.length)}%</strong><small>{highConfidenceCount} / {allPlatforms.length}</small></div>
+  </section>
+
+  <section class="analytics-coverage" aria-labelledby="coverage-title">
+    <div class="section-heading">
+      <div><p class="kicker">Coverage summary</p><h2 id="coverage-title">What is documented</h2></div>
+      <p>Coverage metrics distinguish registry size from evidence completeness and known metadata.</p>
+    </div>
+    <table class="coverage-ledger">
+      <thead><tr><th>Metric</th><th>Value</th><th>Count</th><th>Interpretation</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Metric">Archive coverage</td><td data-label="Value">{pct(archiveCount, allPlatforms.length)}%</td><td data-label="Count">{archiveCount} / {allPlatforms.length}</td><td data-label="Interpretation">Platforms with an archived URL recorded.</td></tr>
+        <tr><td data-label="Metric">Known origin</td><td data-label="Value">{pct(knownOriginCount, allPlatforms.length)}%</td><td data-label="Count">{knownOriginCount} / {allPlatforms.length}</td><td data-label="Interpretation">Platforms with country or origin context.</td></tr>
+        <tr><td data-label="Metric">High confidence</td><td data-label="Value">{pct(highConfidenceCount, allPlatforms.length)}%</td><td data-label="Count">{highConfidenceCount} / {allPlatforms.length}</td><td data-label="Interpretation">Entity records currently marked high confidence.</td></tr>
+        <tr><td data-label="Metric">Outcome coverage</td><td data-label="Value">{pct(allOutcomes.length, allPlatforms.length)}%</td><td data-label="Count">{allOutcomes.length} / {allPlatforms.length}</td><td data-label="Interpretation">Platforms with a customer-outcome record.</td></tr>
+        <tr><td data-label="Metric">Terms coverage</td><td data-label="Value">{pct(allTermsRisk.length, allPlatforms.length)}%</td><td data-label="Count">{allTermsRisk.length} / {allPlatforms.length}</td><td data-label="Interpretation">Platforms with a terms-risk record.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="analytics-breakdowns" aria-labelledby="breakdowns-title">
+    <div class="section-heading">
+      <div><p class="kicker">Core analysis</p><h2 id="breakdowns-title">Registry composition</h2></div>
+      <p>Bars show each category as a share of its relevant record set. Exact counts remain visible.</p>
+    </div>
+    <div class="breakdown-grid">
+      {sections.map((section) => (
+        <section class="breakdown-block">
+          <header><h3>{section.title}</h3><p>{section.note}</p></header>
+          <div class="bar-ledger">
+            {section.rows.map(([value, count]) => (
+              <div class="bar-row">
+                <div><strong>{value}</strong><span>{count}</span></div>
+                <div class="bar-track" aria-label={`${value}: ${count} of ${section.total}`}><span style={`width:${pct(count, section.total)}%`}></span></div>
+                <small>{pct(count, section.total)}%</small>
+              </div>
+            ))}
+          </div>
+        </section>
+      ))}
     </div>
   </section>
 
-  <section class="grid two-col" style="margin-top:18px;">
-    {sections.map(([title, rows]) => (
-      <section class="panel card">
-        <h2>{title}</h2>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>Value</th><th>Count</th></tr></thead>
-            <tbody>
-              {rows.map(([value, count]) => (
-                <tr>
-                  <td data-label="Value"><span class="chip">{value}</span></td>
-                  <td data-label="Count">{count}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </section>
-    ))}
+  <section class="analytics-coverage" aria-labelledby="confidence-title">
+    <div class="section-heading">
+      <div><p class="kicker">Confidence distribution</p><h2 id="confidence-title">Entity certainty</h2></div>
+      <p>Confidence reflects the registry record, not investment quality or platform safety.</p>
+    </div>
+    <table class="coverage-ledger">
+      <thead><tr><th>Confidence</th><th>Count</th><th>Share</th></tr></thead>
+      <tbody>{confidenceCounts.map(([value, count]) => <tr><td data-label="Confidence">{value}</td><td data-label="Count">{count}</td><td data-label="Share">{pct(count, allPlatforms.length)}%</td></tr>)}</tbody>
+    </table>
   </section>
 </BaseLayout>
