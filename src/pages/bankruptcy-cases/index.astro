@@ -1,37 +1,42 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { bankruptcyPlatforms, getOutcome } from '../../lib/data';
+import { bankruptcyPlatforms, getOutcome, getEvents } from '../../lib/data';
 
 const platforms = bankruptcyPlatforms();
+const withRepayment = platforms.filter((platform) => {
+  const outcome = getOutcome(platform.id);
+  return outcome?.repayment_started_at || outcome?.repayment_completed_at;
+}).length;
+const ongoingClaims = platforms.filter((platform) => getOutcome(platform.id)?.outcome_status === 'claims_ongoing').length;
 ---
 <BaseLayout title="Bankruptcy cases | Crypto Yield Archive" description="Bankruptcy and restructuring-heavy crypto lending and yield platform records.">
-  <section class="panel hero-panel">
-    <p class="eyebrow">Bankruptcy & restructuring</p>
-    <h1>Bankruptcy cases</h1>
-    <p>Major restructuring, bankruptcy, liquidation, and creditor-process cases in crypto lending and yield history.</p>
-  </section>
+  <header class="registry-page-head">
+    <div>
+      <p class="kicker">Bankruptcy and restructuring</p>
+      <h1>Bankruptcy cases</h1>
+      <p class="lede">Major bankruptcy, restructuring, liquidation, and creditor-process cases in crypto lending and yield history.</p>
+    </div>
+    <dl class="registry-page-facts">
+      <div><dt>Cases</dt><dd>{platforms.length}</dd></div>
+      <div><dt>Claims ongoing</dt><dd>{ongoingClaims}</dd></div>
+      <div><dt>Repayment started</dt><dd>{withRepayment}</dd></div>
+      <div><dt>Case type</dt><dd>Mixed</dd></div>
+    </dl>
+  </header>
 
-  <section class="panel card" style="margin-top:18px;">
+  <section class="case-register" aria-labelledby="case-register-title">
+    <div class="registry-group-head">
+      <div><p class="kicker">Case ledger</p><h2 id="case-register-title">Recorded proceedings</h2></div>
+      <strong>{platforms.length} platforms</strong>
+    </div>
     {platforms.length ? (
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Name</th><th>Status</th><th>Failure reason</th><th>Customer outcome</th><th>Domain</th></tr></thead>
-          <tbody>
-            {platforms.map((platform) => {
-              const outcome = getOutcome(platform.id);
-              return (
-                <tr>
-                  <td class="name-cell"><a href={`/platform/${platform.slug}/`}><strong>{platform.canonical_name}</strong></a><small>{platform.slug}</small></td>
-                  <td><span class="chip">{platform.status}</span></td>
-                  <td><span class="chip">{platform.failure_reason || 'unknown'}</span></td>
-                  <td><span class="chip">{outcome?.outcome_status || 'unknown'}</span></td>
-                  <td>{platform.official_domain_original || '—'}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-      </div>
+      <div class="table-wrap"><table class="cross-ledger"><thead><tr><th>Platform</th><th>Status</th><th>Failure reason</th><th>Customer outcome</th><th>Major events</th><th>Domain</th></tr></thead><tbody>
+        {platforms.map((platform) => {
+          const outcome = getOutcome(platform.id);
+          const majorEvents = getEvents(platform.id).filter((event) => ['bankruptcy_filed','restructuring_started','restructuring_completed','operations_ended'].includes(event.event_type)).length;
+          return <tr><td data-label="Platform" class="name-cell"><a href={`/platform/${platform.slug}/`}><strong>{platform.canonical_name}</strong></a><small>{platform.country_or_origin || 'origin unknown'}</small></td><td data-label="Status">{platform.status}</td><td data-label="Failure">{platform.failure_reason || 'unknown'}</td><td data-label="Outcome">{outcome?.outcome_status || 'unknown'}</td><td data-label="Major events">{majorEvents}</td><td data-label="Domain">{platform.official_domain_original || '—'}</td></tr>;
+        })}
+      </tbody></table></div>
     ) : <p>No bankruptcy or restructuring records yet.</p>}
   </section>
 </BaseLayout>
