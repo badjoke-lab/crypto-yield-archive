@@ -21,11 +21,7 @@ const jsonLd = {
   name: platform.canonical_name,
   description: platform.summary,
   url: pageUrl,
-  isPartOf: {
-    '@type': 'WebSite',
-    name: 'Crypto Yield Archive',
-    url: 'https://cya.badjoke-lab.com/',
-  },
+  isPartOf: { '@type': 'WebSite', name: 'Crypto Yield Archive', url: 'https://cya.badjoke-lab.com/' },
   about: {
     '@type': 'Organization',
     name: platform.canonical_name,
@@ -34,14 +30,8 @@ const jsonLd = {
   },
   dateModified: platform.last_verified_at,
   keywords: [
-    'crypto lending',
-    'crypto yield',
-    'customer outcome',
-    platform.type,
-    platform.status,
-    platform.failure_reason,
-    outcome?.outcome_status,
-    terms?.terms_status,
+    'crypto lending', 'crypto yield', 'customer outcome', platform.type, platform.status,
+    platform.failure_reason, outcome?.outcome_status, terms?.terms_status,
   ].filter(Boolean).join(', '),
 };
 
@@ -90,105 +80,116 @@ const relatedPlatforms = allPlatforms
 <BaseLayout title={`${platform.canonical_name} | Crypto Yield Archive`} description={platform.summary}>
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
-  <section class="panel hero-panel">
-    <p class="eyebrow">Platform dossier</p>
-    <h1>{platform.canonical_name}</h1>
-    <p>{platform.summary}</p>
-    <div class="chip-row">
-      <span class="chip">{platform.type}</span>
-      <span class="chip">{platform.status}</span>
-      <span class="chip">{platform.failure_reason || 'unknown'}</span>
-      <span class={`chip ${platform.confidence || ''}`}>confidence: {platform.confidence || 'unknown'}</span>
+  <nav class="record-breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Registry</a><span>/</span><span>{platform.canonical_name}</span>
+  </nav>
+
+  <header class="platform-head">
+    <div>
+      <p class="kicker">{platform.type} · {platform.country_or_origin || 'Origin unknown'}</p>
+      <h1>{platform.canonical_name}</h1>
+      <p class="platform-summary">{platform.summary}</p>
+      {platform.aliases?.length ? <p class="platform-aliases">Also known as: {platform.aliases.join(', ')}</p> : null}
     </div>
+    <dl class="platform-status-grid" aria-label="Platform status summary">
+      <div><dt>Status</dt><dd>{platform.status}</dd></div>
+      <div><dt>Outcome</dt><dd>{outcome?.outcome_status || 'unknown'}</dd></div>
+      <div><dt>Confidence</dt><dd>{platform.confidence || 'unknown'}</dd></div>
+      <div><dt>Last verified</dt><dd>{platform.last_verified_at || '—'}</dd></div>
+    </dl>
+  </header>
+
+  <section class="platform-record-strip" aria-label="Platform record facts">
+    <div><span>Launch</span><strong>{platform.launch_date || '—'}</strong></div>
+    <div><span>End</span><strong>{platform.end_date || '—'}</strong></div>
+    <div><span>Failure reason</span><strong>{platform.failure_reason || '—'}</strong></div>
+    <div><span>Events</span><strong>{events.length}</strong></div>
+    <div><span>Evidence</span><strong>{evidence.length}</strong></div>
+    <div><span>Products</span><strong>{products.length}</strong></div>
   </section>
 
   {(lowEvidence.length || sourceReviewEvidence.length) ? (
-    <section class="panel card warning-card" style="margin-top:18px;">
-      <h2>Source quality notice</h2>
-      <p>This record includes evidence that needs stronger sourcing or source review. Treat those items as research leads rather than the strongest proof.</p>
-      <div class="chip-row">
-        <span class="chip low">low reliability: {lowEvidence.length}</span>
-        <span class="chip medium">source review: {sourceReviewEvidence.length}</span>
+    <aside class="source-notice" aria-labelledby="source-notice-title">
+      <div>
+        <p class="kicker">Source quality notice</p>
+        <h2 id="source-notice-title">Use weaker sources with caution.</h2>
+        <p>This record includes evidence that needs stronger sourcing or source review. Treat those items as research leads rather than the strongest proof.</p>
       </div>
-    </section>
+      <dl>
+        <div><dt>Low reliability</dt><dd>{lowEvidence.length}</dd></div>
+        <div><dt>Needs review</dt><dd>{sourceReviewEvidence.length}</dd></div>
+      </dl>
+    </aside>
   ) : null}
 
-  <section class="grid two-col" style="margin-top:18px;">
-    <div class="detail-stack">
-      <section class="panel card">
-        <h2>What happened?</h2>
-        <p>{platform.what_happened || platform.summary}</p>
+  <div class="platform-layout">
+    <article class="platform-main">
+      <section class="record-section" aria-labelledby="what-happened-title">
+        <div class="record-section-head"><p class="kicker">Case summary</p><h2 id="what-happened-title">What happened</h2></div>
+        <p class="record-prose">{platform.what_happened || platform.summary}</p>
       </section>
 
-      <section class="panel card">
-        <div class="section-heading">
-          <h2>Customer outcome</h2>
-          <span class="chip">{outcome?.outcome_status || 'unknown'}</span>
+      <section class="record-section split-record" aria-labelledby="outcome-title">
+        <div class="record-section-head"><p class="kicker">Customer result</p><h2 id="outcome-title">Customer outcome</h2></div>
+        <div class="record-section-body">
+          <p class="record-state">{outcome?.outcome_status || 'unknown'}</p>
+          {outcome ? (
+            <>
+              <p>{outcome.notes}</p>
+              <dl class="record-ledger">
+                <div><dt>Estimated recovery</dt><dd>{outcome.estimated_recovery_rate || '—'}</dd></div>
+                <div><dt>Repayment started</dt><dd>{outcome.repayment_started_at || '—'}</dd></div>
+                <div><dt>Repayment completed</dt><dd>{outcome.repayment_completed_at || '—'}</dd></div>
+                <div><dt>Confidence</dt><dd>{outcome.confidence || '—'}</dd></div>
+              </dl>
+              {outcome.claim_process_url && <p><a class="archive-link" href={outcome.claim_process_url}>Claim or case process →</a></p>}
+            </>
+          ) : <p>Customer outcome has not been researched yet.</p>}
         </div>
-        {outcome ? (
-          <>
-            <p>{outcome.notes}</p>
-            <div class="fact-grid compact-facts">
-              <div class="fact"><div class="k">Estimated recovery</div><div class="v">{outcome.estimated_recovery_rate || '—'}</div></div>
-              <div class="fact"><div class="k">Repayment started</div><div class="v">{outcome.repayment_started_at || '—'}</div></div>
-              <div class="fact"><div class="k">Repayment completed</div><div class="v">{outcome.repayment_completed_at || '—'}</div></div>
-              <div class="fact"><div class="k">Confidence</div><div class="v"><span class={`chip ${outcome.confidence || ''}`}>{outcome.confidence || '—'}</span></div></div>
-            </div>
-            {outcome.claim_process_url && <p><a class="archive-link" href={outcome.claim_process_url}>Claim / case process link</a></p>}
-          </>
-        ) : <p>Customer outcome has not been researched yet.</p>}
       </section>
 
-      <section class="panel card">
-        <div class="section-heading">
-          <h2>Terms risk</h2>
-          <span class="chip">{terms?.terms_status || 'unknown'}</span>
+      <section class="record-section split-record" aria-labelledby="terms-title">
+        <div class="record-section-head"><p class="kicker">Asset treatment</p><h2 id="terms-title">Terms risk</h2></div>
+        <div class="record-section-body">
+          <p class="record-state">{terms?.terms_status || 'unknown'}</p>
+          {terms ? (
+            <>
+              <p>{terms.notes}</p>
+              <dl class="record-ledger">
+                <div><dt>Affected product</dt><dd>{terms.affected_product || '—'}</dd></div>
+                <div><dt>Confidence</dt><dd>{terms.confidence || '—'}</dd></div>
+              </dl>
+              {terms.asset_ownership_interpretation && <p>{terms.asset_ownership_interpretation}</p>}
+              {terms.source_evidence_id && evidenceById.has(terms.source_evidence_id) && (
+                <p><a class="archive-link" href={evidenceById.get(terms.source_evidence_id).url}>Source: {evidenceById.get(terms.source_evidence_id).title}</a></p>
+              )}
+            </>
+          ) : <p>Terms risk has not been researched yet.</p>}
         </div>
-        {terms ? (
-          <>
-            <p>{terms.notes}</p>
-            <div class="fact-grid compact-facts">
-              <div class="fact"><div class="k">Affected product</div><div class="v">{terms.affected_product || '—'}</div></div>
-              <div class="fact"><div class="k">Confidence</div><div class="v"><span class={`chip ${terms.confidence || ''}`}>{terms.confidence || '—'}</span></div></div>
-            </div>
-            {terms.asset_ownership_interpretation && <p>{terms.asset_ownership_interpretation}</p>}
-            {terms.source_evidence_id && evidenceById.has(terms.source_evidence_id) && (
-              <p><a class="archive-link" href={evidenceById.get(terms.source_evidence_id).url}>Source: {evidenceById.get(terms.source_evidence_id).title}</a></p>
-            )}
-          </>
-        ) : <p>Terms risk has not been researched yet.</p>}
       </section>
 
-      <section class="panel card">
-        <h2>Uncertainty</h2>
-        <p>{platform.uncertainty_notes || 'Uncertainty notes have not been added yet.'}</p>
+      <section class="record-section split-record" aria-labelledby="uncertainty-title">
+        <div class="record-section-head"><p class="kicker">Known unknowns</p><h2 id="uncertainty-title">Uncertainty</h2></div>
+        <div class="record-section-body"><p>{platform.uncertainty_notes || 'Uncertainty notes have not been added yet.'}</p></div>
       </section>
 
-      <section class="panel card">
-        <h2>Timeline</h2>
+      <section class="record-section" aria-labelledby="timeline-title">
+        <div class="record-section-head"><p class="kicker">Chronology</p><h2 id="timeline-title">Historical record</h2></div>
         {events.length ? (
-          <div class="timeline-list">
+          <div class="platform-timeline">
             {events.map((event) => {
               const eventEvidence = evidenceByEvent.get(event.id) || [];
               return (
-                <article class="timeline-item">
-                  <div class="timeline-date">{event.event_date}</div>
+                <article class="platform-event">
+                  <time>{event.event_date}</time>
                   <div>
-                    <div class="chip-row small-gap">
-                      <span class="chip">{event.event_type}</span>
-                      {event.impact_level && <span class="chip">impact: {event.impact_level}</span>}
-                      {event.confidence && <span class={`chip ${event.confidence}`}>confidence: {event.confidence}</span>}
-                      <span class="chip">sources: {eventEvidence.length}</span>
-                    </div>
+                    <div class="event-meta"><span>{event.event_type}</span>{event.impact_level && <span>{event.impact_level} impact</span>}<span>{eventEvidence.length} sources</span></div>
                     <h3>{event.title}</h3>
                     <p>{event.description}</p>
                     {event.notes && <p class="muted detail-note">{event.notes}</p>}
                     {eventEvidence.length ? (
-                      <div class="nested-evidence">
-                        <strong>Evidence for this event</strong>
-                        {eventEvidence.map((source) => (
-                          <p><a class="archive-link" href={source.url}>{source.title}</a> · {source.publisher} · {source.reliability}</p>
-                        ))}
+                      <div class="event-sources">
+                        {eventEvidence.map((source) => <a href={source.url}>{source.publisher} — {source.title}</a>)}
                       </div>
                     ) : <p class="muted detail-note">No direct evidence linked to this event yet.</p>}
                   </div>
@@ -199,67 +200,29 @@ const relatedPlatforms = allPlatforms
         ) : <p>No events yet.</p>}
       </section>
 
-      <section class="panel card">
-        <h2>Evidence dossier</h2>
-        <p class="muted detail-note">Reliability labels describe source strength for this registry entry. Use the filters to inspect claim type, reliability, source type, and event-linked evidence.</p>
-        <div class="controls" aria-label="Evidence filters">
-          <label class="control-field">
-            <span>Claim</span>
-            <select id="evidenceClaimFilter">
-              <option value="">All claims</option>
-              {claimOptions.map((claim) => <option value={claim}>{claim}</option>)}
-            </select>
-          </label>
-          <label class="control-field">
-            <span>Reliability</span>
-            <select id="evidenceReliabilityFilter">
-              <option value="">All reliability</option>
-              {reliabilityOptions.map((reliability) => <option value={reliability}>{reliability}</option>)}
-            </select>
-          </label>
-          <label class="control-field">
-            <span>Source type</span>
-            <select id="evidenceSourceTypeFilter">
-              <option value="">All source types</option>
-              {sourceTypeOptions.map((sourceType) => <option value={sourceType}>{sourceType}</option>)}
-            </select>
-          </label>
-          <label class="control-field">
-            <span>Event link</span>
-            <select id="evidenceEventLinkedFilter">
-              <option value="">All evidence</option>
-              <option value="linked">Event-linked only</option>
-              <option value="unlinked">Unlinked only</option>
-            </select>
-          </label>
+      <section class="record-section" aria-labelledby="evidence-title">
+        <div class="record-section-head"><p class="kicker">Source record</p><h2 id="evidence-title">Evidence dossier</h2></div>
+        <p class="muted detail-note">Filter by claim, reliability, source type, and whether evidence is linked to a specific event.</p>
+        <div class="controls evidence-controls" aria-label="Evidence filters">
+          <label class="control-field"><span>Claim</span><select id="evidenceClaimFilter"><option value="">All claims</option>{claimOptions.map((claim) => <option value={claim}>{claim}</option>)}</select></label>
+          <label class="control-field"><span>Reliability</span><select id="evidenceReliabilityFilter"><option value="">All reliability</option>{reliabilityOptions.map((reliability) => <option value={reliability}>{reliability}</option>)}</select></label>
+          <label class="control-field"><span>Source type</span><select id="evidenceSourceTypeFilter"><option value="">All source types</option>{sourceTypeOptions.map((sourceType) => <option value={sourceType}>{sourceType}</option>)}</select></label>
+          <label class="control-field"><span>Event link</span><select id="evidenceEventLinkedFilter"><option value="">All evidence</option><option value="linked">Event-linked only</option><option value="unlinked">Unlinked only</option></select></label>
           <button id="evidenceClearFilters" class="ghost-button" type="button">Clear</button>
         </div>
-        <div class="registry-count" aria-live="polite">
-          Showing <strong id="evidenceVisibleCount">{evidence.length}</strong> of <strong>{evidence.length}</strong> evidence records
-        </div>
+        <div class="registry-count" aria-live="polite">Showing <strong id="evidenceVisibleCount">{evidence.length}</strong> of <strong>{evidence.length}</strong> evidence records</div>
         {evidenceByClaim.length ? (
-          <div class="evidence-claim-groups">
+          <div class="evidence-register">
             {evidenceByClaim.map(([claim, sources]) => (
-              <section class="claim-group">
-                <div class="section-heading"><h3>{claim}</h3><span class="chip">{sources.length} sources</span></div>
-                <div class="evidence-list">
+              <section class="evidence-claim-section">
+                <header><h3>{claim}</h3><span>{sources.length} sources</span></header>
+                <div>
                   {sources.map((source) => (
-                    <article
-                      class={`evidence-item evidence-${source.reliability || 'unknown'}`}
-                      data-evidence-item="true"
-                      data-claim={source.claim_scope || 'other'}
-                      data-reliability={source.reliability || 'unknown'}
-                      data-source-type={source.source_type || 'other'}
-                      data-event-linked={source.event_id ? 'linked' : 'unlinked'}
-                    >
-                      <div class="chip-row small-gap">
-                        <span class="chip">{source.source_type}</span>
-                        <span class={`chip ${source.reliability || ''}`}>reliability: {source.reliability}</span>
-                        {source.event_id && <span class="chip">event linked</span>}
-                      </div>
-                      <h3><a class="archive-link" href={source.url}>{source.title}</a></h3>
+                    <article class={`evidence-row evidence-${source.reliability || 'unknown'}`} data-evidence-item="true" data-claim={source.claim_scope || 'other'} data-reliability={source.reliability || 'unknown'} data-source-type={source.source_type || 'other'} data-event-linked={source.event_id ? 'linked' : 'unlinked'}>
+                      <div class="evidence-row-meta"><span>{source.source_type}</span><span>{source.reliability}</span>{source.event_id && <span>event linked</span>}</div>
+                      <h3><a href={source.url}>{source.title}</a></h3>
                       <p>{source.publisher}{source.published_at ? ` · ${source.published_at}` : ''}</p>
-                      {source.archived_url && <p><a class="archive-link" href={source.archived_url}>Archived version</a></p>}
+                      <div class="evidence-row-links">{source.archived_url && <a href={source.archived_url}>Archived version</a>}</div>
                       {source.notes && <p class="muted detail-note">{source.notes}</p>}
                     </article>
                   ))}
@@ -272,9 +235,8 @@ const relatedPlatforms = allPlatforms
       </section>
 
       {relatedPlatforms.length ? (
-        <section class="panel card">
-          <h2>Related platforms</h2>
-          <p class="muted detail-note">Related by shared status, type, failure reason, outcome, or terms-risk classification.</p>
+        <section class="record-section" aria-labelledby="related-title">
+          <div class="record-section-head"><p class="kicker">Comparative records</p><h2 id="related-title">Related platforms</h2></div>
           <div class="related-grid">
             {relatedPlatforms.map(({ platform: related, score }) => (
               <a class="related-card" href={`/platform/${related.slug}/`}>
@@ -286,39 +248,41 @@ const relatedPlatforms = allPlatforms
           </div>
         </section>
       ) : null}
-    </div>
+    </article>
 
-    <aside class="panel card sticky-side">
-      <h2>Facts</h2>
-      <div class="fact-grid">
-        <div class="fact"><div class="k">Launch</div><div class="v">{platform.launch_date || '—'}</div></div>
-        <div class="fact"><div class="k">End</div><div class="v">{platform.end_date || '—'}</div></div>
-        <div class="fact"><div class="k">Origin</div><div class="v">{platform.country_or_origin || '—'}</div></div>
-        <div class="fact"><div class="k">Confidence</div><div class="v"><span class={`chip ${platform.confidence || ''}`}>{platform.confidence || '—'}</span></div></div>
-        <div class="fact"><div class="k">Domain</div><div class="v">{platform.official_domain_original || '—'}</div></div>
-        <div class="fact"><div class="k">URL status</div><div class="v">{platform.official_url_status || '—'}</div></div>
-      </div>
+    <aside class="platform-sidebar">
+      <section>
+        <p class="kicker">Platform facts</p>
+        <dl class="sidebar-ledger">
+          <div><dt>Launch</dt><dd>{platform.launch_date || '—'}</dd></div>
+          <div><dt>End</dt><dd>{platform.end_date || '—'}</dd></div>
+          <div><dt>Origin</dt><dd>{platform.country_or_origin || '—'}</dd></div>
+          <div><dt>Confidence</dt><dd>{platform.confidence || '—'}</dd></div>
+          <div><dt>Domain</dt><dd>{platform.official_domain_original || '—'}</dd></div>
+          <div><dt>URL status</dt><dd>{platform.official_url_status || '—'}</dd></div>
+        </dl>
+      </section>
 
-      <h3 style="margin-top:18px;">URL history</h3>
-      <div class="side-links">
-        {platform.official_url_original && <a class="archive-link" href={platform.official_url_original}>Original URL</a>}
-        {platform.archived_url && <a class="archive-link" href={platform.archived_url}>Web Archive</a>}
-      </div>
-
-      <h3 style="margin-top:18px;">Products</h3>
-      {products.length ? (
-        <div class="product-list">
-          {products.map((product) => (
-            <div class="fact">
-              <div class="k">{product.product_type}</div>
-              <div class="v"><strong>{product.product_name}</strong></div>
-              {product.risk_notes && <p>{product.risk_notes}</p>}
-            </div>
-          ))}
+      <section>
+        <p class="kicker">URL history</p>
+        <div class="sidebar-links">
+          {platform.official_url_original && <a href={platform.official_url_original}>Original URL →</a>}
+          {platform.archived_url && <a href={platform.archived_url}>Web Archive →</a>}
         </div>
-      ) : <p>No product profiles yet.</p>}
+      </section>
+
+      <section>
+        <p class="kicker">Products</p>
+        {products.length ? (
+          <div class="sidebar-products">
+            {products.map((product) => (
+              <article><span>{product.product_type}</span><strong>{product.product_name}</strong>{product.risk_notes && <p>{product.risk_notes}</p>}</article>
+            ))}
+          </div>
+        ) : <p>No product profiles yet.</p>}
+      </section>
     </aside>
-  </section>
+  </div>
 
   <script is:inline>
     const evidenceClaimFilter = document.querySelector('#evidenceClaimFilter');
@@ -336,17 +300,11 @@ const relatedPlatforms = allPlatforms
       const sourceType = evidenceSourceTypeFilter.value;
       const eventLinked = evidenceEventLinkedFilter.value;
       let shown = 0;
-
       for (const item of evidenceItems) {
-        const matchesClaim = !claim || item.dataset.claim === claim;
-        const matchesReliability = !reliability || item.dataset.reliability === reliability;
-        const matchesSourceType = !sourceType || item.dataset.sourceType === sourceType;
-        const matchesEventLinked = !eventLinked || item.dataset.eventLinked === eventLinked;
-        const isVisible = matchesClaim && matchesReliability && matchesSourceType && matchesEventLinked;
+        const isVisible = (!claim || item.dataset.claim === claim) && (!reliability || item.dataset.reliability === reliability) && (!sourceType || item.dataset.sourceType === sourceType) && (!eventLinked || item.dataset.eventLinked === eventLinked);
         item.hidden = !isVisible;
         if (isVisible) shown += 1;
       }
-
       evidenceVisibleCount.textContent = String(shown);
       evidenceEmptyState.hidden = shown !== 0;
     }
