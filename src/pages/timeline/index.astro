@@ -3,103 +3,84 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { allEvents, allPlatforms } from '../../lib/data';
 
 const platformById = new Map(allPlatforms.map((platform) => [platform.id, platform]));
-const events = [...allEvents].sort((a, b) => String(a.event_date || '').localeCompare(String(b.event_date || '')));
+const events = [...allEvents].sort((a, b) => String(b.event_date || '').localeCompare(String(a.event_date || '')));
 const criticalEvents = events.filter((event) => event.impact_level === 'critical');
 const platformOptions = [...allPlatforms].sort((a, b) => a.canonical_name.localeCompare(b.canonical_name));
 const eventTypeOptions = Array.from(new Set(events.map((event) => event.event_type).filter(Boolean))).sort();
 const impactOptions = Array.from(new Set(events.map((event) => event.impact_level).filter(Boolean))).sort();
 const confidenceOptions = Array.from(new Set(events.map((event) => event.confidence).filter(Boolean))).sort();
-const yearOptions = Array.from(new Set(events.map((event) => String(event.event_date || '').slice(0, 4)).filter(Boolean))).sort();
+const yearOptions = Array.from(new Set(events.map((event) => String(event.event_date || '').slice(0, 4)).filter(Boolean))).sort().reverse();
+const firstEventDate = [...events].sort((a, b) => String(a.event_date || '').localeCompare(String(b.event_date || '')))[0]?.event_date || '—';
+const latestEventDate = events[0]?.event_date || '—';
+const years = yearOptions.map((year) => ({ year, events: events.filter((event) => String(event.event_date || '').startsWith(year)) }));
 ---
 <BaseLayout title="Timeline | Crypto Yield Archive" description="Chronological event timeline across crypto lending and yield platforms.">
-  <section class="panel hero-panel">
-    <p class="eyebrow">Historical timeline</p>
-    <h1>Timeline</h1>
-    <p>A chronological view of launches, suspensions, bankruptcy filings, restructuring events, and customer repayment milestones.</p>
-    <div class="summary-grid">
-      <div class="stat"><div class="label">Events</div><div class="value">{events.length}</div></div>
-      <div class="stat"><div class="label">Critical</div><div class="value">{criticalEvents.length}</div></div>
-      <div class="stat"><div class="label">Platforms</div><div class="value">{allPlatforms.length}</div></div>
+  <header class="timeline-page-head">
+    <div>
+      <p class="kicker">Historical event archive</p>
+      <h1>Timeline</h1>
+      <p class="lede">A chronological record of launches, withdrawal suspensions, bankruptcy filings, restructurings, operational endings, and customer repayment milestones.</p>
     </div>
+    <dl class="timeline-page-facts">
+      <div><dt>Events</dt><dd>{events.length}</dd></div>
+      <div><dt>Critical</dt><dd>{criticalEvents.length}</dd></div>
+      <div><dt>Platforms</dt><dd>{allPlatforms.length}</dd></div>
+      <div><dt>Years covered</dt><dd>{yearOptions.length}</dd></div>
+    </dl>
+  </header>
+
+  <section class="timeline-range" aria-label="Timeline date range">
+    <div><span>First recorded event</span><strong>{firstEventDate}</strong></div>
+    <div><span>Latest recorded event</span><strong>{latestEventDate}</strong></div>
+    <div><span>Default order</span><strong>Newest first</strong></div>
+    <div><span>Coverage</span><strong>Platform-level events</strong></div>
   </section>
 
-  <section class="panel registry-panel" style="margin-top:18px;">
+  <section class="timeline-controls" aria-labelledby="timeline-controls-title">
+    <div class="section-heading">
+      <div><p class="kicker">Archive controls</p><h2 id="timeline-controls-title">Filter the chronology</h2></div>
+      <p>Filter by platform, event type, impact, confidence, or year without leaving the page.</p>
+    </div>
     <div class="controls" aria-label="Timeline filters">
-      <label class="control-field">
-        <span>Platform</span>
-        <select id="timelinePlatformFilter">
-          <option value="">All platforms</option>
-          {platformOptions.map((platform) => <option value={platform.id}>{platform.canonical_name}</option>)}
-        </select>
-      </label>
-      <label class="control-field">
-        <span>Event type</span>
-        <select id="timelineEventTypeFilter">
-          <option value="">All event types</option>
-          {eventTypeOptions.map((eventType) => <option value={eventType}>{eventType}</option>)}
-        </select>
-      </label>
-      <label class="control-field">
-        <span>Impact</span>
-        <select id="timelineImpactFilter">
-          <option value="">All impact levels</option>
-          {impactOptions.map((impact) => <option value={impact}>{impact}</option>)}
-        </select>
-      </label>
-      <label class="control-field">
-        <span>Confidence</span>
-        <select id="timelineConfidenceFilter">
-          <option value="">All confidence</option>
-          {confidenceOptions.map((confidence) => <option value={confidence}>{confidence}</option>)}
-        </select>
-      </label>
-      <label class="control-field">
-        <span>Year</span>
-        <select id="timelineYearFilter">
-          <option value="">All years</option>
-          {yearOptions.map((year) => <option value={year}>{year}</option>)}
-        </select>
-      </label>
+      <label class="control-field"><span>Platform</span><select id="timelinePlatformFilter"><option value="">All platforms</option>{platformOptions.map((platform) => <option value={platform.id}>{platform.canonical_name}</option>)}</select></label>
+      <label class="control-field"><span>Event type</span><select id="timelineEventTypeFilter"><option value="">All event types</option>{eventTypeOptions.map((eventType) => <option value={eventType}>{eventType}</option>)}</select></label>
+      <label class="control-field"><span>Impact</span><select id="timelineImpactFilter"><option value="">All impact levels</option>{impactOptions.map((impact) => <option value={impact}>{impact}</option>)}</select></label>
+      <label class="control-field"><span>Confidence</span><select id="timelineConfidenceFilter"><option value="">All confidence</option>{confidenceOptions.map((confidence) => <option value={confidence}>{confidence}</option>)}</select></label>
+      <label class="control-field"><span>Year</span><select id="timelineYearFilter"><option value="">All years</option>{yearOptions.map((year) => <option value={year}>{year}</option>)}</select></label>
       <button id="timelineClearFilters" class="ghost-button" type="button">Clear</button>
     </div>
-    <div class="registry-count" aria-live="polite">
-      Showing <strong id="timelineVisibleCount">{events.length}</strong> of <strong>{events.length}</strong> events
-    </div>
+    <div class="registry-count" aria-live="polite">Showing <strong id="timelineVisibleCount">{events.length}</strong> of <strong>{events.length}</strong> events</div>
   </section>
 
-  <section class="panel card" style="margin-top:18px;">
-    <div class="timeline-list" id="timelineList">
-      {events.map((event) => {
-        const platform = platformById.get(event.platform_id);
-        const year = String(event.event_date || '').slice(0, 4);
-        return (
-          <article
-            class="timeline-item"
-            data-timeline-event="true"
-            data-platform={event.platform_id}
-            data-event-type={event.event_type || ''}
-            data-impact={event.impact_level || ''}
-            data-confidence={event.confidence || ''}
-            data-year={year}
-          >
-            <div class="timeline-date">{event.event_date}</div>
-            <div>
-              <div class="chip-row small-gap">
-                <span class="chip">{event.event_type}</span>
-                {event.impact_level && <span class="chip">impact: {event.impact_level}</span>}
-                {event.confidence && <span class={`chip ${event.confidence}`}>confidence: {event.confidence}</span>}
-              </div>
-              <h3>{event.title}</h3>
-              <p><a class="archive-link" href={platform ? `/platform/${platform.slug}/` : '#'}>{platform?.canonical_name || event.platform_id}</a></p>
-              <p>{event.description}</p>
-              {event.notes && <p class="muted detail-note">{event.notes}</p>}
-            </div>
-          </article>
-        );
-      })}
-    </div>
-    <p id="timelineEmptyState" class="empty-state" hidden>No timeline events match the current filters.</p>
-  </section>
+  <nav class="timeline-year-index" aria-label="Timeline years">
+    {years.map(({ year, events: yearEvents }) => <a href={`#year-${year}`}><span>{year}</span><strong>{yearEvents.length}</strong></a>)}
+  </nav>
+
+  <div id="timelineList" class="timeline-archive">
+    {years.map(({ year, events: yearEvents }) => (
+      <section id={`year-${year}`} class="timeline-year-section" data-timeline-year-section={year}>
+        <header><div><p class="kicker">Calendar year</p><h2>{year}</h2></div><strong data-year-count>{yearEvents.length} events</strong></header>
+        <div>
+          {yearEvents.map((event) => {
+            const platform = platformById.get(event.platform_id);
+            return (
+              <article class="timeline-record" data-timeline-event="true" data-platform={event.platform_id} data-event-type={event.event_type || ''} data-impact={event.impact_level || ''} data-confidence={event.confidence || ''} data-year={year}>
+                <time>{event.event_date}</time>
+                <div class="timeline-record-main">
+                  <div class="event-meta"><span>{event.event_type}</span>{event.impact_level && <span>{event.impact_level} impact</span>}{event.confidence && <span>{event.confidence} confidence</span>}</div>
+                  <h3>{event.title}</h3>
+                  <p><a class="timeline-platform-link" href={platform ? `/platform/${platform.slug}/` : '#'}>{platform?.canonical_name || event.platform_id}</a></p>
+                  <p>{event.description}</p>
+                  {event.notes && <p class="muted detail-note">{event.notes}</p>}
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </section>
+    ))}
+  </div>
+  <p id="timelineEmptyState" class="empty-state" hidden>No timeline events match the current filters.</p>
 
   <script is:inline>
     const platformFilter = document.querySelector('#timelinePlatformFilter');
@@ -111,6 +92,7 @@ const yearOptions = Array.from(new Set(events.map((event) => String(event.event_
     const visibleCount = document.querySelector('#timelineVisibleCount');
     const emptyState = document.querySelector('#timelineEmptyState');
     const timelineRows = Array.from(document.querySelectorAll('[data-timeline-event="true"]'));
+    const yearSections = Array.from(document.querySelectorAll('[data-timeline-year-section]'));
 
     function applyTimelineFilters() {
       const platform = platformFilter.value;
@@ -121,14 +103,16 @@ const yearOptions = Array.from(new Set(events.map((event) => String(event.event_
       let shown = 0;
 
       for (const row of timelineRows) {
-        const matchesPlatform = !platform || row.dataset.platform === platform;
-        const matchesEventType = !eventType || row.dataset.eventType === eventType;
-        const matchesImpact = !impact || row.dataset.impact === impact;
-        const matchesConfidence = !confidence || row.dataset.confidence === confidence;
-        const matchesYear = !year || row.dataset.year === year;
-        const isVisible = matchesPlatform && matchesEventType && matchesImpact && matchesConfidence && matchesYear;
+        const isVisible = (!platform || row.dataset.platform === platform) && (!eventType || row.dataset.eventType === eventType) && (!impact || row.dataset.impact === impact) && (!confidence || row.dataset.confidence === confidence) && (!year || row.dataset.year === year);
         row.hidden = !isVisible;
         if (isVisible) shown += 1;
+      }
+
+      for (const section of yearSections) {
+        const visibleRows = Array.from(section.querySelectorAll('[data-timeline-event="true"]')).filter((row) => !row.hidden);
+        section.hidden = visibleRows.length === 0;
+        const count = section.querySelector('[data-year-count]');
+        if (count) count.textContent = `${visibleRows.length} ${visibleRows.length === 1 ? 'event' : 'events'}`;
       }
 
       visibleCount.textContent = String(shown);
