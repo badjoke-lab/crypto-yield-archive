@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/timeline.css';
 import { allEvents, allPlatforms } from '../../lib/data';
 
 const platformById = new Map(allPlatforms.map((platform) => [platform.id, platform]));
