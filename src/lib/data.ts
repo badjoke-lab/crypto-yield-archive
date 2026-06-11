@@ -63,6 +63,71 @@ export const allOutcomes = [...outcomes, ...outcomesBatch04, ...outcomesBatch05,
 export const allProducts = [...products, ...productsBatch04, ...productsBatch05, ...productsBatch06, ...productsBatch07, ...productsBatch08, ...productsBatch09, ...productsBatch10] as Product[];
 export const allTermsRisk = [...termsRisk, ...termsRiskBatch04, ...termsRiskBatch05, ...termsRiskBatch06, ...termsRiskBatch07, ...termsRiskBatch08, ...termsRiskBatch09, ...termsRiskBatch10] as TermsRisk[];
 
+const PUBLIC_LABELS: Record<string, string> = {
+  active: 'Active',
+  limited: 'Limited',
+  withdrawals_suspended: 'Withdrawals suspended',
+  restructuring: 'Restructuring',
+  bankrupt: 'Bankrupt',
+  acquired: 'Acquired',
+  rebranded: 'Rebranded',
+  operations_ended: 'Operations ended',
+  inactive: 'Inactive',
+  unknown: 'Unknown',
+  cefi_lending: 'CeFi lending',
+  crypto_interest_account: 'Crypto interest account',
+  centralized_yield: 'Centralized yield platform',
+  borrow_lend_platform: 'Borrow/lend platform',
+  institutional_lending: 'Institutional lending',
+  earn_product: 'Earn product',
+  full_repayment: 'Full repayment',
+  partial_repayment: 'Partial repayment',
+  claims_ongoing: 'Claims ongoing',
+  no_recovery: 'No recovery',
+  not_applicable: 'Not applicable',
+  unknown_restructuring_dependent: 'Unknown; restructuring dependent',
+  insolvency: 'Insolvency',
+  liquidity_crisis: 'Liquidity crisis',
+  counterparty_exposure: 'Counterparty exposure',
+  misconduct: 'Misconduct',
+  regulatory_action: 'Regulatory action',
+  voluntary_shutdown: 'Voluntary shutdown',
+  customer_owned: 'Customer-owned',
+  platform_owned: 'Platform-owned',
+  varies_by_product: 'Varies by product',
+  unclear: 'Unclear',
+  launched: 'Launch',
+  product_launch: 'Product launch',
+  withdrawals_suspended_event: 'Withdrawals suspended',
+  bankruptcy_filed: 'Bankruptcy filing',
+  restructuring_started: 'Restructuring started',
+  restructuring_completed: 'Restructuring completed',
+  operations_ended_event: 'Operations ended',
+  repayment_started: 'Repayment started',
+  repayment_completed: 'Repayment completed',
+  other: 'Other',
+  high: 'High',
+  medium: 'Medium',
+  low: 'Low',
+  critical: 'Critical',
+  news_article: 'News article',
+  official_statement: 'Official statement',
+  court_document: 'Court document',
+  regulatory_notice: 'Regulatory notice',
+  archived_page: 'Archived page',
+  entity: 'Entity',
+  event: 'Event',
+  outcome: 'Outcome',
+  terms: 'Terms',
+  url_history: 'URL history',
+};
+
+export function label(value: unknown) {
+  if (value === null || value === undefined || value === '') return '—';
+  const key = String(value);
+  return PUBLIC_LABELS[key] || key.replace(/_/g, ' ').replace(/\b\w/g, (char) => char.toUpperCase());
+}
+
 export function getPlatformBySlug(slug: string) {
   return allPlatforms.find((platform) => platform.slug === slug);
 }

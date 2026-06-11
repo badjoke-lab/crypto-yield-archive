@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { allPlatforms, getEvents, getEvidence, getOutcome, getProducts, getTermsRisk } from '../../lib/data';
+import { allPlatforms, getEvents, getEvidence, getOutcome, getProducts, getTermsRisk, label } from '../../lib/data';
 
 export function getStaticPaths() {
   return allPlatforms.map((platform) => ({ params: { slug: platform.slug }, props: { platform } }));
@@ -30,8 +30,8 @@ const jsonLd = {
   },
   dateModified: platform.last_verified_at,
   keywords: [
-    'crypto lending', 'crypto yield', 'customer outcome', platform.type, platform.status,
-    platform.failure_reason, outcome?.outcome_status, terms?.terms_status,
+    'crypto lending', 'crypto yield', 'customer outcome', label(platform.type), label(platform.status),
+    label(platform.failure_reason), label(outcome?.outcome_status), label(terms?.terms_status),
   ].filter(Boolean).join(', '),
 };
 
@@ -86,15 +86,15 @@ const relatedPlatforms = allPlatforms
 
   <header class="platform-head">
     <div>
-      <p class="kicker">{platform.type} · {platform.country_or_origin || 'Origin unknown'}</p>
+      <p class="kicker">{label(platform.type)} · {platform.country_or_origin || 'Origin unknown'}</p>
       <h1>{platform.canonical_name}</h1>
       <p class="platform-summary">{platform.summary}</p>
       {platform.aliases?.length ? <p class="platform-aliases">Also known as: {platform.aliases.join(', ')}</p> : null}
     </div>
     <dl class="platform-status-grid" aria-label="Platform status summary">
-      <div><dt>Status</dt><dd>{platform.status}</dd></div>
-      <div><dt>Outcome</dt><dd>{outcome?.outcome_status || 'unknown'}</dd></div>
-      <div><dt>Confidence</dt><dd>{platform.confidence || 'unknown'}</dd></div>
+      <div><dt>Status</dt><dd>{label(platform.status)}</dd></div>
+      <div><dt>Outcome</dt><dd>{label(outcome?.outcome_status || 'unknown')}</dd></div>
+      <div><dt>Confidence</dt><dd>{label(platform.confidence || 'unknown')}</dd></div>
       <div><dt>Last verified</dt><dd>{platform.last_verified_at || '—'}</dd></div>
     </dl>
   </header>
@@ -102,7 +102,7 @@ const relatedPlatforms = allPlatforms
   <section class="platform-record-strip" aria-label="Platform record facts">
     <div><span>Launch</span><strong>{platform.launch_date || '—'}</strong></div>
     <div><span>End</span><strong>{platform.end_date || '—'}</strong></div>
-    <div><span>Failure reason</span><strong>{platform.failure_reason || '—'}</strong></div>
+    <div><span>Failure reason</span><strong>{label(platform.failure_reason)}</strong></div>
     <div><span>Events</span><strong>{events.length}</strong></div>
     <div><span>Evidence</span><strong>{evidence.length}</strong></div>
     <div><span>Products</span><strong>{products.length}</strong></div>
@@ -132,15 +132,15 @@ const relatedPlatforms = allPlatforms
       <section class="record-section split-record" aria-labelledby="outcome-title">
         <div class="record-section-head"><p class="kicker">Customer result</p><h2 id="outcome-title">Customer outcome</h2></div>
         <div class="record-section-body">
-          <p class="record-state">{outcome?.outcome_status || 'unknown'}</p>
+          <p class="record-state">{label(outcome?.outcome_status || 'unknown')}</p>
           {outcome ? (
             <>
               <p>{outcome.notes}</p>
               <dl class="record-ledger">
-                <div><dt>Estimated recovery</dt><dd>{outcome.estimated_recovery_rate || '—'}</dd></div>
+                <div><dt>Estimated recovery</dt><dd>{label(outcome.estimated_recovery_rate)}</dd></div>
                 <div><dt>Repayment started</dt><dd>{outcome.repayment_started_at || '—'}</dd></div>
                 <div><dt>Repayment completed</dt><dd>{outcome.repayment_completed_at || '—'}</dd></div>
-                <div><dt>Confidence</dt><dd>{outcome.confidence || '—'}</dd></div>
+                <div><dt>Confidence</dt><dd>{label(outcome.confidence)}</dd></div>
               </dl>
               {outcome.claim_process_url && <p><a class="archive-link" href={outcome.claim_process_url}>Claim or case process →</a></p>}
             </>
@@ -151,13 +151,13 @@ const relatedPlatforms = allPlatforms
       <section class="record-section split-record" aria-labelledby="terms-title">
         <div class="record-section-head"><p class="kicker">Asset treatment</p><h2 id="terms-title">Terms risk</h2></div>
         <div class="record-section-body">
-          <p class="record-state">{terms?.terms_status || 'unknown'}</p>
+          <p class="record-state">{label(terms?.terms_status || 'unknown')}</p>
           {terms ? (
             <>
               <p>{terms.notes}</p>
               <dl class="record-ledger">
                 <div><dt>Affected product</dt><dd>{terms.affected_product || '—'}</dd></div>
-                <div><dt>Confidence</dt><dd>{terms.confidence || '—'}</dd></div>
+                <div><dt>Confidence</dt><dd>{label(terms.confidence)}</dd></div>
               </dl>
               {terms.asset_ownership_interpretation && <p>{terms.asset_ownership_interpretation}</p>}
               {terms.source_evidence_id && evidenceById.has(terms.source_evidence_id) && (
@@ -183,7 +183,7 @@ const relatedPlatforms = allPlatforms
                 <article class="platform-event">
                   <time>{event.event_date}</time>
                   <div>
-                    <div class="event-meta"><span>{event.event_type}</span>{event.impact_level && <span>{event.impact_level} impact</span>}<span>{eventEvidence.length} sources</span></div>
+                    <div class="event-meta"><span>{label(event.event_type)}</span>{event.impact_level && <span>{label(event.impact_level)} impact</span>}<span>{eventEvidence.length} sources</span></div>
                     <h3>{event.title}</h3>
                     <p>{event.description}</p>
                     {event.notes && <p class="muted detail-note">{event.notes}</p>}
@@ -204,9 +204,9 @@ const relatedPlatforms = allPlatforms
         <div class="record-section-head"><p class="kicker">Source record</p><h2 id="evidence-title">Evidence dossier</h2></div>
         <p class="muted detail-note">Filter by claim, reliability, source type, and whether evidence is linked to a specific event.</p>
         <div class="controls evidence-controls" aria-label="Evidence filters">
-          <label class="control-field"><span>Claim</span><select id="evidenceClaimFilter"><option value="">All claims</option>{claimOptions.map((claim) => <option value={claim}>{claim}</option>)}</select></label>
-          <label class="control-field"><span>Reliability</span><select id="evidenceReliabilityFilter"><option value="">All reliability</option>{reliabilityOptions.map((reliability) => <option value={reliability}>{reliability}</option>)}</select></label>
-          <label class="control-field"><span>Source type</span><select id="evidenceSourceTypeFilter"><option value="">All source types</option>{sourceTypeOptions.map((sourceType) => <option value={sourceType}>{sourceType}</option>)}</select></label>
+          <label class="control-field"><span>Claim</span><select id="evidenceClaimFilter"><option value="">All claims</option>{claimOptions.map((claim) => <option value={claim}>{label(claim)}</option>)}</select></label>
+          <label class="control-field"><span>Reliability</span><select id="evidenceReliabilityFilter"><option value="">All reliability</option>{reliabilityOptions.map((reliability) => <option value={reliability}>{label(reliability)}</option>)}</select></label>
+          <label class="control-field"><span>Source type</span><select id="evidenceSourceTypeFilter"><option value="">All source types</option>{sourceTypeOptions.map((sourceType) => <option value={sourceType}>{label(sourceType)}</option>)}</select></label>
           <label class="control-field"><span>Event link</span><select id="evidenceEventLinkedFilter"><option value="">All evidence</option><option value="linked">Event-linked only</option><option value="unlinked">Unlinked only</option></select></label>
           <button id="evidenceClearFilters" class="ghost-button" type="button">Clear</button>
         </div>
@@ -215,11 +215,11 @@ const relatedPlatforms = allPlatforms
           <div class="evidence-register">
             {evidenceByClaim.map(([claim, sources]) => (
               <section class="evidence-claim-section">
-                <header><h3>{claim}</h3><span>{sources.length} sources</span></header>
+                <header><h3>{label(claim)}</h3><span>{sources.length} sources</span></header>
                 <div>
                   {sources.map((source) => (
                     <article class={`evidence-row evidence-${source.reliability || 'unknown'}`} data-evidence-item="true" data-claim={source.claim_scope || 'other'} data-reliability={source.reliability || 'unknown'} data-source-type={source.source_type || 'other'} data-event-linked={source.event_id ? 'linked' : 'unlinked'}>
-                      <div class="evidence-row-meta"><span>{source.source_type}</span><span>{source.reliability}</span>{source.event_id && <span>event linked</span>}</div>
+                      <div class="evidence-row-meta"><span>{label(source.source_type)}</span><span>{label(source.reliability)}</span>{source.event_id && <span>Event linked</span>}</div>
                       <h3><a href={source.url}>{source.title}</a></h3>
                       <p>{source.publisher}{source.published_at ? ` · ${source.published_at}` : ''}</p>
                       <div class="evidence-row-links">{source.archived_url && <a href={source.archived_url}>Archived version</a>}</div>
@@ -241,7 +241,7 @@ const relatedPlatforms = allPlatforms
             {relatedPlatforms.map(({ platform: related, score }) => (
               <a class="related-card" href={`/platform/${related.slug}/`}>
                 <strong>{related.canonical_name}</strong>
-                <span>{related.status} · {related.failure_reason || 'unknown'}</span>
+                <span>{label(related.status)} · {label(related.failure_reason)}</span>
                 <small>relation score: {score}</small>
               </a>
             ))}
@@ -257,9 +257,9 @@ const relatedPlatforms = allPlatforms
           <div><dt>Launch</dt><dd>{platform.launch_date || '—'}</dd></div>
           <div><dt>End</dt><dd>{platform.end_date || '—'}</dd></div>
           <div><dt>Origin</dt><dd>{platform.country_or_origin || '—'}</dd></div>
-          <div><dt>Confidence</dt><dd>{platform.confidence || '—'}</dd></div>
+          <div><dt>Confidence</dt><dd>{label(platform.confidence)}</dd></div>
           <div><dt>Domain</dt><dd>{platform.official_domain_original || '—'}</dd></div>
-          <div><dt>URL status</dt><dd>{platform.official_url_status || '—'}</dd></div>
+          <div><dt>URL status</dt><dd>{label(platform.official_url_status)}</dd></div>
         </dl>
       </section>
 
@@ -276,7 +276,7 @@ const relatedPlatforms = allPlatforms
         {products.length ? (
           <div class="sidebar-products">
             {products.map((product) => (
-              <article><span>{product.product_type}</span><strong>{product.product_name}</strong>{product.risk_notes && <p>{product.risk_notes}</p>}</article>
+              <article><span>{label(product.product_type)}</span><strong>{product.product_name}</strong>{product.risk_notes && <p>{product.risk_notes}</p>}</article>
             ))}
           </div>
         ) : <p>No product profiles yet.</p>}

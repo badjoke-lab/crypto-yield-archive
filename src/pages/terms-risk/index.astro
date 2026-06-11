@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { allTermsRisk, allPlatforms } from '../../lib/data';
+import { allTermsRisk, allPlatforms, label } from '../../lib/data';
 
 const platformById = new Map(allPlatforms.map((platform) => [platform.id, platform]));
 const groups = Array.from(new Set(allTermsRisk.map((term) => term.terms_status || 'unknown')))
@@ -24,17 +24,17 @@ const unknown = allTermsRisk.filter((term) => term.terms_status === 'unknown').l
   </header>
 
   <nav class="registry-index" aria-label="Terms risk groups">
-    {groups.map(({ status, records }, index) => <a href={`#terms-${status}`}><span>{String(index + 1).padStart(2, '0')}</span><strong>{status}</strong><em>{records.length}</em></a>)}
+    {groups.map(({ status, records }, index) => <a href={`#terms-${status}`}><span>{String(index + 1).padStart(2, '0')}</span><strong>{label(status)}</strong><em>{records.length}</em></a>)}
   </nav>
 
   <div class="registry-groups">
     {groups.map(({ status, records }) => (
       <section id={`terms-${status}`} class="registry-group">
-        <header class="registry-group-head"><div><p class="kicker">Terms class</p><h2>{status}</h2></div><strong>{records.length} records</strong></header>
+        <header class="registry-group-head"><div><p class="kicker">Terms class</p><h2>{label(status)}</h2></div><strong>{records.length} records</strong></header>
         <div class="table-wrap"><table class="cross-ledger"><thead><tr><th>Platform</th><th>Affected product</th><th>Confidence</th><th>Interpretation</th><th>Notes</th></tr></thead><tbody>
           {records.map((term) => {
             const platform = platformById.get(term.platform_id);
-            return <tr><td data-label="Platform" class="name-cell"><a href={platform ? `/platform/${platform.slug}/` : '#'}><strong>{platform?.canonical_name || term.platform_id}</strong></a><small>{platform?.type || 'unknown type'} · {platform?.status || 'unknown status'}</small></td><td data-label="Affected product">{term.affected_product || '—'}</td><td data-label="Confidence">{term.confidence || 'unknown'}</td><td data-label="Interpretation">{term.asset_ownership_interpretation || '—'}</td><td data-label="Notes">{term.notes}</td></tr>;
+            return <tr><td data-label="Platform" class="name-cell"><a href={platform ? `/platform/${platform.slug}/` : '#'}><strong>{platform?.canonical_name || term.platform_id}</strong></a><small>{label(platform?.type || 'unknown')} · {label(platform?.status || 'unknown')}</small></td><td data-label="Affected product">{term.affected_product || '—'}</td><td data-label="Confidence">{label(term.confidence || 'unknown')}</td><td data-label="Interpretation">{term.asset_ownership_interpretation || '—'}</td><td data-label="Notes">{term.notes}</td></tr>;
           })}
         </tbody></table></div>
       </section>

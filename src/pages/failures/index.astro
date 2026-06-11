@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { allPlatforms, getOutcome } from '../../lib/data';
+import { allPlatforms, getOutcome, label } from '../../lib/data';
 
 const groups = Array.from(new Set(allPlatforms.map((platform) => platform.failure_reason || 'unknown')))
   .sort()
@@ -24,17 +24,17 @@ const unknown = allPlatforms.length - assigned;
   </header>
 
   <nav class="registry-index" aria-label="Failure reason groups">
-    {groups.map(({ reason, platforms }, index) => <a href={`#failure-${reason}`}><span>{String(index + 1).padStart(2, '0')}</span><strong>{reason}</strong><em>{platforms.length}</em></a>)}
+    {groups.map(({ reason, platforms }, index) => <a href={`#failure-${reason}`}><span>{String(index + 1).padStart(2, '0')}</span><strong>{label(reason)}</strong><em>{platforms.length}</em></a>)}
   </nav>
 
   <div class="registry-groups">
     {groups.map(({ reason, platforms }) => (
       <section id={`failure-${reason}`} class="registry-group">
-        <header class="registry-group-head"><div><p class="kicker">Failure class</p><h2>{reason}</h2></div><strong>{platforms.length} platforms</strong></header>
+        <header class="registry-group-head"><div><p class="kicker">Failure class</p><h2>{label(reason)}</h2></div><strong>{platforms.length} platforms</strong></header>
         <div class="table-wrap"><table class="cross-ledger"><thead><tr><th>Platform</th><th>Status</th><th>Outcome</th><th>Confidence</th><th>Origin</th></tr></thead><tbody>
           {platforms.map((platform) => {
             const outcome = getOutcome(platform.id);
-            return <tr><td data-label="Platform" class="name-cell"><a href={`/platform/${platform.slug}/`}><strong>{platform.canonical_name}</strong></a><small>{platform.type} · {platform.official_domain_original || 'no domain'}</small></td><td data-label="Status">{platform.status}</td><td data-label="Outcome">{outcome?.outcome_status || 'unknown'}</td><td data-label="Confidence">{platform.confidence || 'unknown'}</td><td data-label="Origin">{platform.country_or_origin || '—'}</td></tr>;
+            return <tr><td data-label="Platform" class="name-cell"><a href={`/platform/${platform.slug}/`}><strong>{platform.canonical_name}</strong></a><small>{label(platform.type)} · {platform.official_domain_original || 'no domain'}</small></td><td data-label="Status">{label(platform.status)}</td><td data-label="Outcome">{label(outcome?.outcome_status || 'unknown')}</td><td data-label="Confidence">{label(platform.confidence || 'unknown')}</td><td data-label="Origin">{platform.country_or_origin || '—'}</td></tr>;
           })}
         </tbody></table></div>
       </section>

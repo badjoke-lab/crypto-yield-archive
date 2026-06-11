@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { allPlatforms, allEvents, allEvidence, allOutcomes, getOutcome, getTermsRisk } from '../lib/data';
+import { allPlatforms, allEvents, allEvidence, allOutcomes, getOutcome, getTermsRisk, label } from '../lib/data';
 
 const statusOptions = Array.from(new Set(allPlatforms.map((platform) => platform.status))).sort();
 const outcomeOptions = Array.from(new Set(allPlatforms.map((platform) => getOutcome(platform.id)?.outcome_status || 'unknown'))).sort();
@@ -14,7 +14,7 @@ const latestVerified = allPlatforms
   .at(-1) || '—';
 
 const entryCards = [
-  { href: '/outcomes/', number: '01', title: 'Customer outcomes', text: 'Repayment, partial recovery, ongoing claims, unresolved balances, and non-applicable active comparators.' },
+  { href: '/outcomes/', number: '01', title: 'Customer outcomes', text: 'Repayment, partial recovery, ongoing claims, unresolved balances, and active comparator records.' },
   { href: '/failures/', number: '02', title: 'Failure reasons', text: 'Liquidity crises, insolvency, counterparty exposure, misconduct, regulation, and other historical drivers.' },
   { href: '/terms-risk/', number: '03', title: 'Terms risk', text: 'How platform terms and legal processes affected asset-treatment uncertainty.' },
   { href: '/timeline/', number: '04', title: 'Historical timeline', text: 'Launches, withdrawal halts, bankruptcy filings, restructurings, and repayment milestones.' },
@@ -29,7 +29,7 @@ function years(platform) {
 }
 
 function platformMeta(platform) {
-  return [platform.type, platform.country_or_origin].filter(Boolean).join(' · ');
+  return [label(platform.type), platform.country_or_origin].filter(Boolean).join(' · ');
 }
 
 function searchText(platform) {
@@ -39,11 +39,16 @@ function searchText(platform) {
     platform.canonical_name,
     platform.slug,
     platform.type,
+    label(platform.type),
     platform.status,
+    label(platform.status),
     platform.failure_reason,
+    label(platform.failure_reason),
     platform.official_domain_original,
     outcome?.outcome_status,
+    label(outcome?.outcome_status),
     terms?.terms_status,
+    label(terms?.terms_status),
     ...(platform.aliases || []),
   ].filter(Boolean).join(' ').toLowerCase();
 }
@@ -105,19 +110,19 @@ function searchText(platform) {
         </label>
         <label class="control-field">
           <span>Status</span>
-          <select id="statusFilter"><option value="">All status</option>{statusOptions.map((status) => <option value={status}>{status}</option>)}</select>
+          <select id="statusFilter"><option value="">All status</option>{statusOptions.map((status) => <option value={status}>{label(status)}</option>)}</select>
         </label>
         <label class="control-field">
           <span>Outcome</span>
-          <select id="outcomeFilter"><option value="">All outcomes</option>{outcomeOptions.map((outcome) => <option value={outcome}>{outcome}</option>)}</select>
+          <select id="outcomeFilter"><option value="">All outcomes</option>{outcomeOptions.map((outcome) => <option value={outcome}>{label(outcome)}</option>)}</select>
         </label>
         <label class="control-field">
           <span>Failure</span>
-          <select id="failureFilter"><option value="">All failure reasons</option>{failureOptions.map((failure) => <option value={failure}>{failure}</option>)}</select>
+          <select id="failureFilter"><option value="">All failure reasons</option>{failureOptions.map((failure) => <option value={failure}>{label(failure)}</option>)}</select>
         </label>
         <label class="control-field">
           <span>Terms</span>
-          <select id="termsFilter"><option value="">All terms status</option>{termsOptions.map((term) => <option value={term}>{term}</option>)}</select>
+          <select id="termsFilter"><option value="">All terms status</option>{termsOptions.map((term) => <option value={term}>{label(term)}</option>)}</select>
         </label>
         <label class="control-field">
           <span>Sort</span>
@@ -171,10 +176,10 @@ function searchText(platform) {
                   data-confidence={platform.confidence || 'low'}
                 >
                   <td class="name-cell" data-label="Platform"><a href={`/platform/${platform.slug}/`}><strong>{platform.canonical_name}</strong></a><small>{platformMeta(platform)}</small></td>
-                  <td data-label="Status"><span class="chip">{platform.status}</span></td>
-                  <td data-label="Outcome"><span class="chip">{outcome?.outcome_status || 'unknown'}</span></td>
-                  <td data-label="Failure"><span class="chip">{platform.failure_reason || '—'}</span></td>
-                  <td data-label="Terms"><span class="chip">{terms?.terms_status || 'unknown'}</span></td>
+                  <td data-label="Status"><span class="chip">{label(platform.status)}</span></td>
+                  <td data-label="Outcome"><span class="chip">{label(outcome?.outcome_status || 'unknown')}</span></td>
+                  <td data-label="Failure"><span class="chip">{label(platform.failure_reason)}</span></td>
+                  <td data-label="Terms"><span class="chip">{label(terms?.terms_status || 'unknown')}</span></td>
                   <td data-label="Years"><strong>{years(platform)}</strong></td>
                   <td data-label="Evidence / links" class="links-cell">
                     <strong>{evidenceCount} sources</strong>
