@@ -6,6 +6,7 @@ import platformsBatch07 from '../../data/platforms-batch-07.json';
 import platformsBatch08 from '../../data/platforms-batch-08.json';
 import platformsBatch09 from '../../data/platforms-batch-09.json';
 import platformsBatch10 from '../../data/platforms-batch-10.json';
+import platformsBatch11 from '../../data/platforms-batch-11.json';
 import eventsBase from '../../data/events.json';
 import eventsBatch03 from '../../data/events-batch-03.json';
 import eventsBatch04 from '../../data/events-batch-04.json';
@@ -15,6 +16,7 @@ import eventsBatch07 from '../../data/events-batch-07.json';
 import eventsBatch08 from '../../data/events-batch-08.json';
 import eventsBatch09 from '../../data/events-batch-09.json';
 import eventsBatch10 from '../../data/events-batch-10.json';
+import eventsBatch11 from '../../data/events-batch-11.json';
 import evidenceBase from '../../data/evidence.json';
 import evidenceBatch03 from '../../data/evidence-batch-03.json';
 import evidenceBatch04 from '../../data/evidence-batch-04.json';
@@ -24,6 +26,7 @@ import evidenceBatch07 from '../../data/evidence-batch-07.json';
 import evidenceBatch08 from '../../data/evidence-batch-08.json';
 import evidenceBatch09 from '../../data/evidence-batch-09.json';
 import evidenceBatch10 from '../../data/evidence-batch-10.json';
+import evidenceBatch11 from '../../data/evidence-batch-11.json';
 import outcomes from '../../data/outcomes.json';
 import outcomesBatch04 from '../../data/outcomes-batch-04.json';
 import outcomesBatch05 from '../../data/outcomes-batch-05.json';
@@ -32,6 +35,7 @@ import outcomesBatch07 from '../../data/outcomes-batch-07.json';
 import outcomesBatch08 from '../../data/outcomes-batch-08.json';
 import outcomesBatch09 from '../../data/outcomes-batch-09.json';
 import outcomesBatch10 from '../../data/outcomes-batch-10.json';
+import outcomesBatch11 from '../../data/outcomes-batch-11.json';
 import products from '../../data/products.json';
 import productsBatch04 from '../../data/products-batch-04.json';
 import productsBatch05 from '../../data/products-batch-05.json';
@@ -40,6 +44,7 @@ import productsBatch07 from '../../data/products-batch-07.json';
 import productsBatch08 from '../../data/products-batch-08.json';
 import productsBatch09 from '../../data/products-batch-09.json';
 import productsBatch10 from '../../data/products-batch-10.json';
+import productsBatch11 from '../../data/products-batch-11.json';
 import termsRisk from '../../data/terms-risk.json';
 import termsRiskBatch04 from '../../data/terms-risk-batch-04.json';
 import termsRiskBatch05 from '../../data/terms-risk-batch-05.json';
@@ -48,6 +53,7 @@ import termsRiskBatch07 from '../../data/terms-risk-batch-07.json';
 import termsRiskBatch08 from '../../data/terms-risk-batch-08.json';
 import termsRiskBatch09 from '../../data/terms-risk-batch-09.json';
 import termsRiskBatch10 from '../../data/terms-risk-batch-10.json';
+import termsRiskBatch11 from '../../data/terms-risk-batch-11.json';
 
 export type Platform = Record<string, any>;
 export type EventRecord = Record<string, any>;
@@ -56,12 +62,12 @@ export type Outcome = Record<string, any>;
 export type Product = Record<string, any>;
 export type TermsRisk = Record<string, any>;
 
-export const allPlatforms = [...platforms, ...platformsBatch04, ...platformsBatch05, ...platformsBatch06, ...platformsBatch07, ...platformsBatch08, ...platformsBatch09, ...platformsBatch10] as Platform[];
-export const allEvents = [...eventsBase, ...eventsBatch03, ...eventsBatch04, ...eventsBatch05, ...eventsBatch06, ...eventsBatch07, ...eventsBatch08, ...eventsBatch09, ...eventsBatch10] as EventRecord[];
-export const allEvidence = [...evidenceBase, ...evidenceBatch03, ...evidenceBatch04, ...evidenceBatch05, ...evidenceBatch06, ...evidenceBatch07, ...evidenceBatch08, ...evidenceBatch09, ...evidenceBatch10] as EvidenceRecord[];
-export const allOutcomes = [...outcomes, ...outcomesBatch04, ...outcomesBatch05, ...outcomesBatch06, ...outcomesBatch07, ...outcomesBatch08, ...outcomesBatch09, ...outcomesBatch10] as Outcome[];
-export const allProducts = [...products, ...productsBatch04, ...productsBatch05, ...productsBatch06, ...productsBatch07, ...productsBatch08, ...productsBatch09, ...productsBatch10] as Product[];
-export const allTermsRisk = [...termsRisk, ...termsRiskBatch04, ...termsRiskBatch05, ...termsRiskBatch06, ...termsRiskBatch07, ...termsRiskBatch08, ...termsRiskBatch09, ...termsRiskBatch10] as TermsRisk[];
+export const allPlatforms = [...platforms, ...platformsBatch04, ...platformsBatch05, ...platformsBatch06, ...platformsBatch07, ...platformsBatch08, ...platformsBatch09, ...platformsBatch10, ...platformsBatch11] as Platform[];
+export const allEvents = [...eventsBase, ...eventsBatch03, ...eventsBatch04, ...eventsBatch05, ...eventsBatch06, ...eventsBatch07, ...eventsBatch08, ...eventsBatch09, ...eventsBatch10, ...eventsBatch11] as EventRecord[];
+export const allEvidence = [...evidenceBase, ...evidenceBatch03, ...evidenceBatch04, ...evidenceBatch05, ...evidenceBatch06, ...evidenceBatch07, ...evidenceBatch08, ...evidenceBatch09, ...evidenceBatch10, ...evidenceBatch11] as EvidenceRecord[];
+export const allOutcomes = [...outcomes, ...outcomesBatch04, ...outcomesBatch05, ...outcomesBatch06, ...outcomesBatch07, ...outcomesBatch08, ...outcomesBatch09, ...outcomesBatch10, ...outcomesBatch11] as Outcome[];
+export const allProducts = [...products, ...productsBatch04, ...productsBatch05, ...productsBatch06, ...productsBatch07, ...productsBatch08, ...productsBatch09, ...productsBatch10, ...productsBatch11] as Product[];
+export const allTermsRisk = [...termsRisk, ...termsRiskBatch04, ...termsRiskBatch05, ...termsRiskBatch06, ...termsRiskBatch07, ...termsRiskBatch08, ...termsRiskBatch09, ...termsRiskBatch10, ...termsRiskBatch11] as TermsRisk[];
 
 const PUBLIC_LABELS: Record<string, string> = {
   active: 'Active',
@@ -118,50 +124,41 @@ const PUBLIC_LABELS: Record<string, string> = {
   entity: 'Entity',
   event: 'Event',
   outcome: 'Outcome',
-  terms: 'Terms',
-  url_history: 'URL history',
 };
 
-export function label(value: unknown) {
-  if (value === null || value === undefined || value === '') return '—';
-  const key = String(value);
-  return PUBLIC_LABELS[key] || key.replace(/_/g, ' ').replace(/\b\w/g, (char) => char.toUpperCase());
+export function labelFor(value?: string | null): string {
+  if (!value) return 'Unknown';
+  return PUBLIC_LABELS[value] || value.replace(/_/g, ' ');
 }
 
-export function getPlatformBySlug(slug: string) {
-  return allPlatforms.find((platform) => platform.slug === slug);
+export function eventsForPlatform(platformId: string): EventRecord[] {
+  return allEvents.filter((event) => event.platform_id === platformId).sort((a, b) => String(a.event_date || '').localeCompare(String(b.event_date || '')));
 }
 
-export function getOutcome(platformId: string) {
-  return allOutcomes.find((item) => item.platform_id === platformId);
+export function evidenceForPlatform(platformId: string): EvidenceRecord[] {
+  return allEvidence.filter((source) => source.platform_id === platformId);
 }
 
-export function getTermsRisk(platformId: string) {
-  return allTermsRisk.find((item) => item.platform_id === platformId);
+export function evidenceForEvent(eventId: string): EvidenceRecord[] {
+  return allEvidence.filter((source) => source.event_id === eventId);
 }
 
-export function getEvents(platformId: string) {
-  return allEvents
-    .filter((item) => item.platform_id === platformId)
-    .sort((a, b) => String(a.event_date).localeCompare(String(b.event_date)));
+export function outcomeForPlatform(platformId: string): Outcome | undefined {
+  return allOutcomes.find((outcome) => outcome.platform_id === platformId);
 }
 
-export function getEvidence(platformId: string) {
-  return allEvidence.filter((item) => item.platform_id === platformId);
+export function productsForPlatform(platformId: string): Product[] {
+  return allProducts.filter((product) => product.platform_id === platformId);
 }
 
-export function getProducts(platformId: string) {
-  return allProducts.filter((item) => item.platform_id === platformId);
+export function termsRiskForPlatform(platformId: string): TermsRisk | undefined {
+  return allTermsRisk.find((term) => term.platform_id === platformId);
 }
 
-export function groupsByOutcome() {
-  const groups = ['full_repayment', 'partial_repayment', 'claims_ongoing', 'no_recovery', 'unknown', 'not_applicable'];
-  return groups.map((group) => ({
-    group,
-    platforms: allPlatforms.filter((platform) => getOutcome(platform.id)?.outcome_status === group || (!getOutcome(platform.id) && group === 'unknown')),
-  }));
+export function platformUrl(platform: Platform): string {
+  return `/platform/${platform.slug}/`;
 }
 
-export function bankruptcyPlatforms() {
-  return allPlatforms.filter((platform) => ['bankrupt', 'restructuring'].includes(platform.status));
+export function year(value?: string | null): string {
+  return value ? String(value).slice(0, 4) : '—';
 }
