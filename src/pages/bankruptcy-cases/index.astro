@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { bankruptcyPlatforms, getOutcome, getEvents } from '../../lib/data';
+import { bankruptcyPlatforms, getOutcome, getEvents, label } from '../../lib/data';
 
 const platforms = bankruptcyPlatforms();
 const withRepayment = platforms.filter((platform) => {
@@ -34,7 +34,7 @@ const ongoingClaims = platforms.filter((platform) => getOutcome(platform.id)?.ou
         {platforms.map((platform) => {
           const outcome = getOutcome(platform.id);
           const majorEvents = getEvents(platform.id).filter((event) => ['bankruptcy_filed','restructuring_started','restructuring_completed','operations_ended'].includes(event.event_type)).length;
-          return <tr><td data-label="Platform" class="name-cell"><a href={`/platform/${platform.slug}/`}><strong>{platform.canonical_name}</strong></a><small>{platform.country_or_origin || 'origin unknown'}</small></td><td data-label="Status">{platform.status}</td><td data-label="Failure">{platform.failure_reason || 'unknown'}</td><td data-label="Outcome">{outcome?.outcome_status || 'unknown'}</td><td data-label="Major events">{majorEvents}</td><td data-label="Domain">{platform.official_domain_original || '—'}</td></tr>;
+          return <tr><td data-label="Platform" class="name-cell"><a href={`/platform/${platform.slug}/`}><strong>{platform.canonical_name}</strong></a><small>{platform.country_or_origin || 'origin unknown'}</small></td><td data-label="Status">{label(platform.status)}</td><td data-label="Failure">{label(platform.failure_reason || 'unknown')}</td><td data-label="Outcome">{label(outcome?.outcome_status || 'unknown')}</td><td data-label="Major events">{majorEvents}</td><td data-label="Domain">{platform.official_domain_original || '—'}</td></tr>;
         })}
       </tbody></table></div>
     ) : <p>No bankruptcy or restructuring records yet.</p>}
