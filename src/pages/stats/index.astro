@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import '../../styles/analytics.css';
-import { allPlatforms, allEvents, allEvidence, allOutcomes, allProducts, allTermsRisk } from '../../lib/data';
+import { allPlatforms, allEvents, allEvidence, allOutcomes, allProducts, allTermsRisk, label } from '../../lib/data';
 
 type AnyRecord = Record<string, unknown>;
 type CountRow = [string, number];
@@ -12,7 +12,7 @@ function countBy(records: AnyRecord[], field: string): CountRow[] {
     const value = String(record[field] || 'unknown');
     map.set(value, (map.get(value) || 0) + 1);
   }
-  return Array.from(map.entries()).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+  return Array.from(map.entries()).sort((a, b) => b[1] - a[1] || label(a[0]).localeCompare(label(b[0])));
 }
 
 function pct(count: number, total: number) {
@@ -37,7 +37,7 @@ const sections: { title: string; rows: CountRow[]; total: number; note: string }
   { title: 'Platform status', rows: statusCounts, total: allPlatforms.length, note: 'Current registry state assigned to each platform.' },
   { title: 'Platform type', rows: typeCounts, total: allPlatforms.length, note: 'Service category used by the current entity model.' },
   { title: 'Failure reason', rows: failureCounts, total: allPlatforms.length, note: 'Primary historical driver, including unknown values.' },
-  { title: 'Customer outcome', rows: outcomeCounts, total: allOutcomes.length, note: 'Outcome records across repayment, claims, and non-applicable cases.' },
+  { title: 'Customer outcome', rows: outcomeCounts, total: allOutcomes.length, note: 'Outcome records across repayment, claims, and active comparator cases.' },
   { title: 'Terms risk', rows: termsCounts, total: allTermsRisk.length, note: 'How deposited assets and contractual treatment are currently classified.' },
   { title: 'Evidence reliability', rows: evidenceReliabilityCounts, total: allEvidence.length, note: 'Source-strength labels assigned to evidence records.' },
   { title: 'Event type', rows: eventTypeCounts, total: allEvents.length, note: 'Recorded historical event categories.' },
@@ -99,8 +99,8 @@ const sections: { title: string; rows: CountRow[]; total: number; note: string }
           <div class="bar-ledger">
             {section.rows.map(([value, count]) => (
               <div class="bar-row">
-                <div><strong>{value}</strong><span>{count}</span></div>
-                <div class="bar-track" aria-label={`${value}: ${count} of ${section.total}`}><span style={`width:${pct(count, section.total)}%`}></span></div>
+                <div><strong>{label(value)}</strong><span>{count}</span></div>
+                <div class="bar-track" aria-label={`${label(value)}: ${count} of ${section.total}`}><span style={`width:${pct(count, section.total)}%`}></span></div>
                 <small>{pct(count, section.total)}%</small>
               </div>
             ))}
@@ -117,7 +117,7 @@ const sections: { title: string; rows: CountRow[]; total: number; note: string }
     </div>
     <table class="coverage-ledger">
       <thead><tr><th>Confidence</th><th>Count</th><th>Share</th></tr></thead>
-      <tbody>{confidenceCounts.map(([value, count]) => <tr><td data-label="Confidence">{value}</td><td data-label="Count">{count}</td><td data-label="Share">{pct(count, allPlatforms.length)}%</td></tr>)}</tbody>
+      <tbody>{confidenceCounts.map(([value, count]) => <tr><td data-label="Confidence">{label(value)}</td><td data-label="Count">{count}</td><td data-label="Share">{pct(count, allPlatforms.length)}%</td></tr>)}</tbody>
     </table>
   </section>
 </BaseLayout>
