@@ -1,0 +1,3 @@
+[
+  {"platform_id":"cya_plat_000021","terms_status":"varies_by_product","asset_ownership_interpretation":"Anchor users interacted with a DeFi protocol and were exposed primarily to UST market, protocol, and smart-contract risks rather than a centralized custodian balance-sheet claim.","affected_product":"Anchor UST deposit yield product","source_evidence_id":"cya_src_b11_0001","notes":"Classified separately from CeFi custodial lender terms because the central failure mode was TerraUSD depeg and ecosystem collapse, not a platform bankruptcy claims process.","confidence":"medium"}
+]
