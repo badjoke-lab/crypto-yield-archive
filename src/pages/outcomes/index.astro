@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { groupsByOutcome, allPlatforms, getOutcome } from '../../lib/data';
+import { groupsByOutcome, allPlatforms, getOutcome, label } from '../../lib/data';
 
 const groups = groupsByOutcome();
 const assigned = allPlatforms.filter((platform) => getOutcome(platform.id)).length;
@@ -22,18 +22,18 @@ const unknown = groups.find(({ group }) => group === 'unknown')?.platforms.lengt
   </header>
 
   <nav class="registry-index" aria-label="Outcome groups">
-    {groups.map(({ group, platforms }, index) => <a href={`#outcome-${group}`}><span>{String(index + 1).padStart(2, '0')}</span><strong>{group}</strong><em>{platforms.length}</em></a>)}
+    {groups.map(({ group, platforms }, index) => <a href={`#outcome-${group}`}><span>{String(index + 1).padStart(2, '0')}</span><strong>{label(group)}</strong><em>{platforms.length}</em></a>)}
   </nav>
 
   <div class="registry-groups">
     {groups.map(({ group, platforms }) => (
       <section id={`outcome-${group}`} class="registry-group">
-        <header class="registry-group-head"><div><p class="kicker">Outcome class</p><h2>{group}</h2></div><strong>{platforms.length} platforms</strong></header>
+        <header class="registry-group-head"><div><p class="kicker">Outcome class</p><h2>{label(group)}</h2></div><strong>{platforms.length} platforms</strong></header>
         {platforms.length ? (
           <div class="table-wrap"><table class="cross-ledger"><thead><tr><th>Platform</th><th>Status</th><th>Failure reason</th><th>Confidence</th><th>Domain</th></tr></thead><tbody>
             {platforms.map((platform) => {
               const outcome = getOutcome(platform.id);
-              return <tr><td data-label="Platform" class="name-cell"><a href={`/platform/${platform.slug}/`}><strong>{platform.canonical_name}</strong></a><small>{platform.type} · {platform.country_or_origin || 'origin unknown'}</small></td><td data-label="Status">{platform.status}</td><td data-label="Failure">{platform.failure_reason || '—'}</td><td data-label="Confidence">{outcome?.confidence || platform.confidence || 'unknown'}</td><td data-label="Domain">{platform.official_domain_original || '—'}</td></tr>;
+              return <tr><td data-label="Platform" class="name-cell"><a href={`/platform/${platform.slug}/`}><strong>{platform.canonical_name}</strong></a><small>{label(platform.type)} · {platform.country_or_origin || 'origin unknown'}</small></td><td data-label="Status">{label(platform.status)}</td><td data-label="Failure">{label(platform.failure_reason)}</td><td data-label="Confidence">{label(outcome?.confidence || platform.confidence || 'unknown')}</td><td data-label="Domain">{platform.official_domain_original || '—'}</td></tr>;
             })}
           </tbody></table></div>
         ) : <p>No records yet.</p>}
