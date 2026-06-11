@@ -10,8 +10,9 @@
     "preview": "astro preview",
     "validate": "node scripts/validate-data.mjs",
     "quality": "node scripts/data-quality-report.mjs",
+    "check:build-output": "node scripts/check-build-output.mjs",
     "check:production": "node scripts/check-production.mjs",
-    "test": "npm run validate && npm run quality && npm run build"
+    "test": "npm run validate && npm run quality && npm run build && npm run check:build-output"
   },
   "dependencies": {
     "astro": "^5.0.0"
