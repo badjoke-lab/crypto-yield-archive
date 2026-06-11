@@ -1,0 +1,3 @@
+[
+  {"platform_id":"cya_plat_000021","product_type":"defi_yield_aggregator","product_name":"Anchor UST deposit yield product","custody_model":"non-custodial Terra smart-contract protocol exposure","yield_source":"UST lending and protocol subsidy model within the Terra ecosystem","risk_notes":"The product depended on UST maintaining its intended dollar peg and on Terra ecosystem incentives. The May 2022 UST/LUNA collapse made the advertised stablecoin-yield premise fail."}
+]
