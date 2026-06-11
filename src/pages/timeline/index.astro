@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import '../../styles/timeline.css';
-import { allEvents, allPlatforms } from '../../lib/data';
+import { allEvents, allPlatforms, label } from '../../lib/data';
 
 const platformById = new Map(allPlatforms.map((platform) => [platform.id, platform]));
 const events = [...allEvents].sort((a, b) => String(b.event_date || '').localeCompare(String(a.event_date || '')));
@@ -44,9 +44,9 @@ const years = yearOptions.map((year) => ({ year, events: events.filter((event) =
     </div>
     <div class="controls" aria-label="Timeline filters">
       <label class="control-field"><span>Platform</span><select id="timelinePlatformFilter"><option value="">All platforms</option>{platformOptions.map((platform) => <option value={platform.id}>{platform.canonical_name}</option>)}</select></label>
-      <label class="control-field"><span>Event type</span><select id="timelineEventTypeFilter"><option value="">All event types</option>{eventTypeOptions.map((eventType) => <option value={eventType}>{eventType}</option>)}</select></label>
-      <label class="control-field"><span>Impact</span><select id="timelineImpactFilter"><option value="">All impact levels</option>{impactOptions.map((impact) => <option value={impact}>{impact}</option>)}</select></label>
-      <label class="control-field"><span>Confidence</span><select id="timelineConfidenceFilter"><option value="">All confidence</option>{confidenceOptions.map((confidence) => <option value={confidence}>{confidence}</option>)}</select></label>
+      <label class="control-field"><span>Event type</span><select id="timelineEventTypeFilter"><option value="">All event types</option>{eventTypeOptions.map((eventType) => <option value={eventType}>{label(eventType)}</option>)}</select></label>
+      <label class="control-field"><span>Impact</span><select id="timelineImpactFilter"><option value="">All impact levels</option>{impactOptions.map((impact) => <option value={impact}>{label(impact)}</option>)}</select></label>
+      <label class="control-field"><span>Confidence</span><select id="timelineConfidenceFilter"><option value="">All confidence</option>{confidenceOptions.map((confidence) => <option value={confidence}>{label(confidence)}</option>)}</select></label>
       <label class="control-field"><span>Year</span><select id="timelineYearFilter"><option value="">All years</option>{yearOptions.map((year) => <option value={year}>{year}</option>)}</select></label>
       <button id="timelineClearFilters" class="ghost-button" type="button">Clear</button>
     </div>
@@ -68,7 +68,7 @@ const years = yearOptions.map((year) => ({ year, events: events.filter((event) =
               <article class="timeline-record" data-timeline-event="true" data-platform={event.platform_id} data-event-type={event.event_type || ''} data-impact={event.impact_level || ''} data-confidence={event.confidence || ''} data-year={year}>
                 <time>{event.event_date}</time>
                 <div class="timeline-record-main">
-                  <div class="event-meta"><span>{event.event_type}</span>{event.impact_level && <span>{event.impact_level} impact</span>}{event.confidence && <span>{event.confidence} confidence</span>}</div>
+                  <div class="event-meta"><span>{label(event.event_type)}</span>{event.impact_level && <span>{label(event.impact_level)} impact</span>}{event.confidence && <span>{label(event.confidence)} confidence</span>}</div>
                   <h3>{event.title}</h3>
                   <p><a class="timeline-platform-link" href={platform ? `/platform/${platform.slug}/` : '#'}>{platform?.canonical_name || event.platform_id}</a></p>
                   <p>{event.description}</p>
