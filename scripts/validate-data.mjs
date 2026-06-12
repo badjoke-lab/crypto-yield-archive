@@ -80,7 +80,8 @@ function urlField(record, field, group) {
   const value = record[field];
   if (!value) return;
   if (!/^https?:\/\//.test(value)) fail(`Invalid URL ${field}=${value} in ${label(record, group)}`);
-}\n
+}
+
 function checkHighReliabilitySourceType(record) {
   if (record.reliability !== 'high') return;
   const highAllowed = new Set(['official_statement', 'court_document', 'bankruptcy_document', 'regulatory_notice', 'archive_capture']);
