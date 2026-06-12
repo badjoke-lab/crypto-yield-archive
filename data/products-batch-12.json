@@ -1,0 +1,3 @@
+[
+  {"platform_id":"cya_plat_000022","product_type":"centralized_yield","product_name":"Midas yield accounts and managed strategies","custody_model":"platform-managed centralized yield account with CeDeFi strategy exposure","yield_source":"managed crypto yield strategies including DeFi portfolio exposure","risk_notes":"The product exposed users to platform strategy risk, market-contagion risk, DeFi portfolio losses, and wind-down balance-adjustment risk rather than a simple fully collateralized savings account."}
+]
