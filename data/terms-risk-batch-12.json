@@ -1,0 +1,3 @@
+[
+  {"platform_id":"cya_plat_000022","terms_status":"platform_owned","asset_ownership_interpretation":"Midas users relied on platform-managed yield accounts and were exposed to platform balance-sheet, strategy, and wind-down treatment rather than holding assets in a segregated, user-controlled smart-contract position.","affected_product":"Midas yield accounts and managed strategies","source_evidence_id":"cya_src_b12_0001","notes":"Classified as platform-owned / platform-managed exposure for registry purposes because the closure involved centralized account balance adjustments and strategy losses communicated by the platform.","confidence":"medium"}
+]
