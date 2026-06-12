@@ -1,0 +1,3 @@
+[
+  {"platform_id":"cya_plat_000023","outcome_status":"partial_repayment","estimated_recovery_rate":"varies by account type and estate distribution; not a single universal percentage","repayment_started_at":"2023-10-24","repayment_completed_at":null,"repayment_method":"bankruptcy plan distributions and post-emergence wind-down recoveries","claim_process_url":"https://restructuring.ra.kroll.com/blockfi/","affected_products":["BlockFi Interest Account","BlockFi lending and yield-related customer claims"],"notes":"BlockFi recoveries depend on account category, wallet treatment, estate asset recoveries, and settlements including FTX-related claims. The registry classifies the outcome as partial repayment rather than full recovery.","confidence":"high"}
+]
