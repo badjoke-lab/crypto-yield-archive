@@ -170,3 +170,15 @@ export function platformUrl(platform: Platform): string {
 export function year(value?: string | null): string {
   return value ? String(value).slice(0, 4) : '—';
 }
+
+export const label = labelFor;
+export const getEvents = eventsForPlatform;
+export const getOutcome = outcomeForPlatform;
+
+export function bankruptcyPlatforms(): Platform[] {
+  const caseEventTypes = new Set(['bankruptcy_filed', 'restructuring_started', 'restructuring_completed']);
+  return allPlatforms.filter((platform) =>
+    ['bankrupt', 'restructuring'].includes(platform.status) ||
+    eventsForPlatform(platform.id).some((event) => caseEventTypes.has(event.event_type)),
+  );
+}
