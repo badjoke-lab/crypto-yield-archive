@@ -1,69 +1,115 @@
 const DEFAULT_BASE_URL = 'https://cya.badjoke-lab.com';
-const EXPECTED_DESIGN_GENERATION = 'editorial_registry_2026_06_10';
-const EXPECTED_MARKER = 'cya_editorial_registry_redesign_complete';
+const DEFAULT_ATTEMPTS = 12;
+const DEFAULT_DELAY_MS = 15000;
 
 const baseUrl = (process.env.CYA_BASE_URL || DEFAULT_BASE_URL).replace(/\/$/, '');
-
-async function readJson(pathname) {
-  const url = `${baseUrl}${pathname}`;
-  const response = await fetch(url, {
-    headers: {
-      accept: 'application/json',
-      'user-agent': 'cya-production-smoke-check/1.0',
-    },
-  });
-
-  if (!response.ok) {
-    throw new Error(`${pathname} returned HTTP ${response.status}`);
-  }
-
-  const contentType = response.headers.get('content-type') || '';
-  if (!contentType.includes('application/json')) {
-    throw new Error(`${pathname} returned non-JSON content-type: ${contentType || 'missing'}`);
-  }
-
-  return response.json();
-}
+const expectedCommit = process.env.CYA_EXPECTED_COMMIT || process.env.GITHUB_SHA || null;
+const attempts = Number(process.env.CYA_SMOKE_ATTEMPTS || DEFAULT_ATTEMPTS);
+const delayMs = Number(process.env.CYA_SMOKE_DELAY_MS || DEFAULT_DELAY_MS);
 
 function assert(condition, message) {
   if (!condition) throw new Error(message);
 }
 
-function assertPositiveInteger(value, label) {
-  assert(Number.isInteger(value) && value > 0, `${label} must be a positive integer`);
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-const version = await readJson('/version.json');
-const manifest = await readJson('/data/manifest.json');
+async function read(pathname, expectedContentType) {
+  const url = `${baseUrl}${pathname}`;
+  const response = await fetch(url, {
+    headers: {
+      accept: expectedContentType,
+      'user-agent': 'cya-machine-readable-production-smoke/1.0',
+    },
+  });
 
-assert(version.project === 'crypto-yield-archive', 'version.project mismatch');
-assert(version.design_generation === EXPECTED_DESIGN_GENERATION, `version.design_generation mismatch: ${version.design_generation}`);
-assert(version.verification_marker === EXPECTED_MARKER, `version.verification_marker mismatch: ${version.verification_marker}`);
-assert(version.registry_type === 'historical_crypto_yield_registry', 'version.registry_type mismatch');
-assert(version.record_counts && typeof version.record_counts === 'object', 'version.record_counts missing');
+  if (!response.ok) throw new Error(`${pathname} returned HTTP ${response.status}`);
 
-assert(manifest.project === 'crypto-yield-archive', 'manifest.project mismatch');
-assert(manifest.files?.version === '/version.json', 'manifest.files.version mismatch');
-assert(manifest.files?.platform_route_pattern === '/platform/{slug}/', 'manifest platform route pattern missing');
-assert(manifest.record_counts && typeof manifest.record_counts === 'object', 'manifest.record_counts missing');
+  const contentType = response.headers.get('content-type') || '';
+  assert(contentType.includes(expectedContentType), `${pathname} returned unexpected content-type: ${contentType || 'missing'}`);
 
-for (const key of ['platforms', 'events', 'evidence', 'outcomes', 'products', 'terms_risk']) {
-  assertPositiveInteger(version.record_counts[key], `version.record_counts.${key}`);
-  assertPositiveInteger(manifest.record_counts[key], `manifest.record_counts.${key}`);
+  return response.text();
+}
+
+async function checkOnce() {
+  const version = JSON.parse(await read('/version.json', 'application/json'));
+  const manifest = JSON.parse(await read('/data/manifest.json', 'application/json'));
+  const llmsText = await read('/llms.txt', 'text/plain');
+  const aiText = await read('/ai.txt', 'text/plain');
+
+  assert(version.schema_version === '1.0.0', 'version schema mismatch');
+  assert(version.project_id === 'crypto-yield-archive', 'version project id mismatch');
+  assert(version.registry_family === 'badjoke-lab-ledger-series', 'version registry family mismatch');
+  assert(version.registry_type === 'historical_crypto_yield_registry', 'version registry type mismatch');
+  assert(version.canonical_origin === 'https://cya.badjoke-lab.com', 'version canonical origin mismatch');
+  assert(version.build?.verification_marker === 'cya_machine_readable_layer_v1', 'version verification marker mismatch');
+  assert(version.build?.commit && typeof version.build.commit === 'string', 'version build commit missing');
+  assert(version.build?.branch && typeof version.build.branch === 'string', 'version build branch missing');
+  assert(version.data?.data_schema_version === 'cya_platform_event_evidence_outcome_product_terms_v1', 'data schema mismatch');
+
+  if (expectedCommit) {
+    assert(version.build.commit === expectedCommit, `production commit ${version.build.commit} does not match expected ${expectedCommit}`);
+  }
+
+  const counts = version.data?.record_counts;
+  assert(Number.isInteger(counts?.primary_records) && counts.primary_records > 0, 'primary record count invalid');
+  assert(Number.isInteger(counts?.events) && counts.events > 0, 'event count invalid');
+  assert(Number.isInteger(counts?.evidence) && counts.evidence > 0, 'evidence count invalid');
+  assert(Number.isInteger(version.data?.record_count_breakdown?.outcomes), 'outcome breakdown missing');
+  assert(Number.isInteger(version.data?.record_count_breakdown?.products), 'product breakdown missing');
+  assert(Number.isInteger(version.data?.record_count_breakdown?.terms_risk), 'terms-risk breakdown missing');
+  assert(version.routes?.platform_detail === '/platform/{slug}/', 'version platform route missing');
+
+  assert(manifest.schema_version === version.schema_version, 'manifest schema mismatch');
+  assert(manifest.project_id === version.project_id, 'manifest project mismatch');
+  assert(manifest.registry_family === version.registry_family, 'manifest registry family mismatch');
+  assert(manifest.registry_type === version.registry_type, 'manifest registry type mismatch');
+  assert(manifest.canonical_origin === version.canonical_origin, 'manifest canonical origin mismatch');
+  assert(manifest.public_files?.version === '/version.json', 'manifest version route missing');
+  assert(manifest.public_files?.manifest === '/data/manifest.json', 'manifest self route missing');
+  assert(manifest.public_files?.llms === '/llms.txt', 'manifest llms route missing');
+  assert(manifest.public_files?.ai === '/ai.txt', 'manifest ai route missing');
+  assert(manifest.data_model?.primary_record === 'yield_platform', 'manifest primary record mismatch');
+  assert(JSON.stringify(manifest.record_counts) === JSON.stringify(counts), 'version and manifest record counts differ');
   assert(
-    version.record_counts[key] === manifest.record_counts[key],
-    `record count mismatch for ${key}: version=${version.record_counts[key]} manifest=${manifest.record_counts[key]}`,
+    JSON.stringify(manifest.record_count_breakdown) === JSON.stringify(version.data.record_count_breakdown),
+    'version and manifest record breakdown differ',
   );
+  assert(manifest.data_safety?.canonical_only === true, 'canonical-only safety flag missing');
+  assert(manifest.data_safety?.includes_unreviewed_candidates === false, 'unreviewed candidate safety flag invalid');
+  assert(manifest.data_safety?.includes_internal_monitoring === false, 'internal monitoring safety flag invalid');
+  assert(manifest.data_safety?.includes_private_notes === false, 'private notes safety flag invalid');
+  assert(Array.isArray(manifest.main_routes) && manifest.main_routes.includes('/source-quality/'), 'manifest routes incomplete');
+
+  assert(llmsText.includes('/version.json'), 'llms.txt missing version route');
+  assert(llmsText.includes('/data/manifest.json'), 'llms.txt missing manifest route');
+  assert(llmsText.includes('/ai.txt'), 'llms.txt missing AI route');
+  assert(llmsText.includes('not an APY ranking'), 'llms.txt missing interpretation warning');
+  assert(aiText.includes('LLM guide: /llms.txt'), 'ai.txt missing LLM guide');
+  assert(aiText.includes('reviewed public registry information only'), 'ai.txt missing safety boundary');
+
+  return {
+    ok: true,
+    base_url: baseUrl,
+    schema_version: version.schema_version,
+    build: version.build,
+    record_counts: counts,
+    records_last_reviewed_at: version.data.records_last_reviewed_at,
+  };
 }
 
-assert(Array.isArray(version.expected_routes) && version.expected_routes.includes('/source-quality/'), 'version.expected_routes incomplete');
-assert(manifest.distributions?.evidence_by_reliability, 'manifest evidence reliability distribution missing');
-assert(Array.isArray(manifest.sample_platforms) && manifest.sample_platforms.length > 0, 'manifest.sample_platforms missing');
+let lastError;
+for (let attempt = 1; attempt <= attempts; attempt += 1) {
+  try {
+    const result = await checkOnce();
+    console.log(JSON.stringify({ ...result, attempt }, null, 2));
+    process.exit(0);
+  } catch (error) {
+    lastError = error;
+    console.error(`Production check attempt ${attempt}/${attempts} failed: ${error.message}`);
+    if (attempt < attempts) await sleep(delayMs);
+  }
+}
 
-console.log(JSON.stringify({
-  ok: true,
-  base_url: baseUrl,
-  design_generation: version.design_generation,
-  generated_at: version.generated_at,
-  record_counts: version.record_counts,
-}, null, 2));
+throw lastError;
