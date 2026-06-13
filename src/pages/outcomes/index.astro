@@ -1,8 +1,14 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { groupsByOutcome, allPlatforms, getOutcome, label } from '../../lib/data';
+import { allPlatforms, getOutcome, label } from '../../lib/data';
 
-const groups = groupsByOutcome();
+const outcomeOrder = ['full_repayment', 'partial_repayment', 'claims_ongoing', 'no_recovery', 'not_applicable', 'unknown'];
+const groups = outcomeOrder
+  .map((group) => ({
+    group,
+    platforms: allPlatforms.filter((platform) => (getOutcome(platform.id)?.outcome_status || 'unknown') === group),
+  }))
+  .filter(({ platforms }) => platforms.length > 0);
 const assigned = allPlatforms.filter((platform) => getOutcome(platform.id)).length;
 const unknown = groups.find(({ group }) => group === 'unknown')?.platforms.length || 0;
 ---
