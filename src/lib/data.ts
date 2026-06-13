@@ -8,7 +8,6 @@ import platformsBatch09 from '../../data/platforms-batch-09.json';
 import platformsBatch10 from '../../data/platforms-batch-10.json';
 import platformsBatch11 from '../../data/platforms-batch-11.json';
 import platformsBatch12 from '../../data/platforms-batch-12.json';
-import platformsBatch13 from '../../data/platforms-batch-13.json';
 import eventsBase from '../../data/events.json';
 import eventsBatch03 from '../../data/events-batch-03.json';
 import eventsBatch04 from '../../data/events-batch-04.json';
@@ -43,7 +42,6 @@ import outcomesBatch09 from '../../data/outcomes-batch-09.json';
 import outcomesBatch10 from '../../data/outcomes-batch-10.json';
 import outcomesBatch11 from '../../data/outcomes-batch-11.json';
 import outcomesBatch12 from '../../data/outcomes-batch-12.json';
-import outcomesBatch13 from '../../data/outcomes-batch-13.json';
 import products from '../../data/products.json';
 import productsBatch04 from '../../data/products-batch-04.json';
 import productsBatch05 from '../../data/products-batch-05.json';
@@ -54,7 +52,6 @@ import productsBatch09 from '../../data/products-batch-09.json';
 import productsBatch10 from '../../data/products-batch-10.json';
 import productsBatch11 from '../../data/products-batch-11.json';
 import productsBatch12 from '../../data/products-batch-12.json';
-import productsBatch13 from '../../data/products-batch-13.json';
 import termsRisk from '../../data/terms-risk.json';
 import termsRiskBatch04 from '../../data/terms-risk-batch-04.json';
 import termsRiskBatch05 from '../../data/terms-risk-batch-05.json';
@@ -65,7 +62,6 @@ import termsRiskBatch09 from '../../data/terms-risk-batch-09.json';
 import termsRiskBatch10 from '../../data/terms-risk-batch-10.json';
 import termsRiskBatch11 from '../../data/terms-risk-batch-11.json';
 import termsRiskBatch12 from '../../data/terms-risk-batch-12.json';
-import termsRiskBatch13 from '../../data/terms-risk-batch-13.json';
 
 export type Platform = Record<string, any>;
 export type EventRecord = Record<string, any>;
@@ -74,12 +70,12 @@ export type Outcome = Record<string, any>;
 export type Product = Record<string, any>;
 export type TermsRisk = Record<string, any>;
 
-export const allPlatforms = [...platforms, ...platformsBatch04, ...platformsBatch05, ...platformsBatch06, ...platformsBatch07, ...platformsBatch08, ...platformsBatch09, ...platformsBatch10, ...platformsBatch11, ...platformsBatch12, ...platformsBatch13] as Platform[];
+export const allPlatforms = [...platforms, ...platformsBatch04, ...platformsBatch05, ...platformsBatch06, ...platformsBatch07, ...platformsBatch08, ...platformsBatch09, ...platformsBatch10, ...platformsBatch11, ...platformsBatch12] as Platform[];
 export const allEvents = [...eventsBase, ...eventsBatch03, ...eventsBatch04, ...eventsBatch05, ...eventsBatch06, ...eventsBatch07, ...eventsBatch08, ...eventsBatch09, ...eventsBatch10, ...eventsBatch11, ...eventsBatch12, ...eventsBatch13] as EventRecord[];
 export const allEvidence = [...evidenceBase, ...evidenceBatch03, ...evidenceBatch04, ...evidenceBatch05, ...evidenceBatch06, ...evidenceBatch07, ...evidenceBatch08, ...evidenceBatch09, ...evidenceBatch10, ...evidenceBatch11, ...evidenceBatch12, ...evidenceBatch13] as EvidenceRecord[];
-export const allOutcomes = [...outcomes, ...outcomesBatch04, ...outcomesBatch05, ...outcomesBatch06, ...outcomesBatch07, ...outcomesBatch08, ...outcomesBatch09, ...outcomesBatch10, ...outcomesBatch11, ...outcomesBatch12, ...outcomesBatch13] as Outcome[];
-export const allProducts = [...products, ...productsBatch04, ...productsBatch05, ...productsBatch06, ...productsBatch07, ...productsBatch08, ...productsBatch09, ...productsBatch10, ...productsBatch11, ...productsBatch12, ...productsBatch13] as Product[];
-export const allTermsRisk = [...termsRisk, ...termsRiskBatch04, ...termsRiskBatch05, ...termsRiskBatch06, ...termsRiskBatch07, ...termsRiskBatch08, ...termsRiskBatch09, ...termsRiskBatch10, ...termsRiskBatch11, ...termsRiskBatch12, ...termsRiskBatch13] as TermsRisk[];
+export const allOutcomes = [...outcomes, ...outcomesBatch04, ...outcomesBatch05, ...outcomesBatch06, ...outcomesBatch07, ...outcomesBatch08, ...outcomesBatch09, ...outcomesBatch10, ...outcomesBatch11, ...outcomesBatch12] as Outcome[];
+export const allProducts = [...products, ...productsBatch04, ...productsBatch05, ...productsBatch06, ...productsBatch07, ...productsBatch08, ...productsBatch09, ...productsBatch10, ...productsBatch11, ...productsBatch12] as Product[];
+export const allTermsRisk = [...termsRisk, ...termsRiskBatch04, ...termsRiskBatch05, ...termsRiskBatch06, ...termsRiskBatch07, ...termsRiskBatch08, ...termsRiskBatch09, ...termsRiskBatch10, ...termsRiskBatch11, ...termsRiskBatch12] as TermsRisk[];
 
 const PUBLIC_LABELS: Record<string, string> = {
   active: 'Active',
