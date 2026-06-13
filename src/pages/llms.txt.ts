@@ -1,43 +1,41 @@
-import { allEvents, allEvidence, allPlatforms } from '../lib/data';
+import { MAIN_ROUTES, PROJECT, getRecordCounts } from '../lib/machine-readable';
 
 export function GET() {
+  const counts = getRecordCounts();
   const body = [
     '# Crypto Yield Archive',
     '',
-    'Evidence-first historical registry of crypto lending, Earn, and yield platforms.',
+    PROJECT.description,
     '',
-    'Canonical site: https://cya.badjoke-lab.com/',
+    `Canonical site: ${PROJECT.canonicalOrigin}/`,
     '',
     'Machine-readable files:',
-    '- https://cya.badjoke-lab.com/version.json',
-    '- https://cya.badjoke-lab.com/data/manifest.json',
+    '- /version.json',
+    '- /data/manifest.json',
+    '- /ai.txt',
     '',
     'Main routes:',
-    '- https://cya.badjoke-lab.com/',
-    '- https://cya.badjoke-lab.com/platform/{slug}/',
-    '- https://cya.badjoke-lab.com/outcomes/',
-    '- https://cya.badjoke-lab.com/failures/',
-    '- https://cya.badjoke-lab.com/terms-risk/',
-    '- https://cya.badjoke-lab.com/bankruptcy-cases/',
-    '- https://cya.badjoke-lab.com/timeline/',
-    '- https://cya.badjoke-lab.com/stats/',
-    '- https://cya.badjoke-lab.com/source-quality/',
-    '- https://cya.badjoke-lab.com/methodology/',
-    '- https://cya.badjoke-lab.com/corrections/',
+    ...MAIN_ROUTES.map((route) => `- ${route}`),
     '',
     'Build-time record counts:',
-    `- Platforms: ${allPlatforms.length}`,
-    `- Events: ${allEvents.length}`,
-    `- Evidence records: ${allEvidence.length}`,
+    `- Platforms: ${counts.primary_records}`,
+    `- Events: ${counts.events}`,
+    `- Evidence records: ${counts.evidence}`,
     '',
-    'Use platform dossier pages for record-level claims and methodology/source-quality pages for interpretation.',
+    'Use notes:',
+    '- This is a historical registry, not an APY ranking or live yield dashboard.',
+    '- This is not an investment recommendation.',
+    '- Customer outcomes may differ by jurisdiction, claim class, product, and date.',
+    '- Use methodology, source-quality, event, and evidence information when interpreting records.',
+    '- Public machine-readable files contain reviewed public registry information only.',
+    '- Record data may be incomplete or revised.',
     '',
   ].join('\n');
 
   return new Response(body, {
     headers: {
       'content-type': 'text/plain; charset=utf-8',
-      'cache-control': 'public, max-age=300',
+      'cache-control': 'public, max-age=3600, must-revalidate',
     },
   });
 }
