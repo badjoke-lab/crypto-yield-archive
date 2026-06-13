@@ -174,6 +174,18 @@ export function year(value?: string | null): string {
 export const label = labelFor;
 export const getEvents = eventsForPlatform;
 export const getOutcome = outcomeForPlatform;
+export const getTermsRisk = termsRiskForPlatform;
+export const getProducts = productsForPlatform;
+export const getEvidence = evidenceForPlatform;
+export const getEventEvidence = evidenceForEvent;
+
+export function getPlatform(platformId: string): Platform | undefined {
+  return allPlatforms.find((platform) => platform.id === platformId);
+}
+
+export function getPlatformBySlug(slug: string): Platform | undefined {
+  return allPlatforms.find((platform) => platform.slug === slug);
+}
 
 export function bankruptcyPlatforms(): Platform[] {
   const caseEventTypes = new Set(['bankruptcy_filed', 'restructuring_started', 'restructuring_completed']);
