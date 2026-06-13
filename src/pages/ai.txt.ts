@@ -1,38 +1,31 @@
-import { allEvents, allEvidence, allPlatforms } from '../lib/data';
+import { MAIN_ROUTES, PROJECT, getRecordCounts } from '../lib/machine-readable';
 
 export function GET() {
+  const counts = getRecordCounts();
   const body = [
     'Crypto Yield Archive',
     '',
-    'Purpose: historical registry of crypto lending, Earn, and yield platform outcomes.',
-    'Canonical origin: https://cya.badjoke-lab.com',
+    `Purpose: ${PROJECT.description}`,
+    `Canonical origin: ${PROJECT.canonicalOrigin}`,
     'Version endpoint: /version.json',
     'Manifest endpoint: /data/manifest.json',
-    `Platforms: ${allPlatforms.length}`,
-    `Events: ${allEvents.length}`,
-    `Evidence records: ${allEvidence.length}`,
+    'LLM guide: /llms.txt',
+    `Platforms: ${counts.primary_records}`,
+    `Events: ${counts.events}`,
+    `Evidence records: ${counts.evidence}`,
     '',
     'Important routes:',
-    '/',
-    '/platform/{slug}/',
-    '/outcomes/',
-    '/failures/',
-    '/terms-risk/',
-    '/bankruptcy-cases/',
-    '/timeline/',
-    '/stats/',
-    '/source-quality/',
-    '/methodology/',
-    '/corrections/',
+    ...MAIN_ROUTES,
     '',
-    'Use this archive as a starting point for source-linked historical records, not as financial advice.',
+    'Safety note: Public files expose reviewed public registry information only. They do not include unreviewed candidates, private notes, or internal monitoring output.',
+    'Interpretation note: This archive is not an APY ranking, live yield dashboard, investment recommendation, or guarantee of uniform customer outcomes.',
     '',
   ].join('\n');
 
   return new Response(body, {
     headers: {
       'content-type': 'text/plain; charset=utf-8',
-      'cache-control': 'public, max-age=300',
+      'cache-control': 'public, max-age=3600, must-revalidate',
     },
   });
 }
