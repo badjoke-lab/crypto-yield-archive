@@ -1,3 +1,0 @@
-[
-  {"platform_id":"cya_plat_000023","terms_status":"platform_owned","asset_ownership_interpretation":"BlockFi Interest Account customers lent or transferred digital assets into a centralized product and were exposed to BlockFi credit and bankruptcy-estate treatment rather than retaining direct, segregated ownership of the same deposited assets.","affected_product":"BlockFi Interest Account","source_evidence_id":"cya_src_b13_0001","notes":"Classified as platform-owned / lending-product exposure for registry purposes because the SEC settlement and bankruptcy history both concern an interest-bearing lending product rather than a non-custodial wallet arrangement.","confidence":"high"}
-]
