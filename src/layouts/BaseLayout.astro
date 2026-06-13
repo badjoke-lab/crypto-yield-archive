@@ -42,6 +42,8 @@ const isCurrent = (href) => href === '/' ? currentPath === '/' : currentPath.sta
     <link rel="canonical" href={canonicalUrl} />
     <link rel="alternate" type="application/json" href="/version.json" title="CYA production version" />
     <link rel="alternate" type="application/json" href="/data/manifest.json" title="CYA public data manifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="CYA LLM guide" />
+    <link rel="alternate" type="text/plain" href="/ai.txt" title="CYA AI entrypoint" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={siteName} />
     <meta property="og:title" content={title} />
@@ -109,6 +111,8 @@ const isCurrent = (href) => href === '/' ? currentPath === '/' : currentPath.sta
             <a href="/source-quality/">Source quality</a>
             <a href="/version.json">Version JSON</a>
             <a href="/data/manifest.json">Data manifest</a>
+            <a href="/llms.txt">LLM guide</a>
+            <a href="/ai.txt">AI entrypoint</a>
           </div>
         </div>
       </footer>
