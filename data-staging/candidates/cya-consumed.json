@@ -1,1 +1,19 @@
-[]
+[
+  {
+    "candidate_id":"cya_candidate_000001",
+    "canonical_name":"Abra",
+    "aliases":["Abra Earn","Abra Boost"],
+    "domain":"abra.com",
+    "country_or_origin":"United States",
+    "platform_type_guess":"crypto_interest_account",
+    "status_guess":"limited",
+    "major_event":"U.S. yield-product wind-down and regulatory settlements",
+    "primary_sources":["https://www.sec.gov/newsroom/press-releases/2024-105","https://www.csbs.org/newsroom/state-financial-regulators-settle-abra-return-cryptocurrency-assets"],
+    "secondary_sources":[],
+    "duplicate_check":{"checked_at":"2026-06-15","matched_platform_ids":["cya_plat_000013"],"notes":"Existing canonical record confirmed."},
+    "decision":"already_recorded",
+    "notes":"Research applied to existing record cya_plat_000013; no new entity added.",
+    "first_seen_at":"2026-06-15",
+    "last_reviewed_at":"2026-06-15"
+  }
+]
