@@ -1,0 +1,3 @@
+[
+  {"platform_id":"cya_plat_000024","terms_status":"unknown","asset_ownership_interpretation":"Yield App customer asset treatment is liquidation-dependent. Public sources establish platform-managed exposure and insolvency, but do not support a single reliable ownership classification for every account, asset, and product category.","affected_product":"Yield App digital wealth, Earn, and managed yield products","source_evidence_id":"cya_src_b15_0005","notes":"Keep terms status unknown until liquidator reports, court materials, or product-specific legal analysis establish how customer assets and claims are classified.","confidence":"medium"}
+]
