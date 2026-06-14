@@ -1,1 +1,24 @@
-[]
+[
+  {
+    "candidate_id":"cya_candidate_000001",
+    "canonical_name":"Abra",
+    "aliases":["Abra Earn","Abra Interest","Abra Boost","Plutus Lending"],
+    "domain":"abra.com",
+    "country_or_origin":"United States",
+    "platform_type_guess":"crypto_interest_account",
+    "status_guess":"limited",
+    "major_event":"U.S. Abra Earn and Abra Boost wind-down followed by state and SEC settlements",
+    "primary_sources":[
+      "https://www.sec.gov/newsroom/press-releases/2024-105",
+      "https://www.sec.gov/files/litigation/complaints/2024/comp-pr2024-105.pdf",
+      "https://ssb.texas.gov/sites/default/files/2024-04/ENF_24_CDO_1881.pdf",
+      "https://www.csbs.org/newsroom/state-financial-regulators-settle-abra-return-cryptocurrency-assets"
+    ],
+    "secondary_sources":[],
+    "duplicate_check":{"checked_at":"2026-06-15","matched_platform_ids":[],"notes":"Repository name and domain searches found no existing canonical Abra record before batch 20."},
+    "decision":"already_recorded",
+    "notes":"Promoted to canonical batch 20 as cya_plat_000029.",
+    "first_seen_at":"2026-06-15",
+    "last_reviewed_at":"2026-06-15"
+  }
+]
