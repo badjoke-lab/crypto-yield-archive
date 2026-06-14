@@ -1,0 +1,3 @@
+[
+  {"platform_id":"cya_plat_000025","outcome_status":"unknown","estimated_recovery_rate":"unknown; dependent on residual asset treatment and individual legal claims","repayment_started_at":null,"repayment_completed_at":null,"repayment_method":"no consolidated court-supervised platform repayment process established in this record","claim_process_url":"https://web.archive.org/web/*/https://stablegains.com/","affected_products":["Stablegains stablecoin yield accounts","customer USDC deposits converted into UST-linked strategy exposure"],"notes":"The record does not assign a universal recovery percentage. Customer outcomes may differ based on residual UST value, settlements, private claims, and product-specific legal treatment.","confidence":"medium"}
+]
