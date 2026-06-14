@@ -1,0 +1,3 @@
+[
+  {"platform_id":"cya_plat_000024","outcome_status":"claims_ongoing","estimated_recovery_rate":"unknown_liquidation_dependent","repayment_started_at":null,"repayment_completed_at":null,"repayment_method":"insolvent liquidation, asset realization, litigation recoveries, and creditor claim administration","claim_process_url":"https://corkgully.com/liquidators-appointed-to-yield-app-to-oversee-insolvency-proceedings/","affected_products":["Yield App digital wealth accounts","Yield App Earn and managed yield products","customer platform balances"],"notes":"No reliable universal recovery percentage is established. Customer outcomes depend on the joint liquidators' asset realization, litigation, claims adjudication, and distribution process.","confidence":"high"}
+]
