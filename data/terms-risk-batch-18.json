@@ -1,0 +1,3 @@
+[
+  {"platform_id":"cya_plat_000027","terms_status":"unclear","asset_ownership_interpretation":"Delio marketed centralized deposit, savings, lending, and staking products under platform custody or administration. Public sources reviewed for this batch do not establish one ownership classification that safely applies to every product, token, and bankruptcy claim.","affected_product":"Delio crypto savings, lending, and staking products","source_evidence_id":"cya_src_b18_0001","notes":"Keep the platform-level classification unclear until bankruptcy records or product-specific terms establish whether particular customer assets are held in trust, treated as property claims, or subject to another legal classification.","confidence":"medium"}
+]
