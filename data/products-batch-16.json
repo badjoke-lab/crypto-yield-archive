@@ -1,0 +1,3 @@
+[
+  {"platform_id":"cya_plat_000025","product_type":"centralized_yield","product_name":"Stablegains stablecoin yield account","custody_model":"platform-managed centralized stablecoin account","yield_source":"customer stablecoin deposits deployed into TerraUSD and Anchor-related yield strategy","risk_notes":"Customers were exposed to platform custody, conversion, stablecoin depeg, protocol dependency, liquidity, disclosure, and legal-recovery risks. The TerraUSD collapse destroyed the economic basis of the product."}
+]
