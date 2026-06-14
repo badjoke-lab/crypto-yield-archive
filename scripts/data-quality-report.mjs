@@ -1,102 +1,73 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const FILE_GROUPS = {
-  platforms: ['data/platforms.json', 'data/platforms-batch-04.json', 'data/platforms-batch-05.json', 'data/platforms-batch-06.json', 'data/platforms-batch-07.json', 'data/platforms-batch-08.json', 'data/platforms-batch-09.json', 'data/platforms-batch-10.json', 'data/platforms-batch-11.json', 'data/platforms-batch-12.json', 'data/platforms-batch-13.json'],
-  events: ['data/events.json', 'data/events-batch-03.json', 'data/events-batch-04.json', 'data/events-batch-05.json', 'data/events-batch-06.json', 'data/events-batch-07.json', 'data/events-batch-08.json', 'data/events-batch-09.json', 'data/events-batch-10.json', 'data/events-batch-11.json', 'data/events-batch-12.json', 'data/events-batch-13.json'],
-  evidence: ['data/evidence.json', 'data/evidence-batch-03.json', 'data/evidence-batch-04.json', 'data/evidence-batch-05.json', 'data/evidence-batch-06.json', 'data/evidence-batch-07.json', 'data/evidence-batch-08.json', 'data/evidence-batch-09.json', 'data/evidence-batch-10.json', 'data/evidence-batch-11.json', 'data/evidence-batch-12.json', 'data/evidence-batch-13.json'],
-  outcomes: ['data/outcomes.json', 'data/outcomes-batch-04.json', 'data/outcomes-batch-05.json', 'data/outcomes-batch-06.json', 'data/outcomes-batch-07.json', 'data/outcomes-batch-08.json', 'data/outcomes-batch-09.json', 'data/outcomes-batch-10.json', 'data/outcomes-batch-11.json', 'data/outcomes-batch-12.json', 'data/outcomes-batch-13.json'],
-  products: ['data/products.json', 'data/products-batch-04.json', 'data/products-batch-05.json', 'data/products-batch-06.json', 'data/products-batch-07.json', 'data/products-batch-08.json', 'data/products-batch-09.json', 'data/products-batch-10.json', 'data/products-batch-11.json', 'data/products-batch-12.json', 'data/products-batch-13.json'],
-  termsRisk: ['data/terms-risk.json', 'data/terms-risk-batch-04.json', 'data/terms-risk-batch-05.json', 'data/terms-risk-batch-06.json', 'data/terms-risk-batch-07.json', 'data/terms-risk-batch-08.json', 'data/terms-risk-batch-09.json', 'data/terms-risk-batch-10.json', 'data/terms-risk-batch-11.json', 'data/terms-risk-batch-12.json', 'data/terms-risk-batch-13.json'],
+const dataDir = path.resolve('data');
+const filesFor = (name) => fs.readdirSync(dataDir)
+  .filter((file) => file === `${name}.json` || (file.startsWith(`${name}-batch-`) && file.endsWith('.json')))
+  .sort()
+  .map((file) => `data/${file}`);
+
+const read = (file) => {
+  const value = JSON.parse(fs.readFileSync(path.resolve(file), 'utf8'));
+  if (!Array.isArray(value)) throw new Error(`${file} must be an array`);
+  return value.map((record, index) => ({ ...record, __file: file, __index: index }));
 };
+const load = (name) => filesFor(name).flatMap(read);
+const recordLabel = (record) => `${record.__file}#${record.__index}`;
 
-function readArray(filePath) {
-  const absolutePath = path.resolve(filePath);
-  if (!fs.existsSync(absolutePath)) return [];
-  const parsed = JSON.parse(fs.readFileSync(absolutePath, 'utf8'));
-  if (!Array.isArray(parsed)) throw new Error(`${filePath} must be an array`);
-  return parsed.map((record, index) => ({ ...record, __file: filePath, __index: index }));
-}
-
-function load(files) {
-  return files.flatMap(readArray);
-}
-
-function recordLabel(record) {
-  return `${record.__file}#${record.__index}`;
-}
-
-const platforms = load(FILE_GROUPS.platforms);
-const events = load(FILE_GROUPS.events);
-const evidence = load(FILE_GROUPS.evidence);
-const outcomes = load(FILE_GROUPS.outcomes);
-const products = load(FILE_GROUPS.products);
-const termsRisk = load(FILE_GROUPS.termsRisk);
-
+const platforms = load('platforms');
+const events = load('events');
+const evidence = load('evidence');
+const outcomes = load('outcomes');
+const products = load('products');
+const termsRisk = load('terms-risk');
 const platformById = new Map(platforms.map((platform) => [platform.id, platform]));
+const platformName = (id) => platformById.get(id)?.canonical_name ?? id;
 const evidenceByPlatform = new Map();
 for (const source of evidence) {
-  const list = evidenceByPlatform.get(source.platform_id) ?? [];
-  list.push(source);
-  evidenceByPlatform.set(source.platform_id, list);
+  const rows = evidenceByPlatform.get(source.platform_id) ?? [];
+  rows.push(source);
+  evidenceByPlatform.set(source.platform_id, rows);
 }
 
-function platformName(platformId) {
-  return platformById.get(platformId)?.canonical_name ?? platformId;
+const groups = {
+  'Low reliability evidence': evidence.filter((r) => r.reliability === 'low'),
+  'Medium reliability evidence': evidence.filter((r) => r.reliability === 'medium'),
+  'Low confidence platforms': platforms.filter((r) => r.confidence === 'low'),
+  'Low confidence events': events.filter((r) => r.confidence === 'low'),
+  'Unknown or ongoing outcomes': outcomes.filter((r) => ['unknown','claims_ongoing'].includes(r.outcome_status)),
+  'Unknown terms-risk records': termsRisk.filter((r) => r.terms_status === 'unknown'),
+  'Platforms with fewer than 3 evidence records': platforms.filter((r) => (evidenceByPlatform.get(r.id) ?? []).length < 3),
+};
+
+const report = [
+  '# CYA Data Quality Report', '',
+  'Generated from all discovered JSON batch files.', '',
+  '## Counts', '',
+  `- platforms: ${platforms.length}`,
+  `- events: ${events.length}`,
+  `- evidence: ${evidence.length}`,
+  `- outcomes: ${outcomes.length}`,
+  `- products: ${products.length}`,
+  `- terms-risk: ${termsRisk.length}`, '',
+  '## Priority issues', '',
+  ...Object.entries(groups).map(([title, rows]) => `- ${title.toLowerCase()}: ${rows.length}`), ''
+];
+
+function render(title, row) {
+  if (title.includes('evidence')) return `- ${row.id} / ${platformName(row.platform_id)} / ${row.title} / ${recordLabel(row)}`;
+  if (title === 'Low confidence platforms') return `- ${row.id} / ${row.canonical_name} / ${recordLabel(row)}`;
+  if (title === 'Low confidence events') return `- ${row.id} / ${platformName(row.platform_id)} / ${row.event_date} / ${row.title} / ${recordLabel(row)}`;
+  if (title === 'Unknown or ongoing outcomes') return `- ${platformName(row.platform_id)} / ${row.outcome_status} / confidence=${row.confidence} / ${recordLabel(row)}`;
+  if (title === 'Unknown terms-risk records') return `- ${platformName(row.platform_id)} / confidence=${row.confidence} / ${recordLabel(row)}`;
+  return `- ${row.canonical_name} / evidence=${(evidenceByPlatform.get(row.id) ?? []).length}`;
 }
 
-const lowReliabilityEvidence = evidence.filter((source) => source.reliability === 'low');
-const mediumReliabilityEvidence = evidence.filter((source) => source.reliability === 'medium');
-const lowConfidencePlatforms = platforms.filter((platform) => platform.confidence === 'low');
-const lowConfidenceEvents = events.filter((event) => event.confidence === 'low');
-const unknownOutcomes = outcomes.filter((outcome) => outcome.outcome_status === 'unknown' || outcome.outcome_status === 'claims_ongoing');
-const unknownTerms = termsRisk.filter((term) => term.terms_status === 'unknown');
-const platformsWithFewEvidence = platforms.filter((platform) => (evidenceByPlatform.get(platform.id) ?? []).length < 3);
-
-const report = [];
-report.push('# CYA Data Quality Report');
-report.push('');
-report.push(`Generated from local JSON files.`);
-report.push('');
-report.push('## Counts');
-report.push('');
-report.push(`- platforms: ${platforms.length}`);
-report.push(`- events: ${events.length}`);
-report.push(`- evidence: ${evidence.length}`);
-report.push(`- outcomes: ${outcomes.length}`);
-report.push(`- products: ${products.length}`);
-report.push(`- terms-risk: ${termsRisk.length}`);
-report.push('');
-
-report.push('## Priority issues');
-report.push('');
-report.push(`- low reliability evidence: ${lowReliabilityEvidence.length}`);
-report.push(`- medium reliability evidence: ${mediumReliabilityEvidence.length}`);
-report.push(`- low confidence platforms: ${lowConfidencePlatforms.length}`);
-report.push(`- low confidence events: ${lowConfidenceEvents.length}`);
-report.push(`- unknown or ongoing outcomes: ${unknownOutcomes.length}`);
-report.push(`- unknown terms-risk records: ${unknownTerms.length}`);
-report.push(`- platforms with fewer than 3 evidence records: ${platformsWithFewEvidence.length}`);
-report.push('');
-
-function addSection(title, rows, render) {
-  report.push(`## ${title}`);
-  report.push('');
-  if (!rows.length) {
-    report.push('None.');
-    report.push('');
-    return;
-  }
-  for (const row of rows) report.push(render(row));
+for (const [title, rows] of Object.entries(groups)) {
+  report.push(`## ${title}`, '');
+  if (!rows.length) report.push('None.');
+  else for (const row of rows) report.push(render(title, row));
   report.push('');
 }
-
-addSection('Low reliability evidence', lowReliabilityEvidence, (source) => `- ${source.id} / ${platformName(source.platform_id)} / ${source.title} / ${recordLabel(source)}`);
-addSection('Medium reliability evidence', mediumReliabilityEvidence, (source) => `- ${source.id} / ${platformName(source.platform_id)} / ${source.title} / ${recordLabel(source)}`);
-addSection('Low confidence platforms', lowConfidencePlatforms, (platform) => `- ${platform.id} / ${platform.canonical_name} / ${recordLabel(platform)}`);
-addSection('Low confidence events', lowConfidenceEvents, (event) => `- ${event.id} / ${platformName(event.platform_id)} / ${event.event_date} / ${event.title} / ${recordLabel(event)}`);
-addSection('Unknown or ongoing outcomes', unknownOutcomes, (outcome) => `- ${platformName(outcome.platform_id)} / ${outcome.outcome_status} / confidence=${outcome.confidence} / ${recordLabel(outcome)}`);
-addSection('Unknown terms-risk records', unknownTerms, (term) => `- ${platformName(term.platform_id)} / confidence=${term.confidence} / ${recordLabel(term)}`);
-addSection('Platforms with fewer than 3 evidence records', platformsWithFewEvidence, (platform) => `- ${platform.canonical_name} / evidence=${(evidenceByPlatform.get(platform.id) ?? []).length}`);
 
 console.log(report.join('\n'));
