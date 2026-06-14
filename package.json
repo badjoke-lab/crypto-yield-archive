@@ -8,8 +8,10 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "validate": "node scripts/validate-data.mjs && node scripts/validate-batch-13.mjs",
+    "validate": "node scripts/validate-data.mjs && node scripts/validate-batch-13.mjs && node scripts/candidates.mjs",
     "quality": "node scripts/data-quality-report.mjs && node scripts/data-quality-report-batch-13.mjs",
+    "candidates:check": "node scripts/candidates.mjs",
+    "batch:next-ids": "node scripts/next-batch-ids.mjs",
     "check:build-output": "node scripts/check-build-output.mjs",
     "check:production": "node scripts/check-production.mjs",
     "test": "npm run validate && npm run quality && npm run build && npm run check:build-output"
