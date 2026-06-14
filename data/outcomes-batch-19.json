@@ -1,0 +1,3 @@
+[
+  {"platform_id":"cya_plat_000028","outcome_status":"full_repayment","estimated_recovery_rate":"100% of investor funds claimed according to the SEC order","repayment_started_at":"2022-03-25","repayment_completed_at":null,"repayment_method":"Customer-initiated withdrawals during the voluntary product wind-down","claim_process_url":"https://www.sec.gov/files/litigation/admin/2023/33-11229.pdf","affected_products":["Linus Interest Accounts"],"notes":"Linus asked investors to withdraw by 22 April 2022 and stopped paying interest on that date. The SEC later confirmed that all investor funds had been claimed. The exact date of the final withdrawal is not stated in the public order.","confidence":"high"}
+]

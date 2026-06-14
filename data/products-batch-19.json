@@ -1,0 +1,3 @@
+[
+  {"platform_id":"cya_plat_000028","product_type":"interest_account","product_name":"Linus Interest Accounts","custody_model":"platform-controlled pooled fiat-to-USDC interest account","yield_source":"USDC deployed into DeFi liquidity pools and direct loans to third-party institutional borrowers","risk_notes":"Customers depended on Linus for custody, conversion, pooling, borrower selection, DeFi deployment, risk management, liquidity, and repayment. Interest rates were set at Linus's discretion and historically ranged from approximately 3.50% to 4.50% APY according to the SEC order."}
+]
