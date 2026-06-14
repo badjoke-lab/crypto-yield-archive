@@ -1,0 +1,3 @@
+[
+  {"platform_id":"cya_plat_000029","terms_status":"platform_owned","asset_ownership_interpretation":"For the historical Abra Earn and Abra Boost products, customers authorized Abra to lend assets through direct or DeFi lending, and the SEC described Earn assets as pooled into a central reserve controlled and deployed by Abra. After the June 2023 conversion to Abra Trade, the applicable terms stated that title remained with customers.","affected_product":"Abra Earn and Abra Boost","source_evidence_id":"cya_src_b20_0002","notes":"The classification applies to the yield-account phase. It does not apply to the later non-interest-bearing Abra Trade balances or current separately managed institutional accounts.","confidence":"high"}
+]
