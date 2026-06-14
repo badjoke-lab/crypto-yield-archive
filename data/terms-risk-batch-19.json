@@ -1,0 +1,3 @@
+[
+  {"platform_id":"cya_plat_000028","terms_status":"platform_owned","asset_ownership_interpretation":"The SEC order states that Linus took complete control of investor assets, pooled them, retained ownership and control over the borrowed assets, and decided how much to hold, lend, and invest.","affected_product":"Linus Interest Accounts","source_evidence_id":"cya_src_b19_0002","notes":"This classification follows the SEC's description of the product structure and applies to the Linus Interest Accounts covered by the order.","confidence":"high"}
+]
