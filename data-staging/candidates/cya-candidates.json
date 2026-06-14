@@ -1,1 +1,24 @@
-[]
+[
+  {
+    "candidate_id":"cya_candidate_000002",
+    "canonical_name":"Yield App",
+    "aliases":["Yield.app","YIELD App","Yield App Ltd"],
+    "domain":"yield.app",
+    "country_or_origin":"Seychelles / Global",
+    "platform_type_guess":"centralized_yield",
+    "status_guess":"bankrupt",
+    "major_event":"All platform activity suspended on 28 June 2024 before insolvent liquidation following losses connected to assets held on FTX through third-party managers.",
+    "primary_sources":[
+      "https://yield.app/en/earn-on-crypto",
+      "https://www.gazette.sc/sites/default/files/2024-08/Gazette%20No%2045%20-%2019th%20August%202024.pdf"
+    ],
+    "secondary_sources":[
+      "https://www.theblock.co/post/302484/yield-app-suspension-liquidation"
+    ],
+    "duplicate_check":{"checked_at":null,"matched_platform_ids":[],"notes":"Pending candidate-only CI audit against all canonical platform names, aliases, and domains."},
+    "decision":"add_now",
+    "notes":"Do not add canonical files until the candidate audit log has been reviewed for possible matches.",
+    "first_seen_at":"2026-06-15",
+    "last_reviewed_at":"2026-06-15"
+  }
+]
