@@ -188,3 +188,27 @@ export function platformUrl(platform: Platform): string {
 export function year(value?: string | null): string {
   return value ? String(value).slice(0, 4) : '—';
 }
+
+export const label = labelFor;
+export const getEvents = eventsForPlatform;
+export const getOutcome = outcomeForPlatform;
+export const getTermsRisk = termsRiskForPlatform;
+export const getProducts = productsForPlatform;
+export const getEvidence = evidenceForPlatform;
+export const getEventEvidence = evidenceForEvent;
+
+export function getPlatform(platformId: string): Platform | undefined {
+  return allPlatforms.find((platform) => platform.id === platformId);
+}
+
+export function getPlatformBySlug(slug: string): Platform | undefined {
+  return allPlatforms.find((platform) => platform.slug === slug);
+}
+
+export function bankruptcyPlatforms(): Platform[] {
+  const caseEventTypes = new Set(['bankruptcy_filed', 'restructuring_started', 'restructuring_completed']);
+  return allPlatforms.filter((platform) =>
+    ['bankrupt', 'restructuring'].includes(platform.status) ||
+    eventsForPlatform(platform.id).some((event) => caseEventTypes.has(event.event_type)),
+  );
+}
