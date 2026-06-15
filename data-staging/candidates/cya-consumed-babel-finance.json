@@ -1,0 +1,11 @@
+[
+  {
+    "candidate_id":"cya_candidate_000006",
+    "canonical_name":"Babel Finance",
+    "aliases":["Babel Holding Limited","Moonalpha Financial Service Limited","Babel Asia Asset Management Private Limited"],
+    "domain":"babel.finance",
+    "duplicate_check":{"checked_at":"2026-06-15","matched_platform_ids":["cya_plat_000009"],"notes":"Existing canonical record confirmed by canonical name, aliases and domain."},
+    "decision":"already_recorded",
+    "notes":"Research applied to existing record cya_plat_000009; no new entity added."
+  }
+]
