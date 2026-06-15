@@ -1,19 +1,2 @@
 [
-  {
-    "candidate_id":"cya_candidate_000006",
-    "canonical_name":"Babel Finance",
-    "aliases":["Babel Holding Limited","Moonalpha Financial Services Limited","Babel Asia Asset Management"],
-    "domain":"babel.finance",
-    "country_or_origin":"Hong Kong / Singapore",
-    "platform_type_guess":"institutional_lending",
-    "status_guess":"restructuring",
-    "major_event":"Redemptions and withdrawals suspended on 17 June 2022, followed by Singapore High Court moratorium applications on 6 March 2023.",
-    "primary_sources":["https://www.prnewswire.com/news-releases/babel-finance-files-moratorium-application-in-singapore-high-court-301763460.html","https://www.elitigation.sg/gdviewer/gd/2023_SGHC_98/pdf"],
-    "secondary_sources":["https://www.coindesk.com/business/2022/06/17/babel-finance-suspends-withdrawals-citing-unusual-liquidity-pressures"],
-    "duplicate_check":{"checked_at":null,"matched_platform_ids":[],"notes":"Pending candidate-only audit against canonical names, aliases and domains."},
-    "decision":"add_now",
-    "notes":"Candidate for formal batch 21 only if no canonical platform match is found.",
-    "first_seen_at":"2026-06-15",
-    "last_reviewed_at":"2026-06-15"
-  }
 ]
