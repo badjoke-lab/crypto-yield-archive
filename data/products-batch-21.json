@@ -1,0 +1,3 @@
+[
+  {"platform_id":"cya_plat_000030","product_type":"exchange_earn","product_name":"ZipUp and ZipUp+","custody_model":"custodial platform account with external counterparty deployment","yield_source":"Customer assets were placed with external cryptocurrency lending platforms including Celsius Network and Babel Finance.","risk_notes":"Customers were exposed to both Zipmex group entities and external lending counterparties. ZipUp-related balances did not necessarily receive the same access or treatment as ordinary exchange wallets."}
+]
