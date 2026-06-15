@@ -1,2 +1,19 @@
 [
+  {
+    "candidate_id":"cya_candidate_000007",
+    "canonical_name":"Zipmex",
+    "aliases":["Zipmex Group","Zipmex Pte. Ltd.","Zipmex Asia Pte. Ltd.","Zipmex Company Limited","ZipUp","ZipUp+"],
+    "domain":"zipmex.com",
+    "country_or_origin":"Singapore / Thailand / Southeast Asia",
+    "platform_type_guess":"centralized_yield",
+    "status_guess":"liquidating",
+    "major_event":"Withdrawals suspended in July 2022 after ZipUp+ exposure, followed by Singapore moratoria, failed restructuring and winding-up proceedings in 2024.",
+    "primary_sources":["https://www.elitigation.sg/gd/s/2024_SGHC_6","https://www.elitigation.sg/gd/s/2024_SGHC_298","https://www.sec.or.th/EN/Pages/News_Detail.aspx?SECID=9530"],
+    "secondary_sources":["https://www.withersworldwide.com/en-gb/insight/read/withers-khattarwong-successfully-obtains-court-order-to-wind-up-zipmex-singapore-%281%29"],
+    "duplicate_check":{"checked_at":null,"matched_platform_ids":[],"notes":"Pending candidate-only audit against canonical names, aliases, yield product names and domain."},
+    "decision":"add_now",
+    "notes":"Candidate for formal batch 21 only if no canonical platform match is found.",
+    "first_seen_at":"2026-06-15",
+    "last_reviewed_at":"2026-06-15"
+  }
 ]
