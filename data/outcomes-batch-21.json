@@ -1,0 +1,14 @@
+[
+  {
+    "platform_id":"cya_plat_000030",
+    "outcome_status":"claims_ongoing",
+    "estimated_recovery_rate":"No final universal recovery rate is established for all ZipUp, exchange-wallet and entity-level creditor classes.",
+    "repayment_started_at":null,
+    "repayment_completed_at":null,
+    "repayment_method":"Multi-entity Singapore winding-up proceedings together with regulator-directed return or transfer of client assets in Thailand",
+    "claim_process_url":"https://www.elitigation.sg/gd/s/2024_SGHC_298",
+    "affected_products":["ZipUp","ZipUp+","Z Wallet and exchange balances","entity-level creditor claims"],
+    "notes":"Some ordinary wallet access and asset-return channels differed from ZipUp-related claims. Singapore entities entered winding-up proceedings, while Thailand required the licensed company to return or transfer client assets. The reviewed sources do not establish completed distributions or one recovery percentage across all jurisdictions and products.",
+    "confidence":"high"
+  }
+]
