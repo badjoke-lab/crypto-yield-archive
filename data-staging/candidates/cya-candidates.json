@@ -1,19 +1,2 @@
 [
-  {
-    "candidate_id":"cya_candidate_000005",
-    "canonical_name":"CoinLoan",
-    "aliases":["CoinLoan OÜ","CoinLoan.io"],
-    "domain":"coinloan.io",
-    "country_or_origin":"Estonia / Global",
-    "platform_type_guess":"crypto_lending_platform",
-    "status_guess":"bankrupt",
-    "major_event":"Withdrawals and user services halted in 2023, followed by Estonian bankruptcy proceedings and creditor distributions.",
-    "primary_sources":["https://lauspartners.ee/en/coinloan-bankruptcy/"],
-    "secondary_sources":["https://cryptoslate.com/coinloan-halts-all-withdrawals-user-services/"],
-    "duplicate_check":{"checked_at":null,"matched_platform_ids":[],"notes":"Pending candidate-only audit against canonical names, aliases and domains."},
-    "decision":"add_now",
-    "notes":"Candidate for formal batch 21 only if no existing canonical platform match is found.",
-    "first_seen_at":"2026-06-15",
-    "last_reviewed_at":"2026-06-15"
-  }
 ]
