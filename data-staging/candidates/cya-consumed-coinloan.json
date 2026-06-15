@@ -1,0 +1,11 @@
+[
+  {
+    "candidate_id":"cya_candidate_000005",
+    "canonical_name":"CoinLoan",
+    "aliases":["CoinLoan OÜ","CoinLoan.io"],
+    "domain":"coinloan.io",
+    "duplicate_check":{"checked_at":"2026-06-15","matched_platform_ids":["cya_plat_000008"],"notes":"Existing canonical record confirmed by name, alias and domain."},
+    "decision":"already_recorded",
+    "notes":"Research applied to existing record cya_plat_000008; no new entity added."
+  }
+]
