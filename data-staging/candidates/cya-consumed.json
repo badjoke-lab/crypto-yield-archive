@@ -15,5 +15,22 @@
     "notes":"Research applied to existing record cya_plat_000013; no new entity added.",
     "first_seen_at":"2026-06-15",
     "last_reviewed_at":"2026-06-15"
+  },
+  {
+    "candidate_id":"cya_candidate_000004",
+    "canonical_name":"Midas Investments",
+    "aliases":["Midas.Investments"],
+    "domain":"midas.investments",
+    "country_or_origin":"Global",
+    "platform_type_guess":"centralized_yield",
+    "status_guess":"operations_ended",
+    "major_event":"Platform closure in December 2022",
+    "primary_sources":["https://blog.midas.investments/midas-closure-reasons-and-pivot-to-cedefi/"],
+    "secondary_sources":["https://www.coindesk.com/business/2022/12/27/crypto-investment-firm-midas-shutting-down-platform-following-losses"],
+    "duplicate_check":{"checked_at":"2026-06-15","matched_platform_ids":["cya_plat_000022"],"notes":"Existing canonical record confirmed by name, alias and domain."},
+    "decision":"already_recorded",
+    "notes":"Research applied to existing record cya_plat_000022; no new entity added.",
+    "first_seen_at":"2026-06-15",
+    "last_reviewed_at":"2026-06-15"
   }
 ]
