@@ -1,0 +1,3 @@
+[
+{"platform_id":"cya_plat_000029","terms_status":"varies_by_product","asset_ownership_interpretation":"CoinFLEX combined ordinary exchange balances, locked balances, flexUSD and repo-market products. The restructuring treated creditor claims and asset allocations through a court-approved scheme rather than establishing one uniform ownership treatment for every product and account type.","affected_product":"CoinFLEX exchange balances, flexUSD, locked balances and lending products","source_evidence_id":"cya_src_b20_0009","notes":"The product mix and scheme structure support a product-dependent classification. This record does not assume that every customer held the same legal claim or received the same recovery instrument.","confidence":"medium"}
+]
