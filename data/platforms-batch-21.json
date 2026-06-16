@@ -1,0 +1,24 @@
+[
+  {
+    "id":"cya_plat_000030",
+    "slug":"zipmex",
+    "canonical_name":"Zipmex",
+    "aliases":["Zipmex Group","Zipmex Pte. Ltd.","Zipmex Asia Pte. Ltd.","Zipmex Company Limited","Zipmex Thailand","ZipUp","ZipUp+"],
+    "type":"exchange_earn",
+    "status":"operations_ended",
+    "failure_reason":"counterparty_exposure",
+    "launch_date":"2018-01-01",
+    "end_date":"2024-05-28",
+    "country_or_origin":"Singapore / Thailand / Indonesia / Australia",
+    "summary":"Southeast Asian crypto exchange and yield platform whose ZipUp and ZipUp+ products deployed customer assets to external lenders including Celsius Network and Babel Finance before withdrawals were suspended in July 2022, restructuring schemes failed, Singapore entities entered winding-up proceedings and Thailand revoked the local exchange and broker licenses.",
+    "what_happened":"Zipmex operated regional cryptocurrency exchanges together with ZipUp and ZipUp+ yield products. On 20 July 2022 it suspended withdrawals. Thailand's SEC subsequently required details of ZipUp customer assets placed through other crypto platforms, especially Celsius Network and Babel Finance, while Zipmex itself confirmed that ZipUp+ funds had been deposited with external lending platforms. Five group entities applied for Singapore moratoria on 22 July 2022. Inter-linked schemes proposed for Zipmex Asia and Zipmex Singapore later failed because the Singapore scheme did not obtain the required approval. The High Court dismissed further moratorium extensions on 11 January 2024, finding no further prospect of restructuring. Zipmex Pte Ltd was wound up on 26 February 2024, Zipmex Asia entered a disputed voluntary winding-up process in May 2024, and the Thai exchange and broker licenses were revoked effective 28 May 2024.",
+    "official_url_original":"https://zipmex.com/",
+    "official_domain_original":"zipmex.com",
+    "official_url_status":"unknown",
+    "archived_url":"https://web.archive.org/web/*/https://zipmex.com/",
+    "confidence":"high",
+    "last_verified_at":"2026-06-15",
+    "uncertainty_notes":"The 2018 launch date is approximate. The end date uses the effective revocation of the Thai exchange and broker licenses; separate group entities entered winding-up proceedings on different dates. Reviewed sources do not establish one final recovery percentage or completed distribution for every ZipUp, exchange-wallet and entity-level creditor class.",
+    "notes":"Added as an exchange-linked yield, counterparty-exposure and multi-entity liquidation case. The record distinguishes ZipUp yield exposure from ordinary exchange-wallet treatment where the sources permit."
+  }
+]

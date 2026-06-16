@@ -32,5 +32,22 @@
     "notes":"Research applied to existing record cya_plat_000022; no new entity added.",
     "first_seen_at":"2026-06-15",
     "last_reviewed_at":"2026-06-15"
+  },
+  {
+    "candidate_id":"cya_candidate_000007",
+    "canonical_name":"Zipmex",
+    "aliases":["Zipmex Group","Zipmex Pte. Ltd.","Zipmex Asia Pte. Ltd.","Zipmex Company Limited","ZipUp","ZipUp+"],
+    "domain":"zipmex.com",
+    "country_or_origin":"Singapore / Thailand / Southeast Asia",
+    "platform_type_guess":"exchange_earn",
+    "status_guess":"operations_ended",
+    "major_event":"Withdrawal suspension, failed restructuring and winding-up proceedings",
+    "primary_sources":["https://www.elitigation.sg/gd/s/2024_SGHC_6","https://www.elitigation.sg/gd/s/2024_SGHC_298","https://www.sec.or.th/EN/Pages/News_Detail.aspx?SECID=10850"],
+    "secondary_sources":[],
+    "duplicate_check":{"checked_at":"2026-06-15","matched_platform_ids":["cya_plat_000030"],"notes":"No canonical match existed before promotion; canonical record created in this batch."},
+    "decision":"already_recorded",
+    "notes":"Promoted to canonical record cya_plat_000030 in batch 21.",
+    "first_seen_at":"2026-06-15",
+    "last_reviewed_at":"2026-06-15"
   }
 ]
