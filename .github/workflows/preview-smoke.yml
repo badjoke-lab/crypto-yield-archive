@@ -23,6 +23,6 @@ jobs:
           CYA_SMOKE_ATTEMPTS: 20
           CYA_SMOKE_DELAY_MS: 15000
         run: |
-          alias=$(printf '%s' "$HEAD_REF" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g; s/^-+|-+$//g')
+          alias=$(printf '%s' "$HEAD_REF" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g; s/^-+|-+$//g' | cut -c1-28)
           export CYA_BASE_URL="https://${alias}.crypto-yield-archive.pages.dev"
           npm run check:production
