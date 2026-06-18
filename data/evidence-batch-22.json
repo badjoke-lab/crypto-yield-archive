@@ -1,0 +1,3 @@
+[
+  {"id":"cya_src_b22_0001","platform_id":"cya_plat_000031","event_id":"cya_ev_000152","source_type":"archive_capture","title":"Cred website archive captures","url":"https://web.archive.org/web/*/https://mycred.io/","publisher":"Internet Archive","published_at":null,"archived_url":"https://web.archive.org/web/*/https://mycred.io/","accessed_at":"2026-06-18","reliability":"high","claim_scope":"url_history","notes":"Historical captures support the Cred and CredEarn platform identity."}
+]
