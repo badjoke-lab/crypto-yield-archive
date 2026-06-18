@@ -1,2 +1,6 @@
-# Astro static build fallback rules are intentionally minimal.
-# Canonical pages are statically generated under dist/.
+/platforms / 301
+/events /timeline/ 301
+/evidence /source-quality/ 301
+/customer-outcomes /outcomes/ 301
+/products / 301
+/data/outcomes.json /data/customer-outcomes.json 301
