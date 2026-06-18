@@ -1,53 +1,7 @@
 [
-  {
-    "candidate_id":"cya_candidate_000001",
-    "canonical_name":"Abra",
-    "aliases":["Abra Earn","Abra Boost"],
-    "domain":"abra.com",
-    "country_or_origin":"United States",
-    "platform_type_guess":"crypto_interest_account",
-    "status_guess":"limited",
-    "major_event":"U.S. yield-product wind-down and regulatory settlements",
-    "primary_sources":["https://www.sec.gov/newsroom/press-releases/2024-105","https://www.csbs.org/newsroom/state-financial-regulators-settle-abra-return-cryptocurrency-assets"],
-    "secondary_sources":[],
-    "duplicate_check":{"checked_at":"2026-06-15","matched_platform_ids":["cya_plat_000013"],"notes":"Existing canonical record confirmed."},
-    "decision":"already_recorded",
-    "notes":"Research applied to existing record cya_plat_000013; no new entity added.",
-    "first_seen_at":"2026-06-15",
-    "last_reviewed_at":"2026-06-15"
-  },
-  {
-    "candidate_id":"cya_candidate_000004",
-    "canonical_name":"Midas Investments",
-    "aliases":["Midas.Investments"],
-    "domain":"midas.investments",
-    "country_or_origin":"Global",
-    "platform_type_guess":"centralized_yield",
-    "status_guess":"operations_ended",
-    "major_event":"Platform closure in December 2022",
-    "primary_sources":["https://blog.midas.investments/midas-closure-reasons-and-pivot-to-cedefi/"],
-    "secondary_sources":["https://www.coindesk.com/business/2022/12/27/crypto-investment-firm-midas-shutting-down-platform-following-losses"],
-    "duplicate_check":{"checked_at":"2026-06-15","matched_platform_ids":["cya_plat_000022"],"notes":"Existing canonical record confirmed by name, alias and domain."},
-    "decision":"already_recorded",
-    "notes":"Research applied to existing record cya_plat_000022; no new entity added.",
-    "first_seen_at":"2026-06-15",
-    "last_reviewed_at":"2026-06-15"
-  },
-  {
-    "candidate_id":"cya_candidate_000007",
-    "canonical_name":"Zipmex",
-    "aliases":["Zipmex Group","Zipmex Pte. Ltd.","Zipmex Asia Pte. Ltd.","Zipmex Company Limited","ZipUp","ZipUp+"],
-    "domain":"zipmex.com",
-    "country_or_origin":"Singapore / Thailand / Southeast Asia",
-    "platform_type_guess":"exchange_earn",
-    "status_guess":"operations_ended",
-    "major_event":"Withdrawal suspension, failed restructuring and winding-up proceedings",
-    "primary_sources":["https://www.elitigation.sg/gd/s/2024_SGHC_6","https://www.elitigation.sg/gd/s/2024_SGHC_298","https://www.sec.or.th/EN/Pages/News_Detail.aspx?SECID=10850"],
-    "secondary_sources":[],
-    "duplicate_check":{"checked_at":"2026-06-15","matched_platform_ids":["cya_plat_000030"],"notes":"No canonical match existed before promotion; canonical record created in this batch."},
-    "decision":"already_recorded",
-    "notes":"Promoted to canonical record cya_plat_000030 in batch 21.",
-    "first_seen_at":"2026-06-15",
-    "last_reviewed_at":"2026-06-15"
-  }
+  {"candidate_id":"cya_candidate_000001","canonical_name":"Abra","aliases":["Abra Earn","Abra Boost"],"domain":"abra.com","country_or_origin":"United States","platform_type_guess":"crypto_interest_account","status_guess":"limited","major_event":"U.S. yield-product wind-down and regulatory settlements","primary_sources":["https://www.sec.gov/newsroom/press-releases/2024-105","https://www.csbs.org/newsroom/state-financial-regulators-settle-abra-return-cryptocurrency-assets"],"secondary_sources":[],"duplicate_check":{"checked_at":"2026-06-15","matched_platform_ids":["cya_plat_000013"],"notes":"Existing canonical record confirmed."},"decision":"already_recorded","notes":"Research applied to existing record cya_plat_000013; no new entity added.","first_seen_at":"2026-06-15","last_reviewed_at":"2026-06-15"},
+  {"candidate_id":"cya_candidate_000004","canonical_name":"Midas Investments","aliases":["Midas.Investments"],"domain":"midas.investments","country_or_origin":"Global","platform_type_guess":"centralized_yield","status_guess":"operations_ended","major_event":"Platform closure in December 2022","primary_sources":["https://blog.midas.investments/midas-closure-reasons-and-pivot-to-cedefi/"],"secondary_sources":["https://www.coindesk.com/business/2022/12/27/crypto-investment-firm-midas-shutting-down-platform-following-losses"],"duplicate_check":{"checked_at":"2026-06-15","matched_platform_ids":["cya_plat_000022"],"notes":"Existing canonical record confirmed by name, alias and domain."},"decision":"already_recorded","notes":"Research applied to existing record cya_plat_000022; no new entity added.","first_seen_at":"2026-06-15","last_reviewed_at":"2026-06-15"},
+  {"candidate_id":"cya_candidate_000007","canonical_name":"Zipmex","aliases":["Zipmex Group","Zipmex Pte. Ltd.","Zipmex Asia Pte. Ltd.","Zipmex Company Limited","ZipUp","ZipUp+"],"domain":"zipmex.com","country_or_origin":"Singapore / Thailand / Southeast Asia","platform_type_guess":"exchange_earn","status_guess":"operations_ended","major_event":"Withdrawal suspension, failed restructuring and winding-up proceedings","primary_sources":["https://www.elitigation.sg/gd/s/2024_SGHC_6","https://www.elitigation.sg/gd/s/2024_SGHC_298","https://www.sec.or.th/EN/Pages/News_Detail.aspx?SECID=10850"],"secondary_sources":[],"duplicate_check":{"checked_at":"2026-06-15","matched_platform_ids":["cya_plat_000030"],"notes":"No canonical match existed before promotion; canonical record created in this batch."},"decision":"already_recorded","notes":"Promoted to canonical record cya_plat_000030 in batch 21.","first_seen_at":"2026-06-15","last_reviewed_at":"2026-06-15"},
+  {"candidate_id":"cya_candidate_000008","canonical_name":"Cred","aliases":["Cred Inc.","Cred LLC","CredEarn","CredBorrow","Libra Credit"],"domain":"mycred.io","country_or_origin":"United States / Global","platform_type_guess":"crypto_interest_account","status_guess":"operations_ended","major_event":"Customer account suspension, Chapter 11 liquidation and later criminal proceedings","primary_sources":["https://bankruptcy.angeiongroup.com/Clients/cred/Index","https://www.justice.gov/usao-ndca/pr/former-ceo-and-cfo-cryptocurrency-lender-cred-llc-sentenced-multiple-years-prison-wire"],"secondary_sources":["https://cointelegraph.com/news/cred-officially-confirms-suspension-of-fund-inflows-and-outflows"],"duplicate_check":{"checked_at":"2026-06-18","matched_platform_ids":["cya_plat_000031"],"notes":"No pre-existing canonical match; promoted after candidate audit reported zero possible matches."},"decision":"already_recorded","notes":"Promoted to canonical record cya_plat_000031 in batch 22.","first_seen_at":"2026-06-18","last_reviewed_at":"2026-06-18"},
+  {"candidate_id":"cya_candidate_000009","canonical_name":"SALT Lending","aliases":["SALT","SALT Lending LLC","SALT Blockchain Inc.","SALT Platform"],"domain":"saltlending.com","country_or_origin":"United States / Global","platform_type_guess":"borrow_lend_platform","status_guess":"active","major_event":"2022 withdrawal pause, California license action, borrower settlement and license reinstatement","primary_sources":["https://dfpi.ca.gov/press_release/dfpi-suspends-salt-lending-llcs-financing-license-pending-investigation/","https://dfpi.ca.gov/press_release/dfpi-secures-300000-in-borrower-refunds-and-penalties-from-crypto-lending-platform-salt-lending-llc/","https://saltlending.com/california-dfpi-notice/"],"secondary_sources":[],"duplicate_check":{"checked_at":"2026-06-18","matched_platform_ids":["cya_plat_000032"],"notes":"No pre-existing canonical match; promoted after candidate audit reported zero possible matches."},"decision":"already_recorded","notes":"Promoted to canonical record cya_plat_000032 in batch 22.","first_seen_at":"2026-06-18","last_reviewed_at":"2026-06-18"}
 ]
