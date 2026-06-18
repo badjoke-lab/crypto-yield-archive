@@ -1,1 +1,24 @@
-[]
+[
+  {
+    "id":"cya_plat_000031",
+    "slug":"cred",
+    "canonical_name":"Cred",
+    "aliases":["Cred Inc.","Cred LLC","CredEarn","CredBorrow","Libra Credit"],
+    "type":"crypto_interest_account",
+    "status":"operations_ended",
+    "failure_reason":"misconduct",
+    "launch_date":"2018-01-01",
+    "end_date":"2020-11-07",
+    "country_or_origin":"United States / Global",
+    "summary":"Crypto lending and yield company that suspended customer inflows and outflows in October 2020, filed Chapter 11 in November 2020, and later became the subject of federal wire-fraud convictions involving former executives.",
+    "what_happened":"Cred accepted cryptocurrency through CredEarn and offered crypto-backed borrowing through CredBorrow. Financial stress and undisclosed business problems preceded a late-October 2020 account halt and a 7 November 2020 Chapter 11 filing. A liquidation plan became effective on 19 April 2021. Former executives later pleaded guilty to wire-fraud conspiracy and were sentenced in August 2025. No reviewed source establishes one completed recovery percentage for every customer class.",
+    "official_url_original":"https://mycred.io/",
+    "official_domain_original":"mycred.io",
+    "official_url_status":"unknown",
+    "archived_url":"https://web.archive.org/web/*/https://mycred.io/",
+    "confidence":"high",
+    "last_verified_at":"2026-06-18",
+    "uncertainty_notes":"The 2018 launch date is approximate. Plan effectiveness is not repayment completion, and final recovery varies by claim class.",
+    "notes":"Centralized crypto interest-account, bankruptcy and misconduct case."
+  }
+]
