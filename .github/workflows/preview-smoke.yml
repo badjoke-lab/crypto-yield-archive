@@ -1,0 +1,29 @@
+name: Preview Surface Check
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  preview-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Check Cloudflare branch preview
+        env:
+          HEAD_REF: ${{ github.head_ref }}
+          CYA_EXPECTED_COMMIT: ${{ github.event.pull_request.head.sha }}
+          CYA_SMOKE_ATTEMPTS: 20
+          CYA_SMOKE_DELAY_MS: 15000
+        run: |
+          alias=$(printf '%s' "$HEAD_REF" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g; s/^-+|-+$//g')
+          export CYA_BASE_URL="https://${alias}.crypto-yield-archive.pages.dev"
+          npm run check:production
