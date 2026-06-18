@@ -1,2 +1,19 @@
 [
+  {
+    "candidate_id":"cya_candidate_000010",
+    "canonical_name":"Donut",
+    "aliases":["Donut App"],
+    "domain":"donut.app",
+    "country_or_origin":"United States",
+    "platform_type_guess":"crypto_interest_account",
+    "status_guess":"operations_ended",
+    "major_event":"Account pause and service closure",
+    "primary_sources":["https://www.donut.app/"],
+    "secondary_sources":[],
+    "duplicate_check":{"checked_at":"2026-06-18","matched_platform_ids":[],"notes":"Candidate audit required."},
+    "decision":"add_now",
+    "notes":"Review separately from Genesis.",
+    "first_seen_at":"2026-06-18",
+    "last_reviewed_at":"2026-06-18"
+  }
 ]
