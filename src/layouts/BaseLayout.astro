@@ -4,14 +4,18 @@ import '../styles/home.css';
 import '../styles/platform.css';
 import '../styles/registries.css';
 import '../styles/qa.css';
+import { PROJECT, PUBLIC_DATA_ROUTES, getBuildMetadata, getDerivedCounts, getRecordCounts, getRecordsLastReviewedAt } from '../lib/machine-readable';
 
+const counts = getRecordCounts();
+const derived = getDerivedCounts();
+const build = getBuildMetadata();
+const defaultDescription = `Evidence-based historical registry with ${counts.platforms} crypto lending and yield platforms, ${counts.events} events, and ${counts.evidence} evidence records.`;
 const {
-  title = 'Crypto Yield Archive',
-  description = 'Evidence-based historical registry of crypto lending, Earn, and yield platforms.',
+  title = PROJECT.siteName,
+  description = defaultDescription,
 } = Astro.props;
 
-const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? 'https://cya.badjoke-lab.com').toString();
-const siteName = 'Crypto Yield Archive';
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? PROJECT.canonicalOrigin).toString();
 const correctionUrl = '/corrections/';
 const repoUrl = 'https://github.com/badjoke-lab/crypto-yield-archive';
 const gaMeasurementId = 'G-LWCGTDBY6W';
@@ -30,6 +34,31 @@ const navItems = [
   ['/about/', 'About'],
 ];
 const isCurrent = (href) => href === '/' ? currentPath === '/' : currentPath.startsWith(href);
+const datasetJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Dataset',
+  name: PROJECT.siteName,
+  description: defaultDescription,
+  url: `${PROJECT.canonicalOrigin}/`,
+  isAccessibleForFree: true,
+  inLanguage: 'en',
+  dateModified: getRecordsLastReviewedAt(),
+  temporalCoverage: '2016/..',
+  version: build.commit,
+  measurementTechnique: 'Reviewed platform, event, evidence, outcome, product, and terms-risk records',
+  variableMeasured: [
+    `Platforms: ${counts.platforms}`,
+    `Events: ${counts.events}`,
+    `Evidence: ${counts.evidence}`,
+    `Customer outcomes: ${counts.customer_outcomes}`,
+    `Product profiles: ${counts.product_profiles}`,
+    `Terms-risk records: ${counts.terms_risk_records}`,
+    `Claims ongoing: ${derived.claims_ongoing}`,
+  ],
+  distribution: Object.entries(PUBLIC_DATA_ROUTES)
+    .filter(([, route]) => route.endsWith('.json'))
+    .map(([name, route]) => ({ '@type': 'DataDownload', name, encodingFormat: 'application/json', contentUrl: `${PROJECT.canonicalOrigin}${route}` })),
+};
 ---
 <!doctype html>
 <html lang="en">
@@ -37,21 +66,24 @@ const isCurrent = (href) => href === '/' ? currentPath === '/' : currentPath.sta
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#f3efe5" />
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
-    <link rel="alternate" type="application/json" href="/version.json" title="CYA production version" />
-    <link rel="alternate" type="application/json" href="/data/manifest.json" title="CYA public data manifest" />
-    <link rel="alternate" type="text/plain" href="/llms.txt" title="CYA LLM guide" />
-    <link rel="alternate" type="text/plain" href="/ai.txt" title="CYA AI entrypoint" />
+    <link rel="alternate" hreflang="en" href={canonicalUrl} />
+    <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
+    {Object.entries(PUBLIC_DATA_ROUTES).map(([name, route]) => (
+      <link rel="alternate" type={route.endsWith('.json') ? 'application/json' : 'text/plain'} href={route} title={`CYA ${name.replace(/_/g, ' ')}`} />
+    ))}
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content={siteName} />
+    <meta property="og:site_name" content={PROJECT.siteName} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <script type="application/ld+json" set:html={JSON.stringify(datasetJsonLd)} />
     <script async src={gaTagUrl}></script>
     <script define:vars={{ gaMeasurementId }}>
       window.dataLayer = window.dataLayer || [];
@@ -67,53 +99,20 @@ const isCurrent = (href) => href === '/' ? currentPath === '/' : currentPath.sta
         <div class="masthead-row shell">
           <a class="brand" href="/" aria-label="Crypto Yield Archive home">
             <span class="brand-mark" aria-hidden="true">CYA</span>
-            <span class="brand-copy">
-              <strong>Crypto Yield Archive</strong>
-              <small>Historical lending and yield registry</small>
-            </span>
+            <span class="brand-copy"><strong>Crypto Yield Archive</strong><small>Historical lending and yield registry</small></span>
           </a>
-          <div class="masthead-meta" aria-label="Archive description">
-            <span>Evidence-led</span>
-            <span>Static registry</span>
-            <a href={correctionUrl}>Submit correction</a>
-          </div>
+          <div class="masthead-meta" aria-label="Archive description"><span>Evidence-led</span><span>Static registry</span><a href={correctionUrl}>Submit correction</a></div>
         </div>
-        <div class="nav-rule">
-          <nav class="site-nav shell" aria-label="Primary navigation">
-            {navItems.map(([href, label]) => (
-              <a href={href} aria-current={isCurrent(href) ? 'page' : undefined}>{label}</a>
-            ))}
-          </nav>
-        </div>
+        <div class="nav-rule"><nav class="site-nav shell" aria-label="Primary navigation">{navItems.map(([href, label]) => <a href={href} aria-current={isCurrent(href) ? 'page' : undefined}>{label}</a>)}</nav></div>
       </header>
-
       <main id="main-content" class="shell">
         <slot />
-        {isPlatformPage && (
-          <section class="record-report" aria-labelledby="report-record-title">
-            <div>
-              <p class="kicker">Record maintenance</p>
-              <h2 id="report-record-title">Report this record</h2>
-              <p>Report incorrect dates, status, customer outcome, terms-risk interpretation, URL history, or missing evidence.</p>
-            </div>
-            <a class="text-action" href={correctionUrl}>Submit correction →</a>
-          </section>
-        )}
+        {isPlatformPage && <section class="record-report" aria-labelledby="report-record-title"><div><p class="kicker">Record maintenance</p><h2 id="report-record-title">Report this record</h2><p>Report incorrect dates, status, customer outcome, terms-risk interpretation, URL history, or missing evidence.</p></div><a class="text-action" href={correctionUrl}>Submit correction →</a></section>}
       </main>
-
       <footer class="site-footer">
         <div class="shell footer-grid">
           <p>Crypto Yield Archive is a historical registry, not an investment recommendation, APY ranking, or real-time dashboard.</p>
-          <div class="footer-links">
-            <a href={correctionUrl}>Submit correction</a>
-            <a href={repoUrl}>GitHub</a>
-            <a href="/methodology/">Methodology</a>
-            <a href="/source-quality/">Source quality</a>
-            <a href="/version.json">Version JSON</a>
-            <a href="/data/manifest.json">Data manifest</a>
-            <a href="/llms.txt">LLM guide</a>
-            <a href="/ai.txt">AI entrypoint</a>
-          </div>
+          <div class="footer-links"><a href={correctionUrl}>Submit correction</a><a href={repoUrl}>GitHub</a><a href="/methodology/">Methodology</a><a href="/source-quality/">Source quality</a><a href="/version.json">Version JSON</a><a href="/data/manifest.json">Data manifest</a><a href="/llms.txt">LLM guide</a><a href="/ai.txt">AI entrypoint</a></div>
         </div>
       </footer>
     </div>
