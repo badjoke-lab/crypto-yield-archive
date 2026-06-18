@@ -8,7 +8,7 @@ const home=fs.readFileSync('dist/index.html','utf8'),stats=fs.readFileSync('dist
 for(const x of p)ok(home.includes(`/platform/${x.slug}/`),`home missing ${x.slug}`);
 ok(home.includes(`of <strong>${p.length}</strong> platforms`),'home total');
 ok(home.includes(`<dt>Claims ongoing</dt><dd>${c}</dd>`),'home claims');
-ok([...time.matchAll(/data-timeline-event=(?:"true"|true)/g)].length===e.length,'timeline rows');
+ok([...time.matchAll(/class=(?:"timeline-record"|timeline-record)/g)].length===e.length,'timeline rows');
 for(const n of [p.length,e.length,s.length,o.length,r.length,t.length])ok(stats.includes(`<strong>${n}</strong>`),`stats ${n}`);
 for(const x of p)ok(fs.existsSync(`dist/platform/${x.slug}/index.html`),`detail ${x.slug}`);
 console.log(JSON.stringify({platforms:p.length,events:e.length,evidence:s.length,outcomes:o.length,products:r.length,terms_risk:t.length,claims_ongoing:c}));
