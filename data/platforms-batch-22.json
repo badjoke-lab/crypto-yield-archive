@@ -20,5 +20,27 @@
     "last_verified_at":"2026-06-18",
     "uncertainty_notes":"The 2018 launch date is approximate. Plan effectiveness is not repayment completion, and final recovery varies by claim class.",
     "notes":"Centralized crypto interest-account, bankruptcy and misconduct case."
+  },
+  {
+    "id":"cya_plat_000032",
+    "slug":"salt-lending",
+    "canonical_name":"SALT Lending",
+    "aliases":["SALT","SALT Lending LLC","SALT Blockchain Inc.","SALT Platform"],
+    "type":"borrow_lend_platform",
+    "status":"active",
+    "failure_reason":null,
+    "launch_date":"2016-01-01",
+    "end_date":null,
+    "country_or_origin":"United States / Global",
+    "summary":"Crypto-backed lending platform that paused withdrawals in November 2022 after the FTX collapse affected its business, resolved a California licensing investigation through a 2024 borrower-refund settlement, and continued offering collateralized loans after license reinstatement.",
+    "what_happened":"SALT offers loans secured by customer cryptocurrency. It paused withdrawals on 15 November 2022 and California suspended its lending license. A December 2024 consent order required borrower refunds, penalties, improved underwriting and disclosure practices, and procedures for closing or refinancing California loans. SALT states that its California license was reinstated effective 15 January 2025, and current first-party materials describe active loan and collateral-withdrawal functions.",
+    "official_url_original":"https://saltlending.com/",
+    "official_domain_original":"saltlending.com",
+    "official_url_status":"live_verified",
+    "archived_url":"https://web.archive.org/web/*/https://saltlending.com/",
+    "confidence":"high",
+    "last_verified_at":"2026-06-18",
+    "uncertainty_notes":"The 2016 launch date is year-level. Product availability and licensing vary by jurisdiction. The 2022 pause was not a company-wide bankruptcy.",
+    "notes":"Active-survivor and regulatory comparator; the SALT token offering is tracked separately from borrower-collateral events."
   }
 ]
