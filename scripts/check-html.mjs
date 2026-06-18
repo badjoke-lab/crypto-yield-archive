@@ -1,6 +1,14 @@
 import fs from 'node:fs';
 import path from 'node:path';
-const load = (name) => fs.readdirSync('data').filter((file) => file.startsWith(name) && file.endsWith('.json')).flatMap((file) => JSON.parse(fs.readFileSync(path.join('data', file), 'utf8')));
-const platforms = load('platforms');
-const events = load('events');
-console.log(platforms.length, events.length);
+const load=(n)=>fs.readdirSync('data').filter((f)=>f.startsWith(n)&&f.endsWith('.json')).flatMap((f)=>JSON.parse(fs.readFileSync(path.join('data',f),'utf8')));
+const ok=(v,m)=>{if(!v)throw new Error(m)};
+const p=load('platforms'),e=load('events'),s=load('evidence'),o=load('outcomes'),r=load('products'),t=load('terms-risk');
+const c=o.filter((x)=>x.outcome_status==='claims_ongoing').length;
+const home=fs.readFileSync('dist/index.html','utf8'),stats=fs.readFileSync('dist/stats/index.html','utf8'),time=fs.readFileSync('dist/timeline/index.html','utf8');
+ok([...home.matchAll(/data-row="platform"/g)].length===p.length,'home rows');
+ok(home.includes(`of <strong>${p.length}</strong> platforms`),'home total');
+ok(home.includes(`<dt>Claims ongoing</dt><dd>${c}</dd>`),'home claims');
+ok([...time.matchAll(/data-timeline-event="true"/g)].length===e.length,'timeline rows');
+for(const n of [p.length,e.length,s.length,o.length,r.length,t.length])ok(stats.includes(`<strong>${n}</strong>`),`stats ${n}`);
+for(const x of p)ok(fs.existsSync(`dist/platform/${x.slug}/index.html`),`detail ${x.slug}`);
+console.log(JSON.stringify({platforms:p.length,events:e.length,evidence:s.length,outcomes:o.length,products:r.length,terms_risk:t.length,claims_ongoing:c}));
