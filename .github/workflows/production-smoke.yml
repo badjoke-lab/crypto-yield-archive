@@ -1,4 +1,4 @@
-name: Production Smoke Check
+name: Production Surface Check
 
 on:
   push:
@@ -22,10 +22,14 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install --no-audit --no-fund
 
-      - name: Check production endpoints
+      - name: Check production after Cloudflare deployment
+        env:
+          CYA_BASE_URL: https://cya.badjoke-lab.com
+          CYA_EXPECTED_COMMIT: ${{ github.event_name == 'push' && github.sha || '' }}
+          CYA_SMOKE_ATTEMPTS: 24
+          CYA_SMOKE_DELAY_MS: 15000
         run: npm run check:production
