@@ -1,0 +1,24 @@
+[
+  {
+    "id":"cya_plat_000034",
+    "slug":"finblox",
+    "canonical_name":"Finblox",
+    "aliases":["Finblox App","Finblox Yield","FBX"],
+    "type":"centralized_yield",
+    "status":"operations_ended",
+    "failure_reason":"counterparty_exposure",
+    "launch_date":"2021-01-01",
+    "end_date":"2025-07-07",
+    "country_or_origin":"Hong Kong / Southeast Asia / Global",
+    "summary":"Centralized crypto yield app that restricted withdrawals and paused rewards in June 2022 after exposure to Three Arrows Capital, later partially restored services, and ended operations in July 2025.",
+    "what_happened":"Finblox offered yield on deposited crypto assets and used multiple counterparties, including Three Arrows Capital. It imposed withdrawal limits and paused rewards while assessing exposure in June 2022. Limits were later raised and selected yield functions resumed. Later reporting recorded a July 2025 shutdown. Reviewed sources do not establish one verified final recovery result for every customer.",
+    "official_url_original":"https://finblox.com/",
+    "official_domain_original":"finblox.com",
+    "official_url_status":"unknown",
+    "archived_url":"https://web.archive.org/web/*/https://finblox.com/",
+    "confidence":"medium",
+    "last_verified_at":"2026-06-18",
+    "uncertainty_notes":"The 2021 launch date is year-level. The exact counterparty loss and final customer recovery remain unverified. The shutdown date relies on reporting that cited company communications.",
+    "notes":"Disputed customer allegations are not treated as established facts."
+  }
+]
