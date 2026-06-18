@@ -1,31 +1,42 @@
-import { MAIN_ROUTES, PROJECT, getRecordCounts } from '../lib/machine-readable';
+import { MAIN_ROUTES, PROJECT, PUBLIC_DATA_ROUTES, getBuildMetadata, getDerivedCounts, getRecordCounts } from '../lib/machine-readable';
 
 export function GET() {
   const counts = getRecordCounts();
+  const derived = getDerivedCounts();
+  const build = getBuildMetadata();
   const body = [
     'Crypto Yield Archive',
     '',
     `Purpose: ${PROJECT.description}`,
     `Canonical origin: ${PROJECT.canonicalOrigin}`,
-    'Version endpoint: /version.json',
-    'Manifest endpoint: /data/manifest.json',
-    'LLM guide: /llms.txt',
-    `Platforms: ${counts.primary_records}`,
+    `Generated at: ${build.generated_at}`,
+    `Build commit: ${build.commit}`,
+    '',
+    'Machine-readable files:',
+    ...Object.entries(PUBLIC_DATA_ROUTES).map(([name, route]) => `${name}: ${route}`),
+    '',
+    `Platforms: ${counts.platforms}`,
     `Events: ${counts.events}`,
     `Evidence records: ${counts.evidence}`,
+    `Customer outcomes: ${counts.customer_outcomes}`,
+    `Product profiles: ${counts.product_profiles}`,
+    `Terms-risk records: ${counts.terms_risk_records}`,
+    `Claims ongoing: ${derived.claims_ongoing}`,
     '',
     'Important routes:',
     ...MAIN_ROUTES,
     '',
-    'Safety note: Public files expose reviewed public registry information only. They do not include unreviewed candidates, private notes, or internal monitoring output.',
-    'Interpretation note: This archive is not an APY ranking, live yield dashboard, investment recommendation, or guarantee of uniform customer outcomes.',
+    'Public data is canonical-only and excludes unreviewed candidates, private notes, and internal monitoring.',
+    'Customer outcomes are point-in-time and may differ by product, jurisdiction, claim class, and date.',
+    'Do not infer one universal recovery rate when the record scope is narrower or unspecified.',
     '',
   ].join('\n');
 
   return new Response(body, {
     headers: {
       'content-type': 'text/plain; charset=utf-8',
-      'cache-control': 'public, max-age=3600, must-revalidate',
+      'cache-control': 'public, max-age=300, must-revalidate',
+      'x-content-type-options': 'nosniff',
     },
   });
 }

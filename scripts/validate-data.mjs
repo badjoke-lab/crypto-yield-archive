@@ -35,6 +35,7 @@ const ENUMS = {
 
 let failed = false;
 const fail = (message) => { failed = true; console.error(`ERROR: ${message}`); };
+const warn = (message) => console.warn(`WARNING: ${message}`);
 const label = (r, group) => `${group} ${r.__file}#${r.__index}`;
 
 function load(files) {
@@ -85,13 +86,12 @@ const termsRisk = load(FILE_GROUPS.termsRisk);
 const platformIds = new Set(platforms.map((r) => r.id));
 const eventIds = new Set(events.map((r) => r.id));
 const evidenceIds = new Set(evidence.map((r) => r.id));
+const platformById = new Map(platforms.map((r) => [r.id, r]));
 
-duplicates(platforms, 'id', 'platforms');
-duplicates(platforms, 'slug', 'platforms');
-duplicates(events, 'id', 'events');
-duplicates(evidence, 'id', 'evidence');
-duplicates(outcomes, 'platform_id', 'outcomes');
-duplicates(termsRisk, 'platform_id', 'terms-risk');
+for (const [records, field, group] of [
+  [platforms, 'id', 'platforms'], [platforms, 'slug', 'platforms'], [events, 'id', 'events'],
+  [evidence, 'id', 'evidence'], [outcomes, 'platform_id', 'outcomes'], [termsRisk, 'platform_id', 'terms-risk'],
+]) duplicates(records, field, group);
 
 for (const r of platforms) {
   required(r, ['id','slug','canonical_name','type','status','summary','confidence','last_verified_at'], 'platforms');
@@ -111,6 +111,11 @@ for (const r of events) {
   enumField(r, 'event_status_effect', ENUMS.eventStatusEffect, 'events', true);
   enumField(r, 'confidence', ENUMS.confidence, 'events');
   dateField(r, 'event_date', 'events');
+  if (r.source_count !== undefined) {
+    const linked = evidence.filter((source) => source.event_id === r.id).length;
+    if (linked > r.source_count) fail(`Linked evidence exceeds source_count for ${r.id}: declared ${r.source_count}, linked ${linked}`);
+    else if (linked < r.source_count) warn(`Incomplete direct event links for ${r.id}: declared ${r.source_count}, linked ${linked}`);
+  }
 }
 for (const r of evidence) {
   required(r, ['id','platform_id','source_type','title','url','publisher','reliability'], 'evidence');
@@ -129,8 +134,14 @@ for (const r of outcomes) {
   if (!platformIds.has(r.platform_id)) fail(`Invalid platform_id=${r.platform_id} in ${label(r, 'outcomes')}`);
   enumField(r, 'outcome_status', ENUMS.outcomeStatus, 'outcomes');
   enumField(r, 'confidence', ENUMS.confidence, 'outcomes');
-  ['repayment_started_at','repayment_completed_at'].forEach((f) => dateField(r, f, 'outcomes'));
+  ['repayment_started_at','repayment_completed_at','as_of','last_verified_at'].forEach((f) => dateField(r, f, 'outcomes'));
   urlField(r, 'claim_process_url', 'outcomes');
+  const asOf = r.as_of || r.last_verified_at || platformById.get(r.platform_id)?.last_verified_at;
+  if (!asOf) fail(`Outcome lacks derivable as_of date: ${label(r, 'outcomes')}`);
+  if (r.outcome_status === 'claims_ongoing' && r.repayment_completed_at) fail(`claims_ongoing cannot have repayment_completed_at: ${label(r, 'outcomes')}`);
+  if (r.claim_classes !== undefined && !Array.isArray(r.claim_classes)) fail(`claim_classes must be an array: ${label(r, 'outcomes')}`);
+  if (r.jurisdictions !== undefined && !Array.isArray(r.jurisdictions)) fail(`jurisdictions must be an array: ${label(r, 'outcomes')}`);
+  if (r.affected_products !== undefined && !Array.isArray(r.affected_products)) fail(`affected_products must be an array: ${label(r, 'outcomes')}`);
 }
 for (const r of products) {
   required(r, ['platform_id','product_type','product_name'], 'products');
@@ -145,5 +156,9 @@ for (const r of termsRisk) {
   enumField(r, 'confidence', ENUMS.confidence, 'terms-risk');
 }
 
+if (outcomes.length !== platforms.length) fail(`Outcome coverage mismatch: ${outcomes.length} outcomes for ${platforms.length} platforms`);
+if (termsRisk.length !== platforms.length) fail(`Terms-risk coverage mismatch: ${termsRisk.length} records for ${platforms.length} platforms`);
+const claimsOngoing = outcomes.filter((r) => r.outcome_status === 'claims_ongoing').length;
+
 if (failed) process.exit(1);
-console.log(`CYA data validation passed: ${platforms.length} platforms, ${events.length} events, ${evidence.length} evidence records.`);
+console.log(`CYA data validation passed: ${platforms.length} platforms, ${events.length} events, ${evidence.length} evidence records, ${outcomes.length} outcomes, ${products.length} products, ${termsRisk.length} terms-risk records, ${claimsOngoing} claims ongoing.`);

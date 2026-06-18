@@ -1,0 +1,12 @@
+/version.json
+  Cache-Control: public, max-age=300, must-revalidate
+  X-Content-Type-Options: nosniff
+/data/*
+  Cache-Control: public, max-age=300, must-revalidate
+  X-Content-Type-Options: nosniff
+/llms.txt
+  Cache-Control: public, max-age=300, must-revalidate
+  X-Content-Type-Options: nosniff
+/ai.txt
+  Cache-Control: public, max-age=300, must-revalidate
+  X-Content-Type-Options: nosniff
