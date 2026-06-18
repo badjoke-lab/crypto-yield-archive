@@ -22,7 +22,16 @@ jobs:
           CYA_EXPECTED_COMMIT: ${{ github.event.pull_request.head.sha }}
           CYA_SMOKE_ATTEMPTS: 20
           CYA_SMOKE_DELAY_MS: 15000
+        shell: bash
         run: |
+          set -o pipefail
           alias=$(printf '%s' "$HEAD_REF" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g; s/^-+|-+$//g' | cut -c1-28)
           export CYA_BASE_URL="https://${alias}.crypto-yield-archive.pages.dev"
-          npm run check:production
+          echo "Preview URL: ${CYA_BASE_URL}" | tee preview-surface.log
+          npm run check:production 2>&1 | tee -a preview-surface.log
+      - name: Upload preview diagnostic
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cya-preview-surface-log
+          path: preview-surface.log
