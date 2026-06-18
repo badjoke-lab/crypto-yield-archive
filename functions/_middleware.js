@@ -21,8 +21,9 @@ export async function onRequest(context) {
 
     const response = await context.next();
     const previewResponse = new Response(response.body, response);
+    const canonicalUrl = new URL(`${url.pathname}${url.search}`, 'https://cya.badjoke-lab.com');
     previewResponse.headers.set('x-robots-tag', 'noindex, nofollow, noarchive');
-    previewResponse.headers.set('link', '<https://cya.badjoke-lab.com/>; rel="canonical"');
+    previewResponse.headers.set('link', `<${canonicalUrl.toString()}>; rel="canonical"`);
     return previewResponse;
   }
 
