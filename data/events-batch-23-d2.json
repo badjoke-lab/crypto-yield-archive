@@ -1,1 +1,1 @@
-[]
+[{"id":"cya_ev_000165","platform_id":"cya_plat_000033","event_type":"withdrawals_suspended","event_date":"2022-11-16","title":"Account functions paused","description":"Donut temporarily disabled account functions after a partner service interruption.","impact_level":"critical","event_status_effect":"withdrawals_suspended","confidence":"high","source_count":1,"notes":"Partner-linked interruption."}]
