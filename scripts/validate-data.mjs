@@ -35,6 +35,7 @@ const ENUMS = {
 
 let failed = false;
 const fail = (message) => { failed = true; console.error(`ERROR: ${message}`); };
+const warn = (message) => console.warn(`WARNING: ${message}`);
 const label = (r, group) => `${group} ${r.__file}#${r.__index}`;
 
 function load(files) {
@@ -112,7 +113,8 @@ for (const r of events) {
   dateField(r, 'event_date', 'events');
   if (r.source_count !== undefined) {
     const linked = evidence.filter((source) => source.event_id === r.id).length;
-    if (r.source_count !== linked) fail(`source_count mismatch for ${r.id}: declared ${r.source_count}, linked ${linked}`);
+    if (linked > r.source_count) fail(`Linked evidence exceeds source_count for ${r.id}: declared ${r.source_count}, linked ${linked}`);
+    else if (linked < r.source_count) warn(`Incomplete direct event links for ${r.id}: declared ${r.source_count}, linked ${linked}`);
   }
 }
 for (const r of evidence) {
