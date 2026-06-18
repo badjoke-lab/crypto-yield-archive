@@ -15,5 +15,22 @@
     "notes":"Review separately from Genesis.",
     "first_seen_at":"2026-06-18",
     "last_reviewed_at":"2026-06-18"
+  },
+  {
+    "candidate_id":"cya_candidate_000011",
+    "canonical_name":"Finblox",
+    "aliases":["Finblox App","FBX"],
+    "domain":"finblox.com",
+    "country_or_origin":"Hong Kong / Global",
+    "platform_type_guess":"centralized_yield",
+    "status_guess":"operations_ended",
+    "major_event":"Service restrictions and later closure",
+    "primary_sources":["https://web.archive.org/web/*/https://finblox.com/"],
+    "secondary_sources":[],
+    "duplicate_check":{"checked_at":"2026-06-18","matched_platform_ids":[],"notes":"Candidate audit required."},
+    "decision":"add_now",
+    "notes":"Review customer outcome conservatively.",
+    "first_seen_at":"2026-06-18",
+    "last_reviewed_at":"2026-06-18"
   }
 ]
