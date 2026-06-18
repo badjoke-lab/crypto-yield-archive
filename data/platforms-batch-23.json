@@ -1,1 +1,24 @@
-[]
+[
+  {
+    "id":"cya_plat_000033",
+    "slug":"donut",
+    "canonical_name":"Donut",
+    "aliases":["Donut App","Donut Savings","Donut Grow","Donut Build","Donut Save"],
+    "type":"crypto_interest_account",
+    "status":"operations_ended",
+    "failure_reason":"counterparty_exposure",
+    "launch_date":"2019-01-01",
+    "end_date":null,
+    "country_or_origin":"United States",
+    "summary":"Consumer crypto savings app that routed customer yield through lending partners including Genesis, paused deposits, withdrawals and earnings in November 2022 after Genesis suspended redemptions, and later closed its service.",
+    "what_happened":"Donut offered yield plans through a simplified savings interface. Genesis was its principal lending partner. When Genesis paused redemptions in November 2022, Donut paused account activity because it could not retrieve user funds from Genesis. Donut later removed its app and transitioned users to account updates tied to the Genesis restructuring. The current official site states that Donut has closed. Public sources reviewed for this record do not establish one final completed distribution date for every Donut user.",
+    "official_url_original":"https://www.donut.app/",
+    "official_domain_original":"donut.app",
+    "official_url_status":"live_verified",
+    "archived_url":"https://web.archive.org/web/*/https://www.donut.app/",
+    "confidence":"high",
+    "last_verified_at":"2026-06-18",
+    "uncertainty_notes":"The 2019 launch date is approximate. The official closure page does not publish a precise shutdown date. Recovery estimates and Genesis milestones are not treated as proof that every Donut account received a completed distribution.",
+    "notes":"Tracked separately from Genesis Global Capital because Donut was the customer-facing yield platform and maintained its own account plans and communications."
+  }
+]
