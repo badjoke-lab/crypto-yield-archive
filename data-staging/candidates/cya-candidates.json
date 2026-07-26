@@ -26,5 +26,32 @@
     "notes": "The first-party governance proposal moves the legacy Goldfinch protocol into recovery-only maintenance mode and winds down Goldfinch Prime. A 7 July update states that Prime investors were fully redeemed, no new deposits are accepted, and the contract was paused, while legacy V1 borrower pools remain in payment or recovery. CYA focuses on CeFi and does not prioritize DeFi lending protocols in its initial scope, so this is staged for an explicit scope and entity-boundary decision rather than forced into canonical data. Review whether Goldfinch Prime should be modeled as a historically significant institutional-yield product/platform exception, whether legacy V1 and Prime remain one platform entity, and how customer outcomes should be scoped by product.",
     "first_seen_at": "2026-07-25",
     "last_reviewed_at": "2026-07-25"
+  },
+  {
+    "candidate_id": "cya_candidate_000011",
+    "canonical_name": "BitMart",
+    "aliases": [
+      "BitMart Earn",
+      "BitMart Staking",
+      "BitMart Lending"
+    ],
+    "domain": "bitmart.com",
+    "country_or_origin": "Marshall Islands / Global",
+    "platform_type_guess": "exchange_earn",
+    "status_guess": "limited",
+    "major_event": "Platform-wide orderly wind-down with Earn, staking, lending, and other products scheduled for phased discontinuation and product-specific redemption or settlement arrangements still pending",
+    "primary_sources": [
+      "https://bitmart.zendesk.com/hc/en-us/articles/53544595916059-Important-Notice-Regarding-the-Orderly-Cessation-of-BitMart-Operations"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-07-26",
+      "matched_platform_ids": [],
+      "notes": "No BitMart canonical CYA platform was found in the current repository review. A full candidate audit remains required before any promotion."
+    },
+    "decision": "needs_research",
+    "notes": "BitMart announced an orderly wind-down on 26 July 2026. The notice schedules the end of spot, futures, and other trading on 26 August 2026 and formal trading-platform termination on 31 January 2027. It also states that BitMart Earn, Staking, Lending, Launchpad, and other products will be discontinued in phases, with dedicated redemption, settlement, and follow-up procedures to be communicated to affected users. Generic exchange Earn products are not prioritized in CYA, so BitMart is staged rather than promoted. Review whether the platform-wide shutdown and unresolved product-level customer outcomes justify a historically significant exchange-Earn exception, identify each affected yield or lending product, preserve product-specific custody and terms, and do not infer repayment completion before official settlement evidence is available.",
+    "first_seen_at": "2026-07-26",
+    "last_reviewed_at": "2026-07-26"
   }
 ]
