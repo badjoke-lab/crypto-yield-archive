@@ -1,0 +1,71 @@
+[
+  {
+    "candidate_id": "cya_candidate_000022",
+    "canonical_name": "Wirex X-Accounts",
+    "aliases": [
+      "X-Accounts",
+      "Wirex X-Account",
+      "X-Account Flexible",
+      "X-Account Plus",
+      "Fixed X-Account"
+    ],
+    "domain": "wirexapp.com",
+    "country_or_origin": "United Kingdom / European Union / Global",
+    "platform_type_guess": "crypto_interest_account",
+    "status_guess": "active",
+    "major_event": "June 2021 X-Accounts launch, early asset expansion, and continuing Flexible, Plus, and Fixed interest-account operation",
+    "primary_sources": [
+      "https://help.wirexapp.com/article/what-is-x-accounts-1290",
+      "https://help.wirexapp.com/article/x-account-terms-of-service-1667",
+      "https://www.wirexapp.com/post/which-x-account-type-is-right-for-you-a-simple-guide-to-wirex-x-accounts"
+    ],
+    "secondary_sources": [
+      "https://www.prnewswire.co.uk/news-releases/bringing-defi-to-the-masses-launch-of-x-accounts-amp-fireblocks-partnership-824758918.html"
+    ],
+    "duplicate_check": {
+      "checked_at": "2026-08-03",
+      "matched_platform_ids": [
+        "cya_plat_000043"
+      ],
+      "notes": "Candidate scan reported no pre-existing canonical identity match. Wirex X-Accounts was promoted after manual product-boundary, launch, current-operation, withdrawal, and ownership-term review."
+    },
+    "decision": "already_recorded",
+    "notes": "Promoted to canonical record cya_plat_000043 in batch 28 as an active product-scoped interest account. Terms support platform-owned classification for X-Accounts only. Outcome remains not_applicable.",
+    "first_seen_at": "2026-08-03",
+    "last_reviewed_at": "2026-08-03"
+  },
+  {
+    "candidate_id": "cya_candidate_000023",
+    "canonical_name": "SwissBorg Earn",
+    "aliases": [
+      "SwissBorg Smart Yield",
+      "Smart Yield",
+      "SwissBorg Earn Strategies",
+      "SwissBorg Yield Wallet"
+    ],
+    "domain": "swissborg.com",
+    "country_or_origin": "Switzerland / European Union / Global",
+    "platform_type_guess": "yield_aggregator",
+    "status_guess": "active",
+    "major_event": "December 2020 Smart Yield launch, broad program expansion, September 2022 transition to SwissBorg Earn, and continuing strategy-specific Earn operation",
+    "primary_sources": [
+      "https://swissborg.com/blog/swissborg-launches-usdc-smart-yield",
+      "https://swissborg.com/blog/swissborg-earn",
+      "https://help.swissborg.com/hc/en-gb/articles/10716337159825-SwissBorg-Earn-What-is-it",
+      "https://help.swissborg.com/hc/en-gb/articles/10719717436433-SwissBorg-Earn-How-to-get-started",
+      "https://swissborg.com/legal/pricing-policy"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-03",
+      "matched_platform_ids": [
+        "cya_plat_000044"
+      ],
+      "notes": "Candidate scan reported no pre-existing canonical identity match. SwissBorg Earn was promoted after manual Smart Yield continuity, product-boundary, strategy, current-operation, fee, and risk review."
+    },
+    "decision": "already_recorded",
+    "notes": "Promoted to canonical record cya_plat_000044 in batch 28 as an active product-scoped yield aggregator. Terms remain varies_by_product because underlying strategy and protocol treatment differs. Outcome remains not_applicable.",
+    "first_seen_at": "2026-08-03",
+    "last_reviewed_at": "2026-08-03"
+  }
+]
