@@ -1,0 +1,73 @@
+[
+  {
+    "candidate_id": "cya_candidate_000024",
+    "canonical_name": "CoinRabbit",
+    "aliases": [
+      "CoinRabbit Earn",
+      "CoinRabbit Earn Interest Product",
+      "CoinRabbit Crypto Savings Account",
+      "CoinRabbit Crypto Loans"
+    ],
+    "domain": "coinrabbit.io",
+    "country_or_origin": "Global",
+    "platform_type_guess": "borrow_lend_platform",
+    "status_guess": "active",
+    "major_event": "2020 platform launch, June 2021 savings-account launch, August 2025 app launch, and continuing active loan and Earn operation under current ownership-transfer terms",
+    "primary_sources": [
+      "https://coinrabbit.io/loans/",
+      "https://coinrabbit.io/earn/",
+      "https://coinrabbit.io/terms-of-use/",
+      "https://coinrabbit.io/about/",
+      "https://coinrabbit.io/blog/coinrabbit-earnings-interest-review/",
+      "https://coinrabbit.io/blog/introducing-the-coinrabbit-crypto-app-a-new-era-of-effortless-crypto-lending/"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-03",
+      "matched_platform_ids": [
+        "cya_plat_000045"
+      ],
+      "notes": "Candidate scan reported no pre-existing canonical match. CoinRabbit was promoted after manual identity, product, ownership, reserve-claim, current-status, and outcome review."
+    },
+    "decision": "already_recorded",
+    "notes": "Promoted to canonical record cya_plat_000045 in batch 29 as an active borrow/lend platform. Terms status is platform_owned. The record preserves the difference between contractual title transfer and current no-rehypothecation marketing. Outcome remains not_applicable.",
+    "first_seen_at": "2026-08-03",
+    "last_reviewed_at": "2026-08-03"
+  },
+  {
+    "candidate_id": "cya_candidate_000025",
+    "canonical_name": "Nebeus",
+    "aliases": [
+      "Nebeus Renting",
+      "Nebeus Crypto Renting",
+      "Nebeus Renting Programs",
+      "Nebeus Crypto Loans"
+    ],
+    "domain": "nebeus.com",
+    "country_or_origin": "Spain / United Kingdom / European Union / Global",
+    "platform_type_guess": "borrow_lend_platform",
+    "status_guess": "active",
+    "major_event": "2014 platform launch, documented 2022 Renting operation, May 2026 Renting Terms update, and continuing active loans and Renting programs",
+    "primary_sources": [
+      "https://nebeus.com/about-us",
+      "https://nebeus.com/",
+      "https://help.nebeus.com/en/legal/renting-terms-of-use",
+      "https://support.nebeus.com/portal/en/kb/articles/how-to-start-renting",
+      "https://support.nebeus.com/portal/en/kb/articles/crypto-renting-and-staking-agreement",
+      "https://support.nebeus.com/portal/en/kb/articles/terms-of-use",
+      "https://blog.nebeus.com/should-you-consider-staking-or-renting-your-crypto/"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-03",
+      "matched_platform_ids": [
+        "cya_plat_000046"
+      ],
+      "notes": "Candidate scan reported no pre-existing canonical match. Nebeus was promoted after manual identity, product, contractual-version, current-status, ownership, and outcome review."
+    },
+    "decision": "already_recorded",
+    "notes": "Promoted to canonical record cya_plat_000046 in batch 29 as an active borrow/lend platform. Terms status is varies_by_product because current and legacy Renting agreements use materially different structures. Outcome remains not_applicable.",
+    "first_seen_at": "2026-08-03",
+    "last_reviewed_at": "2026-08-03"
+  }
+]
