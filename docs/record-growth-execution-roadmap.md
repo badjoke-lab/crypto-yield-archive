@@ -8,54 +8,45 @@ Last baseline review: 2026-08-03
 
 This file is the authoritative recovery point for CYA record growth, corpus audits, staging automation, and monitoring work.
 
-It records:
-
-- latest confirmed `main`
-- current canonical counts
-- candidate queue and reserved IDs
-- completed logical phases
-- first incomplete gate
-- ordered work through 100 platforms
-
 Permanent operating rules remain in `docs/record-growth-plan.md` and `docs/development-policy.md`.
 
 ## Canonical safety boundary
 
 - `data/` is canonical.
-- Unreviewed candidates, generated drafts, monitoring findings, and private notes stay under `data-staging/` or workflow artifacts.
+- Candidates, generated drafts, monitoring findings, and private notes remain under `data-staging/` or workflow artifacts until reviewed.
 - Never write directly to `main`.
-- Never promote before name, alias, domain, product-boundary, entity-boundary, and evidence review.
-- Never infer final recovery rates, repayment completion, custody, terms, or asset ownership.
+- Never promote before identity, alias, domain, entity-boundary, product-boundary, terms, and evidence review.
+- Never infer repayment completion, recovery rate, custody, ownership, or customer outcome from candidate metadata.
 - Candidate scanning and draft generation are review aids, not publication decisions.
-- GitHub search is supplementary; canonical JSON inspection and repository validation are authoritative.
+- Repository validation and direct production observation are separate claims.
 
 ## Current confirmed baseline
 
 ```text
 Repository: badjoke-lab/crypto-yield-archive
 Default branch: main
-Confirmed main commit: 53349df4938dd16fbda445353b4e7d80033ed9b4
-Latest merged PR: #67 Add batch 28 Wirex X-Accounts and SwissBorg Earn records
+Confirmed main commit: e9851f10dcb122339b50f65168eebb2c3820ea5b
+Latest merged PR: #70 Add batch 29 CoinRabbit and Nebeus records
 ```
 
 ### Canonical scale
 
 ```text
-Platforms:       44
-Events:          217
-Evidence:        326
-Outcomes:         44
-Products:         67
-Terms risk:       44
+Platforms:       46
+Events:          226
+Evidence:        340
+Outcomes:         46
+Products:         71
+Terms risk:       46
 Claims ongoing:   15
-Generated pages:  56
+Generated pages:  58
 ```
 
-Batch-28 validation confirmed that source arrays, generated HTML, public JSON, manifest counts, version metadata, and sitemap inputs resolve to the same values.
+Batch-29 validation confirmed that canonical arrays, generated HTML, public JSON, manifest counts, metadata, and sitemap inputs resolve to the same values.
 
 ## Completed safety and automation gates
 
-### Phase 4 — full corpus audit
+### Phase 4 — full 40-platform corpus audit
 
 Completed in PR #59.
 
@@ -79,8 +70,7 @@ Completed in PR #60.
 - draft eligibility only for duplicate-clear `decision=add_now`
 - mandatory blocking of `needs_research`
 - canonical SHA-256 write guard
-- deterministic fixtures
-- Node.js 24 artifact workflow
+- deterministic fixtures and Node.js 24 artifact workflow
 
 ### Phase 5 / R8 — review-only six-group draft generator
 
@@ -94,7 +84,7 @@ Generated review artifacts:
 - outcome
 - product
 - terms risk
-- manifest with classifications and blockers
+- manifest with scanner classifications and blockers
 
 Forbidden operations:
 
@@ -112,50 +102,49 @@ automatic merge
 Candidate-only gate: PR #63  
 Canonical promotion: PR #64
 
-#### AQRU
-
-- `cya_plat_000041`
-- `centralized_yield / limited`
-- launch, growth, yield reduction, ownership restructure, and current narrowed-product history
-- outcome: `not_applicable`
-- terms: `varies_by_product`
-
-#### YouHodler
-
-- `cya_plat_000042`
-- `borrow_lend_platform / active`
-- savings launch history, weekly payouts, current Yield Account, limits, jurisdiction, company, and custody sources
-- outcome: `not_applicable`
-- terms: `varies_by_product`
+- AQRU: `cya_plat_000041 / centralized_yield / limited`
+- YouHodler: `cya_plat_000042 / borrow_lend_platform / active`
+- final counts: 42 platforms / 210 events / 314 evidence
 
 ### Batch 28 — Wirex X-Accounts and SwissBorg Earn
 
 Candidate-only gate: PR #66  
 Canonical promotion: PR #67
 
-#### Wirex X-Accounts
+- Wirex X-Accounts: `cya_plat_000043 / crypto_interest_account / active / platform_owned`
+- SwissBorg Earn: `cya_plat_000044 / yield_aggregator / active / varies_by_product`
+- final counts: 44 platforms / 217 events / 326 evidence
 
-- `cya_plat_000043`
-- `crypto_interest_account / active`
-- product-scoped separately from the wider Wirex card, payments, trading, Multiply, and Credit business
-- records the June 2021 launch and early asset expansion
-- records current Flexible, Plus, and Fixed variants
+### Batch 29 — CoinRabbit and Nebeus
+
+Candidate-only gate: PR #69  
+Canonical promotion: PR #70
+
+#### CoinRabbit
+
+- `cya_plat_000045`
+- `borrow_lend_platform / active`
+- records the approximate 2020 platform launch
+- records the June 2021 savings-account launch
+- records the August 2025 mobile-app launch
+- records current fixed/open-ended loans and Earn operation
 - terms: `platform_owned`
-- current terms state that X-Account assets transfer to Wirex and are outside government-backed deposit-guarantee schemes
+- preserves the difference between contractual title transfer and current no-rehypothecation marketing
 - outcome: `not_applicable`
 
-#### SwissBorg Earn
+#### Nebeus
 
-- `cya_plat_000044`
-- `yield_aggregator / active`
-- product-scoped separately from the wider SwissBorg wealth app
-- preserves continuity from the December 2020 Smart Yield launch
-- records broad Smart Yield expansion and the September 2022 transition to SwissBorg Earn
-- records current strategy subscriptions, redemptions, APY, risk scores, payouts, and fees
+- `cya_plat_000046`
+- `borrow_lend_platform / active`
+- records the approximate 2014 platform launch
+- records active Renting programs by August 2022
+- records the May 2026 Renting Terms update
+- records current loans and fixed/flexible Renting programs
 - terms: `varies_by_product`
+- preserves the difference between current retained-ownership terms and older lease/use agreements
 - outcome: `not_applicable`
 
-#### Batch-28 validation
+#### Batch-29 validation
 
 ```text
 Validate data:        success
@@ -164,10 +153,10 @@ CYA CI:               success
 Candidate scan:       success
 Candidate draft:      success
 Corpus blockers:      0
-Candidate matches:    0 possible matches
+Candidate matches:    0 possible matches before promotion
 Build-output check:   success
-Wirex route:          /platform/wirex-x-accounts/
-SwissBorg route:      /platform/swissborg-earn/
+CoinRabbit route:     /platform/coinrabbit/
+Nebeus route:         /platform/nebeus/
 ```
 
 ## Candidate queue and reserved identifiers
@@ -177,11 +166,11 @@ Active candidate queue: 2 needs_research candidates
 - cya_candidate_000010 Goldfinch
 - cya_candidate_000011 BitMart
 
-Next candidate ID:       cya_candidate_000024
-Next platform ID:        cya_plat_000045
-Next event ID:           cya_ev_000223
-Next canonical batch:    29
-Next evidence prefix:    cya_src_b29_
+Next candidate ID:       cya_candidate_000026
+Next platform ID:        cya_plat_000047
+Next event ID:           cya_ev_000232
+Next canonical batch:    30
+Next evidence prefix:    cya_src_b30_
 ```
 
 Goldfinch and BitMart remain staging-only:
@@ -189,24 +178,20 @@ Goldfinch and BitMart remain staging-only:
 - Goldfinch requires a DeFi/institutional-yield scope and product/entity-boundary decision.
 - BitMart requires an exchange-Earn exception decision plus product-specific redemption, custody, terms, and customer-outcome evidence.
 
-They must not be silently inserted into batch 29.
+They must not be silently inserted into batch 30.
 
 ## Current phase
 
 ```text
 Phase 3A: reach 30 platforms                         complete
-Phase 3B / R1: batch 22, 30 -> 32                   complete
-Public-surface corrective gate                      complete
-Phase 3B / R2: batch 23, 32 -> 34                   complete
-Phase 3B / R3: batch 24, 34 -> 36                   complete
-Phase 3B / R4: batch 25, 36 -> 38                   complete
-Phase 3B / R5: batch 26, 38 -> 40                   complete
+Phase 3B / batches 22-26: 30 -> 40                  complete
 Phase 4: 40-platform full audit                     complete
 Phase 5 / R7: candidate scanner                     complete
 Phase 5 / R8: review-only draft generator           complete
 Phase 6 / batch 27: 40 -> 42                        complete
 Phase 6 / batch 28: 42 -> 44                        complete
-Phase 6 / batch 29: 44 -> 46                        current
+Phase 6 / batch 29: 44 -> 46                        complete
+Phase 6 / batch 30: 46 -> 48                        current
 Phase 7: weekly existing-record monitoring          not started
 Phase 8: 60 -> 100 with 75/100 audits               not started
 ```
@@ -214,11 +199,11 @@ Phase 8: 60 -> 100 with 75/100 audits               not started
 ## Current execution point
 
 ```text
-Phase 6 / batch 29 candidate-only gate
+Phase 6 / batch 30 candidate-only gate
 
 1. select two high-value, in-scope CeFi yield/lending candidates
 2. investigate identity, product boundary, event history, terms, and customer outcome
-3. assign candidate IDs 000024 and 000025 only after duplicate review
+3. assign candidate IDs 000026 and 000027 only after duplicate review
 4. stage candidates without canonical changes
 5. run candidate audit, scanner, draft generator, and all repository checks
 6. merge the candidate-only PR
@@ -226,8 +211,6 @@ Phase 6 / batch 29 candidate-only gate
 ```
 
 ## Phase 6 — 40 to 60 platforms
-
-Use scanner and draft-generator output while retaining manual source review and candidate-only duplicate gates.
 
 ### Batch policy
 
@@ -237,7 +220,7 @@ Use scanner and draft-generator output while retaining manual source review and 
 - prefer historically significant CeFi lending, interest-account, and centralized-yield records
 - include active comparators when lending or yield is a core platform function
 - product-scoped records are allowed when the continuing parent business must remain separate
-- acquisition, shutdown, recovery, and customer-outcome boundaries must remain conservative
+- preserve terms evolution, marketing-versus-contract differences, and customer-outcome uncertainty
 
 ### Required six-group model
 
@@ -273,16 +256,7 @@ Do not hide these findings or convert them into guessed values.
 
 ## Phase 7 — weekly monitoring
 
-After reaching 60 platforms, monitor:
-
-- official blogs and notices
-- court and administrator pages
-- creditor portals
-- regulators
-- archive availability
-- official domains and status changes
-
-Findings remain staging-only. Create no PR when nothing material changed.
+After reaching 60 platforms, monitor official notices, court and administrator pages, creditor portals, regulators, archive availability, official domains, and status changes. Findings remain staging-only, and no PR should be created when nothing material changed.
 
 ## Phase 8 — 60 to 100 platforms
 
@@ -297,28 +271,24 @@ Findings remain staging-only. Create no PR when nothing material changed.
 
 ```text
 PR #43 public-surface implementation: merged
-Batches 23-28 repository/public-output validation: complete
+Batches 23-29 repository/public-output validation: complete
 40-platform audit: complete
 Direct external production observation from this execution environment: not independently confirmed
 ```
 
-Expected public values after the batch-28 deployment:
+Expected public values after the batch-29 deployment:
 
 ```text
-platforms: 44
-events: 217
-evidence: 326
-outcomes: 44
-products: 67
-terms-risk: 44
+platforms: 46
+events: 226
+evidence: 340
+outcomes: 46
+products: 71
+terms-risk: 46
 claims ongoing: 15
 ```
 
-Repository validation and direct deployment observation must remain separate. Never report production success without direct evidence.
-
 ## Recovery procedure
-
-After interruption:
 
 ```text
 1. Read this file and docs/development-policy.md.
@@ -363,29 +333,20 @@ npm test
 #63-#64 batch 27 candidate and canonical work
 #65 batch 28 checkpoint
 #66-#67 batch 28 candidate and canonical work
+#68 batch 29 checkpoint
+#69-#70 batch 29 candidate and canonical work
 ```
 
 ## Update rule
 
-After every covered merge, update:
-
-```text
-confirmed main commit
-latest merged PR
-all six canonical counts
-next reserved IDs
-candidate queue state
-completed logical work
-current phase and first incomplete gate
-production-verification state
-```
+After every covered merge, update the confirmed main commit, latest merged PR, canonical counts, reserved IDs, candidate queue, completed work, current phase, first incomplete gate, and production-verification state.
 
 Do not leave a stale current-location marker.
 
 ## Immediate next action
 
 ```text
-Phase 6 / batch 29 candidate-only gate
+Phase 6 / batch 30 candidate-only gate
 
-Select, research, duplicate-check, and stage two high-value CeFi yield/lending candidates as cya_candidate_000024 and cya_candidate_000025. Do not alter canonical data in the candidate PR.
+Select, research, duplicate-check, and stage two high-value CeFi yield/lending candidates as cya_candidate_000026 and cya_candidate_000027. Do not alter canonical data in the candidate PR.
 ```
