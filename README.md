@@ -78,17 +78,6 @@ npm test
 
 `npm test` runs validation and the Astro build.
 
-## Development policy
-
-Before starting or resuming development work, read:
-
-```text
-docs/development-policy.md
-docs/record-growth-execution-roadmap.md
-```
-
-`docs/development-policy.md` defines repository validation, preview, merge, production verification, push discipline, and interruption recovery.
-
 ## Data files
 
 Registry data currently lives in base files plus batch files under `data/`.
