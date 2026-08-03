@@ -1,0 +1,48 @@
+[
+  {
+    "platform_id": "cya_plat_000041",
+    "outcome_status": "not_applicable",
+    "estimated_recovery_rate": "No customer-loss or repayment event is assigned. Reviewed sources describe product contraction, continued withdrawal availability, an ownership restructure, and continuing limited platform operation.",
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": "Not applicable",
+    "claim_process_url": null,
+    "affected_products": [
+      "AQRU Auto and Flex crypto yield products",
+      "AQRU Maple products",
+      "AQRU Real-World Receivables"
+    ],
+    "claim_classes": [],
+    "jurisdictions": [
+      "Supported non-U.S. customer jurisdictions"
+    ],
+    "as_of": "2026-08-03",
+    "last_verified_at": "2026-08-03",
+    "notes": "AQRU plc stated in November 2022 that customer assets were available for withdrawal as normal, and the 2023 transfer announcement said customers should not experience service disruption. These statements do not prove a universal historical withdrawal result, but no reviewed evidence established a claims or repayment process requiring an outcome classification.",
+    "confidence": "medium"
+  },
+  {
+    "platform_id": "cya_plat_000042",
+    "outcome_status": "not_applicable",
+    "estimated_recovery_rate": "No platform-wide customer-loss, claims, or repayment event was identified in the reviewed sources; YouHodler remains an active comparator.",
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": "Not applicable",
+    "claim_process_url": null,
+    "affected_products": [
+      "YouHodler Savings Accounts",
+      "YouHodler Yield Account",
+      "YouHodler crypto-backed loans"
+    ],
+    "claim_classes": [],
+    "jurisdictions": [
+      "Switzerland",
+      "European Union",
+      "Other supported jurisdictions"
+    ],
+    "as_of": "2026-08-03",
+    "last_verified_at": "2026-08-03",
+    "notes": "Not-applicable applies only because the platform is active and the reviewed record does not concern a failure or customer-recovery process. It is not a guarantee against product, counterparty, market, custody, or jurisdictional risk.",
+    "confidence": "high"
+  }
+]
