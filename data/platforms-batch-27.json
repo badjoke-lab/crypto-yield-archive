@@ -1,0 +1,57 @@
+[
+  {
+    "id": "cya_plat_000041",
+    "slug": "aqru",
+    "canonical_name": "AQRU",
+    "aliases": [
+      "AQRU.io",
+      "Accru Finance",
+      "AQRU Earn",
+      "AQRU Invest",
+      "AQRU Exchange"
+    ],
+    "type": "centralized_yield",
+    "status": "limited",
+    "failure_reason": null,
+    "launch_date": "2021-12-01",
+    "end_date": null,
+    "country_or_origin": "Bulgaria / United Kingdom / Global",
+    "summary": "Custodial crypto investment and yield platform launched in late 2021, later narrowed after market-driven yield reductions and a 2023 ownership restructuring, and currently offering a restricted high-minimum product set while several legacy products remain closed to new deposits.",
+    "what_happened": "AQRU launched its consumer-facing crypto-yield platform in December 2021 and reported more than USD 50 million in assets under management and 20,000 signups by May 2022. In November 2022, AQRU plc reduced yields to a maximum of 3% on its Maple product, stopped interest on Bitcoin and Ethereum deposits, and said customer assets remained available for withdrawal. In August 2023, AQRU plc transferred its interest in the app and related digital-asset businesses to Langland Software Solutions in exchange for a minority stake, while stating that customers should not experience service disruption. The current AQRU site remains live but requires a USD 250,000 minimum and shows several legacy products closed to new deposits, supporting a limited rather than ended classification.",
+    "official_url_original": "https://aqru.io/",
+    "official_domain_original": "aqru.io",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://aqru.io/",
+    "confidence": "medium",
+    "last_verified_at": "2026-08-03",
+    "uncertainty_notes": "The exact December 2021 launch day was not identified and 1 December is used as a sortable approximate date. Current product availability is jurisdiction-dependent. The 2023 ownership transfer did not establish a customer-loss, shutdown, repayment, or acquisition outcome for the customer-facing platform.",
+    "notes": "Limited status reflects narrowed access and multiple products closed to new deposits while the platform and at least one yield product remain available."
+  },
+  {
+    "id": "cya_plat_000042",
+    "slug": "youhodler",
+    "canonical_name": "YouHodler",
+    "aliases": [
+      "YouHodler Savings Account",
+      "YouHodler Yield Account",
+      "YouHodler Crypto Yield Account",
+      "YouHodler Crypto Loans"
+    ],
+    "type": "borrow_lend_platform",
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": "2018-01-01",
+    "end_date": null,
+    "country_or_origin": "Switzerland / European Union / Global",
+    "summary": "Active crypto lending and yield platform that introduced stablecoin and Bitcoin savings accounts in 2019 and continues to offer crypto-backed liquidity, trading, custody, and a flexible Yield Account across supported jurisdictions.",
+    "what_happened": "YouHodler developed as a crypto-backed lending and wallet platform and launched a USDT savings account in August 2019 followed by a Bitcoin savings account in September 2019. It moved savings payouts to a weekly schedule in April 2020. The current platform continues to offer a Yield Account with weekly settlement, flexible access, asset and account limits, and jurisdiction-specific restrictions. Current terms identify YouHodler entities in Switzerland and the European Union and describe segregated, off-balance-sheet handling for covered customer assets while allowing the use of disclosed third-party service providers.",
+    "official_url_original": "https://www.youhodler.com/",
+    "official_domain_original": "youhodler.com",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://www.youhodler.com/",
+    "confidence": "high",
+    "last_verified_at": "2026-08-03",
+    "uncertainty_notes": "The platform-level launch year is approximate. Product availability, eligible assets, limits, reward rates, legal entity, and regulatory treatment vary by jurisdiction and can change. This record does not imply deposit insurance or universal customer protection.",
+    "notes": "Active comparator covering YouHodler's integrated lending and yield business rather than a failure case."
+  }
+]
