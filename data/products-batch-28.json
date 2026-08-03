@@ -25,7 +25,7 @@
   },
   {
     "platform_id": "cya_plat_000044",
-    "product_type": "yield_aggregator",
+    "product_type": "defi_yield_aggregator",
     "product_name": "SwissBorg Smart Yield",
     "custody_model": "app-based custodial strategy wallet",
     "yield_source": "SwissBorg-selected DeFi, CeFi, lending, market-making, staking, and liquidity strategies used by the historical Smart Yield optimiser",
@@ -33,7 +33,7 @@
   },
   {
     "platform_id": "cya_plat_000044",
-    "product_type": "yield_aggregator",
+    "product_type": "defi_yield_aggregator",
     "product_name": "SwissBorg Earn strategies",
     "custody_model": "app-based custodial access to strategy-specific yield positions",
     "yield_source": "Strategy-dependent DeFi lending, liquidity provision, staking, restaking, protocol rewards, and other disclosed opportunities",
