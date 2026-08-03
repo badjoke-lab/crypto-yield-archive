@@ -1,0 +1,47 @@
+[
+  {
+    "platform_id": "cya_plat_000039",
+    "outcome_status": "partial_repayment",
+    "estimated_recovery_rate": "Recovery varied by program, asset and customer. Scheduled-release customers received more than the fixed incident-date U.S.-dollar value by August 2024, while exit-payout customers accepted deductions and later settlement offers used different terms.",
+    "repayment_started_at": "2023-04-28",
+    "repayment_completed_at": "2026-06-30",
+    "repayment_method": "Migration, discounted exit payouts, monthly scheduled USDC releases, conditional claim conversion and final settlement offers",
+    "claim_process_url": "https://inlock.io/blog/",
+    "affected_products": [
+      "Inlock Savings Account",
+      "other Inlock custodial customer-asset balances affected by the November 2022 incident"
+    ],
+    "claim_classes": [
+      "Vigiler migration participants",
+      "Exit Payout participants",
+      "Scheduled Release participants",
+      "Final Settlement participants"
+    ],
+    "jurisdictions": [
+      "European Union",
+      "Global supported customer jurisdictions"
+    ],
+    "as_of": "2026-08-03",
+    "last_verified_at": "2026-08-03",
+    "notes": "The 2024 value benchmark was calculated using fixed incident-date U.S.-dollar values and applied to the scheduled-release cohort; it was not a universal in-kind recovery result. Some customers accepted discounted exits, others migrated or accepted later settlement offers. Inlock ended active customer-asset services on 30 June 2026 after completing the recovery-process wind-down.",
+    "confidence": "high"
+  },
+  {
+    "platform_id": "cya_plat_000040",
+    "outcome_status": "not_applicable",
+    "estimated_recovery_rate": "No customer-loss or repayment event was identified; Stablehouse was acquired and transitioned within the XBTO group.",
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": "Not applicable",
+    "claim_process_url": null,
+    "affected_products": [
+      "Historical Stablehouse digital-asset yield products"
+    ],
+    "claim_classes": [],
+    "jurisdictions": [],
+    "as_of": "2026-08-03",
+    "last_verified_at": "2026-08-03",
+    "notes": "The reviewed sources establish acquisition and product transition rather than insolvency, withdrawal suspension or customer claims. No repayment or recovery percentage is assigned.",
+    "confidence": "high"
+  }
+]
