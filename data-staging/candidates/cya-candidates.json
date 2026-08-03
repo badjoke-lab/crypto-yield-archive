@@ -53,5 +53,70 @@
     "notes": "BitMart announced an orderly wind-down on 26 July 2026. The notice schedules the end of spot, futures, and other trading on 26 August 2026 and formal trading-platform termination on 31 January 2027. It also states that BitMart Earn, Staking, Lending, Launchpad, and other products will be discontinued in phases, with dedicated redemption, settlement, and follow-up procedures to be communicated to affected users. Generic exchange Earn products are not prioritized in CYA, so BitMart is staged rather than promoted. Review whether the platform-wide shutdown and unresolved product-level customer outcomes justify a historically significant exchange-Earn exception, identify each affected yield or lending product, preserve product-specific custody and terms, and do not infer repayment completion before official settlement evidence is available.",
     "first_seen_at": "2026-07-26",
     "last_reviewed_at": "2026-07-26"
+  },
+  {
+    "candidate_id": "cya_candidate_000024",
+    "canonical_name": "CoinRabbit",
+    "aliases": [
+      "CoinRabbit Earn",
+      "CoinRabbit Earn Interest Product",
+      "CoinRabbit Crypto Savings Account",
+      "CoinRabbit Crypto Loans"
+    ],
+    "domain": "coinrabbit.io",
+    "country_or_origin": "Global",
+    "platform_type_guess": "borrow_lend_platform",
+    "status_guess": "active",
+    "major_event": "Crypto lending platform founded in 2020 and currently operating crypto-backed loans, a flexible Earn Interest Product, storage, swaps, and an app, with current terms stating that CoinRabbit owns Earn deposits and loan collateral while current loan marketing separately claims no collateral rehypothecation",
+    "primary_sources": [
+      "https://coinrabbit.io/loans/",
+      "https://coinrabbit.io/earn/",
+      "https://coinrabbit.io/terms-of-use/",
+      "https://coinrabbit.io/about/",
+      "https://coinrabbit.io/blog/introducing-the-coinrabbit-crypto-app-a-new-era-of-effortless-crypto-lending/"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-03",
+      "matched_platform_ids": [],
+      "notes": "Repository name, alias, and domain review found no canonical CoinRabbit record. Scanner and candidate audit remain mandatory before promotion."
+    },
+    "decision": "add_now",
+    "notes": "CoinRabbit is in CYA scope because lending and the interest-bearing deposit product are core platform functions. The current Earn page describes daily accrual and flexible withdrawals, while the May 2026 terms define an Earn Interest Product, state that CoinRabbit owns topped-up Earn assets, and allow those assets to be used for loans. Loan terms also state that collateral ownership passes to CoinRabbit, while the current loan marketing page says collateral is fully reserved and not rehypothecated. Canonical review must preserve this terms-versus-marketing distinction rather than harmonizing it. Separate the Earn deposit ownership model from the collateral-return and liquidation model, do not treat current advertised rates or reserve statements as guarantees, and keep outcome not_applicable unless a verified customer-loss or recovery event is found.",
+    "first_seen_at": "2026-08-03",
+    "last_reviewed_at": "2026-08-03"
+  },
+  {
+    "candidate_id": "cya_candidate_000025",
+    "canonical_name": "Nebeus",
+    "aliases": [
+      "Nebeus Renting",
+      "Nebeus Crypto Renting",
+      "Nebeus Renting Programs",
+      "Nebeus Crypto Loans"
+    ],
+    "domain": "nebeus.com",
+    "country_or_origin": "Spain / United Kingdom / European Union / Global",
+    "platform_type_guess": "borrow_lend_platform",
+    "status_guess": "active",
+    "major_event": "Crypto lending platform founded in 2014 and currently operating crypto-backed loans and multiple fixed or flexible Renting programs, with current May 2026 terms stating that users retain legal ownership while older renting agreements described a lease to Nebeus and broad reuse or rehypothecation rights",
+    "primary_sources": [
+      "https://nebeus.com/about-us",
+      "https://nebeus.com/",
+      "https://support.nebeus.com/portal/en/kb/articles/renting-terms-of-use",
+      "https://support.nebeus.com/portal/en/kb/articles/how-to-start-renting",
+      "https://support.nebeus.com/portal/en/kb/articles/crypto-renting-and-staking-agreement",
+      "https://support.nebeus.com/portal/en/kb/articles/terms-of-use"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-03",
+      "matched_platform_ids": [],
+      "notes": "Repository name, alias, and domain review found no canonical Nebeus record. Scanner and candidate audit remain mandatory before promotion."
+    },
+    "decision": "add_now",
+    "notes": "Nebeus is in CYA scope because crypto-backed lending and Renting are core platform functions. Current first-party materials list active Sprout, Baobab, Sequoia, Bonsai, Juniper, and related programs with different lockups, rewards, and payout schedules. The May 2026 Renting Terms state that users retain legal ownership, the assets are technically held and operationally handled through Nebeus group infrastructure, and principal or rewards are not guaranteed or protected by deposit or investor-compensation schemes. Older first-party agreements instead described users leasing assets to Nebeus and permitted pledge, repledge, lending, sale, investment, or other use. Canonical review must record the contractual evolution and effective-date uncertainty, distinguish current and legacy programs, identify the current contractual counterparty, and avoid applying one ownership model retroactively across all periods. Outcome should remain not_applicable while the service is active.",
+    "first_seen_at": "2026-08-03",
+    "last_reviewed_at": "2026-08-03"
   }
 ]
