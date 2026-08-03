@@ -53,5 +53,71 @@
     "notes": "BitMart announced an orderly wind-down on 26 July 2026. The notice schedules the end of spot, futures, and other trading on 26 August 2026 and formal trading-platform termination on 31 January 2027. It also states that BitMart Earn, Staking, Lending, Launchpad, and other products will be discontinued in phases, with dedicated redemption, settlement, and follow-up procedures to be communicated to affected users. Generic exchange Earn products are not prioritized in CYA, so BitMart is staged rather than promoted. Review whether the platform-wide shutdown and unresolved product-level customer outcomes justify a historically significant exchange-Earn exception, identify each affected yield or lending product, preserve product-specific custody and terms, and do not infer repayment completion before official settlement evidence is available.",
     "first_seen_at": "2026-07-26",
     "last_reviewed_at": "2026-07-26"
+  },
+  {
+    "candidate_id": "cya_candidate_000016",
+    "canonical_name": "Block Earner Earner Product",
+    "aliases": [
+      "Block Earner Earner",
+      "Earner",
+      "USD Earner",
+      "Gold Earner",
+      "Crypto Earner"
+    ],
+    "domain": "blockearner.com.au",
+    "country_or_origin": "Australia",
+    "platform_type_guess": "crypto_interest_account",
+    "status_guess": "operations_ended",
+    "major_event": "Fixed-yield Earner product offered from March to November 2022, ASIC enforcement beginning in November 2022, conflicting Federal and Full Federal Court decisions, and a unanimous High Court ruling on 17 June 2026 that Earner was a financial product requiring an Australian financial services licence",
+    "primary_sources": [
+      "https://www.asic.gov.au/about-asic/news-centre/find-a-media-release/2026-releases/26-124mr-asic-successful-in-high-court-block-earner-appeal/",
+      "https://www.hcourt.gov.au/cases-and-judgments/judgments/judgments-1998-current/australian-securities-and-investments-commission-v-web3-ventures-pty-ltd",
+      "https://asic.gov.au/about-asic/news-centre/find-a-media-release/2022-releases/22-324mr-asic-sues-block-earner-for-unlicensed-conduct-over-crypto-asset-based-products/",
+      "https://download.asic.gov.au/media/ynmpkdfe/22-324mr-concise-statement.pdf"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-03",
+      "matched_platform_ids": [],
+      "notes": "No canonical Block Earner, Web3 Ventures or Earner product record was found in the repository review. The automated candidate audit and direct canonical JSON inspection remain required before promotion."
+    },
+    "decision": "add_now",
+    "notes": "This candidate is product-scoped. Web3 Ventures Pty Ltd, trading as Block Earner, continues to exist and may offer other services, so only the discontinued fixed-yield Earner product should be classified as operations_ended. Court and ASIC materials state that Earner was offered from March to November 2022 and that customers transferred rights and title to Block Earner, which could use the crypto assets to generate returns. The High Court unanimously held in June 2026 that Earner was a financial product requiring an AFS licence and remitted the penalty issue. Secondary reporting indicates customer assets were returned after discontinuation, but a canonical full-repayment outcome requires direct confirmation from the judgments or other primary evidence before promotion. Do not apply the classification to Block Earner's separate Access product or current business.",
+    "first_seen_at": "2026-08-03",
+    "last_reviewed_at": "2026-08-03"
+  },
+  {
+    "candidate_id": "cya_candidate_000017",
+    "canonical_name": "Flint",
+    "aliases": [
+      "Flint Money",
+      "Flint.money",
+      "Flint Crypto",
+      "Flint App"
+    ],
+    "domain": "flint.money",
+    "country_or_origin": "India / Singapore / Global",
+    "platform_type_guess": "centralized_yield",
+    "status_guess": "operations_ended",
+    "major_event": "Custodial fixed-yield service phased out under regulatory uncertainty, user unlend and withdrawal instructions issued in January 2023, and Flint Labs later confirmed that its first flagship project Flint Money had been closed before the company pivoted to other products",
+    "primary_sources": [
+      "https://flintlabs.medium.com/how-to-withdraw-your-funds-from-flint-to-your-crypto-wallet-565522183a2d",
+      "https://flintlabs.medium.com/flint-labs-next-chapter-7e56a87f4f5e",
+      "https://flintlabs.medium.com/the-evolution-of-flint-labs-2978ffa9f1a4",
+      "https://flintlabs.medium.com/"
+    ],
+    "secondary_sources": [
+      "https://www.moneycontrol.com/news/business/cryptocurrency/sequoia-backed-defi-app-flint-discontinues-flagship-yield-service-report-9948711.html",
+      "https://inc42.com/buzz/flint-labs-shuts-down-flint-money-app-amid-regulatory-uncertainty/"
+    ],
+    "duplicate_check": {
+      "checked_at": "2026-08-03",
+      "matched_platform_ids": [],
+      "notes": "No canonical Flint, Flint Money, flint.money or Eugenius platform was found in the repository review. The candidate audit must avoid unrelated current products and software projects named Flint."
+    },
+    "decision": "add_now",
+    "notes": "Flint Money was a consumer-facing custodial yield app that converted deposits into stablecoin or crypto positions and deployed funds through institutional and DeFi counterparties. Reports in January 2023 state that Flint was phasing out the yield service under regulatory uncertainty, asked users to unlend and withdraw, and said principal plus accrued interest through the cutoff was safe and would be returned. Flint Labs' later first-party retrospectives state that Flint Money, its first flagship project, had been brought to a close and the company pivoted. The first-party retrospective refers to November of the prior year while contemporaneous shutdown reporting and withdrawal instructions continued in January 2023; the canonical end date must remain unresolved until the exact customer notice and operational cutoff are reconciled. Withdrawal availability and company assurances do not prove universal completed repayment. Preserve the old flint.money entity and do not confuse it with unrelated current Flint-branded products.",
+    "first_seen_at": "2026-08-03",
+    "last_reviewed_at": "2026-08-03"
   }
 ]
