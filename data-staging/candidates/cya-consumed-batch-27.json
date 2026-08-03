@@ -1,0 +1,72 @@
+[
+  {
+    "candidate_id": "cya_candidate_000020",
+    "canonical_name": "AQRU",
+    "aliases": [
+      "AQRU.io",
+      "Accru Finance",
+      "AQRU Earn",
+      "AQRU Invest",
+      "AQRU Exchange"
+    ],
+    "domain": "aqru.io",
+    "country_or_origin": "Bulgaria / United Kingdom / Global",
+    "platform_type_guess": "centralized_yield",
+    "status_guess": "limited",
+    "major_event": "Launch, operating-scale growth, November 2022 yield reductions, August 2023 ownership restructuring, and continuing narrowed product availability",
+    "primary_sources": [
+      "https://www.aquis.eu/stock-exchange/announcements/3550343",
+      "https://www.aquis.eu/stock-exchange/announcements/3841946",
+      "https://www.investegate.co.uk/announcement/rns/supernova-digital-assets-plc--sol/operational-update-board-changes/7721158",
+      "https://aqru.io/",
+      "https://aqru.io/terms-of-use/"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-03",
+      "matched_platform_ids": [
+        "cya_plat_000041"
+      ],
+      "notes": "Candidate scan reported no pre-existing canonical identity match. AQRU was promoted after manual scope, product-boundary, URL, terms, and current-status review."
+    },
+    "decision": "already_recorded",
+    "notes": "Promoted to canonical record cya_plat_000041 in batch 27 as limited. The 2023 ownership restructure is not classified as acquisition, failure, customer loss, or repayment. Outcome remains not_applicable, and product terms vary by product.",
+    "first_seen_at": "2026-08-03",
+    "last_reviewed_at": "2026-08-03"
+  },
+  {
+    "candidate_id": "cya_candidate_000021",
+    "canonical_name": "YouHodler",
+    "aliases": [
+      "YouHodler Savings Account",
+      "YouHodler Yield Account",
+      "YouHodler Crypto Yield Account",
+      "YouHodler Crypto Loans"
+    ],
+    "domain": "youhodler.com",
+    "country_or_origin": "Switzerland / European Union / Global",
+    "platform_type_guess": "borrow_lend_platform",
+    "status_guess": "active",
+    "major_event": "2019 savings-product launches, weekly-payout expansion, and continuing active Yield Account and crypto-backed lending operation",
+    "primary_sources": [
+      "https://www.youhodler.com/blog/youhodler-usdt-savings-account-gives-users-12-annual-profit-with-zero-effort",
+      "https://www.youhodler.com/blog/bitcoin-btc-savings-account-gives-users-7-2-annual-profit-with-zero-effort",
+      "https://www.youhodler.com/yield",
+      "https://help.youhodler.com/en/articles/7329037-crypto-yield-account-guide",
+      "https://www.youhodler.com/docs/terms-of-service",
+      "https://www.youhodler.com/company"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-03",
+      "matched_platform_ids": [
+        "cya_plat_000042"
+      ],
+      "notes": "Candidate scan reported no pre-existing canonical identity match. YouHodler was promoted after manual scope, product-boundary, current-status, legal-entity, custody, and terms review."
+    },
+    "decision": "already_recorded",
+    "notes": "Promoted to canonical record cya_plat_000042 in batch 27 as an active comparator. Outcome remains not_applicable. The record separates Yield Account mechanics from crypto-backed loan mechanics and does not infer universal regulatory protection.",
+    "first_seen_at": "2026-08-03",
+    "last_reviewed_at": "2026-08-03"
+  }
+]
