@@ -1,0 +1,45 @@
+[
+  {
+    "platform_id": "cya_plat_000043",
+    "outcome_status": "not_applicable",
+    "estimated_recovery_rate": "No platform-wide customer-loss, claims, or repayment event was identified for Wirex X-Accounts in the reviewed sources; the product remains active.",
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": "Not applicable",
+    "claim_process_url": null,
+    "affected_products": [
+      "X-Account Flexible",
+      "X-Account Plus",
+      "Fixed X-Account"
+    ],
+    "claim_classes": [],
+    "jurisdictions": [
+      "Supported Wirex jurisdictions"
+    ],
+    "as_of": "2026-08-03",
+    "last_verified_at": "2026-08-03",
+    "notes": "Not-applicable reflects the absence of a reviewed failure or recovery process, not an assurance of principal protection, uninterrupted access, product availability, or solvency. X-Accounts are explicitly outside government-backed depositor-compensation schemes.",
+    "confidence": "high"
+  },
+  {
+    "platform_id": "cya_plat_000044",
+    "outcome_status": "not_applicable",
+    "estimated_recovery_rate": "No product-wide customer-loss, claims, or repayment event was identified for SwissBorg Earn in the reviewed sources; Earn strategies remain active.",
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": "Not applicable",
+    "claim_process_url": null,
+    "affected_products": [
+      "SwissBorg Smart Yield",
+      "SwissBorg Earn strategies"
+    ],
+    "claim_classes": [],
+    "jurisdictions": [
+      "Supported SwissBorg jurisdictions"
+    ],
+    "as_of": "2026-08-03",
+    "last_verified_at": "2026-08-03",
+    "notes": "Not-applicable applies only because the product is active and no reviewed recovery process exists. Individual strategies can still carry smart-contract, protocol, counterparty, liquidity, slashing, market, operational, or redemption-delay risk.",
+    "confidence": "high"
+  }
+]
