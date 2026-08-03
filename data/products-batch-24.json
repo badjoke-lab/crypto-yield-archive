@@ -1,0 +1,18 @@
+[
+  {
+    "platform_id": "cya_plat_000035",
+    "product_type": "centralized_yield",
+    "product_name": "Pillow crypto savings Cases",
+    "custody_model": "custodial_platform_wallet",
+    "yield_source": "platform-managed deployment of deposited Bitcoin, Ether and stablecoins; full underlying allocation was not established in the reviewed sources",
+    "risk_notes": "Users deposited crypto to Pillow-controlled addresses and depended on Pillow for interest accrual and withdrawals. The platform later stopped interest and imposed final withdrawal deadlines during an orderly shutdown."
+  },
+  {
+    "platform_id": "cya_plat_000036",
+    "product_type": "interest_account",
+    "product_name": "Nuri Bitcoin Interest Account",
+    "custody_model": "third_party_cefi_interest_account_brokered_by_nuri",
+    "yield_source": "Celsius Network Bitcoin lending and Earn program",
+    "risk_notes": "The product was separately contracted with Celsius and brokered through Nuri. Celsius controlled the underlying Earn assets, and the June 2022 freeze moved users into the Celsius bankruptcy and distribution process."
+  }
+]

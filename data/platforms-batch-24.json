@@ -1,0 +1,55 @@
+[
+  {
+    "id": "cya_plat_000035",
+    "slug": "pillow",
+    "canonical_name": "Pillow",
+    "aliases": [
+      "Pillow Fund",
+      "Pillow Crypto",
+      "Pillow App"
+    ],
+    "type": "centralized_yield",
+    "status": "operations_ended",
+    "failure_reason": "voluntary_shutdown",
+    "launch_date": "2021-01-01",
+    "end_date": "2023-07-31",
+    "country_or_origin": "Singapore / India / Global",
+    "summary": "Centralized crypto savings and yield app that stopped interest accrual in June 2023 and closed operations on 31 July 2023 after citing regulatory uncertainty and associated financial-infrastructure constraints.",
+    "what_happened": "Pillow offered a custodial app through which users deposited Bitcoin, Ether and stablecoins to earn advertised yield. On 23 June 2023, Pillow informed users that it would discontinue its services because regulatory uncertainty made continued operation difficult. Interest accrual stopped, bank withdrawals remained available until 7 July, and crypto withdrawals remained available until the scheduled closure on 31 July 2023. The notice said deposits and accrued interest were available for withdrawal, but reviewed sources do not establish that every user completed withdrawal.",
+    "official_url_original": "https://pillow.fund/",
+    "official_domain_original": "pillow.fund",
+    "official_url_status": "unknown",
+    "archived_url": "https://web.archive.org/web/*/https://pillow.fund/",
+    "confidence": "high",
+    "last_verified_at": "2026-08-03",
+    "uncertainty_notes": "The 2021 launch date is year-level. Regulatory uncertainty was the stated reason for the voluntary closure, but no specific enforcement order is treated as the direct cause. The available-withdrawal statement does not establish universal withdrawal completion or a final customer recovery rate.",
+    "notes": "Recorded as a voluntary orderly shutdown rather than an insolvency or loss event."
+  },
+  {
+    "id": "cya_plat_000036",
+    "slug": "nuri-bitcoin-interest-account",
+    "canonical_name": "Nuri Bitcoin Interest Account",
+    "aliases": [
+      "Nuri Bitcoin Ertragskonto",
+      "Bitwala Bitcoin Interest Account",
+      "Bitwala Bitcoin Ertragskonto",
+      "Nuri Interest Account"
+    ],
+    "type": "crypto_interest_account",
+    "status": "operations_ended",
+    "failure_reason": "counterparty_exposure",
+    "launch_date": "2021-05-01",
+    "end_date": "2022-12-19",
+    "country_or_origin": "Germany / European Union",
+    "summary": "Bitcoin interest product brokered by Nuri, formerly Bitwala, and provided by Celsius Network; withdrawals and new investments stopped after Celsius froze activity in June 2022, and the Nuri business closed in December 2022.",
+    "what_happened": "Nuri offered a Bitcoin Interest Account to European customers while Celsius Network exclusively provided the underlying interest product and contractual yield relationship. Celsius paused withdrawals in June 2022, which prevented withdrawals and new investments through the Nuri product. Celsius filed Chapter 11 in July 2022. Nuri filed for insolvency in August and discontinued its own services on 19 December 2022. Ordinary Nuri bank balances, custody wallets and self-custodial vaults followed separate treatment and are not used to infer the outcome of the Celsius-linked interest account. Celsius plan distributions began in 2024 and remain individualized and ongoing.",
+    "official_url_original": "https://nuri.com/",
+    "official_domain_original": "nuri.com",
+    "official_url_status": "repurposed",
+    "archived_url": "https://web.archive.org/web/*/https://nuri.com/",
+    "confidence": "high",
+    "last_verified_at": "2026-08-03",
+    "uncertainty_notes": "The product launch date is recorded at month-level. The end date uses Nuri's full-service discontinuation date; the interest account had already been frozen since June 2022. Current Nuri and Bitwala brands are successor or reused services and do not represent revival of the historical Celsius-linked product. Individual creditor recovery remains claim-specific.",
+    "notes": "Modeled as a product-scoped customer-facing platform record while preserving Celsius as the underlying provider and contractual counterparty."
+  }
+]
