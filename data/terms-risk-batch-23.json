@@ -1,0 +1,20 @@
+[
+  {
+    "platform_id": "cya_plat_000033",
+    "terms_status": "unclear",
+    "asset_ownership_interpretation": "Donut customer balances were exposed through a Genesis-linked yield arrangement, but the reviewed sources do not establish one uniform ownership priority or claim treatment for every Donut product and user.",
+    "affected_product": "Donut Grow, Build, Save and related account balances",
+    "source_evidence_id": "cya_src_b23_0007",
+    "notes": "Unclear is used because the reviewed public record establishes the counterparty restructuring but not one complete set of Donut contractual ownership terms.",
+    "confidence": "medium"
+  },
+  {
+    "platform_id": "cya_plat_000034",
+    "terms_status": "varies_by_product",
+    "asset_ownership_interpretation": "Finblox stated that deposited assets used Fireblocks infrastructure and could be held in cold wallets or lent to borrowers for users who opted into Earn, so custody and risk treatment varied by product and use.",
+    "affected_product": "Finblox Earn, Crypto Vault and other custodial balances",
+    "source_evidence_id": "cya_src_b23_0018",
+    "notes": "Product-dependent classification follows Finblox's first-party custody explanation and does not establish one guaranteed recovery priority.",
+    "confidence": "high"
+  }
+]
