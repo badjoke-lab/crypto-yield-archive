@@ -1,0 +1,42 @@
+[
+  {
+    "platform_id": "cya_plat_000043",
+    "product_type": "interest_account",
+    "product_name": "X-Account Flexible",
+    "custody_model": "platform-owned custodial account",
+    "yield_source": "Wirex-managed use, holding, investment, or other deployment of transferred crypto-assets under the X-Account terms",
+    "risk_notes": "Variable rates may change with market, business, legal, or regulatory conditions. Flexible accounts permit withdrawal through the platform, but access can be affected by account, asset, platform, or compliance restrictions."
+  },
+  {
+    "platform_id": "cya_plat_000043",
+    "product_type": "interest_account",
+    "product_name": "X-Account Plus",
+    "custody_model": "platform-owned custodial account",
+    "yield_source": "Wirex-managed use, holding, investment, or other deployment of transferred crypto-assets under the X-Account terms",
+    "risk_notes": "Plus accounts trade higher fixed rates for restricted liquidity and require a redemption-notice period. Current terms and in-app conditions control the exact tenure, assets, rate, and withdrawal process."
+  },
+  {
+    "platform_id": "cya_plat_000043",
+    "product_type": "interest_account",
+    "product_name": "Fixed X-Account",
+    "custody_model": "platform-owned custodial account",
+    "yield_source": "Wirex-managed use, holding, investment, or other deployment of transferred crypto-assets under the X-Account terms",
+    "risk_notes": "Assets cannot be withdrawn during the selected fixed term and the account converts to Flexible after maturity. Fixed rates, supported assets, terms, and reward denomination vary."
+  },
+  {
+    "platform_id": "cya_plat_000044",
+    "product_type": "yield_aggregator",
+    "product_name": "SwissBorg Smart Yield",
+    "custody_model": "app-based custodial strategy wallet",
+    "yield_source": "SwissBorg-selected DeFi, CeFi, lending, market-making, staking, and liquidity strategies used by the historical Smart Yield optimiser",
+    "risk_notes": "Historical Smart Yield was a one-size-fits-all product with changing allocations, rates, liquidity, and protocol exposure. It evolved into the multi-strategy SwissBorg Earn model rather than ending as a platform failure."
+  },
+  {
+    "platform_id": "cya_plat_000044",
+    "product_type": "yield_aggregator",
+    "product_name": "SwissBorg Earn strategies",
+    "custody_model": "app-based custodial access to strategy-specific yield positions",
+    "yield_source": "Strategy-dependent DeFi lending, liquidity provision, staking, restaking, protocol rewards, and other disclosed opportunities",
+    "risk_notes": "Each strategy has its own protocols, risk score, APY, cap, cooldown, payout, redemption timing, fees, and smart-contract or counterparty exposure. No single ownership or liquidity interpretation applies to every strategy."
+  }
+]
