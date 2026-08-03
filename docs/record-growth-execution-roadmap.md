@@ -25,62 +25,60 @@ Permanent operating policy remains in `docs/record-growth-plan.md`. Update this 
 ```text
 Repository: badjoke-lab/crypto-yield-archive
 Default branch: main
-Confirmed main commit: 709359bbd6d289ff4730b15c183fa5105a2f432b
-Latest merged PR: #48 Add batch 23 Donut and Finblox records
+Confirmed main commit: 3e16303903b646a8a6d4e92f3c0cb50bc23b35bf
+Latest merged PR: #51 Add batch 24 Pillow and Nuri interest-account records
 ```
 
 ### Current canonical scale
 
 ```text
-Platforms:       34
-Events:          169
-Evidence:        233
-Outcomes:         34
-Products:         52
-Terms risk:       34
-Claims ongoing:   14
-Generated pages:  46
+Platforms:       36
+Events:          178
+Evidence:        252
+Outcomes:         36
+Products:         54
+Terms risk:       36
+Claims ongoing:   15
+Generated pages:  48
 ```
 
-Validation on the final batch-23 head confirmed that HTML, canonical JSON datasets, manifest counts, version metadata, sitemap inputs, and all six canonical record groups resolve to the same counts.
+Validation on the final batch-24 head confirmed that HTML, canonical JSON datasets, manifest counts, version metadata, sitemap inputs, and all six canonical record groups resolve to the same counts.
 
 ### Latest completed logical work
 
 ```text
-R2 / batch 23: complete
+R3 / batch 24: complete
 ```
 
-Donut:
+Pillow:
 
-- promoted as `cya_plat_000033`
-- `operations_ended / counterparty_exposure`
-- records the November 2022 Genesis-linked account halt
-- records the February 2023 discontinuation and 31 March 2023 app-removal deadline
-- records the underlying August 2024 Genesis distribution milestone
-- outcome remains `claims_ongoing`
-- no universal Donut-specific recovery percentage or completion date is claimed
-
-Finblox:
-
-- promoted as `cya_plat_000034`
-- `operations_ended / counterparty_exposure`
-- records the June 2022 withdrawal restrictions and reward pause
-- records the July 2022 partial restoration
-- records the reported 7 July 2025 service closure
-- records the March 2026 FINBLOX LIMITED dissolution as corroborating evidence
+- promoted as `cya_plat_000035`
+- `operations_ended / voluntary_shutdown`
+- records the 23 June 2023 orderly-shutdown announcement
+- records the bank and crypto withdrawal windows and 31 July 2023 closure
 - outcome remains `unknown`
-- the surviving automated status page is treated as potentially stale rather than proof of active service
+- Pillow's statement that balances were available for withdrawal is not treated as proof that every user completed withdrawal
 
-Batch-23 validation:
+Nuri Bitcoin Interest Account:
+
+- promoted as `cya_plat_000036`
+- `operations_ended / counterparty_exposure`
+- modeled as the customer-facing Nuri/Bitwala interest product provided contractually by Celsius
+- records the June 2022 withdrawal halt, Celsius Chapter 11, Nuri insolvency, and 19 December 2022 service closure
+- records the beginning of Celsius plan distributions in 2024
+- outcome remains `claims_ongoing`
+- ordinary Nuri bank balances, custody wallets, and self-custodial vaults remain outside this record's outcome classification
+
+Batch-24 validation:
 
 ```text
 Validate data: success
 Validate and build: success
 CYA CI: success
-Candidate audit: 9 entries, 0 possible matches
+Candidate audit: 11 entries, 0 possible matches
 Build-output check: success
-Donut route generated: /platform/donut/
-Finblox route generated: /platform/finblox/
+Pillow route generated: /platform/pillow/
+Nuri route generated: /platform/nuri-bitcoin-interest-account/
 ```
 
 ### Queue and next identifiers
@@ -90,11 +88,11 @@ Active candidate queue: 2 needs_research candidates
 - cya_candidate_000010 Goldfinch
 - cya_candidate_000011 BitMart
 
-Next candidate ID:       cya_candidate_000014
-Next platform ID:        cya_plat_000035
-Next event ID candidate: cya_ev_000175
-Next formal batch:       batch 24
-Next evidence prefix:    cya_src_b24_
+Next candidate ID:       cya_candidate_000016
+Next platform ID:        cya_plat_000037
+Next event ID candidate: cya_ev_000184
+Next formal batch:       batch 25
+Next evidence prefix:    cya_src_b25_
 ```
 
 Always rescan all canonical files before assigning IDs. Counts and maximum IDs are not interchangeable.
@@ -108,8 +106,9 @@ Phase 3A: reach 30 platforms                         complete
 Phase 3B / R1: batch 22, 30 -> 32                   complete
 Public-surface corrective gate                      complete
 Phase 3B / R2: batch 23, 32 -> 34                   complete
-Phase 3B / R3: batch 24, 34 -> 36                   current
-Phase 3B / R4-R5: reach 40                          not started
+Phase 3B / R3: batch 24, 34 -> 36                   complete
+Phase 3B / R4: batch 25, 36 -> 38                   current
+Phase 3B / R5: batch 26, 38 -> 40                   not started
 Phase 4: 40-platform audit                          not started
 Phase 5: scanner and draft generator                not started
 Phase 6: 40 -> 60                                   not started
@@ -121,17 +120,18 @@ Phase 8: 60 -> 100 with 75/100 audits               not started
 
 ```text
 PR #43 public-surface implementation: merged
-PR #48 repository/public-output validation: complete
-PR #48 Cloudflare production deployment: triggered by main merge
+PR #48 batch-23 repository/public-output validation: complete
+PR #51 batch-24 repository/public-output validation: complete
+PR #51 Cloudflare production deployment: triggered by main merge
 Direct production smoke confirmation: pending final observation
 ```
 
-The repository gate is complete. Before classifying the release as production-verified, confirm the deployed commit and the following public surfaces:
+Before classifying the current release as production-verified, confirm the deployed commit and these public surfaces:
 
 ```text
 /
-/platform/donut/
-/platform/finblox/
+/platform/pillow/
+/platform/nuri-bitcoin-interest-account/
 /version.json
 /data/manifest.json
 /data/platforms.json
@@ -144,16 +144,20 @@ The repository gate is complete. Before classifying the release as production-ve
 robots.txt
 ```
 
-Expected public counts are 34 / 169 / 233 with 34 outcomes, 52 products, 34 terms-risk records, and 14 claims ongoing.
+Expected public counts are 36 / 178 / 252 with 36 outcomes, 54 products, 36 terms-risk records, and 15 claims ongoing.
+
+### Workflow maintenance note
+
+The August 2026 GitHub runner emitted Node.js 20 deprecation warnings for the action runtime. Validation remains green and the project successfully installed Node 20.20.2, but workflow action/runtime upgrades should be reviewed during the 40-platform audit or a separate maintenance PR rather than mixed into record-growth batches.
 
 ## Interruption and recovery history
 
 ### Superseded public-surface work
 
 - PR #42 was closed as superseded.
-- PR #43 was rebased into a mergeable final implementation and merged.
+- PR #43 was rebuilt into a mergeable final implementation and merged.
 
-### Closed batch-23 branch
+### Closed legacy batch-23 branch
 
 PR #40 and branch `cya-b23` were not resumed directly because they predated the public-surface correction, used candidate IDs later occupied by Goldfinch and BitMart, and contained incomplete canonical groups. Donut and Finblox were rebuilt from current `main` through fresh candidate-only and canonical PRs.
 
@@ -163,6 +167,9 @@ PR #40 and branch `cya-b23` were not resumed directly because they predated the 
 #46 Refresh CYA resume checkpoint after public surface merge
 #47 Stage Donut and Finblox batch 23 candidates
 #48 Add batch 23 Donut and Finblox records
+#49 Advance CYA roadmap after batch 23
+#50 Stage Pillow and Nuri batch 24 candidates
+#51 Add batch 24 Pillow and Nuri interest-account records
 ```
 
 ## Recovery procedure
@@ -237,8 +244,8 @@ Candidate-only CI success is not sufficient for canonical promotion.
 | --- | --- | ---: | --- |
 | R1 | 22 | 30 -> 32 | complete |
 | R2 | 23 | 32 -> 34 | complete |
-| R3 | 24 | 34 -> 36 | current |
-| R4 | 25 | 36 -> 38 | pending |
+| R3 | 24 | 34 -> 36 | complete |
+| R4 | 25 | 36 -> 38 | current |
 | R5 | 26 | 38 -> 40 | pending |
 
 Normal target is two platforms per PR. A duplicate-enrichment PR is still successful; never force the count upward with an unreviewed replacement.
@@ -269,6 +276,7 @@ Check:
 - low-confidence seeds
 - unknown outcomes and terms
 - candidate history and split consumed files
+- GitHub Actions runtime and Node-version maintenance warnings
 
 Consolidate `cya-consumed-coinloan.json` and other split history when safe and traceable.
 
@@ -318,10 +326,10 @@ At 100, audit the full operating system: canonical quality, candidate decisions,
 
 ## Planning horizon
 
-Indicative, dependency-aware ranges from the current 34-platform baseline:
+Indicative, dependency-aware ranges from the current 36-platform baseline:
 
 ```text
-34 -> 40:                 2-4 working weeks
+36 -> 40:                 1-3 working weeks
 40-platform audit:       1 week
 staging automation:      1-2 weeks
 40 -> 60:                4-8 weeks
@@ -369,13 +377,13 @@ Before the next PR, report:
 ## Immediate next action
 
 ```text
-Phase 3B / R3 / batch 24
+Phase 3B / R4 / batch 25
 
-1. complete the post-merge production smoke for batch 23
+1. complete the post-merge production smoke for batch 24
 2. scan the canonical corpus and candidate history before assigning IDs
 3. select two evidence-ready CeFi lending or historically significant yield candidates
 4. keep Goldfinch and BitMart in needs_research unless an explicit scope decision is completed
-5. stage fresh candidates beginning at cya_candidate_000014
+5. stage fresh candidates beginning at cya_candidate_000016
 6. run duplicate audit and candidate-only CI
 7. promote only public-quality records with platform, event, evidence, outcome, product, and terms-risk coverage
 8. run final CI and generated-public-output checks
