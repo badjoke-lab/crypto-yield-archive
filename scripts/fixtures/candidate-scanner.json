@@ -1,0 +1,53 @@
+{
+  "platforms": [
+    {
+      "id": "cya_plat_fixture_001",
+      "canonical_name": "Alpha Yield",
+      "aliases": ["Alpha Earn"],
+      "official_domain_original": "alpha.example"
+    },
+    {
+      "id": "cya_plat_fixture_002",
+      "canonical_name": "Beta Finance",
+      "aliases": ["Beta"],
+      "official_domain_original": "beta.example"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "fixture_exact",
+      "canonical_name": "Alpha Yield",
+      "aliases": [],
+      "domain": "alpha.example",
+      "decision": "add_now"
+    },
+    {
+      "candidate_id": "fixture_alias",
+      "canonical_name": "Alpha Earn",
+      "aliases": [],
+      "domain": "",
+      "decision": "add_now"
+    },
+    {
+      "candidate_id": "fixture_new",
+      "canonical_name": "Gamma Credit",
+      "aliases": [],
+      "domain": "gamma.example",
+      "decision": "add_now"
+    },
+    {
+      "candidate_id": "fixture_research",
+      "canonical_name": "Delta Prime",
+      "aliases": [],
+      "domain": "delta.example",
+      "decision": "needs_research"
+    },
+    {
+      "candidate_id": "fixture_terminal",
+      "canonical_name": "Archived Decision",
+      "aliases": [],
+      "domain": "archived.example",
+      "decision": "out_of_scope"
+    }
+  ]
+}
