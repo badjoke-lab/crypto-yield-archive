@@ -1,0 +1,18 @@
+[
+  {
+    "platform_id": "cya_plat_000039",
+    "product_type": "interest_account",
+    "product_name": "Inlock Savings Account",
+    "custody_model": "custodial_platform_account",
+    "yield_source": "platform-managed lending and collateralized crypto-credit activities",
+    "risk_notes": "Customers depended on Inlock's custody, liquidation and counterparty controls. A failed liquidation process made part of customer assets unavailable and led to a multi-path recovery process."
+  },
+  {
+    "platform_id": "cya_plat_000040",
+    "product_type": "centralized_yield",
+    "product_name": "Stablehouse digital-asset interest products",
+    "custody_model": "custodial_platform_account",
+    "yield_source": "platform-managed digital-asset activities powered by the wider XBTO group; complete historical allocation was not disclosed in the reviewed launch materials",
+    "risk_notes": "Historical yield products preceded Stablehouse's acquisition and transition toward institutional custody and trading. Current XBTO custody terms should not be applied retroactively to the old yield products."
+  }
+]
