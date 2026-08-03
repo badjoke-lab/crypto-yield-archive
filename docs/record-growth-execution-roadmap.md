@@ -2,13 +2,13 @@
 
 Status: active execution checkpoint  
 Project: Crypto Yield Archive (CYA)  
-Last baseline review: 2026-06-18  
+Last baseline review: 2026-08-03  
 
 ## Purpose
 
 This is the recovery point for CYA record-growth work. It records the latest confirmed `main`, canonical counts, next IDs, current phase, remaining PR order, recovery procedure, and merge-report rules.
 
-Permanent operating policy remains in `docs/record-growth-plan.md`. Update this file after every merged growth, audit, automation, or monitoring PR.
+Permanent operating policy remains in `docs/record-growth-plan.md`. Update this file after every merged growth, audit, automation, monitoring, or public-surface corrective pull request.
 
 ## Canonical safety boundary
 
@@ -25,20 +25,23 @@ Permanent operating policy remains in `docs/record-growth-plan.md`. Update this 
 ```text
 Repository: badjoke-lab/crypto-yield-archive
 Default branch: main
-Confirmed main commit: 61e273c9b996cc3c0c6972b5be4e7d192fa4e21c
-Latest merged PR: #38 Add batch 22 Cred and SALT Lending records
+Confirmed main commit: 9fd65b61abb346c00b5981b209a6e8db228baf8b
+Latest merged PR: #43 Unify canonical public counts and machine-readable data
 ```
 
 ### Current canonical scale
 
 ```text
-Platforms: 32
-Events:    158
-Evidence:  214
-Outcomes:  32
-Products:  50
-Terms risk: 32
+Platforms:  32
+Events:     158
+Evidence:   214
+Outcomes:    32
+Products:    50
+Terms risk:  32
+Claims ongoing: 13
 ```
+
+PR #43 changed public generation, metadata, SEO, redirects, and deployment safeguards only. It did not add or remove canonical records.
 
 ### Latest completed logical work
 
@@ -57,18 +60,23 @@ SALT Lending:
 - 2022 withdrawal pause
 - California settlement and license reinstatement
 
-Final validation:
-- CYA CI: success
-- Validate data: success
-- Validate and build: success
-- candidate audit: 5 entries, 0 possible matches
+Corrective public-surface gate:
+- PR #42 closed as superseded
+- PR #43 merged as the final public-surface implementation
+- canonical public JSON added for all six record groups
+- HTML, machine-readable counts, build metadata, canonical links, redirects, sitemap, robots, and preview safeguards aligned
+- Cloudflare branch preview succeeded before merge
+- production verification for merge commit 9fd65b61 remains an explicit release check
 ```
 
 ### Queue and next identifiers
 
 ```text
-Active candidate queue: empty
-Next candidate ID:       cya_candidate_000010
+Active candidate queue: 2 needs_research candidates
+- cya_candidate_000010 Goldfinch
+- cya_candidate_000011 BitMart
+
+Next candidate ID:       cya_candidate_000012
 Next platform ID:        cya_plat_000033
 Next event ID candidate: cya_ev_000164
 Next formal batch:       batch 23
@@ -77,11 +85,15 @@ Next evidence prefix:    cya_src_b23_
 
 Always rescan all canonical files before assigning IDs. Counts and maximum IDs are not interchangeable.
 
+Goldfinch and BitMart are not approved batch-23 promotions. Both remain staging-only because their inclusion depends on scope and product-level outcome review.
+
 ### Current phase
 
 ```text
 Phase 3A: reach 30 platforms                         complete
 Phase 3B / R1: batch 22, 30 -> 32                   complete
+Public-surface corrective gate                      complete in repository
+Production verification for PR #43                  pending confirmation
 Phase 3B / R2: batch 23, 32 -> 34                   current
 Phase 3B / R3-R5: reach 40                          not started
 Phase 4: 40-platform audit                          not started
@@ -94,7 +106,32 @@ Phase 8: 60 -> 100 with 75/100 audits               not started
 Current execution point:
 
 ```text
-Select and stage two evidence-ready candidates for batch 23.
+1. Confirm the PR #43 production deployment and public counts.
+2. Reconstruct batch 23 from current main rather than reusing the closed branch directly.
+3. Review Donut and Finblox as the first batch-23 candidate pair.
+4. Assign candidate IDs cya_candidate_000012 and cya_candidate_000013 only after current duplicate and ID scans.
+5. Keep Goldfinch and BitMart in needs_research unless separate scope review promotes them.
+```
+
+## Interruption findings recorded on 2026-08-03
+
+### Closed batch-23 branch
+
+PR #40 and branch `cya-b23` contain incomplete Donut and Finblox research. The branch must not be merged or resumed directly because:
+
+- it predates the public-surface correction;
+- it used candidate IDs now occupied by Goldfinch and BitMart;
+- it mixed candidate staging and incomplete canonical files;
+- its evidence, outcomes, products, and terms-risk records were not complete.
+
+Reusable research may be inspected, but all new work must start from current `main` with fresh IDs and candidate-only staging.
+
+### Open pull-request state
+
+```text
+PR #42: closed as superseded
+PR #43: merged
+Open development PRs after #43 merge: none expected before roadmap update
 ```
 
 ## Recovery procedure
@@ -132,11 +169,12 @@ candidate selection
 -> candidate audit and CI
 -> new / exact match / ambiguous / out-of-scope decision
 -> canonical promotion or existing-record enrichment
--> clear active queue
+-> clear promoted candidates from active queue
 -> record consumed/rejected decision
 -> final CI on final head
 -> ready/non-draft PR
 -> squash merge with expected head SHA
+-> production verification when canonical public output changes
 -> update this checkpoint
 -> mandatory merge report
 ```
@@ -157,6 +195,8 @@ CYA CI
 Validate data
 Validate and build
 ```
+
+Candidate-only CI success is not sufficient for canonical promotion.
 
 ## Remaining schedule
 
@@ -247,7 +287,7 @@ At 100, audit the full operating system: canonical quality, candidate decisions,
 
 ## Planning horizon
 
-Indicative, dependency-aware ranges:
+Indicative, dependency-aware ranges from the current 32-platform baseline:
 
 ```text
 32 -> 40:                 3-5 working weeks
@@ -276,6 +316,7 @@ next batch and evidence prefix
 candidate queue state
 completed logical PR
 current phase and execution point
+production verification state when public output changed
 ```
 
 Do not leave a stale current-location marker.
@@ -291,6 +332,7 @@ Before the next PR, report:
 4. current phase
 5. overall roadmap position
 6. next PR
+7. production verification state when applicable
 ```
 
 ## Immediate next action
@@ -298,14 +340,14 @@ Before the next PR, report:
 ```text
 Phase 3B / R2 / batch 23
 
-1. reconfirm main and maximum IDs
-2. select two evidence-ready candidates
-3. stage candidates only
+1. verify production commit and canonical counts after PR #43
+2. create a fresh batch-23 candidate branch from current main
+3. stage Donut and Finblox only as cya_candidate_000012 and cya_candidate_000013 after ID scan
 4. run duplicate audit and candidate-only CI
-5. promote only candidates with no canonical match
-6. enrich existing records when matched
-7. clear queue and record decisions
+5. decide new platform / existing enrichment / hold / rejection separately for each candidate
+6. complete public-quality platform, event, evidence, outcome, product, and terms-risk records only for approved candidates
+7. preserve Goldfinch and BitMart as needs_research unless a separate scope decision changes them
 8. run final CI
 9. squash merge with expected head SHA
-10. update this checkpoint
+10. verify production and update this checkpoint
 ```
