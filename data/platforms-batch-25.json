@@ -1,0 +1,58 @@
+[
+  {
+    "id": "cya_plat_000037",
+    "slug": "block-earner-earner-product",
+    "canonical_name": "Block Earner Earner Product",
+    "aliases": [
+      "Block Earner Earner",
+      "Earner",
+      "USD Earner",
+      "Gold Earner",
+      "Crypto Earner",
+      "Block Earner Lend"
+    ],
+    "type": "crypto_interest_account",
+    "status": "operations_ended",
+    "failure_reason": "regulatory_action",
+    "launch_date": "2022-03-17",
+    "end_date": "2022-11-16",
+    "country_or_origin": "Australia",
+    "summary": "Fixed-yield digital-asset product offered by Block Earner from March to November 2022; discontinued after ASIC raised licensing concerns, followed by litigation that culminated in a unanimous 2026 High Court ruling that Earner was a financial product requiring an Australian financial services licence.",
+    "what_happened": "Web3 Ventures Pty Ltd, trading as Block Earner, offered USD Earner, Gold Earner and Crypto Earner products under which customers transferred rights and title to cryptocurrency and received fixed returns. Block Earner ceased offering Earner on 16 November 2022 after ASIC raised concerns and ASIC commenced civil proceedings on 23 November. The Federal Court found in 2024 that Earner required licensing, the Full Federal Court reversed that conclusion in 2025, and the High Court unanimously restored the licensing finding in June 2026. The product had already ended and the 2024 penalty judgment recorded that all cryptocurrency lent through Earner was returned to users within weeks of discontinuation. Block Earner's separate Access product and continuing business are outside this record.",
+    "official_url_original": "https://blockearner.com.au/",
+    "official_domain_original": "blockearner.com.au",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://blockearner.com.au/",
+    "confidence": "high",
+    "last_verified_at": "2026-08-03",
+    "uncertainty_notes": "The product end date is the documented date on which Block Earner ceased offering Earner. Litigation over penalty relief continued after the High Court liability decision and is not treated as a customer-outcome issue. This record does not classify Block Earner's separate Access product or current services as ended.",
+    "notes": "Product-scoped record maintained separately from the continuing Block Earner entity."
+  },
+  {
+    "id": "cya_plat_000038",
+    "slug": "flint-money",
+    "canonical_name": "Flint",
+    "aliases": [
+      "Flint Money",
+      "Flint.money",
+      "Flint Crypto",
+      "Flint App"
+    ],
+    "type": "centralized_yield",
+    "status": "operations_ended",
+    "failure_reason": "voluntary_shutdown",
+    "launch_date": "2021-10-01",
+    "end_date": null,
+    "country_or_origin": "India / Singapore / Global",
+    "summary": "Custodial crypto yield app that deployed customer assets through institutional and DeFi counterparties, later phased out its flagship yield service under regulatory uncertainty and instructed users to unlend and withdraw before Flint Labs pivoted to other products.",
+    "what_happened": "Flint Money offered fixed-yield products on stablecoins and other crypto assets through a custodial app. Flint stated that deposited funds were deployed through institutional borrowers and DeFi protocols. In January 2023, users were instructed to unlend and withdraw as the service was phased out under regulatory uncertainty; Flint stated that principal and accrued interest through the cutoff remained safe and would be returned. Flint Labs later confirmed that Flint Money, its first flagship project, had been closed while the company moved to other products. First-party retrospectives and contemporaneous shutdown reporting do not establish one exact final service-termination date or prove that every user completed withdrawal.",
+    "official_url_original": "https://flint.money/",
+    "official_domain_original": "flint.money",
+    "official_url_status": "unknown",
+    "archived_url": "https://web.archive.org/web/*/https://flint.money/",
+    "confidence": "medium",
+    "last_verified_at": "2026-08-03",
+    "uncertainty_notes": "The October 2021 launch date is month-level. Flint Labs' retrospective refers to the flagship project being closed in November of the prior year, while withdrawal instructions and external shutdown reporting continued in January 2023. No exact final operational date or universal completed customer recovery was verified.",
+    "notes": "The historical flint.money yield product is not the same as unrelated current products or software using the Flint name."
+  }
+]
