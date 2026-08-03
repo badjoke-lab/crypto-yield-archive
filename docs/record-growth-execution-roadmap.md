@@ -34,28 +34,28 @@ Permanent operating rules remain in `docs/record-growth-plan.md` and `docs/devel
 ```text
 Repository: badjoke-lab/crypto-yield-archive
 Default branch: main
-Confirmed main commit: d15a7010915a4a52cf8adb953f4411fcfa5f2e49
-Latest merged PR: #64 Add batch 27 AQRU and YouHodler records
+Confirmed main commit: 53349df4938dd16fbda445353b4e7d80033ed9b4
+Latest merged PR: #67 Add batch 28 Wirex X-Accounts and SwissBorg Earn records
 ```
 
 ### Canonical scale
 
 ```text
-Platforms:       42
-Events:          210
-Evidence:        314
-Outcomes:         42
-Products:         62
-Terms risk:       42
+Platforms:       44
+Events:          217
+Evidence:        326
+Outcomes:         44
+Products:         67
+Terms risk:       44
 Claims ongoing:   15
-Generated pages:  54
+Generated pages:  56
 ```
 
-The batch-27 validation confirmed that source arrays, generated HTML, public JSON, manifest counts, version metadata, and sitemap inputs resolve to the same counts.
+Batch-28 validation confirmed that source arrays, generated HTML, public JSON, manifest counts, version metadata, and sitemap inputs resolve to the same values.
 
-## Latest completed work
+## Completed safety and automation gates
 
-### Phase 4 — full 40-platform corpus audit
+### Phase 4 — full corpus audit
 
 Completed in PR #59.
 
@@ -67,26 +67,26 @@ Validate/build:    success
 CYA CI:            success
 ```
 
-The audit gate is permanently included in normal `npm test`.
+The audit remains part of normal `npm test`.
 
 ### Phase 5 / R7 — deterministic candidate scanner
 
 Completed in PR #60.
 
-- normalized canonical-name, alias, and domain matching
+- canonical-name, alias, and domain matching
 - transparent match scores and reasons
 - exact, probable, ambiguous, new, out-of-scope, historical, and manual-review classes
 - draft eligibility only for duplicate-clear `decision=add_now`
 - mandatory blocking of `needs_research`
 - canonical SHA-256 write guard
 - deterministic fixtures
-- Node.js 24 artifact-only workflow
+- Node.js 24 artifact workflow
 
 ### Phase 5 / R8 — review-only six-group draft generator
 
 Completed in PR #61.
 
-Generates review artifacts for:
+Generated review artifacts:
 
 - platform
 - event
@@ -94,45 +94,68 @@ Generates review artifacts for:
 - outcome
 - product
 - terms risk
-- manifest with scan classifications and blockers
+- manifest with classifications and blockers
 
-Safety properties:
+Forbidden operations:
 
 ```text
-automatic canonical ID assignment: forbidden
-canonical writes:                  forbidden
-automatic promotion:               forbidden
-automatic merge:                   forbidden
+automatic canonical ID assignment
+automatic canonical writes
+automatic promotion
+automatic merge
 ```
 
-### Phase 6 / batch 27 — AQRU and YouHodler
+## Phase 6 completed batches
 
-Candidate-only gate completed in PR #63. Canonical promotion completed in PR #64.
+### Batch 27 — AQRU and YouHodler
+
+Candidate-only gate: PR #63  
+Canonical promotion: PR #64
 
 #### AQRU
 
-- promoted as `cya_plat_000041`
+- `cya_plat_000041`
 - `centralized_yield / limited`
-- records the approximate December 2021 launch
-- records the May 2022 operating-scale milestone
-- records the November 2022 yield reductions and end of BTC/ETH interest
-- records the August 2023 operating-business transfer without treating it as failure, acquisition, repayment, or customer loss
-- records current narrowed, high-minimum product availability
+- launch, growth, yield reduction, ownership restructure, and current narrowed-product history
 - outcome: `not_applicable`
 - terms: `varies_by_product`
 
 #### YouHodler
 
-- promoted as `cya_plat_000042`
+- `cya_plat_000042`
 - `borrow_lend_platform / active`
-- records the 2019 USDT and BTC savings-account launches
-- records the 2020 weekly-payout change
-- records current Yield Account operation, limits, jurisdiction restrictions, company structure, and custody terms
-- keeps Yield Account and crypto-backed loan mechanics separate
+- savings launch history, weekly payouts, current Yield Account, limits, jurisdiction, company, and custody sources
 - outcome: `not_applicable`
 - terms: `varies_by_product`
 
-#### Batch-27 validation
+### Batch 28 — Wirex X-Accounts and SwissBorg Earn
+
+Candidate-only gate: PR #66  
+Canonical promotion: PR #67
+
+#### Wirex X-Accounts
+
+- `cya_plat_000043`
+- `crypto_interest_account / active`
+- product-scoped separately from the wider Wirex card, payments, trading, Multiply, and Credit business
+- records the June 2021 launch and early asset expansion
+- records current Flexible, Plus, and Fixed variants
+- terms: `platform_owned`
+- current terms state that X-Account assets transfer to Wirex and are outside government-backed deposit-guarantee schemes
+- outcome: `not_applicable`
+
+#### SwissBorg Earn
+
+- `cya_plat_000044`
+- `yield_aggregator / active`
+- product-scoped separately from the wider SwissBorg wealth app
+- preserves continuity from the December 2020 Smart Yield launch
+- records broad Smart Yield expansion and the September 2022 transition to SwissBorg Earn
+- records current strategy subscriptions, redemptions, APY, risk scores, payouts, and fees
+- terms: `varies_by_product`
+- outcome: `not_applicable`
+
+#### Batch-28 validation
 
 ```text
 Validate data:        success
@@ -143,8 +166,8 @@ Candidate draft:      success
 Corpus blockers:      0
 Candidate matches:    0 possible matches
 Build-output check:   success
-AQRU route:           /platform/aqru/
-YouHodler route:      /platform/youhodler/
+Wirex route:          /platform/wirex-x-accounts/
+SwissBorg route:      /platform/swissborg-earn/
 ```
 
 ## Candidate queue and reserved identifiers
@@ -154,11 +177,11 @@ Active candidate queue: 2 needs_research candidates
 - cya_candidate_000010 Goldfinch
 - cya_candidate_000011 BitMart
 
-Next candidate ID:       cya_candidate_000022
-Next platform ID:        cya_plat_000043
-Next event ID:           cya_ev_000216
-Next canonical batch:    28
-Next evidence prefix:    cya_src_b28_
+Next candidate ID:       cya_candidate_000024
+Next platform ID:        cya_plat_000045
+Next event ID:           cya_ev_000223
+Next canonical batch:    29
+Next evidence prefix:    cya_src_b29_
 ```
 
 Goldfinch and BitMart remain staging-only:
@@ -166,7 +189,7 @@ Goldfinch and BitMart remain staging-only:
 - Goldfinch requires a DeFi/institutional-yield scope and product/entity-boundary decision.
 - BitMart requires an exchange-Earn exception decision plus product-specific redemption, custody, terms, and customer-outcome evidence.
 
-They must not be silently inserted into batch 28 merely because the automation exists.
+They must not be silently inserted into batch 29.
 
 ## Current phase
 
@@ -182,7 +205,8 @@ Phase 4: 40-platform full audit                     complete
 Phase 5 / R7: candidate scanner                     complete
 Phase 5 / R8: review-only draft generator           complete
 Phase 6 / batch 27: 40 -> 42                        complete
-Phase 6 / batch 28: 42 -> 44                        current
+Phase 6 / batch 28: 42 -> 44                        complete
+Phase 6 / batch 29: 44 -> 46                        current
 Phase 7: weekly existing-record monitoring          not started
 Phase 8: 60 -> 100 with 75/100 audits               not started
 ```
@@ -190,11 +214,11 @@ Phase 8: 60 -> 100 with 75/100 audits               not started
 ## Current execution point
 
 ```text
-Phase 6 / batch 28 candidate-only gate
+Phase 6 / batch 29 candidate-only gate
 
 1. select two high-value, in-scope CeFi yield/lending candidates
 2. investigate identity, product boundary, event history, terms, and customer outcome
-3. assign candidate IDs 000022 and 000023 only after duplicate review
+3. assign candidate IDs 000024 and 000025 only after duplicate review
 4. stage candidates without canonical changes
 5. run candidate audit, scanner, draft generator, and all repository checks
 6. merge the candidate-only PR
@@ -273,20 +297,20 @@ Findings remain staging-only. Create no PR when nothing material changed.
 
 ```text
 PR #43 public-surface implementation: merged
-Batches 23-27 repository/public-output validation: complete
+Batches 23-28 repository/public-output validation: complete
 40-platform audit: complete
 Direct external production observation from this execution environment: not independently confirmed
 ```
 
-Expected public values after the batch-27 deployment:
+Expected public values after the batch-28 deployment:
 
 ```text
-platforms: 42
-events: 210
-evidence: 314
-outcomes: 42
-products: 62
-terms-risk: 42
+platforms: 44
+events: 217
+evidence: 326
+outcomes: 44
+products: 67
+terms-risk: 44
 claims ongoing: 15
 ```
 
@@ -337,6 +361,8 @@ npm test
 #61 review-only six-group draft generator
 #62 Phase 6 checkpoint
 #63-#64 batch 27 candidate and canonical work
+#65 batch 28 checkpoint
+#66-#67 batch 28 candidate and canonical work
 ```
 
 ## Update rule
@@ -359,7 +385,7 @@ Do not leave a stale current-location marker.
 ## Immediate next action
 
 ```text
-Phase 6 / batch 28 candidate-only gate
+Phase 6 / batch 29 candidate-only gate
 
-Select, research, duplicate-check, and stage two high-value CeFi yield/lending candidates as cya_candidate_000022 and cya_candidate_000023. Do not alter canonical data in the candidate PR.
+Select, research, duplicate-check, and stage two high-value CeFi yield/lending candidates as cya_candidate_000024 and cya_candidate_000025. Do not alter canonical data in the candidate PR.
 ```
