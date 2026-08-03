@@ -1,0 +1,43 @@
+[
+  {
+    "platform_id": "cya_plat_000033",
+    "outcome_status": "claims_ongoing",
+    "estimated_recovery_rate": "No universal Donut-specific final recovery rate is established by the reviewed sources.",
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": "Underlying Genesis Chapter 11 distributions and Donut account-update process",
+    "claim_process_url": "https://restructuring.ra.kroll.com/genesis/",
+    "affected_products": [
+      "Donut Grow",
+      "Donut Build",
+      "Donut Save",
+      "other Donut account balances"
+    ],
+    "claim_classes": [],
+    "jurisdictions": [],
+    "as_of": "2026-08-03",
+    "last_verified_at": "2026-08-03",
+    "notes": "Genesis began creditor distributions in August 2024, but the reviewed sources do not establish one Donut-specific completion date or recovery percentage for every user. Gemini Earn's separately documented outcome is not applied to Donut.",
+    "confidence": "medium"
+  },
+  {
+    "platform_id": "cya_plat_000034",
+    "outcome_status": "unknown",
+    "estimated_recovery_rate": "No verified universal final recovery rate is established for Finblox customers.",
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": "No verified platform-wide claims or repayment process was found in the reviewed sources",
+    "claim_process_url": null,
+    "affected_products": [
+      "Finblox Earn",
+      "Finblox Crypto Vault",
+      "other custodial balances"
+    ],
+    "claim_classes": [],
+    "jurisdictions": [],
+    "as_of": "2026-08-03",
+    "last_verified_at": "2026-08-03",
+    "notes": "Reporting records unresolved customer complaints after the 2022 restrictions and the 2025 closure. The reviewed sources do not establish one final customer outcome, distribution process, or recovery percentage.",
+    "confidence": "medium"
+  }
+]
