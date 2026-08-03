@@ -1,0 +1,56 @@
+[
+  {
+    "id": "cya_plat_000045",
+    "slug": "coinrabbit",
+    "canonical_name": "CoinRabbit",
+    "aliases": [
+      "CoinRabbit Earn",
+      "CoinRabbit Earn Interest Product",
+      "CoinRabbit Crypto Savings Account",
+      "CoinRabbit Crypto Loans"
+    ],
+    "type": "borrow_lend_platform",
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": "2020-01-01",
+    "end_date": null,
+    "country_or_origin": "Global",
+    "summary": "Active crypto lending and interest-account platform founded in 2020, offering crypto-backed loans, a flexible Earn Interest Product, storage, swaps, and mobile account management.",
+    "what_happened": "CoinRabbit began operating as a crypto-backed lending platform in 2020 and launched its crypto savings account in June 2021. It added a mobile app in August 2025. Current materials describe active fixed-term and open-ended loans and an Earn Interest Product with daily accrual and flexible withdrawals. Current terms state that CoinRabbit acquires ownership of both loan collateral and topped-up Earn assets, while the current loan marketing page separately says collateral is fully reserved and not rehypothecated. The record preserves that distinction instead of treating marketing language as a replacement for the contractual ownership terms.",
+    "official_url_original": "https://coinrabbit.io/",
+    "official_domain_original": "coinrabbit.io",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://coinrabbit.io/",
+    "confidence": "high",
+    "last_verified_at": "2026-08-03",
+    "uncertainty_notes": "The exact 2020 platform launch day was not identified and 1 January is used as a sortable approximate date. Current rates, supported assets, LTVs, limits, verification requirements, reserve practices, custody, and jurisdictional availability can change.",
+    "notes": "Active comparator covering both CoinRabbit loans and the Earn Interest Product. Marketing reserve claims and contractual title-transfer provisions are shown separately."
+  },
+  {
+    "id": "cya_plat_000046",
+    "slug": "nebeus",
+    "canonical_name": "Nebeus",
+    "aliases": [
+      "Nebeus Renting",
+      "Nebeus Crypto Renting",
+      "Nebeus Renting Programs",
+      "Nebeus Crypto Loans"
+    ],
+    "type": "borrow_lend_platform",
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": "2014-01-01",
+    "end_date": null,
+    "country_or_origin": "Spain / United Kingdom / European Union / Global",
+    "summary": "Active crypto lending and financial platform founded in 2014, currently offering crypto-backed loans, multiple fixed and flexible Renting programs, wallets, payments, exchange services, and crypto-friendly accounts.",
+    "what_happened": "Nebeus was founded in 2014 as a crypto-lending platform and later expanded into a broader financial app. By August 2022 it publicly offered multiple Renting programs. Current materials list Sprout, Baobab, Sequoia, Bonsai, Juniper, and related plans with different lockups and reward schedules. May 2026 Renting Terms state that users retain legal ownership while delegated assets are operationally handled and may be deployed through Nebeus infrastructure and authorised providers. Older first-party agreements instead described a lease to Nebeus and permitted pledge, repledge, sale, lending, investment, or other use. The record treats this as contractual evolution and does not retroactively apply one ownership model to all periods.",
+    "official_url_original": "https://nebeus.com/",
+    "official_domain_original": "nebeus.com",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://nebeus.com/",
+    "confidence": "high",
+    "last_verified_at": "2026-08-03",
+    "uncertainty_notes": "The exact 2014 platform launch day was not identified and 1 January is used as a sortable approximate date. Contracting entity, ownership language, programs, reward rates, lockups, supported assets, payout schedules, custody providers, and jurisdictional availability have changed over time and require date-specific interpretation.",
+    "notes": "Active comparator preserving the distinction between current Renting Terms and older lease or rehypothecation language."
+  }
+]
