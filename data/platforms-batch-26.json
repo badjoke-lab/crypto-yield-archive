@@ -1,0 +1,55 @@
+[
+  {
+    "id": "cya_plat_000039",
+    "slug": "inlock",
+    "canonical_name": "Inlock",
+    "aliases": [
+      "INLOCK",
+      "Inlock Savings Account",
+      "INLOCK Crypto Savings Account",
+      "Income Locker"
+    ],
+    "type": "crypto_interest_account",
+    "status": "operations_ended",
+    "failure_reason": "risk_mismanagement",
+    "launch_date": "2020-09-11",
+    "end_date": "2026-06-30",
+    "country_or_origin": "Hungary / Lithuania / European Union",
+    "summary": "Custodial crypto savings and lending platform that suspended customer-asset services in November 2022 after a failed liquidation process made part of customer assets unavailable, then ran multiple recovery programs before ending all active financial services in June 2026.",
+    "what_happened": "Inlock offered weekly interest through a custodial Savings Account and crypto-backed lending products. On 14 November 2022, it activated an emergency shutdown after a failed liquidation process made a small portion of customer assets unavailable. Inlock later offered migration to Vigiler, discounted exit payouts, scheduled releases and later settlement offers. Recovery outcomes varied by path, asset and customer: some customers accepted deductions, while the scheduled-release cohort later received more than the fixed U.S.-dollar value recorded at the incident date. Inlock completed the recovery-process wind-down and stopped all active customer-asset services on 30 June 2026, leaving the platform in read-only mode until permanent decommissioning.",
+    "official_url_original": "https://inlock.io/",
+    "official_domain_original": "inlock.io",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://inlock.io/",
+    "confidence": "high",
+    "last_verified_at": "2026-08-03",
+    "uncertainty_notes": "Recovery was not uniform. Exit-payout participants accepted discounts, migration participants followed a separate path, and scheduled-release metrics used fixed incident-date U.S.-dollar values rather than universal in-kind recovery. The 30 June 2026 end date marks termination of active services; read-only access and support continued temporarily.",
+    "notes": "The customer outcome is recorded as partial repayment with path-specific notes rather than universal full repayment."
+  },
+  {
+    "id": "cya_plat_000040",
+    "slug": "stablehouse",
+    "canonical_name": "Stablehouse",
+    "aliases": [
+      "StableHouse",
+      "Stablehouse Yield",
+      "Stablehouse Digital Assets Platform"
+    ],
+    "type": "centralized_yield",
+    "status": "acquired",
+    "failure_reason": "acquisition",
+    "launch_date": "2021-11-17",
+    "end_date": null,
+    "country_or_origin": "Bermuda / Global",
+    "summary": "Digital-asset yield platform launched in 2021 and later acquired by XBTO, transitioning from retail and professional yield products toward institutional custody and trading within the XBTO group.",
+    "what_happened": "Stablehouse opened early access in November 2021 with digital-asset products offering fixed interest and later published revised yield rates. XBTO announced its strategic acquisition of Stablehouse in August 2023 subject to Bermuda Monetary Authority approval. First-party XBTO materials later describe Stablehouse as fully acquired and a wholly owned subsidiary operating custody and trading infrastructure. The record reflects an acquisition and product transition, not a platform failure: no customer-loss, withdrawal-halt or repayment event is established. The historical yield products remain distinct from Stablehouse's current XBTO custody and trading role.",
+    "official_url_original": "https://www.stablehouse.com/",
+    "official_domain_original": "stablehouse.com",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://www.stablehouse.com/",
+    "confidence": "high",
+    "last_verified_at": "2026-08-03",
+    "uncertainty_notes": "The August 2023 acquisition announcement was subject to regulatory approval. Current official materials confirm completion during 2023, but no exact legal completion date was identified. Current custody and trading terms are not retroactively applied to the historical yield products.",
+    "notes": "Acquired status records the corporate and product transition while preserving Stablehouse as a continuing regulated subsidiary within XBTO."
+  }
+]
