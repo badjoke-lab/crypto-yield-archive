@@ -1,0 +1,34 @@
+[
+  {
+    "platform_id": "cya_plat_000041",
+    "product_type": "centralized_yield",
+    "product_name": "AQRU Auto, Flex and Maple crypto yield products",
+    "custody_model": "custodial platform account",
+    "yield_source": "Product-dependent platform allocations including overcollateralized Flex strategies and uncollateralized Maple lending products described in AQRU materials",
+    "risk_notes": "Historical rates and availability changed materially. Bitcoin and Ethereum interest ended in November 2022, several products are closed to new deposits, and uncollateralized Maple exposure differs from Flex and current receivables products."
+  },
+  {
+    "platform_id": "cya_plat_000041",
+    "product_type": "structured_yield",
+    "product_name": "AQRU Real-World Receivables",
+    "custody_model": "custodial platform account",
+    "yield_source": "Fixed-term returns described as secured by underlying real-world receivables",
+    "risk_notes": "The current page displays a fixed 45-day term and a stated rate, but the reviewed public material does not establish complete obligor, security, default, liquidity, or insolvency treatment for every customer position."
+  },
+  {
+    "platform_id": "cya_plat_000042",
+    "product_type": "interest_account",
+    "product_name": "YouHodler Yield Account",
+    "custody_model": "segregated custodial platform account with disclosed third-party service providers",
+    "yield_source": "Platform-provided rewards on supported crypto assets; complete current allocation and counterparty mechanics were not disclosed in the reviewed public product pages",
+    "risk_notes": "Reward rates, supported assets, limits, settlement, legal entity, jurisdictional availability, and custody arrangements can change. Segregation language does not eliminate market, operational, counterparty, or legal risk."
+  },
+  {
+    "platform_id": "cya_plat_000042",
+    "product_type": "borrow_lend_platform",
+    "product_name": "YouHodler crypto-backed loans",
+    "custody_model": "custodial crypto collateral",
+    "yield_source": "Loan interest, fees, collateral-management charges, and related platform financial services",
+    "risk_notes": "Loan terms vary by asset, loan-to-value level, jurisdiction, duration, collateral maintenance, and liquidation conditions. The lending product must not be conflated with Yield Account ownership or reward mechanics."
+  }
+]
