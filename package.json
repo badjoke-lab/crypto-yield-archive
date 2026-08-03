@@ -14,11 +14,13 @@
     "audit": "node scripts/audit-corpus.mjs",
     "candidates:check": "node scripts/candidates.mjs",
     "candidates:scan": "node scripts/candidate-scanner.mjs",
+    "candidates:draft": "node scripts/candidate-draft-generator.mjs",
     "test:candidate-scanner": "node scripts/test-candidate-scanner.mjs",
+    "test:candidate-drafts": "node scripts/test-candidate-draft-generator.mjs",
     "batch:next-ids": "node scripts/next-batch-ids.mjs",
     "check:build-output": "node scripts/check-build-output.mjs",
     "check:production": "node scripts/check-production.mjs",
-    "test": "npm run validate && npm run quality && npm run audit && npm run test:candidate-scanner && npm run build && npm run check:build-output"
+    "test": "npm run validate && npm run quality && npm run audit && npm run test:candidate-scanner && npm run test:candidate-drafts && npm run build && npm run check:build-output"
   },
   "dependencies": {
     "astro": "^5.0.0"
