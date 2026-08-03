@@ -1,0 +1,93 @@
+[
+  {
+    "id": "cya_ev_000216",
+    "platform_id": "cya_plat_000043",
+    "event_type": "yield_program_started",
+    "event_date": "2021-06-23",
+    "title": "Wirex launches X-Accounts",
+    "description": "Wirex announced the launch of X-Accounts as an app-based product for earning interest through crypto and DeFi-linked allocations.",
+    "impact_level": "high",
+    "event_status_effect": "active",
+    "confidence": "high",
+    "source_count": 1,
+    "notes": "Product launch event for X-Accounts, not the launch of the broader Wirex platform."
+  },
+  {
+    "id": "cya_ev_000217",
+    "platform_id": "cya_plat_000043",
+    "event_type": "other",
+    "event_date": "2021-07-12",
+    "title": "Wirex expands the asset set supporting X-Accounts",
+    "description": "Wirex announced additional crypto-assets on its platform and described continued expansion of X-Accounts shortly after the product launch.",
+    "impact_level": "medium",
+    "event_status_effect": "active",
+    "confidence": "high",
+    "source_count": 1,
+    "notes": "Early product-expansion milestone; historical availability does not establish the current asset list."
+  },
+  {
+    "id": "cya_ev_000218",
+    "platform_id": "cya_plat_000043",
+    "event_type": "other",
+    "event_date": "2026-08-03",
+    "title": "Wirex documents current Flexible, Plus, and Fixed X-Accounts",
+    "description": "Current Wirex materials described active Flexible, Plus, and Fixed X-Account variants with variable or fixed rates, weekly interest, different lockups, and different withdrawal conditions.",
+    "impact_level": "medium",
+    "event_status_effect": "active",
+    "confidence": "high",
+    "source_count": 3,
+    "notes": "Current-state snapshot; country eligibility, assets, limits, rates, and exact terms can change."
+  },
+  {
+    "id": "cya_ev_000219",
+    "platform_id": "cya_plat_000044",
+    "event_type": "yield_program_started",
+    "event_date": "2020-12-14",
+    "title": "SwissBorg launches USDC Smart Yield",
+    "description": "SwissBorg released its first USDC Smart Yield wallet to an initial user cohort and began rolling the product out through the app.",
+    "impact_level": "high",
+    "event_status_effect": "active",
+    "confidence": "high",
+    "source_count": 1,
+    "notes": "Launch date is directly stated in the first-party announcement."
+  },
+  {
+    "id": "cya_ev_000220",
+    "platform_id": "cya_plat_000044",
+    "event_type": "other",
+    "event_date": "2022-06-22",
+    "title": "SwissBorg reports broad Smart Yield expansion",
+    "description": "SwissBorg reported that Smart Yield had expanded from the original USDC wallet to nineteen additional tokens and had been used through hundreds of thousands of wallets.",
+    "impact_level": "medium",
+    "event_status_effect": "active",
+    "confidence": "high",
+    "source_count": 1,
+    "notes": "Historical scale and product-expansion event; figures are first-party operating metrics."
+  },
+  {
+    "id": "cya_ev_000221",
+    "platform_id": "cya_plat_000044",
+    "event_type": "other",
+    "event_date": "2022-09-08",
+    "title": "SwissBorg introduces Earn as the next stage of Smart Yield",
+    "description": "SwissBorg launched SwissBorg Earn, replacing the one-size-fits-all Smart Yield approach with multiple asset- and risk-specific yield strategies.",
+    "impact_level": "high",
+    "event_status_effect": "active",
+    "confidence": "high",
+    "source_count": 1,
+    "notes": "Product evolution rather than closure or rebrand of the whole SwissBorg platform."
+  },
+  {
+    "id": "cya_ev_000222",
+    "platform_id": "cya_plat_000044",
+    "event_type": "other",
+    "event_date": "2026-08-03",
+    "title": "SwissBorg Earn remains active with strategy-specific risk and fee terms",
+    "description": "Current SwissBorg materials described active Earn strategies, subscriptions, redemptions, APY presentation, risk scores, earnings history, and strategy-specific performance and service fees.",
+    "impact_level": "medium",
+    "event_status_effect": "active",
+    "confidence": "high",
+    "source_count": 4,
+    "notes": "Current-state snapshot. Strategy availability, protocol exposure, payout timing, caps, cooldowns, APY, and fees can change."
+  }
+]
