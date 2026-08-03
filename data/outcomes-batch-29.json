@@ -1,0 +1,47 @@
+[
+  {
+    "platform_id": "cya_plat_000045",
+    "outcome_status": "not_applicable",
+    "estimated_recovery_rate": "No platform-wide customer-loss, claims, or repayment event was identified for CoinRabbit in the reviewed sources; loans and Earn remain active.",
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": "Not applicable",
+    "claim_process_url": null,
+    "affected_products": [
+      "CoinRabbit Earn Interest Product",
+      "CoinRabbit fixed-term loans",
+      "CoinRabbit open-ended loans"
+    ],
+    "claim_classes": [],
+    "jurisdictions": [
+      "Supported CoinRabbit jurisdictions"
+    ],
+    "as_of": "2026-08-03",
+    "last_verified_at": "2026-08-03",
+    "notes": "Not-applicable reflects the absence of a reviewed failure or recovery process. It is not a guarantee of principal, collateral return, reserve sufficiency, product access, or solvency.",
+    "confidence": "high"
+  },
+  {
+    "platform_id": "cya_plat_000046",
+    "outcome_status": "not_applicable",
+    "estimated_recovery_rate": "No platform-wide customer-loss, claims, or repayment event was identified for Nebeus in the reviewed sources; lending and Renting remain active.",
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": "Not applicable",
+    "claim_process_url": null,
+    "affected_products": [
+      "Nebeus Crypto Renting programs",
+      "Nebeus crypto-backed loans"
+    ],
+    "claim_classes": [],
+    "jurisdictions": [
+      "European Union",
+      "United Kingdom",
+      "Other supported jurisdictions"
+    ],
+    "as_of": "2026-08-03",
+    "last_verified_at": "2026-08-03",
+    "notes": "Not-applicable applies because the platform is active and no reviewed recovery process exists. It does not eliminate counterparty, custody, operational, legal, lockup, liquidity, or provider risk.",
+    "confidence": "high"
+  }
+]
