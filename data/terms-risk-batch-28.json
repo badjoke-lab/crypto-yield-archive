@@ -1,0 +1,20 @@
+[
+  {
+    "platform_id": "cya_plat_000043",
+    "terms_status": "platform_owned",
+    "asset_ownership_interpretation": "Wirex X-Account terms state that customers transfer ownership of deposited crypto-assets to Wirex, which may use, hold, or manage those assets at its discretion while owing the contractual account balance and interest treatment.",
+    "affected_product": "X-Account Flexible, X-Account Plus, and Fixed X-Account",
+    "source_evidence_id": "cya_src_b28_0004",
+    "notes": "The terms also state that X-Accounts are not bank or deposit accounts and are not covered by government-backed depositor compensation, insurance, or guarantee schemes. This classification applies only to X-Accounts, not every Wirex wallet, card, payment, or trading balance.",
+    "confidence": "high"
+  },
+  {
+    "platform_id": "cya_plat_000044",
+    "terms_status": "varies_by_product",
+    "asset_ownership_interpretation": "SwissBorg Earn provides app-based access to multiple strategy-specific positions, but reviewed public materials do not establish one legal ownership, custody, insolvency, protocol, or liquidity treatment that applies uniformly to Smart Yield and every current Earn strategy.",
+    "affected_product": "SwissBorg Smart Yield and SwissBorg Earn strategies",
+    "source_evidence_id": "cya_src_b28_0012",
+    "notes": "Current pricing establishes strategy-specific fees but does not by itself resolve legal asset ownership or insolvency priority. Each strategy's risk report, protocol allocation, cooldown, cap, redemption, and legal terms require separate review.",
+    "confidence": "medium"
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "id": "cya_plat_000043",
+    "slug": "wirex-x-accounts",
+    "canonical_name": "Wirex X-Accounts",
+    "aliases": [
+      "X-Accounts",
+      "Wirex X-Account",
+      "X-Account Flexible",
+      "X-Account Plus",
+      "Fixed X-Account"
+    ],
+    "type": "crypto_interest_account",
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": "2021-06-23",
+    "end_date": null,
+    "country_or_origin": "United Kingdom / European Union / Global",
+    "summary": "Product-scoped Wirex interest-account service launched in June 2021 and currently offered through flexible, plus, and fixed variants with different rate, lockup, and withdrawal conditions.",
+    "what_happened": "Wirex announced X-Accounts in June 2021 as an app-based product for earning interest on transferred assets and expanded the supported asset set soon after launch. Current materials describe Flexible accounts with variable rates and on-demand withdrawals, Plus accounts with higher fixed rates and a redemption-notice period, and Fixed accounts with selected lockup terms. Current terms state that X-Accounts are not bank or deposit accounts, are not protected by government-backed depositor-compensation schemes, and involve transfer of ownership of deposited crypto-assets to Wirex for use or management at its discretion.",
+    "official_url_original": "https://help.wirexapp.com/article/what-is-x-accounts-1290",
+    "official_domain_original": "wirexapp.com",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://www.wirexapp.com/",
+    "confidence": "high",
+    "last_verified_at": "2026-08-03",
+    "uncertainty_notes": "Availability, eligible assets, account variants, rates, limits, legal entity, and withdrawal conditions vary by country and can change. The record does not cover the entire Wirex payments, card, trading, Multiply, or Credit business.",
+    "notes": "Product-scoped active comparator. Current terms support a platform-owned asset interpretation for X-Accounts only."
+  },
+  {
+    "id": "cya_plat_000044",
+    "slug": "swissborg-earn",
+    "canonical_name": "SwissBorg Earn",
+    "aliases": [
+      "SwissBorg Smart Yield",
+      "Smart Yield",
+      "SwissBorg Earn Strategies",
+      "SwissBorg Yield Wallet"
+    ],
+    "type": "yield_aggregator",
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": "2020-12-14",
+    "end_date": null,
+    "country_or_origin": "Switzerland / European Union / Global",
+    "summary": "Product-scoped SwissBorg yield service launched as Smart Yield in December 2020 and expanded into SwissBorg Earn, offering app-based access to multiple strategy-specific DeFi, staking, liquidity, and related yield sources.",
+    "what_happened": "SwissBorg launched its first USDC Smart Yield wallet on 14 December 2020 and expanded the product across additional assets. In September 2022, SwissBorg introduced SwissBorg Earn as the next stage of Smart Yield, replacing a single strategy with multiple asset- and risk-specific strategies. Current support and pricing materials describe active Earn subscriptions, redemptions, payouts, APY presentation, risk scores, performance fees, strategy caps, cooldowns, and loyalty-based fee or yield differences. Because the underlying strategy, protocol, liquidity, and risk structure varies, one custody or ownership interpretation should not be applied across every Earn strategy.",
+    "official_url_original": "https://help.swissborg.com/hc/en-gb/sections/360004790438-SwissBorg-Earn",
+    "official_domain_original": "swissborg.com",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://swissborg.com/smart-yield-account",
+    "confidence": "high",
+    "last_verified_at": "2026-08-03",
+    "uncertainty_notes": "Available strategies, underlying protocols, APYs, risk scores, caps, cooldowns, fees, payout timing, and jurisdictional access can change. This record does not cover all SwissBorg exchange, custody, token, or investment products.",
+    "notes": "Product-scoped active comparator preserving continuity from Smart Yield to SwissBorg Earn."
+  }
+]
