@@ -1,0 +1,43 @@
+[
+  {
+    "platform_id": "cya_plat_000037",
+    "outcome_status": "full_repayment",
+    "estimated_recovery_rate": "All cryptocurrency lent under the Earner product was returned to users in full after discontinuation.",
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": "Return of cryptocurrency after the Earner product was discontinued",
+    "claim_process_url": null,
+    "affected_products": [
+      "USD Earner",
+      "Gold Earner",
+      "Crypto Earner"
+    ],
+    "claim_classes": [],
+    "jurisdictions": [
+      "Australia"
+    ],
+    "as_of": "2026-08-03",
+    "last_verified_at": "2026-08-03",
+    "notes": "The Federal Court penalty judgment records that all cryptocurrency lent through Earner was returned to users within weeks of discontinuation. This outcome applies only to Earner and not to Block Earner's separate Access product or current services. No exact universal completion date was identified.",
+    "confidence": "high"
+  },
+  {
+    "platform_id": "cya_plat_000038",
+    "outcome_status": "unknown",
+    "estimated_recovery_rate": "Flint stated that principal and accrued interest through the cutoff would be returned, but reviewed sources do not establish universal completed withdrawal.",
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": "User-initiated unlend and withdrawal through the Flint application",
+    "claim_process_url": null,
+    "affected_products": [
+      "Flint fixed-yield stablecoin products",
+      "other Flint Money yield balances"
+    ],
+    "claim_classes": [],
+    "jurisdictions": [],
+    "as_of": "2026-08-03",
+    "last_verified_at": "2026-08-03",
+    "notes": "First-party instructions and contemporaneous reporting offered a withdrawal path and stated that funds were safe. Availability and assurances are not treated as proof that every user completed withdrawal or received one uniform recovery.",
+    "confidence": "medium"
+  }
+]
