@@ -1,0 +1,34 @@
+[
+  {
+    "platform_id": "cya_plat_000045",
+    "product_type": "interest_account",
+    "product_name": "CoinRabbit Earn Interest Product",
+    "custody_model": "platform-owned custodial deposit",
+    "yield_source": "CoinRabbit loan activity and other platform use of topped-up digital assets under the Earn terms",
+    "risk_notes": "Current terms allow CoinRabbit to own and use deposited assets, change APY, and set product limits. Current marketing describes flexible withdrawals, but access, rates, assets, limits, and platform capacity can change."
+  },
+  {
+    "platform_id": "cya_plat_000045",
+    "product_type": "borrow_lend_platform",
+    "product_name": "CoinRabbit crypto-backed loans",
+    "custody_model": "platform-owned crypto collateral during the loan",
+    "yield_source": "Borrower interest and fees on fixed-term and open-ended crypto-backed loans",
+    "risk_notes": "Collateral can be liquidated at the margin-call threshold. Current marketing claims full reserves and no rehypothecation, while contractual title to collateral passes to CoinRabbit; both statements require product- and date-specific interpretation."
+  },
+  {
+    "platform_id": "cya_plat_000046",
+    "product_type": "centralized_yield",
+    "product_name": "Nebeus Crypto Renting programs",
+    "custody_model": "program-specific delegated assets handled through Nebeus group infrastructure and authorised providers",
+    "yield_source": "Program-dependent lending, liquidity, and other documented yield-generating activity conducted through Nebeus infrastructure or institutional partners",
+    "risk_notes": "Programs differ by asset, lockup, payout frequency, rate, contracting entity, provider, and ownership language. Current and legacy agreements use materially different legal descriptions."
+  },
+  {
+    "platform_id": "cya_plat_000046",
+    "product_type": "borrow_lend_platform",
+    "product_name": "Nebeus crypto-backed loans",
+    "custody_model": "custodial crypto collateral under product-specific loan terms",
+    "yield_source": "Loan interest, fees, collateral-management charges, and related platform financial services",
+    "risk_notes": "Loan terms, collateral treatment, LTV, liquidation, duration, legal entity, and jurisdiction differ from Renting programs and require separate review."
+  }
+]
