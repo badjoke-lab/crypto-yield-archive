@@ -1,0 +1,20 @@
+[
+  {
+    "platform_id": "cya_plat_000041",
+    "terms_status": "varies_by_product",
+    "asset_ownership_interpretation": "AQRU terms cover wallet, custody, exchange, investment and multiple yield or strategy products, while current products use different underlying arrangements. One ownership or insolvency interpretation should not be applied across Auto, Flex, Maple, Trend, Ten, exchange, and receivables products.",
+    "affected_product": "AQRU wallet, exchange, investment and yield products",
+    "source_evidence_id": "cya_src_b27_0008",
+    "notes": "The reviewed terms predate the 2023 ownership restructure and do not fully resolve current product-level asset ownership, counterparty exposure, security, or insolvency treatment. Reverify terms before any status or customer-outcome change.",
+    "confidence": "medium"
+  },
+  {
+    "platform_id": "cya_plat_000042",
+    "terms_status": "varies_by_product",
+    "asset_ownership_interpretation": "Current YouHodler terms describe segregated and off-balance-sheet handling for covered customer assets and allow custody through disclosed group or third-party providers, but product-specific rights and risks differ across wallets, conversion, Yield Account, loans, trading and other services.",
+    "affected_product": "YouHodler Yield Account, wallets, conversion and crypto-backed loans",
+    "source_evidence_id": "cya_src_b27_0016",
+    "notes": "Segregation and custody language should not be converted into a universal customer-owned classification for every product or jurisdiction. Product terms, legal entity, limits, eligible assets and protections require periodic re-verification.",
+    "confidence": "medium"
+  }
+]
