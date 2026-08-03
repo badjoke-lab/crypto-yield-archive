@@ -1,0 +1,20 @@
+[
+  {
+    "platform_id": "cya_plat_000045",
+    "terms_status": "platform_owned",
+    "asset_ownership_interpretation": "Current CoinRabbit terms state that CoinRabbit acquires ownership of digital assets transferred as loan collateral and owns digital assets topped up into the Earn Interest Product while owing contractual return or balance obligations.",
+    "affected_product": "CoinRabbit Earn Interest Product and crypto-backed loans",
+    "source_evidence_id": "cya_src_b29_0005",
+    "notes": "The current loan page separately markets fully reserved collateral and no rehypothecation. That marketing claim is recorded but does not replace the contractual title-transfer language. Product terms, reserves, use practices, and jurisdiction require continuing review.",
+    "confidence": "high"
+  },
+  {
+    "platform_id": "cya_plat_000046",
+    "terms_status": "varies_by_product",
+    "asset_ownership_interpretation": "Current May 2026 Renting Terms state that users retain legal ownership while assets are locked and operationally handled through Nebeus infrastructure and authorised providers. Older first-party agreements used a lease model and granted broader operational use rights, so the applicable interpretation depends on product, agreement version, contracting entity, and activation date.",
+    "affected_product": "Nebeus Crypto Renting programs and related legacy agreements",
+    "source_evidence_id": "cya_src_b29_0010",
+    "notes": "Current product-specific terms should control current programs, but older positions may have been governed by different agreements. Loan collateral and general wallet balances are not assigned the same ownership model without separate product review.",
+    "confidence": "medium"
+  }
+]
