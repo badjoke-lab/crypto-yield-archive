@@ -99,8 +99,21 @@ for (const row of platforms) {
   list.push(row);
   domains.set(domain, list);
 }
+const allowedDomainShares = new Map([
+  ['nexo.com', new Set(['cya_plat_000010', 'cya_plat_000020'])],
+]);
 for (const [domain, rows] of domains) {
-  if (rows.length > 1) block(`official domain collision ${domain}: ${rows.map((row) => `${row.id} (${row.canonical_name})`).join(', ')}`);
+  if (rows.length <= 1) continue;
+  const ids = new Set(rows.map((row) => row.id));
+  const allowed = allowedDomainShares.get(domain);
+  const exactAllowedShare = allowed
+    && ids.size === allowed.size
+    && [...ids].every((id) => allowed.has(id));
+  if (exactAllowedShare) {
+    notes.push(`allowed product-scoped domain share ${domain}: ${[...ids].join(', ')}`);
+  } else {
+    block(`official domain collision ${domain}: ${rows.map((row) => `${row.id} (${row.canonical_name})`).join(', ')}`);
+  }
 }
 
 // Coverage and reference integrity beyond the base validator.
