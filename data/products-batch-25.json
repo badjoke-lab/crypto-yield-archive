@@ -1,0 +1,18 @@
+[
+  {
+    "platform_id": "cya_plat_000037",
+    "product_type": "interest_account",
+    "product_name": "Block Earner Earner (USD Earner, Gold Earner and Crypto Earner)",
+    "custody_model": "custodial_unsecured_loan_to_platform",
+    "yield_source": "Block Earner's discretionary use and lending of customer cryptocurrency to third parties while paying a fixed return",
+    "risk_notes": "Customers transferred rights and title to cryptocurrency to Block Earner and became exposed to the platform's use of those assets. The product was later found to require an Australian financial services licence."
+  },
+  {
+    "platform_id": "cya_plat_000038",
+    "product_type": "centralized_yield",
+    "product_name": "Flint Money fixed-yield crypto products",
+    "custody_model": "custodial_platform_account",
+    "yield_source": "Deployment through institutional borrowers and DeFi protocols selected by Flint",
+    "risk_notes": "Users depended on Flint to lend, unlend and return deposited assets. The service was phased out under regulatory uncertainty and customers were instructed to withdraw."
+  }
+]

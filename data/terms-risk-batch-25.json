@@ -1,0 +1,20 @@
+[
+  {
+    "platform_id": "cya_plat_000037",
+    "terms_status": "platform_owned",
+    "asset_ownership_interpretation": "Earner customers transferred all rights and title in their cryptocurrency to Block Earner, which could use and lend the assets at its sole discretion while owing a contractual return.",
+    "affected_product": "USD Earner, Gold Earner and Crypto Earner",
+    "source_evidence_id": "cya_src_b25_0013",
+    "notes": "Platform-owned classification follows the product terms described in ASIC's amended concise statement. It applies only to Earner and not to the separate Access product.",
+    "confidence": "high"
+  },
+  {
+    "platform_id": "cya_plat_000038",
+    "terms_status": "unclear",
+    "asset_ownership_interpretation": "Flint operated custodial yield balances and deployed funds through institutional and DeFi counterparties, but reviewed public sources do not establish one complete legal ownership or insolvency-priority treatment for every product and asset.",
+    "affected_product": "Flint Money fixed-yield products and custodial balances",
+    "source_evidence_id": "cya_src_b25_0017",
+    "notes": "The first-party withdrawal guide establishes platform-controlled lend and unlend mechanics but does not provide a complete legal asset-ownership framework.",
+    "confidence": "medium"
+  }
+]
