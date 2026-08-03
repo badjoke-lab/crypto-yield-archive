@@ -13,10 +13,12 @@
     "quality": "node scripts/data-quality-report.mjs && node scripts/data-quality-report-batch-13.mjs",
     "audit": "node scripts/audit-corpus.mjs",
     "candidates:check": "node scripts/candidates.mjs",
+    "candidates:scan": "node scripts/candidate-scanner.mjs",
+    "test:candidate-scanner": "node scripts/test-candidate-scanner.mjs",
     "batch:next-ids": "node scripts/next-batch-ids.mjs",
     "check:build-output": "node scripts/check-build-output.mjs",
     "check:production": "node scripts/check-production.mjs",
-    "test": "npm run validate && npm run quality && npm run audit && npm run build && npm run check:build-output"
+    "test": "npm run validate && npm run quality && npm run audit && npm run test:candidate-scanner && npm run build && npm run check:build-output"
   },
   "dependencies": {
     "astro": "^5.0.0"
