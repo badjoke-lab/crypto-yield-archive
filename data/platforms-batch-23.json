@@ -1,0 +1,56 @@
+[
+  {
+    "id": "cya_plat_000033",
+    "slug": "donut",
+    "canonical_name": "Donut",
+    "aliases": [
+      "Donut App",
+      "Donut Savings",
+      "Donut Grow",
+      "Donut Build",
+      "Donut Save"
+    ],
+    "type": "crypto_interest_account",
+    "status": "operations_ended",
+    "failure_reason": "counterparty_exposure",
+    "launch_date": "2019-01-01",
+    "end_date": "2023-03-31",
+    "country_or_origin": "United States",
+    "summary": "Consumer crypto yield app that paused account functions after Genesis suspended redemptions in November 2022, announced discontinuation in February 2023, and removed its mobile app while keeping a web dashboard for account updates.",
+    "what_happened": "Donut offered consumer-facing crypto savings and yield plans and relied on lending counterparties including Genesis Global Capital. After Genesis suspended redemptions on 16 November 2022, Donut account access and withdrawals were affected. Donut announced discontinuation in February 2023 and said the mobile app would be removed by 31 March 2023 while users were moved to a web dashboard. Genesis began creditor distributions in August 2024, but reviewed sources do not establish one completed Donut-specific recovery date or universal recovery percentage.",
+    "official_url_original": "https://www.donut.app/",
+    "official_domain_original": "donut.app",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://www.donut.app/",
+    "confidence": "high",
+    "last_verified_at": "2026-08-03",
+    "uncertainty_notes": "The 2019 launch date is approximate. The 31 March 2023 date is the stated mobile-app removal deadline, while the current site does not publish a separate legal shutdown date. Genesis distributions cannot be treated as proof that every Donut user received the same recovery or that all Donut claims are complete.",
+    "notes": "Tracked separately from Genesis because Donut was the customer-facing yield platform with its own products, interface and communications."
+  },
+  {
+    "id": "cya_plat_000034",
+    "slug": "finblox",
+    "canonical_name": "Finblox",
+    "aliases": [
+      "Finblox App",
+      "Finblox Yield",
+      "FBX"
+    ],
+    "type": "centralized_yield",
+    "status": "operations_ended",
+    "failure_reason": "counterparty_exposure",
+    "launch_date": "2021-01-01",
+    "end_date": "2025-07-07",
+    "country_or_origin": "Hong Kong / United Kingdom / Global",
+    "summary": "Centralized crypto yield platform that restricted withdrawals and paused rewards in June 2022 while assessing Three Arrows Capital exposure, later restored selected functions, and was reported to have closed services in July 2025.",
+    "what_happened": "Finblox offered custodial crypto yield, wallet and reward products. On 16 June 2022 it imposed severe withdrawal limits and paused rewards while assessing Three Arrows Capital exposure. It increased limits and restored selected rewards in July 2022. DL News later reported that Finblox planned to close services on 7 July 2025 based on company communications. FINBLOX LIMITED was dissolved in the United Kingdom on 3 March 2026. A surviving automated status page still reports systems as operational, so it is not treated as proof that the original customer yield service remains active.",
+    "official_url_original": "https://finblox.com/",
+    "official_domain_original": "finblox.com",
+    "official_url_status": "live_unverified",
+    "archived_url": "https://web.archive.org/web/*/https://finblox.com/",
+    "confidence": "medium",
+    "last_verified_at": "2026-08-03",
+    "uncertainty_notes": "The 2021 launch date is year-level. The July 2025 closure date relies on reporting that cited company emails. The relationship between FINBLOX LIMITED and every operating entity or customer contract requires caution. Reviewed sources do not establish one final customer recovery result.",
+    "notes": "The surviving website and status-page artifacts may be stale. They are preserved as URL-history evidence rather than treated as current service confirmation."
+  }
+]

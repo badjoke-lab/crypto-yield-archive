@@ -1,0 +1,18 @@
+[
+  {
+    "platform_id": "cya_plat_000033",
+    "product_type": "interest_account",
+    "product_name": "Donut yield accounts (Grow, Build and Save)",
+    "custody_model": "custodial_platform_account_linked_to_third_party_lending",
+    "yield_source": "platform-managed lending arrangements including Genesis exposure",
+    "risk_notes": "Donut users depended on the platform and its lending counterparties. The Genesis redemption halt prevented normal access and moved account outcomes into an underlying restructuring process."
+  },
+  {
+    "platform_id": "cya_plat_000034",
+    "product_type": "centralized_yield",
+    "product_name": "Finblox Earn and Crypto Vault",
+    "custody_model": "custodial_platform_account",
+    "yield_source": "opted-in customer assets could be lent to borrowers to generate yield",
+    "risk_notes": "Finblox imposed severe withdrawal limits and paused rewards while assessing 3AC exposure. Product-level and final customer outcomes remain unresolved."
+  }
+]
