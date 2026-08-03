@@ -15,91 +15,97 @@ Permanent operating policy remains in `docs/record-growth-plan.md`. Update this 
 - `data/` is canonical.
 - Unreviewed candidates, generated drafts, monitoring findings, and private notes stay under `data-staging/`.
 - Never write directly to `main`.
-- Never promote before name/alias/domain duplicate review.
+- Never promote before name, alias, domain, product-boundary, and entity-boundary review.
 - Never infer final recovery rates or repayment completion.
-- Do not treat moratorium, plan effectiveness, a new brand, a new token, a corporate dissolution, or an automated status page as sufficient proof of customer outcome.
-- GitHub search is supplementary; the candidate audit and canonical JSON are authoritative.
+- Do not treat moratorium, plan effectiveness, a new brand, a new token, a corporate dissolution, an automated status page, or a withdrawal window as sufficient proof of customer outcome.
+- GitHub search is supplementary; candidate audit and canonical JSON inspection are authoritative.
 
 ## Current confirmed baseline
 
 ```text
 Repository: badjoke-lab/crypto-yield-archive
 Default branch: main
-Confirmed main commit: 3e16303903b646a8a6d4e92f3c0cb50bc23b35bf
-Latest merged PR: #51 Add batch 24 Pillow and Nuri interest-account records
+Confirmed main commit: 802417c6ff14f820cba6007b56ac9b8e15cef204
+Latest merged PR: #54 Add batch 25 Block Earner and Flint records
 ```
 
 ### Current canonical scale
 
 ```text
-Platforms:       36
-Events:          178
-Evidence:        252
-Outcomes:         36
-Products:         54
-Terms risk:       36
+Platforms:       38
+Events:          188
+Evidence:        274
+Outcomes:         38
+Products:         56
+Terms risk:       38
 Claims ongoing:   15
-Generated pages:  48
+Generated pages:  50
 ```
 
-Validation on the final batch-24 head confirmed that HTML, canonical JSON datasets, manifest counts, version metadata, sitemap inputs, and all six canonical record groups resolve to the same counts.
+The final batch-25 build confirmed that HTML, canonical JSON datasets, manifest counts, version metadata, sitemap inputs, and all six canonical record groups resolve to the same counts.
 
-### Latest completed logical work
+## Latest completed logical work
 
 ```text
-R3 / batch 24: complete
+R4 / batch 25: complete
 ```
 
-Pillow:
+### Block Earner Earner Product
 
-- promoted as `cya_plat_000035`
+- promoted as `cya_plat_000037`
+- product-scoped; Block Earner's continuing business and separate Access product remain outside the record
+- `operations_ended / regulatory_action`
+- offered from 17 March to 16 November 2022
+- records ASIC proceedings and the Federal, Full Federal, and High Court stages through 17 June 2026
+- outcome is `full_repayment`
+- Federal Court penalty judgment records that all cryptocurrency lent through Earner was returned within weeks of discontinuation
+- terms are `platform_owned` because users transferred rights and title to Block Earner
+
+### Flint
+
+- promoted as `cya_plat_000038`
+- historical `flint.money` yield service only
 - `operations_ended / voluntary_shutdown`
-- records the 23 June 2023 orderly-shutdown announcement
-- records the bank and crypto withdrawal windows and 31 July 2023 closure
+- records January 2023 unlend and withdrawal instructions during the regulatory-uncertainty phase-out
+- records Flint Labs' confirmation that Flint Money had closed while the company pivoted
+- exact final operational date remains unresolved
 - outcome remains `unknown`
-- Pillow's statement that balances were available for withdrawal is not treated as proof that every user completed withdrawal
+- withdrawal availability and company assurances are not treated as proof of universal completed withdrawal
 
-Nuri Bitcoin Interest Account:
-
-- promoted as `cya_plat_000036`
-- `operations_ended / counterparty_exposure`
-- modeled as the customer-facing Nuri/Bitwala interest product provided contractually by Celsius
-- records the June 2022 withdrawal halt, Celsius Chapter 11, Nuri insolvency, and 19 December 2022 service closure
-- records the beginning of Celsius plan distributions in 2024
-- outcome remains `claims_ongoing`
-- ordinary Nuri bank balances, custody wallets, and self-custodial vaults remain outside this record's outcome classification
-
-Batch-24 validation:
+### Batch-25 validation
 
 ```text
 Validate data: success
 Validate and build: success
 CYA CI: success
-Candidate audit: 11 entries, 0 possible matches
+Candidate audit: 13 entries, 0 possible matches
 Build-output check: success
-Pillow route generated: /platform/pillow/
-Nuri route generated: /platform/nuri-bitcoin-interest-account/
+Block Earner route generated: /platform/block-earner-earner-product/
+Flint route generated: /platform/flint-money/
 ```
 
-### Queue and next identifiers
+## Queue and next identifiers
 
 ```text
 Active candidate queue: 2 needs_research candidates
 - cya_candidate_000010 Goldfinch
 - cya_candidate_000011 BitMart
 
-Next candidate ID:       cya_candidate_000016
-Next platform ID:        cya_plat_000037
-Next event ID candidate: cya_ev_000184
-Next formal batch:       batch 25
-Next evidence prefix:    cya_src_b25_
+Next candidate ID:       cya_candidate_000018
+Next platform ID:        cya_plat_000039
+Next event ID candidate: cya_ev_000194
+Next formal batch:       batch 26
+Next evidence prefix:    cya_src_b26_
 ```
 
 Always rescan all canonical files before assigning IDs. Counts and maximum IDs are not interchangeable.
 
-Goldfinch and BitMart remain staging-only. Goldfinch needs an explicit DeFi/institutional-yield scope and entity-boundary decision. BitMart needs an exchange-Earn exception decision and product-specific redemption, custody, and customer-outcome evidence.
+Goldfinch and BitMart remain staging-only:
 
-### Current phase
+- Goldfinch needs a DeFi/institutional-yield scope and entity-boundary decision.
+- BitMart needs an exchange-Earn exception decision plus product-specific redemption, custody, and customer-outcome evidence.
+
+## Current phase
 
 ```text
 Phase 3A: reach 30 platforms                         complete
@@ -107,22 +113,23 @@ Phase 3B / R1: batch 22, 30 -> 32                   complete
 Public-surface corrective gate                      complete
 Phase 3B / R2: batch 23, 32 -> 34                   complete
 Phase 3B / R3: batch 24, 34 -> 36                   complete
-Phase 3B / R4: batch 25, 36 -> 38                   current
-Phase 3B / R5: batch 26, 38 -> 40                   not started
-Phase 4: 40-platform audit                          not started
+Phase 3B / R4: batch 25, 36 -> 38                   complete
+Phase 3B / R5: batch 26, 38 -> 40                   current
+Phase 4: 40-platform full audit                     next
 Phase 5: scanner and draft generator                not started
 Phase 6: 40 -> 60                                   not started
 Phase 7: weekly existing-record monitoring          not started
 Phase 8: 60 -> 100 with 75/100 audits               not started
 ```
 
-### Production verification state
+## Production verification state
 
 ```text
 PR #43 public-surface implementation: merged
 PR #48 batch-23 repository/public-output validation: complete
 PR #51 batch-24 repository/public-output validation: complete
-PR #51 Cloudflare production deployment: triggered by main merge
+PR #54 batch-25 repository/public-output validation: complete
+PR #54 Cloudflare production deployment: triggered by main merge
 Direct production smoke confirmation: pending final observation
 ```
 
@@ -130,8 +137,8 @@ Before classifying the current release as production-verified, confirm the deplo
 
 ```text
 /
-/platform/pillow/
-/platform/nuri-bitcoin-interest-account/
+/platform/block-earner-earner-product/
+/platform/flint-money/
 /version.json
 /data/manifest.json
 /data/platforms.json
@@ -144,18 +151,20 @@ Before classifying the current release as production-verified, confirm the deplo
 robots.txt
 ```
 
-Expected public counts are 36 / 178 / 252 with 36 outcomes, 54 products, 36 terms-risk records, and 15 claims ongoing.
+Expected public counts are 38 / 188 / 274 with 38 outcomes, 56 products, 38 terms-risk records, 15 claims ongoing, and 50 generated pages.
 
-### Workflow maintenance note
+Direct production access from the current execution environment is blocked by DNS resolution, so repository and generated-output gates are complete while external production observation remains explicitly pending rather than falsely reported as successful.
 
-The August 2026 GitHub runner emitted Node.js 20 deprecation warnings for the action runtime. Validation remains green and the project successfully installed Node 20.20.2, but workflow action/runtime upgrades should be reviewed during the 40-platform audit or a separate maintenance PR rather than mixed into record-growth batches.
+## Workflow maintenance note
+
+The August 2026 GitHub runner emits Node.js 20 deprecation warnings for the action runtime. Validation remains green and the project installs Node 20.20.2 successfully. Review action/runtime upgrades during the 40-platform audit or a separate maintenance PR; do not mix them into record-growth batches.
 
 ## Interruption and recovery history
 
 ### Superseded public-surface work
 
-- PR #42 was closed as superseded.
-- PR #43 was rebuilt into a mergeable final implementation and merged.
+- PR #42 closed as superseded.
+- PR #43 rebuilt into a mergeable final implementation and merged.
 
 ### Closed legacy batch-23 branch
 
@@ -170,6 +179,9 @@ PR #40 and branch `cya-b23` were not resumed directly because they predated the 
 #49 Advance CYA roadmap after batch 23
 #50 Stage Pillow and Nuri batch 24 candidates
 #51 Add batch 24 Pillow and Nuri interest-account records
+#52 Advance CYA roadmap after batch 24
+#53 Stage Block Earner and Flint batch 25 candidates
+#54 Add batch 25 Block Earner and Flint records
 ```
 
 ## Recovery procedure
@@ -245,8 +257,8 @@ Candidate-only CI success is not sufficient for canonical promotion.
 | R1 | 22 | 30 -> 32 | complete |
 | R2 | 23 | 32 -> 34 | complete |
 | R3 | 24 | 34 -> 36 | complete |
-| R4 | 25 | 36 -> 38 | current |
-| R5 | 26 | 38 -> 40 | pending |
+| R4 | 25 | 36 -> 38 | complete |
+| R5 | 26 | 38 -> 40 | current |
 
 Normal target is two platforms per PR. A duplicate-enrichment PR is still successful; never force the count upward with an unreviewed replacement.
 
@@ -262,23 +274,28 @@ Use one-platform PRs for complex multi-entity, multi-jurisdiction, disputed owne
 
 ### Phase 4 — 40-platform full audit
 
-One audit-only PR after 40 platforms. Do not add platforms in the audit PR.
+Immediately after batch 26, create one audit-only PR. Do not add platforms in the audit PR.
 
-Check:
+Mandatory checks:
 
-- duplicate names, aliases, domains
-- broken platform/event references
-- source-count mismatch
-- status/outcome/end-date contradictions
+- duplicate canonical names, aliases, and domains
+- product-scoped records accidentally conflated with continuing parent businesses
+- broken platform and event references
+- event `source_count` mismatches, including legacy warnings
+- status, outcome, and end-date contradictions
 - `claims_ongoing` records described as complete
-- unsafe or repurposed domains
+- full-repayment records lacking direct primary support
+- unsafe, repurposed, or stale domains
 - missing archive URLs
-- low-confidence seeds
+- low-confidence events and medium-reliability evidence concentrations
 - unknown outcomes and terms
-- candidate history and split consumed files
+- platforms with fewer than three evidence records
+- candidate and consumed-history consistency
+- split consumed files such as `cya-consumed-coinloan.json`
 - GitHub Actions runtime and Node-version maintenance warnings
+- production smoke access and deployment-observation procedure
 
-Consolidate `cya-consumed-coinloan.json` and other split history when safe and traceable.
+Do not mix new platform additions into the audit PR.
 
 ### Phase 5 — staging automation
 
@@ -301,7 +318,7 @@ Forbidden: automatic canonical promotion, direct main commit, automatic ready, a
 
 R9-R16, about eight PRs of two to three platforms. Use automation but retain manual evidence review.
 
-Measure duplicate rate, scanner false positives/negatives, draft completeness, primary-source coverage, and correction rate.
+Measure duplicate rate, scanner false positives and negatives, draft completeness, primary-source coverage, and correction rate.
 
 Completion: 60 platforms, no unresolved duplicate, no critical reference break, traceable candidate history, all CI green.
 
@@ -322,22 +339,22 @@ R40: 100-platform maturity audit
 
 At 75, audit scanner thresholds, draft omissions, outcomes, terms-risk, evidence density, and monitoring quality.
 
-At 100, audit the full operating system: canonical quality, candidate decisions, automation accuracy, monitoring usefulness, duplicate rate, primary-source rate, archive coverage, unknown/low-confidence rates, and event/evidence distribution.
+At 100, audit the complete operating system: canonical quality, candidate decisions, automation accuracy, monitoring usefulness, duplicate rate, primary-source rate, archive coverage, unknown and low-confidence rates, and event/evidence distribution.
 
 ## Planning horizon
 
-Indicative, dependency-aware ranges from the current 36-platform baseline:
+Indicative, dependency-aware ranges from the current 38-platform baseline:
 
 ```text
-36 -> 40:                 1-3 working weeks
-40-platform audit:       1 week
-staging automation:      1-2 weeks
-40 -> 60:                4-8 weeks
-monitoring setup:        1-2 weeks
-60 -> 75:                3-6 weeks
-75 audit:                1 week
-75 -> 100:               5-10 weeks
-100 audit:               1-2 weeks
+38 -> 40:                 one reviewed batch
+40-platform audit:       one audit PR
+staging automation:      1-2 working weeks
+40 -> 60:                4-8 working weeks
+monitoring setup:        1-2 working weeks
+60 -> 75:                3-6 working weeks
+75 audit:                1 working week
+75 -> 100:               5-10 working weeks
+100 audit:               1-2 working weeks
 ```
 
 These are planning ranges, not promises of continuous daily work.
@@ -377,16 +394,16 @@ Before the next PR, report:
 ## Immediate next action
 
 ```text
-Phase 3B / R4 / batch 25
+Phase 3B / R5 / batch 26
 
-1. complete the post-merge production smoke for batch 24
-2. scan the canonical corpus and candidate history before assigning IDs
-3. select two evidence-ready CeFi lending or historically significant yield candidates
-4. keep Goldfinch and BitMart in needs_research unless an explicit scope decision is completed
-5. stage fresh candidates beginning at cya_candidate_000016
-6. run duplicate audit and candidate-only CI
-7. promote only public-quality records with platform, event, evidence, outcome, product, and terms-risk coverage
-8. run final CI and generated-public-output checks
-9. squash merge with expected head SHA
-10. verify production and update this checkpoint
+1. scan canonical data and candidate history before assigning IDs
+2. select two evidence-ready CeFi lending or historically significant yield candidates
+3. keep Goldfinch and BitMart in needs_research unless an explicit scope decision is completed
+4. stage fresh candidates beginning at cya_candidate_000018
+5. run duplicate audit and candidate-only CI
+6. promote only public-quality records with platform, event, evidence, outcome, product, and terms-risk coverage
+7. run final CI and generated-public-output checks
+8. squash merge with expected head SHA
+9. confirm the 40-platform canonical checkpoint
+10. begin the Phase 4 audit without adding new platforms
 ```
