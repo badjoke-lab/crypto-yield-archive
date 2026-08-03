@@ -15,7 +15,7 @@
   {
     "id": "cya_ev_000176",
     "platform_id": "cya_plat_000035",
-    "event_type": "shutdown_announced",
+    "event_type": "other",
     "event_date": "2023-06-23",
     "title": "Pillow announces orderly shutdown",
     "description": "Pillow told users that it would discontinue services because regulatory uncertainty made continued operation difficult and instructed users to withdraw their funds.",
