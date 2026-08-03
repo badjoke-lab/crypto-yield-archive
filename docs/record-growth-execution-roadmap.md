@@ -34,24 +34,24 @@ Permanent operating rules remain in `docs/record-growth-plan.md` and `docs/devel
 ```text
 Repository: badjoke-lab/crypto-yield-archive
 Default branch: main
-Confirmed main commit: 594d44d5652959fde3c27a7c5a14168b1b26c3e7
-Latest merged PR: #61 Add review-only six-group candidate draft generator
+Confirmed main commit: d15a7010915a4a52cf8adb953f4411fcfa5f2e49
+Latest merged PR: #64 Add batch 27 AQRU and YouHodler records
 ```
 
 ### Canonical scale
 
 ```text
-Platforms:       40
-Events:          200
-Evidence:        298
-Outcomes:         40
-Products:         58
-Terms risk:       40
+Platforms:       42
+Events:          210
+Evidence:        314
+Outcomes:         42
+Products:         62
+Terms risk:       42
 Claims ongoing:   15
-Generated pages:  52
+Generated pages:  54
 ```
 
-The canonical counts did not change during the Phase 4 audit or Phase 5 staging-automation work.
+The batch-27 validation confirmed that source arrays, generated HTML, public JSON, manifest counts, version metadata, and sitemap inputs resolve to the same counts.
 
 ## Latest completed work
 
@@ -59,62 +59,34 @@ The canonical counts did not change during the Phase 4 audit or Phase 5 staging-
 
 Completed in PR #59.
 
-Final audit state:
-
 ```text
 Initial blockers: 37
 Final blockers:    0
 Validate data:     success
 Validate/build:    success
 CYA CI:            success
-Canonical counts:  40 / 200 / 298 preserved
 ```
 
-Completed audit work:
-
-- added `scripts/audit-corpus.mjs`
-- made the corpus audit part of normal `npm test`
-- normalized legacy event `source_count` values to direct evidence links
-- documented the reviewed Nexo / Nexo Earn shared-domain exception
-- retained non-blocking quality debt explicitly instead of guessing values
-
-Known non-blocking debt includes:
-
-- several platforms with thin evidence coverage
-- repurposed original URLs
-- one unresolved exact end date
-- unclear historical terms for several records
-- legacy split consumed-ledger files
-- GitHub Actions Node.js 20 deprecation warnings in older workflows
+The audit gate is permanently included in normal `npm test`.
 
 ### Phase 5 / R7 — deterministic candidate scanner
 
 Completed in PR #60.
 
-Implemented:
-
 - normalized canonical-name, alias, and domain matching
 - transparent match scores and reasons
-- classifications for exact, probable, ambiguous, new, out-of-scope, historical, and manual-review cases
-- `eligible_for_draft=true` only for duplicate-clear `decision=add_now`
+- exact, probable, ambiguous, new, out-of-scope, historical, and manual-review classes
+- draft eligibility only for duplicate-clear `decision=add_now`
 - mandatory blocking of `needs_research`
 - canonical SHA-256 write guard
 - deterministic fixtures
 - Node.js 24 artifact-only workflow
 
-Current candidate scan result:
-
-```text
-Goldfinch: manual_review_required / draft-ineligible
-BitMart:   manual_review_required / draft-ineligible
-Canonical matches: none
-```
-
-### Phase 5 / R8 — review-only draft generator
+### Phase 5 / R8 — review-only six-group draft generator
 
 Completed in PR #61.
 
-Generated artifact groups:
+Generates review artifacts for:
 
 - platform
 - event
@@ -127,15 +99,53 @@ Generated artifact groups:
 Safety properties:
 
 ```text
-Canonical IDs assigned:       0
-Canonical writes performed:   0
-Goldfinch review state:        blocked
-BitMart review state:          blocked
-Outcome default:               unknown
-Terms default:                 unknown
+automatic canonical ID assignment: forbidden
+canonical writes:                  forbidden
+automatic promotion:               forbidden
+automatic merge:                   forbidden
 ```
 
-The generator never infers event dates, event types, source metadata, customer outcome, custody, yield source, terms, or asset ownership.
+### Phase 6 / batch 27 — AQRU and YouHodler
+
+Candidate-only gate completed in PR #63. Canonical promotion completed in PR #64.
+
+#### AQRU
+
+- promoted as `cya_plat_000041`
+- `centralized_yield / limited`
+- records the approximate December 2021 launch
+- records the May 2022 operating-scale milestone
+- records the November 2022 yield reductions and end of BTC/ETH interest
+- records the August 2023 operating-business transfer without treating it as failure, acquisition, repayment, or customer loss
+- records current narrowed, high-minimum product availability
+- outcome: `not_applicable`
+- terms: `varies_by_product`
+
+#### YouHodler
+
+- promoted as `cya_plat_000042`
+- `borrow_lend_platform / active`
+- records the 2019 USDT and BTC savings-account launches
+- records the 2020 weekly-payout change
+- records current Yield Account operation, limits, jurisdiction restrictions, company structure, and custody terms
+- keeps Yield Account and crypto-backed loan mechanics separate
+- outcome: `not_applicable`
+- terms: `varies_by_product`
+
+#### Batch-27 validation
+
+```text
+Validate data:        success
+Validate and build:   success
+CYA CI:               success
+Candidate scan:       success
+Candidate draft:      success
+Corpus blockers:      0
+Candidate matches:    0 possible matches
+Build-output check:   success
+AQRU route:           /platform/aqru/
+YouHodler route:      /platform/youhodler/
+```
 
 ## Candidate queue and reserved identifiers
 
@@ -144,11 +154,11 @@ Active candidate queue: 2 needs_research candidates
 - cya_candidate_000010 Goldfinch
 - cya_candidate_000011 BitMart
 
-Next candidate ID:       cya_candidate_000020
-Next platform ID:        cya_plat_000041
-Next event ID:           cya_ev_000206
-Next canonical batch:    27
-Next evidence prefix:    cya_src_b27_
+Next candidate ID:       cya_candidate_000022
+Next platform ID:        cya_plat_000043
+Next event ID:           cya_ev_000216
+Next canonical batch:    28
+Next evidence prefix:    cya_src_b28_
 ```
 
 Goldfinch and BitMart remain staging-only:
@@ -156,7 +166,7 @@ Goldfinch and BitMart remain staging-only:
 - Goldfinch requires a DeFi/institutional-yield scope and product/entity-boundary decision.
 - BitMart requires an exchange-Earn exception decision plus product-specific redemption, custody, terms, and customer-outcome evidence.
 
-They must not be silently inserted into batch 27 merely because the automation exists.
+They must not be silently inserted into batch 28 merely because the automation exists.
 
 ## Current phase
 
@@ -171,7 +181,8 @@ Phase 3B / R5: batch 26, 38 -> 40                   complete
 Phase 4: 40-platform full audit                     complete
 Phase 5 / R7: candidate scanner                     complete
 Phase 5 / R8: review-only draft generator           complete
-Phase 6: 40 -> 60                                   current
+Phase 6 / batch 27: 40 -> 42                        complete
+Phase 6 / batch 28: 42 -> 44                        current
 Phase 7: weekly existing-record monitoring          not started
 Phase 8: 60 -> 100 with 75/100 audits               not started
 ```
@@ -179,11 +190,11 @@ Phase 8: 60 -> 100 with 75/100 audits               not started
 ## Current execution point
 
 ```text
-Phase 6 / batch 27 candidate-only gate
+Phase 6 / batch 28 candidate-only gate
 
 1. select two high-value, in-scope CeFi yield/lending candidates
 2. investigate identity, product boundary, event history, terms, and customer outcome
-3. assign candidate IDs 000020 and 000021 only after duplicate review
+3. assign candidate IDs 000022 and 000023 only after duplicate review
 4. stage candidates without canonical changes
 5. run candidate audit, scanner, draft generator, and all repository checks
 6. merge the candidate-only PR
@@ -192,7 +203,7 @@ Phase 6 / batch 27 candidate-only gate
 
 ## Phase 6 — 40 to 60 platforms
 
-Use the scanner and draft-generator outputs while retaining manual source review and candidate-only duplicate gates.
+Use scanner and draft-generator output while retaining manual source review and candidate-only duplicate gates.
 
 ### Batch policy
 
@@ -200,6 +211,7 @@ Use the scanner and draft-generator outputs while retaining manual source review
 - use one candidate-only PR followed by one canonical PR
 - do not combine unresolved `needs_research` records with ready candidates
 - prefer historically significant CeFi lending, interest-account, and centralized-yield records
+- include active comparators when lending or yield is a core platform function
 - product-scoped records are allowed when the continuing parent business must remain separate
 - acquisition, shutdown, recovery, and customer-outcome boundaries must remain conservative
 
@@ -223,6 +235,17 @@ no critical reference break
 traceable candidate history
 all final CI checks green
 ```
+
+## Known non-blocking quality debt
+
+- several legacy platforms have thin evidence coverage
+- several original URLs are repurposed
+- Flint has no exact verified end date
+- seven historical terms records remain unknown
+- legacy split consumed-ledger files remain
+- older GitHub workflows still emit Node.js 20 deprecation warnings
+
+Do not hide these findings or convert them into guessed values.
 
 ## Phase 7 — weekly monitoring
 
@@ -250,20 +273,20 @@ Findings remain staging-only. Create no PR when nothing material changed.
 
 ```text
 PR #43 public-surface implementation: merged
-Batches 23-26 repository/public-output validation: complete
+Batches 23-27 repository/public-output validation: complete
 40-platform audit: complete
 Direct external production observation from this execution environment: not independently confirmed
 ```
 
-Expected public values remain:
+Expected public values after the batch-27 deployment:
 
 ```text
-platforms: 40
-events: 200
-evidence: 298
-outcomes: 40
-products: 58
-terms-risk: 40
+platforms: 42
+events: 210
+evidence: 314
+outcomes: 42
+products: 62
+terms-risk: 42
 claims ongoing: 15
 ```
 
@@ -312,6 +335,8 @@ npm test
 #59 full corpus audit
 #60 deterministic candidate scanner
 #61 review-only six-group draft generator
+#62 Phase 6 checkpoint
+#63-#64 batch 27 candidate and canonical work
 ```
 
 ## Update rule
@@ -334,7 +359,7 @@ Do not leave a stale current-location marker.
 ## Immediate next action
 
 ```text
-Phase 6 / batch 27 candidate-only gate
+Phase 6 / batch 28 candidate-only gate
 
-Select, research, duplicate-check, and stage two high-value CeFi yield/lending candidates as cya_candidate_000020 and cya_candidate_000021. Do not alter canonical data in the candidate PR.
+Select, research, duplicate-check, and stage two high-value CeFi yield/lending candidates as cya_candidate_000022 and cya_candidate_000023. Do not alter canonical data in the candidate PR.
 ```
