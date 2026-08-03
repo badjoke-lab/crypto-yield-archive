@@ -19,35 +19,52 @@
       "canonical_name": "Alpha Yield",
       "aliases": [],
       "domain": "alpha.example",
-      "decision": "add_now"
+      "decision": "add_now",
+      "primary_sources": [],
+      "secondary_sources": []
     },
     {
       "candidate_id": "fixture_alias",
       "canonical_name": "Alpha Earn",
       "aliases": [],
       "domain": "",
-      "decision": "add_now"
+      "decision": "add_now",
+      "primary_sources": [],
+      "secondary_sources": []
     },
     {
       "candidate_id": "fixture_new",
       "canonical_name": "Gamma Credit",
-      "aliases": [],
+      "aliases": ["Gamma Earn"],
       "domain": "gamma.example",
-      "decision": "add_now"
+      "country_or_origin": "Global",
+      "platform_type_guess": "centralized_yield",
+      "status_guess": "operations_ended",
+      "major_event": "Gamma Credit announced an orderly product wind-down.",
+      "decision": "add_now",
+      "primary_sources": ["https://gamma.example/wind-down"],
+      "secondary_sources": ["https://news.example/gamma-credit"]
     },
     {
       "candidate_id": "fixture_research",
       "canonical_name": "Delta Prime",
       "aliases": [],
       "domain": "delta.example",
-      "decision": "needs_research"
+      "platform_type_guess": "institutional_lending",
+      "status_guess": "limited",
+      "major_event": "Product scope and customer outcome remain unresolved.",
+      "decision": "needs_research",
+      "primary_sources": ["https://delta.example/update"],
+      "secondary_sources": []
     },
     {
       "candidate_id": "fixture_terminal",
       "canonical_name": "Archived Decision",
       "aliases": [],
       "domain": "archived.example",
-      "decision": "out_of_scope"
+      "decision": "out_of_scope",
+      "primary_sources": [],
+      "secondary_sources": []
     }
   ]
 }
