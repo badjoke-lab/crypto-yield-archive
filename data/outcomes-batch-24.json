@@ -1,0 +1,48 @@
+[
+  {
+    "platform_id": "cya_plat_000035",
+    "outcome_status": "unknown",
+    "estimated_recovery_rate": "Pillow stated that deposits and accrued interest were available for withdrawal before closure, but reviewed sources do not establish universal completed withdrawal.",
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": "User-initiated bank or crypto withdrawals during the announced wind-down windows",
+    "claim_process_url": null,
+    "affected_products": [
+      "Pillow BTC Case",
+      "Pillow ETH Case",
+      "Pillow stablecoin Cases",
+      "other Pillow wallet balances"
+    ],
+    "claim_classes": [],
+    "jurisdictions": [],
+    "as_of": "2026-08-03",
+    "last_verified_at": "2026-08-03",
+    "notes": "No insolvency or customer-loss process was identified in the reviewed sources. The shutdown notice offered withdrawal access, but availability is not treated as proof that every customer withdrew successfully.",
+    "confidence": "medium"
+  },
+  {
+    "platform_id": "cya_plat_000036",
+    "outcome_status": "claims_ongoing",
+    "estimated_recovery_rate": "No universal final recovery rate is assigned; Celsius distributions are claim-specific and continued through multiple rounds.",
+    "repayment_started_at": "2024-01-31",
+    "repayment_completed_at": null,
+    "repayment_method": "Celsius Chapter 11 plan distributions through approved distribution partners",
+    "claim_process_url": "https://cases.stretto.com/celsius",
+    "affected_products": [
+      "Nuri Bitcoin Interest Account",
+      "Bitwala Bitcoin Interest Account"
+    ],
+    "claim_classes": [
+      "Celsius General Earn Claims or other claim classification assigned through the Celsius process"
+    ],
+    "jurisdictions": [
+      "Germany",
+      "European Union",
+      "other supported Celsius creditor jurisdictions"
+    ],
+    "as_of": "2026-08-03",
+    "last_verified_at": "2026-08-03",
+    "notes": "Ordinary Nuri bank balances, custody wallets and self-custodial vaults are outside this outcome. Former Nuri interest-account users depend on their individual Celsius claim and distribution status.",
+    "confidence": "high"
+  }
+]
