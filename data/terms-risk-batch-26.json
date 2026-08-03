@@ -1,0 +1,20 @@
+[
+  {
+    "platform_id": "cya_plat_000039",
+    "terms_status": "unclear",
+    "asset_ownership_interpretation": "Inlock operated a custodial Savings Account and controlled the lending, collateral and liquidation processes, but the reviewed public materials do not establish one complete legal ownership or insolvency-priority treatment for every customer asset and recovery path.",
+    "affected_product": "Inlock Savings Account and other custodial customer-asset balances",
+    "source_evidence_id": "cya_src_b26_0002",
+    "notes": "Unclear is retained because product mechanics are documented but the complete contractual ownership and claim-priority framework was not verified across all recovery programs.",
+    "confidence": "medium"
+  },
+  {
+    "platform_id": "cya_plat_000040",
+    "terms_status": "varies_by_product",
+    "asset_ownership_interpretation": "Historical Stablehouse yield products and the current XBTO custody and trading accounts use different product structures. Current custody terms identify Stablehouse as the custody provider but cannot be applied retroactively to the earlier yield accounts.",
+    "affected_product": "Historical Stablehouse yield accounts and current Stablehouse/XBTO custody accounts",
+    "source_evidence_id": "cya_src_b26_0020",
+    "notes": "Product-dependent classification preserves the distinction between the historical yield offering and the post-acquisition custody and trading platform.",
+    "confidence": "medium"
+  }
+]
