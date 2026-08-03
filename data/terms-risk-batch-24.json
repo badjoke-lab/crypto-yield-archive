@@ -1,0 +1,20 @@
+[
+  {
+    "platform_id": "cya_plat_000035",
+    "terms_status": "unclear",
+    "asset_ownership_interpretation": "Pillow operated custodial deposit addresses and promised yield, but the reviewed public sources do not establish one complete contractual ownership or insolvency-priority treatment for all supported assets and products.",
+    "affected_product": "Pillow crypto savings Cases and custodial wallet balances",
+    "source_evidence_id": "cya_src_b24_0001",
+    "notes": "Unclear is retained because a customer-facing product guide establishes custody and yield use but not a complete legal asset-ownership framework.",
+    "confidence": "medium"
+  },
+  {
+    "platform_id": "cya_plat_000036",
+    "terms_status": "platform_owned",
+    "asset_ownership_interpretation": "The Nuri Bitcoin Interest Account was separately contracted with Celsius. The Celsius Earn Decision concluded that assets deposited in Earn accounts became Celsius property and estate assets, subject to reserved creditor defenses.",
+    "affected_product": "Nuri / Bitwala Bitcoin Interest Account",
+    "source_evidence_id": "cya_src_b24_0019",
+    "notes": "This classification applies only to the Celsius-linked interest account and not to ordinary Nuri bank balances, custody wallets or self-custodial vaults.",
+    "confidence": "high"
+  }
+]
