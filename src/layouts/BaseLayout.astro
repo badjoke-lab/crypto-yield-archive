@@ -33,6 +33,13 @@ const navItems = [
   ['/methodology/', 'Methodology'],
   ['/about/', 'About'],
 ];
+const projectLinks = [
+  ['https://badjoke-lab.com/', 'Hub'],
+  ['https://hei.badjoke-lab.com/', 'HEI'],
+  ['https://www.stableorgone.com/', 'SOG'],
+  ['https://cya.badjoke-lab.com/', 'CYA'],
+  ['https://bir.badjoke-lab.com/', 'BIR'],
+];
 const isCurrent = (href) => href === '/' ? currentPath === '/' : currentPath.startsWith(href);
 const datasetJsonLd = {
   '@context': 'https://schema.org',
@@ -112,7 +119,17 @@ const datasetJsonLd = {
       <footer class="site-footer">
         <div class="shell footer-grid">
           <p>Crypto Yield Archive is a historical registry, not an investment recommendation, APY ranking, or real-time dashboard.</p>
-          <div class="footer-links"><a href={correctionUrl}>Submit correction</a><a href={repoUrl}>GitHub</a><a href="/methodology/">Methodology</a><a href="/source-quality/">Source quality</a><a href="/version.json">Version JSON</a><a href="/data/manifest.json">Data manifest</a><a href="/llms.txt">LLM guide</a><a href="/ai.txt">AI entrypoint</a></div>
+          <div class="footer-links">
+            {projectLinks.map(([href, label]) => <a href={href} aria-current={label === 'CYA' ? 'page' : undefined}>{label}</a>)}
+            <a href={correctionUrl}>Submit correction</a>
+            <a href={repoUrl}>GitHub</a>
+            <a href="/methodology/">Methodology</a>
+            <a href="/source-quality/">Source quality</a>
+            <a href="/version.json">Version JSON</a>
+            <a href="/data/manifest.json">Data manifest</a>
+            <a href="/llms.txt">LLM guide</a>
+            <a href="/ai.txt">AI entrypoint</a>
+          </div>
         </div>
       </footer>
     </div>
