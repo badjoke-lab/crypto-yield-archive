@@ -42,6 +42,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           SOURCE_SHA: ${{ github.event.workflow_run.head_sha }}
           PRODUCTION_BRANCH_REF: agent%2Fseo-hardening
+          PRODUCTION_SOURCE_URL: https://cya.badjoke-lab.com/.well-known/cya-source-commit.txt
         run: |
           set -euo pipefail
           ready=0
@@ -58,9 +59,16 @@ jobs:
             check_json="$(gh api "/repos/${GITHUB_REPOSITORY}/commits/${production_sha}/check-runs?per_page=100" --jq '[.check_runs[] | select(.name == "Cloudflare Pages")] | sort_by(.started_at) | last // {}')"
             check_status="$(jq -r '.status // "missing"' <<<"${check_json}")"
             check_conclusion="$(jq -r '.conclusion // "pending"' <<<"${check_json}")"
-            echo "Cloudflare ${production_sha}: status=${check_status} conclusion=${check_conclusion} (${attempt}/120)."
+            deployed_source="$(curl --fail --silent --show-error --max-time 20 "${PRODUCTION_SOURCE_URL}" 2>/dev/null | tr -d '\r\n' || true)"
+            echo "Cloudflare ${production_sha}: status=${check_status} conclusion=${check_conclusion} deployed_source=${deployed_source:-missing} (${attempt}/120)."
 
             if [[ "${check_status}" == "completed" && "${check_conclusion}" == "success" ]]; then
+              ready=1
+              break
+            fi
+
+            if [[ "${deployed_source}" == "${SOURCE_SHA}" ]]; then
+              echo "Custom-domain source marker matches even though the Cloudflare check has not completed; continuing to the full production-surface audit."
               ready=1
               break
             fi
@@ -74,7 +82,7 @@ jobs:
           done
 
           if [[ "${ready}" != "1" ]]; then
-            echo "Cloudflare production deployment did not complete successfully before timeout." >&2
+            echo "Cloudflare production deployment did not complete and the deployed source marker did not match before timeout." >&2
             exit 1
           fi
 
