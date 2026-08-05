@@ -1,0 +1,76 @@
+name: Deploy CYA Production
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'data/**'
+      - 'src/**'
+      - 'public/**'
+      - 'functions/**'
+      - 'scripts/**'
+      - 'astro.config.mjs'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'tsconfig.json'
+      - '.github/workflows/deploy-production.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  deployments: write
+
+concurrency:
+  group: cya-production-deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Verify Cloudflare credentials
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo '::error::CLOUDFLARE_API_TOKEN is not configured for this repository or production environment.'
+            exit 1
+          fi
+
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+
+      - name: Validate repository
+        run: npm test
+
+      - name: Build production output
+        run: npm run build
+
+      - name: Deploy to Cloudflare Pages
+        id: cloudflare
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: 4342d6a763f40d2476b548c77339d42e
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          wranglerVersion: '4'
+          command: pages deploy dist --project-name=crypto-yield-archive --branch=main
+
+      - name: Verify deployed production
+        env:
+          CYA_BASE_URL: https://cya.badjoke-lab.com
+          CYA_EXPECTED_COMMIT: ${{ github.sha }}
+          CYA_SMOKE_ATTEMPTS: 16
+          CYA_SMOKE_DELAY_MS: 15000
+        run: npm run check:production
