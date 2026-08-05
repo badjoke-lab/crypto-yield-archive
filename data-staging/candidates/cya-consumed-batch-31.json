@@ -1,0 +1,77 @@
+[
+  {
+    "candidate_id": "cya_candidate_000028",
+    "canonical_name": "YieldNodes",
+    "aliases": [
+      "Yield Nodes",
+      "YieldNodes Masternode Rental",
+      "YieldNodes Pro"
+    ],
+    "domain": "yieldnodes.com",
+    "country_or_origin": "Hong Kong / Malta / Global",
+    "platform_type_guess": "centralized_yield",
+    "status_guess": "limited",
+    "major_event": "Deposits and withdrawals were suspended in October 2022, followed by a restructuring proposal, account-linked NFT claims, and an unresolved transition toward a proposed YieldNodes Pro model",
+    "primary_sources": [
+      "https://yieldnodes.com/how-yieldnodes-masternode-rental-services-really-work-in-detail/",
+      "https://yieldnodes.com/nft/",
+      "https://yieldnodes.com/comprehensive-update-on-the-current-status-of-yieldnodes/",
+      "https://yieldnodes.com/imprint/"
+    ],
+    "secondary_sources": [
+      "https://yieldnodes.legal/",
+      "https://yieldnodes.legal/help"
+    ],
+    "duplicate_check": {
+      "checked_at": "2026-08-05",
+      "matched_platform_ids": [
+        "cya_plat_000049"
+      ],
+      "notes": "Candidate scan reported no pre-existing canonical match. YieldNodes was promoted after identity, model, suspension, restructuring, NFT-claim, terms, and customer-outcome review."
+    },
+    "decision": "already_recorded",
+    "notes": "Promoted to canonical record cya_plat_000049 in batch 31 with restructuring status, unknown failure reason, unclear terms, and claims_ongoing customer outcome.",
+    "first_seen_at": "2026-08-05",
+    "last_reviewed_at": "2026-08-05"
+  },
+  {
+    "candidate_id": "cya_candidate_000029",
+    "canonical_name": "Bake",
+    "aliases": [
+      "Cake DeFi",
+      "CakeDeFi",
+      "Bake.io",
+      "Cake DeFi Lending",
+      "Bake Earn"
+    ],
+    "domain": "bake.io",
+    "country_or_origin": "Singapore / Lithuania / Poland / Global",
+    "platform_type_guess": "centralized_yield",
+    "status_guess": "limited",
+    "major_event": "Cake DeFi rebranded its retail platform to Bake in June 2023; on 15 April 2026 crypto-asset trading services were suspended, remaining crypto balances were converted to USD, and withdrawal-only custody arrangements began",
+    "primary_sources": [
+      "https://blog.bake.io/what-is-cake-defi/",
+      "https://blog.bake.io/cake-defi-is-now-bake/",
+      "https://blog.bake.io/important-update-suspension-of-crypto-asset-trading-services/",
+      "https://app.bake.io/",
+      "https://bake.io/services/savings/",
+      "https://bake.io/services/lending/",
+      "https://support.bake.io/en/articles/9743731-what-are-the-possible-risks-involved",
+      "https://assets.bake.io/docs/TNC.pdf"
+    ],
+    "secondary_sources": [
+      "https://www.londonstockexchange.com/news-article/GST/temporary-suspension-of-crypto-trading-services/16954088"
+    ],
+    "duplicate_check": {
+      "checked_at": "2026-08-05",
+      "matched_platform_ids": [
+        "cya_plat_000050"
+      ],
+      "notes": "Candidate scan reported no pre-existing canonical match. Bake was promoted after Cake DeFi identity continuity, product history, legal-entity, service-suspension, current terms, and customer-outcome review."
+    },
+    "decision": "already_recorded",
+    "notes": "Promoted to canonical record cya_plat_000050 in batch 31 with limited status, varies_by_product terms, and unknown customer outcome for the ongoing USD withdrawal process.",
+    "first_seen_at": "2026-08-05",
+    "last_reviewed_at": "2026-08-05"
+  }
+]
