@@ -2,187 +2,175 @@
   {
     "candidate_id": "cya_candidate_000010",
     "canonical_name": "Goldfinch",
-    "aliases": ["Goldfinch Protocol", "Goldfinch Prime", "Goldfinch V1"],
+    "aliases": [
+      "Goldfinch Protocol",
+      "Goldfinch Prime",
+      "Goldfinch V1"
+    ],
     "domain": "goldfinch.finance",
     "country_or_origin": "Global / United States",
     "platform_type_guess": "institutional_lending",
     "status_guess": "limited",
     "major_event": "Goldfinch Prime wind-down, full Prime investor redemption, contract pause, and transition of the legacy protocol to maintenance mode for borrower recoveries",
-    "primary_sources": ["https://t.co/yX2fb2TYui", "https://www.goldfinch.finance/"],
+    "primary_sources": [
+      "https://t.co/yX2fb2TYui",
+      "https://www.goldfinch.finance/"
+    ],
     "secondary_sources": [],
-    "duplicate_check": {"checked_at": "2026-07-25", "matched_platform_ids": [], "notes": "No Goldfinch or Goldfinch Prime canonical platform was found in the current repository review. A full candidate audit remains required before any promotion."},
+    "duplicate_check": {
+      "checked_at": "2026-07-25",
+      "matched_platform_ids": [],
+      "notes": "No Goldfinch or Goldfinch Prime canonical platform was found in the current repository review. A full candidate audit remains required before any promotion."
+    },
     "decision": "needs_research",
     "notes": "The first-party governance proposal moves the legacy Goldfinch protocol into recovery-only maintenance mode and winds down Goldfinch Prime. A 7 July update states that Prime investors were fully redeemed, no new deposits are accepted, and the contract was paused, while legacy V1 borrower pools remain in payment or recovery. CYA focuses on CeFi and does not prioritize DeFi lending protocols in its initial scope, so this is staged for an explicit scope and entity-boundary decision rather than forced into canonical data.",
     "first_seen_at": "2026-07-25",
     "last_reviewed_at": "2026-07-25"
   },
   {
-    "candidate_id": "cya_candidate_000040",
-    "canonical_name": "Linus Financial",
-    "aliases": ["Linus", "Linus Interest Accounts", "Linus Crypto Lending Product"],
-    "domain": "linusfinancial.com",
-    "country_or_origin": "United States",
-    "platform_type_guess": "crypto_interest_account",
-    "status_guess": "operations_ended",
-    "major_event": "SEC-regulated crypto lending product that ceased new offerings and customer use before a cooperative settlement.",
-    "primary_sources": ["https://www.sec.gov/newsroom/press-releases/2023-149"],
-    "secondary_sources": [],
-    "duplicate_check": {"checked_at": "2026-08-05", "matched_platform_ids": [], "notes": "Discovery-pool entry. Canonical and consumed-ledger matching is delegated to the hardened candidate scanner before any promotion decision."},
-    "decision": "needs_research",
-    "notes": "Batch 34 discovery-pool entry only. Confirm identity, product scope, legal entity, chronology, primary evidence, custody, terms, customer outcomes and current status after scanner classification.",
-    "first_seen_at": "2026-08-05",
-    "last_reviewed_at": "2026-08-05"
-  },
-  {
-    "candidate_id": "cya_candidate_000041",
-    "canonical_name": "Block Earner",
-    "aliases": ["Block Earner Earner", "Earner Product", "Block Earner Access"],
-    "domain": "blockearner.com.au",
-    "country_or_origin": "Australia",
-    "platform_type_guess": "crypto_interest_account",
-    "status_guess": "limited",
-    "major_event": "Australian fixed-yield crypto product subject to ASIC litigation and appellate review.",
-    "primary_sources": ["https://asic.gov.au/about-asic/news-centre/find-a-media-release/"],
-    "secondary_sources": [],
-    "duplicate_check": {"checked_at": "2026-08-05", "matched_platform_ids": [], "notes": "Discovery-pool entry. Canonical and consumed-ledger matching is delegated to the hardened candidate scanner before any promotion decision."},
-    "decision": "needs_research",
-    "notes": "Batch 34 discovery-pool entry only. Confirm identity, product scope, legal entity, chronology, primary evidence, custody, terms, customer outcomes and current status after scanner classification.",
-    "first_seen_at": "2026-08-05",
-    "last_reviewed_at": "2026-08-05"
-  },
-  {
     "candidate_id": "cya_candidate_000042",
     "canonical_name": "Finder Earn",
-    "aliases": ["Finder Earn Product", "Finder Wallet Earn"],
+    "aliases": [
+      "Finder Earn Product",
+      "Finder Wallet Earn",
+      "Finder Wallet Pty Ltd",
+      "Wallet Ventures Pty Ltd",
+      "TAUD Earn"
+    ],
     "domain": "finder.com.au",
     "country_or_origin": "Australia",
     "platform_type_guess": "crypto_interest_account",
     "status_guess": "operations_ended",
-    "major_event": "Australian consumer yield product challenged by ASIC, requiring product and court-history review.",
-    "primary_sources": ["https://asic.gov.au/about-asic/news-centre/find-a-media-release/"],
+    "major_event": "Finder Wallet offered Finder Earn from late February through 10 November 2022, ceased the product from 24 November 2022 after ASIC raised concerns, returned all customer funds in full, and ultimately prevailed when the Full Federal Court dismissed ASIC's appeal in July 2025",
+    "primary_sources": [
+      "https://www.asic.gov.au/about-asic/news-centre/find-a-media-release/2022-releases/22-359mr-finder-wallet-sued-for-alleged-unlicensed-conduct-and-inadequate-risk-disclosure-over-finder-earn-product/",
+      "https://www.asic.gov.au/about-asic/news-centre/find-a-media-release/2024-releases/24-045mr-federal-court-finds-finder-earn-product-was-not-a-financial-product/",
+      "https://www.asic.gov.au/about-asic/news-centre/find-a-media-release/2024-releases/24-068mr-asic-appeals-finder-wallet-decision/",
+      "https://www.asic.gov.au/about-asic/news-centre/find-a-media-release/2025-releases/25-147mr-asic-s-appeal-against-finder-wallet-decision-dismissed/"
+    ],
     "secondary_sources": [],
-    "duplicate_check": {"checked_at": "2026-08-05", "matched_platform_ids": [], "notes": "Discovery-pool entry. Canonical and consumed-ledger matching is delegated to the hardened candidate scanner before any promotion decision."},
-    "decision": "needs_research",
-    "notes": "Batch 34 discovery-pool entry only. Confirm identity, product scope, legal entity, chronology, primary evidence, custody, terms, customer outcomes and current status after scanner classification.",
-    "first_seen_at": "2026-08-05",
-    "last_reviewed_at": "2026-08-05"
-  },
-  {
-    "candidate_id": "cya_candidate_000043",
-    "canonical_name": "Stablegains",
-    "aliases": ["Stablegains USDC Yield", "Stablegains Earn"],
-    "domain": "stablegains.com",
-    "country_or_origin": "United States",
-    "platform_type_guess": "centralized_yield",
-    "status_guess": "operations_ended",
-    "major_event": "Consumer yield wrapper materially exposed to Anchor Protocol and UST before withdrawals and outcomes became disputed.",
-    "primary_sources": ["https://www.stablegains.com/"],
-    "secondary_sources": [],
-    "duplicate_check": {"checked_at": "2026-08-05", "matched_platform_ids": [], "notes": "Discovery-pool entry. Canonical and consumed-ledger matching is delegated to the hardened candidate scanner before any promotion decision."},
-    "decision": "needs_research",
-    "notes": "Batch 34 discovery-pool entry only. Confirm identity, product scope, legal entity, chronology, primary evidence, custody, terms, customer outcomes and current status after scanner classification.",
-    "first_seen_at": "2026-08-05",
-    "last_reviewed_at": "2026-08-05"
-  },
-  {
-    "candidate_id": "cya_candidate_000044",
-    "canonical_name": "Pillow",
-    "aliases": ["Pillow Fund", "Pillow Earn", "Pillow Crypto Savings"],
-    "domain": "pillow.fund",
-    "country_or_origin": "Singapore / India / Global",
-    "platform_type_guess": "centralized_yield",
-    "status_guess": "operations_ended",
-    "major_event": "Consumer crypto yield app that announced a service wind-down and customer withdrawal process.",
-    "primary_sources": ["https://www.pillow.fund/"],
-    "secondary_sources": [],
-    "duplicate_check": {"checked_at": "2026-08-05", "matched_platform_ids": [], "notes": "Discovery-pool entry. Canonical and consumed-ledger matching is delegated to the hardened candidate scanner before any promotion decision."},
-    "decision": "needs_research",
-    "notes": "Batch 34 discovery-pool entry only. Confirm identity, product scope, legal entity, chronology, primary evidence, custody, terms, customer outcomes and current status after scanner classification.",
+    "duplicate_check": {
+      "checked_at": "2026-08-05",
+      "matched_platform_ids": [],
+      "notes": "The hardened scanner classified Finder Earn as duplicate-clear with no canonical match. Finder.com, Finder Wallet, Wallet Ventures, TAUD, and Finder Earn were also checked as product and entity signals before promotion."
+    },
+    "decision": "add_now",
+    "notes": "Finder Earn qualifies as a product-scoped historical centralized yield record separate from the wider Finder comparison business and later Finder Wallet or Wallet Ventures activity. ASIC states that customers deposited Australian dollars, which were converted to TAUD and allocated to Finder Wallet for its own working capital, in exchange for annual compounding returns of 4.01% or 6.01%. Finder Wallet ceased offering the product from 24 November 2022 and ASIC states that all funds were returned in full. The initial Federal Court decision and the July 2025 Full Federal Court appeal decision both rejected ASIC's allegation that Finder Earn was a debenture; canonical promotion must therefore record the regulatory proceedings without classifying the product as unlawful, unlicensed, insolvent, fraudulent, or a failed repayment case. Preserve the legal-entity rename from Finder Wallet Pty Ltd to Wallet Ventures Pty Ltd, the product's late-February launch timing without inventing an exact day, the 10 November offer endpoint, the 24 November cessation and full-return statement, and the distinction between product closure and ongoing corporate operations.",
     "first_seen_at": "2026-08-05",
     "last_reviewed_at": "2026-08-05"
   },
   {
     "candidate_id": "cya_candidate_000045",
     "canonical_name": "Cabital",
-    "aliases": ["Cabital Earn", "Cabital Crypto Earn"],
+    "aliases": [
+      "Cabital Earn",
+      "Cabital Crypto Earn"
+    ],
     "domain": "cabital.com",
     "country_or_origin": "Singapore / Europe / Global",
     "platform_type_guess": "centralized_yield",
     "status_guess": "acquired",
-    "major_event": "Centralized crypto yield and payments platform acquired by Matrixport, requiring successor and customer-product review.",
-    "primary_sources": ["https://www.cabital.com/"],
+    "major_event": "Centralized crypto yield and payments platform acquired by Matrixport, requiring successor and customer-product review",
+    "primary_sources": [
+      "https://www.cabital.com/"
+    ],
     "secondary_sources": [],
-    "duplicate_check": {"checked_at": "2026-08-05", "matched_platform_ids": [], "notes": "Discovery-pool entry. Canonical and consumed-ledger matching is delegated to the hardened candidate scanner before any promotion decision."},
+    "duplicate_check": {
+      "checked_at": "2026-08-05",
+      "matched_platform_ids": [],
+      "notes": "The hardened scanner classified Cabital as duplicate-clear. It remains needs_research because the acquisition, customer migration, legal entity, product closure, custody, and outcome evidence are not yet sufficient for promotion."
+    },
     "decision": "needs_research",
-    "notes": "Batch 34 discovery-pool entry only. Confirm identity, product scope, legal entity, chronology, primary evidence, custody, terms, customer outcomes and current status after scanner classification.",
+    "notes": "Retained for a later batch. Confirm the Matrixport acquisition perimeter, legal entities, Earn product terms, customer balance migration, product end date, successor obligations, and whether any customer assets or claims remained outside the transaction.",
     "first_seen_at": "2026-08-05",
     "last_reviewed_at": "2026-08-05"
   },
   {
     "candidate_id": "cya_candidate_000046",
     "canonical_name": "AAX Savings",
-    "aliases": ["AAX", "Atom Asset Exchange", "AAX Earn", "AAX Fixed Savings"],
+    "aliases": [
+      "AAX",
+      "Atom Asset Exchange",
+      "AAX Earn",
+      "AAX Flexible Savings",
+      "AAX Fixed Savings",
+      "AAX Asia Private Limited",
+      "AAX Singapore Private Limited"
+    ],
     "domain": "aax.com",
-    "country_or_origin": "Hong Kong / Seychelles / Global",
+    "country_or_origin": "Hong Kong / Singapore / Malta / Seychelles / Cayman Islands / Global",
     "platform_type_guess": "exchange_earn",
     "status_guess": "operations_ended",
-    "major_event": "Exchange-linked savings and yield products affected by the 2022 AAX shutdown and later legal proceedings.",
-    "primary_sources": ["https://www.aax.com/"],
-    "secondary_sources": [],
-    "duplicate_check": {"checked_at": "2026-08-05", "matched_platform_ids": [], "notes": "Discovery-pool entry. Canonical and consumed-ledger matching is delegated to the hardened candidate scanner before any promotion decision."},
-    "decision": "needs_research",
-    "notes": "Batch 34 discovery-pool entry only. Confirm identity, product scope, legal entity, chronology, primary evidence, custody, terms, customer outcomes and current status after scanner classification.",
+    "major_event": "AAX suspended withdrawals on 12 November 2022, its customer and asset records became inaccessible or incomplete across a multi-jurisdictional group, and the Singapore High Court ordered AAX Asia and AAX Singapore wound up in October 2023 after finding that they were unable to pay their debts and lacked available assets for current liabilities",
+    "primary_sources": [
+      "https://www.elitigation.sg/gd/s/2023_SGHC_324",
+      "https://www.aax.com/"
+    ],
+    "secondary_sources": [
+      "https://www.scmp.com/tech/tech-trends/article/3204802/hong-kong-police-arrest-two-men-linked-cryptocurrency-platform-aax-after-withdrawal-freeze",
+      "https://www.thestandard.com.hk/breaking-news/section/4/198704/Two-men-arrested-over-collapse-of-crypto-platform-AAX"
+    ],
+    "duplicate_check": {
+      "checked_at": "2026-08-05",
+      "matched_platform_ids": [],
+      "notes": "The hardened scanner classified AAX Savings as duplicate-clear with no canonical match. AAX, Atom Asset Exchange, the two Singapore entities, Flexible Savings, Fixed Savings, Earn, and aax.com were checked as identity signals."
+    },
+    "decision": "add_now",
+    "notes": "Promote as an exchange-linked savings and yield record rather than a generic exchange entry. The Singapore High Court records that AAX Singapore and AAX Asia were part of an AAX Group operating across Singapore, Hong Kong, Malta, Seychelles, and the Cayman Islands; that customer records were missing and customers did not know which entities they contracted with; that the companies had no available assets to meet current liabilities; and that winding-up orders were granted at the 12 October 2023 hearing, effective 17 October 2023. Reports concerning the 12 November 2022 withdrawal freeze, alleged liquidity problems, missing management, digital-asset keys, arrests, fraud complaints, and loss estimates must remain allegations or reported police positions unless supported by a final judgment. Canonical promotion must separate AAX Flexible and Fixed Savings from spot and derivatives accounts, distinguish AAX Asia and AAX Singapore from other group entities, preserve uncertainty over customer contracting entities and missing records, classify customer outcomes as unresolved, and avoid inventing a universal claim process, recovery percentage, fraud conviction, exact group-wide closure date, or one legal owner for all customer assets.",
     "first_seen_at": "2026-08-05",
     "last_reviewed_at": "2026-08-05"
   },
   {
     "candidate_id": "cya_candidate_000047",
     "canonical_name": "BlueBenx",
-    "aliases": ["Blue Benx", "BlueBenx Earn", "BlueBenx Yield"],
+    "aliases": [
+      "Blue Benx",
+      "BlueBenx Earn",
+      "BlueBenx Yield"
+    ],
     "domain": "bluebenx.com",
     "country_or_origin": "Brazil",
     "platform_type_guess": "centralized_yield",
     "status_guess": "withdrawals_suspended",
-    "major_event": "Brazilian crypto yield platform associated with withdrawal suspension and customer-loss allegations.",
-    "primary_sources": ["https://bluebenx.com/"],
+    "major_event": "Brazilian crypto yield platform associated with withdrawal suspension and customer-loss allegations",
+    "primary_sources": [
+      "https://bluebenx.com/"
+    ],
     "secondary_sources": [],
-    "duplicate_check": {"checked_at": "2026-08-05", "matched_platform_ids": [], "notes": "Discovery-pool entry. Canonical and consumed-ledger matching is delegated to the hardened candidate scanner before any promotion decision."},
+    "duplicate_check": {
+      "checked_at": "2026-08-05",
+      "matched_platform_ids": [],
+      "notes": "The hardened scanner classified BlueBenx as duplicate-clear. It remains needs_research because reliable primary regulatory, court, product, legal-entity, and customer-outcome evidence is insufficient."
+    },
     "decision": "needs_research",
-    "notes": "Batch 34 discovery-pool entry only. Confirm identity, product scope, legal entity, chronology, primary evidence, custody, terms, customer outcomes and current status after scanner classification.",
-    "first_seen_at": "2026-08-05",
-    "last_reviewed_at": "2026-08-05"
-  },
-  {
-    "candidate_id": "cya_candidate_000048",
-    "canonical_name": "Yield App",
-    "aliases": ["Yield App Earn", "YLD App", "Yield.app"],
-    "domain": "yield.app",
-    "country_or_origin": "Seychelles / Global",
-    "platform_type_guess": "centralized_yield",
-    "status_guess": "limited",
-    "major_event": "Centralized yield platform whose corporate and product transition requires successor and balance review.",
-    "primary_sources": ["https://www.yield.app/"],
-    "secondary_sources": [],
-    "duplicate_check": {"checked_at": "2026-08-05", "matched_platform_ids": [], "notes": "Discovery-pool entry. Canonical and consumed-ledger matching is delegated to the hardened candidate scanner before any promotion decision."},
-    "decision": "needs_research",
-    "notes": "Batch 34 discovery-pool entry only. Confirm identity, product scope, legal entity, chronology, primary evidence, custody, terms, customer outcomes and current status after scanner classification.",
+    "notes": "Retained for later research. Do not promote from customer allegations or surviving site material alone. Confirm the operating entity, product structure, regulator or court record, withdrawal chronology, asset custody, legal title, and customer outcomes.",
     "first_seen_at": "2026-08-05",
     "last_reviewed_at": "2026-08-05"
   },
   {
     "candidate_id": "cya_candidate_000049",
     "canonical_name": "Outlet Finance",
-    "aliases": ["Outlet", "Outlet Savings", "Outlet Earn"],
+    "aliases": [
+      "Outlet",
+      "Outlet Savings",
+      "Outlet Earn"
+    ],
     "domain": "outlet.finance",
     "country_or_origin": "United States",
     "platform_type_guess": "crypto_interest_account",
     "status_guess": "operations_ended",
-    "major_event": "Consumer yield account app whose counterparty model, closure and repayment status require review.",
-    "primary_sources": ["https://outlet.finance/"],
+    "major_event": "Consumer yield account app whose counterparty model, closure and repayment status require review",
+    "primary_sources": [
+      "https://outlet.finance/"
+    ],
     "secondary_sources": [],
-    "duplicate_check": {"checked_at": "2026-08-05", "matched_platform_ids": [], "notes": "Discovery-pool entry. Canonical and consumed-ledger matching is delegated to the hardened candidate scanner before any promotion decision."},
+    "duplicate_check": {
+      "checked_at": "2026-08-05",
+      "matched_platform_ids": [],
+      "notes": "The hardened scanner classified Outlet Finance as duplicate-clear. It remains needs_research because the closure chronology, counterparties, customer communications, legal entities, and repayment outcome are not adequately sourced."
+    },
     "decision": "needs_research",
-    "notes": "Batch 34 discovery-pool entry only. Confirm identity, product scope, legal entity, chronology, primary evidence, custody, terms, customer outcomes and current status after scanner classification.",
+    "notes": "Retained for a later batch. Confirm the operating company, product terms, underlying yield counterparties, custody and ownership model, closure date, withdrawal process, and whether customer balances were returned in full.",
     "first_seen_at": "2026-08-05",
     "last_reviewed_at": "2026-08-05"
   }
