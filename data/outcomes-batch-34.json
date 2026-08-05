@@ -1,0 +1,57 @@
+[
+  {
+    "platform_id": "cya_plat_000055",
+    "outcome_status": "full_repayment",
+    "estimated_recovery_rate": "100% of customer funds, based on ASIC's statement that all Finder Earn funds were returned in full to customers after the product ceased.",
+    "repayment_started_at": null,
+    "repayment_completed_at": "2022-11-24",
+    "repayment_method": "Return of Australian-dollar customer balances after exit from Finder Earn and product cessation",
+    "claim_process_url": null,
+    "affected_products": [
+      "Finder Earn"
+    ],
+    "claim_classes": [
+      "Finder Earn customers"
+    ],
+    "jurisdictions": [
+      "Australia"
+    ],
+    "as_of": "2026-08-05",
+    "last_verified_at": "2026-08-05",
+    "notes": "ASIC states that all funds were returned in full. This customer outcome is distinct from the later regulatory litigation, which the courts dismissed. No insolvency, creditor haircut, delayed claim process or continuing customer recovery is inferred.",
+    "confidence": "high"
+  },
+  {
+    "platform_id": "cya_plat_000056",
+    "outcome_status": "unknown",
+    "estimated_recovery_rate": "Not classified. The Singapore winding-up judgment records missing customer records, uncertain contracting entities, unavailable assets and the need for multi-jurisdictional investigations, but the reviewed evidence does not establish a uniform distribution, recovery percentage or completed customer outcome.",
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": "Court-appointed liquidation and asset and creditor investigation for relevant AAX entities; no verified group-wide customer distribution method",
+    "claim_process_url": null,
+    "affected_products": [
+      "AAX Flexible Savings",
+      "AAX Fixed Savings",
+      "AAB Plus",
+      "AAX exchange and wallet balances associated with unresolved contracting entities"
+    ],
+    "claim_classes": [
+      "Savings subscribers",
+      "Exchange and wallet customers",
+      "Unsecured creditors of AAX Asia or AAX Singapore",
+      "Customers whose contracting entity could not be determined from available records"
+    ],
+    "jurisdictions": [
+      "Singapore",
+      "Hong Kong",
+      "Malta",
+      "Seychelles",
+      "Cayman Islands",
+      "Other customer jurisdictions"
+    ],
+    "as_of": "2026-08-05",
+    "last_verified_at": "2026-08-05",
+    "notes": "The court-appointed liquidator was expected to investigate group assets and identify creditors. Arrests, complaints, alleged losses and frozen accounts do not prove a uniform customer recovery result. No claim is made that every savings customer contracted with a Singapore entity or that every group entity entered the same proceeding.",
+    "confidence": "high"
+  }
+]

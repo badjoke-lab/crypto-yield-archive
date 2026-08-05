@@ -1,0 +1,20 @@
+[
+  {
+    "platform_id": "cya_plat_000055",
+    "terms_status": "unclear",
+    "asset_ownership_interpretation": "ASIC states that customer Australian dollars were converted to TAUD and allocated to Finder Wallet for its own working-capital use, with customers receiving Australian dollars when exiting. This establishes centralized economic control but does not, by itself, resolve every legal-title, trust, segregation or insolvency question. The courts held that Finder Earn was not a debenture.",
+    "affected_product": "Finder Earn deposits, TAUD conversion, working-capital allocation, fixed returns and exit balances",
+    "source_evidence_id": "cya_src_b34_0001",
+    "notes": "Do not classify the product as a bank deposit, insured account, self-custody arrangement, trust asset or upheld unlicensed debenture. The full customer return is an outcome fact and does not retroactively remove the product's platform-credit and legal-structure risks.",
+    "confidence": "high"
+  },
+  {
+    "platform_id": "cya_plat_000056",
+    "terms_status": "unclear",
+    "asset_ownership_interpretation": "The Singapore court records that customer records were missing and customers did not know which AAX entities they contracted with. The reviewed savings materials describe centralized subscriptions and rewards but do not establish one legal owner, segregated pool, trust structure, reserve, deploying entity or creditor class for every savings balance.",
+    "affected_product": "AAX Flexible Savings, Fixed Savings, AAB Plus and associated exchange or wallet balances",
+    "source_evidence_id": "cya_src_b34_0011",
+    "notes": "Savings, spot, derivatives and wallet balances must not be collapsed into one ownership model. Product flexibility, lock-up duration, APY, token rewards, exchange custody, legal entity and liquidation claim treatment vary and remain incompletely documented. Police allegations and missing digital-asset keys do not independently resolve customer legal title.",
+    "confidence": "high"
+  }
+]

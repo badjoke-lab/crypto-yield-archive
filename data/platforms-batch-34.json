@@ -1,0 +1,61 @@
+[
+  {
+    "id": "cya_plat_000055",
+    "slug": "finder-earn",
+    "canonical_name": "Finder Earn",
+    "aliases": [
+      "Finder Earn Product",
+      "Finder Wallet Earn",
+      "Finder Wallet Pty Ltd",
+      "Wallet Ventures Pty Ltd",
+      "TAUD Earn"
+    ],
+    "type": "crypto_interest_account",
+    "status": "operations_ended",
+    "failure_reason": "regulatory_action",
+    "launch_date": null,
+    "end_date": "2022-11-24",
+    "country_or_origin": "Australia",
+    "summary": "Product-scoped Australian yield account offered by Finder Wallet in 2022. Customer Australian dollars were converted to TAUD and allocated to Finder Wallet for working-capital use in exchange for fixed annual returns. The product ceased after ASIC raised concerns, all customer funds were returned in full, and the courts ultimately rejected ASIC's claim that Finder Earn was a debenture.",
+    "what_happened": "Finder Wallet offered Finder Earn from late February through 10 November 2022. Customers deposited Australian dollars, which were converted to TAUD and allocated to Finder Wallet, and received annual compounding returns of 4.01% or 6.01%. After ASIC notified Finder Wallet of concerns, the product ceased from 24 November 2022 and ASIC states that all customer funds were returned in full. ASIC commenced civil proceedings in December 2022, but the Federal Court dismissed the case in March 2024 and the Full Federal Court dismissed ASIC's appeal in July 2025.",
+    "official_url_original": "https://www.finder.com.au/finder-wallet/finder-earn",
+    "official_domain_original": "finder.com.au",
+    "official_url_status": "unknown",
+    "archived_url": "https://web.archive.org/web/*/https://www.finder.com.au/finder-wallet/finder-earn",
+    "confidence": "high",
+    "last_verified_at": "2026-08-05",
+    "uncertainty_notes": "ASIC describes the offer period as beginning in late February 2022, so no exact launch day is assigned. Regulatory action is used because the product ceased after ASIC raised concerns and litigation followed; it does not mean a breach was upheld. Both the first-instance court and the Full Federal Court rejected ASIC's debenture allegation. Product closure is separate from the continuing Finder comparison business and from Wallet Ventures Pty Ltd, the renamed Finder Wallet entity.",
+    "notes": "Added as a fully repaid product-closure comparator showing that regulatory scrutiny and product cessation do not necessarily imply insolvency or customer loss."
+  },
+  {
+    "id": "cya_plat_000056",
+    "slug": "aax-savings",
+    "canonical_name": "AAX Savings",
+    "aliases": [
+      "AAX",
+      "Atom Asset Exchange",
+      "AAX Earn",
+      "AAX Flexible Savings",
+      "AAX Fixed Savings",
+      "AAB Plus",
+      "AAX Asia Private Limited",
+      "AAX Singapore Private Limited"
+    ],
+    "type": "exchange_earn",
+    "status": "bankrupt",
+    "failure_reason": "insolvency",
+    "launch_date": null,
+    "end_date": "2023-10-17",
+    "country_or_origin": "Hong Kong / Singapore / Malta / Seychelles / Cayman Islands / Global",
+    "summary": "Exchange-linked flexible and fixed crypto savings products operated within the multi-jurisdictional AAX Group. AAX froze withdrawals in November 2022. Singapore proceedings later found AAX Asia and AAX Singapore unable to pay debts, lacking available assets for current liabilities, and missing customer records, and winding-up orders took effect in October 2023.",
+    "what_happened": "AAX offered flexible and fixed savings products and token-linked yield programs alongside spot and derivatives trading. Withdrawals were suspended on 12 November 2022. Subsequent reports described police investigations, arrests, complaints and alleged liquidity problems, but those claims are preserved as allegations rather than final fraud findings. The Singapore High Court found that AAX Asia and AAX Singapore were unable to pay their debts, had no available assets to meet current liabilities, and lacked complete customer records. Winding-up orders granted on 12 October 2023 took effect on 17 October 2023, with the liquidator tasked with multi-jurisdictional asset and creditor investigations.",
+    "official_url_original": "https://www.aax.com/",
+    "official_domain_original": "aax.com",
+    "official_url_status": "dead_domain",
+    "archived_url": "https://web.archive.org/web/*/https://www.aax.com/",
+    "confidence": "high",
+    "last_verified_at": "2026-08-05",
+    "uncertainty_notes": "The bankruptcy and insolvency classification is directly supported for AAX Asia and AAX Singapore. AAX operated through a wider group across several jurisdictions, and customers reportedly did not know which entity they contracted with. The 17 October 2023 end date is the effective date of the Singapore winding-up orders, not a claim that every AAX group entity legally ended that day. Customer records, asset ownership, contracting entities, group-wide liabilities and recovery remain unresolved.",
+    "notes": "Tracked as a product-scoped exchange-Earn failure because savings customers faced the same withdrawal freeze and entity uncertainty as the wider exchange while product terms and customer claims require separate treatment."
+  }
+]

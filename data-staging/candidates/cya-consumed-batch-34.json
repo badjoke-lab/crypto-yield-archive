@@ -1,0 +1,73 @@
+[
+  {
+    "candidate_id": "cya_candidate_000042",
+    "canonical_name": "Finder Earn",
+    "aliases": [
+      "Finder Earn Product",
+      "Finder Wallet Earn",
+      "Finder Wallet Pty Ltd",
+      "Wallet Ventures Pty Ltd",
+      "TAUD Earn"
+    ],
+    "domain": "finder.com.au",
+    "country_or_origin": "Australia",
+    "platform_type_guess": "crypto_interest_account",
+    "status_guess": "operations_ended",
+    "major_event": "Late-February to November 2022 Finder Earn operation, full return of customer funds, ASIC litigation, and final July 2025 appeal dismissal",
+    "primary_sources": [
+      "https://www.asic.gov.au/about-asic/news-centre/find-a-media-release/2022-releases/22-359mr-finder-wallet-sued-for-alleged-unlicensed-conduct-and-inadequate-risk-disclosure-over-finder-earn-product/",
+      "https://www.asic.gov.au/about-asic/news-centre/find-a-media-release/2024-releases/24-045mr-federal-court-finds-finder-earn-product-was-not-a-financial-product/",
+      "https://www.asic.gov.au/about-asic/news-centre/find-a-media-release/2025-releases/25-147mr-asic-s-appeal-against-finder-wallet-decision-dismissed/"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-05",
+      "matched_platform_ids": [
+        "cya_plat_000055"
+      ],
+      "notes": "Promoted after the hardened scanner found no canonical match and review separated Finder Earn from the wider Finder business, Finder Wallet and Wallet Ventures corporate identity, TAUD conversion, regulatory allegations, court outcomes and customer repayment."
+    },
+    "decision": "already_recorded",
+    "notes": "Promoted to canonical record cya_plat_000055 in batch 34. The record classifies the product as operations ended with full repayment and preserves that ASIC's debenture allegation was rejected at first instance and on appeal.",
+    "first_seen_at": "2026-08-05",
+    "last_reviewed_at": "2026-08-05"
+  },
+  {
+    "candidate_id": "cya_candidate_000046",
+    "canonical_name": "AAX Savings",
+    "aliases": [
+      "AAX",
+      "Atom Asset Exchange",
+      "AAX Earn",
+      "AAX Flexible Savings",
+      "AAX Fixed Savings",
+      "AAB Plus",
+      "AAX Asia Private Limited",
+      "AAX Singapore Private Limited"
+    ],
+    "domain": "aax.com",
+    "country_or_origin": "Hong Kong / Singapore / Malta / Seychelles / Cayman Islands / Global",
+    "platform_type_guess": "exchange_earn",
+    "status_guess": "bankrupt",
+    "major_event": "November 2022 withdrawal freeze followed by investigations and effective October 2023 winding-up orders for AAX Asia and AAX Singapore",
+    "primary_sources": [
+      "https://www.elitigation.sg/gd/s/2023_SGHC_324",
+      "https://medium.com/aaxexchange/crypto-savings-on-aax-and-the-power-of-compounding-aax-academy-9981aff30711",
+      "https://medium.com/aaxexchange/aab-plus-explained-earning-interest-on-crypto-aax-academy-b31a514e2e6e"
+    ],
+    "secondary_sources": [
+      "https://www.thestandard.com.hk/news/article/198519/Police-arrested-two-men-in-crypto-exchange-AAX-related-case"
+    ],
+    "duplicate_check": {
+      "checked_at": "2026-08-05",
+      "matched_platform_ids": [
+        "cya_plat_000056"
+      ],
+      "notes": "Promoted after the hardened scanner found no canonical match and review separated AAX savings products, AAB Plus, the wider exchange, AAX Asia, AAX Singapore, other group entities, police allegations, court insolvency findings and unresolved customer contracting entities."
+    },
+    "decision": "already_recorded",
+    "notes": "Promoted to canonical record cya_plat_000056 in batch 34. The bankruptcy classification is grounded in the Singapore court findings for AAX Asia and AAX Singapore; no universal fraud conviction, asset ownership, contracting entity, claim route or recovery percentage is inferred for the wider group.",
+    "first_seen_at": "2026-08-05",
+    "last_reviewed_at": "2026-08-05"
+  }
+]
