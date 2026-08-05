@@ -1,0 +1,58 @@
+[
+  {
+    "platform_id": "cya_plat_000055",
+    "outcome_status": "unknown",
+    "estimated_recovery_rate": "Not classified. MyConstant announced an intended orderly liquidation, but the reviewed regulatory sources do not establish that distributions began, the value available for customers, treatment of collateral and borrower obligations, or completion for any uniform customer class.",
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": "Intended orderly liquidation and customer-recovery process described by the operator; no reviewed distribution mechanism or completed repayment schedule verified",
+    "claim_process_url": null,
+    "affected_products": [
+      "MyConstant peer-to-peer lending marketplace investments",
+      "MyConstant crypto interest accounts",
+      "MyConstant fiat interest accounts",
+      "Borrower collateral and outstanding loan positions"
+    ],
+    "claim_classes": [
+      "Peer-to-peer lenders and investors",
+      "Crypto interest-account customers",
+      "Fiat interest-account customers",
+      "Borrowers with collateral or outstanding obligations"
+    ],
+    "jurisdictions": [
+      "United States and other supported markets",
+      "California regulatory jurisdiction"
+    ],
+    "as_of": "2026-08-05",
+    "last_verified_at": "2026-08-05",
+    "notes": "The phrase orderly liquidation comes from the operator's reported customer communication and is not proof of a court-supervised liquidation, bankruptcy case, funded distribution plan, collateral sufficiency, recovery percentage, or completed customer repayment.",
+    "confidence": "high"
+  },
+  {
+    "platform_id": "cya_plat_000056",
+    "outcome_status": "unknown",
+    "estimated_recovery_rate": "Not classified. Regulators described withdrawal instructions and a multistate settlement covering up to $82.1 million in remaining virtual assets for eligible United States Abra Trade customers, but the reviewed sources do not establish universal completion or an Abra Earn-specific recovery percentage.",
+    "repayment_started_at": "2023-06-15",
+    "repayment_completed_at": null,
+    "repayment_method": "Customer-directed withdrawal during the United States wind-down and return of remaining virtual assets under participating-state settlement procedures",
+    "claim_process_url": "https://www.csbs.org/newsroom/state-financial-regulators-settle-abra-return-cryptocurrency-assets",
+    "affected_products": [
+      "Abra Earn interest accounts",
+      "Remaining virtual assets in eligible United States Abra Trade accounts",
+      "Balances subject to state-specific withdrawal or asset-return procedures"
+    ],
+    "claim_classes": [
+      "United States Abra Earn customers instructed to withdraw",
+      "Eligible Abra Trade customers in participating settlement states",
+      "Customers with remaining virtual assets subject to state procedures"
+    ],
+    "jurisdictions": [
+      "United States",
+      "Participating multistate settlement jurisdictions"
+    ],
+    "as_of": "2026-08-05",
+    "last_verified_at": "2026-08-05",
+    "notes": "The June 2023 allocation cutoff and withdrawal instruction mark the start of the reviewed exit process, not proof of completed external withdrawal. The state settlement's Abra Trade population and stated maximum asset amount are not silently applied to every historical Abra Earn customer.",
+    "confidence": "high"
+  }
+]
