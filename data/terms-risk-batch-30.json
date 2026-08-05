@@ -1,0 +1,20 @@
+[
+  {
+    "platform_id": "cya_plat_000047",
+    "terms_status": "varies_by_product",
+    "asset_ownership_interpretation": "Matrixport's general platform terms defer to product-specific terms, and the reviewed fixed-income, structured-yield, saving, and loan materials do not establish one universal asset-ownership or custody model across all products and legal entities.",
+    "affected_product": "Matrixport Fixed Income, flexible saving, structured-yield, and loan products",
+    "source_evidence_id": "cya_src_b30_0007",
+    "notes": "Current product pages describe different investment, lending, collateral, redemption, and settlement mechanics. Each product and jurisdiction requires its own terms review; general marketing language does not establish deposit insurance or universal principal protection.",
+    "confidence": "medium"
+  },
+  {
+    "platform_id": "cya_plat_000048",
+    "terms_status": "varies_by_product",
+    "asset_ownership_interpretation": "Coinchange's historical High Yield Account used an asset-management agreement, while current materials describe multiple individual, business, API, vault, custodial, and planned trust-minimized structures. Ownership and key control therefore depend on product, agreement version, implementation, legal entity, and client-facing arrangement.",
+    "affected_product": "Coinchange Earn accounts, business products, APIs, vaults, and related yield infrastructure",
+    "source_evidence_id": "cya_src_b30_0009",
+    "notes": "Historical 2021 terms must not be silently applied to every current product. Current first-party custody and key-control statements are recorded as claims and require implementation-specific verification.",
+    "confidence": "medium"
+  }
+]

@@ -1,0 +1,70 @@
+[
+  {
+    "candidate_id": "cya_candidate_000026",
+    "canonical_name": "Matrixport",
+    "aliases": [
+      "Matrixport Invest",
+      "Matrixport Fixed Income",
+      "Matrixport Flexi Saving"
+    ],
+    "domain": "matrixport.com",
+    "country_or_origin": "Singapore / Hong Kong / Global",
+    "platform_type_guess": "borrow_lend_platform",
+    "status_guess": "active",
+    "major_event": "Launch and continued expansion of a core digital-asset yield and lending business, including fixed-income, flexible saving, structured-yield, collateralized-loan, and institutional lending products",
+    "primary_sources": [
+      "https://www.matrixport.com/",
+      "https://www.matrixport.com/uni/invest",
+      "https://www.matrixport.com/uni/term",
+      "https://www.matrixport.com/docs/en-us/fixed_income.html",
+      "https://helpcenter.matrixport.com/en/articles/10052260-fixed-income"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-05",
+      "matched_platform_ids": [
+        "cya_plat_000047"
+      ],
+      "notes": "Candidate scan reported no pre-existing canonical match. Matrixport was promoted after manual identity, product-boundary, terms, current-status, and outcome review."
+    },
+    "decision": "already_recorded",
+    "notes": "Promoted to canonical record cya_plat_000047 in batch 30 as an active borrow/lend platform. Terms status is varies_by_product and outcome is not_applicable.",
+    "first_seen_at": "2026-08-05",
+    "last_reviewed_at": "2026-08-05"
+  },
+  {
+    "candidate_id": "cya_candidate_000027",
+    "canonical_name": "Coinchange",
+    "aliases": [
+      "Coinchange Financials",
+      "Coinchange Earn Account",
+      "Coinchange High Yield Account",
+      "Coinchange DeFi Yield"
+    ],
+    "domain": "coinchange.io",
+    "country_or_origin": "Canada / United States / Poland / Global",
+    "platform_type_guess": "yield_aggregator",
+    "status_guess": "active",
+    "major_event": "Public launch of an automated crypto yield platform in 2021 followed by expansion from individual Earn accounts into business, API, vault, and multi-strategy yield infrastructure",
+    "primary_sources": [
+      "https://www.coinchange.io/",
+      "https://www.coinchange.io/help-center/what-is-coinchange",
+      "https://www.coinchange.io/products/earn-account-business",
+      "https://www.coinchange.io/help-center/coinchange-transparency-and-trust",
+      "https://www.coinchange.io/br/hya-agreement",
+      "https://www.coinchange.io/terms"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-05",
+      "matched_platform_ids": [
+        "cya_plat_000048"
+      ],
+      "notes": "Candidate scan reported no pre-existing canonical match. Coinchange was promoted after manual identity, product-boundary, historical/current terms, custody-claim, status, and outcome review."
+    },
+    "decision": "already_recorded",
+    "notes": "Promoted to canonical record cya_plat_000048 in batch 30 as an active yield aggregator. Terms status is varies_by_product and outcome is not_applicable.",
+    "first_seen_at": "2026-08-05",
+    "last_reviewed_at": "2026-08-05"
+  }
+]
