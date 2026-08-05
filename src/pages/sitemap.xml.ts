@@ -4,6 +4,7 @@ import { allPlatforms } from '../lib/data';
 const SITE = 'https://cya.badjoke-lab.com';
 const staticPaths = [
   '/',
+  '/platforms/',
   '/outcomes/',
   '/bankruptcy-cases/',
   '/failures/',
@@ -14,6 +15,7 @@ const staticPaths = [
   '/methodology/',
   '/about/',
   '/corrections/',
+  '/support/',
 ];
 
 function validDate(value: unknown): string | null {
