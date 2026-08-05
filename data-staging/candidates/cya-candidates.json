@@ -53,5 +53,69 @@
     "notes": "BitMart announced an orderly wind-down on 26 July 2026. The notice schedules the end of spot, futures, and other trading on 26 August 2026 and formal trading-platform termination on 31 January 2027. It also states that BitMart Earn, Staking, Lending, Launchpad, and other products will be discontinued in phases, with dedicated redemption, settlement, and follow-up procedures to be communicated to affected users. Generic exchange Earn products are not prioritized in CYA, so BitMart is staged rather than promoted. Review whether the platform-wide shutdown and unresolved product-level customer outcomes justify a historically significant exchange-Earn exception, identify each affected yield or lending product, preserve product-specific custody and terms, and do not infer repayment completion before official settlement evidence is available.",
     "first_seen_at": "2026-07-26",
     "last_reviewed_at": "2026-07-26"
+  },
+  {
+    "candidate_id": "cya_candidate_000026",
+    "canonical_name": "Matrixport",
+    "aliases": [
+      "Matrixport Invest",
+      "Matrixport Fixed Income",
+      "Matrixport Flexi Saving"
+    ],
+    "domain": "matrixport.com",
+    "country_or_origin": "Singapore / Hong Kong / Global",
+    "platform_type_guess": "borrow_lend_platform",
+    "status_guess": "active",
+    "major_event": "Launch and continued expansion of a core digital-asset yield and lending business, including fixed-income, flexible saving, structured-yield, collateralized-loan, and institutional lending products",
+    "primary_sources": [
+      "https://www.matrixport.com/",
+      "https://www.matrixport.com/uni/invest",
+      "https://www.matrixport.com/uni/term",
+      "https://www.matrixport.com/docs/en-us/fixed_income.html",
+      "https://helpcenter.matrixport.com/en/articles/10052260-fixed-income"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-05",
+      "matched_platform_ids": [],
+      "notes": "The complete 46-platform canonical ledger and consumed-candidate history were reviewed. No Matrixport name, alias, or matrixport.com domain match was found. The deterministic scanner must confirm duplicate-clear status before drafting."
+    },
+    "decision": "add_now",
+    "notes": "Matrixport is an in-scope active comparator because yield and lending are core platform functions rather than incidental exchange add-ons. First-party materials describe the platform as founded in 2019 and currently offering fixed income, flexible saving, staking, structured yield, collateralized loans, and related investment products. Canonical review must keep product-level terms, legal entities, jurisdictions, underlying lending or staking strategies, lockups, early-redemption rules, and asset-ownership treatment separate. Current rates, principal language, collateral practices, licensing claims, and product availability must not be treated as permanent or universal.",
+    "first_seen_at": "2026-08-05",
+    "last_reviewed_at": "2026-08-05"
+  },
+  {
+    "candidate_id": "cya_candidate_000027",
+    "canonical_name": "Coinchange",
+    "aliases": [
+      "Coinchange Financials",
+      "Coinchange Earn Account",
+      "Coinchange High Yield Account",
+      "Coinchange DeFi Yield"
+    ],
+    "domain": "coinchange.io",
+    "country_or_origin": "Canada / United States / Poland / Global",
+    "platform_type_guess": "yield_aggregator",
+    "status_guess": "active",
+    "major_event": "Public launch of an automated crypto yield platform in 2021 followed by expansion from individual Earn accounts into business, API, vault, and multi-strategy yield infrastructure",
+    "primary_sources": [
+      "https://www.coinchange.io/",
+      "https://www.coinchange.io/help-center/what-is-coinchange",
+      "https://www.coinchange.io/products/earn-account-business",
+      "https://www.coinchange.io/help-center/coinchange-transparency-and-trust",
+      "https://www.coinchange.io/br/hya-agreement",
+      "https://www.coinchange.io/terms"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-05",
+      "matched_platform_ids": [],
+      "notes": "The complete 46-platform canonical ledger and consumed-candidate history were reviewed. No Coinchange name, alias, or coinchange.io domain match was found. The deterministic scanner must confirm duplicate-clear status before drafting."
+    },
+    "decision": "add_now",
+    "notes": "Coinchange is an in-scope active comparator because automated yield generation is the platform's central product. First-party materials state that its proprietary platform reached market in Q3 2021 and now provides individual and business Earn accounts, API and vault infrastructure, and strategies spanning DeFi and CeFi. Historical and current terms must be reviewed separately: the 2021 High Yield Account agreement, current custody or key-control claims, strategy allocation, liquidity, fees, jurisdictional availability, and client-facing business structures may differ. No advertised APY, principal-protection statement, regulatory claim, strategy description, or withdrawal condition is treated as permanent or as proof of universal customer protection.",
+    "first_seen_at": "2026-08-05",
+    "last_reviewed_at": "2026-08-05"
   }
 ]
