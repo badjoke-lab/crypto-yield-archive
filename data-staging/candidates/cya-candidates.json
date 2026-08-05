@@ -32,24 +32,28 @@
     "canonical_name": "Cabital",
     "aliases": [
       "Cabital Earn",
-      "Cabital Crypto Earn"
+      "Cabital Crypto Earn",
+      "Cabital Connect"
     ],
     "domain": "cabital.com",
     "country_or_origin": "Singapore / Europe / Global",
     "platform_type_guess": "centralized_yield",
-    "status_guess": "acquired",
-    "major_event": "Centralized crypto yield and payments platform acquired by Matrixport, requiring successor and customer-product review",
+    "status_guess": "unknown",
+    "major_event": "Cabital operated consumer crypto Earn and payments products and announced a 2022 fiat on-and-off-ramp partnership with Matrixport; later product closure, entity status, customer migration and outcome remain unresolved",
     "primary_sources": [
-      "https://www.cabital.com/"
+      "https://www.cabital.com/",
+      "https://blog.matrixport.com/announcements/matrixport-partners-with-cabital/"
     ],
-    "secondary_sources": [],
+    "secondary_sources": [
+      "https://find-and-update.company-information.service.gov.uk/company/14888741"
+    ],
     "duplicate_check": {
       "checked_at": "2026-08-05",
       "matched_platform_ids": [],
-      "notes": "The hardened scanner classified Cabital as duplicate-clear. It remains needs_research because the acquisition, customer migration, legal entity, product closure, custody, and outcome evidence are not yet sufficient for promotion."
+      "notes": "The hardened scanner classified Cabital as duplicate-clear. The reviewed Matrixport source describes a commercial partnership and integration of Cabital Connect, not an acquisition."
     },
     "decision": "needs_research",
-    "notes": "Retained for a later batch. Confirm the Matrixport acquisition perimeter, legal entities, Earn product terms, customer balance migration, product end date, successor obligations, and whether any customer assets or claims remained outside the transaction.",
+    "notes": "Retained for a later batch with the unsupported acquisition premise removed. Confirm the operating legal entities, whether Cabital Earn and Cabital Connect shared the same customer obligations, exact product end dates, the relationship between the original business and later similarly named entities, customer balance withdrawal or migration, custody and title terms, and whether any claims remained. The UK company record found during review is not assumed to be the original operating entity without identity evidence.",
     "first_seen_at": "2026-08-05",
     "last_reviewed_at": "2026-08-05"
   },
