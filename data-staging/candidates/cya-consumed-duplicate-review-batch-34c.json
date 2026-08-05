@@ -1,0 +1,74 @@
+[
+  {
+    "candidate_id": "cya_candidate_000038",
+    "canonical_name": "Delio",
+    "aliases": [
+      "Delio Bank",
+      "Delio Global",
+      "HappyDelio",
+      "Delifunding",
+      "Delio Lending",
+      "Delio Deposit",
+      "Delio Vault"
+    ],
+    "domain": "delio.io",
+    "country_or_origin": "South Korea",
+    "platform_type_guess": "centralized_yield",
+    "status_guess": "bankrupt",
+    "major_event": "Duplicate review confirmed that the June 2023 withdrawal suspension, Haru-linked stress, FIU sanctions, failed rehabilitation, November 2024 bankruptcy, and unresolved creditor recovery are already represented in canonical Delio record cya_plat_000027",
+    "primary_sources": [
+      "https://delio.io/"
+    ],
+    "secondary_sources": [
+      "https://view.asiae.co.kr/en/article/2024040412005828228",
+      "https://view.asiae.co.kr/en/article/2024112211250814450"
+    ],
+    "duplicate_check": {
+      "checked_at": "2026-08-05",
+      "matched_platform_ids": [
+        "cya_plat_000027"
+      ],
+      "notes": "The hardened candidate scanner returned exact_duplicate for cya_plat_000027. Canonical data/platforms-batch-18.json already includes Delio Bank, Delio Global, HappyDelio and Delifunding aliases, centralized deposit and yield products, the June 2023 halt, FIU sanctions, rehabilitation dismissal, bankruptcy, and unresolved liquidation outcomes."
+    },
+    "decision": "already_recorded",
+    "notes": "Removed from the batch 34 addition queue. No second Delio platform is created. Future bankruptcy, trustee, criminal-case, claim, valuation, or distribution evidence must update cya_plat_000027 and its linked records.",
+    "first_seen_at": "2026-08-05",
+    "last_reviewed_at": "2026-08-05"
+  },
+  {
+    "candidate_id": "cya_candidate_000039",
+    "canonical_name": "Finblox",
+    "aliases": [
+      "Finblox App",
+      "Finblox Yield",
+      "Finblox Earn",
+      "Finblox Savings",
+      "Finblox Rewards",
+      "FBX"
+    ],
+    "domain": "finblox.com",
+    "country_or_origin": "Hong Kong / United Kingdom / Global",
+    "platform_type_guess": "centralized_yield",
+    "status_guess": "operations_ended",
+    "major_event": "Duplicate review confirmed that the June 2022 Three Arrows Capital restrictions, partial restoration, later service closure reporting, dissolved UK entity, stale website artifacts, and unresolved customer outcomes are already represented in canonical Finblox record cya_plat_000034",
+    "primary_sources": [
+      "https://help.finblox.com/en/articles/6348481-update-june-30-2022",
+      "https://finblox.com/"
+    ],
+    "secondary_sources": [
+      "https://www.coindesk.com/business/2022/06/16/finblox-imposes-15k-monthly-withdrawal-limit-amid-three-arrows-capital-uncertainty",
+      "https://www.theblock.co/post/155434/finblox-doubles-withdrawal-limit-after-dropping-it-amid-exposure-to-3ac"
+    ],
+    "duplicate_check": {
+      "checked_at": "2026-08-05",
+      "matched_platform_ids": [
+        "cya_plat_000034"
+      ],
+      "notes": "The hardened candidate scanner returned exact_duplicate for cya_plat_000034. Canonical data/platforms-batch-23.json already includes Finblox App, Finblox Yield and FBX aliases, the June 2022 restrictions, partial July restoration, reported July 2025 closure, UK dissolution, stale status-page caveat, and unresolved recovery."
+    },
+    "decision": "already_recorded",
+    "notes": "Removed from the batch 34 addition queue. No second Finblox platform is created. Future 3AC exposure, Reserved Funds, closure, entity, or customer outcome evidence must update cya_plat_000034 and its linked records.",
+    "first_seen_at": "2026-08-05",
+    "last_reviewed_at": "2026-08-05"
+  }
+]
