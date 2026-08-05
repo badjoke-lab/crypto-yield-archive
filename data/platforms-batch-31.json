@@ -1,0 +1,56 @@
+[
+  {
+    "id": "cya_plat_000049",
+    "slug": "yieldnodes",
+    "canonical_name": "YieldNodes",
+    "aliases": [
+      "Yield Nodes",
+      "YieldNodes Masternode Rental",
+      "YieldNodes Pro"
+    ],
+    "type": "centralized_yield",
+    "status": "restructuring",
+    "failure_reason": "unknown",
+    "launch_date": "2019-01-01",
+    "end_date": null,
+    "country_or_origin": "Hong Kong / Malta / Global",
+    "summary": "Centralized masternode-rental yield platform established around 2019 that suspended deposits and withdrawals in October 2022 and moved customer balances into a prolonged restructuring, NFT claim, and proposed YieldNodes Pro transition.",
+    "what_happened": "YieldNodes accepted customer crypto into a managed masternode and staking model. First-party statements say deposits and withdrawals were suspended in October 2022 after exchange-account restrictions and liquidity pressure, and that the operator began a restructuring tied to DECENOMY assets. The operator later distributed account-linked NFTs and proposed a future YieldNodes Pro platform, while affected investors organized separate recovery efforts. The original account balances, NFT rights, underlying asset claims, and any future-platform rights remain distinct and unresolved.",
+    "official_url_original": "https://yieldnodes.com/",
+    "official_domain_original": "yieldnodes.com",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://yieldnodes.com/",
+    "confidence": "medium",
+    "last_verified_at": "2026-08-05",
+    "uncertainty_notes": "The exact 2019 launch day was not identified. The immediate and ultimate causes of the 2022 suspension, asset backing, legal ownership of underlying assets, value of account-linked NFTs, enforceability of repurchase language, recovery rate, and launch prospects for YieldNodes Pro remain contested or unverified.",
+    "notes": "Status is restructuring rather than operations-ended because the operator continues publishing updates and describes a proposed successor model, but ordinary deposits and withdrawals have not resumed in the reviewed evidence."
+  },
+  {
+    "id": "cya_plat_000050",
+    "slug": "bake-formerly-cake-defi",
+    "canonical_name": "Bake",
+    "aliases": [
+      "Cake DeFi",
+      "CakeDeFi",
+      "Bake.io",
+      "Cake DeFi Lending",
+      "Bake Earn"
+    ],
+    "type": "centralized_yield",
+    "status": "limited",
+    "failure_reason": null,
+    "launch_date": "2019-01-01",
+    "end_date": null,
+    "country_or_origin": "Singapore / Lithuania / Poland / Global",
+    "summary": "Centralized crypto yield platform founded as Cake DeFi in 2019, rebranded to Bake in 2023, and reduced to account maintenance and USD withdrawals after suspending crypto-asset services on 15 April 2026 for MiCA alignment.",
+    "what_happened": "Cake DeFi originally provided retail access to staking, institutional lending, liquidity mining, and later Savings and DeFi-powered Lending products. The retail business rebranded to Bake in June 2023. In March 2026 the operator announced an indefinite suspension of crypto-asset services, and from 15 April 2026 remaining crypto balances were converted to USD, new crypto deposits and accounts were stopped, and existing accounts became withdrawal-only under a custodial arrangement. The reviewed evidence does not establish completion of every withdrawal or uniform treatment of illiquid assets.",
+    "official_url_original": "https://bake.io/",
+    "official_domain_original": "bake.io",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://cakedefi.com/",
+    "confidence": "high",
+    "last_verified_at": "2026-08-05",
+    "uncertainty_notes": "The exact 2019 launch day was not identified. Historical Cake DeFi products used different strategies and terms. The reviewed April 2026 terms establish a withdrawal-only USD state, but do not prove that every customer completed withdrawal or that every illiquid asset retained recoverable value.",
+    "notes": "Status is limited because the platform and accounts remain available for maintenance and USD withdrawals, while crypto-asset and yield functionality is blocked."
+  }
+]
