@@ -1,0 +1,34 @@
+[
+  {
+    "platform_id": "cya_plat_000055",
+    "product_type": "interest_account",
+    "product_name": "Finder Earn",
+    "custody_model": "Customers deposited Australian dollars that Finder Wallet converted to TAUD and allocated to Finder Wallet for use as working capital; customers received Australian dollars when exiting the product",
+    "yield_source": "Fixed annual compounding return paid by Finder Wallet in exchange for use of customer capital, advertised at 4.01% or 6.01% depending on the customer circumstances",
+    "risk_notes": "Customers faced platform credit, working-capital use, stablecoin conversion, legal-title, liquidity, operational and regulatory-classification risk. The courts later held that the product was not a debenture, and ASIC states that all funds were returned in full."
+  },
+  {
+    "platform_id": "cya_plat_000056",
+    "product_type": "exchange_earn",
+    "product_name": "AAX Flexible Savings",
+    "custody_model": "Crypto assets were subscribed through the centralized AAX exchange into a flexible savings balance; the reviewed product material does not establish segregation, the deploying legal entity or the ultimate use of subscribed assets",
+    "yield_source": "Variable APY credited on supported crypto assets while users retained flexible redemption features subject to platform availability and terms",
+    "risk_notes": "Customers faced exchange custody, entity, counterparty, deployment, rate, liquidity, withdrawal, recordkeeping, insolvency and cross-jurisdictional creditor risks. Flexible redemption marketing did not prevent the later platform-wide withdrawal freeze."
+  },
+  {
+    "platform_id": "cya_plat_000056",
+    "product_type": "exchange_earn",
+    "product_name": "AAX Fixed Savings",
+    "custody_model": "Crypto assets were committed to fixed-duration products administered within AAX; early access and legal ownership depended on product terms and the operating entity, which are not fully established by the reviewed evidence",
+    "yield_source": "Advertised fixed-duration APY on supported crypto assets, including short promotional terms and asset-specific rates",
+    "risk_notes": "Customers faced lock-up, exchange custody, entity, counterparty, deployment, maturity settlement, liquidity, withdrawal, recordkeeping, insolvency and cross-jurisdictional creditor risks. Advertised APY and automatic maturity concepts are not treated as principal protection."
+  },
+  {
+    "platform_id": "cya_plat_000056",
+    "product_type": "staking_like_yield",
+    "product_name": "AAB Plus",
+    "custody_model": "AAX administered an interest-earning service for AAB tokens with fixed and flexible reward components; the reviewed first-party description does not establish segregation, reserve backing or legal title treatment",
+    "yield_source": "Fixed and dynamic AAB-token rewards intended to provide passive income and partially respond to token-market changes",
+    "risk_notes": "Customers faced AAB token-price, issuer, platform custody, reward-policy, liquidity, withdrawal, entity and insolvency risks. Token-denominated rewards could increase while the underlying token value declined, so advertised payout rates are not equivalent to fiat-value preservation."
+  }
+]
