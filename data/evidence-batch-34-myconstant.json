@@ -1,0 +1,62 @@
+[
+  {
+    "id": "cya_src_b34_0001",
+    "platform_id": "cya_plat_000055",
+    "event_id": "cya_ev_000268",
+    "source_type": "regulatory_notice",
+    "title": "DFPI announces investigation into MyConstant",
+    "url": "https://dfpi.ca.gov/alert/dfpi-announces-investigation-into-crypto-lending-company-myconstant/",
+    "publisher": "California Department of Financial Protection and Innovation",
+    "published_at": "2022-12-05",
+    "archived_url": null,
+    "accessed_at": "2026-08-05",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "Regulatory alert reporting that MyConstant paused consumer deposits and withdrawals on 17 November 2022. The alert relays the operator's market-condition explanation without establishing an independently adjudicated cause."
+  },
+  {
+    "id": "cya_src_b34_0002",
+    "platform_id": "cya_plat_000055",
+    "event_id": "cya_ev_000269",
+    "source_type": "regulatory_notice",
+    "title": "DFPI reports MyConstant's intended orderly liquidation",
+    "url": "https://dfpi.ca.gov/alert/dfpi-announces-investigation-into-crypto-lending-company-myconstant/",
+    "publisher": "California Department of Financial Protection and Innovation",
+    "published_at": "2022-12-05",
+    "archived_url": null,
+    "accessed_at": "2026-08-05",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "Regulatory alert reporting MyConstant's 25 November 2022 customer message about an intended orderly liquidation. It is not evidence that distributions began, that recoveries were maximized, or that liquidation completed."
+  },
+  {
+    "id": "cya_src_b34_0003",
+    "platform_id": "cya_plat_000055",
+    "event_id": "cya_ev_000270",
+    "source_type": "regulatory_notice",
+    "title": "DFPI orders MyConstant to cease offering crypto-related products",
+    "url": "https://dfpi.ca.gov/press_release/dfpi-orders-myconstant-to-cease-offering-crypto-related-products/",
+    "publisher": "California Department of Financial Protection and Innovation",
+    "published_at": "2022-12-21",
+    "archived_url": null,
+    "accessed_at": "2026-08-05",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "Primary regulatory source for the California cease order and the regulator's findings concerning MyConstant's peer-to-peer lending, crypto interest, and fiat interest products."
+  },
+  {
+    "id": "cya_src_b34_0004",
+    "platform_id": "cya_plat_000055",
+    "event_id": null,
+    "source_type": "regulatory_notice",
+    "title": "DFPI description of MyConstant product structures",
+    "url": "https://dfpi.ca.gov/press_release/dfpi-orders-myconstant-to-cease-offering-crypto-related-products/",
+    "publisher": "California Department of Financial Protection and Innovation",
+    "published_at": "2022-12-21",
+    "archived_url": null,
+    "accessed_at": "2026-08-05",
+    "reliability": "high",
+    "claim_scope": "terms_risk",
+    "notes": "Regulatory description of three distinct product families: crypto-collateralized peer-to-peer loan brokering, a fixed-yield crypto account, and a fixed-return fiat account. It does not provide the full historical customer agreements, custody terms, collateral waterfall, or liquidation distribution rules."
+  }
+]
