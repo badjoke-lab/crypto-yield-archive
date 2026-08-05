@@ -1,0 +1,56 @@
+[
+  {
+    "id": "cya_plat_000047",
+    "slug": "matrixport",
+    "canonical_name": "Matrixport",
+    "aliases": [
+      "Matrixport Invest",
+      "Matrixport Fixed Income",
+      "Matrixport Flexi Saving",
+      "Matrixport Balance+"
+    ],
+    "type": "borrow_lend_platform",
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": "2019-01-01",
+    "end_date": null,
+    "country_or_origin": "Singapore / Hong Kong / Global",
+    "summary": "Active digital-asset financial platform founded in 2019 whose core business combines fixed and flexible yield products, structured investments, collateralized lending, brokerage, custody, and institutional services.",
+    "what_happened": "Matrixport developed as a one-stop digital-asset financial platform with yield and lending as core functions. First-party materials describe fixed-income and flexible-saving products backed by platform staking and lending activity, structured-yield products, and multiple collateralized loan services. The platform remains active, but rates, lockups, early-redemption rights, underlying strategies, legal entities, licensing scope, custody arrangements, and jurisdictional access vary by product and over time.",
+    "official_url_original": "https://www.matrixport.com/",
+    "official_domain_original": "matrixport.com",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://www.matrixport.com/",
+    "confidence": "high",
+    "last_verified_at": "2026-08-05",
+    "uncertainty_notes": "The 2019 launch date is year-level. Current first-party product pages and terms do not establish one universal ownership, custody, principal-protection, liquidity, or risk model across every Matrixport entity and product. Product availability and regulatory permissions differ by jurisdiction.",
+    "notes": "Active comparator included because yield and lending are core platform functions rather than incidental exchange add-ons."
+  },
+  {
+    "id": "cya_plat_000048",
+    "slug": "coinchange",
+    "canonical_name": "Coinchange",
+    "aliases": [
+      "Coinchange Financials",
+      "Coinchange Earn Account",
+      "Coinchange High Yield Account",
+      "Coinchange DeFi Yield"
+    ],
+    "type": "yield_aggregator",
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": "2021-07-01",
+    "end_date": null,
+    "country_or_origin": "Canada / United States / Poland / Global",
+    "summary": "Active digital-asset yield platform that brought its proprietary automated strategy system to market in Q3 2021 and expanded from individual Earn accounts into business, API, vault, and multi-strategy yield infrastructure.",
+    "what_happened": "Coinchange developed automated systems for allocating digital assets across DeFi and CeFi strategies and states that it brought the proprietary platform to market in Q3 2021. Historical terms governed a customer-facing High Yield Account, while current materials emphasize customized individual and business Earn products, APIs, vaults, and multi-strategy allocation. The platform remains active, but custody, key control, strategy composition, liquidity, fees, legal entities, and client-facing arrangements vary by product and version.",
+    "official_url_original": "https://www.coinchange.io/",
+    "official_domain_original": "coinchange.io",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://www.coinchange.io/",
+    "confidence": "high",
+    "last_verified_at": "2026-08-05",
+    "uncertainty_notes": "The Q3 2021 launch is recorded as 1 July for sortable year-quarter precision. Current marketing statements about APY, principal protection, custody, key control, strategy risk, liquidity, and regulation are product- and jurisdiction-specific and can change.",
+    "notes": "Active comparator included because yield generation and yield infrastructure are the central business rather than a peripheral exchange feature."
+  }
+]
