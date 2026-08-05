@@ -1,0 +1,56 @@
+[
+  {
+    "platform_id": "cya_plat_000053",
+    "outcome_status": "unknown",
+    "estimated_recovery_rate": "Not classified. BitMart instructed users to redeem eligible Earn, Staking, Lending, and other investment products and kept withdrawals available, but product-specific settlement procedures and completion across all customer accounts were not established as of 5 August 2026.",
+    "repayment_started_at": "2026-07-26",
+    "repayment_completed_at": null,
+    "repayment_method": "Product-specific redemption or settlement into BitMart account balances followed by withdrawal requests subject to applicable product, compliance, security, and risk-review procedures",
+    "claim_process_url": "https://bitmart.zendesk.com/hc/en-us/articles/53544595916059-Important-Notice-Regarding-the-Orderly-Cessation-of-BitMart-Operations",
+    "affected_products": [
+      "BitMart Flexible and Fixed Savings",
+      "BitMart Staking",
+      "BitMart Crypto Loans",
+      "Earn assets and loan collateral held in BitMart accounts"
+    ],
+    "claim_classes": [
+      "Savings subscribers",
+      "Staking participants",
+      "Crypto Loan borrowers",
+      "Customers with collateral or residual account balances"
+    ],
+    "jurisdictions": [
+      "Global customer base"
+    ],
+    "as_of": "2026-08-05",
+    "last_verified_at": "2026-08-05",
+    "notes": "The platform remained in an active wind-down. Withdrawal availability and instructions to redeem products are not proof that every fixed-term product matured, every loan or collateral position settled, every compliance review completed, or every customer withdrew. Future August 2026 and January 2027 deadlines are not treated as completed.",
+    "confidence": "high"
+  },
+  {
+    "platform_id": "cya_plat_000054",
+    "outcome_status": "unknown",
+    "estimated_recovery_rate": "Not classified. Kriptomat states that KriptoEarn positions were terminated and assets returned to main wallets, but the reviewed evidence does not establish completion of external withdrawal, Kraken transfer, manual processing, or account closure for every customer.",
+    "repayment_started_at": "2026-05-19",
+    "repayment_completed_at": null,
+    "repayment_method": "Termination of KriptoEarn positions, return of assets to Kriptomat main wallets, then customer-directed transfer to Kraken or direct withdrawal, with manual residual-account processing after the regulated-service deadline",
+    "claim_process_url": "https://kriptomat.io/wind-down/",
+    "affected_products": [
+      "KriptoEarn staking positions",
+      "Kriptomat main-wallet balances returned from KriptoEarn",
+      "Residual customer balances after 30 June 2026"
+    ],
+    "claim_classes": [
+      "KriptoEarn participants",
+      "Customers transferring to Kraken",
+      "Customers requesting direct or manual withdrawal"
+    ],
+    "jurisdictions": [
+      "European Union and supported Kriptomat markets"
+    ],
+    "as_of": "2026-08-05",
+    "last_verified_at": "2026-08-05",
+    "notes": "Internal-wallet return is not equated with completed external recovery. Residual accounts remained subject to read-only access, manual processing, compliance review, operational limitations, and possible fees.",
+    "confidence": "high"
+  }
+]
