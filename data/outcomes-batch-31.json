@@ -1,0 +1,52 @@
+[
+  {
+    "platform_id": "cya_plat_000049",
+    "outcome_status": "claims_ongoing",
+    "estimated_recovery_rate": "Unknown. Ordinary withdrawals have not resumed in the reviewed evidence, and no verified recovery rate is assigned to original account balances, account-linked NFTs, DECENOMY assets, or proposed YieldNodes Pro rights.",
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": "Proposed restructuring through account-linked NFTs and a future YieldNodes Pro transition; no completed customer repayment method verified",
+    "claim_process_url": "https://yieldnodes.com/nft/",
+    "affected_products": [
+      "YieldNodes masternode-rental accounts",
+      "YieldNodes account-linked NFTs",
+      "Proposed YieldNodes Pro balance transition"
+    ],
+    "claim_classes": [
+      "Original account holders",
+      "NFT claimants",
+      "Non-NFT account holders"
+    ],
+    "jurisdictions": [
+      "Global customer base"
+    ],
+    "as_of": "2026-08-05",
+    "last_verified_at": "2026-08-05",
+    "notes": "The NFT claim page is a restructuring path, not proof of repayment. Operator statements, investor-group claims, asset-value assertions, and future-platform plans remain separate. No fraud finding, principal recovery, NFT repurchase value, or completion date is inferred.",
+    "confidence": "medium"
+  },
+  {
+    "platform_id": "cya_plat_000050",
+    "outcome_status": "unknown",
+    "estimated_recovery_rate": "Not classified. Bake states that remaining crypto balances were converted to USD and are withdrawable through a custodial arrangement, but the reviewed sources do not establish completion for every customer or recoverable value for every illiquid asset.",
+    "repayment_started_at": "2026-04-15",
+    "repayment_completed_at": null,
+    "repayment_method": "Withdrawal of USD balances converted at the 15 April 2026 exchange rate through the platform and designated custodial institution",
+    "claim_process_url": "https://app.bake.io/",
+    "affected_products": [
+      "Cake DeFi and Bake crypto balances",
+      "Bake Savings",
+      "Bake Lending",
+      "Bake staking and legacy DeFiChain products",
+      "Bake Pro membership balances"
+    ],
+    "claim_classes": [],
+    "jurisdictions": [
+      "Existing Bake users"
+    ],
+    "as_of": "2026-08-05",
+    "last_verified_at": "2026-08-05",
+    "notes": "The platform describes an orderly USD withdrawal process rather than insolvency or bankruptcy. Unknown is used because platform-wide completion, fees, timing, and treatment of assets lacking a liquid market are not independently confirmed.",
+    "confidence": "high"
+  }
+]
