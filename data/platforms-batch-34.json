@@ -1,0 +1,50 @@
+[
+  {
+    "id": "cya_plat_000055",
+    "slug": "myconstant",
+    "canonical_name": "MyConstant",
+    "aliases": [
+      "CONST LLC",
+      "My Constant",
+      "ConstantP2P",
+      "MyConstant P2P Lending",
+      "MyConstant Crypto Interest Account"
+    ],
+    "type": "borrow_lend_platform",
+    "country_or_origin": "United States / California",
+    "launch_date": null,
+    "end_date": null,
+    "status": "restructuring",
+    "status_detail": "MyConstant paused consumer deposits and withdrawals on 17 November 2022 and told customers on 25 November 2022 that it intended to implement an orderly liquidation. The reviewed evidence does not establish a completed liquidation, universal customer recovery, bankruptcy filing, or exact final closure date.",
+    "official_url_original": "https://www.myconstant.com/",
+    "official_url_status": "unknown",
+    "failure_reason": "regulatory_action",
+    "failure_reason_detail": "California DFPI ordered CONST LLC on 21 December 2022 to cease offering its peer-to-peer lending and interest-bearing products in California. The customer withdrawal pause and liquidation announcement preceded that order, so this classification records the definitive regulatory action without asserting that it caused the earlier suspension or proving insolvency, fraud, or misconduct beyond the regulator's findings.",
+    "summary": "MyConstant was a mixed centralized lending and yield platform offering crypto-collateralized peer-to-peer loan brokering, a fixed-yield crypto account, and a fixed-return fiat account. Its 2022 suspension, intended orderly liquidation, and California cease order are recorded separately, while recovery and legal-title outcomes remain unresolved.",
+    "confidence": "high",
+    "last_verified_at": "2026-08-05"
+  },
+  {
+    "id": "cya_plat_000056",
+    "slug": "abra-earn",
+    "canonical_name": "Abra Earn",
+    "aliases": [
+      "Plutus Lending LLC",
+      "Abra Interest Account",
+      "Abra Earn Program"
+    ],
+    "type": "crypto_interest_account",
+    "country_or_origin": "United States / Global",
+    "launch_date": null,
+    "end_date": null,
+    "status": "operations_ended",
+    "status_detail": "The SEC states that Abra began winding down the U.S. Abra Earn program in June 2023 and instructed U.S. customers to withdraw. No reviewed evidence shows that the historical retail Abra Earn product restarted. Current Abra wealth, institutional, staking, DeFi-yield, trading, and lending services are separate from this product-scoped record.",
+    "official_url_original": "https://www.abra.com/earn/",
+    "official_url_status": "unknown",
+    "failure_reason": "regulatory_action",
+    "failure_reason_detail": "State regulators and the SEC later resolved licensing and securities-registration matters involving Abra entities and Abra Earn. These actions are recorded as the definitive legal disposition, but CYA does not infer that enforcement alone caused the June 2023 wind-down, that every state-settlement account was an Abra Earn account, or that the current Abra business is the same product.",
+    "summary": "Abra Earn was a retail crypto interest account operated by Plutus Lending LLC. The historical product reached substantial scale, entered a U.S. wind-down in 2023, and was later addressed through multistate and SEC proceedings. Customer withdrawal and settlement populations remain separated from the current Abra business.",
+    "confidence": "high",
+    "last_verified_at": "2026-08-05"
+  }
+]
