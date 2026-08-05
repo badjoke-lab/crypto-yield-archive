@@ -25,25 +25,25 @@ Permanent operating rules remain in `docs/record-growth-plan.md` and `docs/devel
 ```text
 Repository: badjoke-lab/crypto-yield-archive
 Default branch: main
-Confirmed main commit: a164603c8fb1cd8feef0ab6bb243550975b30351
-Latest merged PR: #80 Serialize CYA production deployment checks
-Latest canonical PR: #79 Add batch 31 YieldNodes and Bake records
+Confirmed main commit: 9d9f6534ae5ad255ea871c6a5a622af546c767d0
+Latest merged PR: #87 Add batch 32 BitLendingClub and Bitbond records
+Latest canonical PR: #87 Add batch 32 BitLendingClub and Bitbond records
 ```
 
 ### Canonical scale
 
 ```text
-Platforms:       50
-Events:          247
-Evidence:        372
-Outcomes:         50
-Products:         80
-Terms risk:       50
+Platforms:       52
+Events:          254
+Evidence:        383
+Outcomes:         52
+Products:         83
+Terms risk:       52
 Claims ongoing:   16
-Generated pages:  62
+Generated pages:  64
 ```
 
-Batch-31 validation confirmed that canonical arrays, generated HTML, public JSON, manifest counts, metadata, sitemap inputs, candidate history, and the two new platform routes resolve to the same registry.
+Batch-32 validation confirmed that canonical arrays, generated HTML, public JSON, manifest counts, metadata, sitemap inputs, candidate history, and the two new platform routes resolve to the same registry.
 
 ## Completed safety, automation, and public-surface gates
 
@@ -98,15 +98,18 @@ Completed in PR #74.
 - dedicated Node.js 24 SEO workflow
 - Astro build before generated-output validation
 
-### Production verification serialization
+### Production deployment repair
 
-Completed in PR #80.
+Completed in PR #85.
 
-- only the newest main production check remains active
-- superseded smoke runs are canceled instead of producing false persistent failures
-- Node.js 24 runtime
-- exact deployed-commit verification remains mandatory
-- Cloudflare observation window extended from 6 minutes to 12 minutes
+- removed the unusable token-dependent Direct Upload workflow
+- identified `agent/seo-hardening` as the Cloudflare Pages production branch
+- added a GitHub-native sync from public-build changes on `main`
+- uses only the repository `GITHUB_TOKEN`
+- preserves the existing Cloudflare project and custom-domain configuration
+- serializes sync jobs and cancels superseded runs
+
+Batch 32 triggered the new sync successfully after PR #87 merged.
 
 ## Phase 6 completed batches
 
@@ -116,6 +119,7 @@ Batch 28: Wirex X-Accounts + SwissBorg Earn        42 -> 44
 Batch 29: CoinRabbit + Nebeus                      44 -> 46
 Batch 30: Matrixport + Coinchange                  46 -> 48
 Batch 31: YieldNodes + Bake                        48 -> 50
+Batch 32: BitLendingClub + Bitbond Lending         50 -> 52
 ```
 
 ### Batch 30 — Matrixport and Coinchange
@@ -132,33 +136,41 @@ Canonical promotion: PR #76
 Candidate-only gate: PR #78  
 Canonical promotion: PR #79
 
-#### YieldNodes
+- YieldNodes: `cya_plat_000049 / centralized_yield / restructuring`
+- Bake: `cya_plat_000050 / centralized_yield / limited`
+- disputed or incomplete recovery evidence remains explicit
+- historical product and current withdrawal-only terms remain separated
 
-- `cya_plat_000049`
-- `centralized_yield / restructuring`
-- approximate 2019 launch
-- October 2022 deposits and withdrawals suspension
-- restructuring proposal and disputed causal account
-- July 2023 account-linked NFT distribution
-- December 2023 NFT claim cutoff
-- February 2025 unresolved YieldNodes Pro state
-- failure reason: `unknown`
-- terms: `unclear`
-- outcome: `claims_ongoing`
+### Batch 32 — BitLendingClub and Bitbond Lending Marketplace
 
-#### Bake
+Candidate-only gate: PR #86  
+Canonical promotion: PR #87
 
-- `cya_plat_000050`
-- `centralized_yield / limited`
-- preserves Cake DeFi identity continuity from 2019
-- historical staking, lending, Savings, and liquidity-mining products
-- June 2023 Cake DeFi-to-Bake rebrand
-- March 2026 suspension announcement
-- 15 April 2026 crypto-service block, USD conversion, and withdrawal-only state
-- terms: `varies_by_product`
+#### BitLendingClub
+
+- `cya_plat_000051`
+- `borrow_lend_platform / operations_ended`
+- temporary Loanbase rebrand preserved
+- February 2016 account compromise separated from the later shutdown
+- December 2016 stop to new registrations, loans, and investments
+- failure reason: `regulatory_action`
+- exact final shutdown date remains unknown
+- outcome: `unknown`; uniform repayment or withdrawal completion is not inferred
+- the unrelated current Japanese BitLending service is excluded
+
+#### Bitbond Lending Marketplace
+
+- `cya_plat_000052`
+- `borrow_lend_platform / operations_ended`
+- product-scoped historical marketplace record
+- 2019 BB1 security-token financing layer recorded separately
+- May 2020 stop to new loan origination and tokenization pivot
+- failure reason: `voluntary_shutdown`
+- current Bitbond tokenization infrastructure remains outside the failure classification
+- marketplace claims and BB1 token-holder rights remain separate
 - outcome: `unknown`
 
-#### Batch-31 validation
+#### Batch-32 validation
 
 ```text
 Validate data:        success
@@ -169,8 +181,9 @@ Candidate scan:       success
 Candidate draft:      success
 Corpus blockers:      0
 Candidate matches:    0 possible matches before promotion
-YieldNodes route:     /platform/yieldnodes/
-Bake route:           /platform/bake-formerly-cake-defi/
+BitLendingClub route: /platform/bitlendingclub-loanbase/
+Bitbond route:        /platform/bitbond-lending-marketplace/
+Generated pages:      64
 ```
 
 ## Candidate queue and reserved identifiers
@@ -180,11 +193,11 @@ Active candidate queue: 2 needs_research candidates
 - cya_candidate_000010 Goldfinch
 - cya_candidate_000011 BitMart
 
-Next candidate IDs:      cya_candidate_000030 / cya_candidate_000031
-Next platform ID:        cya_plat_000051
-Next event ID:           cya_ev_000253
-Next canonical batch:    32
-Next evidence prefix:    cya_src_b32_
+Next candidate IDs:      cya_candidate_000032 / cya_candidate_000033
+Next platform ID:        cya_plat_000053
+Next event ID:           cya_ev_000260
+Next canonical batch:    33
+Next evidence prefix:    cya_src_b33_
 ```
 
 Goldfinch and BitMart remain staging-only:
@@ -192,7 +205,7 @@ Goldfinch and BitMart remain staging-only:
 - Goldfinch requires a DeFi/institutional-yield scope and product/entity-boundary decision.
 - BitMart requires an exchange-Earn exception decision plus product-specific redemption, custody, terms, and customer-outcome evidence.
 
-They must not be silently inserted into batch 32.
+They must not be silently inserted into batch 33.
 
 ## Current phase
 
@@ -207,7 +220,8 @@ Phase 6 / batch 28: 42 -> 44                        complete
 Phase 6 / batch 29: 44 -> 46                        complete
 Phase 6 / batch 30: 46 -> 48                        complete
 Phase 6 / batch 31: 48 -> 50                        complete
-Phase 6 / batch 32: 50 -> 52                        current
+Phase 6 / batch 32: 50 -> 52                        complete
+Phase 6 / batch 33: 52 -> 54                        current
 Phase 7: weekly existing-record monitoring          not started
 Phase 8: 60 -> 100 with 75/100 audits               not started
 ```
@@ -215,12 +229,12 @@ Phase 8: 60 -> 100 with 75/100 audits               not started
 ## Current execution point
 
 ```text
-Phase 6 / batch 32 candidate-only gate
+Phase 6 / batch 33 candidate-only gate
 
 1. select two high-value, in-scope CeFi yield/lending candidates
 2. confirm no canonical or consumed-ledger match
 3. investigate identity, product boundary, event history, terms, custody, and customer outcome
-4. assign candidate IDs 000030 and 000031 only after duplicate review
+4. assign candidate IDs 000032 and 000033 only after duplicate review
 5. stage candidates without canonical changes
 6. run candidate audit, scanner, draft generator, and all repository checks
 7. merge the candidate-only PR
@@ -263,7 +277,7 @@ all final CI checks green
 
 - several legacy platforms have thin evidence coverage
 - several original URLs are repurposed
-- Flint has no exact verified end date
+- Flint and BitLendingClub have no exact verified end date
 - historical terms remain unknown or unclear for several records
 - legacy split consumed-ledger files remain
 - older non-production workflows may still emit Node.js 20 action-runtime warnings
@@ -288,21 +302,22 @@ After reaching 60 platforms, monitor official notices, court and administrator p
 ```text
 PR #43 public-surface implementation: merged
 PR #74 SEO hardening: merged and production-checked
-PR #80 production-smoke serialization: merged
-Batches 23-31 repository/public-output validation: complete
+PR #85 Cloudflare production-branch sync: merged and successful
+Batch 32 repository/public-output validation: complete
+Batch 32 main-to-production-branch sync: successful
+Latest 52-platform direct production observation: pending Cloudflare deployment completion
 40-platform audit: complete
-Latest 50-platform production deployment and direct route observation: pending newest-main smoke completion
 ```
 
 Expected public values after the latest deployment:
 
 ```text
-platforms: 50
-events: 247
-evidence: 372
-outcomes: 50
-products: 80
-terms-risk: 50
+platforms: 52
+events: 254
+evidence: 383
+outcomes: 52
+products: 83
+terms-risk: 52
 claims ongoing: 16
 ```
 
@@ -347,6 +362,9 @@ npm test
 #78 batch 31 candidate-only gate
 #79 batch 31 canonical promotion
 #80 production-smoke serialization
+#85 Cloudflare production-branch sync repair
+#86 batch 32 candidate-only gate
+#87 batch 32 canonical promotion
 ```
 
 ## Update rule
@@ -358,7 +376,7 @@ Do not leave a stale current-location marker.
 ## Immediate next action
 
 ```text
-Phase 6 / batch 32 candidate-only gate
+Phase 6 / batch 33 candidate-only gate
 
-Select, research, duplicate-check, and stage two high-value CeFi yield/lending candidates as cya_candidate_000030 and cya_candidate_000031. Do not alter canonical data in the candidate PR.
+Select, research, duplicate-check, and stage two high-value CeFi yield/lending candidates as cya_candidate_000032 and cya_candidate_000033. Do not alter canonical data in the candidate PR.
 ```
