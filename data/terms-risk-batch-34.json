@@ -1,0 +1,20 @@
+[
+  {
+    "platform_id": "cya_plat_000055",
+    "terms_status": "unclear",
+    "asset_ownership_interpretation": "The reviewed regulatory sources distinguish peer-to-peer marketplace investments, crypto interest accounts, fiat interest accounts, borrower collateral, and outstanding loan obligations, but they do not reproduce the complete historical customer agreements or establish one uniform legal-title, segregation, trust, lien-priority, or insolvency treatment across those products.",
+    "affected_product": "MyConstant peer-to-peer lending, crypto interest accounts, fiat interest accounts, borrower collateral, and platform-held balances",
+    "source_evidence_id": "cya_src_b34_0004",
+    "notes": "Product labels and collateral descriptions are not enough to infer customer ownership, deposit insurance, segregation, principal protection, collateral sufficiency, liquidation priority, or completed recovery. Each product and customer class requires separate historical terms and liquidation evidence.",
+    "confidence": "medium"
+  },
+  {
+    "platform_id": "cya_plat_000056",
+    "terms_status": "unclear",
+    "asset_ownership_interpretation": "The SEC release summarizes allegations that Plutus Lending exercised discretion over Abra Earn assets to generate income and fund interest, but the settled case was resolved without admission or denial and the reviewed sources do not establish a complete contractual legal-title, segregation, or insolvency analysis for every customer and jurisdiction.",
+    "affected_product": "Abra Earn deposits, interest credits, deployed customer assets, and balances exiting through withdrawal or state asset-return procedures",
+    "source_evidence_id": "cya_src_b34_0008",
+    "notes": "Regulatory allegations, product operation, and state asset-return procedures must remain distinct. This record does not infer platform ownership, customer ownership, self-custody, segregation, guaranteed interest, universal withdrawal completion, or identical treatment between Abra Earn and Abra Trade accounts.",
+    "confidence": "medium"
+  }
+]
