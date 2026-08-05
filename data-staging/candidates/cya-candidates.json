@@ -29,8 +29,9 @@
   },
   {
     "candidate_id": "cya_candidate_000011",
-    "canonical_name": "BitMart",
+    "canonical_name": "BitMart Earn and Lending",
     "aliases": [
+      "BitMart",
       "BitMart Earn",
       "BitMart Staking",
       "BitMart Lending"
@@ -45,13 +46,42 @@
     ],
     "secondary_sources": [],
     "duplicate_check": {
-      "checked_at": "2026-07-26",
+      "checked_at": "2026-08-05",
       "matched_platform_ids": [],
-      "notes": "No BitMart canonical CYA platform was found in the current repository review. A full candidate audit remains required before any promotion."
+      "notes": "No BitMart, BitMart Earn, BitMart Staking, BitMart Lending, or matching bitmart.com platform record was found in canonical or consumed candidate history."
     },
-    "decision": "needs_research",
-    "notes": "BitMart announced an orderly wind-down on 26 July 2026. The notice schedules the end of spot, futures, and other trading on 26 August 2026 and formal trading-platform termination on 31 January 2027. It also states that BitMart Earn, Staking, Lending, Launchpad, and other products will be discontinued in phases, with dedicated redemption, settlement, and follow-up procedures to be communicated to affected users. Generic exchange Earn products are not prioritized in CYA, so BitMart is staged rather than promoted. Review whether the platform-wide shutdown and unresolved product-level customer outcomes justify a historically significant exchange-Earn exception, identify each affected yield or lending product, preserve product-specific custody and terms, and do not infer repayment completion before official settlement evidence is available.",
+    "decision": "add_now",
+    "notes": "Explicit scope review completed for batch 33. BitMart qualifies as a product-scoped exchange-Earn exception because the operator announced a platform-wide orderly wind-down that directly names Earn, Staking, and Lending products, while product-specific redemption and settlement procedures remain unresolved. Canonical promotion must model the yield/lending product family separately from spot and futures trading, keep status limited until the relevant product termination dates are effective, preserve product-specific custody and terms, and classify customer outcomes as unknown unless official settlement evidence establishes otherwise. The announcement schedules trading cessation for 26 August 2026 and formal platform termination for 31 January 2027; these future dates must not be represented as already completed on 5 August 2026.",
     "first_seen_at": "2026-07-26",
-    "last_reviewed_at": "2026-07-26"
+    "last_reviewed_at": "2026-08-05"
+  },
+  {
+    "candidate_id": "cya_candidate_000032",
+    "canonical_name": "Kriptomat KriptoEarn",
+    "aliases": [
+      "Kriptomat",
+      "KriptoEarn",
+      "Kriptomat Earn"
+    ],
+    "domain": "kriptomat.io",
+    "country_or_origin": "Estonia / European Union",
+    "platform_type_guess": "exchange_earn",
+    "status_guess": "operations_ended",
+    "major_event": "KriptoEarn was paused in November 2022 because of risk at external partners, and Kriptomat later announced an orderly company-wide wind-down with crypto services ending on 30 June 2026",
+    "primary_sources": [
+      "https://help.kriptomat.io/en/articles/6729269-11-11-2022-kriptoearn-important-announcement",
+      "https://kriptomat.io/kriptomat-to-wind-down-operations-by-30-june-2026-and-what-comes-next-for-our-customers/",
+      "https://kriptomat.io/wind-down/"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-05",
+      "matched_platform_ids": [],
+      "notes": "No Kriptomat, KriptoEarn, Kriptomat Earn, or matching kriptomat.io platform record was found in canonical or consumed candidate history."
+    },
+    "decision": "add_now",
+    "notes": "Promote only as a product-scoped historical exchange-Earn record. The November 2022 first-party notice says KriptoEarn was paused as a precaution because external partners could be affected by market vulnerabilities and states that Kriptomat itself had no liquidity issue; it does not prove whether the product later resumed. The May 2026 first-party wind-down notice says Kriptomat remained solvent, customer assets were safe and available for withdrawal, and all crypto services would end by 30 June 2026. Canonical review must separate the 2022 product pause from the 2026 company closure, identify any intervening product status, preserve the relevant partner, custody, and terms versions, and avoid treating withdrawal availability as proof that every user withdrew or every Earn obligation completed.",
+    "first_seen_at": "2026-08-05",
+    "last_reviewed_at": "2026-08-05"
   }
 ]
