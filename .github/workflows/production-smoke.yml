@@ -12,6 +12,7 @@ on:
 
 permissions:
   contents: read
+  checks: read
 
 concurrency:
   group: cya-production-surface
@@ -35,11 +36,53 @@ jobs:
       - name: Install dependencies
         run: npm install --no-audit --no-fund
 
+      - name: Wait for Cloudflare production deployment
+        if: ${{ github.event_name == 'workflow_run' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_SHA: ${{ github.event.workflow_run.head_sha }}
+          PRODUCTION_BRANCH_REF: agent%2Fseo-hardening
+        run: |
+          set -euo pipefail
+          ready=0
+          for attempt in $(seq 1 120); do
+            production_sha="$(gh api "/repos/${GITHUB_REPOSITORY}/branches/${PRODUCTION_BRANCH_REF}" --jq '.commit.sha')"
+            source_marker="$(gh api -H 'Accept: application/vnd.github.raw+json' "/repos/${GITHUB_REPOSITORY}/contents/public/.well-known/cya-source-commit.txt?ref=${production_sha}" | tr -d '\r\n')"
+
+            if [[ "${source_marker}" != "${SOURCE_SHA}" ]]; then
+              echo "Cloudflare branch source ${source_marker:-missing} does not yet match ${SOURCE_SHA} (${attempt}/120)."
+              sleep 15
+              continue
+            fi
+
+            check_json="$(gh api "/repos/${GITHUB_REPOSITORY}/commits/${production_sha}/check-runs?per_page=100" --jq '[.check_runs[] | select(.name == "Cloudflare Pages")] | sort_by(.started_at) | last // {}')"
+            check_status="$(jq -r '.status // "missing"' <<<"${check_json}")"
+            check_conclusion="$(jq -r '.conclusion // "pending"' <<<"${check_json}")"
+            echo "Cloudflare ${production_sha}: status=${check_status} conclusion=${check_conclusion} (${attempt}/120)."
+
+            if [[ "${check_status}" == "completed" && "${check_conclusion}" == "success" ]]; then
+              ready=1
+              break
+            fi
+
+            if [[ "${check_status}" == "completed" && "${check_conclusion}" != "success" ]]; then
+              echo "Cloudflare production deployment failed with conclusion ${check_conclusion}." >&2
+              exit 1
+            fi
+
+            sleep 15
+          done
+
+          if [[ "${ready}" != "1" ]]; then
+            echo "Cloudflare production deployment did not complete successfully before timeout." >&2
+            exit 1
+          fi
+
       - name: Check current production surface
         env:
           CYA_BASE_URL: https://cya.badjoke-lab.com
           CYA_EXPECTED_COMMIT: ''
           CYA_EXPECTED_SOURCE_COMMIT: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || '' }}
-          CYA_SMOKE_ATTEMPTS: 48
+          CYA_SMOKE_ATTEMPTS: ${{ github.event_name == 'workflow_run' && '24' || '12' }}
           CYA_SMOKE_DELAY_MS: 15000
         run: npm run check:production
