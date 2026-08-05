@@ -6,7 +6,7 @@ Last baseline review: 2026-08-05
 
 ## Purpose
 
-This file is the authoritative recovery point for CYA record growth, corpus audits, staging automation, and monitoring work.
+This file is the authoritative recovery point for CYA record growth, corpus audits, staging automation, production verification, and monitoring work.
 
 Permanent operating rules remain in `docs/record-growth-plan.md` and `docs/development-policy.md`.
 
@@ -16,35 +16,36 @@ Permanent operating rules remain in `docs/record-growth-plan.md` and `docs/devel
 - Candidates and generated drafts remain under `data-staging/` or workflow artifacts until reviewed.
 - Never write directly to `main`.
 - Use one candidate-only PR followed by one separate canonical PR.
-- Never infer repayment completion, recovery rate, custody, ownership, principal protection, or customer outcome from candidate metadata or marketing.
-- Product, legal-entity, jurisdiction, terms-version, custody, and customer-outcome boundaries must be reviewed before promotion.
-- Repository validation and direct production observation are separate claims.
+- Never infer repayment completion, recovery rate, custody, ownership, principal protection, fraud, or customer outcome from candidate metadata or marketing.
+- Product, legal-entity, jurisdiction, terms-version, custody, identity, and customer-outcome boundaries must be reviewed before promotion.
+- Repository validation, Cloudflare deployment, and direct production observation are separate claims.
 
 ## Current confirmed baseline
 
 ```text
 Repository: badjoke-lab/crypto-yield-archive
 Default branch: main
-Confirmed main commit: c02369f453cf8702debbfc0aa2fadcc1d586801b
-Latest merged PR: #76 Add batch 30 Matrixport and Coinchange records
+Confirmed main commit: a164603c8fb1cd8feef0ab6bb243550975b30351
+Latest merged PR: #80 Serialize CYA production deployment checks
+Latest canonical PR: #79 Add batch 31 YieldNodes and Bake records
 ```
 
 ### Canonical scale
 
 ```text
-Platforms:       48
-Events:          235
-Evidence:        353
-Outcomes:         48
-Products:         76
-Terms risk:       48
-Claims ongoing:   15
-Generated pages:  60
+Platforms:       50
+Events:          247
+Evidence:        372
+Outcomes:         50
+Products:         80
+Terms risk:       50
+Claims ongoing:   16
+Generated pages:  62
 ```
 
-Batch-30 validation confirmed that canonical arrays, generated HTML, public JSON, manifest counts, metadata, sitemap inputs, and the two new platform routes resolve to the same registry.
+Batch-31 validation confirmed that canonical arrays, generated HTML, public JSON, manifest counts, metadata, sitemap inputs, candidate history, and the two new platform routes resolve to the same registry.
 
-## Completed safety and automation gates
+## Completed safety, automation, and public-surface gates
 
 ### Phase 4 — full 40-platform corpus audit
 
@@ -97,6 +98,16 @@ Completed in PR #74.
 - dedicated Node.js 24 SEO workflow
 - Astro build before generated-output validation
 
+### Production verification serialization
+
+Completed in PR #80.
+
+- only the newest main production check remains active
+- superseded smoke runs are canceled instead of producing false persistent failures
+- Node.js 24 runtime
+- exact deployed-commit verification remains mandatory
+- Cloudflare observation window extended from 6 minutes to 12 minutes
+
 ## Phase 6 completed batches
 
 ```text
@@ -104,6 +115,7 @@ Batch 27: AQRU + YouHodler                         40 -> 42
 Batch 28: Wirex X-Accounts + SwissBorg Earn        42 -> 44
 Batch 29: CoinRabbit + Nebeus                      44 -> 46
 Batch 30: Matrixport + Coinchange                  46 -> 48
+Batch 31: YieldNodes + Bake                        48 -> 50
 ```
 
 ### Batch 30 — Matrixport and Coinchange
@@ -111,41 +123,54 @@ Batch 30: Matrixport + Coinchange                  46 -> 48
 Candidate-only gate: PR #75  
 Canonical promotion: PR #76
 
-#### Matrixport
+- Matrixport: `cya_plat_000047 / borrow_lend_platform / active`
+- Coinchange: `cya_plat_000048 / yield_aggregator / active`
+- both use `varies_by_product` terms and `not_applicable` outcomes
 
-- `cya_plat_000047`
-- `borrow_lend_platform / active`
-- approximate 2019 platform launch
-- July 2021 Lite interface with fixed-income access
-- May 2022 fixed-income API
-- June 2022 non-liquidation loan launch
-- current fixed-income, flexible-saving, staking, structured-yield, and collateralized-loan operation
+### Batch 31 — YieldNodes and Bake
+
+Candidate-only gate: PR #78  
+Canonical promotion: PR #79
+
+#### YieldNodes
+
+- `cya_plat_000049`
+- `centralized_yield / restructuring`
+- approximate 2019 launch
+- October 2022 deposits and withdrawals suspension
+- restructuring proposal and disputed causal account
+- July 2023 account-linked NFT distribution
+- December 2023 NFT claim cutoff
+- February 2025 unresolved YieldNodes Pro state
+- failure reason: `unknown`
+- terms: `unclear`
+- outcome: `claims_ongoing`
+
+#### Bake
+
+- `cya_plat_000050`
+- `centralized_yield / limited`
+- preserves Cake DeFi identity continuity from 2019
+- historical staking, lending, Savings, and liquidity-mining products
+- June 2023 Cake DeFi-to-Bake rebrand
+- March 2026 suspension announcement
+- 15 April 2026 crypto-service block, USD conversion, and withdrawal-only state
 - terms: `varies_by_product`
-- outcome: `not_applicable`
+- outcome: `unknown`
 
-#### Coinchange
-
-- `cya_plat_000048`
-- `yield_aggregator / active`
-- Q3 2021 proprietary-platform launch
-- August 2021 High Yield Account agreement
-- current individual and business Earn, API, vault, and multi-strategy infrastructure
-- historical and current terms remain separate
-- terms: `varies_by_product`
-- outcome: `not_applicable`
-
-#### Batch-30 validation
+#### Batch-31 validation
 
 ```text
 Validate data:        success
 Validate and build:   success
 CYA CI:               success
 SEO:                  success
+Candidate scan:       success
 Candidate draft:      success
 Corpus blockers:      0
 Candidate matches:    0 possible matches before promotion
-Matrixport route:     /platform/matrixport/
-Coinchange route:     /platform/coinchange/
+YieldNodes route:     /platform/yieldnodes/
+Bake route:           /platform/bake-formerly-cake-defi/
 ```
 
 ## Candidate queue and reserved identifiers
@@ -155,11 +180,11 @@ Active candidate queue: 2 needs_research candidates
 - cya_candidate_000010 Goldfinch
 - cya_candidate_000011 BitMart
 
-Next candidate IDs:      cya_candidate_000028 / cya_candidate_000029
-Next platform ID:        cya_plat_000049
-Next event ID:           cya_ev_000241
-Next canonical batch:    31
-Next evidence prefix:    cya_src_b31_
+Next candidate IDs:      cya_candidate_000030 / cya_candidate_000031
+Next platform ID:        cya_plat_000051
+Next event ID:           cya_ev_000253
+Next canonical batch:    32
+Next evidence prefix:    cya_src_b32_
 ```
 
 Goldfinch and BitMart remain staging-only:
@@ -167,7 +192,7 @@ Goldfinch and BitMart remain staging-only:
 - Goldfinch requires a DeFi/institutional-yield scope and product/entity-boundary decision.
 - BitMart requires an exchange-Earn exception decision plus product-specific redemption, custody, terms, and customer-outcome evidence.
 
-They must not be silently inserted into batch 31.
+They must not be silently inserted into batch 32.
 
 ## Current phase
 
@@ -181,7 +206,8 @@ Phase 6 / batch 27: 40 -> 42                        complete
 Phase 6 / batch 28: 42 -> 44                        complete
 Phase 6 / batch 29: 44 -> 46                        complete
 Phase 6 / batch 30: 46 -> 48                        complete
-Phase 6 / batch 31: 48 -> 50                        current
+Phase 6 / batch 31: 48 -> 50                        complete
+Phase 6 / batch 32: 50 -> 52                        current
 Phase 7: weekly existing-record monitoring          not started
 Phase 8: 60 -> 100 with 75/100 audits               not started
 ```
@@ -189,12 +215,12 @@ Phase 8: 60 -> 100 with 75/100 audits               not started
 ## Current execution point
 
 ```text
-Phase 6 / batch 31 candidate-only gate
+Phase 6 / batch 32 candidate-only gate
 
 1. select two high-value, in-scope CeFi yield/lending candidates
 2. confirm no canonical or consumed-ledger match
 3. investigate identity, product boundary, event history, terms, custody, and customer outcome
-4. assign candidate IDs 000028 and 000029 only after duplicate review
+4. assign candidate IDs 000030 and 000031 only after duplicate review
 5. stage candidates without canonical changes
 6. run candidate audit, scanner, draft generator, and all repository checks
 7. merge the candidate-only PR
@@ -210,7 +236,7 @@ Phase 6 / batch 31 candidate-only gate
 - prefer historically significant CeFi lending, interest-account, and centralized-yield records
 - active comparators are allowed when lending or yield is a core platform function
 - product-scoped records are allowed when the parent business must remain separate
-- preserve terms evolution, marketing-versus-contract differences, and customer-outcome uncertainty
+- preserve terms evolution, marketing-versus-contract differences, disputed causes, and customer-outcome uncertainty
 
 ### Required six-group model
 
@@ -238,9 +264,9 @@ all final CI checks green
 - several legacy platforms have thin evidence coverage
 - several original URLs are repurposed
 - Flint has no exact verified end date
-- seven historical terms records remain unknown
+- historical terms remain unknown or unclear for several records
 - legacy split consumed-ledger files remain
-- older GitHub workflows still emit Node.js 20 deprecation warnings
+- older non-production workflows may still emit Node.js 20 action-runtime warnings
 
 Do not hide these findings or convert them into guessed values.
 
@@ -262,21 +288,22 @@ After reaching 60 platforms, monitor official notices, court and administrator p
 ```text
 PR #43 public-surface implementation: merged
 PR #74 SEO hardening: merged and production-checked
-Batches 23-30 repository/public-output validation: complete
+PR #80 production-smoke serialization: merged
+Batches 23-31 repository/public-output validation: complete
 40-platform audit: complete
-Batch-30 production deployment and direct route observation: pending current main smoke completion
+Latest 50-platform production deployment and direct route observation: pending newest-main smoke completion
 ```
 
-Expected public values after the batch-30 deployment:
+Expected public values after the latest deployment:
 
 ```text
-platforms: 48
-events: 235
-evidence: 353
-outcomes: 48
-products: 76
-terms-risk: 48
-claims ongoing: 15
+platforms: 50
+events: 247
+evidence: 372
+outcomes: 50
+products: 80
+terms-risk: 50
+claims ongoing: 16
 ```
 
 ## Recovery procedure
@@ -316,6 +343,10 @@ npm test
 #74 SEO hardening
 #75 batch 30 candidate-only gate
 #76 batch 30 canonical promotion
+#77 batch 31 checkpoint
+#78 batch 31 candidate-only gate
+#79 batch 31 canonical promotion
+#80 production-smoke serialization
 ```
 
 ## Update rule
@@ -327,7 +358,7 @@ Do not leave a stale current-location marker.
 ## Immediate next action
 
 ```text
-Phase 6 / batch 31 candidate-only gate
+Phase 6 / batch 32 candidate-only gate
 
-Select, research, duplicate-check, and stage two high-value CeFi yield/lending candidates as cya_candidate_000028 and cya_candidate_000029. Do not alter canonical data in the candidate PR.
+Select, research, duplicate-check, and stage two high-value CeFi yield/lending candidates as cya_candidate_000030 and cya_candidate_000031. Do not alter canonical data in the candidate PR.
 ```
