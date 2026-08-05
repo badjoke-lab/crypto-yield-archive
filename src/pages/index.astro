@@ -1,56 +1,30 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { allPlatforms, allEvents, allEvidence, allOutcomes, getOutcome, getTermsRisk, label } from '../lib/data';
+import { allPlatforms, allEvents, allEvidence, allOutcomes, getOutcome, label } from '../lib/data';
 
-const statusOptions = Array.from(new Set(allPlatforms.map((platform) => platform.status))).sort();
-const outcomeOptions = Array.from(new Set(allPlatforms.map((platform) => getOutcome(platform.id)?.outcome_status || 'unknown'))).sort();
-const failureOptions = Array.from(new Set(allPlatforms.map((platform) => platform.failure_reason || 'unknown'))).sort();
-const termsOptions = Array.from(new Set(allPlatforms.map((platform) => getTermsRisk(platform.id)?.terms_status || 'unknown'))).sort();
 const claimsOngoing = allOutcomes.filter((outcome) => outcome.outcome_status === 'claims_ongoing').length;
-const latestVerified = allPlatforms
-  .map((platform) => platform.last_verified_at)
-  .filter(Boolean)
-  .sort()
-  .at(-1) || '—';
+const latestVerified = allPlatforms.map((platform) => platform.last_verified_at).filter(Boolean).sort().at(-1) || '—';
+const recentlyReviewed = [...allPlatforms]
+  .sort((a, b) => String(b.last_verified_at || '').localeCompare(String(a.last_verified_at || '')) || a.canonical_name.localeCompare(b.canonical_name))
+  .slice(0, 6);
+const ongoingClaims = allPlatforms
+  .filter((platform) => getOutcome(platform.id)?.outcome_status === 'claims_ongoing')
+  .sort((a, b) => String(b.last_verified_at || '').localeCompare(String(a.last_verified_at || '')) || a.canonical_name.localeCompare(b.canonical_name))
+  .slice(0, 6);
+const majorFailures = allPlatforms
+  .filter((platform) => platform.failure_reason && platform.failure_reason !== 'unknown')
+  .sort((a, b) => String(b.end_date || '').localeCompare(String(a.end_date || '')) || a.canonical_name.localeCompare(b.canonical_name))
+  .slice(0, 6);
+const outcomeStatuses = Array.from(new Set(allOutcomes.map((outcome) => outcome.outcome_status).filter(Boolean))).sort();
 
-const entryCards = [
-  { href: '/outcomes/', number: '01', title: 'Customer outcomes', text: 'Repayment, partial recovery, ongoing claims, unresolved balances, and active comparator records.' },
-  { href: '/failures/', number: '02', title: 'Failure reasons', text: 'Liquidity crises, insolvency, counterparty exposure, misconduct, regulation, and other historical drivers.' },
-  { href: '/terms-risk/', number: '03', title: 'Terms risk', text: 'How platform terms and legal processes affected asset-treatment uncertainty.' },
-  { href: '/timeline/', number: '04', title: 'Historical timeline', text: 'Launches, withdrawal halts, bankruptcy filings, restructurings, and repayment milestones.' },
-  { href: '/source-quality/', number: '05', title: 'Source quality', text: 'Evidence coverage, weaker records, unknowns, and source-quality limitations.' },
-  { href: '/stats/', number: '06', title: 'Registry statistics', text: 'Status, outcome, event, evidence, failure, and terms-risk distributions.' },
-];
-
-function years(platform) {
-  const start = platform.launch_date ? String(platform.launch_date).slice(0, 4) : '—';
-  const end = platform.end_date ? String(platform.end_date).slice(0, 4) : '';
-  return `${start}${end ? `–${end}` : '–'}`;
-}
-
-function platformMeta(platform) {
-  return [label(platform.type), platform.country_or_origin].filter(Boolean).join(' · ');
-}
-
-function searchText(platform) {
+function recordCard(platform) {
   const outcome = getOutcome(platform.id);
-  const terms = getTermsRisk(platform.id);
-  return [
-    platform.canonical_name,
-    platform.slug,
-    platform.type,
-    label(platform.type),
-    platform.status,
-    label(platform.status),
-    platform.failure_reason,
-    label(platform.failure_reason),
-    platform.official_domain_original,
-    outcome?.outcome_status,
-    label(outcome?.outcome_status),
-    terms?.terms_status,
-    label(terms?.terms_status),
-    ...(platform.aliases || []),
-  ].filter(Boolean).join(' ').toLowerCase();
+  return {
+    href: `/platform/${platform.slug}/`,
+    name: platform.canonical_name,
+    meta: [label(platform.status), label(outcome?.outcome_status || 'unknown'), platform.last_verified_at ? `Reviewed ${platform.last_verified_at}` : null].filter(Boolean).join(' · '),
+    summary: platform.summary,
+  };
 }
 ---
 <BaseLayout>
@@ -59,6 +33,10 @@ function searchText(platform) {
       <p class="kicker">Crypto lending history</p>
       <h1 id="home-title">The historical record of crypto lending, Earn products, and customer outcomes.</h1>
       <p class="lede">Crypto Yield Archive documents what happened after users deposited assets into centralized lending and yield platforms. It connects platform history, customer outcome, terms risk, failure chain, and evidence.</p>
+      <div class="home-primary-actions">
+        <a class="primary-action" href="/platforms/">Browse all platforms</a>
+        <a class="secondary-action" href="/failures/">Review failure cases</a>
+      </div>
     </div>
     <dl class="home-facts" aria-label="Registry summary">
       <div><dt>Platforms</dt><dd>{allPlatforms.length}</dd></div>
@@ -74,225 +52,33 @@ function searchText(platform) {
     <span>Not an APY ranking</span>
   </section>
 
-  <section class="directory-section" aria-labelledby="directory-title">
-    <div class="section-heading">
-      <div>
-        <p class="kicker">Archive directory</p>
-        <h2 id="directory-title">Explore the record</h2>
-      </div>
-      <p>Cross-platform views separate historical outcomes, causes, terms, events, and evidence quality.</p>
-    </div>
-    <div class="editorial-directory">
-      {entryCards.map((card) => (
-        <a href={card.href}>
-          <span class="directory-number">{card.number}</span>
-          <span class="directory-copy"><strong>{card.title}</strong><small>{card.text}</small></span>
-          <span aria-hidden="true">→</span>
-        </a>
-      ))}
-    </div>
+  <section class="home-record-section" aria-labelledby="recent-title">
+    <div class="section-heading"><div><p class="kicker">Recently reviewed</p><h2 id="recent-title">Latest platform reviews</h2></div><a href="/platforms/?sort=reviewed-desc">Browse all platforms →</a></div>
+    <div class="home-record-grid">{recentlyReviewed.map((platform) => { const card = recordCard(platform); return <a class="home-record-card" href={card.href}><strong>{card.name}</strong><span>{card.meta}</span><p>{card.summary}</p></a>; })}</div>
   </section>
 
-  <section class="registry-section" aria-labelledby="registry-title">
-    <div class="section-heading">
-      <div>
-        <p class="kicker">Platform registry</p>
-        <h2 id="registry-title">Browse all records</h2>
-      </div>
-      <p>Search and filter the complete platform-level registry. Current view state remains shareable by URL.</p>
-    </div>
-
-    <div class="registry-panel">
-      <div class="controls" aria-label="Registry filters">
-        <label class="control-field search-field">
-          <span>Search</span>
-          <input id="registrySearch" type="search" placeholder="Name, alias, domain, type, outcome…" autocomplete="off" />
-        </label>
-        <label class="control-field">
-          <span>Status</span>
-          <select id="statusFilter"><option value="">All status</option>{statusOptions.map((status) => <option value={status}>{label(status)}</option>)}</select>
-        </label>
-        <label class="control-field">
-          <span>Outcome</span>
-          <select id="outcomeFilter"><option value="">All outcomes</option>{outcomeOptions.map((outcome) => <option value={outcome}>{label(outcome)}</option>)}</select>
-        </label>
-        <label class="control-field">
-          <span>Failure</span>
-          <select id="failureFilter"><option value="">All failure reasons</option>{failureOptions.map((failure) => <option value={failure}>{label(failure)}</option>)}</select>
-        </label>
-        <label class="control-field">
-          <span>Terms</span>
-          <select id="termsFilter"><option value="">All terms status</option>{termsOptions.map((term) => <option value={term}>{label(term)}</option>)}</select>
-        </label>
-        <label class="control-field">
-          <span>Sort</span>
-          <select id="sortSelect">
-            <option value="name-asc">Name A–Z</option>
-            <option value="name-desc">Name Z–A</option>
-            <option value="launch-desc">Launch newest</option>
-            <option value="launch-asc">Launch oldest</option>
-            <option value="status-asc">Status A–Z</option>
-            <option value="outcome-asc">Outcome A–Z</option>
-            <option value="confidence-desc">Confidence high first</option>
-          </select>
-        </label>
-        <button id="copyCurrentView" class="ghost-button" type="button">Copy view link</button>
-        <button id="clearFilters" class="ghost-button" type="button">Clear</button>
-      </div>
-
-      <div class="registry-count" aria-live="polite">
-        Showing <strong id="visibleCount">{allPlatforms.length}</strong> of <strong>{allPlatforms.length}</strong> platforms
-        <span id="copyStatus" class="copy-status" aria-live="polite"></span>
-      </div>
-
-      <div class="table-wrap">
-        <table id="registryTable" class="registry-table">
-          <thead>
-            <tr>
-              <th>Platform</th>
-              <th>Status</th>
-              <th>Outcome</th>
-              <th>Failure</th>
-              <th>Terms</th>
-              <th>Years</th>
-              <th>Evidence / links</th>
-            </tr>
-          </thead>
-          <tbody id="registryBody">
-            {allPlatforms.map((platform) => {
-              const outcome = getOutcome(platform.id);
-              const terms = getTermsRisk(platform.id);
-              const evidenceCount = allEvidence.filter((item) => item.platform_id === platform.id).length;
-              return (
-                <tr
-                  data-row="platform"
-                  data-search={searchText(platform)}
-                  data-name={platform.canonical_name}
-                  data-status={platform.status}
-                  data-outcome={outcome?.outcome_status || 'unknown'}
-                  data-failure={platform.failure_reason || 'unknown'}
-                  data-terms={terms?.terms_status || 'unknown'}
-                  data-launch={platform.launch_date || ''}
-                  data-confidence={platform.confidence || 'low'}
-                >
-                  <td class="name-cell" data-label="Platform"><a href={`/platform/${platform.slug}/`}><strong>{platform.canonical_name}</strong></a><small>{platformMeta(platform)}</small></td>
-                  <td data-label="Status"><span class="chip">{label(platform.status)}</span></td>
-                  <td data-label="Outcome"><span class="chip">{label(outcome?.outcome_status || 'unknown')}</span></td>
-                  <td data-label="Failure"><span class="chip">{label(platform.failure_reason)}</span></td>
-                  <td data-label="Terms"><span class="chip">{label(terms?.terms_status || 'unknown')}</span></td>
-                  <td data-label="Years"><strong>{years(platform)}</strong></td>
-                  <td data-label="Evidence / links" class="links-cell">
-                    <strong>{evidenceCount} sources</strong>
-                    <small>{platform.official_domain_original || 'No domain recorded'}</small>
-                    {platform.archived_url && <a class="archive-link" href={platform.archived_url}>Archive</a>}
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-        <p id="emptyState" class="empty-state" hidden>No platforms match the current filters.</p>
-      </div>
-    </div>
+  <section class="home-record-section" aria-labelledby="claims-title">
+    <div class="section-heading"><div><p class="kicker">Customer outcomes</p><h2 id="claims-title">Ongoing customer claims</h2></div><a href="/platforms/?outcome=claims_ongoing">View all ongoing claims →</a></div>
+    {ongoingClaims.length ? <div class="home-record-grid">{ongoingClaims.map((platform) => { const card = recordCard(platform); return <a class="home-record-card" href={card.href}><strong>{card.name}</strong><span>{card.meta}</span><p>{card.summary}</p></a>; })}</div> : <p class="empty-state">No reviewed platform currently matches this outcome.</p>}
   </section>
 
-  <script is:inline>
-    const searchInput = document.querySelector('#registrySearch');
-    const statusFilter = document.querySelector('#statusFilter');
-    const outcomeFilter = document.querySelector('#outcomeFilter');
-    const failureFilter = document.querySelector('#failureFilter');
-    const termsFilter = document.querySelector('#termsFilter');
-    const sortSelect = document.querySelector('#sortSelect');
-    const copyButton = document.querySelector('#copyCurrentView');
-    const clearButton = document.querySelector('#clearFilters');
-    const visibleCount = document.querySelector('#visibleCount');
-    const emptyState = document.querySelector('#emptyState');
-    const copyStatus = document.querySelector('#copyStatus');
-    const tbody = document.querySelector('#registryBody');
-    const rows = Array.from(document.querySelectorAll('[data-row="platform"]'));
-    const confidenceRank = { high: 3, medium: 2, low: 1 };
+  <section class="home-record-section" aria-labelledby="failures-title">
+    <div class="section-heading"><div><p class="kicker">Major cases</p><h2 id="failures-title">Failure records</h2></div><a href="/failures/">Open failure analysis →</a></div>
+    <div class="home-record-grid">{majorFailures.map((platform) => { const card = recordCard(platform); return <a class="home-record-card" href={card.href}><strong>{card.name}</strong><span>{label(platform.failure_reason)} · {card.meta}</span><p>{card.summary}</p></a>; })}</div>
+  </section>
 
-    function compareRows(a, b, sort) {
-      if (sort === 'name-desc') return b.dataset.name.localeCompare(a.dataset.name);
-      if (sort === 'launch-desc') return String(b.dataset.launch).localeCompare(String(a.dataset.launch));
-      if (sort === 'launch-asc') return String(a.dataset.launch || '9999').localeCompare(String(b.dataset.launch || '9999'));
-      if (sort === 'status-asc') return a.dataset.status.localeCompare(b.dataset.status) || a.dataset.name.localeCompare(b.dataset.name);
-      if (sort === 'outcome-asc') return a.dataset.outcome.localeCompare(b.dataset.outcome) || a.dataset.name.localeCompare(b.dataset.name);
-      if (sort === 'confidence-desc') return (confidenceRank[b.dataset.confidence] || 0) - (confidenceRank[a.dataset.confidence] || 0) || a.dataset.name.localeCompare(b.dataset.name);
-      return a.dataset.name.localeCompare(b.dataset.name);
-    }
+  <section class="home-outcome-section" aria-labelledby="outcome-browse-title">
+    <div class="section-heading"><div><p class="kicker">Browse by outcome</p><h2 id="outcome-browse-title">Follow what customers ultimately received</h2></div><p>Outcome filters open the dedicated registry with the selected state preserved in the URL.</p></div>
+    <div class="outcome-link-grid">{outcomeStatuses.map((status) => <a href={`/platforms/?outcome=${encodeURIComponent(status)}`}><strong>{label(status)}</strong><span>Browse matching platform records →</span></a>)}</div>
+  </section>
 
-    function readControls() {
-      return { q: searchInput.value.trim(), status: statusFilter.value, outcome: outcomeFilter.value, failure: failureFilter.value, terms: termsFilter.value, sort: sortSelect.value };
-    }
+  <section class="methodology-summary" aria-labelledby="methodology-summary-title">
+    <div><p class="kicker">Methodology</p><h2 id="methodology-summary-title">A reviewed historical archive, not a live yield comparison.</h2><p>CYA separates platform identity, events, evidence, customer outcomes, products, and terms-risk interpretation. Unknowns and weaker evidence remain visible.</p></div>
+    <a class="secondary-action" href="/methodology/">Read the methodology</a>
+  </section>
 
-    function writeUrlState(controls) {
-      const params = new URLSearchParams();
-      if (controls.q) params.set('q', controls.q);
-      if (controls.status) params.set('status', controls.status);
-      if (controls.outcome) params.set('outcome', controls.outcome);
-      if (controls.failure) params.set('failure', controls.failure);
-      if (controls.terms) params.set('terms', controls.terms);
-      if (controls.sort && controls.sort !== 'name-asc') params.set('sort', controls.sort);
-      const nextUrl = `${window.location.pathname}${params.toString() ? `?${params.toString()}` : ''}`;
-      window.history.replaceState(null, '', nextUrl);
-    }
-
-    function restoreFromUrl() {
-      const params = new URLSearchParams(window.location.search);
-      searchInput.value = params.get('q') || '';
-      statusFilter.value = params.get('status') || '';
-      outcomeFilter.value = params.get('outcome') || '';
-      failureFilter.value = params.get('failure') || '';
-      termsFilter.value = params.get('terms') || '';
-      sortSelect.value = params.get('sort') || 'name-asc';
-    }
-
-    function applyFilters() {
-      const controls = readControls();
-      const query = controls.q.toLowerCase();
-      let shown = 0;
-      for (const row of [...rows].sort((a, b) => compareRows(a, b, controls.sort))) {
-        const isVisible = (!query || row.dataset.search.includes(query)) && (!controls.status || row.dataset.status === controls.status) && (!controls.outcome || row.dataset.outcome === controls.outcome) && (!controls.failure || row.dataset.failure === controls.failure) && (!controls.terms || row.dataset.terms === controls.terms);
-        row.hidden = !isVisible;
-        tbody.appendChild(row);
-        if (isVisible) shown += 1;
-      }
-      visibleCount.textContent = String(shown);
-      emptyState.hidden = shown !== 0;
-      writeUrlState(controls);
-    }
-
-    async function copyCurrentView() {
-      writeUrlState(readControls());
-      try {
-        await navigator.clipboard.writeText(window.location.href);
-        copyStatus.textContent = 'Copied view link.';
-      } catch {
-        copyStatus.textContent = 'Copy failed. Use the address bar URL.';
-      }
-      window.setTimeout(() => { copyStatus.textContent = ''; }, 2200);
-    }
-
-    searchInput.addEventListener('input', applyFilters);
-    statusFilter.addEventListener('change', applyFilters);
-    outcomeFilter.addEventListener('change', applyFilters);
-    failureFilter.addEventListener('change', applyFilters);
-    termsFilter.addEventListener('change', applyFilters);
-    sortSelect.addEventListener('change', applyFilters);
-    copyButton.addEventListener('click', copyCurrentView);
-    clearButton.addEventListener('click', () => {
-      searchInput.value = '';
-      statusFilter.value = '';
-      outcomeFilter.value = '';
-      failureFilter.value = '';
-      termsFilter.value = '';
-      sortSelect.value = 'name-asc';
-      applyFilters();
-      searchInput.focus();
-    });
-
-    restoreFromUrl();
-    applyFilters();
-  </script>
+  <section class="home-support-callout" aria-labelledby="home-support-title">
+    <div><p class="kicker">Independent maintenance</p><h2 id="home-support-title">Help maintain customer-outcome records</h2><p>Support source review, court-document checks, corrections, broken-link replacement, and long-term archive maintenance. Support does not influence classifications or evidence standards.</p></div>
+    <a class="support-action" href="/support/">Support CYA</a>
+  </section>
 </BaseLayout>
