@@ -53,5 +53,76 @@
     "notes": "BitMart announced an orderly wind-down on 26 July 2026. The notice schedules the end of spot, futures, and other trading on 26 August 2026 and formal trading-platform termination on 31 January 2027. It also states that BitMart Earn, Staking, Lending, Launchpad, and other products will be discontinued in phases, with dedicated redemption, settlement, and follow-up procedures to be communicated to affected users. Generic exchange Earn products are not prioritized in CYA, so BitMart is staged rather than promoted. Review whether the platform-wide shutdown and unresolved product-level customer outcomes justify a historically significant exchange-Earn exception, identify each affected yield or lending product, preserve product-specific custody and terms, and do not infer repayment completion before official settlement evidence is available.",
     "first_seen_at": "2026-07-26",
     "last_reviewed_at": "2026-07-26"
+  },
+  {
+    "candidate_id": "cya_candidate_000028",
+    "canonical_name": "YieldNodes",
+    "aliases": [
+      "Yield Nodes",
+      "YieldNodes Masternode Rental",
+      "YieldNodes Pro"
+    ],
+    "domain": "yieldnodes.com",
+    "country_or_origin": "Hong Kong / Malta / Global",
+    "platform_type_guess": "centralized_yield",
+    "status_guess": "limited",
+    "major_event": "Deposits and withdrawals were suspended in October 2022, followed by a restructuring proposal, account-linked NFT claims, and an unresolved transition toward a proposed YieldNodes Pro model",
+    "primary_sources": [
+      "https://yieldnodes.com/how-yieldnodes-masternode-rental-services-really-work-in-detail/",
+      "https://yieldnodes.com/nft/",
+      "https://yieldnodes.com/comprehensive-update-on-the-current-status-of-yieldnodes/",
+      "https://yieldnodes.com/imprint/"
+    ],
+    "secondary_sources": [
+      "https://yieldnodes.legal/",
+      "https://yieldnodes.legal/help"
+    ],
+    "duplicate_check": {
+      "checked_at": "2026-08-05",
+      "matched_platform_ids": [],
+      "notes": "Repository-wide checks found no canonical YieldNodes name, alias, yieldnodes.com domain, or consumed-candidate match. The deterministic scanner must confirm duplicate-clear status before drafting."
+    },
+    "decision": "add_now",
+    "notes": "YieldNodes is a high-value centralized-yield incident candidate because users deposited crypto into a managed masternode-rental model, deposits and withdrawals were suspended in October 2022, and customer balances entered a long-running restructuring and claim-conversion process. First-party statements attribute the suspension to a Binance account freeze, liquidity pressure, and the risk that continued inflows would fund withdrawals. Later materials describe account-linked NFTs and a proposed YieldNodes Pro transition, while an investor-run legal group describes frozen principal and recovery efforts. Canonical review must distinguish operator claims from independently verified facts, identify contracting entities and historical risk disclosures, model the original account balance separately from NFT or future-platform claims, and avoid inferring fraud, asset backing, recovery rate, repayment completion, or NFT repurchase value.",
+    "first_seen_at": "2026-08-05",
+    "last_reviewed_at": "2026-08-05"
+  },
+  {
+    "candidate_id": "cya_candidate_000029",
+    "canonical_name": "Bake",
+    "aliases": [
+      "Cake DeFi",
+      "CakeDeFi",
+      "Bake.io",
+      "Cake DeFi Lending",
+      "Bake Earn"
+    ],
+    "domain": "bake.io",
+    "country_or_origin": "Singapore / Lithuania / Poland / Global",
+    "platform_type_guess": "centralized_yield",
+    "status_guess": "limited",
+    "major_event": "Cake DeFi rebranded its retail platform to Bake in June 2023; on 15 April 2026 crypto-asset trading services were suspended, remaining crypto balances were converted to USD, and withdrawal-only custody arrangements began",
+    "primary_sources": [
+      "https://blog.bake.io/what-is-cake-defi/",
+      "https://blog.bake.io/cake-defi-is-now-bake/",
+      "https://blog.bake.io/important-update-suspension-of-crypto-asset-trading-services/",
+      "https://app.bake.io/",
+      "https://bake.io/services/savings/",
+      "https://bake.io/services/lending/",
+      "https://support.bake.io/en/articles/9743731-what-are-the-possible-risks-involved",
+      "https://assets.bake.io/docs/TNC.pdf"
+    ],
+    "secondary_sources": [
+      "https://www.londonstockexchange.com/news-article/GST/temporary-suspension-of-crypto-trading-services/16954088"
+    ],
+    "duplicate_check": {
+      "checked_at": "2026-08-05",
+      "matched_platform_ids": [],
+      "notes": "Repository-wide checks found no canonical Bake, Cake DeFi, bake.io, cakedefi.com, or consumed-candidate match. The deterministic scanner must confirm duplicate-clear status before drafting."
+    },
+    "decision": "add_now",
+    "notes": "Bake is an in-scope yield-platform record rather than a generic exchange-Earn exception: Cake DeFi originally centered on staking, lending, and liquidity-mining access, later added Savings and DeFi-powered Lending, and rebranded its retail operation to Bake. In April 2026 the operator suspended crypto-asset trading services for MiCA alignment, converted remaining crypto balances to USD, discontinued crypto deposits, and moved toward withdrawal-only custody through a trust or asset-management provider. Canonical review must determine the exact status and product end dates for Lending, Savings, staking, and legacy DeFiChain products; preserve the Cake DeFi-to-Bake identity chain and legal-entity changes; separate marketing claims such as principal protection from contractual terms; and avoid inferring full repayment, fee-free withdrawal, continuing yield operation, or uniform treatment of illiquid assets.",
+    "first_seen_at": "2026-08-05",
+    "last_reviewed_at": "2026-08-05"
   }
 ]
