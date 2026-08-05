@@ -6,6 +6,11 @@ import '../styles/registries.css';
 import '../styles/qa.css';
 import { PROJECT, PUBLIC_DATA_ROUTES, getBuildMetadata, getDerivedCounts, getRecordCounts, getRecordsLastReviewedAt } from '../lib/machine-readable';
 
+interface Props {
+  title?: string;
+  description?: string;
+}
+
 const counts = getRecordCounts();
 const derived = getDerivedCounts();
 const build = getBuildMetadata();
@@ -15,13 +20,15 @@ const {
   description = defaultDescription,
 } = Astro.props;
 
-const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? PROJECT.canonicalOrigin).toString();
+const currentPath = Astro.url.pathname;
+const siteOrigin = Astro.site ?? new URL(PROJECT.canonicalOrigin);
+const canonicalUrl = new URL(currentPath, siteOrigin).toString();
+const socialImageUrl = new URL('/og/cya-og.svg', siteOrigin).toString();
 const correctionUrl = '/corrections/';
 const repoUrl = 'https://github.com/badjoke-lab/crypto-yield-archive';
 const gaMeasurementId = 'G-LWCGTDBY6W';
 const gaTagUrl = `https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`;
-const isPlatformPage = Astro.url.pathname.startsWith('/platform/');
-const currentPath = Astro.url.pathname;
+const isPlatformPage = currentPath.startsWith('/platform/');
 const navItems = [
   ['/', 'Registry'],
   ['/outcomes/', 'Outcomes'],
@@ -41,9 +48,20 @@ const projectLinks = [
   ['https://bir.badjoke-lab.com/', 'BIR'],
 ];
 const isCurrent = (href) => href === '/' ? currentPath === '/' : currentPath.startsWith(href);
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${PROJECT.canonicalOrigin}/#website`,
+  name: PROJECT.siteName,
+  url: `${PROJECT.canonicalOrigin}/`,
+  description: defaultDescription,
+  inLanguage: 'en',
+  publisher: { '@type': 'Organization', name: 'BadJoke-Lab', url: 'https://badjoke-lab.com/' },
+};
 const datasetJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Dataset',
+  '@id': `${PROJECT.canonicalOrigin}/#dataset`,
   name: PROJECT.siteName,
   description: defaultDescription,
   url: `${PROJECT.canonicalOrigin}/`,
@@ -52,6 +70,8 @@ const datasetJsonLd = {
   dateModified: getRecordsLastReviewedAt(),
   temporalCoverage: '2016/..',
   version: build.commit,
+  license: 'https://creativecommons.org/licenses/by/4.0/',
+  creator: { '@type': 'Organization', name: 'BadJoke-Lab', url: 'https://badjoke-lab.com/' },
   measurementTechnique: 'Reviewed platform, event, evidence, outcome, product, and terms-risk records',
   variableMeasured: [
     `Platforms: ${counts.platforms}`,
@@ -66,6 +86,17 @@ const datasetJsonLd = {
     .filter(([, route]) => route.endsWith('.json'))
     .map(([name, route]) => ({ '@type': 'DataDownload', name, encodingFormat: 'application/json', contentUrl: `${PROJECT.canonicalOrigin}${route}` })),
 };
+const platformName = String(title).replace(/\s*\|\s*Crypto Yield Archive\s*$/, '');
+const breadcrumbJsonLd = isPlatformPage ? {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  '@id': `${canonicalUrl}#breadcrumb`,
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Registry', item: `${PROJECT.canonicalOrigin}/` },
+    { '@type': 'ListItem', position: 2, name: platformName, item: canonicalUrl },
+  ],
+} : null;
+const structuredData = [websiteJsonLd, ...(currentPath === '/' ? [datasetJsonLd] : []), ...(breadcrumbJsonLd ? [breadcrumbJsonLd] : [])];
 ---
 <!doctype html>
 <html lang="en">
@@ -82,15 +113,23 @@ const datasetJsonLd = {
     {Object.entries(PUBLIC_DATA_ROUTES).map(([name, route]) => (
       <link rel="alternate" type={route.endsWith('.json') ? 'application/json' : 'text/plain'} href={route} title={`CYA ${name.replace(/_/g, ' ')}`} />
     ))}
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={isPlatformPage ? 'article' : 'website'} />
     <meta property="og:site_name" content={PROJECT.siteName} />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content={socialImageUrl} />
+    <meta property="og:image:type" content="image/svg+xml" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Crypto Yield Archive" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <script type="application/ld+json" set:html={JSON.stringify(datasetJsonLd)} />
+    <meta name="twitter:image" content={socialImageUrl} />
+    <meta name="twitter:image:alt" content="Crypto Yield Archive" />
+    {structuredData.map((entry) => <script type="application/ld+json" set:html={JSON.stringify(entry)} />)}
     <script async src={gaTagUrl}></script>
     <script define:vars={{ gaMeasurementId }}>
       window.dataLayer = window.dataLayer || [];
