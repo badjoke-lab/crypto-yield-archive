@@ -4,6 +4,11 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '17 3 * * *'
+  workflow_run:
+    workflows:
+      - Sync Cloudflare Production Branch
+    types:
+      - completed
 
 permissions:
   contents: read
@@ -14,10 +19,13 @@ concurrency:
 
 jobs:
   production-smoke:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout synchronized revision
         uses: actions/checkout@v6
+        with:
+          ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || github.sha }}
 
       - name: Setup Node
         uses: actions/setup-node@v6
@@ -30,7 +38,7 @@ jobs:
       - name: Check current production surface
         env:
           CYA_BASE_URL: https://cya.badjoke-lab.com
-          CYA_EXPECTED_COMMIT: ''
-          CYA_SMOKE_ATTEMPTS: 4
+          CYA_EXPECTED_COMMIT: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || '' }}
+          CYA_SMOKE_ATTEMPTS: 48
           CYA_SMOKE_DELAY_MS: 15000
         run: npm run check:production
