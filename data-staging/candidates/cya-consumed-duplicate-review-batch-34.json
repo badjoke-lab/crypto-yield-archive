@@ -1,0 +1,35 @@
+[
+  {
+    "candidate_id": "cya_candidate_000033",
+    "canonical_name": "MyConstant",
+    "aliases": [
+      "CONST LLC",
+      "My Constant",
+      "Constant",
+      "ConstantP2P",
+      "MyConstant P2P Lending",
+      "MyConstant Crypto Interest Account"
+    ],
+    "domain": "myconstant.com",
+    "country_or_origin": "United States / Vietnam / Global",
+    "platform_type_guess": "borrow_lend_platform",
+    "status_guess": "operations_ended",
+    "major_event": "Duplicate review confirmed that the November 2022 suspension, liquidation, California action, SEC findings, and customer-recovery process are already represented in canonical MyConstant record cya_plat_000026",
+    "primary_sources": [
+      "https://dfpi.ca.gov/alert/dfpi-announces-investigation-into-crypto-lending-company-myconstant/",
+      "https://dfpi.ca.gov/press_release/dfpi-orders-myconstant-to-cease-offering-crypto-related-products/"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-05",
+      "matched_platform_ids": [
+        "cya_plat_000026"
+      ],
+      "notes": "Canonical validation identified the exact slug match `myconstant` in data/platforms-batch-17.json. The existing record already includes CONST LLC, Constant, ConstantP2P, the Loan Matching Service, crypto and fiat interest accounts, November 2022 suspension, liquidation, California and SEC findings, TerraUSD losses, and ongoing recovery uncertainty."
+    },
+    "decision": "already_recorded",
+    "notes": "Removed from the batch 34 addition queue. No second MyConstant platform is created. Future MyConstant evidence improvements must update cya_plat_000026 and its linked records rather than create a duplicate entity.",
+    "first_seen_at": "2026-08-05",
+    "last_reviewed_at": "2026-08-05"
+  }
+]
