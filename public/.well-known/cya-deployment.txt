@@ -5,12 +5,16 @@ https://cya.badjoke-lab.com/version.json
 https://cya.badjoke-lab.com/data/manifest.json
 
 Baseline requested by this deployment:
-platforms=50
-events=247
-evidence=372
-outcomes=50
-products=80
-terms-risk=50
+platforms=52
+events=254
+evidence=383
+outcomes=52
+products=83
+terms-risk=52
 claims-ongoing=16
+
+Batch 32 routes:
+/platform/bitlendingclub-loanbase/
+/platform/bitbond-lending-marketplace/
 
 This marker does not replace the canonical version or manifest endpoints.
