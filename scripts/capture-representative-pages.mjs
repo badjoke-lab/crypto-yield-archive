@@ -42,17 +42,29 @@ for (const [deviceName, device] of Object.entries(devices)) {
           return rect.width > 0 && rect.height > 0 && style.display !== 'none' && style.visibility !== 'hidden';
         };
         const supportPattern = /(support|donat(?:e|ion)|contribut|fund|back this|help keep|tip|wallet)/i;
-        const supportLinks = [...document.querySelectorAll('a,button,[aria-current="page"]')].filter(visible).map((element) => {
-          const rect = element.getBoundingClientRect();
-          const text = `${element.textContent ?? ''} ${element.getAttribute('aria-label') ?? ''}`.replace(/\s+/g, ' ').trim();
-          const href = element instanceof HTMLAnchorElement ? element.href : '';
-          return {
-            tag: element.tagName.toLowerCase(), text, href,
-            location: element.closest('header') ? 'header' : element.closest('footer') ? 'footer' : element.closest('main') ? 'main' : 'other',
-            top: Math.round(rect.top + scrollY),
-            in_initial_viewport: rect.bottom > 0 && rect.top < innerHeight
-          };
-        }).filter((item) => supportPattern.test(`${item.text} ${item.href}`));
+        const supportLinks = [...document.querySelectorAll('a,button,[aria-current="page"]')]
+          .filter(visible)
+          .map((element) => {
+            const rect = element.getBoundingClientRect();
+            const text = `${element.textContent ?? ''} ${element.getAttribute('aria-label') ?? ''}`.replace(/\s+/g, ' ').trim();
+            const href = element instanceof HTMLAnchorElement ? element.href : '';
+            return {
+              tag: element.tagName.toLowerCase(), text, href,
+              location: element.closest('header') ? 'header' : element.closest('footer') ? 'footer' : element.closest('main') ? 'main' : 'other',
+              top: Math.round(rect.top + scrollY),
+              in_initial_viewport: rect.bottom > 0 && rect.top < innerHeight
+            };
+          })
+          .filter((item) => {
+            if (supportPattern.test(item.text)) return true;
+            if (!item.href) return false;
+            try {
+              const url = new URL(item.href);
+              return url.pathname === '/support/' && !url.hash;
+            } catch {
+              return false;
+            }
+          });
         const root = document.documentElement;
         return {
           title: document.title,
@@ -66,7 +78,12 @@ for (const [deviceName, device] of Object.entries(devices)) {
           support_links_in_initial_viewport: supportLinks.filter((item) => item.in_initial_viewport).length,
           support_self_link_count: supportLinks.filter((item) => {
             if (item.tag !== 'a' || !item.href) return false;
-            try { return location.pathname === '/support/' && new URL(item.href).pathname === '/support/'; } catch { return false; }
+            try {
+              const url = new URL(item.href);
+              return location.pathname === '/support/' && url.pathname === '/support/' && !url.hash;
+            } catch {
+              return false;
+            }
           }).length,
           footer_group_count: document.querySelectorAll('.footer-group').length,
           home_record_card_count: document.querySelectorAll('.home-record-card').length,
