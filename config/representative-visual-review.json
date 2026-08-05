@@ -1,0 +1,19 @@
+{
+  "site": "Crypto Yield Archive",
+  "devices": {
+    "desktop": { "width": 1440, "height": 1000 },
+    "mobile": { "width": 390, "height": 844, "isMobile": true, "hasTouch": true }
+  },
+  "pages": [
+    { "id": "home", "route": "/" },
+    { "id": "failures", "route": "/failures/" },
+    { "id": "outcomes", "route": "/outcomes/" },
+    { "id": "terms-risk", "route": "/terms-risk/" },
+    { "id": "stats", "route": "/stats/" },
+    { "id": "platform-celsius", "route": "/platform/celsius/" },
+    { "id": "source-quality", "route": "/source-quality/" },
+    { "id": "methodology", "route": "/methodology/" },
+    { "id": "about", "route": "/about/" },
+    { "id": "corrections", "route": "/corrections/" }
+  ]
+}

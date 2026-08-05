@@ -12,11 +12,43 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Detect site-output changes
+        id: site_changes
+        if: github.event_name == 'pull_request'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin "${{ github.base_ref }}" --depth=1
+          if git diff --quiet "origin/${{ github.base_ref }}...HEAD" -- \
+            src \
+            public \
+            data \
+            astro.config.mjs \
+            package.json \
+            package-lock.json \
+            scripts/generate-build-metadata.mjs \
+            scripts/check-production.mjs \
+            scripts/check-production-once.mjs; then
+            echo "required=false" >> "$GITHUB_OUTPUT"
+            echo "No site-output changes detected; Cloudflare preview check is not applicable."
+          else
+            echo "required=true" >> "$GITHUB_OUTPUT"
+          fi
+
       - uses: actions/setup-node@v4
+        if: github.event_name == 'workflow_dispatch' || steps.site_changes.outputs.required == 'true'
         with:
           node-version: 20
-      - run: npm install --no-audit --no-fund
+
+      - name: Install dependencies
+        if: github.event_name == 'workflow_dispatch' || steps.site_changes.outputs.required == 'true'
+        run: npm install --no-audit --no-fund
+
       - name: Check Cloudflare branch preview
+        if: github.event_name == 'workflow_dispatch' || steps.site_changes.outputs.required == 'true'
         env:
           HEAD_REF: ${{ github.head_ref }}
           CYA_EXPECTED_COMMIT: ${{ github.event.pull_request.head.sha }}
@@ -25,10 +57,16 @@ jobs:
         shell: bash
         run: |
           set -o pipefail
-          alias=$(printf '%s' "$HEAD_REF" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g; s/^-+|-+$//g' | cut -c1-28)
+          alias=$(printf '%s' "$HEAD_REF" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g; s/^-+|-+$//g' | cut -c1-28 | sed -E 's/-+$//')
           export CYA_BASE_URL="https://${alias}.crypto-yield-archive.pages.dev"
           echo "Preview URL: ${CYA_BASE_URL}" | tee preview-surface.log
           npm run check:production 2>&1 | tee -a preview-surface.log
+
+      - name: Record non-applicable preview check
+        if: github.event_name == 'pull_request' && steps.site_changes.outputs.required == 'false'
+        run: |
+          echo "Preview check skipped: this pull request changes CI visual-review files only." | tee preview-surface.log
+
       - name: Upload preview diagnostic
         if: always()
         uses: actions/upload-artifact@v4
