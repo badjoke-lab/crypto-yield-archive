@@ -1,0 +1,93 @@
+[
+  {
+    "id": "cya_ev_000253",
+    "platform_id": "cya_plat_000051",
+    "event_type": "launched",
+    "event_date": "2014-05-01",
+    "title": "BitLendingClub launches its Bitcoin lending marketplace",
+    "description": "BitLendingClub began operating a centrally administered peer-to-peer marketplace matching Bitcoin lenders and borrowers in May 2014.",
+    "impact_level": "medium",
+    "event_status_effect": "active",
+    "confidence": "medium",
+    "source_count": 1,
+    "notes": "The reviewed reporting identifies May 2014 but not an exact launch day; 1 May is a sortable approximate date."
+  },
+  {
+    "id": "cya_ev_000254",
+    "platform_id": "cya_plat_000051",
+    "event_type": "rebranded",
+    "event_date": "2015-09-01",
+    "title": "BitLendingClub adopts the Loanbase name",
+    "description": "The marketplace changed its public name from BitLendingClub to Loanbase before later returning to the BitLendingClub brand.",
+    "impact_level": "medium",
+    "event_status_effect": "active",
+    "confidence": "medium",
+    "source_count": 2,
+    "notes": "September 2015 is supported by contemporaneous retrospective coverage; the exact day and later return date were not established."
+  },
+  {
+    "id": "cya_ev_000255",
+    "platform_id": "cya_plat_000051",
+    "event_type": "other",
+    "event_date": "2016-02-06",
+    "title": "Attackers compromise BitLendingClub customer accounts",
+    "description": "Attackers exploited the platform's web stack and gained access to customer accounts, causing confirmed Bitcoin losses among users without two-factor authentication.",
+    "impact_level": "high",
+    "event_status_effect": "limited",
+    "confidence": "high",
+    "source_count": 1,
+    "notes": "Reported loss estimates varied. The incident is not treated as the direct cause of the later regulatory shutdown."
+  },
+  {
+    "id": "cya_ev_000256",
+    "platform_id": "cya_plat_000051",
+    "event_type": "operations_ended",
+    "event_date": "2016-12-01",
+    "title": "BitLendingClub stops new activity and begins shutdown",
+    "description": "The operator stopped new registrations, loans, and investments and announced a staged closure while existing borrowers continued repayment and customers retained withdrawal access.",
+    "impact_level": "critical",
+    "event_status_effect": "operations_ended",
+    "confidence": "high",
+    "source_count": 2,
+    "notes": "The operator expected the wind-down to continue into 2017, but the exact final shutdown and dissolution dates were not verified."
+  },
+  {
+    "id": "cya_ev_000257",
+    "platform_id": "cya_plat_000052",
+    "event_type": "launched",
+    "event_date": "2013-01-01",
+    "title": "Bitbond begins operating a blockchain lending marketplace",
+    "description": "Bitbond was founded in Berlin in 2013 and began operating a regulated blockchain-based marketplace for small-business loans and global investors.",
+    "impact_level": "medium",
+    "event_status_effect": "active",
+    "confidence": "medium",
+    "source_count": 1,
+    "notes": "The first-party company history provides the year but not the exact launch day; 1 January is a sortable approximate date."
+  },
+  {
+    "id": "cya_ev_000258",
+    "platform_id": "cya_plat_000052",
+    "event_type": "yield_program_started",
+    "event_date": "2019-03-05",
+    "title": "Bitbond Finance launches the BB1 security-token offering",
+    "description": "Bitbond Finance introduced the BB1 token, with a stated plan to use a substantial portion of proceeds to finance SME loans originated through Bitbond's global lending platform.",
+    "impact_level": "high",
+    "event_status_effect": "active",
+    "confidence": "high",
+    "source_count": 1,
+    "notes": "BB1 token rights, issuer obligations, and marketplace lender or borrower claims are separate and are not treated as interchangeable."
+  },
+  {
+    "id": "cya_ev_000259",
+    "platform_id": "cya_plat_000052",
+    "event_type": "operations_ended",
+    "event_date": "2020-05-28",
+    "title": "Bitbond stops new loan origination and pivots to tokenization",
+    "description": "Bitbond said it had shifted its focus to tokenized securities, returned its asset-broker licence, stopped originating new loans, and would continue administering the existing SME loan portfolio.",
+    "impact_level": "high",
+    "event_status_effect": "operations_ended",
+    "confidence": "high",
+    "source_count": 1,
+    "notes": "The operating company continued as a tokenization provider; this event ends only the product-scoped historical lending-marketplace record."
+  }
+]
