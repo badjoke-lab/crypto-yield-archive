@@ -1,0 +1,93 @@
+[
+  {
+    "id": "cya_ev_000268",
+    "platform_id": "cya_plat_000055",
+    "event_type": "withdrawals_suspended",
+    "event_date": "2022-11-17",
+    "title": "MyConstant paused consumer deposits and withdrawals",
+    "description": "California DFPI reported that MyConstant posted messages stating that deteriorating market conditions and crypto collapses had led it to pause consumer deposits and withdrawals. This records the platform restriction without independently adopting the operator's explanation as a proven cause.",
+    "impact_level": "critical",
+    "event_status_effect": "withdrawals_suspended",
+    "status_after": "withdrawals_suspended",
+    "source_count": 1,
+    "confidence": "high"
+  },
+  {
+    "id": "cya_ev_000269",
+    "platform_id": "cya_plat_000055",
+    "event_type": "restructuring_started",
+    "event_date": "2022-11-25",
+    "title": "MyConstant announced an intended orderly liquidation",
+    "description": "DFPI reported that MyConstant told customers it intended to implement an orderly liquidation to maximize and expedite customer recoveries. The announcement is not treated as proof that liquidation distributions began or completed.",
+    "impact_level": "critical",
+    "event_status_effect": "restructuring",
+    "status_after": "restructuring",
+    "source_count": 1,
+    "confidence": "high"
+  },
+  {
+    "id": "cya_ev_000270",
+    "platform_id": "cya_plat_000055",
+    "event_type": "regulatory_action",
+    "event_date": "2022-12-21",
+    "title": "California DFPI ordered MyConstant products to cease",
+    "description": "California DFPI ordered CONST LLC to desist and refrain from violations and to stop offering its peer-to-peer lending and interest-bearing crypto and fiat products in California. The action followed the earlier platform suspension and liquidation announcement.",
+    "impact_level": "high",
+    "event_status_effect": "restructuring",
+    "status_after": "restructuring",
+    "source_count": 1,
+    "confidence": "high"
+  },
+  {
+    "id": "cya_ev_000271",
+    "platform_id": "cya_plat_000056",
+    "event_type": "deposits_suspended",
+    "event_date": "2023-06-15",
+    "title": "Abra stopped new U.S. allocations during the Earn wind-down",
+    "description": "The multistate settlement states that Abra ceased accepting virtual-asset allocations from U.S. Abra Trade customers as of 15 June 2023. The SEC separately states that Abra began winding down Abra Earn in June 2023 and instructed U.S. Earn customers to withdraw. The exact completion date of the retail Earn wind-down is not inferred.",
+    "impact_level": "critical",
+    "event_status_effect": "limited",
+    "status_after": "limited",
+    "source_count": 2,
+    "confidence": "high"
+  },
+  {
+    "id": "cya_ev_000272",
+    "platform_id": "cya_plat_000056",
+    "event_type": "regulatory_action",
+    "event_date": "2024-06-26",
+    "title": "State regulators announced an Abra asset-return settlement",
+    "description": "Twenty-five state financial regulators announced a settlement covering remaining virtual assets for U.S. Abra Trade customers in participating states, with up to $82.1 million described as payable once remaining assets were returned. The covered population is not treated as identical to every historical Abra Earn customer.",
+    "impact_level": "high",
+    "event_status_effect": "none",
+    "status_after": "operations_ended",
+    "source_count": 1,
+    "confidence": "high"
+  },
+  {
+    "id": "cya_ev_000273",
+    "platform_id": "cya_plat_000056",
+    "event_type": "regulatory_action",
+    "event_date": "2024-08-26",
+    "title": "SEC filed settled charges concerning Abra Earn",
+    "description": "The SEC filed settled charges against Plutus Lending LLC concerning unregistered offers and sales of Abra Earn and operation as an unregistered investment company. Abra consented without admitting or denying the allegations, with the penalty amount left for later court determination.",
+    "impact_level": "high",
+    "event_status_effect": "operations_ended",
+    "status_after": "operations_ended",
+    "source_count": 1,
+    "confidence": "high"
+  },
+  {
+    "id": "cya_ev_000274",
+    "platform_id": "cya_plat_000056",
+    "event_type": "regulatory_action",
+    "event_date": "2025-01-13",
+    "title": "Court entered final judgment against Plutus Lending",
+    "description": "The U.S. District Court for the District of Columbia entered final judgment ordering Plutus Lending LLC d/b/a Abra to pay a $1.65 million civil penalty and imposing a permanent injunction resolving the SEC case. This legal resolution is separate from customer withdrawal completion.",
+    "impact_level": "high",
+    "event_status_effect": "none",
+    "status_after": "operations_ended",
+    "source_count": 1,
+    "confidence": "high"
+  }
+]
