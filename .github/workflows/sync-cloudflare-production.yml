@@ -1,0 +1,40 @@
+name: Sync Cloudflare Production Branch
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'data/**'
+      - 'src/**'
+      - 'public/**'
+      - 'functions/**'
+      - 'scripts/**'
+      - 'astro.config.mjs'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'tsconfig.json'
+      - '.github/workflows/sync-cloudflare-production.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cya-cloudflare-production-sync
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Sync configured Cloudflare production branch
+        env:
+          CLOUDFLARE_PRODUCTION_BRANCH: agent/seo-hardening
+        run: |
+          git push --force origin "HEAD:${CLOUDFLARE_PRODUCTION_BRANCH}"
