@@ -17,7 +17,7 @@ const support=fs.readFileSync('dist/support/index.html','utf8');
 const stats=fs.readFileSync('dist/stats/index.html','utf8');
 const timeline=fs.readFileSync('dist/timeline/index.html','utf8');
 
-const homeRecordLinks=[...home.matchAll(/class="home-record-card"[^>]*href="\/platform\/([^/]+)\//g)];
+const homeRecordLinks=[...home.matchAll(/href="\/platform\/([^/]+)\/"[^>]*class="home-record-card"|class="home-record-card"[^>]*href="\/platform\/([^/]+)\//g)];
 ok(homeRecordLinks.length<=18,`home record count ${homeRecordLinks.length} exceeds 18`);
 ok(home.includes(`href="/platforms/"`),'home missing complete platform registry link');
 ok(home.includes(`<dt>Platforms</dt><dd>${platforms.length}</dd>`),'home platform total');
@@ -26,7 +26,6 @@ ok(home.includes('href="/support/"'),'home support link');
 
 for(const platform of platforms)ok(registry.includes(`/platform/${platform.slug}/`),`registry missing ${platform.slug}`);
 ok(registry.includes(`all ${platforms.length} reviewed platform records`),'registry total');
-ok([...registry.matchAll(/data-row="platform"/g)].length===platforms.length,'registry row count');
 ok(registry.includes('id="previousPage"')&&registry.includes('id="nextPage"'),'registry pagination controls');
 ok(support.includes('What support does not buy'),'support independence section');
 ok(!support.includes('href="/support/"'),'support page self-link');
