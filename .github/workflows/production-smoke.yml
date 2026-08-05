@@ -22,7 +22,7 @@ jobs:
     if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout synchronized revision
+      - name: Checkout synchronized source revision
         uses: actions/checkout@v6
         with:
           ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || github.sha }}
@@ -38,7 +38,8 @@ jobs:
       - name: Check current production surface
         env:
           CYA_BASE_URL: https://cya.badjoke-lab.com
-          CYA_EXPECTED_COMMIT: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || '' }}
+          CYA_EXPECTED_COMMIT: ''
+          CYA_EXPECTED_SOURCE_COMMIT: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || '' }}
           CYA_SMOKE_ATTEMPTS: 48
           CYA_SMOKE_DELAY_MS: 15000
         run: npm run check:production

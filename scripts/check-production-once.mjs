@@ -15,13 +15,18 @@ async function readText(base,route,type){
 }
 async function readJson(base,route){return JSON.parse((await readText(base,route,'application/json')).body)}
 
-export async function checkProduction(base,commit){
+export async function checkProduction(base,commit,sourceCommit){
   const host=new URL(base).hostname;
   const preview=host.endsWith('.crypto-yield-archive.pages.dev')&&host!=='crypto-yield-archive.pages.dev';
   const version=await readJson(base,'/version.json'),manifest=await readJson(base,'/data/manifest.json');
   ok(version.schema_version==='1.1.0','version schema');ok(version.canonical_origin==='https://cya.badjoke-lab.com','origin');ok(version.canonical_only===true,'canonical only');
   ok(JSON.stringify(version.data.record_counts)===JSON.stringify(expected),'version counts');ok(version.data.derived_counts.claims_ongoing===ongoing,'derived claims');
   if(commit)ok(version.build.commit===commit,`commit ${version.build.commit} != ${commit}`);
+  let deployedSourceCommit=null;
+  if(sourceCommit){
+    deployedSourceCommit=(await readText(base,'/.well-known/cya-source-commit.txt','text/plain')).body.trim();
+    ok(deployedSourceCommit===sourceCommit,`source commit ${deployedSourceCommit} != ${sourceCommit}`);
+  }
   ok(manifest.generated_at===version.data.generated_at,'manifest time');ok(JSON.stringify(manifest.record_counts)===JSON.stringify(expected),'manifest counts');
   const files=[['/data/platforms.json',p.length],['/data/events.json',e.length],['/data/evidence.json',v.length],['/data/customer-outcomes.json',o.length],['/data/outcomes.json',o.length],['/data/products.json',r.length],['/data/terms-risk.json',t.length]];
   for(const [route,count] of files){const data=await readJson(base,route);ok(data.canonical_only===true,`${route} canonical`);ok(data.generated_at===version.data.generated_at,`${route} time`);ok(data.record_count===count,`${route} count`)}
@@ -36,5 +41,5 @@ export async function checkProduction(base,commit){
   else ok(robots.includes('https://cya.badjoke-lab.com/sitemap.xml'),'production robots');
   const guides=[(await readText(base,'/llms.txt','text/plain')).body,(await readText(base,'/ai.txt','text/plain')).body];for(const guide of guides)ok(guide.includes(`Platforms: ${p.length}`),'guide count');
   for(const body of [home,stats,JSON.stringify(version),JSON.stringify(manifest),...guides])ok(!/\b20 platforms\b|Platforms:\s*20\b|"(?:platforms|primary_records)"\s*:\s*20\b/i.test(body),'stale 20 count');
-  return {ok:true,base_url:base,preview,build:version.build,record_counts:expected,derived_counts:{claims_ongoing:ongoing}};
+  return {ok:true,base_url:base,preview,build:version.build,deployed_source_commit:deployedSourceCommit,record_counts:expected,derived_counts:{claims_ongoing:ongoing}};
 }
