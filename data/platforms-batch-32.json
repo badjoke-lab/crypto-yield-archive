@@ -1,0 +1,56 @@
+[
+  {
+    "id": "cya_plat_000051",
+    "slug": "bitlendingclub-loanbase",
+    "canonical_name": "BitLendingClub",
+    "aliases": [
+      "Loanbase",
+      "LoanBase",
+      "Bit Lending Club"
+    ],
+    "type": "borrow_lend_platform",
+    "status": "operations_ended",
+    "failure_reason": "regulatory_action",
+    "launch_date": "2014-05-01",
+    "end_date": null,
+    "country_or_origin": "Bulgaria / Global",
+    "summary": "Centralized peer-to-peer Bitcoin lending marketplace launched in 2014, temporarily rebranded as Loanbase, and placed into a staged shutdown from December 2016 after the operator cited regulatory pressure.",
+    "what_happened": "BitLendingClub matched Bitcoin lenders and borrowers through a centrally operated marketplace. It adopted the Loanbase name in 2015 and later returned to BitLendingClub. In February 2016 attackers compromised user accounts after exploiting the platform's web stack; that security incident is recorded separately from the later closure. On 1 December 2016 the operator stopped new registrations, loans, and investments and announced a staged wind-down expected to continue while outstanding loans were repaid. The reviewed evidence does not establish the exact final closure date or uniform repayment of every lender and borrower obligation.",
+    "official_url_original": "https://bitlendingclub.com/",
+    "official_domain_original": "bitlendingclub.com",
+    "official_url_status": "dead_domain",
+    "archived_url": "https://web.archive.org/web/*/https://bitlendingclub.com/",
+    "confidence": "medium",
+    "last_verified_at": "2026-08-05",
+    "uncertainty_notes": "The exact May 2014 launch day, date of the return from Loanbase to BitLendingClub, final legal dissolution date, final platform shutdown date, outstanding-loan completion, customer withdrawal completion, and aggregate recovery outcome were not established by the reviewed sources.",
+    "notes": "The similarly named current Japanese BitLending service is unrelated and is not included in this identity. Status is operations-ended because new marketplace activity stopped and a closure process was announced; the null end date preserves uncertainty about final completion."
+  },
+  {
+    "id": "cya_plat_000052",
+    "slug": "bitbond-lending-marketplace",
+    "canonical_name": "Bitbond Lending Marketplace",
+    "aliases": [
+      "Bitbond",
+      "Bitbond P2P Lending",
+      "Bitbond Global Lending Platform",
+      "Bitbond STO",
+      "BB1"
+    ],
+    "type": "borrow_lend_platform",
+    "status": "operations_ended",
+    "failure_reason": "voluntary_shutdown",
+    "launch_date": "2013-01-01",
+    "end_date": "2020-05-28",
+    "country_or_origin": "Germany / Global",
+    "summary": "Product-scoped record for Bitbond's regulated blockchain-based SME lending marketplace, launched in 2013 and discontinued as the company pivoted toward institutional tokenization infrastructure by May 2020.",
+    "what_happened": "Bitbond began as a blockchain-based peer-to-peer lending marketplace serving small-business borrowers and global investors. In 2019 Bitbond Finance issued the BB1 security token, whose proceeds were intended in part to finance SME loans originated through the marketplace. In a May 2020 company update, Bitbond said it was concentrating on tokenized securities, had returned its asset-broker licence, and would refrain from further loan origination while continuing to administer the existing SME loan portfolio. This record covers the historical marketplace and related lending exposure only; Bitbond's current tokenization software business remains active and is not classified as a failed lending platform.",
+    "official_url_original": "https://www.bitbond.com/",
+    "official_domain_original": "bitbond.com",
+    "official_url_status": "repurposed",
+    "archived_url": "https://web.archive.org/web/*/https://www.bitbond.com/",
+    "confidence": "high",
+    "last_verified_at": "2026-08-05",
+    "uncertainty_notes": "The exact 2013 marketplace launch day and the completion status of every borrower loan, lender claim, and BB1 token obligation were not established. The 28 May 2020 end date represents the first-party announcement that new loan origination had ceased, not proof that every legacy position had settled on that date.",
+    "notes": "The current Bitbond company and website are dedicated to tokenization infrastructure. The historical lending marketplace, existing SME loan portfolio, and BB1 security-token rights must remain legally and economically distinct."
+  }
+]
