@@ -1,0 +1,192 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { allPlatforms, allEvidence, getOutcome, getTermsRisk, label } from '../../lib/data';
+
+const PAGE_SIZE = 25;
+const statusOptions = Array.from(new Set(allPlatforms.map((platform) => platform.status))).sort();
+const outcomeOptions = Array.from(new Set(allPlatforms.map((platform) => getOutcome(platform.id)?.outcome_status || 'unknown'))).sort();
+const failureOptions = Array.from(new Set(allPlatforms.map((platform) => platform.failure_reason || 'unknown'))).sort();
+const termsOptions = Array.from(new Set(allPlatforms.map((platform) => getTermsRisk(platform.id)?.terms_status || 'unknown'))).sort();
+const typeOptions = Array.from(new Set(allPlatforms.map((platform) => platform.type || 'unknown'))).sort();
+const jurisdictionOptions = Array.from(new Set(allPlatforms.map((platform) => platform.country_or_origin).filter(Boolean))).sort();
+
+function years(platform) {
+  const start = platform.launch_date ? String(platform.launch_date).slice(0, 4) : '—';
+  const end = platform.end_date ? String(platform.end_date).slice(0, 4) : '';
+  return `${start}${end ? `–${end}` : '–'}`;
+}
+
+function platformMeta(platform) {
+  return [label(platform.type), platform.country_or_origin].filter(Boolean).join(' · ');
+}
+
+function searchText(platform) {
+  const outcome = getOutcome(platform.id);
+  const terms = getTermsRisk(platform.id);
+  return [platform.canonical_name, platform.slug, platform.type, label(platform.type), platform.status, label(platform.status), platform.failure_reason, label(platform.failure_reason), platform.official_domain_original, platform.country_or_origin, outcome?.outcome_status, label(outcome?.outcome_status), terms?.terms_status, label(terms?.terms_status), ...(platform.aliases || [])].filter(Boolean).join(' ').toLowerCase();
+}
+---
+<BaseLayout title="Platform registry | Crypto Yield Archive" description="Search, filter, sort, and page through the complete reviewed Crypto Yield Archive platform registry.">
+  <article class="platform-registry-page">
+    <header class="editorial-head">
+      <p class="kicker">Complete registry</p>
+      <h1>Crypto lending and yield platforms</h1>
+      <p class="lede">Search and filter all {allPlatforms.length} reviewed platform records. URL parameters preserve filters, sort order, and page number.</p>
+    </header>
+
+    <section class="registry-section" aria-labelledby="platform-registry-title">
+      <div class="section-heading"><div><p class="kicker">Platform registry</p><h2 id="platform-registry-title">Browse all records</h2></div><p>Each page shows at most {PAGE_SIZE} records. Use filters to narrow the registry before changing pages.</p></div>
+      <div class="registry-panel">
+        <div class="controls platform-controls" aria-label="Registry filters">
+          <label class="control-field search-field"><span>Search</span><input id="registrySearch" type="search" placeholder="Name, alias, domain, type, outcome…" autocomplete="off" /></label>
+          <label class="control-field"><span>Status</span><select id="statusFilter"><option value="">All status</option>{statusOptions.map((status) => <option value={status}>{label(status)}</option>)}</select></label>
+          <label class="control-field"><span>Outcome</span><select id="outcomeFilter"><option value="">All outcomes</option>{outcomeOptions.map((outcome) => <option value={outcome}>{label(outcome)}</option>)}</select></label>
+          <label class="control-field"><span>Product type</span><select id="typeFilter"><option value="">All types</option>{typeOptions.map((type) => <option value={type}>{label(type)}</option>)}</select></label>
+          <label class="control-field"><span>Failure</span><select id="failureFilter"><option value="">All failure reasons</option>{failureOptions.map((failure) => <option value={failure}>{label(failure)}</option>)}</select></label>
+          <label class="control-field"><span>Terms</span><select id="termsFilter"><option value="">All terms status</option>{termsOptions.map((term) => <option value={term}>{label(term)}</option>)}</select></label>
+          <label class="control-field"><span>Jurisdiction</span><select id="jurisdictionFilter"><option value="">All jurisdictions</option>{jurisdictionOptions.map((jurisdiction) => <option value={jurisdiction}>{jurisdiction}</option>)}</select></label>
+          <label class="control-field"><span>Claims</span><select id="claimsFilter"><option value="">All customer outcomes</option><option value="ongoing">Ongoing claims only</option></select></label>
+          <label class="control-field"><span>Sort</span><select id="sortSelect"><option value="reviewed-desc">Recently reviewed</option><option value="name-asc">Name A–Z</option><option value="name-desc">Name Z–A</option><option value="failure-desc">Failure date newest</option><option value="evidence-desc">Evidence count high first</option></select></label>
+          <button id="copyCurrentView" class="ghost-button" type="button">Copy view link</button>
+          <button id="clearFilters" class="ghost-button" type="button">Clear</button>
+        </div>
+
+        <div class="registry-count" aria-live="polite"><span>Showing <strong id="rangeStart">1</strong>–<strong id="rangeEnd">{Math.min(PAGE_SIZE, allPlatforms.length)}</strong> of <strong id="visibleCount">{allPlatforms.length}</strong> matching platforms</span><span id="copyStatus" class="copy-status" aria-live="polite"></span></div>
+
+        <div class="table-wrap">
+          <table id="registryTable" class="registry-table">
+            <thead><tr><th>Platform</th><th>Status</th><th>Outcome</th><th>Failure</th><th>Terms</th><th>Years</th><th>Evidence / links</th></tr></thead>
+            <tbody id="registryBody">
+              {allPlatforms.map((platform, index) => {
+                const outcome = getOutcome(platform.id);
+                const terms = getTermsRisk(platform.id);
+                const evidenceCount = allEvidence.filter((item) => item.platform_id === platform.id).length;
+                return (
+                  <tr
+                    hidden={index >= PAGE_SIZE}
+                    data-row="platform"
+                    data-search={searchText(platform)}
+                    data-name={platform.canonical_name}
+                    data-status={platform.status}
+                    data-outcome={outcome?.outcome_status || 'unknown'}
+                    data-type={platform.type || 'unknown'}
+                    data-failure={platform.failure_reason || 'unknown'}
+                    data-terms={terms?.terms_status || 'unknown'}
+                    data-jurisdiction={platform.country_or_origin || ''}
+                    data-reviewed={platform.last_verified_at || ''}
+                    data-failure-date={platform.end_date || ''}
+                    data-evidence={String(evidenceCount)}
+                  >
+                    <td class="name-cell" data-label="Platform"><a href={`/platform/${platform.slug}/`}><strong>{platform.canonical_name}</strong></a><small>{platformMeta(platform)}</small></td>
+                    <td data-label="Status"><span class="chip">{label(platform.status)}</span></td>
+                    <td data-label="Outcome"><span class="chip">{label(outcome?.outcome_status || 'unknown')}</span></td>
+                    <td data-label="Failure"><span class="chip">{label(platform.failure_reason)}</span></td>
+                    <td data-label="Terms"><span class="chip">{label(terms?.terms_status || 'unknown')}</span></td>
+                    <td data-label="Years"><strong>{years(platform)}</strong></td>
+                    <td data-label="Evidence / links" class="links-cell"><strong>{evidenceCount} sources</strong><small>{platform.official_domain_original || 'No domain recorded'}</small>{platform.archived_url && <a class="archive-link" href={platform.archived_url}>Archive</a>}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+          <p id="emptyState" class="empty-state" hidden>No platforms match the current filters.</p>
+        </div>
+
+        <nav class="registry-pagination" aria-label="Platform registry pages"><button id="previousPage" type="button">Previous</button><span>Page <strong id="currentPage">1</strong> of <strong id="pageCount">{Math.max(1, Math.ceil(allPlatforms.length / PAGE_SIZE))}</strong></span><button id="nextPage" type="button">Next</button></nav>
+      </div>
+    </section>
+  </article>
+
+  <script define:vars={{ PAGE_SIZE }}>
+    const controls = {
+      q: document.querySelector('#registrySearch'),
+      status: document.querySelector('#statusFilter'),
+      outcome: document.querySelector('#outcomeFilter'),
+      type: document.querySelector('#typeFilter'),
+      failure: document.querySelector('#failureFilter'),
+      terms: document.querySelector('#termsFilter'),
+      jurisdiction: document.querySelector('#jurisdictionFilter'),
+      claims: document.querySelector('#claimsFilter'),
+      sort: document.querySelector('#sortSelect'),
+    };
+    const tbody = document.querySelector('#registryBody');
+    const allRows = Array.from(document.querySelectorAll('[data-row="platform"]'));
+    const visibleCount = document.querySelector('#visibleCount');
+    const rangeStart = document.querySelector('#rangeStart');
+    const rangeEnd = document.querySelector('#rangeEnd');
+    const currentPageLabel = document.querySelector('#currentPage');
+    const pageCountLabel = document.querySelector('#pageCount');
+    const previousPage = document.querySelector('#previousPage');
+    const nextPage = document.querySelector('#nextPage');
+    const emptyState = document.querySelector('#emptyState');
+    const copyStatus = document.querySelector('#copyStatus');
+    let currentPage = 1;
+
+    function values() {
+      return Object.fromEntries(Object.entries(controls).map(([key, element]) => [key, element?.value?.trim?.() || '']));
+    }
+
+    function compareRows(a, b, sort) {
+      if (sort === 'name-desc') return b.dataset.name.localeCompare(a.dataset.name);
+      if (sort === 'name-asc') return a.dataset.name.localeCompare(b.dataset.name);
+      if (sort === 'failure-desc') return String(b.dataset.failureDate).localeCompare(String(a.dataset.failureDate)) || a.dataset.name.localeCompare(b.dataset.name);
+      if (sort === 'evidence-desc') return Number(b.dataset.evidence) - Number(a.dataset.evidence) || a.dataset.name.localeCompare(b.dataset.name);
+      return String(b.dataset.reviewed).localeCompare(String(a.dataset.reviewed)) || a.dataset.name.localeCompare(b.dataset.name);
+    }
+
+    function matches(row, state) {
+      const query = state.q.toLowerCase();
+      return (!query || row.dataset.search.includes(query))
+        && (!state.status || row.dataset.status === state.status)
+        && (!state.outcome || row.dataset.outcome === state.outcome)
+        && (!state.type || row.dataset.type === state.type)
+        && (!state.failure || row.dataset.failure === state.failure)
+        && (!state.terms || row.dataset.terms === state.terms)
+        && (!state.jurisdiction || row.dataset.jurisdiction === state.jurisdiction)
+        && (!state.claims || row.dataset.outcome === 'claims_ongoing');
+    }
+
+    function writeUrl(state, page) {
+      const params = new URLSearchParams();
+      for (const [key, value] of Object.entries(state)) if (value && !(key === 'sort' && value === 'reviewed-desc')) params.set(key, value);
+      if (page > 1) params.set('page', String(page));
+      history.replaceState(null, '', `${location.pathname}${params.size ? `?${params}` : ''}`);
+    }
+
+    function render({ preservePage = false } = {}) {
+      const state = values();
+      const matched = allRows.filter((row) => matches(row, state)).sort((a, b) => compareRows(a, b, state.sort));
+      const pageCount = Math.max(1, Math.ceil(matched.length / PAGE_SIZE));
+      if (!preservePage) currentPage = 1;
+      currentPage = Math.min(Math.max(1, currentPage), pageCount);
+      const start = (currentPage - 1) * PAGE_SIZE;
+      const end = Math.min(start + PAGE_SIZE, matched.length);
+      const currentRows = new Set(matched.slice(start, end));
+      for (const row of matched) tbody.append(row);
+      for (const row of allRows) row.hidden = !currentRows.has(row);
+      visibleCount.textContent = String(matched.length);
+      rangeStart.textContent = matched.length ? String(start + 1) : '0';
+      rangeEnd.textContent = String(end);
+      currentPageLabel.textContent = String(currentPage);
+      pageCountLabel.textContent = String(pageCount);
+      previousPage.disabled = currentPage <= 1;
+      nextPage.disabled = currentPage >= pageCount;
+      emptyState.hidden = matched.length !== 0;
+      writeUrl(state, currentPage);
+    }
+
+    function restore() {
+      const params = new URLSearchParams(location.search);
+      for (const [key, element] of Object.entries(controls)) if (element) element.value = params.get(key) || (key === 'sort' ? 'reviewed-desc' : '');
+      currentPage = Number.parseInt(params.get('page') || '1', 10) || 1;
+      render({ preservePage: true });
+    }
+
+    Object.values(controls).forEach((element) => element?.addEventListener(element.tagName === 'INPUT' ? 'input' : 'change', () => render()));
+    previousPage.addEventListener('click', () => { currentPage -= 1; render({ preservePage: true }); document.querySelector('#platform-registry-title')?.scrollIntoView(); });
+    nextPage.addEventListener('click', () => { currentPage += 1; render({ preservePage: true }); document.querySelector('#platform-registry-title')?.scrollIntoView(); });
+    document.querySelector('#clearFilters')?.addEventListener('click', () => { for (const [key, element] of Object.entries(controls)) element.value = key === 'sort' ? 'reviewed-desc' : ''; render(); controls.q?.focus(); });
+    document.querySelector('#copyCurrentView')?.addEventListener('click', async () => { render({ preservePage: true }); try { await navigator.clipboard.writeText(location.href); copyStatus.textContent = 'Copied view link.'; } catch { copyStatus.textContent = 'Copy failed. Use the address bar URL.'; } setTimeout(() => { copyStatus.textContent = ''; }, 2000); });
+    restore();
+  </script>
+</BaseLayout>
