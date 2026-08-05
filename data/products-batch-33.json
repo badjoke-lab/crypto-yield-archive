@@ -1,0 +1,34 @@
+[
+  {
+    "platform_id": "cya_plat_000053",
+    "product_type": "exchange_earn",
+    "product_name": "BitMart Flexible and Fixed Savings",
+    "custody_model": "Subscribed assets were transferred from the user's Spot Wallet to a centrally administered Earn account",
+    "yield_source": "Interest generated through BitMart Savings arrangements, with the user agreement permitting BitMart Group Entities to use subscribed assets for operating purposes including loans to clients or affiliates",
+    "risk_notes": "Flexible and fixed products had different redemption constraints. Users faced platform, counterparty, deployment, liquidity, term, maturity, withdrawal, compliance-review, and wind-down risk; advertised APY and redemption descriptions did not guarantee profit or eliminate loss."
+  },
+  {
+    "platform_id": "cya_plat_000053",
+    "product_type": "staking_like_yield",
+    "product_name": "BitMart Staking",
+    "custody_model": "Assets moved from Spot Wallet to Earn Wallet and were administered by BitMart for on-chain staking or other supported earning activities",
+    "yield_source": "On-chain staking rewards, interest compensation, project incentives, marketing programs, or other product-specific earning activities",
+    "risk_notes": "Product pages combined PoS and non-PoS earning sources. Users faced lock-up, protocol, counterparty, platform, reward variability, redemption, and wind-down risks, and fixed products could restrict early redemption."
+  },
+  {
+    "platform_id": "cya_plat_000053",
+    "product_type": "borrow_lend_platform",
+    "product_name": "BitMart Crypto Loans",
+    "custody_model": "Collateral was frozen and controlled within BitMart accounts under centrally administered loan and liquidation terms",
+    "yield_source": "Borrower interest and, where enabled at loan initiation, Flexible Savings yield on pledged collateral",
+    "risk_notes": "Borrowers faced collateral valuation, liquidation, interest-rate, repayment, suspension, release, compliance, and wind-down risks. Optional Savings yield on collateral did not remove the underlying loan or platform risks."
+  },
+  {
+    "platform_id": "cya_plat_000054",
+    "product_type": "staking_like_yield",
+    "product_name": "Kriptomat KriptoEarn",
+    "custody_model": "Users retained stated ownership while authorizing Kriptomat to place supported assets into protocol staking through an Earn sub-account and partner or protocol infrastructure",
+    "yield_source": "Dynamic Proof-of-Stake protocol rewards, less product fees or commissions reflected in displayed net reward estimates",
+    "risk_notes": "Rewards were variable and protocol-dependent. Deposits and withdrawals could be delayed by protocol-specific periods, services could be suspended for legal or policy reasons, and partner, protocol, network, cybersecurity, fee, custody-interface, and wind-down risks remained."
+  }
+]

@@ -1,0 +1,55 @@
+[
+  {
+    "id": "cya_plat_000053",
+    "slug": "bitmart-earn-and-lending",
+    "canonical_name": "BitMart Earn and Lending",
+    "aliases": [
+      "BitMart Earn",
+      "BitMart Savings",
+      "BitMart Staking",
+      "BitMart Crypto Loans"
+    ],
+    "type": "exchange_earn",
+    "status": "limited",
+    "failure_reason": "voluntary_shutdown",
+    "launch_date": "2022-08-12",
+    "end_date": null,
+    "country_or_origin": "Marshall Islands / Global",
+    "summary": "Product-scoped record for BitMart's centralized Savings, Staking, and Crypto Loans services during the exchange's announced orderly wind-down.",
+    "what_happened": "BitMart operated flexible and fixed Savings products, staking products, and collateralized Crypto Loans within centrally administered Spot, Earn, and loan accounts. On 26 July 2026 the exchange announced an orderly wind-down, immediately began restricting registrations, deposits, new orders, and positions, and said Earn, Staking, Lending, and other products would be discontinued in phases under product-specific arrangements. As of 5 August 2026, trading cessation scheduled for 26 August 2026 and formal platform termination scheduled for 31 January 2027 were still future events. Product-specific redemption and settlement procedures had not been fully published or completed.",
+    "official_url_original": "https://www.bitmart.com/en-US/savings",
+    "official_domain_original": "bitmart.com",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://www.bitmart.com/en-US/savings",
+    "confidence": "high",
+    "last_verified_at": "2026-08-05",
+    "uncertainty_notes": "The reviewed announcement does not provide final discontinuation dates for each Earn, Staking, or Lending product, does not establish completion of every redemption or withdrawal, and does not resolve treatment of all fixed-term subscriptions, collateralized loans, frozen collateral, compliance reviews, or post-deadline balances.",
+    "notes": "This is a product-scoped CYA record, not a duplicate record for BitMart spot or futures trading. Limited is used because the wind-down is active but the announced trading and platform termination dates have not yet occurred."
+  },
+  {
+    "id": "cya_plat_000054",
+    "slug": "kriptomat-kriptoearn",
+    "canonical_name": "Kriptomat KriptoEarn",
+    "aliases": [
+      "KriptoEarn",
+      "Kriptomat Earn",
+      "Kriptomat Staking"
+    ],
+    "type": "exchange_earn",
+    "status": "operations_ended",
+    "failure_reason": "regulatory_action",
+    "launch_date": null,
+    "end_date": "2026-06-30",
+    "country_or_origin": "Estonia / European Union",
+    "summary": "Product-scoped record for Kriptomat's staking-based KriptoEarn service, paused during the 2022 market crisis and ultimately terminated during Kriptomat's MiCA-related 2026 wind-down.",
+    "what_happened": "KriptoEarn allowed Kriptomat users to place supported crypto assets into protocol staking through a simplified exchange interface while remaining the stated owners of the assets. On 11 November 2022 Kriptomat temporarily paused new KriptoEarn deposits because market vulnerabilities could affect external partners, while stating that Kriptomat itself had no liquidity issue and that principal plus accrued rewards through 10 November would be moved to regular wallets. Product materials published later show that KriptoEarn was again available, but the reviewed evidence does not establish the exact restart date. On 19 May 2026 Kriptomat announced an orderly company wind-down after withdrawing its MiCA authorisation application. The wind-down hub later marked termination of KriptoEarn positions and the 30 June 2026 cessation of regulated services as completed, while residual customer balances remained subject to read-only and manual withdrawal processes.",
+    "official_url_original": "https://kriptomat.io/kriptoearn-terms-of-use/",
+    "official_domain_original": "kriptomat.io",
+    "official_url_status": "repurposed",
+    "archived_url": "https://web.archive.org/web/*/https://kriptomat.io/kriptoearn-terms-of-use/",
+    "confidence": "high",
+    "last_verified_at": "2026-08-05",
+    "uncertainty_notes": "The exact initial KriptoEarn launch date and exact post-2022 restart date were not established. First-party statements support internal-wallet return of KriptoEarn positions, but they do not prove that every customer completed an external withdrawal, transfer to Kraken, manual claim, or account closure.",
+    "notes": "Regulatory action is used for the MiCA licensing transition that led to the voluntary orderly closure; it does not imply enforcement, insolvency, fraud, or misconduct."
+  }
+]

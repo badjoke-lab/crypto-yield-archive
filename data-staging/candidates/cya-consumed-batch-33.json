@@ -1,0 +1,72 @@
+[
+  {
+    "candidate_id": "cya_candidate_000011",
+    "canonical_name": "BitMart Earn and Lending",
+    "aliases": [
+      "BitMart",
+      "BitMart Earn",
+      "BitMart Savings",
+      "BitMart Staking",
+      "BitMart Lending",
+      "BitMart Crypto Loans"
+    ],
+    "domain": "bitmart.com",
+    "country_or_origin": "Marshall Islands / Global",
+    "platform_type_guess": "exchange_earn",
+    "status_guess": "limited",
+    "major_event": "Orderly platform wind-down with immediate restrictions and future trading and platform termination dates, while Earn, Staking, and Lending products enter product-specific discontinuation and settlement processes",
+    "primary_sources": [
+      "https://bitmart.zendesk.com/hc/en-us/articles/53544595916059-Important-Notice-Regarding-the-Orderly-Cessation-of-BitMart-Operations",
+      "https://www.bitmart.com/en-US/savings",
+      "https://www.bitmart.com/en-US/staking",
+      "https://www.bitmart.com/en-US/support/articles/21383985713435/21384004345627/115004890354",
+      "https://www.bitmart.com/en-US/support/articles/21383985713435/21384004345627/38509639043867"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-05",
+      "matched_platform_ids": [
+        "cya_plat_000053"
+      ],
+      "notes": "Promoted after explicit exchange-Earn scope review and product-specific review of Savings, Staking, Crypto Loans, custody, operating-use terms, future dates, withdrawals, and customer outcomes."
+    },
+    "decision": "already_recorded",
+    "notes": "Promoted to canonical record cya_plat_000053 in batch 33 with status limited. The 26 August 2026 trading deadline and 31 January 2027 termination date remain scheduled future events, not completed closures. Product-specific settlement completion remains unknown.",
+    "first_seen_at": "2026-07-26",
+    "last_reviewed_at": "2026-08-05"
+  },
+  {
+    "candidate_id": "cya_candidate_000032",
+    "canonical_name": "Kriptomat KriptoEarn",
+    "aliases": [
+      "Kriptomat",
+      "KriptoEarn",
+      "Kriptomat Earn",
+      "Kriptomat Staking"
+    ],
+    "domain": "kriptomat.io",
+    "country_or_origin": "Estonia / European Union",
+    "platform_type_guess": "exchange_earn",
+    "status_guess": "operations_ended",
+    "major_event": "Temporary 2022 partner-risk pause followed by later product availability, a 2026 MiCA-related company wind-down, termination of KriptoEarn positions, and cessation of regulated services",
+    "primary_sources": [
+      "https://help.kriptomat.io/en/articles/6729269-11-11-2022-kriptoearn-important-announcement",
+      "https://kriptomat.io/kriptoearn-terms-of-use/",
+      "https://kriptomat.io/kriptomat-to-wind-down-operations-by-30-june-2026-and-what-comes-next-for-our-customers/",
+      "https://kriptomat.io/wind-down/",
+      "https://kriptomat.io/terms-and-conditions/"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-05",
+      "matched_platform_ids": [
+        "cya_plat_000054"
+      ],
+      "notes": "Promoted after separating user ownership from delegated staking, the 2022 pause from the 2026 closure, internal-wallet return from external withdrawal, and regulated-service cessation from residual-account processing."
+    },
+    "decision": "already_recorded",
+    "notes": "Promoted to canonical record cya_plat_000054 in batch 33. KriptoEarn and regulated services ended by 30 June 2026, but universal external withdrawal, Kraken transfer, manual claim, and account-closure completion remain unknown.",
+    "first_seen_at": "2026-08-05",
+    "last_reviewed_at": "2026-08-05"
+  }
+]

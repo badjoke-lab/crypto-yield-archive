@@ -1,0 +1,20 @@
+[
+  {
+    "platform_id": "cya_plat_000053",
+    "terms_status": "varies_by_product",
+    "asset_ownership_interpretation": "BitMart's reviewed terms distinguish Savings subscriptions, staking assets, loan collateral, and ordinary Spot Wallet balances. Savings assets were transferred to an Earn account and could be used for BitMart operating purposes, staking assets could be deployed on-chain or through other earning activities, and loan collateral remained frozen under platform control. These structures do not support one uniform ownership or segregation conclusion across the product family.",
+    "affected_product": "BitMart Flexible and Fixed Savings, Staking, Crypto Loans, Earn accounts, and pledged collateral",
+    "source_evidence_id": "cya_src_b33_0004",
+    "notes": "Product-specific agreements, asset, term, maturity, collateral, redemption, liquidation, suspension, and wind-down rules must be read separately. Transfer back to a Spot Wallet and availability of withdrawals do not by themselves establish legal segregation, principal protection, or completed recovery.",
+    "confidence": "high"
+  },
+  {
+    "platform_id": "cya_plat_000054",
+    "terms_status": "customer_owned",
+    "asset_ownership_interpretation": "KriptoEarn version 4.0 states that users remain sole owners of qualified virtual currencies while authorizing Kriptomat to use them for staking on the user's behalf. The assets were represented in a Kriptomat Earn sub-account and remained subject to protocol-specific deposit and withdrawal periods, service suspension rights, dynamic rewards, partner or protocol execution, fees, and platform operational controls.",
+    "affected_product": "KriptoEarn staking deposits, rewards, Earn account balances, and assets returned to Kriptomat main wallets during wind-down",
+    "source_evidence_id": "cya_src_b33_0011",
+    "notes": "Customer-owned reflects the reviewed KriptoEarn terms and does not imply self-custody, instantaneous withdrawal, guaranteed rewards, absence of partner or protocol exposure, or completed external withdrawal during the 2026 wind-down.",
+    "confidence": "high"
+  }
+]
