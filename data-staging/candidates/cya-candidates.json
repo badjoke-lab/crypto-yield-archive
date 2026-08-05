@@ -28,35 +28,6 @@
     "last_reviewed_at": "2026-07-25"
   },
   {
-    "candidate_id": "cya_candidate_000033",
-    "canonical_name": "MyConstant",
-    "aliases": [
-      "CONST LLC",
-      "My Constant",
-      "MyConstant P2P Lending",
-      "MyConstant Crypto Interest Account"
-    ],
-    "domain": "myconstant.com",
-    "country_or_origin": "United States / California",
-    "platform_type_guess": "borrow_lend_platform",
-    "status_guess": "restructuring",
-    "major_event": "MyConstant paused deposits and withdrawals on 17 November 2022, announced an intended orderly liquidation on 25 November 2022, and was ordered by California DFPI to cease offering its peer-to-peer lending and interest-bearing products",
-    "primary_sources": [
-      "https://dfpi.ca.gov/alert/dfpi-announces-investigation-into-crypto-lending-company-myconstant/",
-      "https://dfpi.ca.gov/press_release/dfpi-orders-myconstant-to-cease-offering-crypto-related-products/"
-    ],
-    "secondary_sources": [],
-    "duplicate_check": {
-      "checked_at": "2026-08-05",
-      "matched_platform_ids": [],
-      "notes": "No MyConstant, CONST LLC, My Constant, or matching myconstant.com platform record was found in canonical data or consumed candidate history."
-    },
-    "decision": "add_now",
-    "notes": "MyConstant is a historically significant mixed CeFi lending and interest-account platform. California DFPI records state that the operator offered crypto-collateralized peer-to-peer loan brokering, a fixed-yield crypto account, and a fixed-return fiat account; paused consumer deposits and withdrawals on 17 November 2022; and told customers on 25 November 2022 that it intended to implement an orderly liquidation. The later DFPI order found California-law violations and required the relevant products to cease in California. Canonical promotion must separate the three product families, distinguish the operator's liquidation statement from the regulator's legal findings, identify any later liquidation or recovery process, and avoid inferring bankruptcy, fraud, repayment completion, recovery rate, collateral sufficiency, or a final end date without reviewed evidence.",
-    "first_seen_at": "2026-08-05",
-    "last_reviewed_at": "2026-08-05"
-  },
-  {
     "candidate_id": "cya_candidate_000034",
     "canonical_name": "Abra Earn",
     "aliases": [
@@ -82,6 +53,38 @@
     },
     "decision": "add_now",
     "notes": "Promote only as a product-scoped historical crypto interest-account record, separate from Abra's wallet, trading, institutional, and later corporate activity. The SEC states that Abra Earn launched in the United States around July 2020, reached approximately $600 million in assets, and began winding down in June 2023 with United States customers instructed to withdraw. The CSBS multistate settlement covers remaining virtual assets for United States Abra Trade customers in participating states and describes up to $82.1 million to be returned; that settlement population must not be silently treated as identical to every Abra Earn customer or as proof that all withdrawals completed. Canonical review must preserve the Plutus Lending legal-entity boundary, distinguish Earn balances from Trade accounts, separate the 2024 settlement from the SEC case and 2025 final judgment, and avoid inferring customer harm, universal repayment completion, or a recovery percentage beyond the reviewed orders.",
+    "first_seen_at": "2026-08-05",
+    "last_reviewed_at": "2026-08-05"
+  },
+  {
+    "candidate_id": "cya_candidate_000035",
+    "canonical_name": "Inlock",
+    "aliases": [
+      "INLOCK",
+      "Income Locker",
+      "Inlock Savings Account",
+      "Inlock Lending Platform"
+    ],
+    "domain": "inlock.io",
+    "country_or_origin": "Lithuania / Hungary / Global",
+    "platform_type_guess": "cefi_lending",
+    "status_guess": "operations_ended",
+    "major_event": "Inlock entered an emergency shutdown on 14 November 2022 after a liquidation failure and FTX-linked asset unavailability, implemented multiple recovery paths from 2023, and completed the wind-down of customer asset-related services on 30 June 2026",
+    "primary_sources": [
+      "https://inlock.io/2022/11/14/suspend/",
+      "https://inlock.io/2023/04/02/a-detailed-guide-for-the-exit-payout-and-the-scheduled-release-programs/",
+      "https://inlock.io/2024/08/28/inlock-has-successfully-released-100-of-the-value-of-the-assets-at-the-time-of-the-loss/",
+      "https://inlock.io/",
+      "https://app.inlock.io/"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-05",
+      "matched_platform_ids": [],
+      "notes": "No Inlock, INLOCK, Income Locker, inlock.io, Inlock Savings Account, or Inlock Lending Platform record was found in canonical data or consumed candidate history."
+    },
+    "decision": "add_now",
+    "notes": "Inlock is a high-value CeFi lending and savings record with a complete incident-to-wind-down arc. The operator states that deposits, withdrawals, new loans, and interest were suspended on 14 November 2022 after a liquidation failure made part of customer assets unavailable and describes FTX-linked recovery. Recovery options included migration, loss-discounted exit payout, and a Scheduled Release program beginning in April 2023. In August 2024 the operator reported that the Scheduled Release cohort had received more than 100% of the dollar value recorded at the time of loss, but customer outcomes varied by program, asset, timing, and claim treatment. The current first-party site states that all customer asset-related services ended on 30 June 2026, while historical access remains until 30 September 2026 and support until 31 December 2026. Canonical promotion must separate Savings and Loan products, operator claims from independently verified recovery, asset-value repayment from in-kind recovery, completed service wind-down from future platform decommissioning, and ILK token handling from customer asset claims.",
     "first_seen_at": "2026-08-05",
     "last_reviewed_at": "2026-08-05"
   }
