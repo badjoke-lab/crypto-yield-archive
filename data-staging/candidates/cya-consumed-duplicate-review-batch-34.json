@@ -31,5 +31,72 @@
     "notes": "Removed from the batch 34 addition queue. No second MyConstant platform is created. Future MyConstant evidence improvements must update cya_plat_000026 and its linked records rather than create a duplicate entity.",
     "first_seen_at": "2026-08-05",
     "last_reviewed_at": "2026-08-05"
+  },
+  {
+    "candidate_id": "cya_candidate_000034",
+    "canonical_name": "Abra Earn",
+    "aliases": [
+      "Abra",
+      "Abra App",
+      "Plutus Financial",
+      "Plutus Lending LLC",
+      "Abra Interest Account",
+      "Abra Boost"
+    ],
+    "domain": "abra.com",
+    "country_or_origin": "United States / Global",
+    "platform_type_guess": "crypto_interest_account",
+    "status_guess": "limited",
+    "major_event": "Duplicate review confirmed that the historical Abra Earn and Boost wind-down, state asset-return settlement, SEC action, and continuing non-retail Abra business are already represented in canonical Abra record cya_plat_000013",
+    "primary_sources": [
+      "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-26082",
+      "https://www.csbs.org/newsroom/state-financial-regulators-settle-abra-return-cryptocurrency-assets",
+      "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-26221"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-05",
+      "matched_platform_ids": [
+        "cya_plat_000013"
+      ],
+      "notes": "Canonical validation matched Abra Earn to data/platforms-batch-05.json. The existing Abra record already includes Plutus Financial, Plutus Lending, Abra Trade, Abra Earn, Abra Interest, Abra Boost, the June 2023 U.S. yield wind-down, state asset-return procedures, SEC registration charges, and the continuing private and institutional business."
+    },
+    "decision": "already_recorded",
+    "notes": "Removed from the batch 34 addition queue. No product-scoped duplicate Abra Earn platform is created. Future source or outcome improvements must update cya_plat_000013 and preserve the existing product and legal-entity boundaries.",
+    "first_seen_at": "2026-08-05",
+    "last_reviewed_at": "2026-08-05"
+  },
+  {
+    "candidate_id": "cya_candidate_000035",
+    "canonical_name": "Inlock",
+    "aliases": [
+      "INLOCK",
+      "Income Locker",
+      "Inlock Savings Account",
+      "INLOCK Crypto Savings Account"
+    ],
+    "domain": "inlock.io",
+    "country_or_origin": "Hungary / Lithuania / European Union",
+    "platform_type_guess": "crypto_interest_account",
+    "status_guess": "operations_ended",
+    "major_event": "Duplicate review confirmed that the November 2022 emergency shutdown, path-specific recovery programs, and June 2026 service wind-down are already represented in canonical Inlock record cya_plat_000039",
+    "primary_sources": [
+      "https://inlock.io/2022/11/14/suspend/",
+      "https://inlock.io/2023/04/02/a-detailed-guide-for-the-exit-payout-and-the-scheduled-release-programs/",
+      "https://inlock.io/2024/08/28/inlock-has-successfully-released-100-of-the-value-of-the-assets-at-the-time-of-the-loss/",
+      "https://inlock.io/"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-05",
+      "matched_platform_ids": [
+        "cya_plat_000039"
+      ],
+      "notes": "Canonical validation matched Inlock to data/platforms-batch-26.json. The existing record already includes INLOCK, Income Locker, the Savings Account, failed-liquidation shutdown, Vigiler migration, discounted exit payouts, Scheduled Release, non-uniform recovery, and the 30 June 2026 end of active customer-asset services."
+    },
+    "decision": "already_recorded",
+    "notes": "Removed from the batch 34 addition queue. No second Inlock platform is created. Future updates must attach to cya_plat_000039 and preserve the difference between fixed U.S.-dollar incident-value recovery, in-kind recovery, and path-specific customer outcomes.",
+    "first_seen_at": "2026-08-05",
+    "last_reviewed_at": "2026-08-05"
   }
 ]
