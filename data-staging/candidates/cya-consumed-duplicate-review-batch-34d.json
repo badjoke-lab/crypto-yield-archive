@@ -1,0 +1,147 @@
+[
+  {
+    "candidate_id": "cya_candidate_000040",
+    "canonical_name": "Linus Financial",
+    "aliases": [
+      "Linus",
+      "Linus Interest Accounts",
+      "Linus Crypto Lending Product"
+    ],
+    "domain": "linusfinancial.com",
+    "country_or_origin": "United States",
+    "platform_type_guess": "crypto_interest_account",
+    "status_guess": "operations_ended",
+    "major_event": "Discovery scan confirmed that Linus Financial and its interest-account product are already represented in canonical record cya_plat_000028",
+    "primary_sources": [
+      "https://www.sec.gov/newsroom/press-releases/2023-149"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-05",
+      "matched_platform_ids": [
+        "cya_plat_000028"
+      ],
+      "notes": "The hardened scanner returned exact_duplicate based on the canonical name and Linus and Linus Interest Accounts aliases."
+    },
+    "decision": "already_recorded",
+    "notes": "Removed from the batch 34 discovery pool. Future regulatory or customer-outcome evidence must update cya_plat_000028 rather than create a second entity.",
+    "first_seen_at": "2026-08-05",
+    "last_reviewed_at": "2026-08-05"
+  },
+  {
+    "candidate_id": "cya_candidate_000041",
+    "canonical_name": "Block Earner",
+    "aliases": [
+      "Block Earner Earner",
+      "Earner Product",
+      "Block Earner Access"
+    ],
+    "domain": "blockearner.com.au",
+    "country_or_origin": "Australia",
+    "platform_type_guess": "crypto_interest_account",
+    "status_guess": "limited",
+    "major_event": "Discovery scan confirmed that Block Earner and the Earner product are already represented in canonical record cya_plat_000037",
+    "primary_sources": [
+      "https://asic.gov.au/about-asic/news-centre/find-a-media-release/"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-05",
+      "matched_platform_ids": [
+        "cya_plat_000037"
+      ],
+      "notes": "The hardened scanner returned exact_duplicate from the blockearner.com.au domain, the Block Earner Earner alias, and exact token similarity."
+    },
+    "decision": "already_recorded",
+    "notes": "Removed from the batch 34 discovery pool. Future ASIC, appeal, product, or operational evidence must update cya_plat_000037.",
+    "first_seen_at": "2026-08-05",
+    "last_reviewed_at": "2026-08-05"
+  },
+  {
+    "candidate_id": "cya_candidate_000043",
+    "canonical_name": "Stablegains",
+    "aliases": [
+      "Stablegains USDC Yield",
+      "Stablegains Earn"
+    ],
+    "domain": "stablegains.com",
+    "country_or_origin": "United States",
+    "platform_type_guess": "centralized_yield",
+    "status_guess": "operations_ended",
+    "major_event": "Discovery scan confirmed that Stablegains and its UST and Anchor-linked yield product are already represented in canonical record cya_plat_000025",
+    "primary_sources": [
+      "https://www.stablegains.com/"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-05",
+      "matched_platform_ids": [
+        "cya_plat_000025"
+      ],
+      "notes": "The hardened scanner returned exact_duplicate from the stablegains.com domain and canonical name."
+    },
+    "decision": "already_recorded",
+    "notes": "Removed from the batch 34 discovery pool. Future litigation, terms, or customer-outcome evidence must update cya_plat_000025.",
+    "first_seen_at": "2026-08-05",
+    "last_reviewed_at": "2026-08-05"
+  },
+  {
+    "candidate_id": "cya_candidate_000044",
+    "canonical_name": "Pillow",
+    "aliases": [
+      "Pillow Fund",
+      "Pillow Earn",
+      "Pillow Crypto Savings"
+    ],
+    "domain": "pillow.fund",
+    "country_or_origin": "Singapore / India / Global",
+    "platform_type_guess": "centralized_yield",
+    "status_guess": "operations_ended",
+    "major_event": "Discovery scan confirmed that Pillow and its consumer crypto yield products are already represented in canonical record cya_plat_000035",
+    "primary_sources": [
+      "https://www.pillow.fund/"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-05",
+      "matched_platform_ids": [
+        "cya_plat_000035"
+      ],
+      "notes": "The hardened scanner returned exact_duplicate from the pillow.fund domain, canonical name, and Pillow Fund alias."
+    },
+    "decision": "already_recorded",
+    "notes": "Removed from the batch 34 discovery pool. Future shutdown, withdrawal, entity, or customer-outcome evidence must update cya_plat_000035.",
+    "first_seen_at": "2026-08-05",
+    "last_reviewed_at": "2026-08-05"
+  },
+  {
+    "candidate_id": "cya_candidate_000048",
+    "canonical_name": "Yield App",
+    "aliases": [
+      "YIELD App",
+      "Yield.app",
+      "Yield App Earn",
+      "YLD App"
+    ],
+    "domain": "yield.app",
+    "country_or_origin": "Seychelles / Global",
+    "platform_type_guess": "centralized_yield",
+    "status_guess": "limited",
+    "major_event": "Discovery scan confirmed that Yield App and its yield.app identity are already represented in canonical record cya_plat_000024",
+    "primary_sources": [
+      "https://www.yield.app/"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-05",
+      "matched_platform_ids": [
+        "cya_plat_000024"
+      ],
+      "notes": "The hardened scanner returned exact_duplicate from the yield.app domain, canonical name, and YIELD App and Yield.app aliases."
+    },
+    "decision": "already_recorded",
+    "notes": "Removed from the batch 34 discovery pool. Future transition, successor, product, or customer-balance evidence must update cya_plat_000024.",
+    "first_seen_at": "2026-08-05",
+    "last_reviewed_at": "2026-08-05"
+  }
+]
