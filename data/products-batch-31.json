@@ -1,0 +1,34 @@
+[
+  {
+    "platform_id": "cya_plat_000049",
+    "product_type": "centralized_yield",
+    "product_name": "YieldNodes masternode-rental account",
+    "custody_model": "platform-managed deposit and masternode/staking arrangement",
+    "yield_source": "Operator-managed conversion of customer crypto into DECENOMY-related coins, masternodes, staking, trading, and pooled liquidity flows as described by the operator",
+    "risk_notes": "Customers did not directly control the underlying masternodes or exchange accounts. Liquidity, asset valuation, legal ownership, exchange access, payout funding, counterparty concentration, and the relationship between customer balances and underlying assets remain material and partly disputed."
+  },
+  {
+    "platform_id": "cya_plat_000050",
+    "product_type": "centralized_yield",
+    "product_name": "Bake Savings",
+    "custody_model": "platform-managed centralized lending arrangement before the April 2026 suspension",
+    "yield_source": "Lending subscribed assets to users or counterparties on centralized-finance platforms, with interest distributed to subscribers",
+    "risk_notes": "Historical marketing used principal-protection language, but product terms, borrower exposure, custody, legal entity, limits, withdrawal conditions, and the April 2026 USD conversion must be reviewed separately. The product is not treated as currently operational after the crypto-service suspension."
+  },
+  {
+    "platform_id": "cya_plat_000050",
+    "product_type": "defi_yield_aggregator",
+    "product_name": "Bake Lending",
+    "custody_model": "platform-mediated share-based position in DeFi lending pools before the April 2026 suspension",
+    "yield_source": "Borrower interest from DeFi lending protocols, including Compound, reflected through pool-share exchange rates",
+    "risk_notes": "Smart-contract, liquidity, depegging, counterparty, protocol-governance, reward-rate, settlement-cycle, and jurisdiction risks applied. Current operation is not inferred from historical product pages."
+  },
+  {
+    "platform_id": "cya_plat_000050",
+    "product_type": "staking_like_yield",
+    "product_name": "Cake DeFi and Bake staking and liquidity-mining products",
+    "custody_model": "platform-managed staking and DeFi participation",
+    "yield_source": "Blockchain staking rewards and liquidity-mining incentives, historically including DeFiChain products",
+    "risk_notes": "Supported chains, lockups, unstaking periods, derivative assets, protocol exposure, fees, custody, redemption mechanisms, and legal entities changed over time. Legacy product balances were subject to the April 2026 service suspension and USD conversion rules where applicable."
+  }
+]

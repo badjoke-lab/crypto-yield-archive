@@ -1,0 +1,20 @@
+[
+  {
+    "platform_id": "cya_plat_000049",
+    "terms_status": "unclear",
+    "asset_ownership_interpretation": "YieldNodes describes customer BTC deposits being converted into operator-selected coins and deployed into masternodes or related activities, while customers held platform account balances and later could claim account-linked NFTs. The reviewed public materials do not establish a single verified legal-title model for the underlying assets, account claims, NFTs, or proposed YieldNodes Pro rights.",
+    "affected_product": "YieldNodes masternode-rental accounts and account-linked restructuring instruments",
+    "source_evidence_id": "cya_src_b31_0002",
+    "notes": "The operator's explanation of fund flows is not a substitute for the complete historical customer contract or risk disclosure. Platform balances, underlying coins, NFT certificates, repurchase language, and future-platform access must remain separate. No asset backing or enforceable recovery value is inferred.",
+    "confidence": "medium"
+  },
+  {
+    "platform_id": "cya_plat_000050",
+    "terms_status": "varies_by_product",
+    "asset_ownership_interpretation": "Historical Cake DeFi and Bake staking, lending, Savings, liquidity-mining, and membership products used different custody and strategy structures. From 15 April 2026, current terms define only account maintenance and withdrawal of crypto balances converted to USD through Bake and a custodial institution, while all crypto functionality is blocked.",
+    "affected_product": "Cake DeFi and Bake yield products, crypto balances, Bake Pro balances, and converted USD withdrawal accounts",
+    "source_evidence_id": "cya_src_b31_0016",
+    "notes": "Current withdrawal-only terms must not be retroactively applied to every historical product. Marketing statements such as principal protection are not treated as overriding contractual risk, custody, fee, forfeiture, conversion, or withdrawal provisions.",
+    "confidence": "high"
+  }
+]
