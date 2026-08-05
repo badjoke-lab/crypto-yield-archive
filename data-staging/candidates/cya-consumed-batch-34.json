@@ -1,0 +1,65 @@
+[
+  {
+    "candidate_id": "cya_candidate_000033",
+    "canonical_name": "MyConstant",
+    "aliases": [
+      "CONST LLC",
+      "My Constant",
+      "ConstantP2P",
+      "MyConstant P2P Lending",
+      "MyConstant Crypto Interest Account"
+    ],
+    "domain": "myconstant.com",
+    "country_or_origin": "United States / California",
+    "platform_type_guess": "borrow_lend_platform",
+    "status_guess": "restructuring",
+    "major_event": "November 2022 deposit and withdrawal pause, intended orderly liquidation, and California cease order covering peer-to-peer lending and interest-bearing products",
+    "primary_sources": [
+      "https://dfpi.ca.gov/alert/dfpi-announces-investigation-into-crypto-lending-company-myconstant/",
+      "https://dfpi.ca.gov/press_release/dfpi-orders-myconstant-to-cease-offering-crypto-related-products/"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-05",
+      "matched_platform_ids": [
+        "cya_plat_000055"
+      ],
+      "notes": "Promoted after separating the peer-to-peer marketplace, crypto interest account, fiat interest account, borrower collateral, operator liquidation statement, regulatory findings, and unresolved customer outcomes."
+    },
+    "decision": "already_recorded",
+    "notes": "Promoted to canonical record cya_plat_000055 in batch 34 with status restructuring. No bankruptcy filing, fraud finding beyond the reviewed regulatory record, exact final closure date, funded liquidation distribution, recovery percentage, or universal customer repayment is inferred.",
+    "first_seen_at": "2026-08-05",
+    "last_reviewed_at": "2026-08-05"
+  },
+  {
+    "candidate_id": "cya_candidate_000034",
+    "canonical_name": "Abra Earn",
+    "aliases": [
+      "Plutus Lending LLC",
+      "Abra Interest Account",
+      "Abra Earn Program"
+    ],
+    "domain": "abra.com",
+    "country_or_origin": "United States / Global",
+    "platform_type_guess": "crypto_interest_account",
+    "status_guess": "operations_ended",
+    "major_event": "June 2023 United States wind-down followed by a multistate asset-return settlement, settled SEC charges, and final judgment",
+    "primary_sources": [
+      "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-26082",
+      "https://www.csbs.org/newsroom/state-financial-regulators-settle-abra-return-cryptocurrency-assets",
+      "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-26221"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-05",
+      "matched_platform_ids": [
+        "cya_plat_000056"
+      ],
+      "notes": "Promoted after preserving the Plutus Lending entity boundary, separating historical Abra Earn from current Abra services, and separating Earn customers, Abra Trade settlement accounts, SEC allegations, final judgment, and customer-withdrawal completion."
+    },
+    "decision": "already_recorded",
+    "notes": "Promoted to canonical record cya_plat_000056 in batch 34 with status operations_ended. The record does not equate the multistate settlement population with every Abra Earn customer or infer universal withdrawal completion, a uniform recovery rate, admitted asset-use allegations, or continuity with current Abra products.",
+    "first_seen_at": "2026-08-05",
+    "last_reviewed_at": "2026-08-05"
+  }
+]
