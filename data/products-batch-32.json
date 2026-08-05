@@ -1,0 +1,26 @@
+[
+  {
+    "platform_id": "cya_plat_000051",
+    "product_type": "borrow_lend_platform",
+    "product_name": "BitLendingClub / Loanbase peer-to-peer Bitcoin lending marketplace",
+    "custody_model": "Centrally operated marketplace accounts and platform-mediated Bitcoin transfers between lenders and borrowers",
+    "yield_source": "Interest paid by individual borrowers on marketplace loans",
+    "risk_notes": "Lenders faced borrower default, platform custody, account security, identity-verification, jurisdiction, recovery, withdrawal, and platform-shutdown risk. The February 2016 account compromise and the later regulatory wind-down are separate risk events."
+  },
+  {
+    "platform_id": "cya_plat_000052",
+    "product_type": "borrow_lend_platform",
+    "product_name": "Bitbond peer-to-peer SME lending marketplace",
+    "custody_model": "Platform-mediated marketplace connecting global investors with small-business borrowers under regulated brokerage and servicing arrangements",
+    "yield_source": "Interest and principal payments from SME borrowers",
+    "risk_notes": "Marketplace lenders faced borrower credit, servicing, legal-entity, jurisdiction, platform-transition, liquidity, and recovery risk. Stopping new originations did not automatically settle the existing loan portfolio."
+  },
+  {
+    "platform_id": "cya_plat_000052",
+    "product_type": "structured_yield",
+    "product_name": "BB1 Bitbond security token",
+    "custody_model": "Security-token claim against Bitbond Finance with token-holder rights defined by offering documents rather than ordinary marketplace lender terms",
+    "yield_source": "Issuer coupon and redemption obligations supported in part by proceeds allocated to SME lending and other stated uses",
+    "risk_notes": "BB1 issuer, coupon, maturity, subordination, loan-portfolio exposure, token transfer, custody, and investor-right risks differ from direct lending-marketplace claims. No completed redemption or uniform investor outcome is inferred."
+  }
+]

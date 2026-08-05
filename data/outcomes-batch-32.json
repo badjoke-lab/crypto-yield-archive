@@ -1,0 +1,55 @@
+[
+  {
+    "platform_id": "cya_plat_000051",
+    "outcome_status": "unknown",
+    "estimated_recovery_rate": "Unknown. The shutdown notice allowed existing borrowers to continue repayment and customers to withdraw after final loan settlement, but the reviewed evidence does not establish completion for every loan, lender balance, or customer withdrawal.",
+    "repayment_started_at": "2016-12-01",
+    "repayment_completed_at": null,
+    "repayment_method": "Existing borrower repayments followed by customer withdrawal during the staged marketplace wind-down",
+    "claim_process_url": null,
+    "affected_products": [
+      "BitLendingClub peer-to-peer Bitcoin loans",
+      "Loanbase marketplace loans",
+      "Customer Bitcoin account balances"
+    ],
+    "claim_classes": [
+      "Marketplace lenders",
+      "Borrowers with outstanding loans",
+      "Customers holding withdrawable balances"
+    ],
+    "jurisdictions": [
+      "Global customer base"
+    ],
+    "as_of": "2026-08-05",
+    "last_verified_at": "2026-08-05",
+    "notes": "The operator's projected timetable and continued repayment access are not treated as proof of full repayment, final withdrawal, or legal dissolution. Security-incident losses and ordinary loan wind-down outcomes remain separate.",
+    "confidence": "medium"
+  },
+  {
+    "platform_id": "cya_plat_000052",
+    "outcome_status": "unknown",
+    "estimated_recovery_rate": "Not classified. Bitbond said it would continue managing the existing SME loan portfolio after stopping new originations, but the reviewed sources do not establish a uniform completion or recovery result for marketplace lenders, borrowers, or BB1 token holders.",
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": "Ongoing administration of legacy SME loans and separate BB1 issuer distributions under their respective terms",
+    "claim_process_url": "https://www.bitbond.com/resources/bitbonds-state-of-the-union-2020",
+    "affected_products": [
+      "Bitbond peer-to-peer SME loans",
+      "Legacy Bitbond lender positions",
+      "BB1 security-token exposure"
+    ],
+    "claim_classes": [
+      "Marketplace lenders",
+      "SME borrowers",
+      "BB1 token holders"
+    ],
+    "jurisdictions": [
+      "Germany",
+      "Global marketplace participants"
+    ],
+    "as_of": "2026-08-05",
+    "last_verified_at": "2026-08-05",
+    "notes": "The company's successful continuation as a tokenization provider does not establish settlement of every historical lending or BB1 obligation. Marketplace contracts and security-token rights remain separate.",
+    "confidence": "medium"
+  }
+]

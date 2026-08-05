@@ -1,0 +1,62 @@
+[
+  {
+    "id": "cya_src_b32_0008",
+    "platform_id": "cya_plat_000052",
+    "event_id": "cya_ev_000257",
+    "source_type": "official_statement",
+    "title": "Bitbond company history",
+    "url": "https://www.bitbond.com/company",
+    "publisher": "Bitbond",
+    "published_at": null,
+    "archived_url": null,
+    "accessed_at": "2026-08-05",
+    "reliability": "high",
+    "claim_scope": "launch_date",
+    "notes": "First-party company history states that Bitbond was founded in Berlin in 2013 and began as a regulated blockchain lending platform."
+  },
+  {
+    "id": "cya_src_b32_0009",
+    "platform_id": "cya_plat_000052",
+    "event_id": "cya_ev_000258",
+    "source_type": "official_statement",
+    "title": "What is the Bitbond STO?",
+    "url": "https://www.bitbond.com/resources/what-is-the-bitbondsto",
+    "publisher": "Bitbond",
+    "published_at": "2019-03-05",
+    "archived_url": null,
+    "accessed_at": "2026-08-05",
+    "reliability": "high",
+    "claim_scope": "terms_risk",
+    "notes": "First-party description of the BB1 security-token issuer, intended use of proceeds, coupon structure, and relationship to SME loans on the Bitbond lending platform. Token rights are not equated with ordinary marketplace lender claims."
+  },
+  {
+    "id": "cya_src_b32_0010",
+    "platform_id": "cya_plat_000052",
+    "event_id": "cya_ev_000259",
+    "source_type": "official_statement",
+    "title": "Bitbond's State of the Union 2020",
+    "url": "https://www.bitbond.com/resources/bitbonds-state-of-the-union-2020",
+    "publisher": "Bitbond",
+    "published_at": "2020-05-28",
+    "archived_url": null,
+    "accessed_at": "2026-08-05",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "First-party update says Bitbond shifted toward tokenized securities, returned its asset-broker licence, stopped further loan origination, and continued administering the existing SME loan portfolio."
+  },
+  {
+    "id": "cya_src_b32_0011",
+    "platform_id": "cya_plat_000052",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "Bitbond tokenization infrastructure",
+    "url": "https://www.bitbond.com/",
+    "publisher": "Bitbond",
+    "published_at": null,
+    "archived_url": "https://web.archive.org/web/*/https://www.bitbond.com/",
+    "accessed_at": "2026-08-05",
+    "reliability": "high",
+    "claim_scope": "status",
+    "notes": "Current official site presents Bitbond as institutional tokenization infrastructure. It supports classifying the historical lending marketplace as ended while keeping the current company outside that failure classification."
+  }
+]

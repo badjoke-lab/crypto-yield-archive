@@ -1,0 +1,20 @@
+[
+  {
+    "platform_id": "cya_plat_000051",
+    "terms_status": "unclear",
+    "asset_ownership_interpretation": "BitLendingClub operated centralized customer accounts and a peer-to-peer loan marketplace, but the reviewed public reporting and archive indexes do not establish one complete historical contract governing title to account balances, loan principal, borrower repayments, default recovery, or funds affected by the 2016 security incident.",
+    "affected_product": "BitLendingClub and Loanbase peer-to-peer Bitcoin loans and customer account balances",
+    "source_evidence_id": "cya_src_b32_0007",
+    "notes": "Marketplace matching language does not prove that every customer retained direct legal title or that the platform bore borrower-default and security losses. Historical terms, jurisdiction, servicing, fees, default handling, withdrawal conditions, and shutdown procedures require date-specific archive review.",
+    "confidence": "medium"
+  },
+  {
+    "platform_id": "cya_plat_000052",
+    "terms_status": "varies_by_product",
+    "asset_ownership_interpretation": "Bitbond's historical marketplace lender positions, SME borrower obligations, and BB1 security-token rights were governed by different contracts and legal entities. The current tokenization-infrastructure terms do not replace or retroactively define those historical rights.",
+    "affected_product": "Bitbond peer-to-peer SME loans, legacy lender accounts, and BB1 security-token claims",
+    "source_evidence_id": "cya_src_b32_0009",
+    "notes": "Marketplace lender claims and BB1 token-holder rights must remain separate. Offering descriptions, projected coupons, intended use of proceeds, loan servicing, issuer obligations, subordination, maturity, and redemption conditions should not be collapsed into a single ownership conclusion.",
+    "confidence": "high"
+  }
+]

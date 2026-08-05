@@ -1,0 +1,71 @@
+[
+  {
+    "candidate_id": "cya_candidate_000030",
+    "canonical_name": "BitLendingClub",
+    "aliases": [
+      "Loanbase",
+      "LoanBase",
+      "Bit Lending Club"
+    ],
+    "domain": "bitlendingclub.com",
+    "country_or_origin": "Bulgaria / Global",
+    "platform_type_guess": "peer_to_peer_lending",
+    "status_guess": "operations_ended",
+    "major_event": "Temporary Loanbase rebrand, February 2016 account compromise, and December 2016 staged shutdown under regulatory pressure",
+    "primary_sources": [
+      "https://web.archive.org/web/*/https://bitlendingclub.com/",
+      "https://web.archive.org/web/*/https://loanbase.com/"
+    ],
+    "secondary_sources": [
+      "https://www.coindesk.com/markets/2016/12/02/bitcoin-loan-platform-bitlendingclub-to-shut-down",
+      "https://debanked.com/2016/12/bitcoin-based-p2p-lending-platform-bitlendingclub-shuts-down/",
+      "https://www.securityweek.com/bitcoin-lending-platform-hacked-users-lose-funds/",
+      "https://news.bitcoin.com/regulatory-forces-bitlendingclub-close/"
+    ],
+    "duplicate_check": {
+      "checked_at": "2026-08-05",
+      "matched_platform_ids": [
+        "cya_plat_000051"
+      ],
+      "notes": "Promoted after manual identity, rebrand, incident, shutdown, terms, product, and customer-outcome review. The unrelated current Japanese BitLending service remains excluded."
+    },
+    "decision": "already_recorded",
+    "notes": "Promoted to canonical record cya_plat_000051 in batch 32 as an operations-ended peer-to-peer Bitcoin lending marketplace. Final shutdown date and uniform repayment completion remain unknown.",
+    "first_seen_at": "2026-08-05",
+    "last_reviewed_at": "2026-08-05"
+  },
+  {
+    "candidate_id": "cya_candidate_000031",
+    "canonical_name": "Bitbond Lending Marketplace",
+    "aliases": [
+      "Bitbond",
+      "Bitbond P2P Lending",
+      "Bitbond Global Lending Platform",
+      "Bitbond STO",
+      "BB1"
+    ],
+    "domain": "bitbond.com",
+    "country_or_origin": "Germany / Global",
+    "platform_type_guess": "peer_to_peer_lending",
+    "status_guess": "operations_ended",
+    "major_event": "Launch of the regulated SME lending marketplace, the 2019 BB1 security-token financing layer, and the 2020 stop to new loan origination during Bitbond's tokenization pivot",
+    "primary_sources": [
+      "https://www.bitbond.com/company",
+      "https://www.bitbond.com/resources/what-is-the-bitbondsto",
+      "https://www.bitbond.com/resources/bitbonds-state-of-the-union-2020",
+      "https://www.bitbond.com/"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-05",
+      "matched_platform_ids": [
+        "cya_plat_000052"
+      ],
+      "notes": "Promoted as a product-scoped historical lending marketplace after separating it from Bitbond's current tokenization-infrastructure business and from BB1 token-holder rights."
+    },
+    "decision": "already_recorded",
+    "notes": "Promoted to canonical record cya_plat_000052 in batch 32. The historical marketplace is operations-ended; the current Bitbond company remains active in a different business. Legacy marketplace and BB1 outcomes remain separately unresolved.",
+    "first_seen_at": "2026-08-05",
+    "last_reviewed_at": "2026-08-05"
+  }
+]
