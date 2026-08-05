@@ -24,54 +24,46 @@ Permanent operating rules remain in `docs/record-growth-plan.md` and `docs/devel
 ```text
 Repository: badjoke-lab/crypto-yield-archive
 Default branch: main
-Confirmed main commit: 2990752796fba735d291cf1ca5cbc7e46ba70285
-Latest merged PR: #92 Add batch 33 BitMart and Kriptomat Earn records
-Latest canonical PR: #92 Add batch 33 BitMart and Kriptomat Earn records
+Confirmed main commit: 4ef61d652338cef84cff89f90246c7b49303c468
+Latest merged PR: #104 Add batch 34 Finder Earn and AAX Savings records
+Latest canonical PR: #104 Add batch 34 Finder Earn and AAX Savings records
 ```
 
 ### Canonical scale
 
 ```text
-Platforms:       54
-Events:          262
-Evidence:        397
-Outcomes:         54
-Products:         87
-Terms risk:       54
+Platforms:       56
+Events:          269
+Evidence:        408
+Outcomes:         56
+Products:         91
+Terms risk:       56
 Claims ongoing:   16
-Generated pages:  66
+Generated pages:  68
 ```
 
-Batch-33 validation confirmed canonical references, candidate history, generated HTML, machine-readable JSON, manifest counts, sitemap inputs, and both new platform routes.
+Batch-34 validation confirmed canonical references, candidate history, generated HTML, machine-readable JSON, manifest counts, sitemap inputs, and both new platform routes.
 
 ## Completed safety and automation gates
 
 ### Corpus audit
 
-Completed in PR #59.
+Completed in PR #59 and retained in normal `npm test`.
 
 ```text
 Initial blockers: 37
-Final blockers:    0
+Current blockers:  0
 ```
 
-The corpus audit remains part of `npm test`.
+### Candidate scanner and draft generator
 
-### Candidate scanner
+- PR #60: deterministic canonical-name, alias, and domain matching.
+- PR #61: review-only six-group draft generation.
+- PR #99: hardened duplicate gate.
 
-Completed in PR #60.
+The hardened scanner now fails CI when an `add_now` candidate is classified as an exact, probable, or ambiguous canonical match. `needs_research` matches remain visible for manual review but cannot be promoted automatically.
 
-- deterministic canonical-name, alias, and domain matching
-- transparent scores and reasons
-- duplicate-clear `decision=add_now` required for draft eligibility
-- `needs_research` remains blocked
-- canonical SHA-256 write guard
-
-### Review-only six-group draft generator
-
-Completed in PR #61.
-
-Required groups:
+Required canonical groups remain:
 
 - platform
 - event
@@ -82,45 +74,28 @@ Required groups:
 
 Automatic canonical IDs, writes, promotion, and merge remain forbidden.
 
-### SEO hardening
+### SEO and visual validation
 
-Completed in PR #74.
-
-- Open Graph and Twitter metadata
-- WebSite, Dataset, and breadcrumb structured data
-- reviewed dates in sitemap
-- build-backed SEO validation
+- PR #74: Open Graph, Twitter, structured data, reviewed sitemap dates and build-backed SEO validation.
+- Representative desktop and mobile page screenshots now run for public-surface changes.
 
 ### Cloudflare deployment repair
 
-#### PR #85
+- PR #85 removed the unusable token-dependent Direct Upload path and synchronized `main` to the configured Cloudflare production branch `agent/seo-hardening`.
+- PR #89 chained production verification after synchronization.
+- PR #91 created a unique Cloudflare-visible production commit with a source-main marker.
+- PR #94 waits for the matching Cloudflare Pages check to succeed before running custom-domain verification.
 
-- removed unusable token-dependent Direct Upload
-- identified `agent/seo-hardening` as the configured Cloudflare production branch
-- added GitHub-native synchronization from `main`
-
-#### PR #89
-
-- chained `Production Surface Check` after successful production-branch synchronization
-- separated manual count checks from strict deployed-revision checks
-
-#### PR #91
-
-- fixed the remaining no-deploy condition caused by force-pushing an already-existing main SHA
-- each public synchronization now creates a unique commit on `agent/seo-hardening`
-- writes `public/.well-known/cya-source-commit.txt` with the source main SHA
-- production verification checks the source marker, canonical counts, routes, JSON outputs, sitemap, guides, and HTML surfaces
-
-Latest production sync:
+Current batch-34 production path:
 
 ```text
-Source main: 2990752796fba735d291cf1ca5cbc7e46ba70285
-Cloudflare branch commit: d934baa437fdfa71d87593bd6e2cab280f0df040
-Cloudflare Pages state at checkpoint update: build in progress
-Production Surface Check: run #146 in progress
+Source main:              4ef61d652338cef84cff89f90246c7b49303c468
+Cloudflare branch commit: 5e35fc217756ef9fed261099caa50bc1cbcebb53
+Cloudflare Pages state:   build in progress at checkpoint update
+Production verification: pending the post-build Production Surface Check
 ```
 
-Do not claim the 54-platform custom-domain deployment as verified until run #146 succeeds.
+Do not claim the 56-platform custom-domain deployment as verified until the Production Surface Check succeeds.
 
 ## Phase 6 completed batches
 
@@ -132,80 +107,98 @@ Batch 30: Matrixport + Coinchange                   46 -> 48
 Batch 31: YieldNodes + Bake                         48 -> 50
 Batch 32: BitLendingClub + Bitbond Lending          50 -> 52
 Batch 33: BitMart Earn + Kriptomat KriptoEarn       52 -> 54
+Batch 34: Finder Earn + AAX Savings                 54 -> 56
 ```
 
-## Batch 32 summary
+## Batch 34 execution summary
 
-Candidate-only gate: PR #86  
-Canonical promotion: PR #87
+Candidate-only gate: PR #103  
+Canonical promotion: PR #104
 
-### BitLendingClub
+### Discovery and duplicate correction
 
-- `cya_plat_000051`
-- temporary Loanbase rebrand preserved
-- February 2016 account compromise separated from regulatory-pressure shutdown
-- exact final shutdown and uniform repayment completion remain unknown
-- unrelated current Japanese BitLending service excluded
-
-### Bitbond Lending Marketplace
-
-- `cya_plat_000052`
-- historical lending marketplace separated from current tokenization business
-- marketplace claims separated from BB1 security-token rights
-- legacy customer outcomes remain unknown
-
-## Batch 33 summary
-
-Candidate-only gate: PR #90  
-Canonical promotion: PR #92
-
-### BitMart Earn and Lending
-
-- `cya_plat_000053`
-- product-scoped exchange-Earn record
-- Savings, Staking, and Crypto Loans modeled separately
-- current status remains `limited`
-- 26 August 2026 and 31 January 2027 remain scheduled future events
-- product-specific redemption and withdrawal completion remain unknown
-
-### Kriptomat KriptoEarn
-
-- `cya_plat_000054`
-- November 2022 precautionary pause separated from the 2026 MiCA-related wind-down
-- customer ownership language preserved without treating the service as self-custody
-- internal-wallet return separated from external withdrawal or Kraken transfer
-- regulated-service cessation confirmed for 30 June 2026
-- universal customer withdrawal and account-closure completion remain unknown
-
-### Batch-33 validation
+The hardened scanner prevented duplicate promotion and mapped the following proposals to existing canonical records:
 
 ```text
-Validate data:        success
-Validate and build:   success
-CYA CI:               success
-SEO:                  success
-Candidate scan:       success
-Candidate draft:      success
-Corpus blockers:      0
-BitMart route:        /platform/bitmart-earn-and-lending/
-Kriptomat route:      /platform/kriptomat-kriptoearn/
-Generated pages:      66
+MyConstant      -> cya_plat_000026
+Abra Earn       -> cya_plat_000013
+Inlock          -> cya_plat_000039
+Zipmex          -> cya_plat_000030
+CoinFLEX        -> cya_plat_000029
+Delio           -> cya_plat_000027
+Finblox         -> cya_plat_000034
+Linus Financial -> cya_plat_000028
+Block Earner    -> cya_plat_000037
+Stablegains     -> cya_plat_000025
+Pillow          -> cya_plat_000035
+Yield App       -> cya_plat_000024
+```
+
+Duplicate-review history is preserved in consumed ledgers. No duplicate canonical platform was added.
+
+### Finder Earn
+
+- `cya_plat_000055`
+- product-scoped record separate from Finder.com and later Wallet Ventures activity
+- late-February 2022 launch timing preserved without inventing an exact day
+- Australian-dollar deposits, TAUD conversion and Finder Wallet working-capital use recorded
+- product ceased from 24 November 2022
+- ASIC states all customer funds were returned in full
+- 2022 ASIC allegations, 2024 first-instance dismissal and 2025 appeal dismissal recorded separately
+- outcome: `full_repayment`
+- not classified as insolvency, fraud, an upheld licensing breach or a failed repayment case
+
+### AAX Savings
+
+- `cya_plat_000056`
+- Flexible Savings, Fixed Savings and AAB Plus separated from spot and derivatives accounts
+- AAX Asia and AAX Singapore separated from the wider multi-jurisdictional AAX Group
+- November 2022 withdrawal freeze recorded separately from reported police allegations
+- Singapore court findings support insolvency and winding-up for AAX Asia and AAX Singapore
+- effective winding-up date: 17 October 2023
+- missing customer records and uncertain contracting entities remain explicit
+- outcome: `unknown`
+- no universal fraud conviction, asset ownership, claim route, group-wide end date or recovery percentage inferred
+
+### Batch-34 validation
+
+```text
+Validate data:                 success
+Validate and build:            success
+CYA CI:                        success
+SEO:                           success
+Candidate scan:                success
+Candidate draft:               success
+Representative screenshots:    success
+Corpus blockers:               0
+Finder route:                  /platform/finder-earn/
+AAX route:                     /platform/aax-savings/
+Generated pages:               68
+Machine-readable counts:       56 / 269 / 408 / 56 / 91 / 56
 ```
 
 ## Candidate queue and reserved identifiers
 
 ```text
-Active candidate queue: 1 needs_research candidate
+Active candidate queue: 4 needs_research candidates
 - cya_candidate_000010 Goldfinch
+- cya_candidate_000045 Cabital
+- cya_candidate_000047 BlueBenx
+- cya_candidate_000049 Outlet Finance
 
-Next candidate IDs:      cya_candidate_000033 / cya_candidate_000034
-Next platform ID:        cya_plat_000055
-Next event ID:           cya_ev_000268
-Next canonical batch:    34
-Next evidence prefix:    cya_src_b34_
+Next candidate IDs:      cya_candidate_000050 / cya_candidate_000051
+Next platform ID:        cya_plat_000057
+Next event ID:           cya_ev_000275
+Next canonical batch:    35
+Next evidence prefix:    cya_src_b35_
 ```
 
-Goldfinch remains staging-only and must not be silently promoted. It still requires a DeFi/institutional-yield scope decision and a product/entity/customer-outcome boundary review.
+No active candidate is approved for silent promotion:
+
+- Goldfinch requires a DeFi/institutional-yield scope and entity-boundary decision.
+- Cabital requires acquisition-perimeter, migration and successor-obligation evidence.
+- BlueBenx requires reliable regulatory, court, legal-entity and customer-outcome evidence.
+- Outlet Finance requires counterparty, closure, custody and repayment evidence.
 
 ## Current phase
 
@@ -222,7 +215,8 @@ Phase 6 / batch 30: 46 -> 48                        complete
 Phase 6 / batch 31: 48 -> 50                        complete
 Phase 6 / batch 32: 50 -> 52                        complete
 Phase 6 / batch 33: 52 -> 54                        complete
-Phase 6 / batch 34: 54 -> 56                        current
+Phase 6 / batch 34: 54 -> 56                        complete
+Phase 6 / batch 35: 56 -> 58                        current
 Phase 7: weekly existing-record monitoring          not started
 Phase 8: 60 -> 100 with 75/100 audits               not started
 ```
@@ -230,30 +224,21 @@ Phase 8: 60 -> 100 with 75/100 audits               not started
 ## Current execution point
 
 ```text
-Phase 6 / batch 34 candidate-only gate
+First: verify the 56-platform production deployment.
+Then: Phase 6 / batch 35 candidate-only gate.
 
-1. select two high-value, in-scope CeFi yield/lending candidates
-2. confirm no canonical or consumed-ledger match
-3. investigate identity, product boundary, event history, terms, custody, and customer outcome
-4. assign candidate IDs 000033 and 000034 only after duplicate review
-5. stage candidates without canonical changes
-6. run candidate audit, scanner, draft generator, and all repository checks
-7. merge the candidate-only PR
-8. promote reviewed candidates in a separate canonical PR
+1. review the four active needs_research candidates
+2. discover additional candidates when none are promotion-ready
+3. run hardened canonical and consumed-ledger matching before add_now
+4. investigate identity, product boundary, event history, terms, custody and customer outcome
+5. use candidate IDs 000050 and 000051 for newly discovered records only
+6. stage candidates without canonical changes
+7. run candidate audit, hardened scanner, draft generator and all repository checks
+8. merge the candidate-only PR
+9. promote reviewed candidates in a separate canonical PR
 ```
 
-## Phase 6 batch policy
-
-- normally add two canonical platforms per batch
-- do not combine unresolved `needs_research` candidates with ready candidates
-- prefer historically significant CeFi lending, interest-account, and centralized-yield records
-- active comparators are allowed when lending or yield is a core function
-- product-scoped records are allowed when the parent business must remain separate
-- preserve terms evolution, future dates, marketing-versus-contract differences, disputed causes, and customer-outcome uncertainty
-
-Every promoted platform requires reviewed platform, event, evidence, outcome, product, and terms-risk records.
-
-### Phase 6 completion gate
+## Phase 6 completion gate
 
 ```text
 60 canonical platforms
@@ -270,30 +255,30 @@ verified production deployment
 - several original URLs are repurposed
 - Flint and BitLendingClub have no exact verified end date
 - historical terms remain unknown or unclear for several records
-- legacy split consumed-ledger files remain
-- older non-production workflows may emit Node.js 20 runtime warnings
-- Cloudflare PR previews are not consistently provisioned and may return 404 even when repository checks pass
+- split consumed-ledger files remain
+- older workflows may emit Node.js 20 action-runtime warnings
+- Cloudflare PR previews are not consistently provisioned and may remain pending or return 404 even when local build and visual checks pass
 
 Do not hide these findings or replace them with guessed values.
 
 ## Production verification state
 
 ```text
-Repository/public-output validation at 54 platforms: complete
+Repository/public-output validation at 56 platforms: complete
 Unique Cloudflare production commit creation: complete
-Cloudflare build for d934baa: in progress at checkpoint update
-Direct custom-domain verification for 54 / 262 / 397: pending run #146
+Cloudflare build for 5e35fc2: in progress at checkpoint update
+Direct custom-domain verification for 56 / 269 / 408: pending
 ```
 
 Expected public values:
 
 ```text
-platforms: 54
-events: 262
-evidence: 397
-outcomes: 54
-products: 87
-terms-risk: 54
+platforms: 56
+events: 269
+evidence: 408
+outcomes: 56
+products: 91
+terms-risk: 56
 claims ongoing: 16
 ```
 
@@ -302,9 +287,9 @@ claims ongoing: 16
 ```text
 1. Read this file and docs/development-policy.md.
 2. Fetch current main and recent/open PRs.
-3. Check Cloudflare Pages and the latest Production Surface Check.
-4. Confirm candidate queue and consumed ledgers.
-5. Run candidate audit, scanner, draft generator, and next-ID reporter.
+3. Check the latest Cloudflare production commit and Production Surface Check.
+4. Confirm active candidates and all consumed ledgers.
+5. Run candidate audit, hardened scanner, draft generator and next-ID reporter.
 6. Recalculate canonical counts and maximum IDs.
 7. Correct this checkpoint if repository reality differs.
 8. Resume from the first incomplete gate only.
@@ -316,6 +301,7 @@ Recommended checks:
 npm install
 npm run candidates:check
 npm run candidates:scan
+npm run candidates:scan:guard -- <scan-artifact>
 npm run candidates:draft
 npm run batch:next-ids
 npm test
@@ -324,6 +310,6 @@ npm test
 ## Immediate next action
 
 ```text
-First: confirm Production Surface Check #146 for the 54-platform deployment.
-Then: begin Phase 6 / batch 34 candidate-only gate with candidate IDs 000033 and 000034.
+Confirm the 56-platform Cloudflare deployment and custom-domain surface.
+Then begin Phase 6 / batch 35 candidate-only research with reserved IDs 000050 / 000051.
 ```
