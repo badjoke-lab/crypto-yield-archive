@@ -1,7 +1,9 @@
 import { checkProduction } from './check-production-once.mjs';
 
 const base=(process.env.CYA_BASE_URL||'https://cya.badjoke-lab.com').replace(/\/$/,'');
-const commit=process.env.CYA_EXPECTED_COMMIT||process.env.GITHUB_SHA||null;
+const hasExplicitCommit=Object.prototype.hasOwnProperty.call(process.env,'CYA_EXPECTED_COMMIT');
+const explicitCommit=process.env.CYA_EXPECTED_COMMIT?.trim()||null;
+const commit=hasExplicitCommit?explicitCommit:(process.env.GITHUB_SHA||null);
 const attempts=Number(process.env.CYA_SMOKE_ATTEMPTS||12);
 const delay=Number(process.env.CYA_SMOKE_DELAY_MS||15000);
 let lastError;
