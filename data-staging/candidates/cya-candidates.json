@@ -53,5 +53,63 @@
     "notes": "BitMart announced an orderly wind-down on 26 July 2026. The notice schedules the end of spot, futures, and other trading on 26 August 2026 and formal trading-platform termination on 31 January 2027. It also states that BitMart Earn, Staking, Lending, Launchpad, and other products will be discontinued in phases, with dedicated redemption, settlement, and follow-up procedures to be communicated to affected users. Generic exchange Earn products are not prioritized in CYA, so BitMart is staged rather than promoted. Review whether the platform-wide shutdown and unresolved product-level customer outcomes justify a historically significant exchange-Earn exception, identify each affected yield or lending product, preserve product-specific custody and terms, and do not infer repayment completion before official settlement evidence is available.",
     "first_seen_at": "2026-07-26",
     "last_reviewed_at": "2026-07-26"
+  },
+  {
+    "candidate_id": "cya_candidate_000026",
+    "canonical_name": "Yield App",
+    "aliases": [
+      "YIELD App",
+      "Yield.App"
+    ],
+    "domain": "yield.app",
+    "country_or_origin": "Seychelles / Global",
+    "platform_type_guess": "centralized_yield",
+    "status_guess": "bankrupt",
+    "major_event": "Suspension of all platform activity on 28 June 2024 followed by insolvent liquidation and the appointment of joint liquidators",
+    "primary_sources": [
+      "https://yield.app/",
+      "https://t.me/s/yieldchannel?before=1667",
+      "https://yield.app/terms-and-conditions"
+    ],
+    "secondary_sources": [
+      "https://www.theblock.co/post/302484/yield-app-suspension-liquidation"
+    ],
+    "duplicate_check": {
+      "checked_at": "2026-08-05",
+      "matched_platform_ids": [],
+      "notes": "No canonical Yield App name, alias, yield.app domain, or reviewed platform record was found in the repository search. The deterministic scanner must still confirm duplicate-clear status before drafting."
+    },
+    "decision": "add_now",
+    "notes": "Yield App is a high-value CYA failure record. Its official channel states that all platform activity was suspended before liquidation after portfolio losses involving third-party hedge fund managers that held Yield App assets on FTX. A later liquidator notice confirms insolvent liquidation and joint liquidator appointments. Canonical review must separate the platform shutdown, liquidation process, product model, asset ownership and terms, and customer claims. Do not infer recovery rate, repayment completion, creditor priority, or final customer outcome from the liquidation announcement alone.",
+    "first_seen_at": "2026-08-05",
+    "last_reviewed_at": "2026-08-05"
+  },
+  {
+    "candidate_id": "cya_candidate_000027",
+    "canonical_name": "Midas Investments",
+    "aliases": [
+      "Midas.Investments",
+      "Midas Investments Platform"
+    ],
+    "domain": "midas.investments",
+    "country_or_origin": null,
+    "platform_type_guess": "centralized_yield",
+    "status_guess": "operations_ended",
+    "major_event": "Platform closure announced on 27 December 2022 after disclosed DeFi portfolio losses, large post-Celsius and post-FTX withdrawals, and a balance adjustment affecting customer BTC, ETH, and stablecoin balances",
+    "primary_sources": [
+      "https://blog.midas.investments/midas-closure-reasons-and-pivot-to-cedefi/"
+    ],
+    "secondary_sources": [
+      "https://www.coindesk.com/business/2022/12/27/crypto-investment-firm-midas-shutting-down-platform-following-losses"
+    ],
+    "duplicate_check": {
+      "checked_at": "2026-08-05",
+      "matched_platform_ids": [],
+      "notes": "No canonical Midas Investments name, alias, midas.investments domain, or reviewed platform record was found in the repository search. The deterministic scanner must still confirm duplicate-clear status before drafting."
+    },
+    "decision": "add_now",
+    "notes": "Midas Investments is a high-value centralized-yield closure candidate with a documented platform-level loss and customer-balance adjustment. Contemporary reporting cites the founder's closure statement, including a disclosed USD 50 million DeFi portfolio loss, heavy withdrawals after Celsius and FTX, and a planned 55 percent deduction from BTC, ETH, and stablecoin balances with MIDAS-token compensation. Canonical review must preserve the difference between the stated accounting adjustment, token compensation, actual realised recovery, and any later successor project. Do not infer fraud, full loss, repayment completion, or final customer recovery without stronger outcome evidence.",
+    "first_seen_at": "2026-08-05",
+    "last_reviewed_at": "2026-08-05"
   }
 ]
