@@ -1,0 +1,93 @@
+[
+  {
+    "id": "cya_ev_000268",
+    "platform_id": "cya_plat_000055",
+    "event_type": "operations_ended",
+    "event_date": "2022-11-24",
+    "title": "Finder Earn ceased and customer funds were returned in full",
+    "description": "After ASIC notified Finder Wallet of concerns, Finder Earn ceased being offered from 24 November 2022. ASIC states that all customer funds were returned in full. This product closure is not classified as insolvency or customer loss.",
+    "impact_level": "high",
+    "event_status_effect": "operations_ended",
+    "status_after": "operations_ended",
+    "source_count": 1,
+    "confidence": "high"
+  },
+  {
+    "id": "cya_ev_000269",
+    "platform_id": "cya_plat_000055",
+    "event_type": "regulatory_action",
+    "event_date": "2022-12-15",
+    "title": "ASIC commenced civil proceedings over Finder Earn",
+    "description": "ASIC commenced Federal Court proceedings alleging that Finder Wallet provided unlicensed financial services and failed disclosure and design-and-distribution obligations because ASIC considered Finder Earn to be a debenture. These were allegations and were later rejected by the courts.",
+    "impact_level": "high",
+    "event_status_effect": "none",
+    "status_after": "operations_ended",
+    "source_count": 1,
+    "confidence": "high"
+  },
+  {
+    "id": "cya_ev_000270",
+    "platform_id": "cya_plat_000055",
+    "event_type": "lawsuit",
+    "event_date": "2024-03-14",
+    "title": "Federal Court dismissed ASIC's Finder Earn case",
+    "description": "The Federal Court found that Finder Wallet did not provide unlicensed financial services in relation to Finder Earn and rejected ASIC's contention that the product was a debenture.",
+    "impact_level": "medium",
+    "event_status_effect": "none",
+    "status_after": "operations_ended",
+    "source_count": 1,
+    "confidence": "high"
+  },
+  {
+    "id": "cya_ev_000271",
+    "platform_id": "cya_plat_000055",
+    "event_type": "lawsuit",
+    "event_date": "2025-07-24",
+    "title": "Full Federal Court dismissed ASIC's Finder Wallet appeal",
+    "description": "The Full Federal Court dismissed ASIC's appeal and upheld the decision that Finder Earn was not a debenture and that Finder Wallet, renamed Wallet Ventures Pty Ltd, had not breached the Corporations Act as alleged.",
+    "impact_level": "medium",
+    "event_status_effect": "none",
+    "status_after": "operations_ended",
+    "source_count": 1,
+    "confidence": "high"
+  },
+  {
+    "id": "cya_ev_000272",
+    "platform_id": "cya_plat_000056",
+    "event_type": "withdrawals_suspended",
+    "event_date": "2022-11-12",
+    "title": "AAX suspended customer withdrawals",
+    "description": "AAX suspended withdrawals while publicly attributing the restriction to a system upgrade. Later police statements reported by Hong Kong media described liquidity issues, but the operator explanation and police position remain separately attributed rather than treated as established final findings.",
+    "impact_level": "critical",
+    "event_status_effect": "withdrawals_suspended",
+    "status_after": "withdrawals_suspended",
+    "source_count": 1,
+    "confidence": "medium"
+  },
+  {
+    "id": "cya_ev_000273",
+    "platform_id": "cya_plat_000056",
+    "event_type": "regulatory_action",
+    "event_date": "2022-12-23",
+    "title": "Hong Kong police made arrests in the AAX-related investigation",
+    "description": "Hong Kong police arrested two men in an AAX-related case, froze bank accounts and reported fraud and misleading-police allegations, complaints and claimed losses. No final criminal conviction or universal customer-loss amount is inferred from the reported police investigation.",
+    "impact_level": "high",
+    "event_status_effect": "none",
+    "status_after": "withdrawals_suspended",
+    "source_count": 1,
+    "confidence": "medium"
+  },
+  {
+    "id": "cya_ev_000274",
+    "platform_id": "cya_plat_000056",
+    "event_type": "bankruptcy_filed",
+    "event_date": "2023-10-17",
+    "title": "Singapore winding-up orders took effect for AAX Asia and AAX Singapore",
+    "description": "The Singapore High Court granted winding-up orders at the 12 October 2023 hearing, effective from 17 October 2023. The court found that the companies were unable to pay their debts, had no available assets to meet current liabilities and required a liquidator to investigate assets, customer records and creditor identities across the AAX Group.",
+    "impact_level": "critical",
+    "event_status_effect": "bankrupt",
+    "status_after": "bankrupt",
+    "source_count": 1,
+    "confidence": "high"
+  }
+]
