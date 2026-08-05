@@ -26,5 +26,73 @@
     "notes": "The first-party governance proposal moves the legacy Goldfinch protocol into recovery-only maintenance mode and winds down Goldfinch Prime. A 7 July update states that Prime investors were fully redeemed, no new deposits are accepted, and the contract was paused, while legacy V1 borrower pools remain in payment or recovery. CYA focuses on CeFi and does not prioritize DeFi lending protocols in its initial scope, so this is staged for an explicit scope and entity-boundary decision rather than forced into canonical data. Review whether Goldfinch Prime should be modeled as a historically significant institutional-yield product/platform exception, whether legacy V1 and Prime remain one platform entity, and how customer outcomes should be scoped by product.",
     "first_seen_at": "2026-07-25",
     "last_reviewed_at": "2026-07-25"
+  },
+  {
+    "candidate_id": "cya_candidate_000038",
+    "canonical_name": "Delio",
+    "aliases": [
+      "Delio Global",
+      "Delio Lending",
+      "Delio Deposit",
+      "Delio Vault",
+      "Delio Co., Ltd."
+    ],
+    "domain": "delio.global",
+    "country_or_origin": "South Korea",
+    "platform_type_guess": "cefi_lending",
+    "status_guess": "bankrupt",
+    "major_event": "Delio suspended customer withdrawals on 14 June 2023 after the Haru Invest disruption, faced a three-month FIU business suspension and criminal proceedings, had rehabilitation applications dismissed in April 2024, and was declared bankrupt by the Seoul Bankruptcy Court on 22 November 2024",
+    "primary_sources": [
+      "https://delio.global/"
+    ],
+    "secondary_sources": [
+      "https://view.asiae.co.kr/en/article/2024040412005828228",
+      "https://view.asiae.co.kr/en/article/2024112211250814450",
+      "https://view.asiae.co.kr/en/article/2023090113580004824",
+      "https://www.theblock.co/post/234638/korean-crypto-lending-service-delio-halts-withdrawals-due-to-funds-stuck-in-haru"
+    ],
+    "duplicate_check": {
+      "checked_at": "2026-08-05",
+      "matched_platform_ids": [],
+      "notes": "Repository searches found no Delio, Delio Global, Delio Lending, Delio Deposit, Delio Vault, or delio.global canonical record or consumed candidate. The hardened scanner must independently confirm this before promotion."
+    },
+    "decision": "add_now",
+    "notes": "Delio is a high-value centralized crypto deposit, lending, and yield case with a court-confirmed bankruptcy endpoint. The June 2023 withdrawal suspension followed Haru Invest's disruption, but the reviewed evidence must distinguish Delio's stated reason, any actual Haru exposure, other asset deployment, and subsequent regulatory or criminal allegations. The FIU sanction concerns specific financial-transaction-law and AML violations and is separate from customer-asset recovery. The April 2024 rehabilitation dismissal and November 2024 bankruptcy declaration must be modeled separately. Fraud, embezzlement, deceptive conduct, victim count, and loss amount remain allegations or contested criminal matters unless supported by a final judgment. Canonical promotion must identify the legal entity, deposit and lending products, custody and title terms, bankruptcy trustee or claim procedure, customer classes, asset-versus-fiat valuation, and distribution status without inferring a recovery percentage or completed repayment.",
+    "first_seen_at": "2026-08-05",
+    "last_reviewed_at": "2026-08-05"
+  },
+  {
+    "candidate_id": "cya_candidate_000039",
+    "canonical_name": "Finblox",
+    "aliases": [
+      "Finblox Earn",
+      "Finblox Savings",
+      "Finblox Rewards",
+      "Finblox Limited"
+    ],
+    "domain": "finblox.com",
+    "country_or_origin": "Hong Kong / Philippines / Global",
+    "platform_type_guess": "crypto_interest_account",
+    "status_guess": "limited",
+    "major_event": "Finblox sharply limited withdrawals and paused rewards, deposits, referrals, and new-address creation on 16 June 2022 while assessing Three Arrows Capital exposure, then partially restored withdrawal limits and yield functions from 1 July 2022 while some assets remained designated as Reserved Funds",
+    "primary_sources": [
+      "https://help.finblox.com/en/articles/6348481-update-june-30-2022",
+      "https://twitter.com/finblox/status/1537414199890296838",
+      "https://twitter.com/finblox/status/1540260145321897985",
+      "https://finblox.com/"
+    ],
+    "secondary_sources": [
+      "https://www.coindesk.com/business/2022/06/16/finblox-imposes-15k-monthly-withdrawal-limit-amid-three-arrows-capital-uncertainty",
+      "https://www.theblock.co/post/155434/finblox-doubles-withdrawal-limit-after-dropping-it-amid-exposure-to-3ac"
+    ],
+    "duplicate_check": {
+      "checked_at": "2026-08-05",
+      "matched_platform_ids": [],
+      "notes": "Repository searches found no Finblox, Finblox Earn, Finblox Savings, Finblox Rewards, or finblox.com canonical record or consumed candidate. The hardened scanner must independently confirm this before promotion."
+    },
+    "decision": "add_now",
+    "notes": "Finblox is a historically significant active-or-limited comparator for how a centralized yield platform managed Three Arrows Capital exposure without an immediate total shutdown. The first-party 30 June 2022 update confirms higher but still bounded withdrawal limits, selective reward restoration, dynamic yield rates, and continued Reserved Funds. Secondary reporting links the original 16 June restrictions to 3AC uncertainty and records Finblox's repayment demands. Canonical promotion must determine the actual borrower or counterparty relationship, amount and treatment of 3AC exposure, definition and release of Reserved Funds, whether normal withdrawals fully resumed, later product and legal-entity changes, current site status, and customer outcomes. Temporary restrictions and partial restoration must not be converted into insolvency, full repayment, or current active status without reviewed evidence.",
+    "first_seen_at": "2026-08-05",
+    "last_reviewed_at": "2026-08-05"
   }
 ]
