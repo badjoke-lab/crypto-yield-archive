@@ -53,5 +53,69 @@
     "notes": "BitMart announced an orderly wind-down on 26 July 2026. The notice schedules the end of spot, futures, and other trading on 26 August 2026 and formal trading-platform termination on 31 January 2027. It also states that BitMart Earn, Staking, Lending, Launchpad, and other products will be discontinued in phases, with dedicated redemption, settlement, and follow-up procedures to be communicated to affected users. Generic exchange Earn products are not prioritized in CYA, so BitMart is staged rather than promoted. Review whether the platform-wide shutdown and unresolved product-level customer outcomes justify a historically significant exchange-Earn exception, identify each affected yield or lending product, preserve product-specific custody and terms, and do not infer repayment completion before official settlement evidence is available.",
     "first_seen_at": "2026-07-26",
     "last_reviewed_at": "2026-07-26"
+  },
+  {
+    "candidate_id": "cya_candidate_000030",
+    "canonical_name": "BitLendingClub",
+    "aliases": [
+      "Loanbase",
+      "LoanBase",
+      "Bit Lending Club"
+    ],
+    "domain": "bitlendingclub.com",
+    "country_or_origin": "Bulgaria / Global",
+    "platform_type_guess": "peer_to_peer_lending",
+    "status_guess": "operations_ended",
+    "major_event": "The peer-to-peer Bitcoin lending marketplace temporarily rebranded as Loanbase, suffered a 2016 account-compromise incident, stopped new lending activity in December 2016 under regulatory pressure, and announced a staged shutdown for 2017",
+    "primary_sources": [
+      "https://web.archive.org/web/*/https://bitlendingclub.com/",
+      "https://web.archive.org/web/*/https://loanbase.com/"
+    ],
+    "secondary_sources": [
+      "https://www.coindesk.com/markets/2016/12/02/bitcoin-loan-platform-bitlendingclub-to-shut-down",
+      "https://debanked.com/2016/12/bitcoin-based-p2p-lending-platform-bitlendingclub-shuts-down/",
+      "https://news.bitcoin.com/regulatory-forces-bitlendingclub-close/"
+    ],
+    "duplicate_check": {
+      "checked_at": "2026-08-05",
+      "matched_platform_ids": [],
+      "notes": "Repository review found no BitLendingClub, Loanbase, or matching domain in canonical or consumed candidate history. The similarly named current Japanese BitLending service is unrelated and must remain a separate identity."
+    },
+    "decision": "add_now",
+    "notes": "Candidate is in scope as a historically significant centralized P2P Bitcoin lending marketplace. Canonical review must preserve the temporary Loanbase rebrand, distinguish the February 2016 security incident from the later regulatory shutdown, verify the final service end date, and keep customer repayment or recovery outcome unknown unless direct evidence establishes completion.",
+    "first_seen_at": "2026-08-05",
+    "last_reviewed_at": "2026-08-05"
+  },
+  {
+    "candidate_id": "cya_candidate_000031",
+    "canonical_name": "Bitbond Lending Marketplace",
+    "aliases": [
+      "Bitbond",
+      "Bitbond P2P Lending",
+      "Bitbond Global Lending Platform",
+      "Bitbond STO",
+      "BB1"
+    ],
+    "domain": "bitbond.com",
+    "country_or_origin": "Germany / Global",
+    "platform_type_guess": "peer_to_peer_lending",
+    "status_guess": "rebranded",
+    "major_event": "Bitbond launched a regulated global blockchain-based SME lending marketplace in 2013, later financed loan exposure through the BB1 security token, and then pivoted the operating company from direct lending toward institutional tokenization infrastructure",
+    "primary_sources": [
+      "https://www.bitbond.com/company",
+      "https://www.bitbond.com/resources/what-is-the-bitbondsto",
+      "https://www.bitbond.com/resources/bitbonds-state-of-the-union-2020",
+      "https://www.bitbond.com/"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-05",
+      "matched_platform_ids": [],
+      "notes": "Repository review found no Bitbond canonical platform or consumed candidate. The current Bitbond tokenization business shares the same company history but must not be represented as a still-operating retail lending marketplace."
+    },
+    "decision": "add_now",
+    "notes": "Promote only as a product-scoped historical lending-marketplace record, not as a record for Bitbond's current tokenization software business. Canonical review must identify the marketplace transition date, separate borrower/lender marketplace exposure from BB1 security-token rights, preserve applicable legal entities and terms versions, and avoid inferring uniform loan repayment or investor outcome from the company's successful strategic pivot.",
+    "first_seen_at": "2026-08-05",
+    "last_reviewed_at": "2026-08-05"
   }
 ]
