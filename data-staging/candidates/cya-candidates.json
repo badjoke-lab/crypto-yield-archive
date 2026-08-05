@@ -56,59 +56,65 @@
   },
   {
     "candidate_id": "cya_candidate_000026",
-    "canonical_name": "Yield App",
+    "canonical_name": "Matrixport",
     "aliases": [
-      "YIELD App",
-      "Yield.App"
+      "Matrixport Invest",
+      "Matrixport Fixed Income",
+      "Matrixport Flexi Saving"
     ],
-    "domain": "yield.app",
-    "country_or_origin": "Seychelles / Global",
-    "platform_type_guess": "centralized_yield",
-    "status_guess": "bankrupt",
-    "major_event": "Suspension of all platform activity on 28 June 2024 followed by insolvent liquidation and the appointment of joint liquidators",
+    "domain": "matrixport.com",
+    "country_or_origin": "Singapore / Hong Kong / Global",
+    "platform_type_guess": "borrow_lend_platform",
+    "status_guess": "active",
+    "major_event": "Launch and continued expansion of a core digital-asset yield and lending business, including fixed-income, flexible saving, structured-yield, collateralized-loan, and institutional lending products",
     "primary_sources": [
-      "https://yield.app/",
-      "https://t.me/s/yieldchannel?before=1667",
-      "https://yield.app/terms-and-conditions"
+      "https://www.matrixport.com/",
+      "https://www.matrixport.com/uni/invest",
+      "https://www.matrixport.com/uni/term",
+      "https://www.matrixport.com/docs/en-us/fixed_income.html",
+      "https://helpcenter.matrixport.com/en/articles/10052260-fixed-income"
     ],
-    "secondary_sources": [
-      "https://www.theblock.co/post/302484/yield-app-suspension-liquidation"
-    ],
+    "secondary_sources": [],
     "duplicate_check": {
       "checked_at": "2026-08-05",
       "matched_platform_ids": [],
-      "notes": "No canonical Yield App name, alias, yield.app domain, or reviewed platform record was found in the repository search. The deterministic scanner must still confirm duplicate-clear status before drafting."
+      "notes": "The complete 46-platform canonical ledger and consumed-candidate history were reviewed. No Matrixport name, alias, or matrixport.com domain match was found. The deterministic scanner must confirm duplicate-clear status before drafting."
     },
     "decision": "add_now",
-    "notes": "Yield App is a high-value CYA failure record. Its official channel states that all platform activity was suspended before liquidation after portfolio losses involving third-party hedge fund managers that held Yield App assets on FTX. A later liquidator notice confirms insolvent liquidation and joint liquidator appointments. Canonical review must separate the platform shutdown, liquidation process, product model, asset ownership and terms, and customer claims. Do not infer recovery rate, repayment completion, creditor priority, or final customer outcome from the liquidation announcement alone.",
+    "notes": "Matrixport is an in-scope active comparator because yield and lending are core platform functions rather than incidental exchange add-ons. First-party materials describe the platform as founded in 2019 and currently offering fixed income, flexible saving, staking, structured yield, collateralized loans, and related investment products. Canonical review must keep product-level terms, legal entities, jurisdictions, underlying lending or staking strategies, lockups, early-redemption rules, and asset-ownership treatment separate. Current rates, principal language, collateral practices, licensing claims, and product availability must not be treated as permanent or universal.",
     "first_seen_at": "2026-08-05",
     "last_reviewed_at": "2026-08-05"
   },
   {
     "candidate_id": "cya_candidate_000027",
-    "canonical_name": "Midas Investments",
+    "canonical_name": "Coinchange",
     "aliases": [
-      "Midas.Investments",
-      "Midas Investments Platform"
+      "Coinchange Financials",
+      "Coinchange Earn Account",
+      "Coinchange High Yield Account",
+      "Coinchange DeFi Yield"
     ],
-    "domain": "midas.investments",
-    "country_or_origin": null,
-    "platform_type_guess": "centralized_yield",
-    "status_guess": "operations_ended",
-    "major_event": "Platform closure announced on 27 December 2022 after disclosed DeFi portfolio losses, large post-Celsius and post-FTX withdrawals, and a balance adjustment affecting customer BTC, ETH, and stablecoin balances",
+    "domain": "coinchange.io",
+    "country_or_origin": "Canada / United States / Poland / Global",
+    "platform_type_guess": "yield_aggregator",
+    "status_guess": "active",
+    "major_event": "Public launch of an automated crypto yield platform in 2021 followed by expansion from individual Earn accounts into business, API, vault, and multi-strategy yield infrastructure",
     "primary_sources": [
-      "https://blog.midas.investments/midas-closure-reasons-and-pivot-to-cedefi/"
+      "https://www.coinchange.io/",
+      "https://www.coinchange.io/help-center/what-is-coinchange",
+      "https://www.coinchange.io/products/earn-account-business",
+      "https://www.coinchange.io/help-center/coinchange-transparency-and-trust",
+      "https://www.coinchange.io/br/hya-agreement",
+      "https://www.coinchange.io/terms"
     ],
-    "secondary_sources": [
-      "https://www.coindesk.com/business/2022/12/27/crypto-investment-firm-midas-shutting-down-platform-following-losses"
-    ],
+    "secondary_sources": [],
     "duplicate_check": {
       "checked_at": "2026-08-05",
       "matched_platform_ids": [],
-      "notes": "No canonical Midas Investments name, alias, midas.investments domain, or reviewed platform record was found in the repository search. The deterministic scanner must still confirm duplicate-clear status before drafting."
+      "notes": "The complete 46-platform canonical ledger and consumed-candidate history were reviewed. No Coinchange name, alias, or coinchange.io domain match was found. The deterministic scanner must confirm duplicate-clear status before drafting."
     },
     "decision": "add_now",
-    "notes": "Midas Investments is a high-value centralized-yield closure candidate with a documented platform-level loss and customer-balance adjustment. Contemporary reporting cites the founder's closure statement, including a disclosed USD 50 million DeFi portfolio loss, heavy withdrawals after Celsius and FTX, and a planned 55 percent deduction from BTC, ETH, and stablecoin balances with MIDAS-token compensation. Canonical review must preserve the difference between the stated accounting adjustment, token compensation, actual realised recovery, and any later successor project. Do not infer fraud, full loss, repayment completion, or final customer recovery without stronger outcome evidence.",
+    "notes": "Coinchange is an in-scope active comparator because automated yield generation is the platform's central product. First-party materials state that its proprietary platform reached market in Q3 2021 and now provides individual and business Earn accounts, API and vault infrastructure, and strategies spanning DeFi and CeFi. Historical and current terms must be reviewed separately: the 2021 High Yield Account agreement, current custody or key-control claims, strategy allocation, liquidity, fees, jurisdictional availability, and client-facing business structures may differ. No advertised APY, principal-protection statement, regulatory claim, strategy description, or withdrawal condition is treated as permanent or as proof of universal customer protection.",
     "first_seen_at": "2026-08-05",
     "last_reviewed_at": "2026-08-05"
   }
