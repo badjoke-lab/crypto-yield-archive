@@ -1,0 +1,42 @@
+[
+  {
+    "platform_id": "cya_plat_000047",
+    "product_type": "centralized_yield",
+    "product_name": "Matrixport Fixed Income and flexible saving",
+    "custody_model": "platform and product-specific custodial investment arrangement",
+    "yield_source": "Platform staking and lending activity, including over-collateralized loans, margin loans, and native staking as described in current first-party materials",
+    "risk_notes": "Rates, currencies, tenors, auto-renewal, early redemption, underlying borrowers, staking methods, legal entity, and principal language vary by product and jurisdiction."
+  },
+  {
+    "platform_id": "cya_plat_000047",
+    "product_type": "structured_yield",
+    "product_name": "Matrixport structured-yield products",
+    "custody_model": "product-specific custodial structured investment",
+    "yield_source": "Derivative and strategy-based products including dual-currency and other structured-return designs",
+    "risk_notes": "Returns and principal outcomes depend on product payoff terms, market prices, settlement currency, issuer structure, lockup, and jurisdiction. Marketing yield is not a guaranteed universal return."
+  },
+  {
+    "platform_id": "cya_plat_000047",
+    "product_type": "borrow_lend_platform",
+    "product_name": "Matrixport collateralized loans",
+    "custody_model": "custodial collateral under product-specific loan terms",
+    "yield_source": "Borrower interest and fees from collateralized, fixed-income-backed, and other lending products",
+    "risk_notes": "Collateral eligibility, LTV, liquidation, repayment, custody, pricing, term, and legal entity differ by loan product."
+  },
+  {
+    "platform_id": "cya_plat_000048",
+    "product_type": "defi_yield_aggregator",
+    "product_name": "Coinchange Earn Account",
+    "custody_model": "product- and version-specific account or asset-management arrangement",
+    "yield_source": "Automated allocation across DeFi and CeFi strategies using proprietary models and active rebalancing",
+    "risk_notes": "APY, strategy composition, custody, key control, liquidity, fees, counterparty exposure, protocol exposure, and jurisdictional access can change. Historical account terms may not describe every current product."
+  },
+  {
+    "platform_id": "cya_plat_000048",
+    "product_type": "defi_yield_aggregator",
+    "product_name": "Coinchange API, vault, and business yield infrastructure",
+    "custody_model": "client-facing, Coinchange-facing, or trust-minimized structure depending on implementation",
+    "yield_source": "Multi-strategy yield infrastructure delivered through APIs, vaults, managed accounts, and business integrations",
+    "risk_notes": "The contracting entity, client-facing terms, wallet control, allocation authority, liquidity, strategy risk, and regulatory responsibilities depend on the implementation."
+  }
+]
