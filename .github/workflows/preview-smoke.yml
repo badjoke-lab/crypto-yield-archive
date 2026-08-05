@@ -56,10 +56,25 @@ jobs:
           CYA_SMOKE_DELAY_MS: 15000
         shell: bash
         run: |
-          set -o pipefail
+          set -euo pipefail
           alias=$(printf '%s' "$HEAD_REF" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g; s/^-+|-+$//g' | cut -c1-28 | sed -E 's/-+$//')
           export CYA_BASE_URL="https://${alias}.crypto-yield-archive.pages.dev"
           echo "Preview URL: ${CYA_BASE_URL}" | tee preview-surface.log
+
+          status=$(curl -sS -o /tmp/cya-preview-version.json -w '%{http_code}' "${CYA_BASE_URL}/version.json" || true)
+          echo "Initial /version.json HTTP ${status}" | tee -a preview-surface.log
+
+          if [ "$status" = "404" ]; then
+            echo "Cloudflare branch preview is unavailable for this PR. Local build, validation, SEO, and representative screenshot workflows remain the blocking checks." | tee -a preview-surface.log
+            exit 0
+          fi
+
+          if [ "$status" != "200" ]; then
+            echo "Unexpected preview response; refusing to mask a non-404 failure." | tee -a preview-surface.log
+            exit 1
+          fi
+
+          set -o pipefail
           npm run check:production 2>&1 | tee -a preview-surface.log
 
       - name: Record non-applicable preview check
