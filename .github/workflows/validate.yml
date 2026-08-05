@@ -22,3 +22,11 @@ jobs:
 
       - name: Validate data quality and build
         run: npm run test
+
+      - name: Temporary production count probe
+        env:
+          CYA_BASE_URL: https://cya.badjoke-lab.com
+          CYA_EXPECTED_COMMIT: ''
+          CYA_SMOKE_ATTEMPTS: 1
+          CYA_SMOKE_DELAY_MS: 1000
+        run: npm run check:production
