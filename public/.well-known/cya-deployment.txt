@@ -1,0 +1,16 @@
+Crypto Yield Archive production deployment marker
+
+Canonical machine-readable status:
+https://cya.badjoke-lab.com/version.json
+https://cya.badjoke-lab.com/data/manifest.json
+
+Baseline requested by this deployment:
+platforms=50
+events=247
+evidence=372
+outcomes=50
+products=80
+terms-risk=50
+claims-ongoing=16
+
+This marker does not replace the canonical version or manifest endpoints.
