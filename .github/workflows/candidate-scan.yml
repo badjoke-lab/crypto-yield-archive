@@ -12,7 +12,9 @@ on:
     paths:
       - data-staging/candidates/**
       - scripts/candidate-scanner.mjs
+      - scripts/check-candidate-scan.mjs
       - scripts/test-candidate-scanner.mjs
+      - scripts/test-candidate-scan-guard.mjs
       - scripts/fixtures/candidate-scanner.json
       - scripts/lib/registry-files.mjs
       - package.json
@@ -47,7 +49,11 @@ jobs:
           mkdir -p artifacts
           npm run candidates:scan -- --input "$CANDIDATE_FILE" --output artifacts/candidate-scan.json
 
+      - name: Block unsafe add_now matches
+        run: npm run candidates:scan:guard -- artifacts/candidate-scan.json
+
       - name: Upload candidate scan
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: cya-candidate-scan
