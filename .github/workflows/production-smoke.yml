@@ -22,6 +22,7 @@ jobs:
   production-smoke:
     if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
+    timeout-minutes: 50
     steps:
       - name: Checkout synchronized source revision
         uses: actions/checkout@v6
@@ -42,13 +43,13 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           SOURCE_SHA: ${{ github.event.workflow_run.head_sha }}
           PRODUCTION_BRANCH_REF: agent%2Fseo-hardening
-          PRODUCTION_SOURCE_URL: https://cya.badjoke-lab.com/.well-known/cya-source-commit.txt
+          PRODUCTION_SOURCE_URL: https://cya.badjoke-lab.com/cya-source-commit.txt
         run: |
           set -euo pipefail
           ready=0
           for attempt in $(seq 1 120); do
             production_sha="$(gh api "/repos/${GITHUB_REPOSITORY}/branches/${PRODUCTION_BRANCH_REF}" --jq '.commit.sha')"
-            source_marker="$(gh api -H 'Accept: application/vnd.github.raw+json' "/repos/${GITHUB_REPOSITORY}/contents/public/.well-known/cya-source-commit.txt?ref=${production_sha}" | tr -d '\r\n')"
+            source_marker="$(gh api -H 'Accept: application/vnd.github.raw+json' "/repos/${GITHUB_REPOSITORY}/contents/public/cya-source-commit.txt?ref=${production_sha}" | tr -d '\r\n')"
 
             if [[ "${source_marker}" != "${SOURCE_SHA}" ]]; then
               echo "Cloudflare branch source ${source_marker:-missing} does not yet match ${SOURCE_SHA} (${attempt}/120)."
@@ -59,16 +60,10 @@ jobs:
             check_json="$(gh api "/repos/${GITHUB_REPOSITORY}/commits/${production_sha}/check-runs?per_page=100" --jq '[.check_runs[] | select(.name == "Cloudflare Pages")] | sort_by(.started_at) | last // {}')"
             check_status="$(jq -r '.status // "missing"' <<<"${check_json}")"
             check_conclusion="$(jq -r '.conclusion // "pending"' <<<"${check_json}")"
-            deployed_source="$(curl --fail --silent --show-error --max-time 20 "${PRODUCTION_SOURCE_URL}" 2>/dev/null | tr -d '\r\n' || true)"
+            deployed_source="$(curl --fail --silent --show-error --max-time 20 -H 'Cache-Control: no-cache' "${PRODUCTION_SOURCE_URL}?audit=${attempt}" 2>/dev/null | tr -d '\r\n' || true)"
             echo "Cloudflare ${production_sha}: status=${check_status} conclusion=${check_conclusion} deployed_source=${deployed_source:-missing} (${attempt}/120)."
 
-            if [[ "${check_status}" == "completed" && "${check_conclusion}" == "success" ]]; then
-              ready=1
-              break
-            fi
-
             if [[ "${deployed_source}" == "${SOURCE_SHA}" ]]; then
-              echo "Custom-domain source marker matches even though the Cloudflare check has not completed; continuing to the full production-surface audit."
               ready=1
               break
             fi
@@ -82,7 +77,7 @@ jobs:
           done
 
           if [[ "${ready}" != "1" ]]; then
-            echo "Cloudflare production deployment did not complete and the deployed source marker did not match before timeout." >&2
+            echo "Cloudflare custom-domain source marker did not match before timeout." >&2
             exit 1
           fi
 
@@ -94,3 +89,23 @@ jobs:
           CYA_SMOKE_ATTEMPTS: ${{ github.event_name == 'workflow_run' && '24' || '12' }}
           CYA_SMOKE_DELAY_MS: 15000
         run: npm run check:production
+
+      - name: Install Chromium for production screenshots
+        run: |
+          npm install --no-save --ignore-scripts playwright@1.60.0
+          npx playwright install --with-deps chromium
+
+      - name: Capture production desktop and mobile pages
+        env:
+          CAPTURE_BASE_URL: https://cya.badjoke-lab.com
+        run: node scripts/capture-representative-pages.mjs
+
+      - name: Upload production UI verification
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cya-production-ui-verification-${{ github.run_id }}
+          path: artifacts/representative-visual-review/
+          if-no-files-found: warn
+          retention-days: 30
+          compression-level: 0
