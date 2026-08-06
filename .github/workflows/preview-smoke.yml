@@ -51,26 +51,17 @@ jobs:
         if: github.event_name == 'workflow_dispatch' || steps.site_changes.outputs.required == 'true'
         env:
           HEAD_REF: ${{ github.head_ref }}
-          CYA_SMOKE_ATTEMPTS: 20
+          CYA_EXPECTED_COMMIT: ${{ github.event.pull_request.head.sha }}
+          CYA_SMOKE_ATTEMPTS: 30
           CYA_SMOKE_DELAY_MS: 15000
         shell: bash
         run: |
           set -euo pipefail
           alias=$(printf '%s' "$HEAD_REF" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g; s/^-+|-+$//g' | cut -c1-28 | sed -E 's/-+$//')
           export CYA_BASE_URL="https://${alias}.crypto-yield-archive.pages.dev"
-          export CYA_EXPECTED_COMMIT=$(git log -1 --format=%H -- \
-            src \
-            public \
-            data \
-            astro.config.mjs \
-            package.json \
-            package-lock.json \
-            scripts/generate-build-metadata.mjs \
-            scripts/check-production.mjs \
-            scripts/check-production-once.mjs)
 
           echo "Preview URL: ${CYA_BASE_URL}" | tee preview-surface.log
-          echo "Expected site-output commit: ${CYA_EXPECTED_COMMIT}" | tee -a preview-surface.log
+          echo "Expected PR head: ${CYA_EXPECTED_COMMIT}" | tee -a preview-surface.log
 
           status=$(curl -sS -o /tmp/cya-preview-version.json -w '%{http_code}' "${CYA_BASE_URL}/version.json" || true)
           echo "Initial /version.json HTTP ${status}" | tee -a preview-surface.log
