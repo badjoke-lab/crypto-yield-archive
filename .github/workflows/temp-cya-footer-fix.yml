@@ -1,0 +1,41 @@
+name: Temporary CYA footer spacing fix
+
+on:
+  push:
+    branches:
+      - agent/cya-mobile-footer-spacing
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/cya-mobile-footer-spacing
+          fetch-depth: 0
+
+      - name: Add explicit project-network layout
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          path = Path('src/styles/ui-improvements.css')
+          text = path.read_text()
+          marker = '/* Project-network link layout */'
+          if marker not in text:
+              text += '''\n\n/* Project-network link layout */\n.footer-group nav[aria-label="Project network"] > a {\n  display: grid;\n  align-content: center;\n  gap: 3px;\n}\n\n.footer-group nav[aria-label="Project network"] > a strong,\n.footer-group nav[aria-label="Project network"] > a small {\n  display: block;\n}\n\n@media (max-width: 720px) {\n  .footer-group nav[aria-label="Project network"] > a {\n    grid-template-columns: 1fr;\n    align-items: start;\n    gap: 4px;\n  }\n}\n'''
+              path.write_text(text)
+          PY
+
+      - name: Commit spacing fix
+        run: |
+          set -euo pipefail
+          if git diff --quiet; then exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add src/styles/ui-improvements.css
+          git commit -m 'ui: separate project names from descriptions'
+          git push origin HEAD:agent/cya-mobile-footer-spacing
