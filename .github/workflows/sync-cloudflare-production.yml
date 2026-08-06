@@ -44,6 +44,7 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git checkout -B "$CLOUDFLARE_PRODUCTION_BRANCH"
           mkdir -p public/.well-known
+          printf '%s\n' "$SOURCE_SHA" > public/cya-source-commit.txt
           printf '%s\n' "$SOURCE_SHA" > public/.well-known/cya-source-commit.txt
           git add -A
           git commit --allow-empty -m "chore: sync CYA production from ${SOURCE_SHA}"
