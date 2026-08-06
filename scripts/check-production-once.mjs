@@ -8,7 +8,8 @@ const expected={primary_records:p.length,platforms:p.length,events:e.length,evid
 const ok=(x,m)=>{if(!x)throw new Error(m)};
 
 async function readText(base,route,type){
-  const res=await fetch(`${base}${route}`,{headers:{accept:type,'user-agent':'cya-production-audit/2.0'}});
+  const separator=route.includes('?')?'&':'?';
+  const res=await fetch(`${base}${route}${separator}production_audit=${Date.now()}`,{headers:{accept:type,'cache-control':'no-cache','user-agent':'cya-production-audit/3.0'}});
   ok(res.ok,`${route} HTTP ${res.status}`);
   ok((res.headers.get('content-type')||'').includes(type),`${route} type`);
   return {body:await res.text(),headers:res.headers,url:res.url};
@@ -24,22 +25,42 @@ export async function checkProduction(base,commit,sourceCommit){
   if(commit)ok(version.build.commit===commit,`commit ${version.build.commit} != ${commit}`);
   let deployedSourceCommit=null;
   if(sourceCommit){
-    deployedSourceCommit=(await readText(base,'/.well-known/cya-source-commit.txt','text/plain')).body.trim();
+    deployedSourceCommit=(await readText(base,'/cya-source-commit.txt','text/plain')).body.trim();
     ok(deployedSourceCommit===sourceCommit,`source commit ${deployedSourceCommit} != ${sourceCommit}`);
   }
   ok(manifest.generated_at===version.data.generated_at,'manifest time');ok(JSON.stringify(manifest.record_counts)===JSON.stringify(expected),'manifest counts');
   const files=[['/data/platforms.json',p.length],['/data/events.json',e.length],['/data/evidence.json',v.length],['/data/customer-outcomes.json',o.length],['/data/outcomes.json',o.length],['/data/products.json',r.length],['/data/terms-risk.json',t.length]];
   for(const [route,count] of files){const data=await readJson(base,route);ok(data.canonical_only===true,`${route} canonical`);ok(data.generated_at===version.data.generated_at,`${route} time`);ok(data.record_count===count,`${route} count`)}
-  const homeResponse=await readText(base,'/','text/html'),statsResponse=await readText(base,'/stats/','text/html'),timelineResponse=await readText(base,'/timeline/','text/html');
-  const home=homeResponse.body,stats=statsResponse.body,timeline=timelineResponse.body;
-  ok(home.includes(`of <strong>${p.length}</strong> platforms`),'home count');ok(home.includes(`<dt>Claims ongoing</dt><dd>${ongoing}</dd>`),'home claims');ok([...timeline.matchAll(/class=(?:"timeline-record"|timeline-record)/g)].length===e.length,'timeline count');
+
+  const homeResponse=await readText(base,'/','text/html');
+  const platformsResponse=await readText(base,'/platforms/','text/html');
+  const supportResponse=await readText(base,'/support/','text/html');
+  const statsResponse=await readText(base,'/stats/','text/html');
+  const timelineResponse=await readText(base,'/timeline/','text/html');
+  const home=homeResponse.body,platforms=platformsResponse.body,support=supportResponse.body,stats=statsResponse.body,timeline=timelineResponse.body;
+
+  ok(home.includes(`<dt>Platforms</dt><dd>${p.length}</dd>`),'home platform count');
+  ok(home.includes(`<dt>Claims ongoing</dt><dd>${ongoing}</dd>`),'home claims');
+  ok(home.includes('href="/platforms/"'),'home platforms route');
+  ok(home.includes('href="/support/"'),'home support route');
+  ok([...home.matchAll(/class="home-record-card"/g)].length<=18,'home record card limit');
+  ok(!home.includes('id="registryTable"'),'home must not contain complete registry table');
+  ok(platforms.includes(`all ${p.length} reviewed platform records`),'platform registry total');
+  ok(platforms.includes('id="previousPage"')&&platforms.includes('id="nextPage"'),'platform pagination');
+  for(const platform of p)ok(platforms.includes(`/platform/${platform.slug}/`),`platform registry missing ${platform.slug}`);
+  ok(support.includes('What support does not buy'),'support independence');
+  ok(support.includes('Financial support methods'),'support methods');
+  ok([...timeline.matchAll(/class=(?:"timeline-record"|timeline-record)/g)].length===e.length,'timeline count');
   for(const n of [p.length,e.length,v.length,o.length,r.length,t.length])ok(stats.includes(`<strong>${n}</strong>`),`stats ${n}`);
-  ok(home.includes('https://cya.badjoke-lab.com/'),'home canonical');ok(home.includes('/data/platforms.json'),'home discovery');
+  ok(home.includes('https://cya.badjoke-lab.com/'),'home canonical');
+
   const sitemap=(await readText(base,'/sitemap.xml','application/xml')).body,robotsResponse=await readText(base,'/robots.txt','text/plain'),robots=robotsResponse.body;
   ok([...sitemap.matchAll(/<loc>https:\/\/cya\.badjoke-lab\.com\/platform\//g)].length===p.length,'sitemap count');
+  ok(sitemap.includes('<loc>https://cya.badjoke-lab.com/platforms/</loc>'),'platforms sitemap route');
+  ok(sitemap.includes('<loc>https://cya.badjoke-lab.com/support/</loc>'),'support sitemap route');
   if(preview){ok(robots.includes('Disallow: /'),'preview robots');ok((homeResponse.headers.get('x-robots-tag')||'').includes('noindex'),'preview noindex header')}
   else ok(robots.includes('https://cya.badjoke-lab.com/sitemap.xml'),'production robots');
   const guides=[(await readText(base,'/llms.txt','text/plain')).body,(await readText(base,'/ai.txt','text/plain')).body];for(const guide of guides)ok(guide.includes(`Platforms: ${p.length}`),'guide count');
-  for(const body of [home,stats,JSON.stringify(version),JSON.stringify(manifest),...guides])ok(!/\b20 platforms\b|Platforms:\s*20\b|"(?:platforms|primary_records)"\s*:\s*20\b/i.test(body),'stale 20 count');
-  return {ok:true,base_url:base,preview,build:version.build,deployed_source_commit:deployedSourceCommit,record_counts:expected,derived_counts:{claims_ongoing:ongoing}};
+  for(const body of [home,platforms,support,stats,JSON.stringify(version),JSON.stringify(manifest),...guides])ok(!/\b20 platforms\b|Platforms:\s*20\b|"(?:platforms|primary_records)"\s*:\s*20\b/i.test(body),'stale 20 count');
+  return {ok:true,base_url:base,preview,build:version.build,deployed_source_commit:deployedSourceCommit,record_counts:expected,derived_counts:{claims_ongoing:ongoing},ui:{home_record_cards:[...home.matchAll(/class="home-record-card"/g)].length,platform_registry:p.length,support_page:true}};
 }
