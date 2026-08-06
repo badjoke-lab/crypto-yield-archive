@@ -6,6 +6,7 @@
   },
   "pages": [
     { "id": "home", "route": "/" },
+    { "id": "platforms", "route": "/platforms/" },
     { "id": "failures", "route": "/failures/" },
     { "id": "outcomes", "route": "/outcomes/" },
     { "id": "terms-risk", "route": "/terms-risk/" },
@@ -14,6 +15,7 @@
     { "id": "source-quality", "route": "/source-quality/" },
     { "id": "methodology", "route": "/methodology/" },
     { "id": "about", "route": "/about/" },
-    { "id": "corrections", "route": "/corrections/" }
+    { "id": "corrections", "route": "/corrections/" },
+    { "id": "support", "route": "/support/" }
   ]
 }

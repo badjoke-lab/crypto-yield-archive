@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Support Crypto Yield Archive';
+const description = 'Support source review, customer-outcome research, court-document checks, corrections, broken-link replacement, and long-term maintenance of Crypto Yield Archive.';
+const githubIssues = 'https://github.com/badjoke-lab/crypto-yield-archive/issues';
+---
+<BaseLayout title={`${title} | Crypto Yield Archive`} description={description}>
+  <article class="support-page">
+    <header class="editorial-head">
+      <p class="kicker">Independent public archive</p>
+      <h1>{title}</h1>
+      <p class="lede">CYA preserves evidence-backed histories of crypto lending and yield platforms, including failures, restructurings, repayments, unresolved claims, and customer outcomes.</p>
+    </header>
+
+    <section class="record-section" aria-labelledby="support-funds-title">
+      <div class="record-section-head"><p class="kicker">Maintenance</p><h2 id="support-funds-title">What support funds</h2></div>
+      <div class="support-principle-grid">
+        <article><h3>Customer-outcome research</h3><p>Following repayments, distributions, court processes, unresolved balances, and continuing claims.</p></article>
+        <article><h3>Source and court-document review</h3><p>Checking official notices, filings, restructuring documents, creditor materials, and stronger replacements for weak sources.</p></article>
+        <article><h3>Archive preservation</h3><p>Replacing broken links, preserving historical URLs, and maintaining public machine-readable records.</p></article>
+        <article><h3>Corrections and long-term upkeep</h3><p>Reviewing submitted corrections and keeping public pages, data files, and validation workflows usable.</p></article>
+      </div>
+    </section>
+
+    <section class="record-section" aria-labelledby="support-methods-title">
+      <div class="record-section-head"><p class="kicker">Ways to help</p><h2 id="support-methods-title">Support options</h2></div>
+      <div class="support-principle-grid">
+        <article><h3>Submit evidence or corrections</h3><p>Report missing court documents, repayment notices, source replacements, broken links, or incorrect record details.</p><p><a class="text-action" href="/corrections/">Open the correction page →</a></p></article>
+        <article><h3>Public issue tracking</h3><p>Use GitHub Issues for source-backed, publicly reviewable maintenance requests.</p><p><a class="text-action" href={githubIssues}>Open GitHub Issues →</a></p></article>
+        <article class="support-options-note"><h3>Financial support methods</h3><p>A dedicated CYA payment address or payment link is not currently published. Do not send funds to an address copied from another BadJoke-Lab project. A verified method will be listed here only after it is approved for CYA.</p></article>
+      </div>
+    </section>
+
+    <section class="record-section" aria-labelledby="independence-title">
+      <div class="record-section-head"><p class="kicker">Editorial independence</p><h2 id="independence-title">What support does not buy</h2></div>
+      <div class="support-principle-grid">
+        <article><h3>No guaranteed listing or removal</h3><p>Support does not guarantee that a platform is added, removed, hidden, or prioritized.</p></article>
+        <article><h3>No favorable classification</h3><p>Support cannot buy a different status, customer-outcome assessment, terms-risk interpretation, ranking, or wording.</p></article>
+        <article><h3>No weaker evidence standard</h3><p>Evidence and review requirements remain the same for platform operators, creditors, users, and supporters.</p></article>
+        <article><h3>Corrections remain open</h3><p>Corrections are reviewed regardless of whether the submitter has provided support.</p></article>
+      </div>
+    </section>
+  </article>
+</BaseLayout>

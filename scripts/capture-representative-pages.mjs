@@ -42,17 +42,29 @@ for (const [deviceName, device] of Object.entries(devices)) {
           return rect.width > 0 && rect.height > 0 && style.display !== 'none' && style.visibility !== 'hidden';
         };
         const supportPattern = /(support|donat(?:e|ion)|contribut|fund|back this|help keep|tip|wallet)/i;
-        const supportLinks = [...document.querySelectorAll('a,button')].filter(visible).map((element) => {
-          const rect = element.getBoundingClientRect();
-          const text = `${element.textContent ?? ''} ${element.getAttribute('aria-label') ?? ''}`.replace(/\s+/g, ' ').trim();
-          const href = element instanceof HTMLAnchorElement ? element.href : '';
-          return {
-            text, href,
-            location: element.closest('header') ? 'header' : element.closest('footer') ? 'footer' : element.closest('main') ? 'main' : 'other',
-            top: Math.round(rect.top + scrollY),
-            in_initial_viewport: rect.bottom > 0 && rect.top < innerHeight
-          };
-        }).filter((item) => supportPattern.test(`${item.text} ${item.href}`));
+        const supportLinks = [...document.querySelectorAll('a,button,[aria-current="page"]')]
+          .filter(visible)
+          .map((element) => {
+            const rect = element.getBoundingClientRect();
+            const text = `${element.textContent ?? ''} ${element.getAttribute('aria-label') ?? ''}`.replace(/\s+/g, ' ').trim();
+            const href = element instanceof HTMLAnchorElement ? element.href : '';
+            return {
+              tag: element.tagName.toLowerCase(), text, href,
+              location: element.closest('header') ? 'header' : element.closest('footer') ? 'footer' : element.closest('main') ? 'main' : 'other',
+              top: Math.round(rect.top + scrollY),
+              in_initial_viewport: rect.bottom > 0 && rect.top < innerHeight
+            };
+          })
+          .filter((item) => {
+            if (supportPattern.test(item.text)) return true;
+            if (!item.href) return false;
+            try {
+              const url = new URL(item.href);
+              return url.pathname === '/support/' && !url.hash;
+            } catch {
+              return false;
+            }
+          });
         const root = document.documentElement;
         return {
           title: document.title,
@@ -63,7 +75,21 @@ for (const [deviceName, device] of Object.entries(devices)) {
           broken_images: [...document.images].filter((image) => image.complete && image.naturalWidth === 0).map((image) => image.currentSrc || image.src),
           support_links: supportLinks,
           support_link_count: supportLinks.length,
-          support_links_in_initial_viewport: supportLinks.filter((item) => item.in_initial_viewport).length
+          support_links_in_initial_viewport: supportLinks.filter((item) => item.in_initial_viewport).length,
+          support_self_link_count: supportLinks.filter((item) => {
+            if (item.tag !== 'a' || !item.href) return false;
+            try {
+              const url = new URL(item.href);
+              return location.pathname === '/support/' && url.pathname === '/support/' && !url.hash;
+            } catch {
+              return false;
+            }
+          }).length,
+          footer_group_count: document.querySelectorAll('.footer-group').length,
+          home_record_card_count: document.querySelectorAll('.home-record-card').length,
+          visible_platform_row_count: [...document.querySelectorAll('[data-row="platform"]')].filter(visible).length,
+          platform_toc_count: document.querySelectorAll('.platform-page-toc').length,
+          mobile_collapsed_section_count: [...document.querySelectorAll('.mobile-collapsible-content')].filter((element) => element.hidden).length
         };
       });
       const viewportFile = path.join(dir, `${id}.viewport.png`);
@@ -75,6 +101,13 @@ for (const [deviceName, device] of Object.entries(devices)) {
       if (metrics.main_count !== 1) issues.push(`expected one main, found ${metrics.main_count}`);
       if (metrics.horizontal_overflow_px > 2) issues.push(`horizontal overflow ${metrics.horizontal_overflow_px}px`);
       if (metrics.broken_images.length) issues.push(`${metrics.broken_images.length} broken image(s)`);
+      if (metrics.footer_group_count !== 4) issues.push(`expected four footer groups, found ${metrics.footer_group_count}`);
+      if (metrics.support_links_in_initial_viewport === 0) issues.push('support control is not visible in the initial viewport');
+      if (spec.route === '/support/' && metrics.support_self_link_count > 0) issues.push(`support page contains ${metrics.support_self_link_count} self-link(s)`);
+      if (spec.route === '/' && metrics.home_record_card_count > 18) issues.push(`home renders ${metrics.home_record_card_count} record cards; maximum is 18`);
+      if (spec.route === '/platforms/' && metrics.visible_platform_row_count > 25) issues.push(`platform registry renders ${metrics.visible_platform_row_count} visible rows; maximum is 25`);
+      if (spec.route.startsWith('/platform/') && metrics.platform_toc_count !== 1) issues.push(`expected one platform TOC, found ${metrics.platform_toc_count}`);
+      if (spec.route.startsWith('/platform/') && deviceName === 'mobile' && metrics.mobile_collapsed_section_count < 2) issues.push('long platform sections are not collapsed on mobile');
       const record = { id, page_id: spec.id, route: spec.route, device: deviceName, viewport: device, viewport_file: viewportFile, full_file: fullFile, metrics, issues };
       records.push(record);
       if (issues.length) failures.push(record);
@@ -90,7 +123,7 @@ for (const [deviceName, device] of Object.entries(devices)) {
 await browser.close();
 
 const manifest = {
-  schema_version: '1.0',
+  schema_version: '1.1',
   site: config.site,
   generated_at: new Date().toISOString(),
   expected_state_count: config.pages.length * Object.keys(devices).length,
@@ -102,7 +135,7 @@ const manifest = {
   failures
 };
 await writeFile(path.join(output, 'manifest.json'), `${JSON.stringify(manifest, null, 2)}\n`);
-const cards = records.map((record) => `<article><h2>${record.page_id} · ${record.device}</h2><p><code>${record.route}</code></p><img src="${path.relative(output, record.viewport_file)}"><img src="${path.relative(output, record.full_file)}"><p>Support-like links: ${record.metrics.support_link_count}; initial viewport: ${record.metrics.support_links_in_initial_viewport}</p></article>`).join('');
+const cards = records.map((record) => `<article><h2>${record.page_id} · ${record.device}</h2><p><code>${record.route}</code></p><img src="${path.relative(output, record.viewport_file)}"><img src="${path.relative(output, record.full_file)}"><p>Support controls: ${record.metrics.support_link_count}; initial viewport: ${record.metrics.support_links_in_initial_viewport}; footer groups: ${record.metrics.footer_group_count}</p></article>`).join('');
 await writeFile(path.join(output, 'index.html'), `<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>${config.site} visual review</title><style>body{font-family:system-ui;margin:24px;background:#eee}article{background:#fff;border:1px solid #bbb;padding:16px;margin:24px 0}img{display:block;max-width:100%;border:1px solid #ddd;margin:12px 0}</style><h1>${config.site} representative visual review</h1>${cards}`);
 console.log(JSON.stringify({ site: config.site, states: `${records.length}/${manifest.expected_state_count}`, failures: failures.length }, null, 2));
 if (manifest.status !== 'pass') process.exitCode = 1;

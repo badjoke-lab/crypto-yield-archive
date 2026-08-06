@@ -4,7 +4,9 @@ import '../styles/home.css';
 import '../styles/platform.css';
 import '../styles/registries.css';
 import '../styles/qa.css';
+import '../styles/ui-improvements.css';
 import { PROJECT, PUBLIC_DATA_ROUTES, getBuildMetadata, getDerivedCounts, getRecordCounts, getRecordsLastReviewedAt } from '../lib/machine-readable';
+import { projectNetwork } from '../lib/project-network';
 
 interface Props {
   title?: string;
@@ -25,14 +27,18 @@ const siteOrigin = Astro.site ?? new URL(PROJECT.canonicalOrigin);
 const canonicalUrl = new URL(currentPath, siteOrigin).toString();
 const socialImageUrl = new URL('/og/cya-og.svg', siteOrigin).toString();
 const correctionUrl = '/corrections/';
+const supportUrl = '/support/';
 const repoUrl = 'https://github.com/badjoke-lab/crypto-yield-archive';
 const gaMeasurementId = 'G-LWCGTDBY6W';
 const gaTagUrl = `https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`;
 const isPlatformPage = currentPath.startsWith('/platform/');
-const navItems = [
-  ['/', 'Registry'],
-  ['/outcomes/', 'Outcomes'],
+const isSupportPage = currentPath === supportUrl;
+const primaryNavItems = [
+  ['/platforms/', 'Registry'],
   ['/failures/', 'Failures'],
+];
+const secondaryNavItems = [
+  ['/outcomes/', 'Outcomes'],
   ['/terms-risk/', 'Terms risk'],
   ['/timeline/', 'Timeline'],
   ['/stats/', 'Stats'],
@@ -40,12 +46,26 @@ const navItems = [
   ['/methodology/', 'Methodology'],
   ['/about/', 'About'],
 ];
+const researchLinks = [
+  ['/platforms/', 'Platforms'],
+  ['/outcomes/', 'Outcomes'],
+  ['/failures/', 'Failures'],
+  ['/terms-risk/', 'Terms risk'],
+  ['/timeline/', 'Timeline'],
+  ['/stats/', 'Statistics'],
+];
 const projectLinks = [
-  ['https://badjoke-lab.com/', 'Hub'],
-  ['https://hei.badjoke-lab.com/', 'HEI'],
-  ['https://www.stableorgone.com/', 'SOG'],
-  ['https://cya.badjoke-lab.com/', 'CYA'],
-  ['https://bir.badjoke-lab.com/', 'BIR'],
+  ['/methodology/', 'Methodology'],
+  ['/source-quality/', 'Source quality'],
+  ['/about/', 'About'],
+  [correctionUrl, 'Submit correction'],
+  [repoUrl, 'GitHub'],
+];
+const dataLinks = [
+  ['/version.json', 'Version JSON'],
+  ['/data/manifest.json', 'Data manifest'],
+  ['/llms.txt', 'LLM guide'],
+  ['/ai.txt', 'AI guide'],
 ];
 const isCurrent = (href) => href === '/' ? currentPath === '/' : currentPath.startsWith(href);
 const websiteJsonLd = {
@@ -92,7 +112,7 @@ const breadcrumbJsonLd = isPlatformPage ? {
   '@type': 'BreadcrumbList',
   '@id': `${canonicalUrl}#breadcrumb`,
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Registry', item: `${PROJECT.canonicalOrigin}/` },
+    { '@type': 'ListItem', position: 1, name: 'Registry', item: `${PROJECT.canonicalOrigin}/platforms/` },
     { '@type': 'ListItem', position: 2, name: platformName, item: canonicalUrl },
   ],
 } : null;
@@ -147,30 +167,125 @@ const structuredData = [websiteJsonLd, ...(currentPath === '/' ? [datasetJsonLd]
             <span class="brand-mark" aria-hidden="true">CYA</span>
             <span class="brand-copy"><strong>Crypto Yield Archive</strong><small>Historical lending and yield registry</small></span>
           </a>
-          <div class="masthead-meta" aria-label="Archive description"><span>Evidence-led</span><span>Static registry</span><a href={correctionUrl}>Submit correction</a></div>
-        </div>
-        <div class="nav-rule"><nav class="site-nav shell" aria-label="Primary navigation">{navItems.map(([href, label]) => <a href={href} aria-current={isCurrent(href) ? 'page' : undefined}>{label}</a>)}</nav></div>
-      </header>
-      <main id="main-content" class="shell">
-        <slot />
-        {isPlatformPage && <section class="record-report" aria-labelledby="report-record-title"><div><p class="kicker">Record maintenance</p><h2 id="report-record-title">Report this record</h2><p>Report incorrect dates, status, customer outcome, terms-risk interpretation, URL history, or missing evidence.</p></div><a class="text-action" href={correctionUrl}>Submit correction →</a></section>}
-      </main>
-      <footer class="site-footer">
-        <div class="shell footer-grid">
-          <p>Crypto Yield Archive is a historical registry, not an investment recommendation, APY ranking, or real-time dashboard.</p>
-          <div class="footer-links">
-            {projectLinks.map(([href, label]) => <a href={href} aria-current={label === 'CYA' ? 'page' : undefined}>{label}</a>)}
-            <a href={correctionUrl}>Submit correction</a>
-            <a href={repoUrl}>GitHub</a>
-            <a href="/methodology/">Methodology</a>
-            <a href="/source-quality/">Source quality</a>
-            <a href="/version.json">Version JSON</a>
-            <a href="/data/manifest.json">Data manifest</a>
-            <a href="/llms.txt">LLM guide</a>
-            <a href="/ai.txt">AI entrypoint</a>
+          <div class="masthead-actions" aria-label="Archive actions">
+            <span class="masthead-meta" aria-label="Archive description"><span>Evidence-led</span><span>Static registry</span></span>
+            <a class="correction-action" href={correctionUrl}>Submit correction</a>
+            {isSupportPage ? <span class="support-action current-action" aria-current="page">Support</span> : <a class="support-action" href={supportUrl}>Support</a>}
           </div>
         </div>
+        <div class="nav-rule">
+          <div class="navigation-shell shell">
+            <nav class="site-nav primary-navigation" aria-label="Primary navigation">
+              {primaryNavItems.map(([href, label]) => <a href={href} aria-current={isCurrent(href) ? 'page' : undefined}>{label}</a>)}
+            </nav>
+            <details class="mobile-more-navigation" data-navigation-disclosure>
+              <summary>Menu</summary>
+              <nav aria-label="Additional navigation">
+                {secondaryNavItems.map(([href, label]) => <a href={href} aria-current={isCurrent(href) ? 'page' : undefined}>{label}</a>)}
+                <a href={correctionUrl}>Submit correction</a>
+              </nav>
+            </details>
+            <nav class="desktop-secondary-navigation" aria-label="Additional navigation">
+              {secondaryNavItems.map(([href, label]) => <a href={href} aria-current={isCurrent(href) ? 'page' : undefined}>{label}</a>)}
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      <main id="main-content" class="shell">
+        <slot />
+        {isPlatformPage && (
+          <>
+            <section class="record-support" aria-labelledby="record-support-title">
+              <div><p class="kicker">Independent archive</p><h2 id="record-support-title">Help maintain customer-outcome records</h2><p>Support court-document review, source preservation, corrections, broken-link replacement, and long-term archive maintenance. Support does not influence classifications or evidence standards.</p></div>
+              <a class="support-action" href={supportUrl}>Support CYA</a>
+            </section>
+            <section class="record-report" aria-labelledby="report-record-title"><div><p class="kicker">Record maintenance</p><h2 id="report-record-title">Report this record</h2><p>Report incorrect dates, status, customer outcome, terms-risk interpretation, URL history, or missing evidence.</p></div><a class="text-action" href={correctionUrl}>Submit correction →</a></section>
+          </>
+        )}
+      </main>
+
+      <footer class="site-footer">
+        <div class="shell footer-groups">
+          <section class="footer-summary"><strong>Crypto Yield Archive</strong><p>A reviewed historical registry of crypto lending, Earn products, failures, restructurings, repayments, and customer outcomes.</p></section>
+          <section class="footer-group"><h2>Project network</h2><nav aria-label="Project network">
+            {projectNetwork.map((project) => project.id === 'cya'
+              ? <span class="footer-current-project" aria-current="page"><strong>{project.name}</strong><small>Current project</small></span>
+              : <a href={project.href}><strong>{project.name}</strong><small>{project.description}</small></a>)}
+          </nav></section>
+          <section class="footer-group"><h2>Research</h2><nav aria-label="Research links">{researchLinks.map(([href, label]) => <a href={href}>{label}</a>)}</nav></section>
+          <section class="footer-group"><h2>Project</h2><nav aria-label="Project links">{projectLinks.map(([href, label]) => <a href={href}>{label}</a>)}</nav></section>
+          <section class="footer-group footer-support-group"><h2>Support & public data</h2><nav aria-label="Support and public data">
+            {isSupportPage ? <span class="footer-current-link" aria-current="page">Support CYA</span> : <a class="footer-support-link" href={supportUrl}>Support CYA</a>}
+            {dataLinks.map(([href, label]) => <a href={href}>{label}</a>)}
+          </nav></section>
+        </div>
+        <div class="shell footer-legal"><p>Crypto Yield Archive is a historical registry, not an investment recommendation, APY ranking, or real-time dashboard.</p></div>
       </footer>
     </div>
+
+    <script>
+      document.querySelectorAll('[data-navigation-disclosure]').forEach((element) => {
+        if (!(element instanceof HTMLDetailsElement)) return;
+        const summary = element.querySelector('summary');
+        const sync = () => summary?.setAttribute('aria-expanded', String(element.open));
+        sync();
+        element.addEventListener('toggle', sync);
+        element.addEventListener('keydown', (event) => {
+          if (event.key !== 'Escape' || !element.open) return;
+          element.open = false;
+          summary?.focus();
+        });
+      });
+
+      const platformLayout = document.querySelector('.platform-layout');
+      const platformMain = document.querySelector('.platform-main');
+      if (platformLayout instanceof HTMLElement && platformMain instanceof HTMLElement) {
+        const sections = [...platformMain.querySelectorAll(':scope > .record-section')];
+        const toc = document.createElement('nav');
+        toc.className = 'platform-page-toc';
+        toc.setAttribute('aria-label', 'On this page');
+        const titleElement = document.createElement('strong');
+        titleElement.textContent = 'On this page';
+        const list = document.createElement('ol');
+        toc.append(titleElement, list);
+        const collapsibleTitles = new Set(['Historical record', 'Evidence dossier', 'Related platforms']);
+
+        sections.forEach((section, index) => {
+          if (!(section instanceof HTMLElement)) return;
+          const heading = section.querySelector('h2');
+          if (!(heading instanceof HTMLElement)) return;
+          const headingText = heading.textContent?.trim() || `Section ${index + 1}`;
+          if (!heading.id) heading.id = `platform-section-${index + 1}`;
+          const item = document.createElement('li');
+          const link = document.createElement('a');
+          link.href = `#${heading.id}`;
+          link.textContent = headingText;
+          item.append(link);
+          list.append(item);
+
+          if (window.matchMedia('(max-width: 720px)').matches && collapsibleTitles.has(headingText)) {
+            const head = section.querySelector('.record-section-head');
+            const content = document.createElement('div');
+            content.className = 'mobile-collapsible-content';
+            [...section.children].filter((child) => child !== head).forEach((child) => content.append(child));
+            content.hidden = true;
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.className = 'mobile-section-toggle';
+            button.textContent = 'Show section';
+            button.setAttribute('aria-expanded', 'false');
+            button.addEventListener('click', () => {
+              content.hidden = !content.hidden;
+              button.setAttribute('aria-expanded', String(!content.hidden));
+              button.textContent = content.hidden ? 'Show section' : 'Hide section';
+            });
+            head?.append(button);
+            section.append(content);
+          }
+        });
+        platformLayout.before(toc);
+      }
+    </script>
   </body>
 </html>
