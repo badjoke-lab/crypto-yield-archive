@@ -1,14 +1,24 @@
 name: Production Surface Check
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'data/**'
+      - 'src/**'
+      - 'public/**'
+      - 'functions/**'
+      - 'scripts/**'
+      - 'astro.config.mjs'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'tsconfig.json'
+      - '.github/workflows/production-smoke.yml'
+      - '.github/workflows/sync-cloudflare-production.yml'
   workflow_dispatch:
   schedule:
     - cron: '17 3 * * *'
-  workflow_run:
-    workflows:
-      - Sync Cloudflare Production Branch
-    types:
-      - completed
 
 permissions:
   contents: read
@@ -20,14 +30,13 @@ concurrency:
 
 jobs:
   production-smoke:
-    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     timeout-minutes: 50
     steps:
-      - name: Checkout synchronized source revision
+      - name: Checkout production source revision
         uses: actions/checkout@v6
         with:
-          ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || github.sha }}
+          ref: ${{ github.sha }}
 
       - name: Setup Node
         uses: actions/setup-node@v6
@@ -37,39 +46,28 @@ jobs:
       - name: Install dependencies
         run: npm install --no-audit --no-fund
 
-      - name: Wait for Cloudflare production deployment
-        if: ${{ github.event_name == 'workflow_run' }}
+      - name: Wait for Cloudflare main deployment
         env:
           GH_TOKEN: ${{ github.token }}
-          SOURCE_SHA: ${{ github.event.workflow_run.head_sha }}
-          PRODUCTION_BRANCH_REF: agent%2Fseo-hardening
-          PRODUCTION_SOURCE_URL: https://cya.badjoke-lab.com/cya-source-commit.txt
+          SOURCE_SHA: ${{ github.sha }}
+          PRODUCTION_VERSION_URL: https://cya.badjoke-lab.com/version.json
         run: |
           set -euo pipefail
           ready=0
           for attempt in $(seq 1 120); do
-            production_sha="$(gh api "/repos/${GITHUB_REPOSITORY}/branches/${PRODUCTION_BRANCH_REF}" --jq '.commit.sha')"
-            source_marker="$(gh api -H 'Accept: application/vnd.github.raw+json' "/repos/${GITHUB_REPOSITORY}/contents/public/cya-source-commit.txt?ref=${production_sha}" | tr -d '\r\n')"
-
-            if [[ "${source_marker}" != "${SOURCE_SHA}" ]]; then
-              echo "Cloudflare branch source ${source_marker:-missing} does not yet match ${SOURCE_SHA} (${attempt}/120)."
-              sleep 15
-              continue
-            fi
-
-            check_json="$(gh api "/repos/${GITHUB_REPOSITORY}/commits/${production_sha}/check-runs?per_page=100" --jq '[.check_runs[] | select(.name == "Cloudflare Pages")] | sort_by(.started_at) | last // {}')"
+            check_json="$(gh api "/repos/${GITHUB_REPOSITORY}/commits/${SOURCE_SHA}/check-runs?per_page=100" --jq '[.check_runs[] | select(.name == "Cloudflare Pages")] | sort_by(.started_at) | last // {}')"
             check_status="$(jq -r '.status // "missing"' <<<"${check_json}")"
             check_conclusion="$(jq -r '.conclusion // "pending"' <<<"${check_json}")"
-            deployed_source="$(curl --fail --silent --show-error --max-time 20 -H 'Cache-Control: no-cache' "${PRODUCTION_SOURCE_URL}?audit=${attempt}" 2>/dev/null | tr -d '\r\n' || true)"
-            echo "Cloudflare ${production_sha}: status=${check_status} conclusion=${check_conclusion} deployed_source=${deployed_source:-missing} (${attempt}/120)."
+            deployed_commit="$(curl --fail --silent --show-error --max-time 20 -H 'Cache-Control: no-cache' "${PRODUCTION_VERSION_URL}?audit=${attempt}" 2>/dev/null | jq -r '.build.commit // empty' 2>/dev/null || true)"
+            echo "Cloudflare main ${SOURCE_SHA}: status=${check_status} conclusion=${check_conclusion} deployed_commit=${deployed_commit:-missing} (${attempt}/120)."
 
-            if [[ "${deployed_source}" == "${SOURCE_SHA}" ]]; then
+            if [[ "${check_status}" == "completed" && "${check_conclusion}" == "success" && "${deployed_commit}" == "${SOURCE_SHA}" ]]; then
               ready=1
               break
             fi
 
             if [[ "${check_status}" == "completed" && "${check_conclusion}" != "success" ]]; then
-              echo "Cloudflare production deployment failed with conclusion ${check_conclusion}." >&2
+              echo "Cloudflare main deployment failed with conclusion ${check_conclusion}." >&2
               exit 1
             fi
 
@@ -77,16 +75,16 @@ jobs:
           done
 
           if [[ "${ready}" != "1" ]]; then
-            echo "Cloudflare custom-domain source marker did not match before timeout." >&2
+            echo "Cloudflare custom domain did not serve the expected main commit before timeout." >&2
             exit 1
           fi
 
       - name: Check current production surface
         env:
           CYA_BASE_URL: https://cya.badjoke-lab.com
-          CYA_EXPECTED_COMMIT: ''
-          CYA_EXPECTED_SOURCE_COMMIT: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || '' }}
-          CYA_SMOKE_ATTEMPTS: ${{ github.event_name == 'workflow_run' && '24' || '12' }}
+          CYA_EXPECTED_COMMIT: ${{ github.sha }}
+          CYA_EXPECTED_SOURCE_COMMIT: ''
+          CYA_SMOKE_ATTEMPTS: 12
           CYA_SMOKE_DELAY_MS: 15000
         run: npm run check:production
 
