@@ -603,3 +603,24 @@
     font-size: 0.75rem;
   }
 }
+
+
+/* Project-network link layout */
+.footer-group nav[aria-label="Project network"] > a {
+  display: grid;
+  align-content: center;
+  gap: 3px;
+}
+
+.footer-group nav[aria-label="Project network"] > a strong,
+.footer-group nav[aria-label="Project network"] > a small {
+  display: block;
+}
+
+@media (max-width: 720px) {
+  .footer-group nav[aria-label="Project network"] > a {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 4px;
+  }
+}
