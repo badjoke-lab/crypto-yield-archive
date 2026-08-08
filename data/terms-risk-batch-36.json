@@ -1,0 +1,20 @@
+[
+  {
+    "platform_id": "cya_plat_000059",
+    "terms_status": "unclear",
+    "asset_ownership_interpretation": "Historical FTX Earn support described yield credited to customer accounts, while the post-bankruptcy portal converts account balances and Earn amounts into the relevant customer-entitlement and claim process. The reviewed sources do not establish one universal ownership, segregation, trust, custody or creditor-right model for every FTX-branded Earn variant.",
+    "affected_product": "FTX App Earn and related FTX-branded Earn balances",
+    "source_evidence_id": "cya_src_b36_0002",
+    "notes": "Do not infer that the Earn label created a separate protected asset pool, deposit insurance, direct staking ownership or a product-specific claim class. Contracting entity and jurisdiction remain material to claim treatment.",
+    "confidence": "high"
+  },
+  {
+    "platform_id": "cya_plat_000060",
+    "terms_status": "unclear",
+    "asset_ownership_interpretation": "The Liquid-Celsius integration confirms a customer-facing yield product and Celsius earning model, but the reviewed material does not establish one universal legal transfer, custody, segregation, title or creditor-right structure for all Liquid Earn balances. Liquid's current claim instructions route customers through the FTX Chapter 11 process rather than clarifying a separate product ownership model.",
+    "affected_product": "Liquid Earn and balances associated with the Celsius yield integration",
+    "source_evidence_id": "cya_src_b36_0006",
+    "notes": "Do not infer that every Liquid Earn customer was a direct Celsius creditor or that every balance was legally held by the same Liquid, Quoine, FTX or Celsius entity. Product marketing does not resolve those boundaries.",
+    "confidence": "high"
+  }
+]
