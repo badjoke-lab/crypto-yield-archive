@@ -1,0 +1,56 @@
+name: Existing Record Monitor
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '37 3 * * 1'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cya-existing-record-monitor
+  cancel-in-progress: true
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+
+      - name: Verify monitoring fixtures
+        run: npm run test:monitor
+
+      - name: Run weekly existing-record monitor
+        env:
+          CYA_MONITOR_NETWORK: '1'
+          CYA_MONITOR_OUTPUT_DIR: artifacts/existing-record-monitor
+        run: npm run monitor:records:network
+
+      - name: Publish monitoring summary
+        if: always()
+        run: |
+          if [[ -f artifacts/existing-record-monitor/monitoring-summary.md ]]; then
+            cat artifacts/existing-record-monitor/monitoring-summary.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo 'Monitoring report was not generated.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Upload monitoring report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cya-existing-record-monitor-${{ github.run_id }}
+          path: artifacts/existing-record-monitor/
+          if-no-files-found: error
+          retention-days: 30
