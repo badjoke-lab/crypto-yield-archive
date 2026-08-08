@@ -4,6 +4,15 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '37 3 * * 1'
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/existing-record-monitor.yml'
+      - 'scripts/existing-record-monitor.mjs'
+      - 'scripts/test-existing-record-monitor.mjs'
+      - 'docs/existing-record-monitor.md'
+      - 'package.json'
 
 permissions:
   contents: read
