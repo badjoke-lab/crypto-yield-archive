@@ -7,6 +7,8 @@ import { dataDir, loadGroup, normalizeDomain } from './lib/registry-files.mjs';
 const DAY_MS = 86_400_000;
 const DEFAULT_TIMEOUT_MS = 8_000;
 const DEFAULT_CONCURRENCY = 8;
+const HEAD_FALLBACK_STATUSES = new Set([405, 501]);
+const PROBE_BLOCKED_STATUSES = new Set([401, 402, 403, 429]);
 
 function canonicalDigest() {
   const hash = crypto.createHash('sha256');
@@ -65,44 +67,62 @@ function uniqueUrls(platforms, evidence, outcomes) {
   });
 }
 
-async function probeUrl(row, fetchImpl, timeoutMs) {
+async function requestUrl(url, method, fetchImpl, timeoutMs) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), timeoutMs);
   try {
-    let response;
-    try {
-      response = await fetchImpl(row.url, {
-        method: 'HEAD',
-        redirect: 'follow',
-        signal: controller.signal,
-        headers: { 'user-agent': 'CYA-existing-record-monitor/1.0' },
-      });
-    } catch {
-      response = await fetchImpl(row.url, {
-        method: 'GET',
-        redirect: 'follow',
-        signal: controller.signal,
-        headers: { 'user-agent': 'CYA-existing-record-monitor/1.0' },
-      });
-    }
-    return {
-      ...row,
-      status: response.status,
-      ok: response.status >= 200 && response.status < 400,
-      final_url: response.url || row.url,
-      error: null,
-    };
+    const response = await fetchImpl(url, {
+      method,
+      redirect: 'follow',
+      signal: controller.signal,
+      headers: { 'user-agent': 'CYA-existing-record-monitor/1.1' },
+    });
+    return { response, error: null };
   } catch (error) {
     return {
-      ...row,
-      status: null,
-      ok: false,
-      final_url: null,
+      response: null,
       error: error?.name === 'AbortError' ? 'timeout' : String(error?.message ?? error),
     };
   } finally {
     clearTimeout(timer);
   }
+}
+
+async function probeUrl(row, fetchImpl, timeoutMs) {
+  const head = await requestUrl(row.url, 'HEAD', fetchImpl, timeoutMs);
+  let result = head;
+  let method = 'HEAD';
+  let fallback_reason = null;
+
+  if (!head.response || HEAD_FALLBACK_STATUSES.has(head.response.status)) {
+    fallback_reason = head.response
+      ? `head_http_${head.response.status}`
+      : `head_${head.error ?? 'failed'}`;
+    result = await requestUrl(row.url, 'GET', fetchImpl, timeoutMs);
+    method = 'GET';
+  }
+
+  if (result.response) {
+    return {
+      ...row,
+      status: result.response.status,
+      ok: result.response.status >= 200 && result.response.status < 400,
+      final_url: result.response.url || row.url,
+      error: null,
+      method,
+      fallback_reason,
+    };
+  }
+
+  return {
+    ...row,
+    status: null,
+    ok: false,
+    final_url: null,
+    error: result.error ?? head.error ?? 'unknown_error',
+    method,
+    fallback_reason,
+  };
 }
 
 async function mapConcurrent(items, limit, task) {
@@ -185,24 +205,40 @@ export async function monitorRecords({
               'medium',
               'official_domain_redirect_changed',
               `Official URL redirects from ${original} to ${finalDomain}.`,
-              { url: probe.url, final_url: probe.final_url, http_status: probe.status },
+              {
+                url: probe.url,
+                final_url: probe.final_url,
+                http_status: probe.status,
+                probe_method: probe.method,
+              },
             ));
           }
         }
         continue;
       }
 
-      if (probe.status === 403 || probe.status === 429) {
+      if (PROBE_BLOCKED_STATUSES.has(probe.status)) {
         findings.push(finding(probe.platform, 'low', 'url_probe_blocked', `${probe.kind} returned HTTP ${probe.status}.`, {
-          url: probe.url, evidence_id: probe.evidence_id ?? null, http_status: probe.status,
+          url: probe.url,
+          evidence_id: probe.evidence_id ?? null,
+          http_status: probe.status,
+          probe_method: probe.method,
         }));
       } else if (probe.status === 404 || probe.status === 410) {
         findings.push(finding(probe.platform, 'high', 'url_dead', `${probe.kind} returned HTTP ${probe.status}.`, {
-          url: probe.url, evidence_id: probe.evidence_id ?? null, http_status: probe.status,
+          url: probe.url,
+          evidence_id: probe.evidence_id ?? null,
+          http_status: probe.status,
+          probe_method: probe.method,
         }));
       } else {
         findings.push(finding(probe.platform, 'medium', 'url_unreachable', `${probe.kind} could not be verified.`, {
-          url: probe.url, evidence_id: probe.evidence_id ?? null, http_status: probe.status, error: probe.error,
+          url: probe.url,
+          evidence_id: probe.evidence_id ?? null,
+          http_status: probe.status,
+          error: probe.error,
+          probe_method: probe.method,
+          fallback_reason: probe.fallback_reason,
         }));
       }
     }
@@ -226,6 +262,7 @@ export async function monitorRecords({
       attempted: probes.length,
       succeeded: probes.filter((item) => item.ok).length,
       failed: probes.filter((item) => !item.ok).length,
+      get_fallbacks: probes.filter((item) => item.method === 'GET').length,
     },
     findings,
     summary: {
@@ -249,7 +286,7 @@ function markdown(report) {
     `- Evidence: ${report.canonical_counts.evidence}`,
     `- Outcomes: ${report.canonical_counts.outcomes}`,
     `- Findings: ${report.summary.findings} (high ${report.summary.high}, medium ${report.summary.medium}, low ${report.summary.low})`,
-    `- URL probes: ${report.probes.attempted} attempted / ${report.probes.succeeded} succeeded / ${report.probes.failed} failed`,
+    `- URL probes: ${report.probes.attempted} attempted / ${report.probes.succeeded} succeeded / ${report.probes.failed} failed / ${report.probes.get_fallbacks} GET fallbacks`,
     '',
     '## Findings',
     '',
