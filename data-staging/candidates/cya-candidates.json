@@ -58,39 +58,6 @@
     "last_reviewed_at": "2026-08-05"
   },
   {
-    "candidate_id": "cya_candidate_000047",
-    "canonical_name": "BlueBenx",
-    "aliases": [
-      "Blue Benx",
-      "BlueBenx Finance",
-      "BlueBenx Earn",
-      "BlueBenx Yield",
-      "CriptoSavings"
-    ],
-    "domain": "bluebenx.com",
-    "country_or_origin": "Brazil",
-    "platform_type_guess": "centralized_yield",
-    "status_guess": "withdrawals_suspended",
-    "major_event": "BlueBenx Finance suspended withdrawals, redemptions, deposits and transfers in August 2022; CVM later suspended crypto-linked investment offerings and issued unanimous sanctions for unregistered offerings and fraudulent securities-market operations",
-    "primary_sources": [
-      "https://conteudo.cvm.gov.br/export/sites/cvm/decisoes/anexos/2023/20230117/2461_22.pdf",
-      "https://conteudo.cvm.gov.br/export/sites/cvm/sancionadores/sancionador/anexos/2024/SEI_19957001908_2021_01.pdf",
-      "https://www.gov.br/cvm/pt-br/assuntos/noticias/2025/cvm-retoma-sessoes-de-julgamento-com-retornos-de-vista-do-diretor-joao-accioly"
-    ],
-    "secondary_sources": [
-      "https://thepaypers.com/cryptocurrencies/brazils-bluebenx-crypto-platform-suspends-withdrawals--1257991"
-    ],
-    "duplicate_check": {
-      "checked_at": "2026-08-08",
-      "matched_platform_ids": [],
-      "notes": "The hardened scanner previously classified BlueBenx as duplicate-clear. The candidate is promoted to add_now only after CVM records supplied legal-entity, product, suspension, unauthorized-offering and fraudulent-operation findings. The scanner must be rerun on this branch before canonical promotion."
-    },
-    "decision": "add_now",
-    "notes": "CVM material identifies Bluebenx Tecnologia Financeira S.A. and documents the August 2022 suspension of BlueBenx Finance operations including withdrawals, redemptions, deposits and transfers. A September 2024 CVM judgment unanimously fined Bluebenx and Roberto Cardassi for an unregistered public securities offering. In August 2025 the CVM unanimously convicted Bluebenx for fraudulent securities-market operations and an unregistered public offering, with separate sanctions for responsible individuals. These findings are sufficient to stage a public-quality candidate, but they do not establish a universal customer recovery result, a verified final platform end date, or that every customer claim has been resolved. Customer outcome must remain unknown unless later evidence supports a narrower conclusion.",
-    "first_seen_at": "2026-08-05",
-    "last_reviewed_at": "2026-08-08"
-  },
-  {
     "candidate_id": "cya_candidate_000049",
     "canonical_name": "Outlet Finance",
     "aliases": [
@@ -116,37 +83,5 @@
     "notes": "Retained for a later batch. Confirm the operating company, product terms, underlying yield counterparties, custody and ownership model, closure date, withdrawal process, and whether customer balances were returned in full.",
     "first_seen_at": "2026-08-05",
     "last_reviewed_at": "2026-08-05"
-  },
-  {
-    "candidate_id": "cya_candidate_000050",
-    "canonical_name": "Hotbit Investment Products",
-    "aliases": [
-      "Hotbit Investment",
-      "Hotbit Earn",
-      "Hotbit DeFi Farm",
-      "Hotbit Staking Investment"
-    ],
-    "domain": "hotbit.io",
-    "country_or_origin": "Global",
-    "platform_type_guess": "exchange_earn",
-    "status_guess": "operations_ended",
-    "major_event": "Hotbit operated exchange-linked DeFi Farm and staking investment products, closed and automatically redeemed multiple products through 2023, and ceased all CEX operations on 22 May 2023",
-    "primary_sources": [
-      "https://hotbit.zendesk.com/hc/en-us/articles/12115799863063-Hotbit-s-Announcement-on-the-Close-of-TIME-T-1-DeFi-Farm-Investment-Product-on-February-2nd-2023",
-      "https://hotbit.zendesk.com/hc/en-us/articles/12910104017943-Hotbit-s-Announcement-on-the-Close-of-IOTX-REEF-WOO-BOTTO-OOE-EOS-and-ALICE-T-1-DeFi-Farm-Investment-Products-on-March-7th-2023",
-      "https://hotbit.zendesk.com/hc/en-us/articles/14061339820951-Hotbit-s-Announcement-on-the-Close-of-SPS-T-8-Staking-Investment-Product-on-April-21st-2023"
-    ],
-    "secondary_sources": [
-      "https://blockmanity.com/news/hotbit-exchange-ceases-operations-asks-users-to-withdraw-funds-by-june-21st/"
-    ],
-    "duplicate_check": {
-      "checked_at": "2026-08-08",
-      "matched_platform_ids": [],
-      "notes": "Repository text search did not surface a Hotbit candidate, but GitHub code search is not reliable for this repository. This candidate must pass the hardened canonical-name, alias and domain scanner before it can remain add_now."
-    },
-    "decision": "add_now",
-    "notes": "This is a product-scoped candidate for Hotbit's investment/Earn layer, not a generic exchange record. Hotbit support notices document DeFi Farm and staking products and automatic redemption when those products were closed. Independent reporting reproduces Hotbit's 22 May 2023 announcement that all CEX operations would stop and users should withdraw by 21 June. The product notices establish that Hotbit ran a distinct yield/investment account layer; the exchange closure provides the terminal platform event. Do not infer universal successful withdrawal, repayment, or loss from the redemption notices or shutdown deadline. Customer outcome should remain unknown unless product-specific evidence proves completion.",
-    "first_seen_at": "2026-08-08",
-    "last_reviewed_at": "2026-08-08"
   }
 ]

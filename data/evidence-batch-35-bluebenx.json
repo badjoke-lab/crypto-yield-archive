@@ -1,0 +1,62 @@
+[
+  {
+    "id": "cya_src_b35_0001",
+    "platform_id": "cya_plat_000057",
+    "event_id": "cya_ev_000275",
+    "source_type": "news_article",
+    "title": "Brazil's Bluebenx crypto platform suspends withdrawals",
+    "url": "https://thepaypers.com/cryptocurrencies/brazils-bluebenx-crypto-platform-suspends-withdrawals--1257991",
+    "publisher": "The Paypers",
+    "published_at": "2022-08-16",
+    "archived_url": null,
+    "accessed_at": "2026-08-09",
+    "reliability": "medium",
+    "claim_scope": "event",
+    "notes": "Contemporaneous reporting reproduces BlueBenx's customer communication that BlueBenx Finance products, including withdrawals, redemptions, deposits and transfers, were suspended. The company's claimed hack is preserved as an attributed explanation, not independently verified by CYA."
+  },
+  {
+    "id": "cya_src_b35_0002",
+    "platform_id": "cya_plat_000057",
+    "event_id": "cya_ev_000276",
+    "source_type": "regulatory_notice",
+    "title": "CVM suspends BlueBenx crypto-linked collective investment offerings",
+    "url": "https://www.gov.br/cvm/pt-br/assuntos/noticias/2022/cvm-suspende-oferta-de-contratos-de-investimento-coletivo-em-criptoativos-realizada-por-blubenx-tecnologia-financeira-s-a/",
+    "publisher": "Comissão de Valores Mobiliários",
+    "published_at": "2022-11-30",
+    "archived_url": null,
+    "accessed_at": "2026-08-09",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "Primary regulator notice identifying Bluebenx Tecnologia Financeira S.A., naming BlueBenx investment products including CriptoSavings and DeFi term products, and ordering the public offering activity stopped. Investigation-stage fraud indications in this notice are not treated as final findings."
+  },
+  {
+    "id": "cya_src_b35_0003",
+    "platform_id": "cya_plat_000057",
+    "event_id": "cya_ev_000277",
+    "source_type": "regulatory_notice",
+    "title": "CVM sanctions BlueBenx for unregistered public securities offering",
+    "url": "https://www.gov.br/cvm/pt-br/assuntos/noticias/2024/cvm-condena-acusados-por-realizacao-de-oferta-publica-e-exercicio-de-administracao-de-carteira-de-valores-mobiliarios-irregulares/",
+    "publisher": "Comissão de Valores Mobiliários",
+    "published_at": "2024-09-24",
+    "archived_url": null,
+    "accessed_at": "2026-08-09",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "Primary CVM notice reporting the unanimous administrative decision and fines against Bluebenx Tecnologia Financeira S.A. and Roberto Cardassi for a public securities offering without registration or exemption."
+  },
+  {
+    "id": "cya_src_b35_0004",
+    "platform_id": "cya_plat_000057",
+    "event_id": "cya_ev_000278",
+    "source_type": "regulatory_notice",
+    "title": "CVM resumes judgment and sanctions BlueBenx for fraudulent operation and unregistered offering",
+    "url": "https://www.gov.br/cvm/pt-br/assuntos/noticias/2025/cvm-retoma-sessoes-de-julgamento-com-retornos-de-vista-do-diretor-joao-accioly",
+    "publisher": "Comissão de Valores Mobiliários",
+    "published_at": "2025-08-06",
+    "archived_url": null,
+    "accessed_at": "2026-08-09",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "Primary CVM notice reporting the unanimous 5 August 2025 administrative decision sanctioning Bluebenx Tecnologia Financeira S.A. for fraudulent securities-market operations and an unregistered public offering. The notice states the sanctions were appealable with suspensive effect. This is not described as a criminal fraud conviction."
+  }
+]

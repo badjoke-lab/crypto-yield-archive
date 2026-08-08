@@ -1,0 +1,20 @@
+[
+  {
+    "platform_id": "cya_plat_000057",
+    "terms_status": "unclear",
+    "asset_ownership_interpretation": "CVM records establish that Bluebenx Tecnologia Financeira S.A. offered crypto-linked collective investment contracts and later faced administrative sanctions, but the reviewed sources do not establish one universal customer ownership, segregation, trust, custody or creditor-right model for BlueBenx Finance balances and investment products.",
+    "affected_product": "CriptoSavings, BlueBenx DeFi 90/180/360-day investment contracts and other BlueBenx Finance balances affected by the 2022 suspension",
+    "source_evidence_id": "cya_src_b35_0002",
+    "notes": "Do not infer self-custody, insured deposits, trust assets, platform ownership or a uniform creditor class from the product labels or CVM securities analysis. The later CVM fraud finding concerns securities-market conduct and does not independently resolve customer legal title or recovery.",
+    "confidence": "high"
+  },
+  {
+    "platform_id": "cya_plat_000058",
+    "terms_status": "unclear",
+    "asset_ownership_interpretation": "Hotbit support notices show that investment products were subscribed, closed and redeemed inside a centralized Hotbit Investment account. This establishes platform-administered account control but does not establish legal ownership of underlying assets, segregation, reserve backing, trust treatment, protocol-level custody or the user's rights during an exchange shutdown.",
+    "affected_product": "Hotbit DeFi Farm, staking investment and related Investment Center products",
+    "source_evidence_id": "cya_src_b35_0005",
+    "notes": "Automatic product redemption into an investment account must not be described as external withdrawal, principal protection or completed repayment. Product-specific staking and DeFi labels do not prove direct user control of validators, protocols or smart contracts.",
+    "confidence": "high"
+  }
+]

@@ -1,0 +1,59 @@
+[
+  {
+    "id": "cya_plat_000057",
+    "slug": "bluebenx",
+    "canonical_name": "BlueBenx",
+    "aliases": [
+      "Blue Benx",
+      "BlueBenx Finance",
+      "BlueBenx Earn",
+      "BlueBenx Yield",
+      "CriptoSavings",
+      "Bluebenx Tecnologia Financeira S.A."
+    ],
+    "type": "centralized_yield",
+    "status": "withdrawals_suspended",
+    "failure_reason": "unknown",
+    "launch_date": null,
+    "end_date": null,
+    "country_or_origin": "Brazil",
+    "summary": "Brazilian centralized crypto-yield and investment platform whose BlueBenx Finance operations, including withdrawals, redemptions, deposits and transfers, were suspended in August 2022. CVM later stopped crypto-linked investment offerings and issued final administrative sanctions concerning unregistered public offerings and fraudulent securities-market operations. Customer recovery and the platform's final legal end remain unresolved.",
+    "what_happened": "BlueBenx told customers in August 2022 that BlueBenx Finance operations, including withdrawals, redemptions, deposits and transfers, were being suspended after what the company described as a hack. CYA does not adopt that claimed hack as the verified cause of the freeze. On 30 November 2022, Brazil's CVM ordered the suspension of public offerings of crypto-linked collective investment contracts by Bluebenx Tecnologia Financeira S.A. A September 2024 CVM judgment imposed sanctions for an unregistered public securities offering. In August 2025, the CVM unanimously imposed additional sanctions for fraudulent securities-market operations and an unregistered public offering. Those administrative findings do not establish a criminal conviction, a universal customer recovery result or a verified final platform end date.",
+    "official_url_original": "https://bluebenx.com/",
+    "official_domain_original": "bluebenx.com",
+    "official_url_status": "unknown",
+    "archived_url": "https://web.archive.org/web/*/https://bluebenx.com/",
+    "confidence": "high",
+    "last_verified_at": "2026-08-09",
+    "uncertainty_notes": "The August 2022 operational freeze is supported by contemporaneous reporting that reproduces BlueBenx's customer communication. The company's claimed hack is not treated as an established failure cause. CVM's later administrative decisions establish regulatory findings but do not prove that regulation caused the original withdrawal freeze. No complete customer repayment, recovery percentage, insolvency proceeding, final corporate dissolution date or universal claim resolution is established by the reviewed sources.",
+    "notes": "Tracked as a centralized yield platform because CVM records identify crypto-linked investment contracts including CriptoSavings and term DeFi products, while the 2022 freeze affected BlueBenx Finance withdrawals and redemptions."
+  },
+  {
+    "id": "cya_plat_000058",
+    "slug": "hotbit-investment-products",
+    "canonical_name": "Hotbit Investment Products",
+    "aliases": [
+      "Hotbit Investment",
+      "Hotbit Earn",
+      "Hotbit DeFi Farm",
+      "Hotbit Staking Investment",
+      "Hotbit Investment Center"
+    ],
+    "type": "exchange_earn",
+    "status": "operations_ended",
+    "failure_reason": "voluntary_shutdown",
+    "launch_date": null,
+    "end_date": "2023-05-22",
+    "country_or_origin": "Global",
+    "summary": "Product-scoped record for Hotbit's exchange-linked investment layer, including DeFi Farm and staking products. Hotbit support notices show individual investment products being closed and automatically redeemed into users' investment accounts during 2023. The exchange then ended all centralized-exchange operations on 22 May 2023 and told users to withdraw remaining assets by 21 June.",
+    "what_happened": "Hotbit operated an Investment Center with DeFi Farm, staking and other yield products alongside its centralized exchange. During 2023, Hotbit closed multiple investment products and stated that remaining positions would be automatically redeemed so users could check their investment accounts afterward. Those internal redemptions are not treated as proof of successful external withdrawal. On 22 May 2023, Hotbit announced that all CEX operations would stop and instructed users to withdraw remaining assets by 04:00 UTC on 21 June. The reviewed sources do not establish that every investment customer completed an external withdrawal or received all assets owed.",
+    "official_url_original": "https://www.hotbit.io/",
+    "official_domain_original": "hotbit.io",
+    "official_url_status": "unknown",
+    "archived_url": "https://web.archive.org/web/*/https://www.hotbit.io/",
+    "confidence": "high",
+    "last_verified_at": "2026-08-09",
+    "uncertainty_notes": "No single verified launch date is assigned to the product-scoped Investment Center because the reviewed first-party material spans multiple product launches and closures. Automatic redemption notices refer to balances becoming visible in Hotbit investment accounts and do not prove external withdrawal or universal repayment. The 22 May 2023 end date is the announced cessation of CEX operations, not a claim that every customer balance was resolved that day.",
+    "notes": "Tracked separately from a generic exchange listing because the historical subject is Hotbit's yield and investment product layer and the customer exposure created by those products before the exchange-wide shutdown."
+  }
+]

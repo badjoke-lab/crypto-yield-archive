@@ -1,0 +1,72 @@
+[
+  {
+    "candidate_id": "cya_candidate_000047",
+    "canonical_name": "BlueBenx",
+    "aliases": [
+      "Blue Benx",
+      "BlueBenx Finance",
+      "BlueBenx Earn",
+      "BlueBenx Yield",
+      "CriptoSavings"
+    ],
+    "domain": "bluebenx.com",
+    "country_or_origin": "Brazil",
+    "platform_type_guess": "centralized_yield",
+    "status_guess": "withdrawals_suspended",
+    "major_event": "August 2022 suspension of BlueBenx Finance operations followed by CVM stop-order and final administrative sanctions concerning unregistered offerings and fraudulent securities-market operations",
+    "primary_sources": [
+      "https://www.gov.br/cvm/pt-br/assuntos/noticias/2022/cvm-suspende-oferta-de-contratos-de-investimento-coletivo-em-criptoativos-realizada-por-blubenx-tecnologia-financeira-s-a/",
+      "https://www.gov.br/cvm/pt-br/assuntos/noticias/2024/cvm-condena-acusados-por-realizacao-de-oferta-publica-e-exercicio-de-administracao-de-carteira-de-valores-mobiliarios-irregulares/",
+      "https://www.gov.br/cvm/pt-br/assuntos/noticias/2025/cvm-retoma-sessoes-de-julgamento-com-retornos-de-vista-do-diretor-joao-accioly"
+    ],
+    "secondary_sources": [
+      "https://thepaypers.com/cryptocurrencies/brazils-bluebenx-crypto-platform-suspends-withdrawals--1257991"
+    ],
+    "duplicate_check": {
+      "checked_at": "2026-08-09",
+      "matched_platform_ids": [
+        "cya_plat_000057"
+      ],
+      "notes": "Promoted only after the hardened candidate scanner classified the staged record as a duplicate-clear new candidate and review separated the 2022 withdrawal freeze, attributed hack claim, later CVM administrative findings, product scope and unresolved customer outcome."
+    },
+    "decision": "already_recorded",
+    "notes": "Promoted to canonical record cya_plat_000057 in batch 35. The platform remains withdrawals_suspended with failure_reason unknown because the claimed hack is not independently established as the cause and later regulation is not assumed to have caused the original freeze. Customer outcome and final end date remain unknown.",
+    "first_seen_at": "2026-08-05",
+    "last_reviewed_at": "2026-08-09"
+  },
+  {
+    "candidate_id": "cya_candidate_000050",
+    "canonical_name": "Hotbit Investment Products",
+    "aliases": [
+      "Hotbit Investment",
+      "Hotbit Earn",
+      "Hotbit DeFi Farm",
+      "Hotbit Staking Investment"
+    ],
+    "domain": "hotbit.io",
+    "country_or_origin": "Global",
+    "platform_type_guess": "exchange_earn",
+    "status_guess": "operations_ended",
+    "major_event": "Hotbit operated exchange-linked DeFi Farm and staking investment products, closed and internally redeemed multiple products in 2023, then ended all CEX operations on 22 May 2023",
+    "primary_sources": [
+      "https://hotbit.zendesk.com/hc/en-us/articles/12115799863063-Hotbit-s-Announcement-on-the-Close-of-TIME-T-1-DeFi-Farm-Investment-Product-on-February-2nd-2023",
+      "https://hotbit.zendesk.com/hc/en-us/articles/12910104017943-Hotbit-s-Announcement-on-the-Close-of-IOTX-REEF-WOO-BOTTO-OOE-EOS-and-ALICE-T-1-DeFi-Farm-Investment-Products-on-March-7th-2023",
+      "https://hotbit.zendesk.com/hc/en-us/articles/14061339820951-Hotbit-s-Announcement-on-the-Close-of-SPS-T-8-Staking-Investment-Product-on-April-21st-2023"
+    ],
+    "secondary_sources": [
+      "https://www.coindesk.com/business/2023/05/22/crypto-trading-platform-hotbit-terminates-cex-operations",
+      "https://decrypt.co/140913/hotbit-shutters-crypto-exchange-urges-users-withdraw-funds"
+    ],
+    "duplicate_check": {
+      "checked_at": "2026-08-09",
+      "matched_platform_ids": [
+        "cya_plat_000058"
+      ],
+      "notes": "Promoted only after the hardened candidate scanner classified the staged record as a duplicate-clear new candidate. Review kept the record product-scoped and separated automatic redemption into Hotbit investment accounts from external withdrawal completion."
+    },
+    "decision": "already_recorded",
+    "notes": "Promoted to canonical record cya_plat_000058 in batch 35. Hotbit's CEX operations ended on 22 May 2023, but the customer outcome remains unknown because product-level internal redemption notices and the later withdrawal deadline do not establish universal completed withdrawals or repayment.",
+    "first_seen_at": "2026-08-08",
+    "last_reviewed_at": "2026-08-09"
+  }
+]
