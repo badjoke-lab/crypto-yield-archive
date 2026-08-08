@@ -1,0 +1,18 @@
+[
+  {
+    "platform_id": "cya_plat_000059",
+    "product_type": "exchange_earn",
+    "product_name": "FTX App Earn",
+    "custody_model": "Yield was credited inside FTX-branded customer accounts. The reviewed historical support and post-bankruptcy account materials do not establish one universal segregation, trust, wallet-level custody or legal-title model across FTX.com, FTX US and other branded variants",
+    "yield_source": "FTX marketed tiered yield on supported crypto and fiat balances. CYA does not infer the exact downstream lending, staking, treasury or counterparty mechanism from the customer-facing Earn description alone",
+    "risk_notes": "Customers faced centralized-exchange custody, counterparty, liquidity, insolvency, legal-entity, jurisdiction, withdrawal and terms-change risks. The later bankruptcy claims process replaced normal account access and does not establish that Earn principal or yield was separately protected."
+  },
+  {
+    "platform_id": "cya_plat_000060",
+    "product_type": "exchange_earn",
+    "product_name": "Liquid Earn",
+    "custody_model": "Liquid customers accessed the Celsius earning model through the Liquid exchange integration. The reviewed launch material does not establish whether every supported asset was transferred to Celsius under the same legal arrangement or whether customer title, segregation and creditor rights were uniform",
+    "yield_source": "Celsius compounding-yield model integrated into Liquid, with weekly payouts and no lock-in described at launch",
+    "risk_notes": "Customers faced exchange custody, Celsius-related counterparty, platform-parent, liquidity, withdrawal, legal-entity and insolvency-contagion risks. The integration does not prove that every Liquid Earn customer was a direct creditor of Celsius."
+  }
+]
