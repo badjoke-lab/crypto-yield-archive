@@ -35,6 +35,8 @@ The monitor currently checks:
 
 Network results are signals, not canonical conclusions. HTTP blocking, rate limits, transient outages and redirects can all require manual interpretation.
 
+URL probing uses HEAD first. A fresh GET request is retried when HEAD fails or the server returns HTTP 405 / 501, so sites that do not support HEAD are not reported as unreachable solely for that reason.
+
 ## Severity
 
 ```text
@@ -50,10 +52,10 @@ medium
   exactly 2 evidence records
   claims ongoing without claim_process_url
   official-domain redirect change
-  other unreachable URL state
+  other unreachable URL state after retry
 
 low
-  HTTP 403 / 429 probe blocking or rate limiting
+  HTTP 401 / 402 / 403 / 429 probe blocking, authentication or rate limiting
 ```
 
 Severity is a review priority only. It is not a platform-risk score.
@@ -96,7 +98,7 @@ Fixture tests:
 npm run test:monitor
 ```
 
-The fixture test covers stale verification, thin evidence, missing claim-process links and dead URL detection without depending on the public internet.
+The fixture test covers stale verification, thin evidence, missing claim-process links, dead URLs, authentication-blocked probes, HEAD 405 fallback and fresh GET retry after a failed HEAD request without depending on the public internet.
 
 ## Phase 7 completion criteria
 
