@@ -1,0 +1,34 @@
+[
+  {
+    "platform_id": "cya_plat_000057",
+    "product_type": "centralized_yield",
+    "product_name": "CriptoSavings",
+    "custody_model": "BlueBenx marketed a centralized crypto-linked investment contract through BlueBenx Finance; the reviewed regulatory material does not establish segregation, trust treatment, wallet-level custody, or customer legal title to underlying assets",
+    "yield_source": "Crypto-linked investment returns marketed by BlueBenx; CYA does not reconstruct or validate the underlying trading, liquidity-pool, lending or token strategy from the reviewed sources",
+    "risk_notes": "Customers faced platform, liquidity, withdrawal, legal-structure, regulatory, operational and potential strategy risks. CVM classified the offering activity as a securities-market matter, but that does not by itself resolve asset ownership or customer recovery."
+  },
+  {
+    "platform_id": "cya_plat_000057",
+    "product_type": "centralized_yield",
+    "product_name": "BlueBenx DeFi term investments",
+    "custody_model": "BlueBenx offered fixed-term products identified by CVM as DeFi 90 days, DeFi 180 days and DeFi 360 days; the reviewed sources do not establish segregated custody, legal title, or a verified smart-contract deployment controlled directly by customers",
+    "yield_source": "Advertised crypto-linked returns over fixed terms; the precise underlying yield-generation mechanism is not treated as verified from marketing or regulatory naming alone",
+    "risk_notes": "Customers faced term lock-up, platform, liquidity, withdrawal, strategy, legal-structure and regulatory risks. The DeFi label is a product name and does not establish non-custodial protocol exposure."
+  },
+  {
+    "platform_id": "cya_plat_000058",
+    "product_type": "exchange_earn",
+    "product_name": "Hotbit DeFi Farm",
+    "custody_model": "Users subscribed to named DeFi Farm products through Hotbit's centralized Investment Center. Hotbit support notices describe automatic redemption back into the user's Hotbit investment account, not direct self-custody of the underlying strategy",
+    "yield_source": "Asset-specific DeFi Farm investment products with advertised annualized-return terms administered through Hotbit; the reviewed closure notices do not establish the complete downstream protocol, counterparty or reserve structure for every product",
+    "risk_notes": "Customers faced centralized-exchange custody, strategy, smart-contract or protocol, counterparty, rate, liquidity, redemption and platform-shutdown risks. Internal redemption did not guarantee external withdrawal."
+  },
+  {
+    "platform_id": "cya_plat_000058",
+    "product_type": "staking_like_yield",
+    "product_name": "Hotbit Staking Investment",
+    "custody_model": "Users subscribed to staking-branded investment products inside Hotbit. Support notices show Hotbit controlled product subscription and redemption scheduling and credited redeemed positions to the investment account",
+    "yield_source": "Asset-specific staking or staking-like rewards offered through Hotbit's Investment Center; exact validator, protocol and counterparty arrangements varied by product and are not generalized",
+    "risk_notes": "Customers faced exchange custody, lock-up or redemption-delay, staking or protocol, counterparty, asset-price, operational and shutdown risks. Product labels and internal-account balances do not establish principal protection or external custody rights."
+  }
+]
