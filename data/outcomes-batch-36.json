@@ -1,0 +1,34 @@
+[
+  {
+    "platform_id": "cya_plat_000059",
+    "outcome_status": "claims_ongoing",
+    "estimated_recovery_rate": "Not classified at the FTX Earn product level. Bankruptcy-plan distributions have commenced for eligible allowed claims, but published percentages are defined by claim class and eligibility rather than by participation in the historical Earn program.",
+    "repayment_started_at": "2025-02-18",
+    "repayment_completed_at": null,
+    "repayment_method": "Bankruptcy-plan cash distributions to eligible holders of allowed claims through approved distribution service providers, subject to claim reconciliation and pre-distribution requirements",
+    "claim_process_url": "https://support.ftx.com/hc/en-us/sections/33189504164628-Distributions",
+    "affected_products": ["FTX App Earn", "FTX Earn program balances reflected in customer account histories"],
+    "claim_classes": ["Allowed customer entitlement claims", "Allowed convenience claims where applicable", "Other allowed FTX customer claims according to the relevant debtor entity and Plan class"],
+    "jurisdictions": ["FTX.com and supported FTX debtor jurisdictions", "United States where applicable", "Other eligible jurisdictions under the confirmed Plan"],
+    "as_of": "2026-08-09",
+    "last_verified_at": "2026-08-09",
+    "notes": "FTX support confirms that account history includes amounts earned through the Earn program. CYA does not treat published Dotcom, U.S., Convenience or other claim-class distribution percentages as a product-specific FTX Earn recovery rate. Some claims remain disputed or ineligible for distribution pending reconciliation.",
+    "confidence": "high"
+  },
+  {
+    "platform_id": "cya_plat_000060",
+    "outcome_status": "claims_ongoing",
+    "estimated_recovery_rate": "Not classified. Liquid directs customers into the FTX Chapter 11 claims process, but the reviewed sources do not establish a uniform recovery percentage for Liquid Earn balances or a single legal treatment for every Liquid, Quoine or Celsius-linked customer exposure.",
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": "Customer claims through the FTX restructuring process according to the relevant Liquid and FTX affiliate relationship; product-specific payment completion is not established",
+    "claim_process_url": "https://help.liquid.com/en/articles/8018547-chapter-11-should-i-make-a-claim",
+    "affected_products": ["Liquid Earn", "Liquid balances associated with the Celsius yield integration", "Liquid Global customer balances affected by the post-FTX withdrawal suspension"],
+    "claim_classes": ["Liquid Global customers directed to the FTX Chapter 11 process", "Customers with suspended fiat or crypto balances", "Liquid Earn users whose claim treatment depends on the relevant entity and account structure"],
+    "jurisdictions": ["Japan", "Singapore", "Global Liquid customer base"],
+    "as_of": "2026-08-09",
+    "last_verified_at": "2026-08-09",
+    "notes": "Liquid's help center confirms an available claim path and continued suspension of services. CYA does not infer that every Liquid Earn balance became a direct Celsius claim, that Liquid itself was independently insolvent, or that all users have received a distribution.",
+    "confidence": "high"
+  }
+]
