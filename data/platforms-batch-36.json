@@ -1,0 +1,55 @@
+[
+  {
+    "id": "cya_plat_000059",
+    "slug": "ftx-earn",
+    "canonical_name": "FTX Earn",
+    "aliases": [
+      "FTX App Earn",
+      "FTX US Earn",
+      "Blockfolio Earn",
+      "FTX Earn Program"
+    ],
+    "type": "exchange_earn",
+    "status": "bankrupt",
+    "failure_reason": "insolvency",
+    "launch_date": null,
+    "end_date": "2022-11-11",
+    "country_or_origin": "Bahamas / United States / Global",
+    "summary": "Product-scoped record for FTX's mobile-app Earn program, which paid advertised yield on supported crypto and fiat balances. FTX and affiliated debtors filed for Chapter 11 on 11 November 2022; the customer claims system later preserved account histories including amounts earned through the Earn program. Customer recoveries now proceed through the broader FTX bankruptcy plan rather than a product-specific FTX Earn repayment process.",
+    "what_happened": "FTX promoted an Earn program inside FTX-branded mobile apps, with historical support material describing tiered APY on supported balances. On 11 November 2022, FTX Trading Ltd. and affiliated debtors entered Chapter 11 proceedings. Current FTX claims support states that customer account history through the petition date includes amounts earned from staking or participation in the Earn program, and customer balances are read-only. The FTX Recovery Trust began plan distributions in 2025 and continued distributions in 2026, but those payments are made by bankruptcy claim class and eligibility rather than as a separately reported FTX Earn recovery program. CYA therefore does not assign a product-specific recovery percentage.",
+    "official_url_original": "https://ftx.com/",
+    "official_domain_original": "ftx.com",
+    "official_url_status": "repurposed",
+    "archived_url": "https://web.archive.org/web/*/https://ftx.com/",
+    "confidence": "high",
+    "last_verified_at": "2026-08-09",
+    "uncertainty_notes": "The reviewed material confirms the Earn feature and its treatment inside post-bankruptcy account histories, but CYA does not collapse FTX.com, FTX US, FTX EU and other affiliate obligations into one legal contract. The exact initial launch date and product-specific custody/title terms remain unclear. Bankruptcy-plan distribution percentages vary by allowed claim class and are not treated as an FTX Earn recovery rate.",
+    "notes": "Tracked separately from a generic FTX exchange record because the historical subject is the yield-bearing Earn product and how those balances entered the bankruptcy claims process."
+  },
+  {
+    "id": "cya_plat_000060",
+    "slug": "liquid-earn",
+    "canonical_name": "Liquid Earn",
+    "aliases": [
+      "Liquid.com Earn",
+      "Liquid Crypto Earn",
+      "Liquid Celsius Earn"
+    ],
+    "type": "exchange_earn",
+    "status": "withdrawals_suspended",
+    "failure_reason": "counterparty_exposure",
+    "launch_date": "2021-04-28",
+    "end_date": null,
+    "country_or_origin": "Japan / Singapore / Global",
+    "summary": "Product-scoped record for Liquid's exchange-linked yield service launched through an integration with Celsius Network. After FTX acquired Liquid, Liquid Global suspended fiat and crypto withdrawals in November 2022 in connection with the Chapter 11 proceedings of parent FTX Trading Ltd. Liquid's current support materials continue to direct customers toward the FTX bankruptcy claims process.",
+    "what_happened": "On 28 April 2021, Celsius announced an integration that made its compounding-yield model available to Liquid customers, with weekly payouts and no lock-in described in the launch material. FTX later acquired Liquid. On 15 November 2022, Liquid Global halted fiat and crypto withdrawals after the Chapter 11 filing involving its ultimate parent. Current Liquid support says deposits, trading and withdrawals of fiat and crypto assets have been suspended for an extended period and directs Liquid Global users to the FTX restructuring and claims process. CYA does not infer that Liquid itself was independently insolvent or that every Liquid Earn balance represented a direct claim against Celsius.",
+    "official_url_original": "https://www.liquid.com/",
+    "official_domain_original": "liquid.com",
+    "official_url_status": "unknown",
+    "archived_url": "https://web.archive.org/web/*/https://www.liquid.com/",
+    "confidence": "high",
+    "last_verified_at": "2026-08-09",
+    "uncertainty_notes": "The Celsius integration establishes the product and yield model but does not establish one universal custody, legal-title or downstream counterparty structure for every Liquid Earn customer balance. Current Liquid support confirms the continuing service suspension and claim route, but no reviewed source establishes a final product end date or a uniform recovery percentage.",
+    "notes": "Tracked as an exchange-Earn product. Parent-company Chapter 11 exposure is kept separate from a claim that Liquid or Quoine independently entered insolvency proceedings."
+  }
+]

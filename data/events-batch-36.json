@@ -1,0 +1,58 @@
+[
+  {
+    "id": "cya_ev_000283",
+    "platform_id": "cya_plat_000059",
+    "event_type": "bankruptcy_filed",
+    "event_date": "2022-11-11",
+    "title": "FTX Earn balances enter the FTX Chapter 11 claims context",
+    "description": "FTX Trading Ltd. and affiliated debtors filed voluntary Chapter 11 petitions on 11 November 2022. FTX's later customer portal treats account balances as of that petition date and explicitly includes amounts earned from staking or participation in the Earn program.",
+    "confidence": "high",
+    "impact_level": "critical",
+    "event_status_effect": "bankrupt",
+    "source_count": 2,
+    "sort_order": 1,
+    "notes": "This is the bankruptcy date for the FTX debtor group and the end date used for this product-scoped historical record. CYA does not assume that every FTX-branded Earn variant had the same contracting entity or creditor treatment."
+  },
+  {
+    "id": "cya_ev_000284",
+    "platform_id": "cya_plat_000059",
+    "event_type": "customer_repayment_started",
+    "event_date": "2025-02-18",
+    "title": "FTX begins initial bankruptcy-plan distributions",
+    "description": "FTX and the FTX Recovery Trust announced that initial distributions had commenced for eligible holders of allowed Convenience Class claims, with later distributions extending to additional allowed claim classes.",
+    "confidence": "high",
+    "impact_level": "high",
+    "event_status_effect": "none",
+    "source_count": 1,
+    "sort_order": 2,
+    "notes": "This is a plan-level customer and creditor distribution milestone, not evidence of a product-specific FTX Earn recovery percentage or universal completed repayment."
+  },
+  {
+    "id": "cya_ev_000285",
+    "platform_id": "cya_plat_000060",
+    "event_type": "yield_program_started",
+    "event_date": "2021-04-28",
+    "title": "Liquid launches exchange-linked yield through Celsius integration",
+    "description": "Celsius announced that Liquid customers could access its compounding-yield model through Liquid, with weekly payouts, no lock-in, no minimum balance and asset transfers or withdrawals described in the launch material.",
+    "confidence": "high",
+    "impact_level": "medium",
+    "event_status_effect": "active",
+    "source_count": 1,
+    "sort_order": 1,
+    "notes": "The announcement establishes the launch and customer-facing product model. It does not establish one universal downstream custody, title or creditor structure for all Liquid Earn balances."
+  },
+  {
+    "id": "cya_ev_000286",
+    "platform_id": "cya_plat_000060",
+    "event_type": "withdrawals_suspended",
+    "event_date": "2022-11-15",
+    "title": "Liquid Global suspends fiat and crypto withdrawals",
+    "description": "Liquid Global halted fiat and crypto withdrawals after the Chapter 11 filing involving parent FTX Trading Ltd. Current Liquid support states that deposits, trading and withdrawals remain suspended for an extended period in connection with those proceedings.",
+    "confidence": "high",
+    "impact_level": "critical",
+    "event_status_effect": "withdrawals_suspended",
+    "source_count": 2,
+    "sort_order": 2,
+    "notes": "The suspension is tied to parent-company Chapter 11 exposure. CYA does not convert that relationship into a finding that Liquid or Quoine independently became insolvent."
+  }
+]

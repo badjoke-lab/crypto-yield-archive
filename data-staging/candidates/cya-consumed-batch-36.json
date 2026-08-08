@@ -1,0 +1,53 @@
+[
+  {
+    "candidate_id": "cya_candidate_000051",
+    "canonical_name": "FTX Earn",
+    "aliases": ["FTX App Earn", "FTX US Earn", "Blockfolio Earn", "FTX Earn Program"],
+    "domain": "ftx.com",
+    "country_or_origin": "Bahamas / United States / Global",
+    "platform_type_guess": "exchange_earn",
+    "status_guess": "operations_ended",
+    "major_event": "FTX Earn balances entered the FTX Chapter 11 customer-claims process after the 11 November 2022 filing, with plan distributions beginning in 2025",
+    "primary_sources": [
+      "https://web.archive.org/web/20221127164753/https://help.ftx.com/hc/en-us/articles/10573545824532-FTX-App-Earn",
+      "https://support.ftx.com/hc/en-us/articles/16845301546004-Account-Balances-and-Transactions",
+      "https://www.prnewswire.com/news-releases/ftx-receives-court-approval-for-first-day-motions-301685748.html",
+      "https://www.prnewswire.com/news-releases/ftx-commences-initial-distributions-to-convenience-class-and-sets-next-distribution-302379212.html"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-09",
+      "matched_platform_ids": ["cya_plat_000059"],
+      "notes": "Promoted only after the hardened candidate scanner classified FTX Earn as a duplicate-clear new candidate. The canonical record remains product-scoped and does not substitute a generic FTX exchange dossier."
+    },
+    "decision": "already_recorded",
+    "notes": "Promoted to canonical record cya_plat_000059 in batch 36. The record uses bankrupt/insolvency and end date 11 November 2022, while customer outcome remains claims_ongoing. Published bankruptcy-plan percentages are not treated as a product-specific FTX Earn recovery rate.",
+    "first_seen_at": "2026-08-09",
+    "last_reviewed_at": "2026-08-09"
+  },
+  {
+    "candidate_id": "cya_candidate_000052",
+    "canonical_name": "Liquid Earn",
+    "aliases": ["Liquid.com Earn", "Liquid Crypto Earn", "Liquid Celsius Earn"],
+    "domain": "liquid.com",
+    "country_or_origin": "Japan / Singapore / Global",
+    "platform_type_guess": "exchange_earn",
+    "status_guess": "withdrawals_suspended",
+    "major_event": "Liquid launched exchange-linked yield through Celsius in April 2021 and later suspended fiat and crypto withdrawals after parent FTX entered Chapter 11",
+    "primary_sources": [
+      "https://www.prnewswire.com/news-releases/the-liquid-crypto-exchange-selects-celsius-to-offer-crypto-yield-to-its-customers-301278865.html",
+      "https://help.liquid.com/en/articles/8018542-i-am-unable-to-access-my-funds",
+      "https://help.liquid.com/en/articles/8018547-chapter-11-should-i-make-a-claim"
+    ],
+    "secondary_sources": ["https://www.coindesk.com/business/2022/11/15/liquid-global-crypto-exchange-bailed-out-by-ftx-halts-withdrawals"],
+    "duplicate_check": {
+      "checked_at": "2026-08-09",
+      "matched_platform_ids": ["cya_plat_000060"],
+      "notes": "Promoted only after the hardened candidate scanner classified Liquid Earn as a duplicate-clear new candidate. The canonical record remains product-scoped and keeps Liquid/Quoine, FTX and Celsius legal relationships distinct."
+    },
+    "decision": "already_recorded",
+    "notes": "Promoted to canonical record cya_plat_000060 in batch 36. Status remains withdrawals_suspended with counterparty_exposure rather than an unsupported Liquid-specific insolvency finding. Customer outcome remains claims_ongoing without a uniform recovery percentage.",
+    "first_seen_at": "2026-08-09",
+    "last_reviewed_at": "2026-08-09"
+  }
+]
