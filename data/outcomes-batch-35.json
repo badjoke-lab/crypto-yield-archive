@@ -1,0 +1,54 @@
+[
+  {
+    "platform_id": "cya_plat_000057",
+    "outcome_status": "unknown",
+    "estimated_recovery_rate": "Not classified. Reviewed sources establish the August 2022 suspension of BlueBenx Finance withdrawals and later CVM enforcement, but they do not establish a uniform customer repayment, recovery percentage or completed claim process.",
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": "No verified universal repayment or claim process identified in the reviewed sources",
+    "claim_process_url": null,
+    "affected_products": [
+      "CriptoSavings",
+      "BlueBenx DeFi 90-day investment",
+      "BlueBenx DeFi 180-day investment",
+      "BlueBenx DeFi 360-day investment",
+      "Other BlueBenx Finance products affected by the operational suspension"
+    ],
+    "claim_classes": [
+      "BlueBenx Finance customers",
+      "Investors in BlueBenx crypto-linked investment contracts"
+    ],
+    "jurisdictions": [
+      "Brazil"
+    ],
+    "as_of": "2026-08-09",
+    "last_verified_at": "2026-08-09",
+    "notes": "The CVM enforcement record is not a customer-recovery record. CYA does not infer that the later administrative sanctions created, completed or replaced a customer repayment process. The platform's claimed 2022 hack is not used to calculate losses or recovery.",
+    "confidence": "high"
+  },
+  {
+    "platform_id": "cya_plat_000058",
+    "outcome_status": "unknown",
+    "estimated_recovery_rate": "Not classified. Hotbit support notices show automatic redemption of selected investment products into users' Hotbit investment accounts, and the shutdown announcement gave users a deadline to withdraw remaining assets, but the reviewed evidence does not prove universal external withdrawal or full repayment.",
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": "Product-level automatic redemption to Hotbit investment accounts followed by a separate platform-wide withdrawal window; completion not verified",
+    "claim_process_url": null,
+    "affected_products": [
+      "Hotbit DeFi Farm investment products",
+      "Hotbit staking investment products",
+      "Other Hotbit Investment Center balances outstanding around the CEX shutdown"
+    ],
+    "claim_classes": [
+      "Hotbit investment-product users",
+      "Hotbit customers with remaining platform balances at shutdown"
+    ],
+    "jurisdictions": [
+      "Global"
+    ],
+    "as_of": "2026-08-09",
+    "last_verified_at": "2026-08-09",
+    "notes": "Internal account redemption is not equivalent to an on-chain or external-platform withdrawal. The 21 June 2023 withdrawal deadline is preserved as an instruction, not as evidence that every customer completed withdrawal or received every asset owed.",
+    "confidence": "high"
+  }
+]
