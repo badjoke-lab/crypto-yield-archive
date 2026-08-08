@@ -1,0 +1,62 @@
+[
+  {
+    "id": "cya_src_b36_0006",
+    "platform_id": "cya_plat_000060",
+    "event_id": "cya_ev_000285",
+    "source_type": "official_statement",
+    "title": "Liquid selects Celsius to offer crypto yield to its customers",
+    "url": "https://www.prnewswire.com/news-releases/the-liquid-crypto-exchange-selects-celsius-to-offer-crypto-yield-to-its-customers-301278865.html",
+    "publisher": "Celsius Network",
+    "published_at": "2021-04-28",
+    "archived_url": null,
+    "accessed_at": "2026-08-09",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "Partner announcement states that Liquid customers gained access to Celsius's compounding-yield model, with weekly payouts, no lock-in and no minimum balance. It establishes the customer-facing product but not one universal custody or creditor structure."
+  },
+  {
+    "id": "cya_src_b36_0007",
+    "platform_id": "cya_plat_000060",
+    "event_id": "cya_ev_000286",
+    "source_type": "official_statement",
+    "title": "I am unable to access my funds",
+    "url": "https://help.liquid.com/en/articles/8018542-i-am-unable-to-access-my-funds",
+    "publisher": "Liquid Exchange",
+    "published_at": null,
+    "archived_url": null,
+    "accessed_at": "2026-08-09",
+    "reliability": "high",
+    "claim_scope": "status",
+    "notes": "Current Liquid support says deposits, trading and withdrawals of fiat and crypto assets have been suspended for an extended period in connection with the U.S. Chapter 11 proceedings of parent FTX Trading Ltd. and related affiliates."
+  },
+  {
+    "id": "cya_src_b36_0008",
+    "platform_id": "cya_plat_000060",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "Chapter 11 - should I make a claim?",
+    "url": "https://help.liquid.com/en/articles/8018547-chapter-11-should-i-make-a-claim",
+    "publisher": "Liquid Exchange",
+    "published_at": null,
+    "archived_url": null,
+    "accessed_at": "2026-08-09",
+    "reliability": "high",
+    "claim_scope": "customer_outcome",
+    "notes": "Liquid directs customers to make a claim and to follow the FTX restructuring process while stating that deposits, trading and withdrawals remain unavailable pending further updates."
+  },
+  {
+    "id": "cya_src_b36_0009",
+    "platform_id": "cya_plat_000060",
+    "event_id": "cya_ev_000286",
+    "source_type": "news_article",
+    "title": "Liquid Global, Crypto Exchange Owned by FTX, Halts Withdrawals",
+    "url": "https://www.coindesk.com/business/2022/11/15/liquid-global-crypto-exchange-bailed-out-by-ftx-halts-withdrawals",
+    "publisher": "CoinDesk",
+    "published_at": "2022-11-15",
+    "archived_url": null,
+    "accessed_at": "2026-08-09",
+    "reliability": "medium",
+    "claim_scope": "event",
+    "notes": "Contemporaneous report provides the 15 November 2022 timing and states that Liquid Global halted both fiat and crypto withdrawals after the FTX Chapter 11 filing."
+  }
+]
