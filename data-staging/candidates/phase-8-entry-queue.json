@@ -1,12 +1,13 @@
 [
   {
     "phase": 8,
-    "status": "research_open",
+    "status": "candidate_review",
     "recorded_at": "2026-08-09",
-    "baseline_main_sha": "53734709bee51c5092c31562d18ab5f0ba1c9492",
+    "baseline_main_sha": "a1b715f065401f1c30ca9edaeb6cb99a643a2179",
     "canonical_platforms": 67,
     "next_audit_milestone": 75,
-    "next_candidate_ids": ["cya_candidate_000061", "cya_candidate_000062"],
+    "staged_candidate_ids": ["cya_candidate_000061", "cya_candidate_000062"],
+    "next_candidate_ids": ["cya_candidate_000063", "cya_candidate_000064"],
     "next_platform_id": "cya_plat_000068",
     "next_event_id": "cya_ev_000300",
     "existing_needs_research": [
@@ -15,6 +16,6 @@
       {"candidate_id":"cya_candidate_000049","canonical_name":"Outlet Finance","blocking_questions":["underlying counterparty model","closure chronology","custody and repayment outcome"]}
     ],
     "promotion_policy": "Candidate-only staging first. No canonical IDs, writes, status changes or outcome inference before reviewed promotion.",
-    "next_action": "Research duplicate-clear, scope-valid, evidence-backed candidates for platform 68 onward and continue Phase 8 growth toward the 75-platform full audit."
+    "next_action": "Run hardened duplicate scanning and review-only draft generation for Phemex Savings and WhiteBIT Crypto Lending. Promote only duplicate-clear, evidence-backed candidates in a separate canonical PR."
   }
 ]
