@@ -29,8 +29,8 @@
     "slug": "okx-simple-earn",
     "canonical_name": "OKX Simple Earn",
     "aliases": [
-      "Simple Earn Flexible",
-      "Simple Earn Fixed"
+      "OKX Simple Earn Flexible",
+      "OKX Simple Earn Fixed"
     ],
     "type": "exchange_earn",
     "status": "active",
