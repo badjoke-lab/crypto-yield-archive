@@ -1,0 +1,28 @@
+[
+  {
+    "id": "cya_plat_000061",
+    "slug": "swyftx-earn",
+    "canonical_name": "Swyftx Earn",
+    "aliases": [
+      "Swyftx Staking",
+      "Earn program",
+      "Staking"
+    ],
+    "type": "exchange_earn",
+    "status": "operations_ended",
+    "failure_reason": "voluntary_shutdown",
+    "launch_date": null,
+    "end_date": "2023-01-10",
+    "country_or_origin": "Australia",
+    "summary": "Product-scoped historical record for Swyftx's exchange-linked Earn program, previously called Staking. Swyftx closed the program on 10 January 2023, citing changing regulatory requirements, while the underlying Swyftx exchange continued operating. Swyftx's current support documentation states that assets held in Earn wallets were returned to users' trade wallets together with earned interest.",
+    "what_happened": "Swyftx offered a yield-bearing product first described as Staking and later as Earn. The company closed that product on 10 January 2023 as it reviewed changing regulatory requirements for crypto yield products. Current first-party support states that assets held in Earn wallets were returned to users' Swyftx trade wallets together with interest earned. CYA treats this as the end of the product only, not the end of the Swyftx exchange, and does not equate an internal return to a trade wallet with proof that every user completed an external withdrawal.",
+    "official_url_original": "https://swyftx.com/",
+    "official_domain_original": "swyftx.com",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://swyftx.com/",
+    "confidence": "high",
+    "last_verified_at": "2026-08-09",
+    "uncertainty_notes": "The reviewed sources establish the product closure date and the company's statement that Earn-wallet assets and earned interest were returned to trade wallets. They do not establish an exact original launch date, one historical legal-title or segregation model, a universal downstream yield mechanism, or the exact date on which every internal transfer completed.",
+    "notes": "Tracked separately from the continuing Swyftx exchange because the historical subject is the discontinued Earn/Staking product. The company's regulatory rationale is preserved as its stated reason and is not treated as a finding that regulators ordered the product to close."
+  }
+]
