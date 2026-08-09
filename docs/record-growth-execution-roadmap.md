@@ -1,6 +1,6 @@
 # CYA record growth execution roadmap
 
-Status: Phase 8 — 75-platform audit checkpoint  
+Status: Phase 8 — growth from 75 toward 100  
 Project: Crypto Yield Archive (CYA)  
 Last baseline review: 2026-08-09
 
@@ -18,19 +18,20 @@ Permanent operating rules remain in `docs/record-growth-plan.md` and `docs/devel
 - Never infer repayment completion, recovery rate, custody, ownership, principal protection, fraud, or customer outcome from marketing or candidate metadata.
 - Product, legal-entity, jurisdiction, terms-version, custody, identity, and customer-outcome boundaries require explicit review.
 - Repository validation, Cloudflare deployment, and direct production observation are separate claims.
-- At audit milestones, record growth stops until the audit checkpoint is completed.
+- At audit milestones, record growth stops until the audit checkpoint is completed and its release is production-verified.
 
-## Current confirmed repository baseline
+## Current confirmed baseline
 
 ```text
 Repository:              badjoke-lab/crypto-yield-archive
 Default branch:          main
-Canonical release SHA:   106ec5b7b2f69a513d2795f4e352405e964456ca
-Latest canonical PR:     #137 Add Phase 8 batch 44 Bitfinex Margin Funding and Poloniex Earn records
-Candidate-only PR:       #136 Stage Phase 8 batch 44 Bitfinex Margin Funding and Poloniex Earn candidates
-Production verification: Production Surface Check #174 success
-Growth state:            paused at 75 for full audit
-Audit PR:                #138 open; repository audit pass, production release pending
+Canonical 75 SHA:        106ec5b7b2f69a513d2795f4e352405e964456ca
+Canonical production:   Production Surface Check #174 success
+75-platform audit PR:    #138 merged
+Audit release SHA:       3357933c7d7e4d2449a507979edf3437412280f9
+Audit production:        Production Surface Check #175 success
+Growth state:            75 -> 100 resumed
+Next audit milestone:    100
 ```
 
 ### Canonical scale
@@ -46,7 +47,7 @@ Claims ongoing:   18
 Generated pages:  89
 ```
 
-PR #137 validation confirmed these counts, 0 corpus blockers, 0 low-reliability evidence, and 0 low-confidence platforms. Production Surface Check #174 then verified the exact canonical SHA on the production surface and completed production desktop/mobile capture successfully.
+The 75-platform audit preserved the canonical scale, reduced deterministic quality debt from 27 to 23 by removing cross-brand generic alias collisions, retained 0 corpus blockers, 0 low-reliability evidence and 0 low-confidence platforms, and passed exact-SHA production verification.
 
 ## Completed phase gates
 
@@ -66,14 +67,14 @@ Phase 8 / batch 41: 67 -> 69                        complete
 Phase 8 / batch 42: 69 -> 71                        complete
 Phase 8 / batch 43: 71 -> 73                        complete
 Phase 8 / batch 44: 73 -> 75                        complete / production verified
-Phase 8: 75-platform full audit                     current
-Phase 8: 75 -> 100                                  blocked until audit-release production verification
-Phase 8: 100-platform full audit                    future
+Phase 8: 75-platform full audit                     complete / production verified
+Phase 8: 75 -> 100                                  current
+Phase 8: 100-platform full audit                    future mandatory gate
 ```
 
 ## Phase 7 monitoring gate
 
-Weekly existing-record monitoring was implemented before Phase 8 growth and remains review-only.
+Weekly existing-record monitoring remains operational and review-only.
 
 Key constraints remain:
 
@@ -100,53 +101,18 @@ Batch 44: Bitfinex Margin Funding + Poloniex Earn   73 -> 75
 
 Every Phase 8 addition used a candidate-only gate followed by a separate canonical PR. Goldfinch, Cabital and Outlet Finance were not silently promoted.
 
-## Candidate queue and reserved identifiers
-
-```text
-Active candidate queue: 3 needs_research candidates
-- cya_candidate_000010 Goldfinch
-- cya_candidate_000045 Cabital
-- cya_candidate_000049 Outlet Finance
-
-Next candidate IDs:      cya_candidate_000069 / cya_candidate_000070
-Next platform ID:        cya_plat_000076
-Next event ID:           cya_ev_000315
-Latest completed batch:  44
-Queue status:            audit_at_75
-```
-
-No active candidate is approved for silent promotion:
-
-- Goldfinch requires a DeFi/institutional-yield scope and entity-boundary decision.
-- Cabital requires operating-entity, product-boundary, closure, custody and customer-outcome evidence.
-- Outlet Finance requires counterparty, closure, custody and repayment evidence.
-
 ## 75-platform audit result
 
-Pre-audit canonical baseline:
+Pre-audit:
 
 ```text
 Corpus blockers:             0
 Quality-debt items:         27
-Medium-reliability evidence:108
 Low-reliability evidence:    0
 Low-confidence platforms:    0
-Low-confidence events:      30
-Unknown outcomes:           13
-Claims ongoing:             18
-Unclear terms:              16
 ```
 
-Four quality-debt findings were generic cross-brand alias collisions:
-
-- `simple earn flexible`
-- `simple earn fixed`
-- `simple earn`
-- `flexible savings`
-
-Audit PR #138 namespaced or removed only those ambiguous generic aliases while preserving canonical IDs, names, slugs, statuses, dates, evidence, outcomes, products and terms interpretations.
-
-Repository-side audit result:
+Audit release:
 
 ```text
 Platforms:                  75
@@ -163,29 +129,44 @@ Low-confidence platforms:     0
 Generated pages:             89
 ```
 
-The remaining 23 findings are the pre-existing legacy debt set and are not hidden or guessed away. Details are recorded in `docs/phase-8-75-platform-audit.md`.
+The four removed findings were cross-brand collisions from generic aliases such as `simple earn`, `simple earn flexible`, `simple earn fixed` and `flexible savings`. Canonical facts were not changed to reduce debt.
 
-## 75-platform audit completion gate
+Full details are in `docs/phase-8-75-platform-audit.md`.
+
+## Candidate queue and reserved identifiers
 
 ```text
-75 canonical platforms preserved                    pass
-no canonical record added or removed                pass
-canonical/reference integrity blockers = 0          pass
-low-reliability evidence = 0                        pass
-low-confidence platforms = 0                        pass
-generic cross-brand alias collisions removed        pass
-remaining quality debt explicitly documented        pass
-normal validation/build/SEO checks green             pass on audit branch
-representative audit-branch capture                  pass
-75-platform canonical production SHA verified       pass / Production Surface Check #174
-75-platform audit release production verified       pending until audit PR merge
+Queue status:            growth_to_100
+Active candidates:       3 needs_research
+- cya_candidate_000010 Goldfinch
+- cya_candidate_000045 Cabital
+- cya_candidate_000049 Outlet Finance
+
+Next candidate IDs:      cya_candidate_000069 / cya_candidate_000070
+Next platform ID:        cya_plat_000076
+Next event ID:           cya_ev_000315
+Next audit milestone:    100 platforms
+Latest completed batch:  44
 ```
 
-Only after the audit release itself passes exact-SHA production verification may the queue move from `audit_at_75` to growth toward 100 and platform `cya_plat_000076` be considered.
+No active candidate is approved for silent promotion:
+
+- Goldfinch requires a DeFi/institutional-yield scope and entity-boundary decision.
+- Cabital requires operating-entity, product-boundary, closure, custody and customer-outcome evidence.
+- Outlet Finance requires counterparty, closure, custody and repayment evidence.
+
+## Next-batch research direction
+
+External research completed during the 75-platform production gate identified two strong duplicate-clear candidates for the next candidate-only review:
+
+- Flipster Earn — first-party history establishes the Earn Campaign from 3 April 2024, while 2026 first-party material documents current Basic/Premium/Dynamic Earn products and risk/reward mechanics.
+- Bitrue Power Piggy — first-party Bitrue material describes Power Piggy as a flexible staking/yield platform launched in 2019 and confirms continued operation in 2026.
+
+These are research directions only until they are explicitly staged as `cya_candidate_000069` and `cya_candidate_000070` in a candidate-only PR and pass the hardened duplicate scanner and review-only draft generator.
 
 ## Production sequencing rule
 
-For every canonical or audit release:
+For every canonical, audit, or state-transition release:
 
 1. merge the reviewed PR;
 2. freeze `main`;
@@ -204,9 +185,9 @@ This prevents a later staging or canonical commit from overtaking the exact-SHA 
 3. Check the latest Cloudflare exact-SHA deployment and Production Surface Check.
 4. Confirm the active candidate ledger and consumed ledgers.
 5. Recalculate canonical counts and maximum IDs.
-6. If queue status is audit_at_75, do not stage platform 76.
-7. Complete docs/phase-8-75-platform-audit.md and the audit-release production gate first.
-8. Never silently promote monitoring findings or needs_research candidates.
+6. Respect candidate-only -> canonical PR separation.
+7. Do not silently promote monitoring findings or needs_research candidates.
+8. Stop again at 100 for a full-corpus audit before any platform 101 work.
 ```
 
 Recommended checks:
@@ -223,7 +204,8 @@ npm test
 ## Immediate next action
 
 ```text
-Merge audit PR #138 only after its final CI is green.
-Freeze main and verify the audit-release exact SHA in Cloudflare and Production Surface Check.
-After that succeeds, close the audit checkpoint and only then resume Phase 8 growth from 75 toward 100.
+Complete the audit-close state-transition PR and verify its exact production SHA.
+Then stage the next two reviewed candidates as cya_candidate_000069 and cya_candidate_000070 in a candidate-only PR.
+Do not add canonical platform 76 until candidate scan and review-only draft gates pass.
+Continue reviewed two-record batches toward 100, then stop for the mandatory 100-platform audit.
 ```
