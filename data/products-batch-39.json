@@ -1,0 +1,18 @@
+[
+  {
+    "platform_id": "cya_plat_000064",
+    "product_type": "exchange_earn",
+    "product_name": "Gate Simple Earn",
+    "custody_model": "Gate's current support describes subscriptions transferring assets from the user's Spot or Unified/Trading account into Simple Earn. The reviewed sources do not establish one universal legal-title, segregation, trust or creditor-right model across flexible and fixed-term products.",
+    "yield_source": "Flexible-term returns are described as lending income: subscribed assets serve as working capital for Gate's lending business, are lent to other users, and generated interest is distributed to subscribers. Fixed-term return mechanics are documented separately and should not be assumed identical to the flexible lending model.",
+    "risk_notes": "Risks include centralized-platform custody, borrower/lending exposure for flexible products, changing borrowing demand and APR, redemption delays under heavy demand, fixed-term and early-redemption conditions, market risk, operational risk and jurisdiction-specific availability."
+  },
+  {
+    "platform_id": "cya_plat_000065",
+    "product_type": "exchange_earn",
+    "product_name": "Bybit Easy Earn",
+    "custody_model": "Easy Earn operates inside Bybit account infrastructure. The reviewed sources describe subscription from Bybit accounts and product-specific redemption but do not support one universal legal-title, segregation, trust or creditor-right interpretation across every jurisdiction and Easy Earn variant.",
+    "yield_source": "Varies by product. Bybit currently states Flexible Easy Earn yields are generated from platform revenue; Fixed Easy Earn can use Bybit loan activity or third-party risk-neutral wealth-management strategies. Fixed Rate Loan is a distinct supply-to-loan product and is not collapsed into the same yield source.",
+    "risk_notes": "Bybit labels certain Easy Earn flexible/fixed products principal-protected in token amount, but CYA treats this as current product wording rather than a universal legal or solvency guarantee. Risks can include centralized-platform custody, borrower or third-party strategy exposure, lock-up and early-redemption conditions, market value changes, operational risk and jurisdiction-specific restrictions."
+  }
+]
