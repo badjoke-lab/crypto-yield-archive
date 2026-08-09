@@ -1,0 +1,58 @@
+[
+  {
+    "id": "cya_ev_000288",
+    "platform_id": "cya_plat_000062",
+    "event_type": "rebranded",
+    "event_date": "2021-12-22",
+    "title": "Pool-X upgraded to KuCoin Earn",
+    "description": "KuCoin upgraded the Pool-X product identity to KuCoin Earn on 22 December 2021, including the Pool-X Earn, Staking, Pool-X Account and Flexible Terms naming and account changes described in its first-party announcement.",
+    "confidence": "high",
+    "impact_level": "high",
+    "event_status_effect": "active",
+    "source_count": 1,
+    "sort_order": 1,
+    "notes": "This records the verified KuCoin Earn brand transition, not the initial launch of all predecessor Pool-X yield services."
+  },
+  {
+    "id": "cya_ev_000289",
+    "platform_id": "cya_plat_000062",
+    "event_type": "other",
+    "event_date": "2026-07-29",
+    "title": "Flexible earning products consolidated",
+    "description": "KuCoin announced the integration of Simple Earn Savings, Simple Earn Flexible and Crypto Lending Pro into Simple Earn Flexible while the KuCoin Earn platform remained active.",
+    "confidence": "high",
+    "impact_level": "medium",
+    "event_status_effect": "active",
+    "source_count": 1,
+    "sort_order": 2,
+    "notes": "Product consolidation is recorded separately from the overall platform status and does not imply closure of KuCoin Earn."
+  },
+  {
+    "id": "cya_ev_000290",
+    "platform_id": "cya_plat_000063",
+    "event_type": "other",
+    "event_date": "2022-11-14",
+    "title": "Simple Earn documented in OKX Earn guide",
+    "description": "An OKX first-party Earn guide published on 14 November 2022 described Simple Earn as part of the exchange's Earn product suite, establishing a verified existence date for the service without asserting that date as the exact launch date.",
+    "confidence": "high",
+    "impact_level": "low",
+    "event_status_effect": "active",
+    "source_count": 1,
+    "sort_order": 1,
+    "notes": "This is a first-verified-existence milestone. CYA does not infer an exact umbrella-service launch date from the publication date."
+  },
+  {
+    "id": "cya_ev_000291",
+    "platform_id": "cya_plat_000063",
+    "event_type": "other",
+    "event_date": "2024-05-30",
+    "title": "Simple Earn Fixed made broadly available",
+    "description": "OKX stated that Simple Earn Fixed became available to all eligible users from 30 May 2024, with supported fixed-term lending products whose returns begin after matching with borrowing demand.",
+    "confidence": "high",
+    "impact_level": "medium",
+    "event_status_effect": "active",
+    "source_count": 1,
+    "sort_order": 2,
+    "notes": "This is a product-expansion milestone and is not treated as the launch date of the broader Simple Earn service."
+  }
+]

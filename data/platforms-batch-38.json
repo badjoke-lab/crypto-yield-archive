@@ -1,0 +1,52 @@
+[
+  {
+    "id": "cya_plat_000062",
+    "slug": "kucoin-earn",
+    "canonical_name": "KuCoin Earn",
+    "aliases": [
+      "Pool-X Earn",
+      "KuCoin Simple Earn"
+    ],
+    "type": "exchange_earn",
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": "2021-12-22",
+    "end_date": null,
+    "country_or_origin": "Global",
+    "summary": "Product-scoped record for KuCoin's exchange-linked Earn platform. KuCoin renamed and upgraded Pool-X to KuCoin Earn on 22 December 2021. The product remains active in 2026 and now spans Simple Earn, staking and other yield products, with a July 2026 consolidation of several flexible products into Simple Earn Flexible.",
+    "what_happened": "KuCoin transitioned the Pool-X product identity to KuCoin Earn on 22 December 2021. First-party material in 2026 continues to describe KuCoin Earn as an active one-stop wealth-management platform and documents the consolidation of Simple Earn Savings, Simple Earn Flexible and Crypto Lending Pro into Simple Earn Flexible. CYA treats KuCoin Earn as a product-scoped exchange-yield record rather than a generic KuCoin exchange dossier and does not collapse savings, staking, lending and structured products into one custody or yield mechanism.",
+    "official_url_original": "https://www.kucoin.com/earn",
+    "official_domain_original": "kucoin.com",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://www.kucoin.com/earn",
+    "confidence": "high",
+    "last_verified_at": "2026-08-09",
+    "uncertainty_notes": "The 22 December 2021 date is the verified Pool-X-to-KuCoin Earn product-brand transition. It is not asserted to be the first date on which any Pool-X or KuCoin yield service existed. Product-specific custody, legal title, principal protection, redemption mechanics and yield sources vary and require separate terms review.",
+    "notes": "The continuing KuCoin exchange is not separately classified by this product record. KuCoin Earn remains active as of the reviewed 2026 first-party sources."
+  },
+  {
+    "id": "cya_plat_000063",
+    "slug": "okx-simple-earn",
+    "canonical_name": "OKX Simple Earn",
+    "aliases": [
+      "Simple Earn Flexible",
+      "Simple Earn Fixed"
+    ],
+    "type": "exchange_earn",
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": null,
+    "end_date": null,
+    "country_or_origin": "Global / jurisdiction-dependent",
+    "summary": "Product-scoped record for OKX Simple Earn. First-party OKX material documents Simple Earn by November 2022, fixed and flexible terms, lending-based return mechanics, and continued operation through 2026. An exact launch date for the overall Simple Earn service is not inferred from the reviewed sources.",
+    "what_happened": "OKX's first-party Earn guide published on 14 November 2022 already described Simple Earn within its Earn product suite. Later terms explain that fixed and flexible Simple Earn positions can earn returns when deposited assets are matched with borrowing demand and explicitly state that the service is not principal-protected. Simple Earn Fixed was made broadly available to eligible users from 30 May 2024. Current product pages in 2026 show Simple Earn continuing with flexible and fixed offerings. CYA keeps the record product-scoped and preserves jurisdiction-specific OKX entity boundaries.",
+    "official_url_original": "https://www.okx.com/earn/simple-earn",
+    "official_domain_original": "okx.com",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://www.okx.com/earn/simple-earn",
+    "confidence": "high",
+    "last_verified_at": "2026-08-09",
+    "uncertainty_notes": "The reviewed sources establish that Simple Earn existed by 14 November 2022 but do not establish the exact first launch date of the umbrella service, so launch_date remains null. Applicable OKX legal entities, product availability, fixed/flexible mechanics and terms vary by jurisdiction and period.",
+    "notes": "The continuing OKX exchange is outside the product-end semantics of this record. No platform-wide loss, claims or recovery process was identified in the reviewed sources."
+  }
+]
