@@ -1,0 +1,58 @@
+[
+  {
+    "id": "cya_ev_000292",
+    "platform_id": "cya_plat_000064",
+    "event_type": "other",
+    "event_date": "2024-05-27",
+    "title": "Gate Simple Earn documented in first-party promotion",
+    "description": "Gate published a Simple Earn bonus promotion on 27 May 2024, establishing that the product was already available by that date without treating the promotion date as the product's exact launch date.",
+    "confidence": "high",
+    "impact_level": "low",
+    "event_status_effect": "active",
+    "source_count": 1,
+    "sort_order": 1,
+    "notes": "This is a first-verified-existence milestone from the reviewed source set, not a launch event."
+  },
+  {
+    "id": "cya_ev_000293",
+    "platform_id": "cya_plat_000064",
+    "event_type": "other",
+    "event_date": "2025-03-20",
+    "title": "Simple Earn interest-rate mechanism upgraded",
+    "description": "Gate stated that a borrowing-interest-based rate mechanism was applied across Simple Earn coins from 20 March 2025, with subscriber returns linked to lending funds to Gate borrowers.",
+    "confidence": "high",
+    "impact_level": "medium",
+    "event_status_effect": "active",
+    "source_count": 1,
+    "sort_order": 2,
+    "notes": "The mechanism update is product-level and does not imply a change in the status of the wider Gate exchange."
+  },
+  {
+    "id": "cya_ev_000294",
+    "platform_id": "cya_plat_000065",
+    "event_type": "other",
+    "event_date": "2025-09-08",
+    "title": "Easy Earn documented in Bybit getting-started guide",
+    "description": "Bybit published a getting-started guide describing Easy Earn flexible and fixed products on 8 September 2025, establishing verified product operation by that date without asserting it as the exact launch date.",
+    "confidence": "high",
+    "impact_level": "low",
+    "event_status_effect": "active",
+    "source_count": 1,
+    "sort_order": 1,
+    "notes": "The source path retains legacy Savings wording while the page title and current content use Easy Earn. CYA does not infer the exact rename chronology from that alone."
+  },
+  {
+    "id": "cya_ev_000295",
+    "platform_id": "cya_plat_000065",
+    "event_type": "other",
+    "event_date": "2026-06-08",
+    "title": "Flexible Easy Earn integrated with BYUSDT",
+    "description": "Bybit launched a BYUSDT campaign in June 2026 that allowed eligible users to swap USDT Flexible Easy Earn positions into BYUSDT while continuing to earn the underlying Easy Earn yield and using the same value as margin.",
+    "confidence": "high",
+    "impact_level": "medium",
+    "event_status_effect": "active",
+    "source_count": 1,
+    "sort_order": 2,
+    "notes": "This records a product-integration milestone and does not change the active status of Easy Earn or the wider Bybit exchange."
+  }
+]
