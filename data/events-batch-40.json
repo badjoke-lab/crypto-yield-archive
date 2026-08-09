@@ -1,0 +1,58 @@
+[
+  {
+    "id": "cya_ev_000296",
+    "platform_id": "cya_plat_000066",
+    "event_type": "other",
+    "event_date": "2026-06-08",
+    "title": "Binance Simple Earn documented in updated Binance Earn guide",
+    "description": "Binance Academy's updated June 2026 guide described Simple Earn flexible and locked products and separated Simple Earn from higher-risk Advanced Earn strategies, confirming continued product operation.",
+    "confidence": "high",
+    "impact_level": "low",
+    "event_status_effect": "active",
+    "source_count": 1,
+    "sort_order": 1,
+    "notes": "This is a current-operation milestone, not the launch date of Simple Earn."
+  },
+  {
+    "id": "cya_ev_000297",
+    "platform_id": "cya_plat_000066",
+    "event_type": "other",
+    "event_date": "2026-08-09",
+    "title": "Jurisdiction-specific Simple Earn risk terms reviewed",
+    "description": "CYA verified current Binance jurisdiction-specific Simple Earn risk disclosures that distinguish the product from deposits and describe lending, segregation, priority-repayment and bankruptcy-return risks.",
+    "confidence": "high",
+    "impact_level": "medium",
+    "event_status_effect": "active",
+    "source_count": 1,
+    "sort_order": 2,
+    "notes": "The review date records CYA's verification of current terms and is not presented as the original publication or launch date."
+  },
+  {
+    "id": "cya_ev_000298",
+    "platform_id": "cya_plat_000067",
+    "event_type": "launched",
+    "event_date": "2022-06-24",
+    "title": "Bitget launches Flexible Savings",
+    "description": "Bitget launched Flexible Savings on 24 June 2022 with USDT, DOT and NEAR products, establishing the predecessor product line later represented within Bitget Earn and Simple Earn.",
+    "confidence": "high",
+    "impact_level": "medium",
+    "event_status_effect": "active",
+    "source_count": 2,
+    "sort_order": 1,
+    "notes": "This launch applies to predecessor Flexible Savings, not the exact launch of the later Simple Earn brand."
+  },
+  {
+    "id": "cya_ev_000299",
+    "platform_id": "cya_plat_000067",
+    "event_type": "other",
+    "event_date": "2025-09-29",
+    "title": "Current Bitget Simple Earn risk terms updated",
+    "description": "Bitget's Simple Earn Terms were updated on 29 September 2025 and documented third-party asset management, protocol risk, Bitget credit and operational risk, and the absence of guaranteed principal return or displayed rewards.",
+    "confidence": "high",
+    "impact_level": "medium",
+    "event_status_effect": "active",
+    "source_count": 1,
+    "sort_order": 2,
+    "notes": "This is a terms-update milestone and does not imply a status change or product failure."
+  }
+]
