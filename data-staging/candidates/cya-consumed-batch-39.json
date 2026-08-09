@@ -1,0 +1,54 @@
+[
+  {
+    "candidate_id": "cya_candidate_000057",
+    "canonical_name": "Gate Simple Earn",
+    "aliases": ["Simple Earn", "Gate Simple Earn Flexible Term", "Gate Simple Earn Fixed Term"],
+    "domain": "gate.com",
+    "country_or_origin": "Global / jurisdiction-dependent",
+    "platform_type_guess": "exchange_earn",
+    "status_guess": "active",
+    "major_event": "Gate Simple Earn remained active with flexible and fixed-term products; reviewed sources establish existence by May 2024 and a March 2025 lending-rate mechanism upgrade",
+    "primary_sources": [
+      "https://www.gate.com/announcements/article/36801",
+      "https://www.gate.com/announcements/article/43975",
+      "https://www.gate.com/help/lend/simple-earn/28568",
+      "https://www.gate.com/help/lend/simple-earn/42563/simple-earn-fixed-term-products-faq"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-09",
+      "matched_platform_ids": ["cya_plat_000064"],
+      "notes": "Promoted only after the hardened scanner classified Gate Simple Earn as a duplicate-clear new candidate and the review-only draft generator marked it ready."
+    },
+    "decision": "already_recorded",
+    "notes": "Promoted to canonical product-scoped platform cya_plat_000064 in batch 39. Exact umbrella launch remains unknown; flexible lending mechanics are documented separately from fixed-term and promotional variants.",
+    "first_seen_at": "2026-08-09",
+    "last_reviewed_at": "2026-08-09"
+  },
+  {
+    "candidate_id": "cya_candidate_000058",
+    "canonical_name": "Bybit Easy Earn",
+    "aliases": ["Easy Earn", "Bybit Savings", "Flexible Easy Earn", "Fixed Easy Earn"],
+    "domain": "bybit.com",
+    "country_or_origin": "Global / jurisdiction-dependent",
+    "platform_type_guess": "exchange_earn",
+    "status_guess": "active",
+    "major_event": "Bybit Easy Earn remained active with flexible and fixed products; reviewed sources establish operation by September 2025 and a June 2026 BYUSDT integration",
+    "primary_sources": [
+      "https://www.bybit.com/en/help-center/article/How-to-Get-Started-With-Bybit-Savings",
+      "https://www.bybit.com/en/help-center/article/FAQ-Easy-Earn",
+      "https://www.bybit.com/en/help-center/article/Differences-Between-Bybit-Earn-Products",
+      "https://announcements.bybit.com/en/article/byusdt-trade-earn-trade-futures-daily-to-enjoy-up-to-10-bonus-apr-and-200-000-usdt-prize-pool-blte526e1948c529f66/"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-09",
+      "matched_platform_ids": ["cya_plat_000065"],
+      "notes": "Promoted only after the hardened scanner classified Bybit Easy Earn as a duplicate-clear new candidate and the review-only draft generator marked it ready."
+    },
+    "decision": "already_recorded",
+    "notes": "Promoted to canonical product-scoped platform cya_plat_000065 in batch 39. Exact launch/rename chronology remains unknown; Bybit's principal-protection wording remains an attributed product claim rather than a CYA guarantee.",
+    "first_seen_at": "2026-08-09",
+    "last_reviewed_at": "2026-08-09"
+  }
+]

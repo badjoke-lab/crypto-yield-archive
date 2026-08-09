@@ -1,0 +1,55 @@
+[
+  {
+    "id": "cya_plat_000064",
+    "slug": "gate-simple-earn",
+    "canonical_name": "Gate Simple Earn",
+    "aliases": [
+      "Simple Earn",
+      "Gate Simple Earn Flexible Term",
+      "Gate Simple Earn Fixed Term"
+    ],
+    "type": "exchange_earn",
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": null,
+    "end_date": null,
+    "country_or_origin": "Global / jurisdiction-dependent",
+    "summary": "Product-scoped record for Gate Simple Earn. First-party materials document the product by May 2024, current flexible and fixed-term variants, and a March 2025 lending-rate mechanism upgrade. The product remains active in 2026. An exact umbrella-product launch date is not inferred from the reviewed sources.",
+    "what_happened": "Gate Simple Earn is an exchange-linked yield product with flexible and fixed-term variants. A first-party May 2024 promotion establishes that Simple Earn was already operating by that date. Gate later documented a 20 March 2025 interest-rate mechanism upgrade applying a borrowing-interest-based mechanism across Simple Earn coins. Current support describes flexible subscriptions as funds used in Gate's lending business and loaned to other platform users, with lending interest distributed as returns. CYA keeps the record product-scoped and does not collapse all Simple Earn variants into one legal-title, principal-protection or risk model.",
+    "official_url_original": "https://www.gate.com/simple-earn",
+    "official_domain_original": "gate.com",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://www.gate.com/simple-earn",
+    "confidence": "high",
+    "last_verified_at": "2026-08-09",
+    "uncertainty_notes": "The reviewed sources establish that Simple Earn existed by May 2024 but do not establish the exact first launch date of the umbrella product, so launch_date remains null. Flexible and fixed-term products can differ in lending, lock-up, redemption and promotional mechanics; current product descriptions are not used to invent one universal ownership or principal-protection interpretation.",
+    "notes": "The continuing Gate exchange is outside the product-end semantics of this record. Product availability is jurisdiction-dependent and current materials exclude some restricted regions."
+  },
+  {
+    "id": "cya_plat_000065",
+    "slug": "bybit-easy-earn",
+    "canonical_name": "Bybit Easy Earn",
+    "aliases": [
+      "Easy Earn",
+      "Bybit Savings",
+      "Flexible Easy Earn",
+      "Fixed Easy Earn"
+    ],
+    "type": "exchange_earn",
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": null,
+    "end_date": null,
+    "country_or_origin": "Global / jurisdiction-dependent",
+    "summary": "Product-scoped record for Bybit Easy Earn. First-party materials document Easy Earn by September 2025 and show continued operation in 2026 with flexible, fixed and fixed-rate-loan variants. Exact launch or rename chronology from legacy Bybit Savings is not inferred from the reviewed sources.",
+    "what_happened": "Bybit Easy Earn is a product family within Bybit Earn that includes flexible and fixed products. A first-party getting-started guide published in September 2025 documents the Easy Earn product structure, while 2026 support and campaign material confirms continued operation and integration with BYUSDT. Bybit's current materials distinguish yield sources across platform revenue, Bybit lending and third-party wealth-management strategies. Bybit also describes certain Easy Earn flexible and fixed products as principal-protected in token amount; CYA preserves that as an attributed current product claim rather than a universal legal, custody or solvency guarantee.",
+    "official_url_original": "https://www.bybit.com/en/earn",
+    "official_domain_original": "bybit.com",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://www.bybit.com/en/earn",
+    "confidence": "high",
+    "last_verified_at": "2026-08-09",
+    "uncertainty_notes": "The reviewed sources do not establish an exact Easy Earn launch date or the exact date of transition from earlier Bybit Savings naming, so launch_date remains null. Yield source, lock-up, redemption, principal-treatment claims and applicable legal entities vary by product and jurisdiction.",
+    "notes": "The continuing Bybit exchange is outside this product record. Current principal-protection language is an attributed product statement and must not be read as a universal guarantee against platform, legal, liquidity or counterparty risk."
+  }
+]
