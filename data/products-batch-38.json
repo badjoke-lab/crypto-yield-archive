@@ -1,0 +1,18 @@
+[
+  {
+    "platform_id": "cya_plat_000062",
+    "product_type": "exchange_earn",
+    "product_name": "KuCoin Earn",
+    "custody_model": "KuCoin Earn is presented inside the KuCoin account system and current support documentation describes Financial/Funding-account subscription, holding and redemption flows. The reviewed sources do not establish one universal legal-title, segregation, trust or downstream custody model across every KuCoin Earn product.",
+    "yield_source": "Varies by product. Current KuCoin Earn includes Simple Earn, staking, Crypto Lending Pro and structured products. CYA does not infer one yield source across savings, staking, lending, promotions or structured products.",
+    "risk_notes": "Risks vary by product and can include centralized-platform custody, borrower/counterparty exposure, staking and protocol exposure, structured-product market risk, liquidity/redemption restrictions, term risk, changing APRs, operational risk and jurisdiction-specific availability."
+  },
+  {
+    "platform_id": "cya_plat_000063",
+    "product_type": "exchange_earn",
+    "product_name": "OKX Simple Earn",
+    "custody_model": "OKX's Simple Earn terms describe users depositing digital assets into the service and losing access to use those assets while subscribed. The reviewed sources do not establish one universal legal-title or segregation conclusion for every jurisdiction and product term.",
+    "yield_source": "Primarily lending-based in the reviewed Simple Earn materials. Flexible positions are matched with borrowing demand including loan and margin users; fixed positions are matched with borrowing demand for a fixed term. Product rules and eligible assets vary by jurisdiction and period.",
+    "risk_notes": "OKX states that Simple Earn is not principal-protected. Risks include borrower and counterparty exposure, platform custody, liquidity and redemption restrictions, fixed-term lockups, overdue-loan extensions, market and APR changes, operational risk and jurisdiction-specific terms."
+  }
+]
