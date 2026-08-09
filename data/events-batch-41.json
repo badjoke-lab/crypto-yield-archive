@@ -1,0 +1,58 @@
+[
+  {
+    "id": "cya_ev_000300",
+    "platform_id": "cya_plat_000068",
+    "event_type": "launched",
+    "event_date": "2021-01-18",
+    "title": "Phemex Savings service begins",
+    "description": "Phemex's December 2020 launch announcement stated that Flexible Savings and Fixed Savings would begin on 18 January 2021 as part of its Earn Crypto program.",
+    "confidence": "high",
+    "impact_level": "medium",
+    "event_status_effect": "active",
+    "source_count": 1,
+    "sort_order": 1,
+    "notes": "The announcement was published on 28 December 2020; the recorded event date is the stated service start date."
+  },
+  {
+    "id": "cya_ev_000301",
+    "platform_id": "cya_plat_000068",
+    "event_type": "other",
+    "event_date": "2025-07-10",
+    "title": "Phemex Earn terms document current Savings asset treatment",
+    "description": "Updated Phemex terms explicitly documented Phemex Savings within Earn and described non-segregation, commingling, operating-use, lending, staking and exceptional return-loss risks for Earn Assets.",
+    "confidence": "high",
+    "impact_level": "medium",
+    "event_status_effect": "active",
+    "source_count": 1,
+    "sort_order": 2,
+    "notes": "This is a terms-update milestone, not a product failure or suspension event."
+  },
+  {
+    "id": "cya_ev_000302",
+    "platform_id": "cya_plat_000069",
+    "event_type": "launched",
+    "event_date": "2022-10-21",
+    "title": "WhiteBIT introduces WhiteBIT Earn and renames SMART Staking to Crypto Lending",
+    "description": "WhiteBIT introduced the WhiteBIT Earn product family and stated that SMART Staking would be called Crypto Lending, while saying the rename would not affect user assets.",
+    "confidence": "high",
+    "impact_level": "medium",
+    "event_status_effect": "active",
+    "source_count": 1,
+    "sort_order": 1,
+    "notes": "The launch_date applies to the named Crypto Lending/WhiteBIT Earn identity; SMART Staking is retained as predecessor history."
+  },
+  {
+    "id": "cya_ev_000303",
+    "platform_id": "cya_plat_000069",
+    "event_type": "other",
+    "event_date": "2025-04-08",
+    "title": "WhiteBIT launches flexible Crypto Lending plans",
+    "description": "WhiteBIT introduced flexible Crypto Lending plans alongside fixed plans, allowing interest accrual without a fixed lock-up period and withdrawal without forfeiting already accrued flexible-plan earnings.",
+    "confidence": "high",
+    "impact_level": "low",
+    "event_status_effect": "active",
+    "source_count": 1,
+    "sort_order": 2,
+    "notes": "This is a product-expansion milestone and does not imply a customer-outcome or failure state."
+  }
+]
