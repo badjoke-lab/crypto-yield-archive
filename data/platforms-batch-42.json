@@ -25,7 +25,7 @@
     "id": "cya_plat_000071",
     "slug": "coinex-flexible-savings",
     "canonical_name": "CoinEx Flexible Savings",
-    "aliases": ["CoinEx Financial Account", "Financial Account", "Flexible Savings", "CoinEx Earn Flexible Savings"],
+    "aliases": ["CoinEx Financial Account", "Financial Account", "CoinEx Earn Flexible Savings"],
     "type": "exchange_earn",
     "status": "active",
     "failure_reason": null,

@@ -3,7 +3,7 @@
     "id": "cya_plat_000068",
     "slug": "phemex-savings",
     "canonical_name": "Phemex Savings",
-    "aliases": ["Phemex Earn Savings", "Flexible Savings", "Fixed Savings", "Phemex Crypto Interest Accounts"],
+    "aliases": ["Phemex Earn Savings", "Phemex Flexible Savings", "Phemex Fixed Savings", "Phemex Crypto Interest Accounts"],
     "type": "exchange_earn",
     "status": "active",
     "failure_reason": null,
