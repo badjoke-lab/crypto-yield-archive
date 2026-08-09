@@ -1,16 +1,18 @@
 # Phase 8 — 75-platform full corpus audit
 
-Status: repository audit passed; canonical baseline production verified; audit-release production gate pending  
+Status: complete  
 Audit date: 2026-08-09  
 Canonical baseline SHA: `106ec5b7b2f69a513d2795f4e352405e964456ca`  
 Canonical production verification: Production Surface Check #174 — success  
+Audit release SHA: `3357933c7d7e4d2449a507979edf3437412280f9`  
+Audit release production verification: Production Surface Check #175 — success  
 Audit PR: #138
 
 ## Purpose
 
 This checkpoint is the mandatory Phase 8 full-corpus audit between growth from 60 to 75 platforms and the next growth segment from 75 to 100.
 
-Record growth is paused. Platform `cya_plat_000076` must not be staged or promoted until this audit release has been merged and its exact production SHA has passed the production verification gate.
+The audit is now complete. Growth may resume through the normal candidate-only -> reviewed canonical promotion process. Platform `cya_plat_000076` remains subject to the same candidate, duplicate, evidence, CI and exact-production-SHA gates as every other new record.
 
 ## Baseline under audit
 
@@ -56,41 +58,30 @@ These were naming collisions, not duplicate canonical platforms.
 
 ## Audit correction
 
-The audit namespaces or removes only ambiguous generic aliases while preserving canonical identity and reviewed facts.
+The audit namespaced or removed only ambiguous generic aliases while preserving canonical identity and reviewed facts.
 
 ### OKX Simple Earn
-
-Changed generic aliases:
 
 - `Simple Earn Flexible` -> `OKX Simple Earn Flexible`
 - `Simple Earn Fixed` -> `OKX Simple Earn Fixed`
 
 ### Gate Simple Earn
 
-Removed the bare cross-brand alias:
-
-- `Simple Earn`
-
-Retained Gate-specific flexible/fixed aliases.
+Removed the bare cross-brand alias `Simple Earn` while retaining Gate-specific flexible/fixed aliases.
 
 ### Binance Simple Earn
 
-Removed the bare `Simple Earn` alias and namespaced flexible/locked aliases:
-
+- removed the bare `Simple Earn` alias
 - `Simple Earn Flexible` -> `Binance Simple Earn Flexible`
 - `Simple Earn Locked` -> `Binance Simple Earn Locked`
 
 ### Bitget Simple Earn
-
-Namespaced generic aliases:
 
 - `Flexible Savings` -> `Bitget Flexible Savings`
 - `Simple Earn Flexible` -> `Bitget Simple Earn Flexible`
 - `Simple Earn Fixed` -> `Bitget Simple Earn Fixed`
 
 ### Phemex Savings
-
-Namespaced generic aliases:
 
 - `Flexible Savings` -> `Phemex Flexible Savings`
 - `Fixed Savings` -> `Phemex Fixed Savings`
@@ -125,7 +116,7 @@ Unknown outcomes:                13
 Unclear terms:                   16
 ```
 
-Result: the four new cross-brand alias-collision findings are removed, returning the corpus to the pre-Phase-8-growth legacy debt count of 23 without inventing facts or weakening validation.
+Result: the four new cross-brand alias-collision findings were removed, returning the corpus to the pre-Phase-8-growth legacy debt count of 23 without inventing facts or weakening validation.
 
 ## Remaining non-blocking quality debt
 
@@ -133,26 +124,13 @@ The remaining 23 findings are explicit legacy debt and are intentionally retaine
 
 ### Thin evidence coverage
 
-Three platforms have fewer than three evidence records:
-
-- Ledn — 2
-- Crypto.com Earn — 2
-- Haru Invest — 2
+- Ledn — 2 evidence records
+- Crypto.com Earn — 2 evidence records
+- Haru Invest — 2 evidence records
 
 ### Repurposed original URLs
 
-Historical original URLs are marked repurposed for:
-
-- Gemini Earn
-- Yield App
-- CoinFLEX
-- Nuri Bitcoin Interest Account
-- Bitbond Lending Marketplace
-- Kriptomat KriptoEarn
-- FTX Earn
-- Celsius Network
-- BlockFi
-- Voyager Digital
+Historical original URLs are marked repurposed for Gemini Earn, Yield App, CoinFLEX, Nuri Bitcoin Interest Account, Bitbond Lending Marketplace, Kriptomat KriptoEarn, FTX Earn, Celsius Network, BlockFi and Voyager Digital.
 
 These are not silently relabelled as live or safe.
 
@@ -165,15 +143,7 @@ Both remain `operations_ended` without an invented exact end date.
 
 ### Historical terms unresolved
 
-Terms remain `unknown` for:
-
-- Babel Finance
-- BlockFills
-- Stablegains
-- Hodlnaut
-- Vauld
-- Haru Invest
-- CoinLoan
+Terms remain `unknown` for Babel Finance, BlockFills, Stablegains, Hodlnaut, Vauld, Haru Invest and CoinLoan.
 
 ### Candidate-history storage debt
 
@@ -189,17 +159,16 @@ The active candidate ledger still contains only three `needs_research` records:
 
 None was promoted by this audit.
 
-Reserved next identifiers remain:
+Reserved next identifiers:
 
 ```text
 Next candidates: cya_candidate_000069 / cya_candidate_000070
 Next platform:   cya_plat_000076
 Next event:      cya_ev_000315
+Next audit:      100 platforms
 ```
 
 ## Completion gate
-
-Repository-side audit requirements are satisfied:
 
 ```text
 75 canonical platforms preserved                    pass
@@ -211,12 +180,7 @@ remaining quality debt documented                   pass
 full npm test / build-output validation              pass
 representative audit-branch capture                  pass
 canonical 75-platform production SHA verified        pass / Production Surface Check #174
+audit release production SHA verified                pass / Production Surface Check #175
 ```
 
-One production-side requirement remains mandatory before growth resumes:
-
-```text
-75-platform audit release exact-SHA production       pending until audit PR merge
-```
-
-The queue must remain `audit_at_75` until the audit release itself is observed on the custom production domain with the exact expected build SHA. Only then may a later checkpoint switch the queue to growth toward 100.
+The 75-platform audit checkpoint is complete. The Phase 8 queue may advance to `growth_to_100`, with the next mandatory full-corpus audit at 100 platforms.
