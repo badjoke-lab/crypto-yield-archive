@@ -1,12 +1,13 @@
 [
   {
     "phase": 8,
-    "status": "research_open",
+    "status": "candidate_review",
     "recorded_at": "2026-08-09",
-    "baseline_main_sha": "cbd030d4d6e5aa6af4b6f02894b26a6a9620406f",
+    "baseline_main_sha": "835fa055be8b6341c66e7b7b4bfa9f86699ea155",
     "canonical_platforms": 69,
     "next_audit_milestone": 75,
-    "next_candidate_ids": ["cya_candidate_000063", "cya_candidate_000064"],
+    "staged_candidate_ids": ["cya_candidate_000063", "cya_candidate_000064"],
+    "next_candidate_ids": ["cya_candidate_000065", "cya_candidate_000066"],
     "next_platform_id": "cya_plat_000070",
     "next_event_id": "cya_ev_000304",
     "existing_needs_research": [
@@ -15,6 +16,6 @@
       {"candidate_id":"cya_candidate_000049","canonical_name":"Outlet Finance","blocking_questions":["underlying counterparty model","closure chronology","custody and repayment outcome"]}
     ],
     "promotion_policy": "Candidate-only staging first. No canonical IDs, writes, status changes or outcome inference before reviewed promotion.",
-    "next_action": "Research duplicate-clear, scope-valid, evidence-backed candidates for platforms 70 onward and continue Phase 8 growth toward the 75-platform full audit."
+    "next_action": "Run hardened duplicate scanning and review-only draft generation for HTX Simple Earn and CoinEx Flexible Savings. Promote only duplicate-clear, evidence-backed candidates in a separate canonical PR after the 69-platform production baseline is verified."
   }
 ]
