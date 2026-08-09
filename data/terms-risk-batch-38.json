@@ -1,0 +1,20 @@
+[
+  {
+    "platform_id": "cya_plat_000062",
+    "terms_status": "varies_by_product",
+    "asset_ownership_interpretation": "The reviewed KuCoin materials establish account and redemption mechanics for multiple Earn product families but do not support one universal asset-ownership, segregation, trust or creditor-right interpretation across savings, staking, lending and structured products.",
+    "affected_product": "KuCoin Earn",
+    "source_evidence_id": "cya_src_b38_0004",
+    "notes": "Treat product-specific terms separately. Do not infer that a Funding/Financial-account presentation means assets remain legally customer-owned, segregated or principal-protected, and do not infer a single counterparty model across KuCoin Earn categories.",
+    "confidence": "high"
+  },
+  {
+    "platform_id": "cya_plat_000063",
+    "terms_status": "varies_by_product",
+    "asset_ownership_interpretation": "OKX's Simple Earn User Agreement states that subscribed digital assets are deposited into the service and cannot be accessed, traded, sold, converted or otherwise used while applicable positions are active. The reviewed terms do not justify one universal legal-title or segregation conclusion across all jurisdictions and fixed/flexible product variants.",
+    "affected_product": "OKX Simple Earn",
+    "source_evidence_id": "cya_src_b38_0006",
+    "notes": "The agreement explicitly states that Simple Earn is not principal-protected. Fixed and flexible terms, borrower matching, redemption restrictions and applicable OKX entities can differ, so CYA keeps ownership interpretation product- and jurisdiction-sensitive rather than forcing a customer-owned/platform-owned label.",
+    "confidence": "high"
+  }
+]
