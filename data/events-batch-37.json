@@ -1,0 +1,16 @@
+[
+  {
+    "id": "cya_ev_000287",
+    "platform_id": "cya_plat_000061",
+    "event_type": "operations_ended",
+    "event_date": "2023-01-10",
+    "title": "Swyftx closes Earn program",
+    "description": "Swyftx closed its Earn program, previously called Staking, on 10 January 2023. The company said the decision was made while reviewing changing regulatory requirements for crypto yield products and later stated that assets in Earn wallets were returned to users' trade wallets with earned interest.",
+    "confidence": "high",
+    "impact_level": "high",
+    "event_status_effect": "operations_ended",
+    "source_count": 2,
+    "sort_order": 1,
+    "notes": "The event applies to the Earn/Staking product only. The Swyftx exchange continued operating. The regulatory rationale is the company's stated reason and is not treated as a regulatory enforcement order against the product."
+  }
+]
