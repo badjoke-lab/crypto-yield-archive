@@ -1,0 +1,47 @@
+[
+  {
+    "id": "cya_src_b37_0001",
+    "platform_id": "cya_plat_000061",
+    "event_id": "cya_ev_000287",
+    "source_type": "official_statement",
+    "title": "Earn program (Staking)",
+    "url": "https://support.swyftx.com/en/articles/12526691-earn-program-staking",
+    "publisher": "Swyftx",
+    "published_at": null,
+    "archived_url": null,
+    "accessed_at": "2026-08-09",
+    "reliability": "high",
+    "claim_scope": "customer_outcome",
+    "notes": "Current first-party support states that Earn, previously named Staking, closed on 10 January 2023 because of changing regulatory requirements and that assets held in Earn wallets were returned to users' trade wallets together with earned interest. Used for the product closure and product-level return outcome; it is not evidence that every user completed an external withdrawal."
+  },
+  {
+    "id": "cya_src_b37_0002",
+    "platform_id": "cya_plat_000061",
+    "event_id": "cya_ev_000287",
+    "source_type": "news_article",
+    "title": "Swyftx closes Earn product amid regulatory uncertainty",
+    "url": "https://www.smartcompany.com.au/finance/swyftx-closure-of-earn/",
+    "publisher": "SmartCompany",
+    "published_at": "2023-01-09",
+    "archived_url": null,
+    "accessed_at": "2026-08-09",
+    "reliability": "medium",
+    "claim_scope": "event",
+    "notes": "Contemporaneous reporting corroborates Swyftx's closure of the high-interest Earn product and regulatory-uncertainty context. It is secondary evidence and is not used to infer an enforcement action against Swyftx Earn."
+  },
+  {
+    "id": "cya_src_b37_0003",
+    "platform_id": "cya_plat_000061",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "Swyftx Terms of Use",
+    "url": "https://swyftx.com/terms-of-use/",
+    "publisher": "Swyftx",
+    "published_at": null,
+    "archived_url": null,
+    "accessed_at": "2026-08-09",
+    "reliability": "high",
+    "claim_scope": "entity",
+    "notes": "Current first-party terms support the continuing identity of the Swyftx exchange and operator boundary. They are not treated as proof of the historical Earn product's 2022 terms, custody model, yield mechanism or ownership treatment."
+  }
+]

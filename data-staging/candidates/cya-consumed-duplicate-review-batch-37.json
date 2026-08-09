@@ -1,0 +1,28 @@
+[
+  {
+    "candidate_id": "cya_candidate_000053",
+    "canonical_name": "Gemini Earn",
+    "aliases": ["Earn", "Gemini Earn Program"],
+    "domain": "gemini.com",
+    "country_or_origin": "United States",
+    "platform_type_guess": "exchange_earn",
+    "status_guess": "operations_ended",
+    "major_event": "Gemini Earn redemption suspension, termination and later 100% in-kind return were investigated for Phase 8 but the hardened scanner found an existing canonical Gemini Earn record",
+    "primary_sources": [
+      "https://www.sec.gov/newsroom/press-releases/2023-7",
+      "https://www.gemini.com/earn",
+      "https://www.dfs.ny.gov/consumers/alerts/gemini-earn-customers-details",
+      "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-26465"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-09",
+      "matched_platform_ids": ["cya_plat_000014"],
+      "notes": "The hardened candidate scanner classified this as an exact duplicate using canonical-name, alias and gemini.com domain matches. No new canonical platform is created."
+    },
+    "decision": "duplicate",
+    "notes": "Removed from the active Phase 8 queue after the deterministic scanner identified canonical Gemini Earn platform cya_plat_000014. The research sources may be used later for a reviewed enrichment of that existing record, but this candidate must not create a second platform identity.",
+    "first_seen_at": "2026-08-09",
+    "last_reviewed_at": "2026-08-09"
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "platform_id": "cya_plat_000061",
+    "product_type": "exchange_earn",
+    "product_name": "Swyftx Earn",
+    "custody_model": "Swyftx's current retrospective support describes assets as having been held in an Earn wallet and later returned to the user's Swyftx trade wallet. The reviewed sources do not establish the historical product's exact legal-title, segregation, trust, wallet-control or downstream custody structure.",
+    "yield_source": "The product paid interest and was previously called Staking, but the reviewed sources do not establish one universal staking, lending or other downstream yield mechanism across all supported assets and periods. CYA does not infer the yield source from the former product name alone.",
+    "risk_notes": "Users faced centralized-exchange custody, product-terms, withdrawal, regulatory-change, counterparty and yield-mechanism risks. The product was discontinued while the Swyftx exchange continued operating, and current retrospective documentation does not reconstruct all historical product terms."
+  }
+]

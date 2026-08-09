@@ -1,0 +1,11 @@
+[
+  {
+    "platform_id": "cya_plat_000061",
+    "terms_status": "unclear",
+    "asset_ownership_interpretation": "Current Swyftx support establishes that assets were represented in an Earn wallet and later returned to a trade wallet, but the reviewed sources do not establish the historical Earn product's exact legal ownership, segregation, trust, creditor-right or downstream counterparty structure. Current generic Swyftx terms are not applied retroactively to the discontinued product.",
+    "affected_product": "Swyftx Earn / Swyftx Staking",
+    "source_evidence_id": "cya_src_b37_0001",
+    "notes": "Do not infer that the former Staking name meant direct on-chain staking, that assets remained legally customer-owned throughout, or that current generic exchange terms reproduce the historical Earn terms. Product closure and internal return mechanics are better evidenced than historical ownership terms.",
+    "confidence": "high"
+  }
+]

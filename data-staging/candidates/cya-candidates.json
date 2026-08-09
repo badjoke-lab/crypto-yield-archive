@@ -61,56 +61,5 @@
     "notes": "Retained for a later batch. Confirm the operating company, product terms, underlying yield counterparties, custody and ownership model, closure date, withdrawal process, and whether customer balances were returned in full.",
     "first_seen_at": "2026-08-05",
     "last_reviewed_at": "2026-08-05"
-  },
-  {
-    "candidate_id": "cya_candidate_000053",
-    "canonical_name": "Gemini Earn",
-    "aliases": ["Earn", "Gemini Earn Program"],
-    "domain": "gemini.com",
-    "country_or_origin": "United States",
-    "platform_type_guess": "exchange_earn",
-    "status_guess": "operations_ended",
-    "major_event": "Gemini and Genesis offered Earn from February 2021; Genesis suspended Earn redemptions on 16 November 2022, Gemini terminated the program in January 2023, and final in-kind distributions completed a 100% return of assets owed to Earn users in June 2024",
-    "primary_sources": [
-      "https://www.sec.gov/newsroom/press-releases/2023-7",
-      "https://www.gemini.com/earn",
-      "https://www.dfs.ny.gov/consumers/alerts/gemini-earn-customers-details",
-      "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-26465"
-    ],
-    "secondary_sources": [],
-    "duplicate_check": {
-      "checked_at": "2026-08-09",
-      "matched_platform_ids": [],
-      "notes": "Repository PR history references Gemini Earn only as a comparison or underlying recovery context for other records; no canonical Gemini Earn platform promotion was found. The hardened scanner must confirm name, alias and gemini.com domain clearance before promotion."
-    },
-    "decision": "add_now",
-    "notes": "Product-scoped exchange-yield record, not a generic Gemini exchange dossier and not a duplicate of Genesis Global Capital. SEC materials describe Gemini as agent for retail customers lending assets to Genesis through Earn, the November 2022 redemption halt, and Gemini's January 2023 termination of the program. Gemini and NYDFS later documented 100% in-kind return of the assets owed to Earn users by June 2024. A 2026 SEC dismissal records that recovery and state settlements as factors in dismissing the remaining Gemini action. Canonical review must preserve Gemini/Genesis legal-entity boundaries, distinguish the Earn product from Gemini Exchange and Custody, and treat the completed 100% in-kind return as Earn-specific rather than a generic Genesis-creditor recovery rate.",
-    "first_seen_at": "2026-08-09",
-    "last_reviewed_at": "2026-08-09"
-  },
-  {
-    "candidate_id": "cya_candidate_000054",
-    "canonical_name": "Swyftx Earn",
-    "aliases": ["Swyftx Staking", "Earn program", "Staking"],
-    "domain": "swyftx.com",
-    "country_or_origin": "Australia",
-    "platform_type_guess": "exchange_earn",
-    "status_guess": "operations_ended",
-    "major_event": "Swyftx closed its Earn program, previously called Staking, on 10 January 2023 amid changing crypto-product regulatory requirements and returned assets held in Earn wallets to users' trade wallets together with earned interest",
-    "primary_sources": [
-      "https://support.swyftx.com/en/articles/12526691-earn-program-staking"
-    ],
-    "secondary_sources": [
-      "https://www.smartcompany.com.au/finance/swyftx-closure-of-earn/"
-    ],
-    "duplicate_check": {
-      "checked_at": "2026-08-09",
-      "matched_platform_ids": [],
-      "notes": "No Swyftx or Swyftx Earn canonical record or prior promotion PR was found in the repository review. The hardened scanner must confirm duplicate-clear status before canonical drafting."
-    },
-    "decision": "add_now",
-    "notes": "Product-scoped historical exchange-Earn record; the continuing Swyftx exchange remains outside this product-end classification. Swyftx's current first-party support documentation states that Earn, previously named Staking, closed on 10 January 2023 because of changing regulatory requirements and that assets in Earn wallets were returned to users' trade wallets with earned interest. Canonical review must not convert an internal return to the trade wallet into a claim of universal external withdrawal completion, must not classify the continuing exchange as closed, and should preserve the regulatory-uncertainty rationale as the company's stated reason rather than an enforcement finding against Swyftx Earn.",
-    "first_seen_at": "2026-08-09",
-    "last_reviewed_at": "2026-08-09"
   }
 ]
