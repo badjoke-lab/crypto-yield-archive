@@ -61,5 +61,57 @@
     "notes": "Retained for a later batch. Confirm the operating company, product terms, underlying yield counterparties, custody and ownership model, closure date, withdrawal process, and whether customer balances were returned in full.",
     "first_seen_at": "2026-08-05",
     "last_reviewed_at": "2026-08-05"
+  },
+  {
+    "candidate_id": "cya_candidate_000059",
+    "canonical_name": "Binance Simple Earn",
+    "aliases": ["Simple Earn", "Binance Earn Simple Earn", "Simple Earn Flexible", "Simple Earn Locked"],
+    "domain": "binance.com",
+    "country_or_origin": "Global / jurisdiction-dependent",
+    "platform_type_guess": "exchange_earn",
+    "status_guess": "active",
+    "major_event": "Binance Simple Earn remains active in 2026 with flexible and locked products across hundreds of assets; current Binance materials distinguish Simple Earn from higher-risk Advanced Earn products and jurisdiction-specific disclosures describe lending, segregation and bankruptcy risks",
+    "primary_sources": [
+      "https://academy.binance.com/en/articles/a-beginner-s-guide-to-binance-earn",
+      "https://www.binance.com/lo-LA/support/announcement/detail/6c406b0b1f6e456d869685dc9fe74d99",
+      "https://www.binance.com/en-JP?contentId=323111242381426"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-09",
+      "matched_platform_ids": [],
+      "notes": "Repository code and PR searches found no canonical Binance Simple Earn platform before staging. The hardened scanner must still confirm canonical-name, alias and binance.com domain clearance before promotion."
+    },
+    "decision": "add_now",
+    "notes": "Product-scoped exchange-yield candidate rather than a generic Binance exchange or all-product Binance Earn dossier. Current first-party materials show Simple Earn remains active with flexible and locked products; Binance also uses Simple Earn assets as collateral in flexible loans. Binance Japan's current risk disclosure states that Simple Earn is not a deposit, is not deposit-insured, and that lending-based Simple Earn assets may not be segregated or entitled to priority repayment, with possible non-return if the company fails. Other Binance materials describe some Simple Earn products as principal-protected in token amount; CYA must preserve those statements as jurisdiction/product-specific company disclosures rather than force one universal ownership, segregation, principal-protection or solvency conclusion. Exact umbrella-product launch date remains unresolved and should not be invented.",
+    "first_seen_at": "2026-08-09",
+    "last_reviewed_at": "2026-08-09"
+  },
+  {
+    "candidate_id": "cya_candidate_000060",
+    "canonical_name": "Bitget Simple Earn",
+    "aliases": ["Bitget Earn", "Bitget Savings", "Flexible Savings", "Simple Earn Flexible", "Simple Earn Fixed"],
+    "domain": "bitget.com",
+    "country_or_origin": "Global / jurisdiction-dependent",
+    "platform_type_guess": "exchange_earn",
+    "status_guess": "active",
+    "major_event": "Bitget launched Flexible Savings on 24 June 2022, later operated Savings under Bitget Earn, and currently offers Simple Earn flexible and fixed-term products under product terms updated in September 2025",
+    "primary_sources": [
+      "https://www.bitget.com/support/articles/7809598020121",
+      "https://www.bitget.com/support/articles/12560603786479",
+      "https://www.bitget.com/support/articles/12560603797489",
+      "https://www.bitget.com/support/articles/12560603826506",
+      "https://www.bitget.com/support/articles/12560603826507"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-09",
+      "matched_platform_ids": [],
+      "notes": "Repository code and PR searches found no canonical Bitget Earn/Simple Earn platform before staging. The hardened scanner must still confirm canonical-name, alias and bitget.com domain clearance before promotion."
+    },
+    "decision": "add_now",
+    "notes": "Product-scoped candidate covering the historical Savings-to-current-Simple-Earn line rather than the generic Bitget exchange. The first-party 24 June 2022 launch notice establishes Flexible Savings, while a May 2023 Bitget Earn notice documents fixed-to-flexible Savings operation. Current Simple Earn terms state that Bitget acts as a platform provider, underlying assets may be managed by third parties, Simple Earn is not a registered product, principal recovery and displayed rewards are not guaranteed, and users face Bitget credit/operational risk. Current 2025 guides document flexible and fixed variants. Canonical review should not assume the 2022 Flexible Savings launch is the exact launch date of the later Simple Earn brand, nor convert promotional 'principal secure' wording into a universal guarantee that conflicts with the governing risk terms.",
+    "first_seen_at": "2026-08-09",
+    "last_reviewed_at": "2026-08-09"
   }
 ]
