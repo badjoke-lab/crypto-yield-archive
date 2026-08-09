@@ -1,0 +1,27 @@
+[
+  {
+    "candidate_id": "cya_candidate_000054",
+    "canonical_name": "Swyftx Earn",
+    "aliases": ["Swyftx Staking", "Earn program", "Staking"],
+    "domain": "swyftx.com",
+    "country_or_origin": "Australia",
+    "platform_type_guess": "exchange_earn",
+    "status_guess": "operations_ended",
+    "major_event": "Swyftx closed its Earn program, previously called Staking, on 10 January 2023 amid changing crypto-product regulatory requirements and returned assets held in Earn wallets to users' trade wallets together with earned interest",
+    "primary_sources": [
+      "https://support.swyftx.com/en/articles/12526691-earn-program-staking"
+    ],
+    "secondary_sources": [
+      "https://www.smartcompany.com.au/finance/swyftx-closure-of-earn/"
+    ],
+    "duplicate_check": {
+      "checked_at": "2026-08-09",
+      "matched_platform_ids": ["cya_plat_000061"],
+      "notes": "Promoted only after the hardened scanner classified Swyftx Earn as a duplicate-clear new candidate. The canonical record is product-scoped and does not classify the continuing Swyftx exchange as ended."
+    },
+    "decision": "already_recorded",
+    "notes": "Promoted to canonical record cya_plat_000061 in batch 37. Status is operations_ended with voluntary_shutdown. The first-party return statement is classified as a product-level full return to Swyftx trade wallets, not as proof of universal external withdrawal completion.",
+    "first_seen_at": "2026-08-09",
+    "last_reviewed_at": "2026-08-09"
+  }
+]
