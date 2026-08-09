@@ -1,8 +1,9 @@
 # Phase 8 — 75-platform full corpus audit
 
-Status: repository audit passed; production completion gate pending  
+Status: repository audit passed; canonical baseline production verified; audit-release production gate pending  
 Audit date: 2026-08-09  
 Canonical baseline SHA: `106ec5b7b2f69a513d2795f4e352405e964456ca`  
+Canonical production verification: Production Surface Check #174 — success  
 Audit PR: #138
 
 ## Purpose
@@ -25,6 +26,8 @@ Generated pages:  89
 ```
 
 The baseline was produced by canonical PR #137, which added Bitfinex Margin Funding and Poloniex Earn as platforms 74 and 75 after candidate-only PR #136.
+
+The exact canonical SHA `106ec5b7b2f69a513d2795f4e352405e964456ca` passed Cloudflare deployment, custom production-surface verification, Chromium installation, production desktop/mobile capture and verification-artifact upload in Production Surface Check #174 before the audit PR was allowed to merge.
 
 ## Pre-audit result
 
@@ -206,13 +209,14 @@ low-confidence platforms = 0                        pass
 generic cross-brand alias collisions removed        pass
 remaining quality debt documented                   pass
 full npm test / build-output validation              pass
+representative audit-branch capture                  pass
+canonical 75-platform production SHA verified        pass / Production Surface Check #174
 ```
 
-Production-side requirements remain mandatory before growth resumes:
+One production-side requirement remains mandatory before growth resumes:
 
 ```text
-canonical 75-platform SHA 106ec5b7... production    pending / Production Surface Check #174
 75-platform audit release exact-SHA production       pending until audit PR merge
 ```
 
-The queue must remain `audit_at_75` until both production gates are complete. A later checkpoint may switch the queue to growth toward 100 only after the audit release itself is observed on the custom production domain with the exact expected build SHA.
+The queue must remain `audit_at_75` until the audit release itself is observed on the custom production domain with the exact expected build SHA. Only then may a later checkpoint switch the queue to growth toward 100.
