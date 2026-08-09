@@ -18,6 +18,14 @@ assert.equal(byId.get('fixture_alias').classification, 'probable_duplicate');
 assert.equal(byId.get('fixture_alias').matches[0].platform_id, 'cya_plat_fixture_001');
 assert.equal(byId.get('fixture_new').classification, 'new_candidate');
 assert.equal(byId.get('fixture_new').eligible_for_draft, true);
+assert.equal(byId.get('fixture_cross_domain_shared_alias').classification, 'new_candidate');
+assert.equal(byId.get('fixture_cross_domain_shared_alias').eligible_for_draft, true);
+assert.equal(byId.get('fixture_cross_domain_shared_alias').matches[0].platform_id, 'cya_plat_fixture_003');
+assert.ok(byId.get('fixture_cross_domain_shared_alias').matches[0].score < 70);
+assert.equal(
+  byId.get('fixture_cross_domain_shared_alias').matches[0].reasons[0].type,
+  'alias_exact_domain_conflict',
+);
 assert.equal(byId.get('fixture_research').classification, 'manual_review_required');
 assert.equal(byId.get('fixture_research').eligible_for_draft, false);
 assert.equal(byId.get('fixture_terminal').classification, 'out_of_scope');
@@ -25,7 +33,7 @@ assert.equal(byId.get('fixture_terminal').eligible_for_draft, false);
 assert.deepEqual(result.counts, {
   exact_duplicate: 1,
   probable_duplicate: 1,
-  new_candidate: 1,
+  new_candidate: 2,
   manual_review_required: 1,
   out_of_scope: 1,
 });

@@ -11,6 +11,12 @@
       "canonical_name": "Beta Finance",
       "aliases": ["Beta"],
       "official_domain_original": "beta.example"
+    },
+    {
+      "id": "cya_plat_fixture_003",
+      "canonical_name": "OKX Simple Earn",
+      "aliases": ["Simple Earn Flexible", "Simple Earn Fixed"],
+      "official_domain_original": "okx.example"
     }
   ],
   "candidates": [
@@ -44,6 +50,19 @@
       "decision": "add_now",
       "primary_sources": ["https://gamma.example/wind-down"],
       "secondary_sources": ["https://news.example/gamma-credit"]
+    },
+    {
+      "candidate_id": "fixture_cross_domain_shared_alias",
+      "canonical_name": "Binance Simple Earn",
+      "aliases": ["Simple Earn Flexible"],
+      "domain": "binance.example",
+      "country_or_origin": "Global",
+      "platform_type_guess": "exchange_earn",
+      "status_guess": "active",
+      "major_event": "A distinct exchange brand uses a shared generic product alias.",
+      "decision": "add_now",
+      "primary_sources": ["https://binance.example/earn"],
+      "secondary_sources": []
     },
     {
       "candidate_id": "fixture_research",
