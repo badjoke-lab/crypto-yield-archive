@@ -78,6 +78,11 @@ function scoreCandidateAgainstPlatform(candidate, platform) {
   const platformDomain = normalizeDomain(
     platform.official_domain_original || platform.official_url_original,
   );
+  const domainConflict = Boolean(
+    candidateDomain
+    && platformDomain
+    && candidateDomain !== platformDomain,
+  );
 
   if (candidateDomain && platformDomain && candidateDomain === platformDomain) {
     score = 100;
@@ -92,7 +97,23 @@ function scoreCandidateAgainstPlatform(candidate, platform) {
       const normalizedPlatform = normalizeText(platformName);
       if (!normalizedCandidate || !normalizedPlatform) continue;
 
+      const aliasOnlyDomainConflict = cIndex > 0 && pIndex > 0 && domainConflict;
+
       if (normalizedCandidate === normalizedPlatform) {
+        if (aliasOnlyDomainConflict) {
+          const conflictScore = 55;
+          score = Math.max(score, conflictScore);
+          reasons.push({
+            type: 'alias_exact_domain_conflict',
+            candidate_value: candidateName,
+            platform_value: platformName,
+            candidate_domain: candidateDomain,
+            platform_domain: platformDomain,
+            score: conflictScore,
+          });
+          continue;
+        }
+
         const exactScore = cIndex === 0 && pIndex === 0
           ? 100
           : cIndex === 0
@@ -113,25 +134,37 @@ function scoreCandidateAgainstPlatform(candidate, platform) {
       }
 
       if (compact(candidateName) === compact(platformName)) {
-        score = Math.max(score, 88);
+        const compactScore = aliasOnlyDomainConflict ? 55 : 88;
+        score = Math.max(score, compactScore);
         reasons.push({
-          type: 'name_compact_exact',
+          type: aliasOnlyDomainConflict
+            ? 'alias_compact_exact_domain_conflict'
+            : 'name_compact_exact',
           candidate_value: candidateName,
           platform_value: platformName,
-          score: 88,
+          candidate_domain: aliasOnlyDomainConflict ? candidateDomain : undefined,
+          platform_domain: aliasOnlyDomainConflict ? platformDomain : undefined,
+          score: compactScore,
         });
         continue;
       }
 
       const similarity = jaccard(candidateName, platformName);
       if (similarity >= 0.75) {
-        const fuzzyScore = Math.round(65 + similarity * 20);
+        const rawFuzzyScore = Math.round(65 + similarity * 20);
+        const fuzzyScore = aliasOnlyDomainConflict
+          ? Math.min(rawFuzzyScore, 55)
+          : rawFuzzyScore;
         score = Math.max(score, fuzzyScore);
         reasons.push({
-          type: 'name_token_similarity',
+          type: aliasOnlyDomainConflict
+            ? 'alias_token_similarity_domain_conflict'
+            : 'name_token_similarity',
           candidate_value: candidateName,
           platform_value: platformName,
           similarity: Number(similarity.toFixed(3)),
+          candidate_domain: aliasOnlyDomainConflict ? candidateDomain : undefined,
+          platform_domain: aliasOnlyDomainConflict ? platformDomain : undefined,
           score: fuzzyScore,
         });
       }
