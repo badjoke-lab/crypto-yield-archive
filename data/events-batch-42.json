@@ -1,0 +1,58 @@
+[
+  {
+    "id": "cya_ev_000304",
+    "platform_id": "cya_plat_000070",
+    "event_type": "other",
+    "event_date": "2021-01-25",
+    "title": "HTX publishes Simple Earn Agreement",
+    "description": "HTX published the Simple Earn Agreement governing purchases and redemptions of HTX Earn products, including flexible and fixed-term products.",
+    "confidence": "high",
+    "impact_level": "medium",
+    "event_status_effect": "active",
+    "source_count": 1,
+    "sort_order": 1,
+    "notes": "This is a documented agreement-publication milestone, not an asserted original product launch date."
+  },
+  {
+    "id": "cya_ev_000305",
+    "platform_id": "cya_plat_000070",
+    "event_type": "other",
+    "event_date": "2026-03-24",
+    "title": "HTX Earn Flexible promotion confirms current operation",
+    "description": "HTX announced a Flexible Earn promotion and documented hourly accrual, compounding and redemption mechanics, confirming continuing Simple Earn/Flexible operation in 2026.",
+    "confidence": "high",
+    "impact_level": "low",
+    "event_status_effect": "active",
+    "source_count": 1,
+    "sort_order": 2,
+    "notes": "Current-operation evidence, not a launch event."
+  },
+  {
+    "id": "cya_ev_000306",
+    "platform_id": "cya_plat_000071",
+    "event_type": "other",
+    "event_date": "2025-07-30",
+    "title": "CoinEx continues to document the Financial Account name",
+    "description": "A CoinEx announcement adding assets to its yield product still called the product Financial Account and described interest distribution from borrowed coins in margin trading.",
+    "confidence": "high",
+    "impact_level": "low",
+    "event_status_effect": "active",
+    "source_count": 1,
+    "sort_order": 1,
+    "notes": "This establishes the predecessor name immediately before Flexible Savings documentation appeared; it is not a closure event."
+  },
+  {
+    "id": "cya_ev_000307",
+    "platform_id": "cya_plat_000071",
+    "event_type": "other",
+    "event_date": "2025-08-19",
+    "title": "CoinEx announces Flexible Savings product upgrade",
+    "description": "CoinEx announced an upgrade to its Flexible Savings product with a tiered subsidy structure and documented current flexible subscription, redemption and borrowing-linked yield mechanics.",
+    "confidence": "high",
+    "impact_level": "medium",
+    "event_status_effect": "active",
+    "source_count": 1,
+    "sort_order": 2,
+    "notes": "The exact formal rename date from Financial Account to Flexible Savings remains unresolved."
+  }
+]
