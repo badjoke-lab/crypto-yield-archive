@@ -3,15 +3,15 @@
     "phase": 8,
     "status": "research_open",
     "recorded_at": "2026-08-09",
-    "baseline_main_sha": "4a16f2f928f9e98bc0d5bf668bcb3a28aca09aef",
-    "canonical_platforms": 60,
+    "baseline_main_sha": "dd4029488d52d34301f2840119915442e08104a2",
+    "canonical_platforms": 61,
     "next_audit_milestone": 75,
     "next_candidate_ids": [
-      "cya_candidate_000053",
-      "cya_candidate_000054"
+      "cya_candidate_000055",
+      "cya_candidate_000056"
     ],
-    "next_platform_id": "cya_plat_000061",
-    "next_event_id": "cya_ev_000287",
+    "next_platform_id": "cya_plat_000062",
+    "next_event_id": "cya_ev_000288",
     "existing_needs_research": [
       {
         "candidate_id": "cya_candidate_000010",
@@ -42,6 +42,6 @@
       }
     ],
     "promotion_policy": "Candidate-only staging first. No canonical IDs, writes, status changes or outcome inference before reviewed promotion.",
-    "next_action": "Research two duplicate-clear, scope-valid, evidence-backed candidates for the first Phase 8 candidate-only gate."
+    "next_action": "Research duplicate-clear, scope-valid, evidence-backed candidates for platform 62 and continue Phase 8 growth toward the 75-platform audit."
   }
 ]
