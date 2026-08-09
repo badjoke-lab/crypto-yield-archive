@@ -61,5 +61,57 @@
     "notes": "Retained for a later batch. Confirm the operating company, product terms, underlying yield counterparties, custody and ownership model, closure date, withdrawal process, and whether customer balances were returned in full.",
     "first_seen_at": "2026-08-05",
     "last_reviewed_at": "2026-08-05"
+  },
+  {
+    "candidate_id": "cya_candidate_000057",
+    "canonical_name": "Gate Simple Earn",
+    "aliases": ["Simple Earn", "Gate Simple Earn Flexible Term", "Gate Simple Earn Fixed Term"],
+    "domain": "gate.com",
+    "country_or_origin": "Global / jurisdiction-dependent",
+    "platform_type_guess": "exchange_earn",
+    "status_guess": "active",
+    "major_event": "Gate Simple Earn is an active exchange-yield product with flexible and fixed-term variants; current first-party documentation describes flexible subscriptions as lending working capital to other platform users and documents continuing fixed-term and Auto-Earn operation in 2026",
+    "primary_sources": [
+      "https://www.gate.com/help/lend/simple-earn/28568",
+      "https://www.gate.com/help/lend/simple-earn/42563/simple-earn-fixed-term-products-faq",
+      "https://www.gate.com/help/lend/simple-earn/32882",
+      "https://www.gate.com/help/lend/simple-earn/48860"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-09",
+      "matched_platform_ids": [],
+      "notes": "Repository code and PR searches found no canonical Gate Simple Earn platform before staging. The hardened scanner must still confirm canonical-name, alias and gate.com domain clearance before promotion."
+    },
+    "decision": "add_now",
+    "notes": "Product-scoped exchange-yield candidate rather than a generic Gate exchange dossier. Current first-party flexible-term documentation states that subscribed assets are used as working capital for the platform's lending business and loaned to other users, with lending interest distributed as returns. Current fixed-term, Auto-Earn and bonus documentation confirms continued operation in 2026. Canonical review must not infer one launch date, legal-title treatment, principal guarantee or risk model across flexible, fixed, promotional and future Simple Earn variants; exact umbrella-product launch remains unresolved.",
+    "first_seen_at": "2026-08-09",
+    "last_reviewed_at": "2026-08-09"
+  },
+  {
+    "candidate_id": "cya_candidate_000058",
+    "canonical_name": "Bybit Easy Earn",
+    "aliases": ["Easy Earn", "Bybit Savings", "Flexible Easy Earn", "Fixed Easy Earn"],
+    "domain": "bybit.com",
+    "country_or_origin": "Global / jurisdiction-dependent",
+    "platform_type_guess": "exchange_earn",
+    "status_guess": "active",
+    "major_event": "Bybit Easy Earn remains active in 2026 with flexible, fixed and fixed-rate-loan products; current first-party material distinguishes platform-revenue, Bybit-loan and third-party wealth-management yield sources and states token-amount principal protection for Easy Earn flexible/fixed products",
+    "primary_sources": [
+      "https://www.bybit.com/en/help-center/article/FAQ-Easy-Earn",
+      "https://www.bybit.com/en/help-center/article/How-to-Get-Started-With-Easy-Earn",
+      "https://www.bybit.com/en/help-center/article/Differences-Between-Bybit-Earn-Products",
+      "https://www.bybit.com/en/help-center/topic-list/bybit-earn"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-09",
+      "matched_platform_ids": [],
+      "notes": "Repository code and PR searches found no canonical Bybit Easy Earn/Bybit Earn platform before staging. The hardened scanner must still confirm canonical-name, alias and bybit.com domain clearance before promotion."
+    },
+    "decision": "add_now",
+    "notes": "Product-scoped candidate for Easy Earn flexible/fixed products, not the full Bybit Earn suite and not a generic Bybit exchange dossier. Current first-party documentation states Flexible yields are generated from platform revenue while Fixed products can use Bybit loan activity or third-party risk-neutral wealth-management strategies. Bybit describes Easy Earn flexible/fixed as principal-protected in token amount, but CYA must preserve that as a current company product claim rather than convert it into a universal legal or solvency guarantee. Exact launch/rename chronology from legacy Bybit Savings to the current Easy Earn umbrella remains unresolved and should not be invented in canonical data.",
+    "first_seen_at": "2026-08-09",
+    "last_reviewed_at": "2026-08-09"
   }
 ]
