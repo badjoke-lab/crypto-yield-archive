@@ -1,21 +1,21 @@
 [
   {
     "phase": 8,
-    "status": "candidate_review",
+    "status": "audit_at_75",
     "recorded_at": "2026-08-09",
-    "baseline_main_sha": "0c8dc83011f96a00e4db59c58899bcb9ef6af57e",
-    "canonical_platforms": 73,
+    "baseline_main_sha": "590610a8a305079adc09eca4a283ba6b063bfc77",
+    "canonical_platforms": 75,
     "next_audit_milestone": 75,
-    "staged_candidate_ids": ["cya_candidate_000067", "cya_candidate_000068"],
+    "staged_candidate_ids": [],
     "next_candidate_ids": ["cya_candidate_000069", "cya_candidate_000070"],
-    "next_platform_id": "cya_plat_000074",
-    "next_event_id": "cya_ev_000312",
+    "next_platform_id": "cya_plat_000076",
+    "next_event_id": "cya_ev_000315",
     "existing_needs_research": [
       {"candidate_id":"cya_candidate_000010","canonical_name":"Goldfinch","blocking_questions":["DeFi/institutional-yield scope","entity and product boundary"]},
       {"candidate_id":"cya_candidate_000045","canonical_name":"Cabital","blocking_questions":["operating legal entity","product boundary","closure chronology","custody and customer outcome"]},
       {"candidate_id":"cya_candidate_000049","canonical_name":"Outlet Finance","blocking_questions":["underlying counterparty model","closure chronology","custody and repayment outcome"]}
     ],
     "promotion_policy": "Candidate-only staging first. No canonical IDs, writes, status changes or outcome inference before reviewed promotion.",
-    "next_action": "After the 73-platform production baseline is verified, run hardened duplicate scanning and review-only draft generation for Bitfinex Margin Funding / Lending Pro and Poloniex Earn in a candidate-only PR. If both are promotion-ready, add them as platforms 74 and 75 in a separate canonical PR, then stop growth for the 75-platform full corpus audit."
+    "next_action": "Pause all record growth at 75 platforms. After the batch 44 canonical release is merged and verified in production, run the dedicated 75-platform full corpus audit, resolve any blockers and review quality-debt deltas. Do not stage or promote platform 76 until the 75-platform audit checkpoint is complete."
   }
 ]
