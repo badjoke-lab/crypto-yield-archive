@@ -1,21 +1,20 @@
 [
   {
     "phase": 8,
-    "status": "candidate_review",
+    "status": "research_open",
     "recorded_at": "2026-08-09",
-    "baseline_main_sha": "a1b715f065401f1c30ca9edaeb6cb99a643a2179",
-    "canonical_platforms": 67,
+    "baseline_main_sha": "cbd030d4d6e5aa6af4b6f02894b26a6a9620406f",
+    "canonical_platforms": 69,
     "next_audit_milestone": 75,
-    "staged_candidate_ids": ["cya_candidate_000061", "cya_candidate_000062"],
     "next_candidate_ids": ["cya_candidate_000063", "cya_candidate_000064"],
-    "next_platform_id": "cya_plat_000068",
-    "next_event_id": "cya_ev_000300",
+    "next_platform_id": "cya_plat_000070",
+    "next_event_id": "cya_ev_000304",
     "existing_needs_research": [
       {"candidate_id":"cya_candidate_000010","canonical_name":"Goldfinch","blocking_questions":["DeFi/institutional-yield scope","entity and product boundary"]},
       {"candidate_id":"cya_candidate_000045","canonical_name":"Cabital","blocking_questions":["operating legal entity","product boundary","closure chronology","custody and customer outcome"]},
       {"candidate_id":"cya_candidate_000049","canonical_name":"Outlet Finance","blocking_questions":["underlying counterparty model","closure chronology","custody and repayment outcome"]}
     ],
     "promotion_policy": "Candidate-only staging first. No canonical IDs, writes, status changes or outcome inference before reviewed promotion.",
-    "next_action": "Run hardened duplicate scanning and review-only draft generation for Phemex Savings and WhiteBIT Crypto Lending. Promote only duplicate-clear, evidence-backed candidates in a separate canonical PR."
+    "next_action": "Research duplicate-clear, scope-valid, evidence-backed candidates for platforms 70 onward and continue Phase 8 growth toward the 75-platform full audit."
   }
 ]
