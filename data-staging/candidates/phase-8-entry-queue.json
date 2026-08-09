@@ -1,12 +1,13 @@
 [
   {
     "phase": 8,
-    "status": "research_open",
+    "status": "candidate_review",
     "recorded_at": "2026-08-09",
-    "baseline_main_sha": "6b19004372703759c5c3a120bcd6885c10b96cba",
+    "baseline_main_sha": "110a4cb4b0ac422e85c934470133364e5a17c308",
     "canonical_platforms": 71,
     "next_audit_milestone": 75,
-    "next_candidate_ids": ["cya_candidate_000065", "cya_candidate_000066"],
+    "staged_candidate_ids": ["cya_candidate_000065", "cya_candidate_000066"],
+    "next_candidate_ids": ["cya_candidate_000067", "cya_candidate_000068"],
     "next_platform_id": "cya_plat_000072",
     "next_event_id": "cya_ev_000308",
     "existing_needs_research": [
@@ -15,6 +16,6 @@
       {"candidate_id":"cya_candidate_000049","canonical_name":"Outlet Finance","blocking_questions":["underlying counterparty model","closure chronology","custody and repayment outcome"]}
     ],
     "promotion_policy": "Candidate-only staging first. No canonical IDs, writes, status changes or outcome inference before reviewed promotion.",
-    "next_action": "Research duplicate-clear, scope-valid, evidence-backed candidates for platforms 72 onward and continue Phase 8 growth toward the 75-platform full audit."
+    "next_action": "Run hardened duplicate scanning and review-only draft generation for BingX Earn (formerly Wealth) and MEXC Savings. Promote only duplicate-clear, evidence-backed candidates in a separate canonical PR after the 71-platform production baseline is verified."
   }
 ]
