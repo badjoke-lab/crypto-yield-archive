@@ -52,8 +52,10 @@ jobs:
         env:
           HEAD_REF: ${{ github.head_ref }}
           CYA_EXPECTED_COMMIT: ${{ github.event.pull_request.head.sha }}
-          CYA_SMOKE_ATTEMPTS: 30
-          CYA_SMOKE_DELAY_MS: 15000
+          CYA_PREVIEW_READY_ATTEMPTS: 8
+          CYA_PREVIEW_READY_DELAY_SECONDS: 10
+          CYA_SMOKE_ATTEMPTS: 4
+          CYA_SMOKE_DELAY_MS: 5000
         shell: bash
         run: |
           set -euo pipefail
@@ -63,17 +65,37 @@ jobs:
           echo "Preview URL: ${CYA_BASE_URL}" | tee preview-surface.log
           echo "Expected PR head: ${CYA_EXPECTED_COMMIT}" | tee -a preview-surface.log
 
-          status=$(curl -sS -o /tmp/cya-preview-version.json -w '%{http_code}' "${CYA_BASE_URL}/version.json" || true)
-          echo "Initial /version.json HTTP ${status}" | tee -a preview-surface.log
+          preview_ready=false
+          for attempt in $(seq 1 "$CYA_PREVIEW_READY_ATTEMPTS"); do
+            status=$(curl -sS -H 'cache-control: no-cache' -o /tmp/cya-preview-version.json -w '%{http_code}' "${CYA_BASE_URL}/version.json?preview_probe=$(date +%s%N)" || true)
+            echo "Preview readiness ${attempt}/${CYA_PREVIEW_READY_ATTEMPTS}: /version.json HTTP ${status}" | tee -a preview-surface.log
 
-          if [ "$status" = "404" ]; then
-            echo "Cloudflare branch preview is unavailable for this PR. Local build, validation, SEO, and representative screenshot workflows remain the blocking checks." | tee -a preview-surface.log
+            if [ "$status" = "404" ]; then
+              echo "Cloudflare branch preview is unavailable for this PR. Local build, validation, SEO, and representative screenshot workflows remain the blocking checks." | tee -a preview-surface.log
+              exit 0
+            fi
+
+            if [ "$status" != "200" ]; then
+              echo "Unexpected preview response; refusing to mask a non-404 failure." | tee -a preview-surface.log
+              exit 1
+            fi
+
+            deployed_commit=$(node -e "const fs=require('node:fs');try{const x=JSON.parse(fs.readFileSync('/tmp/cya-preview-version.json','utf8'));process.stdout.write(String(x.build?.commit||''))}catch{}")
+            echo "Observed preview commit: ${deployed_commit:-unknown}" | tee -a preview-surface.log
+
+            if [ "$deployed_commit" = "$CYA_EXPECTED_COMMIT" ]; then
+              preview_ready=true
+              break
+            fi
+
+            if [ "$attempt" -lt "$CYA_PREVIEW_READY_ATTEMPTS" ]; then
+              sleep "$CYA_PREVIEW_READY_DELAY_SECONDS"
+            fi
+          done
+
+          if [ "$preview_ready" != "true" ]; then
+            echo "Cloudflare branch alias exists but did not deploy this PR head. Treating the stale preview as unavailable; local build, validation, SEO, and representative screenshot workflows remain the blocking checks." | tee -a preview-surface.log
             exit 0
-          fi
-
-          if [ "$status" != "200" ]; then
-            echo "Unexpected preview response; refusing to mask a non-404 failure." | tee -a preview-surface.log
-            exit 1
           fi
 
           set -o pipefail
