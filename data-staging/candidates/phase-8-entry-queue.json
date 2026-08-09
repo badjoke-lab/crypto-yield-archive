@@ -1,11 +1,11 @@
 [
   {
     "phase": 8,
-    "status": "audit_at_75",
+    "status": "growth_to_100",
     "recorded_at": "2026-08-09",
-    "baseline_main_sha": "590610a8a305079adc09eca4a283ba6b063bfc77",
+    "baseline_main_sha": "3357933c7d7e4d2449a507979edf3437412280f9",
     "canonical_platforms": 75,
-    "next_audit_milestone": 75,
+    "next_audit_milestone": 100,
     "staged_candidate_ids": [],
     "next_candidate_ids": ["cya_candidate_000069", "cya_candidate_000070"],
     "next_platform_id": "cya_plat_000076",
@@ -16,6 +16,6 @@
       {"candidate_id":"cya_candidate_000049","canonical_name":"Outlet Finance","blocking_questions":["underlying counterparty model","closure chronology","custody and repayment outcome"]}
     ],
     "promotion_policy": "Candidate-only staging first. No canonical IDs, writes, status changes or outcome inference before reviewed promotion.",
-    "next_action": "Pause all record growth at 75 platforms. After the batch 44 canonical release is merged and verified in production, run the dedicated 75-platform full corpus audit, resolve any blockers and review quality-debt deltas. Do not stage or promote platform 76 until the 75-platform audit checkpoint is complete."
+    "next_action": "Resume Phase 8 growth from 75 toward 100. Begin batch 45 with a candidate-only PR using cya_candidate_000069 and cya_candidate_000070; no canonical promotion until hardened duplicate scanning and review-only draft generation pass. Pause again for a full corpus audit at 100 platforms."
   }
 ]
