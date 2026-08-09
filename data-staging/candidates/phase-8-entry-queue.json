@@ -1,21 +1,21 @@
 [
   {
     "phase": 8,
-    "status": "candidate_review",
+    "status": "growth_to_75",
     "recorded_at": "2026-08-09",
-    "baseline_main_sha": "110a4cb4b0ac422e85c934470133364e5a17c308",
-    "canonical_platforms": 71,
+    "baseline_main_sha": "027d087378414ca586fb7e80092294fc6131a2ed",
+    "canonical_platforms": 73,
     "next_audit_milestone": 75,
-    "staged_candidate_ids": ["cya_candidate_000065", "cya_candidate_000066"],
+    "staged_candidate_ids": [],
     "next_candidate_ids": ["cya_candidate_000067", "cya_candidate_000068"],
-    "next_platform_id": "cya_plat_000072",
-    "next_event_id": "cya_ev_000308",
+    "next_platform_id": "cya_plat_000074",
+    "next_event_id": "cya_ev_000312",
     "existing_needs_research": [
       {"candidate_id":"cya_candidate_000010","canonical_name":"Goldfinch","blocking_questions":["DeFi/institutional-yield scope","entity and product boundary"]},
       {"candidate_id":"cya_candidate_000045","canonical_name":"Cabital","blocking_questions":["operating legal entity","product boundary","closure chronology","custody and customer outcome"]},
       {"candidate_id":"cya_candidate_000049","canonical_name":"Outlet Finance","blocking_questions":["underlying counterparty model","closure chronology","custody and repayment outcome"]}
     ],
     "promotion_policy": "Candidate-only staging first. No canonical IDs, writes, status changes or outcome inference before reviewed promotion.",
-    "next_action": "Run hardened duplicate scanning and review-only draft generation for BingX Earn (formerly Wealth) and MEXC Savings. Promote only duplicate-clear, evidence-backed candidates in a separate canonical PR after the 71-platform production baseline is verified."
+    "next_action": "After batch 43 production verification, stage two final candidates for platforms 74 and 75 in a candidate-only PR, promote them separately if duplicate-clear and evidence-backed, then pause growth for the 75-platform full corpus audit before continuing toward 100."
   }
 ]
