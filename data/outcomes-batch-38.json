@@ -1,0 +1,45 @@
+[
+  {
+    "platform_id": "cya_plat_000062",
+    "outcome_status": "not_applicable",
+    "estimated_recovery_rate": "No platform-wide customer-loss, claims, or repayment process was identified for KuCoin Earn in the reviewed sources; KuCoin Earn remains active.",
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": "Not applicable",
+    "claim_process_url": null,
+    "affected_products": [
+      "KuCoin Earn",
+      "KuCoin Simple Earn",
+      "KuCoin staking and related Earn products"
+    ],
+    "claim_classes": [],
+    "jurisdictions": [
+      "Supported KuCoin jurisdictions"
+    ],
+    "as_of": "2026-08-09",
+    "last_verified_at": "2026-08-09",
+    "notes": "Not-applicable reflects the absence of a reviewed failure or recovery process. It is not a guarantee of principal, liquidity, custody, yield, solvency, availability, regulatory protection or redemption at a particular time.",
+    "confidence": "high"
+  },
+  {
+    "platform_id": "cya_plat_000063",
+    "outcome_status": "not_applicable",
+    "estimated_recovery_rate": "No platform-wide customer-loss, claims, or repayment process was identified for OKX Simple Earn in the reviewed sources; Simple Earn remains active.",
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": "Not applicable",
+    "claim_process_url": null,
+    "affected_products": [
+      "OKX Simple Earn Flexible",
+      "OKX Simple Earn Fixed"
+    ],
+    "claim_classes": [],
+    "jurisdictions": [
+      "Supported OKX jurisdictions"
+    ],
+    "as_of": "2026-08-09",
+    "last_verified_at": "2026-08-09",
+    "notes": "Not-applicable reflects the absence of a reviewed failure or recovery process. OKX's own terms state Simple Earn is not principal-protected, so this classification must not be read as a guarantee against principal loss, liquidity restrictions, borrower risk or platform risk.",
+    "confidence": "high"
+  }
+]
