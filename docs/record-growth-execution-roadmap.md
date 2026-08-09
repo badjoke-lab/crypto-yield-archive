@@ -28,8 +28,9 @@ Default branch:          main
 Canonical release SHA:   106ec5b7b2f69a513d2795f4e352405e964456ca
 Latest canonical PR:     #137 Add Phase 8 batch 44 Bitfinex Margin Funding and Poloniex Earn records
 Candidate-only PR:       #136 Stage Phase 8 batch 44 Bitfinex Margin Funding and Poloniex Earn candidates
-Production verification: run #174 in progress for exact canonical SHA
+Production verification: Production Surface Check #174 success
 Growth state:            paused at 75 for full audit
+Audit PR:                #138 open; repository audit pass, production release pending
 ```
 
 ### Canonical scale
@@ -45,7 +46,7 @@ Claims ongoing:   18
 Generated pages:  89
 ```
 
-PR #137 validation confirmed these counts, 0 corpus blockers, 0 low-reliability evidence, and 0 low-confidence platforms before merge.
+PR #137 validation confirmed these counts, 0 corpus blockers, 0 low-reliability evidence, and 0 low-confidence platforms. Production Surface Check #174 then verified the exact canonical SHA on the production surface and completed production desktop/mobile capture successfully.
 
 ## Completed phase gates
 
@@ -64,9 +65,9 @@ Phase 8 / batch 40: 65 -> 67                        complete
 Phase 8 / batch 41: 67 -> 69                        complete
 Phase 8 / batch 42: 69 -> 71                        complete
 Phase 8 / batch 43: 71 -> 73                        complete
-Phase 8 / batch 44: 73 -> 75                        canonical merge complete; production verification in progress
+Phase 8 / batch 44: 73 -> 75                        complete / production verified
 Phase 8: 75-platform full audit                     current
-Phase 8: 75 -> 100                                  blocked until audit completion
+Phase 8: 75 -> 100                                  blocked until audit-release production verification
 Phase 8: 100-platform full audit                    future
 ```
 
@@ -82,7 +83,7 @@ Key constraints remain:
 - no-change runs and synthetic detection fixtures are tested;
 - scheduled monitoring and manual dispatch remain available.
 
-Phase 7 implementation and tuning were completed before Phase 8 entry; Phase 7 was formally closed and Phase 8 started in PR #121.
+Phase 7 was formally closed and Phase 8 started in PR #121.
 
 ## Phase 8 growth summary
 
@@ -111,6 +112,7 @@ Next candidate IDs:      cya_candidate_000069 / cya_candidate_000070
 Next platform ID:        cya_plat_000076
 Next event ID:           cya_ev_000315
 Latest completed batch:  44
+Queue status:            audit_at_75
 ```
 
 No active candidate is approved for silent promotion:
@@ -119,9 +121,9 @@ No active candidate is approved for silent promotion:
 - Cabital requires operating-entity, product-boundary, closure, custody and customer-outcome evidence.
 - Outlet Finance requires counterparty, closure, custody and repayment evidence.
 
-## 75-platform audit baseline
+## 75-platform audit result
 
-The canonical PR #137 audit output before merge reported:
+Pre-audit canonical baseline:
 
 ```text
 Corpus blockers:             0
@@ -135,48 +137,57 @@ Claims ongoing:             18
 Unclear terms:              16
 ```
 
-Four quality-debt findings are generic cross-brand alias collisions introduced by the exchange-yield expansion:
+Four quality-debt findings were generic cross-brand alias collisions:
 
 - `simple earn flexible`
 - `simple earn fixed`
 - `simple earn`
 - `flexible savings`
 
-The 75-platform audit namespaces or removes only those generic aliases while preserving canonical names, reviewed historical brand aliases, product facts, statuses and outcomes.
+Audit PR #138 namespaced or removed only those ambiguous generic aliases while preserving canonical IDs, names, slugs, statuses, dates, evidence, outcomes, products and terms interpretations.
 
-Other known debt is not to be hidden or guessed away. It includes:
+Repository-side audit result:
 
-- Ledn, Crypto.com Earn and Haru Invest with fewer than three evidence records;
-- repurposed historical URLs for several legacy records;
-- Flint and BitLendingClub without an exact verified end date;
-- unknown historical terms for Babel Finance, BlockFills, Stablegains, Hodlnaut, Vauld, Haru Invest and CoinLoan;
-- split consumed-candidate ledgers.
+```text
+Platforms:                  75
+Events:                     309
+Evidence:                   485
+Outcomes:                    75
+Products:                   112
+Terms risk:                  75
+Claims ongoing:              18
+Corpus blockers:              0
+Quality-debt items:          23
+Low-reliability evidence:     0
+Low-confidence platforms:     0
+Generated pages:             89
+```
+
+The remaining 23 findings are the pre-existing legacy debt set and are not hidden or guessed away. Details are recorded in `docs/phase-8-75-platform-audit.md`.
 
 ## 75-platform audit completion gate
 
-The audit is complete only when all of the following are true:
-
 ```text
-75 canonical platforms preserved                    required
-no canonical record added or removed                required
-canonical/reference integrity blockers = 0          required
-low-reliability evidence = 0                        required
-low-confidence platforms = 0                        required
-generic cross-brand alias collisions removed        required
-remaining quality debt explicitly documented        required
-all normal validation/build/SEO checks green        required
-representative public-surface checks green          required
-75-platform canonical production SHA verified       required
-75-platform audit release production verified       required
+75 canonical platforms preserved                    pass
+no canonical record added or removed                pass
+canonical/reference integrity blockers = 0          pass
+low-reliability evidence = 0                        pass
+low-confidence platforms = 0                        pass
+generic cross-brand alias collisions removed        pass
+remaining quality debt explicitly documented        pass
+normal validation/build/SEO checks green             pass on audit branch
+representative audit-branch capture                  pass
+75-platform canonical production SHA verified       pass / Production Surface Check #174
+75-platform audit release production verified       pending until audit PR merge
 ```
 
-Only after this gate is complete may the queue move from `audit_at_75` to growth toward 100 and platform `cya_plat_000076` be considered.
+Only after the audit release itself passes exact-SHA production verification may the queue move from `audit_at_75` to growth toward 100 and platform `cya_plat_000076` be considered.
 
 ## Production sequencing rule
 
-For every canonical release:
+For every canonical or audit release:
 
-1. merge the canonical PR;
+1. merge the reviewed PR;
 2. freeze `main`;
 3. wait for the Cloudflare Pages check for that exact SHA;
 4. require `/version.json` build commit to match the same SHA;
@@ -194,7 +205,7 @@ This prevents a later staging or canonical commit from overtaking the exact-SHA 
 4. Confirm the active candidate ledger and consumed ledgers.
 5. Recalculate canonical counts and maximum IDs.
 6. If queue status is audit_at_75, do not stage platform 76.
-7. Complete docs/phase-8-75-platform-audit.md and its CI/production gates first.
+7. Complete docs/phase-8-75-platform-audit.md and the audit-release production gate first.
 8. Never silently promote monitoring findings or needs_research candidates.
 ```
 
@@ -212,7 +223,7 @@ npm test
 ## Immediate next action
 
 ```text
-Complete exact-SHA production verification for canonical SHA 106ec5b7b2f69a513d2795f4e352405e964456ca.
-Complete the dedicated 75-platform audit branch without adding platform 76.
-Reduce only evidence-backed / deterministic quality debt, preserve unresolved historical uncertainty, and verify the audit release in production before resuming 75 -> 100 growth.
+Merge audit PR #138 only after its final CI is green.
+Freeze main and verify the audit-release exact SHA in Cloudflare and Production Surface Check.
+After that succeeds, close the audit checkpoint and only then resume Phase 8 growth from 75 toward 100.
 ```
