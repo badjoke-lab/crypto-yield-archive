@@ -22,7 +22,7 @@ Primary sources:
 - https://help.swissborg.com/hc/en-gb/articles/10716337159825-SwissBorg-Earn-What-is-it
 - https://swissborg.com/legal/swissborg-app-terms-of-use
 
-Decision: `add_now`, subject to hardened duplicate scanning, corpus audit and review-only draft generation. Canonical review must preserve both the 2020 Smart Yield launch and the 2022 SwissBorg Earn transition as distinct events and decide whether a platform-level launch date can be assigned without obscuring that lineage.
+Scanner resolution: `exact_duplicate` of `cya_plat_000044`. Canonical SwissBorg Earn already preserves the 2020 Smart Yield launch and the 2022 Earn transition. Decision: `duplicate`; no new platform ID is consumed. Newly reviewed current App Terms may be considered later as enrichment of the existing record.
 
 ## Wirex X-Accounts
 
@@ -33,7 +33,6 @@ Reviewed first-party basis:
 - current X-Account Terms state that when customers deposit compatible crypto-assets into an X-Account, ownership transfers to Wirex, which may use, hold or manage the assets at its discretion;
 - the Terms explicitly state that X-Accounts are not checking, savings, bank or deposit accounts and are not protected by government-backed depositor compensation, insurance or guarantee schemes;
 - UK regulatory material classifies X-Accounts as a crypto feature not regulated by the FCA; that conclusion is UK-specific and must not be generalized across other jurisdictions;
-- reviewed first-party material did not establish an authoritative original X-Accounts launch date;
 - Wirex Business Yield is a separate business-facing product and must not be collapsed into this consumer X-Accounts identity.
 
 Primary sources:
@@ -43,8 +42,8 @@ Primary sources:
 - https://help.wirexapp.com/article/x-account-terms-of-service-1667
 - https://help.wirexapp.com/article/regulations-united-kingdom-1600
 
-Decision: `add_now`, subject to hardened duplicate scanning, corpus audit and review-only draft generation. Unless a first-party historical launch source is separately verified, canonical `launch_date` should remain null.
+Scanner resolution: `exact_duplicate` of `cya_plat_000043`. Canonical Wirex X-Accounts already records the 2021-06-23 launch using the company-issued launch announcement syndicated through PR Newswire and already records the current ownership-transfer and non-deposit terms. Decision: `duplicate`; no new platform ID is consumed. Newly reviewed UK regulatory material may be considered later as enrichment of the existing record.
 
-## Required gate
+## Batch result
 
-Both records remain staging-only. No canonical IDs are assigned in this branch. SwissBorg strategy-level protocol/custody/risk details and Wirex jurisdiction-specific regulation, title transfer, product terms and protections must remain scoped to the evidence actually reviewed. Hardened duplicate scanning and corpus validation must resolve any canonical overlap before promotion.
+Both staged identities were exact canonical duplicates. They are removed from the active candidate ledger and preserved in `cya-consumed-duplicate-review-batch-50.json`. Canonical platform count remains 84, next platform ID remains `cya_plat_000085`, and replacement candidate IDs begin at `cya_candidate_000081` / `cya_candidate_000082`.
