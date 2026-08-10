@@ -20,7 +20,7 @@ Primary sources:
 - https://bitvavo.com/en/earn
 - https://support.bitvavo.com/hc/en-us/articles/4405243949841-Staking-at-Bitvavo
 - https://support.bitvavo.com/hc/en-us/articles/25307127969681-Lending-at-Bitvavo
-- https://bitvavo.com/en/news/flex-fixed-staking-lending-earn-rates-jul-2025
+- https://bitvavo.com/en/news/flex-fixed-staking-lending-earn-rates-jun-2025
 - https://bitvavo.com/en/news/flex-fixed-staking-lending-earn-rates-jul-2026
 
 Decision: `add_now`, subject to hardened duplicate scanning, corpus audit and review-only draft generation. No canonical launch date should be assigned unless a first-party historical umbrella launch source is separately verified.
@@ -29,11 +29,11 @@ Decision: `add_now`, subject to hardened duplicate scanning, corpus audit and re
 
 Reviewed first-party basis:
 
-- Coinmetro launched BTC Earn on 2026-07-11;
-- the first-party launch announcement defines 3, 6, 12 and 24 month commitment terms and a minimum participation amount of 0.001 BTC;
+- Coinmetro's BTC Earn article documents a current fixed-term BTC reward product with 3, 6, 12 and 24 month commitment terms and a minimum participation amount of 0.001 BTC;
 - rewards accrue in BTC in real time and early exit forfeits rewards;
 - Coinmetro states that the full BTC balance is returned at term end, but CYA treats this as a product promise rather than a universal principal or solvency guarantee;
 - Coinmetro states that rewards are generated and distributed through its internal infrastructure without external lending platforms, third-party protocols, wrapped assets or synthetic tokens;
+- official copies of the same BTC Earn article expose conflicting publication-date metadata across host and locale variants, so the review does not establish one reliable exact launch date;
 - reviewed public material does not establish the underlying economic source of the reward, legal-title transfer, segregation or insolvency treatment;
 - Coinmetro's broader on-chain staking and MARs/XCM ecosystem is a separate product lineage and is not collapsed into this narrow BTC Earn identity.
 
@@ -41,9 +41,10 @@ Primary sources:
 
 - https://www.coinmetro.com/blog/earn-6-on-your-bitcoin-introducing-btc-earn-by-coinmetro
 - https://coinmetro.com/home
+- https://www.coinmetro.com/terms-of-use
 
-Decision: `add_now`, subject to hardened duplicate scanning, corpus audit and review-only draft generation. If duplicate-clear, the exact product launch date `2026-07-11` is supported by the first-party launch announcement.
+Decision: `add_now`, subject to hardened duplicate scanning, corpus audit and review-only draft generation. Canonical `launch_date` must remain null unless a stable first-party historical source resolves the conflicting article-date metadata.
 
 ## Required gate
 
-Both records remain staging-only. No canonical IDs are assigned in this branch. Ordinary GitHub code search is not treated as authoritative for duplicate clearance because it missed exact JSON-backed identities in Batch 50. The hardened candidate scanner must compare both candidates against the full canonical corpus before promotion. No unsupported legal-title, custody, segregation, principal-protection or insolvency-treatment claim may be inferred.
+Both records remain staging-only in the candidate-review phase until promotion. Ordinary GitHub code search is not treated as authoritative for duplicate clearance because it missed exact JSON-backed identities in Batch 50. The hardened candidate scanner compared both candidates against the full canonical corpus and classified both as `new_candidate` with no canonical matches and `eligible_for_draft: true`. No unsupported legal-title, custody, segregation, principal-protection or insolvency-treatment claim may be inferred.
