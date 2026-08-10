@@ -3,19 +3,19 @@
     "phase": 8,
     "status": "growth_to_100",
     "recorded_at": "2026-08-10",
-    "baseline_main_sha": "e550475797e29898c07634ecf5b8ce1a66fbaadf",
-    "canonical_platforms": 88,
+    "baseline_main_sha": "11a77b5990bd5acf1fbe6d51a8dc0f48e0a67b21",
+    "canonical_platforms": 90,
     "next_audit_milestone": 100,
-    "staged_candidate_ids": ["cya_candidate_000085", "cya_candidate_000086"],
+    "staged_candidate_ids": [],
     "next_candidate_ids": ["cya_candidate_000087", "cya_candidate_000088"],
-    "next_platform_id": "cya_plat_000089",
-    "next_event_id": "cya_ev_000335",
+    "next_platform_id": "cya_plat_000091",
+    "next_event_id": "cya_ev_000337",
     "existing_needs_research": [
       {"candidate_id":"cya_candidate_000010","canonical_name":"Goldfinch","blocking_questions":["DeFi/institutional-yield scope","entity and product boundary"]},
       {"candidate_id":"cya_candidate_000045","canonical_name":"Cabital","blocking_questions":["operating legal entity","product boundary","closure chronology","custody and customer outcome"]},
       {"candidate_id":"cya_candidate_000049","canonical_name":"Outlet Finance","blocking_questions":["underlying counterparty model","closure chronology","custody and repayment outcome"]}
     ],
     "promotion_policy": "Candidate-only staging first. No canonical IDs, writes, status changes or outcome inference before reviewed promotion.",
-    "next_action": "Run the hardened candidate scanner and corpus audit for candidates 85 and 86. Promote only duplicate-clear reviewed candidates, then exact-SHA verify the resulting release and production surface before continuing toward the mandatory 100-platform full audit."
+    "next_action": "After the 90-platform canonical merge, exact-SHA verify the release and production surface. Then stage candidates 87 and 88 in the next reviewed batch toward the mandatory 100-platform full audit."
   }
 ]
