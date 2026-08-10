@@ -9,7 +9,7 @@
     "staged_candidate_ids": [],
     "next_candidate_ids": ["cya_candidate_000083", "cya_candidate_000084"],
     "next_platform_id": "cya_plat_000087",
-    "next_event_id": "cya_ev_000335",
+    "next_event_id": "cya_ev_000334",
     "existing_needs_research": [
       {"candidate_id":"cya_candidate_000010","canonical_name":"Goldfinch","blocking_questions":["DeFi/institutional-yield scope","entity and product boundary"]},
       {"candidate_id":"cya_candidate_000045","canonical_name":"Cabital","blocking_questions":["operating legal entity","product boundary","closure chronology","custody and customer outcome"]},
