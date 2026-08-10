@@ -1,12 +1,13 @@
 [
   {
     "phase": 8,
-    "status": "candidate_review",
+    "status": "growth_to_100",
     "recorded_at": "2026-08-10",
     "baseline_main_sha": "541ba3eee33936c7eed1822b3e5765a47c6a4c48",
     "canonical_platforms": 84,
     "next_audit_milestone": 100,
-    "staged_candidate_ids": ["cya_candidate_000079", "cya_candidate_000080"],
+    "staged_candidate_ids": [],
+    "resolved_duplicate_ids": ["cya_candidate_000079", "cya_candidate_000080"],
     "next_candidate_ids": ["cya_candidate_000081", "cya_candidate_000082"],
     "next_platform_id": "cya_plat_000085",
     "next_event_id": "cya_ev_000333",
@@ -16,6 +17,6 @@
       {"candidate_id":"cya_candidate_000049","canonical_name":"Outlet Finance","blocking_questions":["underlying counterparty model","closure chronology","custody and repayment outcome"]}
     ],
     "promotion_policy": "Candidate-only staging first. No canonical IDs, writes, status changes or outcome inference before reviewed promotion.",
-    "next_action": "Run the hardened duplicate scanner, corpus audit and review-only candidate draft generator for SwissBorg Earn and Wirex X-Accounts. Promote only duplicate-clear, evidence-supported identities in a separate canonical PR, then exact-SHA verify the production surface before staging the next batch toward 100."
+    "next_action": "Batch 50 resolved both staged candidates as exact canonical duplicates: SwissBorg Earn -> cya_plat_000044 and Wirex X-Accounts -> cya_plat_000043. No platform IDs were consumed. After merging the duplicate review, stage replacement candidates 81 and 82 toward the 100-platform audit milestone."
   }
 ]
