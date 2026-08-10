@@ -3,11 +3,11 @@
     "phase": 8,
     "status": "growth_to_100",
     "recorded_at": "2026-08-10",
-    "baseline_main_sha": "f5c51cd1a5197086fb48f147173795a961b80495",
+    "baseline_main_sha": "d54584b8be7c905ac6fc2eaea26caed778dc6762",
     "canonical_platforms": 86,
     "next_audit_milestone": 100,
-    "staged_candidate_ids": [],
-    "next_candidate_ids": ["cya_candidate_000083", "cya_candidate_000084"],
+    "staged_candidate_ids": ["cya_candidate_000083", "cya_candidate_000084"],
+    "next_candidate_ids": ["cya_candidate_000085", "cya_candidate_000086"],
     "next_platform_id": "cya_plat_000087",
     "next_event_id": "cya_ev_000334",
     "existing_needs_research": [
@@ -16,6 +16,6 @@
       {"candidate_id":"cya_candidate_000049","canonical_name":"Outlet Finance","blocking_questions":["underlying counterparty model","closure chronology","custody and repayment outcome"]}
     ],
     "promotion_policy": "Candidate-only staging first. No canonical IDs, writes, status changes or outcome inference before reviewed promotion.",
-    "next_action": "After the 86-platform canonical merge, exact-SHA verify the release and production surface. Then stage candidates 83 and 84 in the next reviewed batch toward the mandatory 100-platform full audit."
+    "next_action": "Run the hardened candidate scanner and corpus audit for candidates 83 and 84. Promote only duplicate-clear reviewed candidates, then exact-SHA verify the resulting release and production surface before continuing toward the mandatory 100-platform full audit."
   }
 ]
