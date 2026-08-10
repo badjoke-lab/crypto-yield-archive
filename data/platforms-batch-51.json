@@ -29,18 +29,18 @@
     "type": "centralized_yield",
     "status": "active",
     "failure_reason": null,
-    "launch_date": "2026-07-11",
+    "launch_date": null,
     "end_date": null,
     "country_or_origin": "Estonia / Global / jurisdiction-dependent",
-    "summary": "Product-scoped record for Coinmetro BTC Earn, a fixed-term Bitcoin reward program launched on 11 July 2026 with 3, 6, 12 and 24 month terms and rewards paid in BTC.",
-    "what_happened": "Coinmetro launched BTC Earn on 11 July 2026. The first-party launch announcement describes fixed commitment terms of 3, 6, 12 and 24 months, real-time BTC reward accrual, forfeiture of rewards on early exit and return of the committed BTC balance at term end. Coinmetro states that rewards are generated and distributed through its internal infrastructure without external lending platforms, third-party protocols, wrapped assets or synthetic tokens. CYA records those statements as product mechanics and promises, not as proof of principal protection, solvency, segregation, legal title or insolvency treatment. The broader Coinmetro on-chain staking and MARs/XCM ecosystem is outside this narrow product identity.",
+    "summary": "Product-scoped record for Coinmetro BTC Earn, a current fixed-term Bitcoin reward program with 3, 6, 12 and 24 month terms and rewards paid in BTC. Coinmetro's first-party copies of the same launch article expose inconsistent publication-date metadata, so CYA does not assign an exact launch date.",
+    "what_happened": "Coinmetro currently presents BTC Earn as a fixed-term reward program. The first-party launch article describes commitment terms of 3, 6, 12 and 24 months, real-time BTC reward accrual, forfeiture of rewards on early exit and return of the committed BTC balance at term end. Coinmetro states that rewards are generated and distributed through its internal infrastructure without external lending platforms, third-party protocols, wrapped assets or synthetic tokens. Official copies of the same article currently expose conflicting publication dates across host and locale variants, so CYA does not convert any one displayed date into an exact canonical launch date or dated launch event. Product mechanics and return statements are recorded as first-party claims, not as proof of principal protection, solvency, segregation, legal title or insolvency treatment. The broader Coinmetro on-chain staking and MARs/XCM ecosystem is outside this narrow product identity.",
     "official_url_original": "https://www.coinmetro.com/blog/earn-6-on-your-bitcoin-introducing-btc-earn-by-coinmetro",
     "official_domain_original": "coinmetro.com",
     "official_url_status": "live_verified",
     "archived_url": "https://web.archive.org/web/*/https://www.coinmetro.com/blog/earn-6-on-your-bitcoin-introducing-btc-earn-by-coinmetro",
     "confidence": "high",
     "last_verified_at": "2026-08-10",
-    "uncertainty_notes": "The exact product launch date is supported by Coinmetro's first-party announcement. Reviewed public material does not establish the underlying economic source of the internal reward, legal-title transfer, segregation or insolvency treatment, so those remain unresolved.",
+    "uncertainty_notes": "The product is current and its mechanics are documented by Coinmetro, but official copies of the same launch article expose conflicting publication dates, including different 2026 dates across host or locale variants. Exact launch_date therefore remains null. Reviewed public material also does not establish the underlying economic source of the internal reward, legal-title transfer, segregation or insolvency treatment.",
     "notes": "The statement that the full BTC balance is returned at term end is preserved only as a first-party product promise and is not converted into a CYA guarantee of principal, liquidity or solvency."
   }
 ]
