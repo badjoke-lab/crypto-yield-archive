@@ -1,0 +1,32 @@
+[
+  {
+    "candidate_id": "cya_candidate_000079",
+    "canonical_name": "SwissBorg Earn",
+    "aliases": ["SwissBorg Smart Yield", "Smart Yield", "SwissBorg Earn Strategies"],
+    "domain": "swissborg.com",
+    "duplicate_check": {
+      "checked_at": "2026-08-10",
+      "matched_platform_ids": ["cya_plat_000044"],
+      "notes": "The hardened candidate scanner classified the candidate as an exact duplicate of canonical SwissBorg Earn cya_plat_000044 with exact canonical-name and domain matches and exact Smart Yield aliases."
+    },
+    "decision": "duplicate",
+    "notes": "Do not create a new platform identity. Canonical cya_plat_000044 already preserves the 2020 Smart Yield launch and 2022 SwissBorg Earn evolution. Newly reviewed current App Terms may support later evidence enrichment, but no new platform ID is consumed.",
+    "first_seen_at": "2026-08-10",
+    "last_reviewed_at": "2026-08-10"
+  },
+  {
+    "candidate_id": "cya_candidate_000080",
+    "canonical_name": "Wirex X-Accounts",
+    "aliases": ["Wirex X-Account", "X-Accounts", "Wirex Earn"],
+    "domain": "wirexapp.com",
+    "duplicate_check": {
+      "checked_at": "2026-08-10",
+      "matched_platform_ids": ["cya_plat_000043"],
+      "notes": "The hardened candidate scanner classified the candidate as an exact duplicate of canonical Wirex X-Accounts cya_plat_000043 with exact canonical-name and domain matches and exact X-Account aliases."
+    },
+    "decision": "duplicate",
+    "notes": "Do not create a new platform identity. Canonical cya_plat_000043 already records the 2021-06-23 X-Accounts launch and current title-transfer, non-deposit and withdrawal mechanics. Newly reviewed UK regulatory material may support later evidence enrichment, but no new platform ID is consumed.",
+    "first_seen_at": "2026-08-10",
+    "last_reviewed_at": "2026-08-10"
+  }
+]
