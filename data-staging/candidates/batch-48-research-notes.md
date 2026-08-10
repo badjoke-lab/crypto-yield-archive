@@ -2,7 +2,7 @@
 
 Baseline canonical SHA: `61c7396794d713dacf237f447f2e02d8fc1ba588`  
 Canonical platforms: 81  
-Candidate IDs: `cya_candidate_000075` / `cya_candidate_000076`
+Candidate IDs reviewed: `cya_candidate_000075` / `cya_candidate_000076`
 
 ## AscendEX Earn
 
@@ -20,6 +20,8 @@ Primary sources:
 - https://ascendex.com/en/products
 - https://ascendex.com/en/support/articles/16662-ascendex-launches-tether-usdt-staking-and-usd-coin-usdc-staking-w
 - https://ascendex.com/en/support/articles/141791-ascendex-launches-reur-fixed-earn-with-up-to-9-apr
+
+Decision: `add_now`, subject to all staging gates. If promoted, this candidate receives the next canonical platform ID, `cya_plat_000082`.
 
 ## BitMart Earn
 
@@ -39,6 +41,14 @@ Primary sources:
 - https://www.bitmart.com/en-US/support/articles/7923156042395/7923853757083/4406956282651
 - https://www.bitmart.com/en-US/savings
 
+Duplicate resolution:
+
+- hardened scanning identifies this candidate as the existing canonical BitMart Earn and Lending identity `cya_plat_000053`;
+- canonical aliases already include `BitMart Earn` and `BitMart Savings`, with canonical domain `bitmart.com`;
+- decision is `duplicate` and the candidate is archived in `cya-consumed-duplicate-review-batch-48.json`;
+- no new canonical platform ID is assigned or consumed;
+- reviewed sources may support a later evidence-backed enrichment of `cya_plat_000053`.
+
 ## Required gate
 
-Both candidates remain staging-only until the hardened duplicate scanner and review-only draft generator pass. No canonical platform IDs, canonical status changes, custody interpretation, customer outcome, or principal guarantee may be inferred from this document.
+AscendEX remains staging-only until the hardened duplicate scanner, corpus audit, validation and review-only draft generator pass. BitMart is resolved as a canonical duplicate and must not return to the active candidate ledger. No unsupported canonical status changes, custody interpretation, customer outcome, or principal guarantee may be inferred from this document.
