@@ -1,22 +1,21 @@
 [
   {
     "phase": 8,
-    "status": "candidate_review",
+    "status": "growth_to_100",
     "recorded_at": "2026-08-10",
-    "baseline_main_sha": "61c7396794d713dacf237f447f2e02d8fc1ba588",
-    "canonical_platforms": 81,
+    "baseline_main_sha": "333d4d64ef018cb4ae060ee6504651070313bddd",
+    "canonical_platforms": 82,
     "next_audit_milestone": 100,
-    "staged_candidate_ids": ["cya_candidate_000075"],
-    "resolved_duplicate_ids": ["cya_candidate_000076"],
+    "staged_candidate_ids": [],
     "next_candidate_ids": ["cya_candidate_000077", "cya_candidate_000078"],
-    "next_platform_id": "cya_plat_000082",
-    "next_event_id": "cya_ev_000327",
+    "next_platform_id": "cya_plat_000083",
+    "next_event_id": "cya_ev_000329",
     "existing_needs_research": [
       {"candidate_id":"cya_candidate_000010","canonical_name":"Goldfinch","blocking_questions":["DeFi/institutional-yield scope","entity and product boundary"]},
       {"candidate_id":"cya_candidate_000045","canonical_name":"Cabital","blocking_questions":["operating legal entity","product boundary","closure chronology","custody and customer outcome"]},
       {"candidate_id":"cya_candidate_000049","canonical_name":"Outlet Finance","blocking_questions":["underlying counterparty model","closure chronology","custody and repayment outcome"]}
     ],
     "promotion_policy": "Candidate-only staging first. No canonical IDs, writes, status changes or outcome inference before reviewed promotion.",
-    "next_action": "Promote AscendEX Earn separately as platform 82 in a canonical PR after all staging gates pass. BitMart Earn candidate cya_candidate_000076 is resolved as a duplicate of cya_plat_000053 and must not consume a new platform ID. Exact-SHA verify the canonical release before staging the next batch toward 100."
+    "next_action": "After the 82-platform canonical merge, exact-SHA verify the release and production surface. Then stage candidates 77 and 78 in the next reviewed batch toward the mandatory 100-platform full audit."
   }
 ]

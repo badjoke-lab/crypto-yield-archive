@@ -1,0 +1,24 @@
+[
+  {
+    "id": "cya_plat_000082",
+    "slug": "ascendex-earn",
+    "canonical_name": "AscendEX Earn",
+    "aliases": ["AscendEX Staking", "AscendEX Fixed Earn", "AscendEX Flexible Earn"],
+    "type": "exchange_earn",
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": null,
+    "end_date": null,
+    "country_or_origin": "Global / jurisdiction-dependent",
+    "summary": "Product-scoped record for AscendEX Earn. First-party materials document exchange-hosted staking by 2021 and continuing Fixed Earn operation in 2026, while the current Earn surface spans staking, DeFi yield farming, liquidity mining and lending/borrowing. The reviewed sources do not establish one original umbrella-product launch date.",
+    "what_happened": "AscendEX documented USDT and USDC staking on 2 August 2021 with daily rewards, regular and instant unbinding and use of staked assets as margin collateral. Current AscendEX Earn materials describe multiple yield generators, including staking, DeFi yield farming, liquidity mining and lending/borrowing, and a 20 March 2026 announcement documents continuing Fixed Earn operation through REUR fixed-term products. AscendEX's Staking Agreement states that designated tokens may be staked through third-party validators, while its Yield Farming Agreement states that designated tokens may be deposited into relevant DeFi smart contracts. Those mechanisms are product-specific and do not establish one universal custody, legal-title, segregation or principal-protection model for the entire Earn umbrella.",
+    "official_url_original": "https://ascendex.com/en/earn",
+    "official_domain_original": "ascendex.com",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://ascendex.com/en/earn",
+    "confidence": "high",
+    "last_verified_at": "2026-08-10",
+    "uncertainty_notes": "The reviewed sources establish active AscendEX staking by August 2021 and current Fixed Earn operation in 2026 but do not establish the original umbrella AscendEX Earn launch date, so launch_date remains null. Yield source, custody, legal title, segregation, redemption and risk treatment vary by product.",
+    "notes": "The broader AscendEX exchange, trading and non-Earn products are outside this product-scoped identity. Product-specific staking, yield-farming, liquidity-mining and lending mechanics are not generalized into one universal asset-treatment model."
+  }
+]
