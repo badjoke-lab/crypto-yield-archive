@@ -1,98 +1,90 @@
 # Phase 9A — XORA Finance incident-led exception
 
-Status: active operating decision  
+Status: canonical promotion pending production verification  
 Project: Crypto Yield Archive (CYA)  
-Canonical platforms: 100  
+Canonical target: 101 platforms  
 Phase 8 finalization SHA: `162c216621687a149ebbfe213960a622667aa391`  
 Phase 8 Production Surface Check: #193 success
 
 ## Decision
 
-Phase 8 is complete. Open a **single-platform incident-led exception window** for XORA Finance.
+Phase 8 remains complete. Phase 9A authorizes exactly one incident-led exception: XORA Finance.
 
-This decision does **not** restart general record growth. It authorizes only:
+The candidate-only review is complete. `cya_candidate_000102` is duplicate-clear against the 100-platform corpus and was advanced to `add_now` only after the XRPL deposit leg and claimant-published public evidence were preserved and reviewed.
 
-1. staging and review of `cya_candidate_000102` XORA Finance;
-2. hardened duplicate scan and candidate-draft generation against the full 100-platform corpus;
-3. public-quality source review and transaction-level incident verification;
-4. at most one canonical platform promotion, taking the corpus from 100 to 101 only if every normal gate passes.
+The separate canonical promotion uses:
 
-If XORA does not reach public quality, the canonical corpus remains at 100 and the candidate stays `needs_research`.
+- platform: `cya_plat_000101`
+- incident event: `cya_ev_000340`
+- batch: 60
+- status: `active`
+- platform type: `centralized_yield`
+- terms risk: `unclear`
+- customer outcome: `unknown`
 
-## Phase 8 release evidence
+No platform 102 is authorized.
 
-The finalization revision `162c216621687a149ebbfe213960a622667aa391` passed the exact production gate:
+## Evidence boundary
 
-- Cloudflare main deployment: success;
-- custom production surface/version check: success;
-- Production Surface Check #193: success;
-- production desktop/mobile representative capture: success;
-- production UI verification artifact upload: success.
+Current XORA first-party materials establish a custodial XRP yield product using a shared XRPL treasury, per-user destination tags and off-chain balance accounting. Current materials state that the native XRP yield is treasury-subsidized during bootstrap and present XRPL AMM and on-chain lending as later transition stages. Current terms state that supported deposited balances are held in XORA-managed custodial wallets and permit security/compliance withdrawal holds.
 
-This closes the audit lock condition without changing the 100-platform canonical corpus.
-
-## Safety boundary
-
-- `data/` remains canonical and unchanged during candidate research.
-- Candidate staging does not allocate a canonical platform ID.
-- No fraud, scam, insolvency, loss, recovery or customer-outcome conclusion may be inferred from social posts or investigation summaries alone.
-- A risk label used by a third party is evidence about that publisher's assessment, not CYA's canonical classification.
-- Current operation, legal entity, custody, terms version, yield source and withdrawal behavior require independent review.
-- Any canonical incident event must distinguish first-party statements, third-party allegations and on-chain observations.
-
-## Why XORA is in scope
-
-Current first-party XORA materials describe a custodial XRP yield product. The current yield-source material describes treasury-subsidized native XRP yield and presents XRPL-native AMM/lending as later roadmap phases. Current public terms state that supported deposited balances are held in custodial wallets managed by XORA and that withdrawal holds may be imposed for security/compliance purposes.
-
-DefiLlama independently classifies XORA as a custodial XRPL savings product and currently attributes its TVL to shared treasury address `rhbErkS2d4H82tRbdGyFkhhc4LNtjKaC3o`, with destination-tag routing and internal per-user accounting. This supports the product/custody research boundary but does not by itself prove the incident allegations.
-
-The 5 August 2026 RippleXity material supplied for review and the linked XRPL.to investigation report an unresolved XRP deposit/withdrawal dispute involving `29,899.8 XRP`, conflicting account narratives and questions about represented treasury assets. These are material research signals, but they remain non-canonical until verified.
-
-## Automated candidate gate result
-
-The Phase 9A candidate branch has already passed the repository's candidate scanner and candidate-draft workflows against the 100-platform corpus.
-
-Result for `cya_candidate_000102`:
+A reproducible Ripple full-history probe independently found exactly one successful `29,899.8 XRP` inbound payment matching the reported amount:
 
 ```text
-canonical match:                none
-duplicate state:                duplicate-clear
-classification:                 manual_review_required
-decision:                       needs_research
-eligible_for_draft:             false
-eligible_for_canonical promote: false
-canonical IDs assigned:         0
-canonical writes performed:     0
+Transaction:      4FD202B3DB7ADCA94ABDF3CC06762A3B2DD615532E13B531B1737E14788C09AA
+Ledger:           105566760
+Validated:        2026-07-13T09:02:02Z
+Treasury:         rhbErkS2d4H82tRbdGyFkhhc4LNtjKaC3o
+Destination tag:  287588244
+Result:            tesSUCCESS
 ```
 
-The automated gate therefore confirms that XORA is not an existing canonical duplicate, but it does **not** authorize promotion. Manual evidence review remains required.
+The claimant-published public media depicts a Binance withdrawal record with the same amount, treasury, tag and transaction hash, plus a DM interface labeled Xora Finance / `@xora_finance` describing a manual AML hold tied to that tag. A separate claimant-published screenshot depicts a conflicting phishing/no-account explanation.
 
-## Promotion gate
+Those screenshots are preserved as claimant-published evidence, not authenticated XORA internal records.
 
-XORA may consume platform 101 only if all of the following are satisfied:
+## Canonical wording rules
 
-1. duplicate scan against the 100-platform canonical corpus passes;
-2. operating platform and product boundary are clear;
-3. current terms/custody/yield-source evidence is archived or reproducibly captured;
-4. the reported deposit is tied to a reproducible XRPL transaction and destination context, or the incident wording is explicitly constrained to an attributed report if transaction evidence remains unavailable;
-5. withdrawal-settlement claims are checked against XRPL and are not stated more strongly than the available evidence supports;
-6. conflicting support/account narratives are preserved from attributable sources before being described;
-7. treasury/BTC/IOU claims are independently reproduced before any canonical reserve-representation event is created;
-8. legal-entity and jurisdiction claims are not copied from marketing or inferred from governing-law clauses without review;
-9. candidate draft, validation, build, audit, SEO, preview and production gates pass;
-10. no new corpus blocker is introduced.
+The canonical record may state that:
 
-## Canonical shape if approved
+- XORA is a custodial/centralized XRP yield platform;
+- the reported `29,899.8 XRP` deposit leg is independently reproduced on XRPL;
+- a claimant publicly reported a withdrawal dispute;
+- claimant-published screenshots depict an AML-hold explanation tied to destination tag `287588244` and a separate conflicting phishing/no-account explanation;
+- the requested withdrawal destination, final settlement, customer outcome and operating legal entity remain unresolved.
 
-The initial canonical record should be conservative:
+The canonical record must not infer:
 
-- platform status remains `active` unless stronger reviewed evidence supports another status;
-- product is represented as custodial/centralized yield according to applicable first-party terms;
-- current yield-source wording attributes treasury-subsidy claims to XORA and does not imply current XRPL lending without proof;
-- incident event wording remains attributed and separates reported facts from verified on-chain observations;
-- outcome remains unknown unless a customer result is directly established;
-- no scam/fraud classification is created from community investigation alone.
+- fraud or scam;
+- insolvency;
+- permanent customer loss;
+- a recovery rate;
+- platform-wide withdrawal suspension;
+- legal asset ownership merely from custodial control.
 
-## Growth boundary after platform 101
+## Event boundary
 
-This exception authorizes **no platform 102**. A broader post-100 growth target requires another explicit operating decision after the XORA review/promotion is resolved.
+`cya_ev_000340` uses `event_type: other` and `event_status_effect: none`.
+
+Its date, `2026-08-03`, marks the first preserved claimant post publishing support evidence. It is not represented as the date the underlying withdrawal problem necessarily began.
+
+## Terms boundary
+
+`terms_status: unclear` is intentional. XORA's June 2026 terms establish custodial control but do not clearly resolve legal or beneficial ownership of deposited assets or insolvency treatment. CYA therefore does not map custody to `platform_owned` or `customer_owned` without stronger language.
+
+## Customer-outcome boundary
+
+`outcome_status: unknown` is scoped to the documented dispute. It does not mean XORA is insolvent or that platform-wide customers have losses. Update the outcome only when the requested withdrawal destination, settlement or recovery/loss becomes directly supportable.
+
+## Remaining research
+
+After canonical promotion, later evidence may still improve the record by:
+
+1. identifying the requested withdrawal destination and final XRPL settlement state;
+2. verifying the operating legal entity independently of Stockholm marketing origin and Delaware governing-law language;
+3. reproducing any treasury BTC/IOU representation claim before creating a reserve-representation event;
+4. updating the customer outcome if recovery, loss or settlement becomes directly supportable.
+
+## Production gate
+
+Merge the canonical promotion only after repository validation, build, candidate, SEO and preview gates succeed. After merge, production-verify the exact merged SHA. General record growth stays locked; Phase 9A ends at platform 101.

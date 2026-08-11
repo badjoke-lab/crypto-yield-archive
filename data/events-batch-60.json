@@ -1,0 +1,16 @@
+[
+  {
+    "id": "cya_ev_000340",
+    "platform_id": "cya_plat_000101",
+    "event_type": "other",
+    "event_date": "2026-08-03",
+    "title": "Claimant publishes XORA withdrawal-dispute evidence",
+    "description": "A claimant publicly described an unresolved XORA withdrawal dispute and published screenshots. The material includes a Binance withdrawal record matching a separately reproduced 29,899.8 XRP deposit to the XORA-attributed treasury with destination tag 287588244, and depicts two conflicting account narratives: a manual AML hold tied to that tag and a separate phishing/no-account explanation. CYA has not authenticated the support screenshots or verified the requested withdrawal destination, final settlement, or customer outcome.",
+    "confidence": "medium",
+    "impact_level": "medium",
+    "event_status_effect": "none",
+    "source_count": 5,
+    "sort_order": 1,
+    "notes": "The event date marks the first preserved claimant post publishing support evidence, not the date the withdrawal problem necessarily began. Event type is 'other' because the reviewed evidence does not establish a platform-wide withdrawal suspension."
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "platform_id": "cya_plat_000101",
+    "outcome_status": "unknown",
+    "estimated_recovery_rate": "Not established. CYA has not verified the requested withdrawal destination, final settlement, or whether the claimant ultimately recovered the disputed balance.",
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": null,
+    "claim_process_url": null,
+    "affected_products": [
+      "XORA Finance XRP Yield"
+    ],
+    "claim_classes": [],
+    "jurisdictions": [
+      "Sweden",
+      "Global"
+    ],
+    "as_of": "2026-08-12",
+    "last_verified_at": "2026-08-12",
+    "notes": "Unknown is scoped to the documented claimant dispute and must not be read as a platform-wide loss, insolvency or recovery-rate conclusion. The platform remains recorded as active because current first-party materials present it as operating and the reviewed evidence does not establish a general withdrawal suspension.",
+    "confidence": "medium"
+  }
+]

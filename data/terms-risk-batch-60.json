@@ -1,0 +1,11 @@
+[
+  {
+    "platform_id": "cya_plat_000101",
+    "terms_status": "unclear",
+    "asset_ownership_interpretation": "XORA's June 2026 terms state that supported deposited balances are held in custodial wallets managed by XORA, but the reviewed language does not clearly state whether legal or beneficial ownership transfers to XORA, remains with the customer, or how ownership would be treated in an insolvency. CYA therefore records the asset-ownership treatment as unclear rather than inferring platform-owned or customer-owned status from custody alone.",
+    "affected_product": "XORA Finance XRP Yield",
+    "source_evidence_id": "cya_src_b60_0003",
+    "notes": "Custodial control is not treated as equivalent to legal ownership. The terms also permit withdrawal limits or holds for security/compliance purposes and state that yields are estimates rather than guarantees. Reverify if XORA publishes a more explicit legal-ownership or insolvency-treatment clause.",
+    "confidence": "medium"
+  }
+]
