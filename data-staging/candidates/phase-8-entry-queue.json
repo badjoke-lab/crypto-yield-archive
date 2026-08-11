@@ -6,8 +6,8 @@
     "baseline_main_sha": "ad9dca89048b89f5d57825130ff74184a67f4f65",
     "canonical_platforms": 91,
     "next_audit_milestone": 100,
-    "staged_candidate_ids": ["cya_candidate_000089", "cya_candidate_000090"],
-    "resolved_duplicate_ids": ["cya_candidate_000088"],
+    "staged_candidate_ids": ["cya_candidate_000090"],
+    "resolved_duplicate_ids": ["cya_candidate_000088", "cya_candidate_000089"],
     "next_candidate_ids": ["cya_candidate_000091", "cya_candidate_000092"],
     "next_platform_id": "cya_plat_000092",
     "next_event_id": "cya_ev_000338",
@@ -17,6 +17,6 @@
       {"candidate_id":"cya_candidate_000049","canonical_name":"Outlet Finance","blocking_questions":["underlying counterparty model","closure chronology","custody and repayment outcome"]}
     ],
     "promotion_policy": "Candidate-only staging first. No canonical IDs, writes, status changes or outcome inference before reviewed promotion.",
-    "next_action": "Run Batch 55 hardened candidate scanning and review-only draft generation for cya_candidate_000089 Gemini Staking and cya_candidate_000090 Revolut Crypto Staking against exact production-verified 91-platform SHA ad9dca89048b89f5d57825130ff74184a67f4f65. Resolve any duplicate without consuming a canonical ID. If promotion-ready, use a separate canonical PR beginning at cya_plat_000092 and cya_ev_000338 as applicable."
+    "next_action": "Batch 55 hardened scanning resolved Gemini Staking candidate cya_candidate_000089 as an exact duplicate of canonical cya_plat_000014. No platform ID is consumed. Revolut Crypto Staking cya_candidate_000090 remains the sole add_now candidate. If all candidate-only gates pass, promote Revolut separately beginning at cya_plat_000092 and cya_ev_000338 only if a dated event is evidence-backed; otherwise keep launch_date unresolved and do not invent a launch event."
   }
 ]
