@@ -44,7 +44,7 @@ Products:        131
 Terms risk:       91
 ```
 
-Batch 54 promoted Bitstamp Earn Staking as `cya_plat_000091`. Candidate-only scanning also resolved Crypto.com On-Chain Staking as an exact duplicate of canonical `cya_plat_000019`, so no second Crypto.com platform identity or platform ID was created. The exact 91-platform main SHA passed Cloudflare deployment, current production-surface verification and desktop/mobile production capture before Batch 55 work began.
+Batch 54 promoted Bitstamp Earn Staking as `cya_plat_000091`. Candidate scanning resolved Crypto.com On-Chain Staking as an exact duplicate of canonical `cya_plat_000019`. The exact 91-platform SHA passed Cloudflare deployment, current production-surface verification and desktop/mobile production capture before Batch 55 work began.
 
 ## Completed phase gates
 
@@ -79,6 +79,8 @@ Batch 52: Uphold Staking + HashKey ETH Staking       86 -> 88
 Batch 53: eToro Staking + Robinhood Crypto Staking   88 -> 90
 Batch 54: Bitstamp Earn Staking                      90 -> 91
           Crypto.com candidate duplicate             no new ID
+Batch 55: Revolut candidate retained
+          Gemini candidate duplicate                 no new ID
 ```
 
 Every addition uses a candidate-only gate followed by a separate canonical PR. Duplicate findings do not consume canonical IDs. `needs_research` candidates are not silently promoted.
@@ -89,7 +91,8 @@ Every addition uses a candidate-only gate followed by a separate canonical PR. D
 Queue status:            growth_to_100
 Canonical platforms:     91
 Verified baseline SHA:   ad9dca89048b89f5d57825130ff74184a67f4f65
-Staged candidates:       cya_candidate_000089 / cya_candidate_000090
+Staged add_now:           cya_candidate_000090 Revolut Crypto Staking
+Resolved duplicate:      cya_candidate_000089 Gemini Staking -> cya_plat_000014
 Next candidate IDs:      cya_candidate_000091 / cya_candidate_000092
 Next platform ID:        cya_plat_000092
 Next event ID:           cya_ev_000338
@@ -109,28 +112,33 @@ They remain blocked from silent promotion.
 
 ## Batch 55 candidate-only gate
 
-### `cya_candidate_000089` — Gemini Staking
+### Gemini Staking
 
-Research basis:
+`cya_candidate_000089` was classified by the hardened scanner as `exact_duplicate -> cya_plat_000014`. It consumes no canonical ID. The candidate is removed from the active ledger and preserved in `data-staging/candidates/cya-consumed-duplicate-review-batch-55.json`.
 
-- Gemini first-party launch material supports `2022-08-18` as the launch of Gemini Staking, initially with Polygon (MATIC);
-- current 2026 Gemini Staking terms define conventional staking through Gemini or third-party staking service providers and state that protocol rules determine reward timing and amount;
-- current terms document service fees, slashing, activation queues, unbonding periods, jurisdiction restrictions, non-guaranteed rewards and absence of FDIC/SIPC or similar protections for staked assets;
-- the current agreement explicitly distinguishes conventional Gemini Staking from the separate Asset Rewards program, so those products must not be collapsed into one mechanism or identity.
+The newly reviewed first-party material may support later evidence-backed enrichment of the existing canonical Gemini record, including:
 
-Decision remains `add_now` only for candidate review. Hardened full-corpus scanning is authoritative for duplicate clearance.
+- `2022-08-18` launch evidence;
+- current conventional-Staking versus Asset Rewards separation;
+- Gemini or third-party staking-service-provider model;
+- protocol-determined rewards, service fees, slashing, activation queues and unbonding periods;
+- jurisdiction restrictions and absence of FDIC/SIPC or similar protection for staked assets.
 
-### `cya_candidate_000090` — Revolut Crypto Staking
+No second Gemini staking identity may be created.
 
-Research basis:
+### Revolut Crypto Staking
+
+`cya_candidate_000090` remains the sole draft-eligible new candidate after the Gemini duplicate resolution.
+
+Reviewed boundary:
 
 - current Revolut first-party material documents a live in-app staking service for proof-of-stake assets;
-- current product material states Revolut continues holding staked cryptoassets on the user's behalf and that the user remains beneficial owner;
-- current material documents token-specific lock-up or unbonding periods, validator performance, slashing, market risk and non-guaranteed rewards;
-- fee and product treatment vary by jurisdiction, so no universal Revolut fee model may be asserted;
-- the reviewed first-party sources do not establish one exact original launch date, so no launch date may be invented during candidate or canonical review.
+- current material states Revolut continues holding staked cryptoassets on the user's behalf while the user remains beneficial owner;
+- token-specific lock-up/unbonding, validator performance, slashing, market risk and non-guaranteed rewards are documented;
+- fee treatment varies by jurisdiction and must not be generalized into one universal fee schedule;
+- no exact original launch date has been established from the reviewed first-party sources, so no launch date or launch event may be invented.
 
-Decision remains `add_now` only for candidate review. Hardened full-corpus scanning is authoritative for duplicate clearance.
+Revolut remains staging-only until all corrected candidate-only checks pass.
 
 ## Production sequencing rule
 
@@ -159,11 +167,11 @@ For every canonical, audit, or state-transition release:
 ## Immediate next action
 
 ```text
-1. Run the Batch 55 candidate-only gate for Gemini Staking and Revolut Crypto Staking against exact production-verified 91-platform SHA ad9dca89048b89f5d57825130ff74184a67f4f65.
+1. Complete the corrected Batch 55 candidate-only PR with Revolut as the sole add_now candidate and Gemini recorded as a resolved duplicate.
 2. Require hardened duplicate scan, corpus audit, review-only draft generation and normal repository checks to pass.
-3. Resolve any duplicate without consuming a canonical platform ID.
-4. If candidates are promotion-ready, merge the candidate-only PR without touching data/.
-5. Open a separate canonical promotion PR beginning at cya_plat_000092 and cya_ev_000338 as applicable.
-6. After canonical merge, freeze main and exact-SHA production verify before Batch 56.
+3. Merge the candidate-only PR without changing canonical data.
+4. Open a separate canonical promotion PR for Revolut beginning at cya_plat_000092.
+5. Keep launch_date null and do not create cya_ev_000338 unless an explicit dated first-party event is found; otherwise cya_ev_000338 remains unconsumed for the next evidence-backed event.
+6. After canonical merge, freeze main and require exact-SHA production verification before Batch 56.
 7. Continue reviewed growth to 100, then stop for the mandatory 100-platform full audit.
 ```
