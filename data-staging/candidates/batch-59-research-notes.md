@@ -2,47 +2,57 @@
 
 Baseline canonical SHA: `ef6426842399071c82ce6bfc388347fec3296f66`  
 Canonical platforms: 98  
-Candidate IDs reviewed: `cya_candidate_000097` / `cya_candidate_000098`
+Initial candidate IDs: `cya_candidate_000097` / `cya_candidate_000098`  
+Replacement candidate IDs: `cya_candidate_000099` / `cya_candidate_000100`
 
-## Bitvavo Staking
+## Initial hardened-scan result
 
-Reviewed first-party basis:
+The first final-growth pair was rejected by the hardened full-corpus scanner:
 
-- Bitvavo currently operates Flex and Fixed Staking for supported digital assets through its Earn surface;
-- current Terms state users opt in to staking supported assets held in the Bitvavo wallet, with Bitvavo acting as validator or delegator on the user's behalf in third-party proof-of-stake networks;
-- current Terms state staking assets continue to be held by the Foundation and separately document the Foundation/custody structure for user assets;
-- rewards are protocol/service dependent, distributed after applicable fees, and estimates/rates may change;
-- Fixed Staking can impose lock-up and unstaking restrictions, while current terms warn that slashing or protocol malfunction can cause partial or total loss;
-- certain assets can be eligible for both staking and lending; if the user enables both services, Bitvavo may decide which service applies, so canonical promotion must keep the staking product boundary explicit rather than importing lending treatment into all staking balances;
-- reviewed sources establish current staking operation but do not establish one exact original launch date.
+- `cya_candidate_000097` Bitvavo Staking → `exact_duplicate` of `cya_plat_000085`;
+- `cya_candidate_000098` Bitpanda Staking → `exact_duplicate` of `cya_plat_000083`.
 
-Primary sources:
+Both are removed from the active add-now queue and preserved in `cya-consumed-duplicate-review-batch-59.json`. No canonical platform or event ID is consumed for either duplicate. Their reviewed first-party material may support later enrichment of the existing canonical records.
 
-- https://bitvavo.com/en/terms
-- https://bitvavo.com/en/earn
-- https://support.bitvavo.com/hc/en-us/articles/4405243949841-Staking-at-Bitvavo
-
-Decision: `add_now`, subject to hardened duplicate scanning, corpus audit and review-only draft generation. Keep `launch_date` unresolved unless an explicit first-party original-launch source is found. Legal/custody treatment must be stated only within the reviewed staking and Foundation terms and must not be conflated with Bitvavo's separate lending service.
-
-## Bitpanda Staking
+## Bit2Me Earn
 
 Reviewed first-party basis:
 
-- Bitpanda's first-party launch announcement dated 10 May 2022 states that Bitpanda Staking was then available on ten crypto-assets;
-- current Bitpanda Earn/Staking material documents proof-of-stake participation, weekly rewards, automatic restaking and network/protocol-dependent unstaking constraints;
-- current product material explicitly distinguishes Staking from Earn on Stablecoins: the staking product participates in Proof-of-Stake validation, while Earn on Stablecoins is a lending product with separate ownership/counterparty treatment;
-- current staking material documents slashing, hack and market-value risks and does not support treating staking rewards as guaranteed;
-- Bitpanda maintains a dedicated Staking Terms document on its current legal hub;
-- ownership, segregation and insolvency treatment must remain conservative until the governing staking/user terms are reviewed closely enough to support a specific CYA terms classification.
+- current dedicated Bit2Me Earn terms govern a product in which users transfer and lock eligible cryptoassets in favor of Bit2Me to receive variable rewards;
+- the terms state Bit2Me may transfer, dispose of or use transferred/locked cryptoassets during the Earn period at its discretion;
+- rewards are variable, product conditions can change, and withdrawals/suspensions and service-specific risks are documented;
+- separate ETH 2.0 terms document proof-of-stake staking inside Bit2Me Earn and identify a 2023 ETH staking rollout, but that date must not be substituted for the original launch date of the broader Earn product;
+- current support material distinguishes reward sources, including staking-validation rewards for eligible proof-of-stake assets;
+- ownership/custody interpretation must follow the Earn-specific transfer/use terms rather than ordinary Bit2Me wallet custody language.
 
 Primary sources:
 
-- https://blog.bitpanda.com/en/bitpanda-staking-here
-- https://www.bitpanda.com/en/staking
-- https://www.bitpanda.com/en/legal/staking
+- https://legal.bit2me.com/en/support/solutions/articles/35000290581
+- https://legal.bit2me.com/en/support/solutions/articles/35000293201-eth-2-0
+- https://support.bit2me.com/en/support/solutions/articles/35000226814
 
-Decision: `add_now`, subject to hardened duplicate scanning, corpus audit and review-only draft generation. A dated launch event may be created only after scanner clearance and canonical review, using the first-party 2022-05-10 launch announcement. Keep Bitpanda Staking separate from Earn on Stablecoins.
+Decision: `add_now`, subject to the rerun hardened duplicate scanner and review-only draft gate. Keep the broad Earn launch date unresolved. Treat the product as centralized yield with an explicit transfer/use-of-assets boundary and do not infer customer-owned custody while assets are in the Earn arrangement.
+
+## KriptoEarn
+
+Reviewed first-party basis:
+
+- current Kriptomat material describes KriptoEarn as a blockchain staking solution and simplified technical interface to staking functionality on individual proof-of-stake protocols;
+- current terms state qualified virtual currencies can be staked through KriptoEarn for in-kind protocol-derived rewards;
+- rewards shown in the interface are approximate, protocol-determined, variable and not guaranteed;
+- current terms document withdrawal periods, fees and protocol/network malfunction risk;
+- current product material documents supported staking assets and network lock-up mechanics;
+- custody/ownership interpretation remains unresolved until the governing Kriptomat Terms of Service and KriptoEarn annex are jointly reviewed for canonical promotion;
+- reviewed sources establish current operation but do not establish one exact original launch date.
+
+Primary sources:
+
+- https://kriptomat.io/kriptoearn-terms-of-use/
+- https://kriptomat.io/earn/
+- https://kriptomat.io/
+
+Decision: `add_now`, subject to the rerun hardened duplicate scanner and review-only draft gate. Keep launch date unresolved unless an explicit first-party original-launch source is found. Do not convert marketing language about slashing insurance or staking returns into a general loss guarantee without governing-term support.
 
 ## Required gate
 
-Both records remain staging-only. No canonical platform IDs are assigned here. Ordinary repository search returned no matching Bitvavo Staking or Bitpanda Staking records but is not authoritative. Hardened scanning against the full 98-platform canonical corpus is mandatory and any duplicate must be resolved without consuming a canonical ID. The final growth batch may promote only enough records to reach exactly 100 platforms; after that, record growth stops for the mandatory full-corpus audit.
+Only candidate IDs `cya_candidate_000099` and `cya_candidate_000100` remain active for the final growth gate. No canonical platform IDs are assigned here. Hardened scanning against the full 98-platform canonical corpus must pass after the duplicate replacements. Any further duplicate must again be resolved without consuming a canonical ID. The final canonical promotion may add only enough reviewed records to reach exactly 100 platforms; after that, record growth stops for the mandatory full-corpus audit.
