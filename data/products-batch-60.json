@@ -1,0 +1,10 @@
+[
+  {
+    "platform_id": "cya_plat_000101",
+    "product_type": "centralized_yield",
+    "product_name": "XORA Finance XRP Yield",
+    "custody_model": "Centralized custodial arrangement. XORA's current whitepaper and terms describe a shared XRPL treasury with per-user destination tags and off-chain balance accounting; supported deposited balances are held in XORA-managed custodial wallets, and withdrawals are intended to settle from the treasury to a user-specified destination.",
+    "yield_source": "XORA states that the current native XRP yield is funded by a finite treasury subsidy during bootstrap. Its current materials present XRPL AMM liquidity provision and XRPL-native lending as later transition stages rather than established current sources, and separately describe an estimated XORA token reward-value component.",
+    "risk_notes": "Risks include custodial and operational exposure, finite subsidy sustainability, variable rates, non-traded token reward valuation, security/compliance withdrawal holds, and unresolved legal-entity/ownership treatment. The documented claimant dispute is a historical incident signal but does not establish platform-wide withdrawal suspension, fraud, insolvency or permanent customer loss."
+  }
+]
