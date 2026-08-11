@@ -1,22 +1,22 @@
 [
   {
     "phase": 8,
-    "status": "growth_to_100",
+    "status": "audit_required",
     "recorded_at": "2026-08-11",
-    "baseline_main_sha": "ef6426842399071c82ce6bfc388347fec3296f66",
-    "canonical_platforms": 98,
+    "baseline_main_sha": "337a073e197e5b4d1b2ffd9f6364944059b5d71a",
+    "canonical_platforms": 100,
     "next_audit_milestone": 100,
-    "staged_candidate_ids": ["cya_candidate_000099", "cya_candidate_000101"],
+    "staged_candidate_ids": [],
     "resolved_duplicate_ids": ["cya_candidate_000088", "cya_candidate_000089", "cya_candidate_000097", "cya_candidate_000098", "cya_candidate_000100"],
-    "next_candidate_ids": ["cya_candidate_000102", "cya_candidate_000103"],
-    "next_platform_id": "cya_plat_000099",
+    "next_candidate_ids": [],
+    "next_platform_id": null,
     "next_event_id": "cya_ev_000340",
     "existing_needs_research": [
       {"candidate_id":"cya_candidate_000010","canonical_name":"Goldfinch","blocking_questions":["DeFi/institutional-yield scope","entity and product boundary"]},
       {"candidate_id":"cya_candidate_000045","canonical_name":"Cabital","blocking_questions":["operating legal entity","product boundary","closure chronology","custody and customer outcome"]},
       {"candidate_id":"cya_candidate_000049","canonical_name":"Outlet Finance","blocking_questions":["underlying counterparty model","closure chronology","custody and repayment outcome"]}
     ],
-    "promotion_policy": "Candidate-only staging first. No canonical IDs, writes, status changes or outcome inference before reviewed promotion.",
-    "next_action": "Rerun the final Phase 8 hardened candidate gate for scanner-cleared cya_candidate_000099 Bit2Me Earn plus replacement cya_candidate_000101 Coinmerce Earn against exact production-verified 98-platform SHA ef6426842399071c82ce6bfc388347fec3296f66. Bitvavo Staking, Bitpanda Staking and KriptoEarn were exact duplicates and consumed no canonical IDs. Resolve any further duplicate without consuming a canonical ID. If both active candidates are promotion-ready, use a separate canonical PR beginning at cya_plat_000099 and reach exactly 100 platforms. Event ID cya_ev_000340 may be consumed only for an explicitly evidence-backed dated event. At 100, stop record growth for the mandatory full-corpus audit before any platform 101 work."
+    "promotion_policy": "Record growth is locked at the 100-platform milestone. No platform 101 candidate staging, canonical ID allocation or promotion is allowed until the mandatory full-corpus audit is completed, production-verified and explicitly releases the growth lock.",
+    "next_action": "Complete the final Batch 59 canonical promotion and exact-SHA production verification at exactly 100 platforms. Then run the mandatory full-corpus audit across platforms, events, evidence, outcomes, products, terms-risk, machine-readable outputs, build surfaces and representative production pages. Do not allocate a platform 101 ID or stage additional growth candidates before the audit is completed and production-verified."
   }
 ]
