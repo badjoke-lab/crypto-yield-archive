@@ -18,23 +18,22 @@ Permanent operating rules remain in `docs/record-growth-plan.md` and `docs/devel
 - Never infer repayment completion, recovery rate, custody, ownership, principal protection, fraud, or customer outcome from marketing or candidate metadata.
 - Product, legal-entity, jurisdiction, terms-version, custody, identity, and customer-outcome boundaries require explicit review.
 - Repository validation, Cloudflare deployment, and direct production observation are separate claims.
-- At audit milestones, record growth stops until the audit checkpoint is completed and its release is production-verified.
+- At 100 platforms, record growth stops until the mandatory full-corpus audit is completed and production-verified.
 
-## Current promotion state
+## Current confirmed baseline
 
 ```text
 Repository:                  badjoke-lab/crypto-yield-archive
 Default branch:              main
-Verified canonical 92 SHA:   d5610cf53d04b4d4a89419bca4dfab8bc51dc0ae
-Candidate-only PR:           #161 merged
-Candidate-only SHA:          a3248cf463bcd08de0efa68baae9742d8997763d
-Batch 56 canonical targets:  cya_plat_000093 Bitso Earnings
-                             cya_plat_000094 Luno Staking
-Growth state after merge:    94 -> 100
+Canonical 94 SHA:            89db1785eefc5e486a8349a889edc5f52f0eaeaf
+Latest canonical PR:         #162
+Production Surface Check:    #188 success
+Representative screenshots: success
+Growth state:                94 -> 100
 Next audit milestone:        100
 ```
 
-### Expected canonical scale after Batch 56 promotion
+### Canonical scale
 
 ```text
 Platforms:       94
@@ -45,79 +44,34 @@ Products:        135
 Terms risk:       94
 ```
 
-No event ID is consumed in Batch 56 because the reviewed first-party sources do not establish one exact original Bitso Earnings or Luno Staking launch date. `cya_ev_000338` remains available for the next evidence-backed event.
+Batch 56 promoted Bitso Earnings and Luno Staking. Neither consumed an event ID because an exact original launch date was not asserted. The exact 94-platform SHA passed Cloudflare deployment, current production-surface verification and production desktop/mobile capture before Batch 57 work began.
 
-## Completed phase gates
-
-```text
-Phase 3A: reach 30 platforms                         complete
-Phase 3B / batches 22-26: 30 -> 40                  complete
-Phase 4: 40-platform full audit                     complete
-Phase 5 / R7: candidate scanner                     complete
-Phase 5 / R8: review-only draft generator           complete
-Phase 6 / batches 27-36: 40 -> 60                   complete
-Phase 7: weekly existing-record monitoring          complete / operational
-Phase 8 / batches 37-44: 60 -> 75                   complete
-Phase 8: 75-platform full audit                     complete / production verified
-Phase 8 / batches 45-55: 75 -> 92                   complete / latest 92 production verified
-Phase 8 / batch 56 candidate gate                   complete
-Phase 8 / batch 56 canonical promotion              current
-Phase 8: 100-platform full audit                    future mandatory gate
-```
-
-## Phase 8 recent growth summary
+## Recent growth
 
 ```text
-Batch 45: Flipster Earn + Bitrue Power Piggy         75 -> 77
-Batch 46: BloFin Earn + LBank Earn                   77 -> 79
-Batch 47: Toobit Earn + Bitunix Easy Earn            79 -> 81
-Batch 48: AscendEX Earn                              81 -> 82
-          BitMart candidate duplicate                no new ID
-Batch 49: Bitpanda Earn + CEX.IO Earn                82 -> 84
-Batch 50: SwissBorg + Wirex candidate duplicates     no new IDs
-Batch 51: Bitvavo Earn + Coinmetro BTC Earn          84 -> 86
-Batch 52: Uphold Staking + HashKey ETH Staking       86 -> 88
 Batch 53: eToro Staking + Robinhood Crypto Staking   88 -> 90
 Batch 54: Bitstamp Earn Staking                      90 -> 91
           Crypto.com candidate duplicate             no new ID
 Batch 55: Revolut Crypto Staking                     91 -> 92
           Gemini candidate duplicate                 no new ID
-Batch 56: Bitso Earnings + Luno Staking              92 -> 94 target
+Batch 56: Bitso Earnings + Luno Staking              92 -> 94
+Batch 57 candidate gate                              current
 ```
 
-Every addition uses a candidate-only gate followed by a separate canonical PR. Duplicate findings do not consume canonical IDs. `needs_research` candidates are not silently promoted.
+Every addition uses a candidate-only gate followed by a separate canonical PR. Duplicate findings do not consume canonical IDs.
 
-## Batch 56 reviewed boundary
-
-### Bitso Earnings
-
-- candidate `cya_candidate_000091` passed hardened full-corpus scanning as draft-eligible with no unsafe canonical match;
-- canonical ID is `cya_plat_000093`;
-- current first-party material documents weekly Earnings, flexible balance availability, stablecoin yields and dynamic proof-of-stake asset yields;
-- Bitso's current product education also documents specialized third-party yield providers and other product-specific yield methods, so CYA does not collapse every Earnings asset into one universal source, counterparty, custody or legal-title model;
-- `launch_date` remains null and no launch event is created because an exact original umbrella launch date was not established;
-- terms status remains `unclear` at medium confidence rather than extrapolating marketing ownership/flexibility language into universal legal-title, segregation or insolvency treatment.
-
-### Luno Staking
-
-- candidate `cya_candidate_000092` passed hardened full-corpus scanning as draft-eligible with no unsafe canonical match;
-- canonical ID is `cya_plat_000094`;
-- current first-party material documents active staking in Malaysia, Nigeria and South Africa, dedicated staking wallets, selected staking service providers and validator-node mechanics;
-- current Luno Staking Terms state staked cryptoassets are not transferred to the third-party validator, Luno continues holding them on the user's behalf, and the user remains beneficial owner;
-- terms also document warm-up periods, protocol rules, variable network/validator rewards and slashing risk that may affect rewards or principal;
-- the June 2023 terms date is not treated as the service's original launch date, so `launch_date` remains null and no launch event is created;
-- `customer_owned` is limited to express beneficial-ownership language at medium confidence and is not a universal conclusion about legal-title form, segregation, principal protection or insolvency treatment.
-
-## Queue after Batch 56 canonical promotion
+## Candidate queue and reserved identifiers
 
 ```text
 Queue status:            growth_to_100
 Canonical platforms:     94
-Active staged candidates: none
-Next candidate IDs:      cya_candidate_000093 / cya_candidate_000094
+Verified baseline SHA:   89db1785eefc5e486a8349a889edc5f52f0eaeaf
+Staged candidates:       cya_candidate_000093 / cya_candidate_000094
+Next candidate IDs:      cya_candidate_000095 / cya_candidate_000096
 Next platform ID:        cya_plat_000095
 Next event ID:           cya_ev_000338
 Next audit milestone:    100 platforms
+Latest completed batch:  56
 ```
 
 Long-lived `needs_research` candidates remain:
@@ -130,6 +84,24 @@ Long-lived `needs_research` candidates remain:
 
 They remain blocked from silent promotion.
 
+## Batch 57 candidate-only gate
+
+### `cya_candidate_000093` — Ndax Staking
+
+- first-party Ndax material supports `2022-02-15` as the launch date of its first flexible crypto staking program, initially ETH/DOT/ADA;
+- current Ndax material documents continued multi-asset staking, variable/non-guaranteed rewards, bonding/unbonding, standard/instant redemption, slashing/on-chain risks, administration fees and experienced third-party validators;
+- product custody/security language must not be converted into universal legal-title, segregation, principal-protection or insolvency treatment.
+
+Decision remains `add_now` only for candidate review. Hardened full-corpus scanning is authoritative for duplicate clearance.
+
+### `cya_candidate_000094` — VALR Staking
+
+- first-party VALR material supports `2023-06-27` as the official staking launch, initially SOL and AVAX;
+- current VALR product and governing terms continue to document on-chain proof-of-stake staking and opt-in participation;
+- contribution/staking mechanics alone do not resolve universal legal-title, segregation, principal-protection or insolvency treatment, so terms interpretation must remain conservative unless governing text explicitly resolves it.
+
+Decision remains `add_now` only for candidate review. Hardened full-corpus scanning is authoritative for duplicate clearance.
+
 ## Production sequencing rule
 
 For every canonical, audit, or state-transition release:
@@ -141,26 +113,14 @@ For every canonical, audit, or state-transition release:
 5. require Production Surface Check and representative screenshots to succeed;
 6. only then allow the next candidate/canonical merge based on that release.
 
-## Recovery procedure
-
-```text
-1. Read this file and docs/development-policy.md.
-2. Fetch current main and recent/open PRs.
-3. Check the latest exact-SHA Cloudflare deployment, Production Surface Check and representative screenshots.
-4. Confirm active and consumed candidate ledgers.
-5. Recalculate canonical counts and maximum IDs.
-6. Respect candidate-only -> canonical PR separation.
-7. Do not silently promote monitoring findings or needs_research candidates.
-8. Stop at 100 for the mandatory full-corpus audit before platform 101.
-```
-
 ## Immediate next action
 
 ```text
-1. Complete and merge the reviewed Batch 56 Bitso/Luno canonical PR only after all repository, candidate, SEO, preview and representative-surface checks pass.
-2. Freeze main on the resulting exact canonical SHA.
-3. Require Cloudflare exact-SHA deployment, Production Surface Check and representative screenshots to pass.
-4. Only after that verification, research and stage replacement candidates cya_candidate_000093 and cya_candidate_000094 from the verified 94-platform baseline.
-5. Keep cya_ev_000338 unconsumed until a dated event is explicitly evidence-backed.
-6. Continue reviewed growth to 100, then stop for the mandatory full-corpus audit.
+1. Run the Batch 57 candidate-only gate for Ndax Staking and VALR Staking against exact production-verified 94-platform SHA 89db1785eefc5e486a8349a889edc5f52f0eaeaf.
+2. Require hardened duplicate scan, corpus audit, review-only draft generation and normal repository checks to pass.
+3. Resolve any duplicate without consuming a canonical platform ID.
+4. If candidate-only gates pass, merge without touching data/.
+5. Open a separate canonical promotion PR beginning at cya_plat_000095 and dated events beginning at cya_ev_000338 where first-party launch dates remain supported.
+6. After canonical merge, freeze main and exact-SHA production verify before Batch 58.
+7. Continue to 100, then stop for the mandatory full-corpus audit.
 ```
