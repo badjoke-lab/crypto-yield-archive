@@ -1,0 +1,25 @@
+[
+  {
+    "phase": "9A",
+    "status": "proposed_pending_phase8_production_verification",
+    "recorded_at": "2026-08-11",
+    "baseline_audit_release_sha": "bf2b1948f7ac817956f740e91fcfe80bb8ad0ba4",
+    "canonical_platforms": 100,
+    "scope": "single_platform_incident_led_exception",
+    "staged_candidate_ids": ["cya_candidate_000102"],
+    "candidate_name": "XORA Finance",
+    "next_platform_id": null,
+    "next_event_id": "cya_ev_000340",
+    "canonical_cap": 101,
+    "promotion_policy": "Candidate research and hardened drafting may proceed only after the Phase 8 audit release is production-verified. XORA may consume platform 101 only after duplicate, source, on-chain incident, legal-entity, validation, audit, preview and production gates pass. No platform 102 is authorized by Phase 9A.",
+    "required_research": [
+      "verify reported 29,899.8 XRP deposit transaction and destination context",
+      "verify reported withdrawal request and XRPL settlement state",
+      "preserve attributable XORA support/account narratives",
+      "reproduce any treasury BTC/IOU representation claim before canonical use",
+      "verify legal entity and applicable terms version",
+      "archive first-party and investigation sources"
+    ],
+    "next_action": "Complete Phase 8 production verification, then run the hardened candidate scanner/draft gate for cya_candidate_000102 without allocating a canonical platform ID."
+  }
+]
