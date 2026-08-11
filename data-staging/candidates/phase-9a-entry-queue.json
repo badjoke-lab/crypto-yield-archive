@@ -1,9 +1,10 @@
 [
   {
     "phase": "9A",
-    "status": "canonical_promotion_pending_production_verification",
+    "status": "production_verified_complete",
     "recorded_at": "2026-08-11",
     "last_advanced_at": "2026-08-12",
+    "completed_at": "2026-08-12",
     "phase8_finalization_sha": "162c216621687a149ebbfe213960a622667aa391",
     "phase8_production_surface_check": 193,
     "canonical_platforms": 101,
@@ -12,6 +13,7 @@
     "candidate_name": "XORA Finance",
     "canonical_platform_id": "cya_plat_000101",
     "canonical_event_id": "cya_ev_000340",
+    "canonical_merge_sha": "87f21a256949b4d07ad4d073b91e860aa0bb02fe",
     "next_platform_id": null,
     "next_event_id": "cya_ev_000341",
     "canonical_cap": 101,
@@ -34,13 +36,36 @@
       "transaction_result": "tesSUCCESS",
       "workflow_run": 31506973985
     },
-    "promotion_policy": "Phase 9A authorizes exactly one canonical XORA promotion to platform 101. The canonical record must keep verified XRPL facts separate from claimant-published support narratives, retain active status unless stronger evidence supports a broader status change, and leave withdrawal destination, final settlement, customer outcome and operating legal entity unresolved. No platform 102 is authorized.",
+    "production_verification": {
+      "status": "success",
+      "production_surface_check": 197,
+      "workflow_run_id": 31513145221,
+      "verified_commit": "87f21a256949b4d07ad4d073b91e860aa0bb02fe",
+      "base_url": "https://cya.badjoke-lab.com",
+      "record_counts": {
+        "primary_records": 101,
+        "platforms": 101,
+        "events": 335,
+        "evidence": 597,
+        "customer_outcomes": 101,
+        "product_profiles": 142,
+        "terms_risk_records": 101
+      },
+      "claims_ongoing": 18,
+      "visual_verification": {
+        "states": "24/24",
+        "failures": 0,
+        "artifact_id": 9109998416,
+        "artifact_digest": "sha256:4cfcbfed3cb68ac601a4be1c11f03e27aea5950ff612ef95b3b5a182a0c3adb2"
+      }
+    },
+    "promotion_policy": "Phase 9A authorized exactly one canonical XORA promotion to platform 101. The canonical record keeps verified XRPL facts separate from claimant-published support narratives, retains active status unless stronger evidence supports a broader status change, and leaves withdrawal destination, final settlement, customer outcome and operating legal entity unresolved. No platform 102 is authorized.",
     "remaining_research": [
       "identify the requested withdrawal destination and final XRPL settlement state if attributable evidence becomes available",
       "verify the operating legal entity independently of Stockholm marketing origin and Delaware governing-law language",
       "reproduce treasury BTC/IOU representation claims before creating any reserve-representation event",
       "update customer outcome only if recovery, loss or settlement becomes directly supportable"
     ],
-    "next_action": "Run canonical validation, build, candidate, SEO and preview gates for the platform-101 promotion. Merge only if all required checks pass, then production-verify the exact merged SHA and keep general growth locked; Phase 9A does not authorize platform 102."
+    "next_action": "Phase 9A is closed at platform 101. Keep normal monitoring and evidence-upgrade work active, but do not allocate or publish platform 102 without a separately reviewed and authorized growth phase."
   }
 ]
