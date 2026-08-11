@@ -1,8 +1,8 @@
 # CYA record growth execution roadmap
 
-Status: Phase 8 — growth from 75 toward 100  
+Status: Phase 8 — growth from 90 toward 100  
 Project: Crypto Yield Archive (CYA)  
-Last baseline review: 2026-08-09
+Last baseline review: 2026-08-11
 
 ## Purpose
 
@@ -25,29 +25,28 @@ Permanent operating rules remain in `docs/record-growth-plan.md` and `docs/devel
 ```text
 Repository:              badjoke-lab/crypto-yield-archive
 Default branch:          main
-Canonical 75 SHA:        106ec5b7b2f69a513d2795f4e352405e964456ca
-Canonical production:   Production Surface Check #174 success
-75-platform audit PR:    #138 merged
-Audit release SHA:       3357933c7d7e4d2449a507979edf3437412280f9
-Audit production:        Production Surface Check #175 success
-Growth state:            75 -> 100 resumed
+Canonical 90 SHA:        907689cd598f1fff9a04dbfc02e7ad7314b55244
+Latest canonical PR:     #156
+Production verification: Production Surface Check #184 success
+Screenshots:             Representative page screenshots #71 success
+Growth state:            90 -> 100
 Next audit milestone:    100
 ```
 
 ### Canonical scale
 
 ```text
-Platforms:       75
-Events:          309
-Evidence:        485
-Outcomes:         75
-Products:        112
-Terms risk:       75
-Claims ongoing:   18
-Generated pages:  89
+Platforms:       90
+Events:          331
+Evidence:        548
+Outcomes:         90
+Products:        130
+Terms risk:       90
+Corpus blockers:  0
+Generated pages: 104
 ```
 
-The 75-platform audit preserved the canonical scale, reduced deterministic quality debt from 27 to 23 by removing cross-brand generic alias collisions, retained 0 corpus blockers, 0 low-reliability evidence and 0 low-confidence platforms, and passed exact-SHA production verification.
+The 90-platform release added eToro Staking and Robinhood Crypto Staking after candidate-only review, hardened duplicate scanning, corpus validation and separate canonical promotion. The exact 90-platform production SHA passed the production surface gate and representative screenshot workflow.
 
 ## Completed phase gates
 
@@ -59,16 +58,18 @@ Phase 5 / R7: candidate scanner                     complete
 Phase 5 / R8: review-only draft generator           complete
 Phase 6 / batches 27-36: 40 -> 60                   complete
 Phase 7: weekly existing-record monitoring          complete / operational
-Phase 8 / batch 37: 60 -> 61                        complete
-Phase 8 / batch 38: 61 -> 63                        complete
-Phase 8 / batch 39: 63 -> 65                        complete
-Phase 8 / batch 40: 65 -> 67                        complete
-Phase 8 / batch 41: 67 -> 69                        complete
-Phase 8 / batch 42: 69 -> 71                        complete
-Phase 8 / batch 43: 71 -> 73                        complete
-Phase 8 / batch 44: 73 -> 75                        complete / production verified
+Phase 8 / batches 37-44: 60 -> 75                   complete
 Phase 8: 75-platform full audit                     complete / production verified
-Phase 8: 75 -> 100                                  current
+Phase 8 / batch 45: 75 -> 77                        complete
+Phase 8 / batch 46: 77 -> 79                        complete
+Phase 8 / batch 47: 79 -> 81                        complete
+Phase 8 / batch 48: 81 -> 82                        complete
+Phase 8 / batch 49: 82 -> 84                        complete
+Phase 8 / batch 50: duplicate resolution            complete / no platform IDs consumed
+Phase 8 / batch 51: 84 -> 86                        complete
+Phase 8 / batch 52: 86 -> 88                        complete
+Phase 8 / batch 53: 88 -> 90                        complete / production verified
+Phase 8: 90 -> 100                                  current
 Phase 8: 100-platform full audit                    future mandatory gate
 ```
 
@@ -89,80 +90,72 @@ Phase 7 was formally closed and Phase 8 started in PR #121.
 ## Phase 8 growth summary
 
 ```text
-Batch 37: Swyftx Earn                               60 -> 61
-Batch 38: KuCoin Earn + OKX Simple Earn             61 -> 63
-Batch 39: Gate Simple Earn + Bybit Easy Earn        63 -> 65
-Batch 40: Binance Simple Earn + Bitget Simple Earn  65 -> 67
-Batch 41: Phemex Savings + WhiteBIT Crypto Lending  67 -> 69
-Batch 42: HTX Simple Earn + CoinEx Flexible Savings 69 -> 71
-Batch 43: BingX Earn + MEXC Savings                 71 -> 73
-Batch 44: Bitfinex Margin Funding + Poloniex Earn   73 -> 75
+Batch 37: Swyftx Earn                                60 -> 61
+Batch 38: KuCoin Earn + OKX Simple Earn              61 -> 63
+Batch 39: Gate Simple Earn + Bybit Easy Earn         63 -> 65
+Batch 40: Binance Simple Earn + Bitget Simple Earn   65 -> 67
+Batch 41: Phemex Savings + WhiteBIT Crypto Lending   67 -> 69
+Batch 42: HTX Simple Earn + CoinEx Flexible Savings  69 -> 71
+Batch 43: BingX Earn + MEXC Savings                  71 -> 73
+Batch 44: Bitfinex Margin Funding + Poloniex Earn    73 -> 75
+Audit:    full 75-platform corpus                    complete
+Batch 45: Flipster Earn + Bitrue Power Piggy         75 -> 77
+Batch 46: BloFin Earn + LBank Earn                   77 -> 79
+Batch 47: Toobit Earn + Bitunix Easy Earn            79 -> 81
+Batch 48: AscendEX Earn                              81 -> 82
+          BitMart Earn candidate resolved duplicate  no new ID
+Batch 49: Bitpanda Earn + CEX.IO Earn                82 -> 84
+Batch 50: SwissBorg + Wirex candidates duplicates    no new IDs
+Batch 51: Bitvavo Earn + Coinmetro BTC Earn          84 -> 86
+Batch 52: Uphold Staking + HashKey ETH Staking       86 -> 88
+Batch 53: eToro Staking + Robinhood Crypto Staking   88 -> 90
 ```
 
-Every Phase 8 addition used a candidate-only gate followed by a separate canonical PR. Goldfinch, Cabital and Outlet Finance were not silently promoted.
-
-## 75-platform audit result
-
-Pre-audit:
-
-```text
-Corpus blockers:             0
-Quality-debt items:         27
-Low-reliability evidence:    0
-Low-confidence platforms:    0
-```
-
-Audit release:
-
-```text
-Platforms:                  75
-Events:                     309
-Evidence:                   485
-Outcomes:                    75
-Products:                   112
-Terms risk:                  75
-Claims ongoing:              18
-Corpus blockers:              0
-Quality-debt items:          23
-Low-reliability evidence:     0
-Low-confidence platforms:     0
-Generated pages:             89
-```
-
-The four removed findings were cross-brand collisions from generic aliases such as `simple earn`, `simple earn flexible`, `simple earn fixed` and `flexible savings`. Canonical facts were not changed to reduce debt.
-
-Full details are in `docs/phase-8-75-platform-audit.md`.
+Every Phase 8 addition continues to use a candidate-only gate followed by a separate canonical PR. Duplicate findings do not consume canonical IDs. `needs_research` candidates are not silently promoted.
 
 ## Candidate queue and reserved identifiers
 
+Current canonical baseline:
+
 ```text
 Queue status:            growth_to_100
-Active candidates:       3 needs_research
+Canonical platforms:     90
+Next candidate IDs:      cya_candidate_000087 / cya_candidate_000088
+Next platform ID:        cya_plat_000091
+Next event ID:           cya_ev_000337
+Next audit milestone:    100 platforms
+Latest completed batch:  53
+```
+
+Long-lived `needs_research` candidates remain:
+
+```text
 - cya_candidate_000010 Goldfinch
 - cya_candidate_000045 Cabital
 - cya_candidate_000049 Outlet Finance
-
-Next candidate IDs:      cya_candidate_000069 / cya_candidate_000070
-Next platform ID:        cya_plat_000076
-Next event ID:           cya_ev_000315
-Next audit milestone:    100 platforms
-Latest completed batch:  44
 ```
 
-No active candidate is approved for silent promotion:
+They remain blocked from silent promotion:
 
 - Goldfinch requires a DeFi/institutional-yield scope and entity-boundary decision.
 - Cabital requires operating-entity, product-boundary, closure, custody and customer-outcome evidence.
 - Outlet Finance requires counterparty, closure, custody and repayment evidence.
 
-## Next-batch research direction
+## Batch 54 candidate-only gate
 
-External research completed during the 75-platform production gate identified two strong duplicate-clear candidates for the next candidate-only review:
+The next candidate-only review is reserved for:
 
-- Flipster Earn — first-party history establishes the Earn Campaign from 3 April 2024, while 2026 first-party material documents current Basic/Premium/Dynamic Earn products and risk/reward mechanics.
-- Bitrue Power Piggy — first-party Bitrue material describes Power Piggy as a flexible staking/yield platform launched in 2019 and confirms continued operation in 2026.
+```text
+cya_candidate_000087 — Bitstamp Earn Staking
+cya_candidate_000088 — Crypto.com On-Chain Staking
+```
 
-These are research directions only until they are explicitly staged as `cya_candidate_000069` and `cya_candidate_000070` in a candidate-only PR and pass the hardened duplicate scanner and review-only draft generator.
+Research direction:
+
+- Bitstamp: first-party material supports public ETH staking under Bitstamp Earn from 2021-07-13, with an earlier April 2021 early-access rollout. Product and jurisdiction boundaries must remain explicit; historical ALGO staking and other Earn products are not automatically one identical product.
+- Crypto.com: current first-party material supports active multi-asset on-chain staking, protocol-derived variable rewards, service fees and network-specific bonding/unbonding mechanics. The reviewed current materials do not establish one exact original umbrella launch date, so no date may be invented.
+
+These identities remain candidates only until hardened scanner, corpus audit and review-only candidate draft generation complete successfully. No canonical IDs are assigned in the candidate-only PR.
 
 ## Production sequencing rule
 
@@ -175,19 +168,19 @@ For every canonical, audit, or state-transition release:
 5. require Production Surface Check and production screenshots to succeed;
 6. only then allow the next `main` merge.
 
-This prevents a later staging or canonical commit from overtaking the exact-SHA production verifier.
+Candidate-only PRs may be prepared from the exact verified canonical baseline, but canonical promotion must not overtake the production verification gate.
 
 ## Recovery procedure
 
 ```text
 1. Read this file and docs/development-policy.md.
 2. Fetch current main and recent/open PRs.
-3. Check the latest Cloudflare exact-SHA deployment and Production Surface Check.
+3. Check the latest exact-SHA Cloudflare deployment, Production Surface Check and representative screenshots.
 4. Confirm the active candidate ledger and consumed ledgers.
 5. Recalculate canonical counts and maximum IDs.
 6. Respect candidate-only -> canonical PR separation.
 7. Do not silently promote monitoring findings or needs_research candidates.
-8. Stop again at 100 for a full-corpus audit before any platform 101 work.
+8. Stop at 100 for the mandatory full-corpus audit before any platform 101 work.
 ```
 
 Recommended checks:
@@ -204,8 +197,10 @@ npm test
 ## Immediate next action
 
 ```text
-Complete the audit-close state-transition PR and verify its exact production SHA.
-Then stage the next two reviewed candidates as cya_candidate_000069 and cya_candidate_000070 in a candidate-only PR.
-Do not add canonical platform 76 until candidate scan and review-only draft gates pass.
-Continue reviewed two-record batches toward 100, then stop for the mandatory 100-platform audit.
+1. Run the Batch 54 candidate-only gate for cya_candidate_000087 and cya_candidate_000088 against canonical SHA 907689cd598f1fff9a04dbfc02e7ad7314b55244.
+2. Require hardened duplicate scan, corpus audit, review-only draft generation and normal repository checks to pass.
+3. If one candidate resolves as a duplicate or unsafe scope, do not consume a canonical platform ID; replace or reclassify it before promotion.
+4. If promotion-ready, open a separate canonical PR beginning at cya_plat_000091 and cya_ev_000337 as applicable.
+5. After canonical merge, freeze main and require exact-SHA production verification before Batch 55.
+6. Continue reviewed growth to 100, then stop for the mandatory 100-platform full audit.
 ```
