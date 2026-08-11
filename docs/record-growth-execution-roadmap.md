@@ -1,6 +1,6 @@
 # CYA record growth execution roadmap
 
-Status: Phase 8 — growth from 90 toward 100  
+Status: Phase 8 — growth from 91 toward 100  
 Project: Crypto Yield Archive (CYA)  
 Last baseline review: 2026-08-11
 
@@ -20,33 +20,32 @@ Permanent operating rules remain in `docs/record-growth-plan.md` and `docs/devel
 - Repository validation, Cloudflare deployment, and direct production observation are separate claims.
 - At audit milestones, record growth stops until the audit checkpoint is completed and its release is production-verified.
 
-## Current confirmed baseline
+## Current promotion state
 
 ```text
-Repository:              badjoke-lab/crypto-yield-archive
-Default branch:          main
-Canonical 90 SHA:        907689cd598f1fff9a04dbfc02e7ad7314b55244
-Latest canonical PR:     #156
-Production verification: Production Surface Check #184 success
-Screenshots:             Representative page screenshots #71 success
-Growth state:            90 -> 100
-Next audit milestone:    100
+Repository:                 badjoke-lab/crypto-yield-archive
+Default branch:             main
+Verified canonical 90 SHA:  907689cd598f1fff9a04dbfc02e7ad7314b55244
+Candidate-only PR:          #157 merged
+Candidate-only SHA:         c57d15f91464f1113e3421fd3abeb0f2a2a47765
+Batch 54 canonical target:  cya_plat_000091 Bitstamp Earn Staking
+Growth state after merge:   91 -> 100
+Next audit milestone:       100
 ```
 
-### Canonical scale
+### Expected canonical scale after Batch 54 promotion
 
 ```text
-Platforms:       90
-Events:          331
-Evidence:        548
-Outcomes:         90
-Products:        130
-Terms risk:       90
-Corpus blockers:  0
-Generated pages: 104
+Platforms:       91
+Events:          332
+Evidence:        553
+Outcomes:         91
+Products:        131
+Terms risk:       91
+Generated pages: 105 expected from one new platform dossier
 ```
 
-The 90-platform release added eToro Staking and Robinhood Crypto Staking after candidate-only review, hardened duplicate scanning, corpus validation and separate canonical promotion. The exact 90-platform production SHA passed the production surface gate and representative screenshot workflow.
+Exact built-page count and corpus blockers remain subject to PR validation and the final exact-SHA production gate.
 
 ## Completed phase gates
 
@@ -60,75 +59,58 @@ Phase 6 / batches 27-36: 40 -> 60                   complete
 Phase 7: weekly existing-record monitoring          complete / operational
 Phase 8 / batches 37-44: 60 -> 75                   complete
 Phase 8: 75-platform full audit                     complete / production verified
-Phase 8 / batch 45: 75 -> 77                        complete
-Phase 8 / batch 46: 77 -> 79                        complete
-Phase 8 / batch 47: 79 -> 81                        complete
-Phase 8 / batch 48: 81 -> 82                        complete
-Phase 8 / batch 49: 82 -> 84                        complete
-Phase 8 / batch 50: duplicate resolution            complete / no platform IDs consumed
-Phase 8 / batch 51: 84 -> 86                        complete
-Phase 8 / batch 52: 86 -> 88                        complete
-Phase 8 / batch 53: 88 -> 90                        complete / production verified
-Phase 8 / batch 54 candidate gate                   current
-Phase 8: 90 -> 100                                  current
+Phase 8 / batches 45-53: 75 -> 90                   complete / latest 90 production verified
+Phase 8 / batch 54 candidate gate                   complete
+Phase 8 / batch 54 canonical promotion              current
 Phase 8: 100-platform full audit                    future mandatory gate
 ```
 
-## Phase 7 monitoring gate
-
-Weekly existing-record monitoring remains operational and review-only.
-
-Key constraints remain:
-
-- monitoring reuses canonical platform IDs;
-- signals cannot directly write or reclassify canonical records;
-- stale verification dates, broken/repurposed URLs, status changes, claims changes and material event signals remain review inputs;
-- no-change runs and synthetic detection fixtures are tested;
-- scheduled monitoring and manual dispatch remain available.
-
-Phase 7 was formally closed and Phase 8 started in PR #121.
-
-## Phase 8 growth summary
+## Phase 8 recent growth summary
 
 ```text
-Batch 37: Swyftx Earn                                60 -> 61
-Batch 38: KuCoin Earn + OKX Simple Earn              61 -> 63
-Batch 39: Gate Simple Earn + Bybit Easy Earn         63 -> 65
-Batch 40: Binance Simple Earn + Bitget Simple Earn   65 -> 67
-Batch 41: Phemex Savings + WhiteBIT Crypto Lending   67 -> 69
-Batch 42: HTX Simple Earn + CoinEx Flexible Savings  69 -> 71
-Batch 43: BingX Earn + MEXC Savings                  71 -> 73
-Batch 44: Bitfinex Margin Funding + Poloniex Earn    73 -> 75
-Audit:    full 75-platform corpus                    complete
 Batch 45: Flipster Earn + Bitrue Power Piggy         75 -> 77
 Batch 46: BloFin Earn + LBank Earn                   77 -> 79
 Batch 47: Toobit Earn + Bitunix Easy Earn            79 -> 81
 Batch 48: AscendEX Earn                              81 -> 82
-          BitMart Earn candidate resolved duplicate  no new ID
+          BitMart candidate duplicate                no new ID
 Batch 49: Bitpanda Earn + CEX.IO Earn                82 -> 84
-Batch 50: SwissBorg + Wirex candidates duplicates    no new IDs
+Batch 50: SwissBorg + Wirex candidate duplicates     no new IDs
 Batch 51: Bitvavo Earn + Coinmetro BTC Earn          84 -> 86
 Batch 52: Uphold Staking + HashKey ETH Staking       86 -> 88
 Batch 53: eToro Staking + Robinhood Crypto Staking   88 -> 90
-Batch 54: Bitstamp candidate retained; Crypto.com duplicate of cya_plat_000019
+Batch 54: Bitstamp Earn Staking                      90 -> 91 target
+          Crypto.com candidate duplicate             no new ID
 ```
 
-Every Phase 8 addition continues to use a candidate-only gate followed by a separate canonical PR. Duplicate findings do not consume canonical IDs. `needs_research` candidates are not silently promoted.
+Every addition uses a candidate-only gate followed by a separate canonical PR. Duplicate findings do not consume canonical IDs.
 
-## Candidate queue and reserved identifiers
+## Batch 54 reviewed boundary
 
-Current canonical baseline and Batch 54 staging state:
+### Bitstamp Earn Staking
+
+- candidate `cya_candidate_000087` passed the hardened scanner as a new, draft-eligible identity against the 90-platform canonical corpus;
+- canonical ID is `cya_plat_000091`;
+- reviewed full public ETH-staking launch date is `2021-07-13`, following a documented April 2021 gradual early-access rollout;
+- current first-party material documents continuing Bitstamp Earn staking, underlying protocol rewards, a 15% service commission, network-specific staking risks and jurisdiction-specific availability;
+- current first-party educational material states that customers maintain full ownership of crypto assets when staking with Bitstamp Earn;
+- CYA records that product statement without inferring universal legal segregation, principal protection or insolvency treatment across every Bitstamp legal entity or jurisdiction;
+- the 2025 ALGO-staking wind-down is product-specific and does not establish an Earn-wide shutdown.
+
+### Crypto.com duplicate resolution
+
+`cya_candidate_000088` was classified by the hardened scanner as an exact duplicate of canonical `cya_plat_000019`. It consumes no canonical ID and remains archived in `data-staging/candidates/cya-consumed-duplicate-review-batch-54.json`. Its newly reviewed current staking sources may support later enrichment of the existing canonical record only.
+
+## Queue after Batch 54 canonical promotion
 
 ```text
 Queue status:            growth_to_100
-Canonical platforms:     90
-Staged add_now:           cya_candidate_000087 Bitstamp Earn Staking
-Resolved duplicate:      cya_candidate_000088 Crypto.com On-Chain Staking -> cya_plat_000019
+Canonical platforms:     91
+Active staged candidates: none
+Resolved duplicate:      cya_candidate_000088 -> cya_plat_000019
 Next candidate IDs:      cya_candidate_000089 / cya_candidate_000090
-Next platform ID:        cya_plat_000091
-Next event ID:           cya_ev_000337
+Next platform ID:        cya_plat_000092
+Next event ID:           cya_ev_000338
 Next audit milestone:    100 platforms
-Latest completed batch:  53
 ```
 
 Long-lived `needs_research` candidates remain:
@@ -139,42 +121,7 @@ Long-lived `needs_research` candidates remain:
 - cya_candidate_000049 Outlet Finance
 ```
 
-They remain blocked from silent promotion:
-
-- Goldfinch requires a DeFi/institutional-yield scope and entity-boundary decision.
-- Cabital requires operating-entity, product-boundary, closure, custody and customer-outcome evidence.
-- Outlet Finance requires counterparty, closure, custody and repayment evidence.
-
-## Batch 54 candidate-only gate
-
-Candidate review results:
-
-```text
-cya_candidate_000087 — Bitstamp Earn Staking
-  scanner: new_candidate / draft-eligible
-  decision: add_now
-
-cya_candidate_000088 — Crypto.com On-Chain Staking
-  scanner: exact_duplicate -> cya_plat_000019
-  decision: duplicate
-  canonical ID consumed: no
-```
-
-Bitstamp research basis:
-
-- first-party material supports public ETH staking under Bitstamp Earn from 2021-07-13, with an earlier April 2021 early-access rollout;
-- product and jurisdiction boundaries must remain explicit;
-- historical ALGO staking and other Earn products are not automatically one identical product;
-- no universal custody, legal-title, segregation, principal-protection or insolvency conclusion may be inferred.
-
-Crypto.com duplicate resolution:
-
-- current first-party material supports active multi-asset on-chain staking, protocol-derived variable rewards, service fees and network-specific bonding/unbonding mechanics;
-- hardened scanning matched the staged identity exactly to canonical `cya_plat_000019`;
-- no second platform identity may be created and no new canonical platform ID is consumed;
-- the newly reviewed 2026 material may be considered later for evidence-backed enrichment of the existing canonical record.
-
-The duplicate is preserved in `data-staging/candidates/cya-consumed-duplicate-review-batch-54.json` and removed from the active candidate ledger.
+They remain blocked from silent promotion.
 
 ## Production sequencing rule
 
@@ -184,10 +131,8 @@ For every canonical, audit, or state-transition release:
 2. freeze `main`;
 3. wait for the Cloudflare Pages check for that exact SHA;
 4. require `/version.json` build commit to match the same SHA;
-5. require Production Surface Check and production screenshots to succeed;
-6. only then allow the next `main` merge.
-
-Candidate-only PRs may be prepared from the exact verified canonical baseline, but canonical promotion must not overtake the production verification gate.
+5. require Production Surface Check and representative screenshots to succeed;
+6. only then allow the next canonical/candidate merge based on that release.
 
 ## Recovery procedure
 
@@ -195,31 +140,19 @@ Candidate-only PRs may be prepared from the exact verified canonical baseline, b
 1. Read this file and docs/development-policy.md.
 2. Fetch current main and recent/open PRs.
 3. Check the latest exact-SHA Cloudflare deployment, Production Surface Check and representative screenshots.
-4. Confirm the active candidate ledger and consumed ledgers.
+4. Confirm active and consumed candidate ledgers.
 5. Recalculate canonical counts and maximum IDs.
 6. Respect candidate-only -> canonical PR separation.
 7. Do not silently promote monitoring findings or needs_research candidates.
-8. Stop at 100 for the mandatory full-corpus audit before any platform 101 work.
-```
-
-Recommended checks:
-
-```bash
-npm install
-npm run candidates:check
-npm run candidates:scan
-npm run candidates:draft
-npm run batch:next-ids
-npm test
+8. Stop at 100 for the mandatory full-corpus audit before platform 101.
 ```
 
 ## Immediate next action
 
 ```text
-1. Complete the Batch 54 candidate-only PR with Bitstamp as the sole add_now candidate and Crypto.com recorded as a resolved duplicate.
-2. Require hardened duplicate scan, corpus audit, review-only draft generation and normal repository checks to pass.
-3. If candidate-only gates pass, merge the candidate-only PR without changing canonical data.
-4. Open a separate canonical promotion PR for Bitstamp beginning at cya_plat_000091 and cya_ev_000337 as applicable.
-5. After canonical merge, freeze main and require exact-SHA production verification before the next batch.
-6. Continue reviewed growth to 100, then stop for the mandatory 100-platform full audit.
+1. Complete and merge the reviewed Batch 54 Bitstamp canonical PR only after all repository, candidate, SEO and preview checks pass.
+2. Freeze main on the resulting exact canonical SHA.
+3. Require Cloudflare exact-SHA deployment, Production Surface Check and representative screenshots to pass.
+4. Only after that verification, research and stage replacement candidates cya_candidate_000089 and cya_candidate_000090 from the verified 91-platform baseline.
+5. Continue reviewed growth to 100, then stop for the mandatory full-corpus audit.
 ```
