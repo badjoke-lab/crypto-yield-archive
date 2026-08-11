@@ -1,6 +1,6 @@
 # CYA record growth execution roadmap
 
-Status: Phase 8 audit release merged; exact production verification pending. Phase 9A XORA incident-led exception proposed.  
+Status: Phase 8 complete. Phase 9A XORA incident-led research active.  
 Project: Crypto Yield Archive (CYA)  
 Last baseline review: 2026-08-11
 
@@ -19,7 +19,7 @@ Permanent operating rules remain in `docs/record-growth-plan.md` and `docs/devel
 - Product, legal-entity, jurisdiction, terms-version, custody, identity, and customer-outcome boundaries require explicit review.
 - Repository validation, Cloudflare deployment, and direct production observation are separate claims.
 - General record growth remains locked beyond 100 platforms.
-- Phase 9A, if activated after Phase 8 production verification, authorizes only the XORA Finance incident-led candidate and at most platform 101.
+- Active Phase 9A authorizes only the XORA Finance incident-led candidate and at most platform 101.
 
 ## Production-verified 100-platform canonical baseline
 
@@ -47,9 +47,7 @@ Claims ongoing:   18
 Generated pages: 114
 ```
 
-The exact 100-platform canonical SHA passed Cloudflare main deployment, current production-surface verification, production desktop/mobile capture and verification-artifact upload before the audit branch was created. Main CYA CI built the same SHA and verified the machine-readable layer with `primary_records=100` and matching platform/event/evidence/outcome/product/terms-risk counts.
-
-## Phase 8 100-platform full-corpus audit
+## Phase 8 100-platform full-corpus audit — complete
 
 The audit checkpoint was merged in PR #169.
 
@@ -67,15 +65,29 @@ Claims ongoing:                 18
 Unclear terms:                  24
 ```
 
-The 75-platform audit completed with blocker count `0` and quality-debt count `23`. The 100-platform corpus therefore reaches the milestone without introducing a new blocker and without increasing the audit debt count.
+The 75-platform audit completed with blocker count `0` and quality-debt count `23`. The 100-platform corpus reaches the milestone without introducing a new blocker and without increasing the audit debt count.
 
 The detailed audit record is `docs/phase-8-100-platform-audit.md`.
 
-### Audit-release production-verification gap
+### Production finalization
 
-Cloudflare Pages deployed the audit release SHA `bf2b1948f7ac817956f740e91fcfe80bb8ad0ba4` successfully. However, the `Production Surface Check` push trigger excluded `docs/**`, so the docs-only audit release did not automatically receive the required exact-SHA production-surface and representative screenshot run.
+The audit release initially exposed a workflow-trigger gap: `Production Surface Check` excluded `docs/**`, so a docs-only audit checkpoint could deploy without automatically receiving the required exact-SHA production verification.
 
-PR #170 fixes that trigger boundary by adding `docs/**` without weakening any verifier logic. Phase 8 is not marked complete until the resulting release is checked on the custom production domain with the existing exact-SHA verifier and production screenshots.
+PR #170 added `docs/**` to the existing production-smoke push path without weakening any production verifier logic.
+
+PR #172 then created a deployable docs-only finalization checkpoint. Its merge SHA passed the complete production gate:
+
+```text
+Phase 8 finalization SHA:        162c216621687a149ebbfe213960a622667aa391
+Production Surface Check:        #193 success
+Cloudflare main deployment:      success
+Custom production surface check: success
+Production desktop/mobile:       success
+Verification artifact upload:    success
+Artifact:                         cya-production-ui-verification-31502882155
+```
+
+Phase 8 is therefore complete.
 
 ## Remaining non-blocking debt boundary
 
@@ -99,28 +111,56 @@ cya_candidate_000045 Cabital
 cya_candidate_000049 Outlet Finance
 ```
 
-Phase 9A proposes one additional incident-led research candidate:
+Phase 9A adds one incident-led research candidate:
 
 ```text
 cya_candidate_000102 XORA Finance
 ```
 
-XORA is staged as `needs_research`, not `add_now`. Its CYA product scope is strongly supported by first-party custodial/yield material, while the reported deposit/withdrawal dispute and treasury questions still require transaction-level, attributable and legal-entity review.
+XORA remains `needs_research`, not `add_now`. No canonical platform ID has been allocated.
 
-No canonical platform ID is allocated by candidate staging.
+Current product-scope review supports CYA relevance:
 
-## Phase 9A operating decision
+- XORA's whitepaper and terms describe a custodial XRP yield product;
+- current public yield-source material says the native XRP yield is treasury-subsidized and treats XRPL AMM/lending as later roadmap phases;
+- current terms allow security/compliance withdrawal holds;
+- DefiLlama independently classifies XORA as a custodial XRPL savings product and attributes TVL to shared treasury address `rhbErkS2d4H82tRbdGyFkhhc4LNtjKaC3o`.
 
-The proposed Phase 9A decision is documented in `docs/phase-9a-xora-incident-led-exception.md`.
+The reported `29,899.8 XRP` deposit/withdrawal dispute remains a material research signal but not a CYA canonical finding until the underlying transaction/account evidence is reviewed.
+
+## Phase 9A automated gate result
+
+The candidate scanner and candidate-draft workflow ran against the 100-platform corpus and both succeeded as workflows.
+
+For XORA:
+
+```text
+canonical match:                none
+duplicate state:                duplicate-clear
+classification:                 manual_review_required
+decision:                       needs_research
+eligible_for_draft:             false
+eligible_for_canonical promote: false
+canonical IDs assigned:         0
+canonical writes performed:     0
+```
+
+This is the intended safety result: XORA is not blocked as a duplicate, but manual evidence review is still required before any canonical promotion.
+
+## Phase 9A operating boundary
+
+The active Phase 9A decision is documented in `docs/phase-9a-xora-incident-led-exception.md`.
 
 Boundary:
 
-- activate only after Phase 8 exact production verification succeeds;
 - authorize only `cya_candidate_000102` XORA Finance;
-- run hardened duplicate scan and candidate draft against the full 100-platform corpus;
-- require first-party product/terms review and transaction-level incident verification;
-- allow at most one canonical promotion, to 101 platforms, if every gate passes;
+- require transaction-level review of the reported deposit/withdrawal dispute;
+- independently reproduce relevant treasury/on-chain claims;
+- preserve attributable XORA support/account narratives before describing conflicts;
+- verify the operating legal entity and applicable terms version;
+- do not infer country/origin from governing-law clauses alone;
 - do not classify fraud/scam/insolvency/customer loss from social or investigation summaries alone;
+- allow at most one canonical promotion, to 101 platforms, if every gate passes;
 - authorize no platform 102.
 
 If XORA does not reach public quality, canonical remains at 100.
@@ -128,11 +168,12 @@ If XORA does not reach public quality, canonical remains at 100.
 ## Immediate next action
 
 ```text
-1. Merge PR #170 only after its repository checks pass.
-2. Require the resulting main SHA to pass Cloudflare deployment, Production Surface Check and production desktop/mobile capture.
-3. Mark Phase 8 complete only after that exact-SHA production verification succeeds.
-4. Merge the Phase 9A XORA candidate/operating-decision PR only after the Phase 8 gate is closed and its own repository checks pass.
-5. Run hardened candidate scan/draft for cya_candidate_000102 against the full 100-platform corpus.
-6. Perform the required on-chain, source-preservation, legal-entity and terms review before allocating platform 101.
-7. If public quality is achieved, open a separate canonical promotion PR; otherwise retain XORA as needs_research and keep canonical at 100.
+1. Merge the Phase 9A XORA staging/operating-decision PR after its refreshed repository checks pass.
+2. Preserve XORA as needs_research; do not allocate a platform ID yet.
+3. Verify the reported 29,899.8 XRP deposit transaction and destination-tag context.
+4. Verify the reported withdrawal request and whether an XRPL settlement occurred.
+5. Independently reproduce the attributed XORA treasury address/history and any BTC/IOU representation claim before canonical use.
+6. Preserve attributable first-party support/account narratives and source snapshots.
+7. Verify the operating legal entity and incident-date terms boundary.
+8. If the candidate reaches public quality, change it through a separately reviewed candidate decision and open a separate canonical promotion PR for platform 101; otherwise retain needs_research and keep canonical at 100.
 ```
