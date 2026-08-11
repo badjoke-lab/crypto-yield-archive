@@ -9,11 +9,9 @@ Candidate IDs reviewed: `cya_candidate_000089` / `cya_candidate_000090`
 Reviewed first-party basis:
 
 - Gemini announced the launch of Gemini Staking on 18 August 2022, initially supporting Polygon (MATIC), with additional proof-of-stake assets planned;
-- the launch material describes yield as crypto rewards paid by proof-of-stake networks to validators and states that Gemini simplifies validator/infrastructure operation for customers;
-- the current Gemini Staking Agreement is dated 12 June 2026 and defines Staking as a service provided by Gemini Trust Company, LLC or Gemini Moonbase, LLC depending on the user context;
-- current terms state Gemini or a third-party Staking Services Provider may facilitate staking, protocol rules determine reward timing and amount, Gemini charges a staking service fee, and rewards are not guaranteed;
-- current terms document slashing, activation queues, unbonding periods, jurisdiction restrictions, and absence of FDIC/SIPC or similar protections for staked assets;
-- the current agreement explicitly distinguishes conventional Gemini Staking from the separate Asset Rewards program, so CYA must not collapse those two mechanisms into one product identity.
+- the current Gemini Staking Agreement is dated 12 June 2026 and documents Gemini or third-party staking service providers, protocol-determined reward timing and amount, service fees, slashing, activation queues, unbonding periods, jurisdiction restrictions and non-guaranteed rewards;
+- current terms state that staked assets are not covered by FDIC/SIPC or similar protections;
+- the current agreement explicitly distinguishes conventional Gemini Staking from the separate Asset Rewards program.
 
 Primary sources:
 
@@ -21,7 +19,7 @@ Primary sources:
 - https://www.gemini.com/legal/staking-agreement
 - https://support.gemini.com/hc/en-us/articles/7329954040731-What-is-Gemini-Staking
 
-Decision: `add_now`, subject to hardened duplicate scanning, corpus audit and review-only draft generation. If duplicate-clear, `2022-08-18` is supported as the launch date of Gemini Staking. Product/legal-entity/jurisdiction boundaries and the separation from Asset Rewards must remain explicit. No deposit-insurance, principal-protection or universal custody/segregation conclusion may be inferred.
+Scanner resolution: `exact_duplicate` of `cya_plat_000014`. Decision: `duplicate`. No new canonical platform ID may be consumed. The reviewed 2022 launch and 2026 current terms may support a later evidence-backed enrichment of canonical `cya_plat_000014`, particularly the conventional-Staking versus Asset Rewards boundary and current fee/slashing/unbonding/protection treatment.
 
 ## Revolut Crypto Staking
 
@@ -40,8 +38,17 @@ Primary sources:
 - https://help.revolut.com/en-LI/help/wealth/cryptocurrencies/crypto-staking/managing-my-crypto-staking/is-there-minimum-duration-of-staking/
 - https://help.revolut.com/en-DE/help/wealth/cryptocurrencies/crypto-staking/crypto-staking-costs-and-benefits/is-there-a-fee-associated-with-staking/
 
-Decision: `add_now`, subject to hardened duplicate scanning, corpus audit and review-only draft generation. If duplicate-clear, keep `launch_date` unresolved unless an explicit first-party original-launch source is found during canonical review. Beneficial-ownership language should be preserved as an attributed product statement and must not be converted into a universal legal-segregation, principal-protection or insolvency conclusion. Jurisdiction-specific fee and availability differences remain explicit.
+Scanner resolution: sole draft-eligible new candidate after Gemini duplicate resolution. Decision: `add_now`. Keep `launch_date` unresolved unless an explicit first-party original-launch source is found during canonical review. Beneficial-ownership language must remain an attributed product statement and must not be converted into a universal legal-segregation, principal-protection or insolvency conclusion. Jurisdiction-specific fee and availability differences remain explicit.
+
+## Batch result
+
+- `cya_candidate_000090` Revolut Crypto Staking remains the sole `add_now` candidate for Batch 55.
+- `cya_candidate_000089` Gemini Staking is removed from the active candidate ledger and preserved in `cya-consumed-duplicate-review-batch-55.json`.
+- canonical platform count remains 91.
+- next canonical platform ID remains `cya_plat_000092`.
+- next event ID remains `cya_ev_000338`.
+- replacement candidate numbering resumes at `cya_candidate_000091`.
 
 ## Required gate
 
-Both records remain staging-only. No canonical platform or event IDs are assigned here. Ordinary repository search returned no matching Gemini Staking or Revolut staking record but is not authoritative. The hardened candidate scanner must compare both identities, aliases and domains against the full 91-platform canonical corpus before promotion. Candidate draft generation remains review-only. Any duplicate must be resolved without consuming a canonical ID.
+Revolut remains staging-only. No canonical platform or event ID is assigned in this candidate-only PR. Hardened candidate scanning, corpus audit and review-only draft generation must all pass before promotion. No unsupported launch date, custody conclusion, principal guarantee, insolvency treatment or customer-outcome claim may be inferred.
