@@ -1,0 +1,32 @@
+[
+  {
+    "candidate_id": "cya_candidate_000097",
+    "canonical_name": "Bitvavo Staking",
+    "aliases": ["Bitvavo Earn Staking", "Bitvavo Flex Staking", "Bitvavo Fixed Staking"],
+    "domain": "bitvavo.com",
+    "duplicate_check": {
+      "checked_at": "2026-08-11",
+      "matched_platform_ids": ["cya_plat_000085"],
+      "notes": "The hardened candidate scanner classified Bitvavo Staking as an exact duplicate of canonical cya_plat_000085."
+    },
+    "decision": "duplicate",
+    "notes": "Do not create a second Bitvavo staking platform identity or consume a canonical platform ID. Current first-party terms may support later enrichment of cya_plat_000085, especially Foundation-held custody, Flex/Fixed Staking, slashing/protocol-loss risk, and the boundary where an asset eligible for both staking and lending may be assigned by Bitvavo to one service or the other.",
+    "first_seen_at": "2026-08-11",
+    "last_reviewed_at": "2026-08-11"
+  },
+  {
+    "candidate_id": "cya_candidate_000098",
+    "canonical_name": "Bitpanda Staking",
+    "aliases": ["Bitpanda Earn Staking", "Bitpanda Crypto Staking"],
+    "domain": "bitpanda.com",
+    "duplicate_check": {
+      "checked_at": "2026-08-11",
+      "matched_platform_ids": ["cya_plat_000083"],
+      "notes": "The hardened candidate scanner classified Bitpanda Staking as an exact duplicate of canonical cya_plat_000083."
+    },
+    "decision": "duplicate",
+    "notes": "Do not create a second Bitpanda staking platform identity or consume a canonical platform ID. The first-party 2022-05-10 launch announcement and current Staking Terms/Product material may support later evidence-backed enrichment of cya_plat_000083, while keeping Staking separate from Earn on Stablecoins.",
+    "first_seen_at": "2026-08-11",
+    "last_reviewed_at": "2026-08-11"
+  }
+]
