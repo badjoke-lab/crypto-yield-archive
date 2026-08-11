@@ -2,12 +2,13 @@
   {
     "phase": 8,
     "status": "growth_to_100",
-    "recorded_at": "2026-08-10",
-    "baseline_main_sha": "11a77b5990bd5acf1fbe6d51a8dc0f48e0a67b21",
+    "recorded_at": "2026-08-11",
+    "baseline_main_sha": "907689cd598f1fff9a04dbfc02e7ad7314b55244",
     "canonical_platforms": 90,
     "next_audit_milestone": 100,
-    "staged_candidate_ids": [],
-    "next_candidate_ids": ["cya_candidate_000087", "cya_candidate_000088"],
+    "staged_candidate_ids": ["cya_candidate_000087"],
+    "resolved_duplicate_ids": ["cya_candidate_000088"],
+    "next_candidate_ids": ["cya_candidate_000089", "cya_candidate_000090"],
     "next_platform_id": "cya_plat_000091",
     "next_event_id": "cya_ev_000337",
     "existing_needs_research": [
@@ -16,6 +17,6 @@
       {"candidate_id":"cya_candidate_000049","canonical_name":"Outlet Finance","blocking_questions":["underlying counterparty model","closure chronology","custody and repayment outcome"]}
     ],
     "promotion_policy": "Candidate-only staging first. No canonical IDs, writes, status changes or outcome inference before reviewed promotion.",
-    "next_action": "After the 90-platform canonical merge, exact-SHA verify the release and production surface. Then stage candidates 87 and 88 in the next reviewed batch toward the mandatory 100-platform full audit."
+    "next_action": "Batch 54 hardened scanning resolved Crypto.com On-Chain Staking candidate cya_candidate_000088 as an exact duplicate of canonical cya_plat_000019. No platform ID is consumed. Bitstamp Earn Staking cya_candidate_000087 remains the sole add_now candidate. If all candidate-only gates pass, promote Bitstamp separately beginning at cya_plat_000091 and cya_ev_000337, then exact-SHA production verify before the next batch."
   }
 ]
