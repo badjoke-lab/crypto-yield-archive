@@ -20,21 +20,19 @@ Permanent operating rules remain in `docs/record-growth-plan.md` and `docs/devel
 - Repository validation, Cloudflare deployment, and direct production observation are separate claims.
 - At 100 platforms, record growth stops until the mandatory full-corpus audit is completed and production-verified.
 
-## Current promotion state
+## Current confirmed baseline
 
 ```text
 Repository:                  badjoke-lab/crypto-yield-archive
 Default branch:              main
-Verified canonical 94 SHA:   89db1785eefc5e486a8349a889edc5f52f0eaeaf
-Candidate-only PR:           #163 merged
-Candidate-only SHA:          c5a2ad22262712ef4f747bb166b4e91b1e55e750
-Batch 57 canonical targets:  cya_plat_000095 Ndax Staking
-                             cya_plat_000096 VALR Staking
-Growth state after merge:    96 -> 100
+Canonical 96 SHA:            b7a8c41b1d4637ea27a528adf1f5c152f2af5bfd
+Latest canonical PR:         #164
+Production Surface Check:    #189 success
+Growth state:                96 -> 100
 Next audit milestone:        100
 ```
 
-### Expected canonical scale after Batch 57 promotion
+### Canonical scale
 
 ```text
 Platforms:       96
@@ -45,7 +43,7 @@ Products:        137
 Terms risk:       96
 ```
 
-Both Batch 57 candidates passed the hardened 94-platform scanner as draft-eligible with no unsafe canonical match. Ndax has a first-party launch date of 2022-02-15 and VALR a first-party launch date of 2023-06-27, so `cya_ev_000338` and `cya_ev_000339` are consumed as reviewed launch events.
+Batch 57 promoted Ndax Staking and VALR Staking. The exact 96-platform SHA passed the production gate: Cloudflare wait, current production surface, and production desktop/mobile capture all succeeded before Batch 58 staging.
 
 ## Recent growth
 
@@ -56,46 +54,47 @@ Batch 54: Bitstamp Earn Staking                      90 -> 91
 Batch 55: Revolut Crypto Staking                     91 -> 92
           Gemini candidate duplicate                 no new ID
 Batch 56: Bitso Earnings + Luno Staking              92 -> 94
-Batch 57: Ndax Staking + VALR Staking                94 -> 96 target
+Batch 57: Ndax Staking + VALR Staking                94 -> 96
+Batch 58 candidate gate                              current
 ```
 
 Every addition uses a candidate-only gate followed by a separate canonical PR. Duplicate findings do not consume canonical IDs.
 
-## Batch 57 reviewed boundary
-
-### Ndax Staking
-
-- `cya_candidate_000093` passed hardened full-corpus scanning as draft-eligible;
-- canonical target is `cya_plat_000095` with launch event `cya_ev_000338` dated `2022-02-15`;
-- current Ndax material documents opt-in staking, third-party validators, non-guaranteed rewards, bonding/unbonding, redemption choices, slashing/on-chain risk and administration fees;
-- current User Agreement states users receive full rights, interests and title to Virtual Assets purchased on the platform and describes custody arrangements for on-platform assets;
-- `customer_owned` is grounded in those express current title/custody terms and does not eliminate staking-specific protocol, validator, platform or insolvency risk.
-
-### VALR Staking
-
-- `cya_candidate_000094` passed hardened full-corpus scanning as draft-eligible;
-- canonical target is `cya_plat_000096` with launch event `cya_ev_000339` dated `2023-06-27`;
-- current VALR Terms explicitly state that rights, title and ownership of Staked Assets remain with the eligible account holder, that the assets are held for the account holder and are not VALR property or subject to VALR creditor claims;
-- current terms also document protocol-derived rewards, commissions, unstaking periods, non-guaranteed rewards and slashing risk;
-- `customer_owned` is therefore directly grounded in staking-specific governing terms, but does not eliminate protocol, validator, market or operational risk.
-
-## Queue after Batch 57 canonical promotion
+## Candidate queue
 
 ```text
 Queue status:            growth_to_100
 Canonical platforms:     96
-Active staged candidates: none
-Next candidate IDs:      cya_candidate_000095 / cya_candidate_000096
+Verified baseline SHA:   b7a8c41b1d4637ea27a528adf1f5c152f2af5bfd
+Staged candidates:       cya_candidate_000095 / cya_candidate_000096
+Next candidate IDs:      cya_candidate_000097 / cya_candidate_000098
 Next platform ID:        cya_plat_000097
 Next event ID:           cya_ev_000340
 Next audit milestone:    100 platforms
+Latest completed batch:  57
 ```
 
 Long-lived `needs_research` candidates remain Goldfinch, Cabital and Outlet Finance and are blocked from silent promotion.
 
-## Production sequencing rule
+## Batch 58 candidate-only gate
 
-For every canonical, audit, or state-transition release:
+### `cya_candidate_000095` — Newton Earn (Staking)
+
+- current Newton first-party material documents active Earn/Staking, approved validators, custodian-controlled dedicated wallets, protocol-derived rewards, fees, bonding/unbonding and slashing risk;
+- current Terms state account Digital Assets are fully-paid assets beneficially owned by customers, not Newton, and held in trust;
+- staked assets remain in Newton omnibus accounts with the custodian, remain attributed to the user's account, and custody/possession/control is not transferred to validators;
+- reviewed sources do not establish one exact original launch date, so no launch date may be invented.
+
+### `cya_candidate_000096` — Wealthsimple Crypto Staking
+
+- current Wealthsimple first-party material documents SOL/ETH/ADA/DOT staking through approved third-party validators from custodial wallets;
+- current Crypto Product Risk Disclosure states customer cryptoassets are fully-paid assets beneficially owned by customers, held in trust and segregated from Wealthsimple's own assets;
+- rewards are variable/non-guaranteed, fees apply, warm-up/cool-down periods exist and slashing risk remains;
+- reviewed sources do not establish one exact original launch date, so no launch date may be invented.
+
+Both remain candidate-only until hardened full-corpus scanning and review-only draft generation pass.
+
+## Production sequencing rule
 
 1. merge the reviewed PR;
 2. freeze `main`;
@@ -107,9 +106,10 @@ For every canonical, audit, or state-transition release:
 ## Immediate next action
 
 ```text
-1. Complete the Batch 57 Ndax/VALR canonical PR and require all repository, candidate, SEO, preview and representative-surface checks to pass.
-2. Merge only after those gates succeed.
-3. Freeze main on the resulting exact 96-platform SHA and require Cloudflare exact-SHA deployment, Production Surface Check and production/representative screenshots to pass.
-4. Only after that verification, stage candidates cya_candidate_000095 and cya_candidate_000096 from the verified 96-platform baseline.
-5. Continue to 100, then stop for the mandatory full-corpus audit before any platform 101 work.
+1. Run Batch 58 candidate-only gates for Newton and Wealthsimple against exact production-verified 96-platform SHA b7a8c41b1d4637ea27a528adf1f5c152f2af5bfd.
+2. Resolve any duplicate without consuming a canonical ID.
+3. If corrected gates pass, merge candidate-only without touching data/.
+4. Open a separate canonical promotion PR beginning at cya_plat_000097; keep cya_ev_000340 unconsumed unless a dated event is explicitly evidence-backed.
+5. Exact-SHA production verify the resulting release before the final growth batch.
+6. Reach 100, then stop for the mandatory full-corpus audit before any platform 101 work.
 ```
