@@ -1,0 +1,27 @@
+[
+  {
+    "id": "cya_plat_000101",
+    "slug": "xora-finance",
+    "canonical_name": "XORA Finance",
+    "aliases": [
+      "XORA",
+      "Xora Finance"
+    ],
+    "type": "centralized_yield",
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": null,
+    "end_date": null,
+    "country_or_origin": "Sweden / Global",
+    "summary": "Custodial XRP yield platform using a shared XRPL treasury with per-user destination tags and off-chain balance accounting. Current first-party material says the native XRP yield is treasury-subsidized during bootstrap, while future XRPL AMM and lending allocations remain roadmap items.",
+    "what_happened": "XORA operates a custodial XRP yield service using a shared XRPL treasury and per-user destination tags. Current first-party materials state that deposited balances are held in XORA-managed custodial wallets, that the native XRP yield is currently subsidized from a finite treasury reserve, and that withdrawal holds or limits may be imposed for security or compliance purposes. CYA independently reproduced one successful 29,899.8 XRP payment on 2026-07-13 to the XORA-attributed treasury with destination tag 287588244. On 2026-08-03 and 2026-08-04, claimant Hwan published a withdrawal dispute and screenshots depicting a support explanation tying the same destination tag to a manual AML hold, plus a separate conflicting phishing/no-account explanation. Those screenshots are claimant-published evidence, not authenticated XORA internal records. The requested withdrawal destination, final settlement, customer outcome, and operating legal entity remain unresolved. CYA does not classify the case as fraud, scam, insolvency, permanent loss, or a platform-wide withdrawal suspension.",
+    "official_url_original": "https://xora.finance/",
+    "official_domain_original": "xora.finance",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://xora.finance/",
+    "confidence": "medium",
+    "last_verified_at": "2026-08-12",
+    "uncertainty_notes": "Current custody, yield-source and withdrawal-control language are supported by XORA's June 2026 materials, and the 29,899.8 XRP deposit leg is independently reproduced on XRPL. However, CYA has not independently authenticated the claimant-published support screenshots, verified the requested withdrawal destination or final settlement, established the claimant's ultimate customer outcome, or identified a verified operating legal entity. Stockholm/Sweden is recorded as operating origin, not as a legal-incorporation conclusion.",
+    "notes": "Keep the incident boundary narrow. Active status means current first-party materials and the live site present XORA as operating; it does not imply that every user can withdraw without delay. Do not infer platform-wide withdrawal suspension, fraud, insolvency, reserve sufficiency, or customer loss from the documented dispute."
+  }
+]
