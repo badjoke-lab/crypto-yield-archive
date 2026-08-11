@@ -1,0 +1,43 @@
+name: XORA XRPL research
+
+on:
+  push:
+    branches:
+      - phase9/xora-xrpl-probe
+    paths:
+      - scripts/research-xrpl-payment.mjs
+      - .github/workflows/xora-xrpl-research.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Probe XORA treasury history
+        run: |
+          node scripts/research-xrpl-payment.mjs \
+            --account rhbErkS2d4H82tRbdGyFkhhc4LNtjKaC3o \
+            --target-drops 29899800000 \
+            --server https://s2.ripple.com:51234/ \
+            --output artifacts/xora-xrpl-payment-research.json
+
+      - name: Upload research result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: xora-xrpl-payment-research
+          path: artifacts/xora-xrpl-payment-research.json
+          if-no-files-found: warn
+          retention-days: 30
