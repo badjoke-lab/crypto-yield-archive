@@ -1,12 +1,6 @@
 name: XORA social evidence research
 
 on:
-  push:
-    branches:
-      - phase9/xora-social-evidence-probe
-    paths:
-      - scripts/research-x-posts.mjs
-      - .github/workflows/xora-social-evidence-research.yml
   workflow_dispatch:
 
 permissions:
