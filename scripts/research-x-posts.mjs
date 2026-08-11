@@ -4,6 +4,7 @@ import path from 'node:path';
 const posts = [
   { id: '2084884136523948149', user: 'RippleXity' },
   { id: '2084604284122038562', user: 'gimgyeongh62101' },
+  { id: '2084206277757161565', user: 'gimgyeongh62101' },
   { id: '2084227389442462069', user: 'XRPDegens' },
   { id: '2084608721343398018', user: 'DNF_sol' },
 ];
@@ -78,7 +79,31 @@ async function resolveShortUrl(url) {
   }
 }
 
+async function downloadMedia(url, destination) {
+  try {
+    const response = await fetch(url, {
+      headers: { 'user-agent': 'crypto-yield-archive-research/1.0' },
+      signal: AbortSignal.timeout(30_000),
+    });
+    if (!response.ok) return { ok: false, status: response.status, url };
+    const bytes = Buffer.from(await response.arrayBuffer());
+    await fs.mkdir(path.dirname(destination), { recursive: true });
+    await fs.writeFile(destination, bytes);
+    return {
+      ok: true,
+      status: response.status,
+      url,
+      destination,
+      bytes: bytes.length,
+      content_type: response.headers.get('content-type'),
+    };
+  } catch (error) {
+    return { ok: false, url, error: String(error) };
+  }
+}
+
 const results = [];
+const mediaManifest = [];
 for (const post of posts) {
   const canonicalUrl = `https://twitter.com/${post.user}/status/${post.id}`;
   const xUrl = `https://x.com/${post.user}/status/${post.id}`;
@@ -89,6 +114,18 @@ for (const post of posts) {
   const resolvedLinks = [];
   for (const shortUrl of shortUrls) {
     resolvedLinks.push({ short_url: shortUrl, ...(await resolveShortUrl(shortUrl)) });
+  }
+
+  const mediaDownloads = [];
+  const mediaDetails = Array.isArray(syndication.json?.mediaDetails) ? syndication.json.mediaDetails : [];
+  for (const [index, media] of mediaDetails.entries()) {
+    if (!media?.media_url_https) continue;
+    const parsed = new URL(media.media_url_https);
+    const ext = path.extname(parsed.pathname) || '.bin';
+    const destination = `artifacts/xora-social-media/${post.id}-${index + 1}${ext}`;
+    const downloaded = await downloadMedia(media.media_url_https, destination);
+    mediaDownloads.push({ type: media.type ?? null, ...downloaded });
+    mediaManifest.push({ post_id: post.id, type: media.type ?? null, ...downloaded });
   }
 
   results.push({
@@ -104,13 +141,15 @@ for (const post of posts) {
     syndication_token: token,
     syndication,
     resolved_links: resolvedLinks,
+    media_downloads: mediaDownloads,
   });
 }
 
 const report = {
   generated_at: new Date().toISOString(),
-  purpose: 'Preserve publicly retrievable text/metadata for X posts cited in the XORA Finance incident research without treating unavailable or screenshot-only content as fact.',
+  purpose: 'Preserve publicly retrievable text/metadata/media for X posts cited in the XORA Finance incident research without treating unavailable or screenshot-only content as fact.',
   posts: results,
+  media_manifest: mediaManifest,
 };
 
 const output = process.argv[2] || 'artifacts/xora-social-evidence.json';
