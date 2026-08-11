@@ -1,6 +1,6 @@
 # CYA record growth execution roadmap
 
-Status: Phase 8 — final growth gate from 98 to 100  
+Status: Phase 8 — 100-platform milestone / mandatory audit gate  
 Project: Crypto Yield Archive (CYA)  
 Last baseline review: 2026-08-11
 
@@ -14,37 +14,38 @@ Permanent operating rules remain in `docs/record-growth-plan.md` and `docs/devel
 
 - `data/` is canonical.
 - Candidates and generated drafts remain under `data-staging/` or workflow artifacts until reviewed.
-- Use one candidate-only PR followed by one separate canonical PR for new records.
+- Candidate-only review and canonical promotion remain separate operations.
 - Never infer repayment completion, recovery rate, custody, ownership, principal protection, fraud, or customer outcome from marketing or candidate metadata.
 - Product, legal-entity, jurisdiction, terms-version, custody, identity, and customer-outcome boundaries require explicit review.
 - Repository validation, Cloudflare deployment, and direct production observation are separate claims.
-- At 100 platforms, record growth stops until the mandatory full-corpus audit is completed and production-verified.
+- At 100 platforms, record growth is locked until the mandatory full-corpus audit is completed and production-verified.
 
-## Current confirmed baseline
+## Confirmed pre-promotion baseline
 
 ```text
 Repository:                  badjoke-lab/crypto-yield-archive
 Default branch:              main
-Canonical 98 SHA:            ef6426842399071c82ce6bfc388347fec3296f66
-Latest canonical PR:         #166
+Verified canonical 98 SHA:   ef6426842399071c82ce6bfc388347fec3296f66
 Production Surface Check:    #190 success
-Final candidate PR:          #167 open / draft
-Growth state:                98 -> 100 final gate
-Next audit milestone:        100
+Final candidate PR:          #167 merged
+Final candidate-only SHA:    337a073e197e5b4d1b2ffd9f6364944059b5d71a
+Batch 59 canonical targets:  cya_plat_000099 Bit2Me Earn
+                             cya_plat_000100 Coinmerce Earn
+Milestone after promotion:   100 platforms
 ```
 
-### Canonical scale
+### Expected canonical scale after Batch 59 promotion
 
 ```text
-Platforms:       98
+Platforms:       100
 Events:          334
-Evidence:        581
-Outcomes:         98
-Products:        139
-Terms risk:       98
+Evidence:        587
+Outcomes:        100
+Products:        141
+Terms risk:      100
 ```
 
-Batch 58 promoted Newton Earn (Staking) and Wealthsimple Crypto Staking. The exact 98-platform SHA passed Cloudflare deployment wait, current production surface verification, and production desktop/mobile capture before Batch 59 staging.
+No Batch 59 event is created. The reviewed first-party sources do not establish one exact original launch date for the broad Bit2Me Earn or Coinmerce Earn products, so `cya_ev_000340` remains unconsumed.
 
 ## Recent growth
 
@@ -57,14 +58,14 @@ Batch 55: Revolut Crypto Staking                     91 -> 92
 Batch 56: Bitso Earnings + Luno Staking              92 -> 94
 Batch 57: Ndax Staking + VALR Staking                94 -> 96
 Batch 58: Newton Earn + Wealthsimple Crypto Staking  96 -> 98
-Batch 59 candidate gate                              current / final growth gate
+Batch 59: Bit2Me Earn + Coinmerce Earn               98 -> 100 target
 ```
 
-Every addition uses a candidate-only gate followed by a separate canonical PR. Duplicate findings do not consume canonical IDs.
+Every addition used a candidate-only gate followed by a separate canonical PR. Duplicate findings did not consume canonical IDs.
 
-## Batch 59 hardened-scan corrections
+## Final candidate-gate corrections
 
-Three attempted final-growth candidates were rejected by the full-corpus scanner and consume no canonical IDs:
+The hardened full-corpus scanner rejected three attempted final-growth candidates as exact duplicates:
 
 ```text
 cya_candidate_000097 Bitvavo Staking   exact_duplicate -> cya_plat_000085
@@ -72,67 +73,63 @@ cya_candidate_000098 Bitpanda Staking  exact_duplicate -> cya_plat_000083
 cya_candidate_000100 KriptoEarn        exact_duplicate -> cya_plat_000054
 ```
 
-All three are preserved in the Batch 59 duplicate-review ledger. Their reviewed first-party material may support later enrichment of the existing canonical records.
+All three remain in the duplicate-review ledger for possible evidence-backed enrichment of their existing canonical records. No new platform or event ID was consumed for them.
 
-Bit2Me Earn (`cya_candidate_000099`) passed the corrected 98-platform scanner as draft-eligible and remains active.
+The corrected final scanner reported five active/retained candidates with two draft-eligible records and no unsafe add-now match. Those two records are Bit2Me Earn and Coinmerce Earn.
 
-## Corrected final candidate queue
+## Batch 59 reviewed boundary
+
+### Bit2Me Earn — `cya_plat_000099`
+
+- product-scoped centralized yield record;
+- current dedicated Earn terms state users transfer and lock eligible cryptoassets in favor of Bit2Me for variable rewards;
+- the reviewed terms permit Bit2Me to transfer, dispose of or use those assets during the Earn period;
+- separate ETH 2.0 terms document staking within Bit2Me Earn, but that later rollout date is not substituted for the broad Earn launch date;
+- terms classification is `platform_owned`, limited to assets subject to the reviewed Earn arrangement;
+- ordinary Bit2Me wallet custody treatment is not generalized to Earn assets;
+- no principal, reward, liquidity or insolvency guarantee is inferred.
+
+### Coinmerce Earn — `cya_plat_000100`
+
+- product-scoped centralized yield/lending record;
+- current first-party terms define the client as lender and Coinmerce Earn B.V. as borrower of eligible assets dedicated to Earn;
+- dedicated Earn assets leave the ordinary Foundation custody structure and may be used for on-lending or staking with third parties;
+- terms classification is `platform_owned`, grounded in the explicit lender/borrower structure and movement of assets outside ordinary Foundation custody;
+- ordinary Coinmerce custody segregation is not generalized to Earn assets;
+- no principal, reward, counterparty or insolvency guarantee is inferred.
+
+## Milestone lock after Batch 59
 
 ```text
-Queue status:             growth_to_100
-Canonical platforms:      98
-Verified baseline SHA:    ef6426842399071c82ce6bfc388347fec3296f66
-Staged candidates:        cya_candidate_000099 / cya_candidate_000101
-Resolved duplicates:      cya_candidate_000097 / cya_candidate_000098 / cya_candidate_000100
-Next candidate IDs:       cya_candidate_000102 / cya_candidate_000103
-Next platform ID:         cya_plat_000099
+Queue status:             audit_required
+Canonical platforms:      100
+Active staged candidates: none
+Next candidate IDs:       none while audit lock is active
+Next platform ID:         not allocated
 Next event ID:            cya_ev_000340
-Next audit milestone:     100 platforms
+Audit milestone:          100 platforms
 ```
 
-Long-lived `needs_research` candidates remain Goldfinch, Cabital and Outlet Finance and are blocked from silent promotion.
+Long-lived `needs_research` candidates remain Goldfinch, Cabital and Outlet Finance. They remain blocked from silent promotion while the milestone audit lock is active.
 
-## Active final candidate boundary
+## 100-platform production sequencing rule
 
-### `cya_candidate_000099` — Bit2Me Earn
-
-- current dedicated Bit2Me Earn terms describe users transferring and locking eligible cryptoassets in favor of Bit2Me to receive variable rewards;
-- the Earn terms permit Bit2Me to transfer, dispose of or use transferred/locked assets during the Earn period and document withdrawal, suspension and service-specific risks;
-- separate ETH 2.0 terms document proof-of-stake staking within Bit2Me Earn, but the 2023 ETH rollout date must not be substituted for the broad Earn product launch date;
-- ownership/custody treatment must follow the Earn-specific transfer/use terms rather than ordinary wallet custody language;
-- the corrected hardened scan classified Bit2Me Earn as draft-eligible;
-- reviewed sources do not establish one exact original launch date for the broad Earn product.
-
-### `cya_candidate_000101` — Coinmerce Earn
-
-- Coinmerce currently offers the Earn Program through a Yield Account in cooperation with Coinmerce Earn B.V.;
-- current first-party terms define the client as lender and Coinmerce Earn as borrower of eligible cryptoassets dedicated to Earn;
-- Earn assets are transferred out of Foundation custody to Coinmerce Earn, which may use them for on-lending and staking with third parties to generate yield;
-- current terms distinguish Yield Account assets dedicated to Earn from ordinary Foundation-held custody assets and document weekly rewards and Yield Account risks;
-- ordinary Coinmerce custody segregation must not be generalized to assets lent into Earn;
-- reviewed sources establish current operation but do not establish one exact original Earn launch date.
-
-Coinmerce remains candidate-only until the rerun hardened full-corpus scanner and review-only draft generation pass.
-
-## Production sequencing rule
-
-1. merge the reviewed candidate-only PR only after the corrected scanner and all candidate checks succeed;
-2. open a separate canonical PR only for scanner-cleared candidates;
-3. promote only enough records to reach exactly 100 platforms;
-4. merge only after repository, candidate, SEO, preview and representative-surface checks succeed;
-5. freeze `main` on the resulting 100-platform SHA;
-6. require Cloudflare exact-SHA deployment, `/version.json` consistency, Production Surface Check and production/representative screenshots to succeed;
-7. immediately stop record growth and begin the mandatory full-corpus audit;
-8. do not create or stage platform 101 before the audit is completed and production-verified.
+1. complete the final Batch 59 canonical PR and require repository, candidate, SEO, preview and representative-surface checks to pass;
+2. merge only after all gates succeed;
+3. freeze `main` on the exact resulting 100-platform SHA;
+4. require Cloudflare exact-SHA deployment, `/version.json` consistency, Production Surface Check and production/representative screenshots to succeed;
+5. keep record growth locked;
+6. run the mandatory full-corpus audit across platforms, events, evidence, outcomes, products, terms-risk, cross-file references, machine-readable outputs, build surfaces and representative production pages;
+7. fix any blocker through reviewed audit PRs and production-verify the audit release;
+8. only an explicit successful audit state transition may release future growth; do not allocate or stage platform 101 before that.
 
 ## Immediate next action
 
 ```text
-1. Rerun Batch 59 candidate-only gates for scanner-cleared Bit2Me Earn and replacement Coinmerce Earn against exact production-verified 98-platform SHA ef6426842399071c82ce6bfc388347fec3296f66.
-2. Resolve any further duplicate without consuming a canonical ID and replace it inside the same candidate-only gate.
-3. Merge candidate-only only when the corrected scanner and all workflows pass.
-4. Open the final canonical promotion PR beginning at cya_plat_000099 and promote only enough reviewed records to reach exactly 100.
-5. Use cya_ev_000340 only for an explicitly evidence-backed dated event; otherwise leave event IDs unconsumed.
-6. Production-verify the exact 100-platform SHA.
-7. Stop growth and execute the mandatory full-corpus audit before any platform 101 work.
+1. Run all canonical gates for Batch 59 Bit2Me Earn and Coinmerce Earn.
+2. Merge only if every required workflow succeeds.
+3. Freeze main on the exact 100-platform SHA and production-verify it.
+4. Keep phase-8 entry queue at audit_required with no next platform ID allocated.
+5. Run the mandatory full-corpus audit immediately after production verification.
+6. Do not stage, assign or promote platform 101 before the audit is completed and production-verified.
 ```
