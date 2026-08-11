@@ -10,6 +10,7 @@ on:
       - 'public/**'
       - 'functions/**'
       - 'scripts/**'
+      - 'docs/**'
       - 'astro.config.mjs'
       - 'package.json'
       - 'package-lock.json'
