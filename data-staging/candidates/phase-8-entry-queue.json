@@ -6,9 +6,9 @@
     "baseline_main_sha": "ef6426842399071c82ce6bfc388347fec3296f66",
     "canonical_platforms": 98,
     "next_audit_milestone": 100,
-    "staged_candidate_ids": ["cya_candidate_000099", "cya_candidate_000100"],
-    "resolved_duplicate_ids": ["cya_candidate_000088", "cya_candidate_000089", "cya_candidate_000097", "cya_candidate_000098"],
-    "next_candidate_ids": ["cya_candidate_000101", "cya_candidate_000102"],
+    "staged_candidate_ids": ["cya_candidate_000099", "cya_candidate_000101"],
+    "resolved_duplicate_ids": ["cya_candidate_000088", "cya_candidate_000089", "cya_candidate_000097", "cya_candidate_000098", "cya_candidate_000100"],
+    "next_candidate_ids": ["cya_candidate_000102", "cya_candidate_000103"],
     "next_platform_id": "cya_plat_000099",
     "next_event_id": "cya_ev_000340",
     "existing_needs_research": [
@@ -17,6 +17,6 @@
       {"candidate_id":"cya_candidate_000049","canonical_name":"Outlet Finance","blocking_questions":["underlying counterparty model","closure chronology","custody and repayment outcome"]}
     ],
     "promotion_policy": "Candidate-only staging first. No canonical IDs, writes, status changes or outcome inference before reviewed promotion.",
-    "next_action": "Rerun the final Phase 8 hardened candidate gate for cya_candidate_000099 Bit2Me Earn and cya_candidate_000100 KriptoEarn against exact production-verified 98-platform SHA ef6426842399071c82ce6bfc388347fec3296f66. Bitvavo Staking and Bitpanda Staking were exact duplicates and consumed no canonical IDs. Resolve any further duplicate without consuming a canonical ID. If enough replacement candidates are promotion-ready, use a separate canonical PR beginning at cya_plat_000099 and reach exactly 100 platforms. Event ID cya_ev_000340 may be consumed only for an explicitly evidence-backed dated event. At 100, stop record growth for the mandatory full-corpus audit before any platform 101 work."
+    "next_action": "Rerun the final Phase 8 hardened candidate gate for scanner-cleared cya_candidate_000099 Bit2Me Earn plus replacement cya_candidate_000101 Coinmerce Earn against exact production-verified 98-platform SHA ef6426842399071c82ce6bfc388347fec3296f66. Bitvavo Staking, Bitpanda Staking and KriptoEarn were exact duplicates and consumed no canonical IDs. Resolve any further duplicate without consuming a canonical ID. If both active candidates are promotion-ready, use a separate canonical PR beginning at cya_plat_000099 and reach exactly 100 platforms. Event ID cya_ev_000340 may be consumed only for an explicitly evidence-backed dated event. At 100, stop record growth for the mandatory full-corpus audit before any platform 101 work."
   }
 ]
