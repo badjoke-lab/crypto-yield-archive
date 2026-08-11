@@ -1,0 +1,16 @@
+[
+  {
+    "candidate_id": "cya_candidate_000102",
+    "canonical_name": "XORA Finance",
+    "domain": "xora.finance",
+    "decision": "already_recorded",
+    "duplicate_check": {
+      "checked_at": "2026-08-12",
+      "matched_platform_ids": ["cya_plat_000101"],
+      "notes": "Promoted only after repeated hardened scans found no canonical duplicate and the candidate-only review advanced XORA to add_now against the 100-platform corpus."
+    },
+    "notes": "Promoted to cya_plat_000101 with one narrowly scoped incident event, cya_ev_000340. The record preserves independently reproduced XRPL deposit facts separately from claimant-published support narratives and leaves requested withdrawal destination, final settlement, customer outcome and operating legal entity unresolved. No fraud, scam, insolvency, permanent-loss or platform-wide withdrawal-suspension classification is inferred.",
+    "first_seen_at": "2026-08-11",
+    "last_reviewed_at": "2026-08-12"
+  }
+]
