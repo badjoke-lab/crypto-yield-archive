@@ -119,13 +119,27 @@ for (const post of posts) {
   const mediaDownloads = [];
   const mediaDetails = Array.isArray(syndication.json?.mediaDetails) ? syndication.json.mediaDetails : [];
   for (const [index, media] of mediaDetails.entries()) {
-    if (!media?.media_url_https) continue;
-    const parsed = new URL(media.media_url_https);
-    const ext = path.extname(parsed.pathname) || '.bin';
-    const destination = `artifacts/xora-social-media/${post.id}-${index + 1}${ext}`;
-    const downloaded = await downloadMedia(media.media_url_https, destination);
-    mediaDownloads.push({ type: media.type ?? null, ...downloaded });
-    mediaManifest.push({ post_id: post.id, type: media.type ?? null, ...downloaded });
+    if (media?.media_url_https) {
+      const parsed = new URL(media.media_url_https);
+      const ext = path.extname(parsed.pathname) || '.bin';
+      const destination = `artifacts/xora-social-media/${post.id}-${index + 1}${ext}`;
+      const downloaded = await downloadMedia(media.media_url_https, destination);
+      mediaDownloads.push({ type: media.type ?? null, role: 'poster_or_photo', ...downloaded });
+      mediaManifest.push({ post_id: post.id, type: media.type ?? null, role: 'poster_or_photo', ...downloaded });
+    }
+
+    if (media?.type === 'video' && Array.isArray(media?.video_info?.variants)) {
+      const mp4s = media.video_info.variants
+        .filter((variant) => variant?.content_type === 'video/mp4' && variant?.url)
+        .sort((a, b) => (a.bitrate ?? 0) - (b.bitrate ?? 0));
+      const preferred = [...mp4s].reverse().find((variant) => (variant.bitrate ?? 0) <= 3_000_000) ?? mp4s.at(-1);
+      if (preferred) {
+        const destination = `artifacts/xora-social-media/${post.id}-video.mp4`;
+        const downloaded = await downloadMedia(preferred.url, destination);
+        mediaDownloads.push({ type: 'video', role: 'video_variant', bitrate: preferred.bitrate ?? null, ...downloaded });
+        mediaManifest.push({ post_id: post.id, type: 'video', role: 'video_variant', bitrate: preferred.bitrate ?? null, ...downloaded });
+      }
+    }
   }
 
   results.push({
