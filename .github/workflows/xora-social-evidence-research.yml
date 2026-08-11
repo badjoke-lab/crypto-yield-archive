@@ -1,0 +1,34 @@
+name: XORA social evidence research
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Probe public X post endpoints
+        run: node scripts/research-x-posts.mjs artifacts/xora-social-evidence.json
+
+      - name: Upload research result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: xora-social-evidence
+          path: |
+            artifacts/xora-social-evidence.json
+            artifacts/xora-social-media/
+          if-no-files-found: warn
+          retention-days: 30
