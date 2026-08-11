@@ -79,15 +79,15 @@
     "platform_id": "cya_plat_000101",
     "event_id": "cya_ev_000340",
     "source_type": "database_reference",
-    "title": "Phase 9A XORA XRPL payment research result",
-    "url": "https://github.com/badjoke-lab/crypto-yield-archive/blob/main/data-staging/research/xora-xrpl-payment-research-2026-08-12.json",
+    "title": "XORA Finance XRPL payment verification — 2026-08-12",
+    "url": "https://github.com/badjoke-lab/crypto-yield-archive/blob/main/docs/research/xora-xrpl-payment-verification-2026-08-12.md",
     "publisher": "Crypto Yield Archive reproducible XRPL probe",
     "published_at": "2026-08-12",
     "archived_url": null,
     "accessed_at": "2026-08-12",
     "reliability": "medium",
     "claim_scope": "event",
-    "notes": "Repository-preserved reproducible Ripple full-history account_tx probe. It scanned the XORA-attributed treasury history and found exactly one successful delivered-amount match for 29,899.8 XRP: transaction 4FD202B3DB7ADCA94ABDF3CC06762A3B2DD615532E13B531B1737E14788C09AA, ledger 105566760, destination tag 287588244, validated 2026-07-13T09:02:02Z."
+    "notes": "Public repository provenance for the reproducible Ripple full-history account_tx probe. It scanned the XORA-attributed treasury history and found exactly one successful delivered-amount match for 29,899.8 XRP: transaction 4FD202B3DB7ADCA94ABDF3CC06762A3B2DD615532E13B531B1737E14788C09AA, ledger 105566760, destination tag 287588244, validated 2026-07-13T09:02:02Z."
   },
   {
     "id": "cya_src_b60_0007",
