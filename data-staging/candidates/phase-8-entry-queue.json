@@ -3,13 +3,13 @@
     "phase": 8,
     "status": "growth_to_100",
     "recorded_at": "2026-08-11",
-    "baseline_main_sha": "d5610cf53d04b4d4a89419bca4dfab8bc51dc0ae",
-    "canonical_platforms": 92,
+    "baseline_main_sha": "a3248cf463bcd08de0efa68baae9742d8997763d",
+    "canonical_platforms": 94,
     "next_audit_milestone": 100,
-    "staged_candidate_ids": ["cya_candidate_000091", "cya_candidate_000092"],
+    "staged_candidate_ids": [],
     "resolved_duplicate_ids": ["cya_candidate_000088", "cya_candidate_000089"],
     "next_candidate_ids": ["cya_candidate_000093", "cya_candidate_000094"],
-    "next_platform_id": "cya_plat_000093",
+    "next_platform_id": "cya_plat_000095",
     "next_event_id": "cya_ev_000338",
     "existing_needs_research": [
       {"candidate_id":"cya_candidate_000010","canonical_name":"Goldfinch","blocking_questions":["DeFi/institutional-yield scope","entity and product boundary"]},
@@ -17,6 +17,6 @@
       {"candidate_id":"cya_candidate_000049","canonical_name":"Outlet Finance","blocking_questions":["underlying counterparty model","closure chronology","custody and repayment outcome"]}
     ],
     "promotion_policy": "Candidate-only staging first. No canonical IDs, writes, status changes or outcome inference before reviewed promotion.",
-    "next_action": "Run Batch 56 hardened candidate scanning and review-only draft generation for cya_candidate_000091 Bitso Earnings and cya_candidate_000092 Luno Staking against exact production-verified 92-platform SHA d5610cf53d04b4d4a89419bca4dfab8bc51dc0ae. Resolve any duplicate without consuming a canonical ID. If promotion-ready, use a separate canonical PR beginning at cya_plat_000093. Event ID cya_ev_000338 remains the next evidence-backed event ID and must not be consumed unless a dated event is explicitly supported."
+    "next_action": "After the Bitso/Luno canonical promotion merges and its exact production SHA passes Production Surface Check and representative screenshots, stage replacement candidates cya_candidate_000093 and cya_candidate_000094 from the verified 94-platform baseline. Event ID cya_ev_000338 remains unconsumed because no exact original Bitso Earnings or Luno Staking launch event was asserted."
   }
 ]
