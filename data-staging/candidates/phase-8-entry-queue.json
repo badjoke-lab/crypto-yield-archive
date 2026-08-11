@@ -3,20 +3,20 @@
     "phase": 8,
     "status": "growth_to_100",
     "recorded_at": "2026-08-11",
-    "baseline_main_sha": "89db1785eefc5e486a8349a889edc5f52f0eaeaf",
-    "canonical_platforms": 94,
+    "baseline_main_sha": "c5a2ad22262712ef4f747bb166b4e91b1e55e750",
+    "canonical_platforms": 96,
     "next_audit_milestone": 100,
-    "staged_candidate_ids": ["cya_candidate_000093", "cya_candidate_000094"],
+    "staged_candidate_ids": [],
     "resolved_duplicate_ids": ["cya_candidate_000088", "cya_candidate_000089"],
     "next_candidate_ids": ["cya_candidate_000095", "cya_candidate_000096"],
-    "next_platform_id": "cya_plat_000095",
-    "next_event_id": "cya_ev_000338",
+    "next_platform_id": "cya_plat_000097",
+    "next_event_id": "cya_ev_000340",
     "existing_needs_research": [
       {"candidate_id":"cya_candidate_000010","canonical_name":"Goldfinch","blocking_questions":["DeFi/institutional-yield scope","entity and product boundary"]},
       {"candidate_id":"cya_candidate_000045","canonical_name":"Cabital","blocking_questions":["operating legal entity","product boundary","closure chronology","custody and customer outcome"]},
       {"candidate_id":"cya_candidate_000049","canonical_name":"Outlet Finance","blocking_questions":["underlying counterparty model","closure chronology","custody and repayment outcome"]}
     ],
     "promotion_policy": "Candidate-only staging first. No canonical IDs, writes, status changes or outcome inference before reviewed promotion.",
-    "next_action": "Run Batch 57 hardened candidate scanning and review-only draft generation for cya_candidate_000093 Ndax Staking and cya_candidate_000094 VALR Staking against exact production-verified 94-platform SHA 89db1785eefc5e486a8349a889edc5f52f0eaeaf. Resolve any duplicate without consuming a canonical ID. If promotion-ready, use a separate canonical PR beginning at cya_plat_000095 and dated events beginning at cya_ev_000338 where first-party launch dates remain supported."
+    "next_action": "After the Ndax/VALR canonical promotion merges and its exact production SHA passes Production Surface Check and representative screenshots, stage candidates cya_candidate_000095 and cya_candidate_000096 from the verified 96-platform baseline. Next platform ID will be cya_plat_000097 and next evidence-backed event ID cya_ev_000340. Stop at 100 for the mandatory full-corpus audit."
   }
 ]
