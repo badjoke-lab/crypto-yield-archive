@@ -1,0 +1,17 @@
+[
+  {
+    "candidate_id": "cya_candidate_000088",
+    "canonical_name": "Crypto.com On-Chain Staking",
+    "aliases": ["Crypto.com Staking", "Crypto.com App Staking", "Crypto.com Onchain Staking"],
+    "domain": "crypto.com",
+    "duplicate_check": {
+      "checked_at": "2026-08-11",
+      "matched_platform_ids": ["cya_plat_000019"],
+      "notes": "The hardened candidate scanner classified Crypto.com On-Chain Staking as an exact duplicate of canonical cya_plat_000019."
+    },
+    "decision": "duplicate",
+    "notes": "Do not create a second Crypto.com staking platform identity or consume a canonical platform ID. The reviewed current first-party staking materials may support later evidence-backed enrichment of canonical cya_plat_000019, including current multi-asset staking, protocol-derived rewards, service-fee deductions and network-specific bonding/unbonding mechanics. Operational wallet/address language must not be converted into unsupported legal-title, segregation or insolvency conclusions.",
+    "first_seen_at": "2026-08-11",
+    "last_reviewed_at": "2026-08-11"
+  }
+]
