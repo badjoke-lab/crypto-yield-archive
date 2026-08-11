@@ -1,6 +1,6 @@
 # CYA record growth execution roadmap
 
-Status: Phase 8 — 100-platform mandatory audit in progress  
+Status: Phase 8 audit release merged; exact production verification pending. Phase 9A XORA incident-led exception proposed.  
 Project: Crypto Yield Archive (CYA)  
 Last baseline review: 2026-08-11
 
@@ -18,10 +18,10 @@ Permanent operating rules remain in `docs/record-growth-plan.md` and `docs/devel
 - Never infer repayment completion, recovery rate, custody, ownership, principal protection, fraud, or customer outcome from marketing or candidate metadata.
 - Product, legal-entity, jurisdiction, terms-version, custody, identity, and customer-outcome boundaries require explicit review.
 - Repository validation, Cloudflare deployment, and direct production observation are separate claims.
-- Record growth is locked at 100 platforms while the mandatory full-corpus audit is in progress.
-- No platform 101 candidate, ID allocation or promotion is authorized by the audit.
+- General record growth remains locked beyond 100 platforms.
+- Phase 9A, if activated after Phase 8 production verification, authorizes only the XORA Finance incident-led candidate and at most platform 101.
 
-## Production-verified 100-platform baseline
+## Production-verified 100-platform canonical baseline
 
 ```text
 Repository:                    badjoke-lab/crypto-yield-archive
@@ -31,7 +31,7 @@ Canonical PR:                  #168 merged
 Production Surface Check:      #191 success
 Representative page capture:   success
 Main CYA CI:                   #504 success
-Queue status:                  audit_in_progress
+Canonical platforms:           100
 ```
 
 ### Canonical scale
@@ -47,28 +47,35 @@ Claims ongoing:   18
 Generated pages: 114
 ```
 
-The exact 100-platform SHA passed Cloudflare main deployment, current production-surface verification, production desktop/mobile capture and verification-artifact upload before the audit branch was created. Main CYA CI built the same SHA and verified the machine-readable layer with `primary_records=100` and matching platform/event/evidence/outcome/product/terms-risk counts.
+The exact 100-platform canonical SHA passed Cloudflare main deployment, current production-surface verification, production desktop/mobile capture and verification-artifact upload before the audit branch was created. Main CYA CI built the same SHA and verified the machine-readable layer with `primary_records=100` and matching platform/event/evidence/outcome/product/terms-risk counts.
 
-## 100-platform full-corpus audit result
+## Phase 8 100-platform full-corpus audit
 
-Main CYA CI #504 executed the normal full gate, including `scripts/audit-corpus.mjs`.
+The audit checkpoint was merged in PR #169.
 
 ```text
-Corpus blockers:                  0
-Quality-debt items:              23
-Medium-reliability evidence:    108
-Low-reliability evidence:         0
-Low-confidence platforms:         0
-Low-confidence events:           30
-Unknown outcomes:                13
-Claims ongoing:                  18
-Unclear terms:                   24
-Active candidates:                3
+Audit release SHA:               bf2b1948f7ac817956f740e91fcfe80bb8ad0ba4
+Audit PR:                        #169 merged
+Corpus blockers:                 0
+Quality-debt items:             23
+Medium-reliability evidence:   108
+Low-reliability evidence:        0
+Low-confidence platforms:        0
+Low-confidence events:          30
+Unknown outcomes:               13
+Claims ongoing:                 18
+Unclear terms:                  24
 ```
 
 The 75-platform audit completed with blocker count `0` and quality-debt count `23`. The 100-platform corpus therefore reaches the milestone without introducing a new blocker and without increasing the audit debt count.
 
 The detailed audit record is `docs/phase-8-100-platform-audit.md`.
+
+### Audit-release production-verification gap
+
+Cloudflare Pages deployed the audit release SHA `bf2b1948f7ac817956f740e91fcfe80bb8ad0ba4` successfully. However, the `Production Surface Check` push trigger excluded `docs/**`, so the docs-only audit release did not automatically receive the required exact-SHA production-surface and representative screenshot run.
+
+PR #170 fixes that trigger boundary by adding `docs/**` without weakening any verifier logic. Phase 8 is not marked complete until the resulting release is checked on the custom production domain with the existing exact-SHA verifier and production screenshots.
 
 ## Remaining non-blocking debt boundary
 
@@ -84,7 +91,7 @@ Low-reliability evidence remains `0`, low-confidence platform count remains `0`,
 
 ## Candidate boundary
 
-The active candidate ledger contains only the same three long-lived `needs_research` records:
+The pre-existing active candidate ledger contains three long-lived `needs_research` records:
 
 ```text
 cya_candidate_000010 Goldfinch
@@ -92,49 +99,40 @@ cya_candidate_000045 Cabital
 cya_candidate_000049 Outlet Finance
 ```
 
-No audit action promotes them.
+Phase 9A proposes one additional incident-led research candidate:
 
 ```text
-Active staged candidates: none
-Next candidate IDs:       none
-Next platform ID:         not allocated
-Next event ID:            cya_ev_000340 remains unconsumed
+cya_candidate_000102 XORA Finance
 ```
 
-## Current audit release gate
+XORA is staged as `needs_research`, not `add_now`. Its CYA product scope is strongly supported by first-party custodial/yield material, while the reported deposit/withdrawal dispute and treasury questions still require transaction-level, attributable and legal-entity review.
 
-The audit checkpoint branch may merge only if all normal repository checks pass, including:
+No canonical platform ID is allocated by candidate staging.
 
-1. canonical validation and data-quality reporting;
-2. full corpus audit with blocker count `0`;
-3. candidate scanner and candidate draft tests;
-4. existing-record monitor tests;
-5. static build and machine-readable build-output validation;
-6. SEO checks;
-7. preview surface verification;
-8. representative desktop/mobile capture.
+## Phase 9A operating decision
 
-After merge, `main` must freeze on the resulting audit-release SHA and that exact SHA must pass Cloudflare deployment, Production Surface Check and production desktop/mobile capture before the audit checkpoint is considered complete.
+The proposed Phase 9A decision is documented in `docs/phase-9a-xora-incident-led-exception.md`.
 
-## Post-100 operating boundary
+Boundary:
 
-`docs/record-growth-plan.md` defines 100 platforms as the **First mature corpus** and does not define an approved platform target beyond 100. Therefore the audit checkpoint does not pre-authorize a 101-platform growth segment.
+- activate only after Phase 8 exact production verification succeeds;
+- authorize only `cya_candidate_000102` XORA Finance;
+- run hardened duplicate scan and candidate draft against the full 100-platform corpus;
+- require first-party product/terms review and transaction-level incident verification;
+- allow at most one canonical promotion, to 101 platforms, if every gate passes;
+- do not classify fraud/scam/insolvency/customer loss from social or investigation summaries alone;
+- authorize no platform 102.
 
-After successful audit-release production verification:
-
-- Phase 8 may be marked complete;
-- the 100-platform corpus becomes the production-verified mature baseline;
-- the growth lock remains active;
-- no next platform/candidate IDs are allocated;
-- future growth beyond 100 requires an explicit next-phase operating decision and a separately reviewed release of the growth lock.
+If XORA does not reach public quality, canonical remains at 100.
 
 ## Immediate next action
 
 ```text
-1. Open the 100-platform audit checkpoint PR with no canonical data changes.
-2. Require all repository, corpus-audit, preview and representative-surface checks to pass.
-3. Merge only with blocker count 0 and no new audit regression.
-4. Freeze main on the resulting audit-release SHA and production-verify the exact SHA.
-5. Record Phase 8 as complete only after the audit release is production-verified.
-6. Keep the growth lock active and do not allocate or stage platform 101 without an explicit next-phase plan.
+1. Merge PR #170 only after its repository checks pass.
+2. Require the resulting main SHA to pass Cloudflare deployment, Production Surface Check and production desktop/mobile capture.
+3. Mark Phase 8 complete only after that exact-SHA production verification succeeds.
+4. Merge the Phase 9A XORA candidate/operating-decision PR only after the Phase 8 gate is closed and its own repository checks pass.
+5. Run hardened candidate scan/draft for cya_candidate_000102 against the full 100-platform corpus.
+6. Perform the required on-chain, source-preservation, legal-entity and terms review before allocating platform 101.
+7. If public quality is achieved, open a separate canonical promotion PR; otherwise retain XORA as needs_research and keep canonical at 100.
 ```
