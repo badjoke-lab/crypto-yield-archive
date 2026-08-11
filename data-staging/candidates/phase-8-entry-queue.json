@@ -3,20 +3,20 @@
     "phase": 8,
     "status": "growth_to_100",
     "recorded_at": "2026-08-11",
-    "baseline_main_sha": "907689cd598f1fff9a04dbfc02e7ad7314b55244",
-    "canonical_platforms": 90,
+    "baseline_main_sha": "c57d15f91464f1113e3421fd3abeb0f2a2a47765",
+    "canonical_platforms": 91,
     "next_audit_milestone": 100,
-    "staged_candidate_ids": ["cya_candidate_000087"],
+    "staged_candidate_ids": [],
     "resolved_duplicate_ids": ["cya_candidate_000088"],
     "next_candidate_ids": ["cya_candidate_000089", "cya_candidate_000090"],
-    "next_platform_id": "cya_plat_000091",
-    "next_event_id": "cya_ev_000337",
+    "next_platform_id": "cya_plat_000092",
+    "next_event_id": "cya_ev_000338",
     "existing_needs_research": [
       {"candidate_id":"cya_candidate_000010","canonical_name":"Goldfinch","blocking_questions":["DeFi/institutional-yield scope","entity and product boundary"]},
       {"candidate_id":"cya_candidate_000045","canonical_name":"Cabital","blocking_questions":["operating legal entity","product boundary","closure chronology","custody and customer outcome"]},
       {"candidate_id":"cya_candidate_000049","canonical_name":"Outlet Finance","blocking_questions":["underlying counterparty model","closure chronology","custody and repayment outcome"]}
     ],
     "promotion_policy": "Candidate-only staging first. No canonical IDs, writes, status changes or outcome inference before reviewed promotion.",
-    "next_action": "Batch 54 hardened scanning resolved Crypto.com On-Chain Staking candidate cya_candidate_000088 as an exact duplicate of canonical cya_plat_000019. No platform ID is consumed. Bitstamp Earn Staking cya_candidate_000087 remains the sole add_now candidate. If all candidate-only gates pass, promote Bitstamp separately beginning at cya_plat_000091 and cya_ev_000337, then exact-SHA production verify before the next batch."
+    "next_action": "After the Bitstamp canonical promotion merges and its exact production SHA passes Production Surface Check and representative screenshots, stage replacement candidates cya_candidate_000089 and cya_candidate_000090 from the verified 91-platform baseline. Crypto.com candidate cya_candidate_000088 remains a resolved duplicate of canonical cya_plat_000019 and consumes no platform ID."
   }
 ]
