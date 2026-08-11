@@ -3,12 +3,12 @@
     "phase": 8,
     "status": "growth_to_100",
     "recorded_at": "2026-08-11",
-    "baseline_main_sha": "3f12097cd1c316c813b85b111cac2d4c5767a7c9",
+    "baseline_main_sha": "ef6426842399071c82ce6bfc388347fec3296f66",
     "canonical_platforms": 98,
     "next_audit_milestone": 100,
-    "staged_candidate_ids": [],
-    "resolved_duplicate_ids": ["cya_candidate_000088", "cya_candidate_000089"],
-    "next_candidate_ids": ["cya_candidate_000097", "cya_candidate_000098"],
+    "staged_candidate_ids": ["cya_candidate_000099", "cya_candidate_000101"],
+    "resolved_duplicate_ids": ["cya_candidate_000088", "cya_candidate_000089", "cya_candidate_000097", "cya_candidate_000098", "cya_candidate_000100"],
+    "next_candidate_ids": ["cya_candidate_000102", "cya_candidate_000103"],
     "next_platform_id": "cya_plat_000099",
     "next_event_id": "cya_ev_000340",
     "existing_needs_research": [
@@ -17,6 +17,6 @@
       {"candidate_id":"cya_candidate_000049","canonical_name":"Outlet Finance","blocking_questions":["underlying counterparty model","closure chronology","custody and repayment outcome"]}
     ],
     "promotion_policy": "Candidate-only staging first. No canonical IDs, writes, status changes or outcome inference before reviewed promotion.",
-    "next_action": "After the Newton/Wealthsimple canonical promotion merges and its exact production SHA passes Production Surface Check and representative screenshots, stage final-growth candidates cya_candidate_000097 and cya_candidate_000098 from the verified 98-platform baseline. Next platform ID will be cya_plat_000099 and next evidence-backed event ID remains cya_ev_000340. Reach 100 only through the same candidate-only then canonical sequence, then stop for the mandatory full-corpus audit before any platform 101 work."
+    "next_action": "Rerun the final Phase 8 hardened candidate gate for scanner-cleared cya_candidate_000099 Bit2Me Earn plus replacement cya_candidate_000101 Coinmerce Earn against exact production-verified 98-platform SHA ef6426842399071c82ce6bfc388347fec3296f66. Bitvavo Staking, Bitpanda Staking and KriptoEarn were exact duplicates and consumed no canonical IDs. Resolve any further duplicate without consuming a canonical ID. If both active candidates are promotion-ready, use a separate canonical PR beginning at cya_plat_000099 and reach exactly 100 platforms. Event ID cya_ev_000340 may be consumed only for an explicitly evidence-backed dated event. At 100, stop record growth for the mandatory full-corpus audit before any platform 101 work."
   }
 ]
