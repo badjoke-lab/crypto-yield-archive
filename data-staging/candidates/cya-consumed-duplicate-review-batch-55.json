@@ -1,0 +1,17 @@
+[
+  {
+    "candidate_id": "cya_candidate_000089",
+    "canonical_name": "Gemini Staking",
+    "aliases": ["Gemini Crypto Staking", "Gemini Conventional Staking"],
+    "domain": "gemini.com",
+    "duplicate_check": {
+      "checked_at": "2026-08-11",
+      "matched_platform_ids": ["cya_plat_000014"],
+      "notes": "The hardened candidate scanner classified Gemini Staking as an exact duplicate of canonical cya_plat_000014."
+    },
+    "decision": "duplicate",
+    "notes": "Do not create a second Gemini staking platform identity or consume a canonical platform ID. The reviewed first-party 2022 launch material and 2026 Staking Agreement may support later evidence-backed enrichment of canonical cya_plat_000014, especially the conventional-Staking versus Asset Rewards boundary, current staking-service-provider model, service fees, slashing, activation queues, unbonding, jurisdiction restrictions and lack of FDIC/SIPC or similar protections. Those facts must remain product- and terms-version-scoped.",
+    "first_seen_at": "2026-08-11",
+    "last_reviewed_at": "2026-08-11"
+  }
+]
