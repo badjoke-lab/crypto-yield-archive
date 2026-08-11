@@ -1,0 +1,88 @@
+{
+  "candidate_id": "cya_candidate_000102",
+  "recorded_at": "2026-08-12",
+  "research_type": "public_x_post_and_media_preservation",
+  "retrieval": {
+    "workflow": "XORA social evidence research",
+    "run_id": 31508695647,
+    "artifact_id": 9108124449,
+    "artifact_digest": "sha256:08440837570dcddce4146321666854aefce10105d7f460c491be01235f4cb9cd",
+    "methods": [
+      "Twitter/X publish oEmbed",
+      "Twitter syndication endpoint with derived public token",
+      "t.co redirect resolution",
+      "public media download"
+    ]
+  },
+  "posts": [
+    {
+      "post_id": "2084884136523948149",
+      "author": "RippleXity",
+      "url": "https://x.com/RippleXity/status/2084884136523948149",
+      "preserved_summary": "RippleXity says its investigation began after Hwan reported depositing 29,899.8 XRP into XORA Finance and being unable to access the funds.",
+      "evidence_role": "third_party_investigation_context"
+    },
+    {
+      "post_id": "2084604284122038562",
+      "author": "gimgyeongh62101",
+      "url": "https://x.com/gimgyeongh62101/status/2084604284122038562",
+      "preserved_summary": "Hwan publishes a post titled XORA Finance – My XRP Withdrawal Timeline, describes it as a factual account rather than an accusation, and asks for a technical explanation of what happened to the XRP.",
+      "evidence_role": "claimant_public_account"
+    },
+    {
+      "post_id": "2084206277757161565",
+      "author": "gimgyeongh62101",
+      "url": "https://x.com/gimgyeongh62101/status/2084206277757161565",
+      "preserved_summary": "Hwan says that after the withdrawal issue he received different explanations and publishes two screenshots as supporting material.",
+      "evidence_role": "claimant_public_support_evidence",
+      "media": [
+        {
+          "artifact_name": "2084206277757161565-1.jpg",
+          "preserved_summary": "Claimant-published screenshot depicts a message attributed to Joren Lundgren saying the affected person fell for a phishing website, never had an account with XORA, and that a fake XORA website existed.",
+          "authentication_boundary": "The screenshot is preserved as claimant-published media. CYA has not independently authenticated the depicted sender/account or established that it refers to the same off-chain account as the deposit tag."
+        },
+        {
+          "artifact_name": "2084206277757161565-2.jpg",
+          "preserved_summary": "Claimant-published screenshot depicts a DM interface labeled Xora Finance / @xora_finance discussing a stuck withdrawal, matching an X account to XORA destination tag 287588244, and describing a manual AML hold with withdrawal freeze and lifetime cap 0. The same published image also depicts a completed Binance XRP withdrawal of 29,899.8 XRP to the XORA-attributed treasury with tag 287588244 and transaction ID 4FD202B3DB7ADCA94ABDF3CC06762A3B2DD615532E13B531B1737E14788C09AA.",
+          "privacy": "A private email address visible in the screenshot is intentionally omitted from the normalized record.",
+          "authentication_boundary": "The support UI is preserved as claimant-published media and is not treated as an independently authenticated XORA support archive. The XRP transaction/hash/tag shown in the same image are independently corroborated by the separate XRPL full-history probe."
+        }
+      ]
+    },
+    {
+      "post_id": "2084227389442462069",
+      "author": "XRPDegens",
+      "url": "https://x.com/XRPDegens/status/2084227389442462069",
+      "preserved_summary": "XRPDegens says the transaction ID confirms the deposit into the official XORA wallet and discusses XORA's reported explanation of the case.",
+      "evidence_role": "third_party_context"
+    },
+    {
+      "post_id": "2084608721343398018",
+      "author": "DNF_sol",
+      "url": "https://x.com/DNF_sol/status/2084608721343398018",
+      "preserved_summary": "DNF_sol describes Hwan's post as the final summary from the person involved in the case.",
+      "evidence_role": "third_party_context"
+    }
+  ],
+  "independent_corroboration": {
+    "xrpl_research_record": "data-staging/research/xora-xrpl-payment-research-2026-08-12.json",
+    "transaction_hash": "4FD202B3DB7ADCA94ABDF3CC06762A3B2DD615532E13B531B1737E14788C09AA",
+    "treasury": "rhbErkS2d4H82tRbdGyFkhhc4LNtjKaC3o",
+    "destination_tag": 287588244,
+    "delivered_xrp": 29899.8,
+    "validated_at": "2026-07-13T09:02:02Z",
+    "result": "tesSUCCESS",
+    "linkage": "The exact transaction hash, amount, destination treasury and destination tag displayed in the claimant-published Binance screenshot match the independently reproduced XRPL transaction."
+  },
+  "video_review": {
+    "post_id": "2084884136523948149",
+    "result": "non_substantive_for_factual_evidence",
+    "summary": "The retrieved short video is primarily an INVESTIGATION / evidence-sources-truth title animation and does not add transaction or account evidence beyond the accompanying post text."
+  },
+  "interpretation_boundary": [
+    "The public screenshots materially connect the independently verified deposit transaction/tag to Hwan's published account of the dispute, but they remain claimant-published evidence rather than authenticated XORA internal records.",
+    "The depicted manual AML-hold explanation and the depicted phishing/no-account explanation can be recorded only as attributed, conflicting account narratives.",
+    "The requested withdrawal destination and final settlement/customer outcome remain unresolved.",
+    "Nothing in this record establishes fraud, scam, insolvency, permanent loss or a recovery rate."
+  ]
+}
