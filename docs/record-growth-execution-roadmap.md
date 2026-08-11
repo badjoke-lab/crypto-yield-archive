@@ -62,16 +62,19 @@ Batch 59 candidate gate                              current / final growth gate
 
 Every addition uses a candidate-only gate followed by a separate canonical PR. Duplicate findings do not consume canonical IDs.
 
-## Batch 59 hardened-scan correction
+## Batch 59 hardened-scan corrections
 
-The initial final-growth pair was rejected by the full-corpus scanner:
+Three attempted final-growth candidates were rejected by the full-corpus scanner and consume no canonical IDs:
 
 ```text
 cya_candidate_000097 Bitvavo Staking   exact_duplicate -> cya_plat_000085
 cya_candidate_000098 Bitpanda Staking  exact_duplicate -> cya_plat_000083
+cya_candidate_000100 KriptoEarn        exact_duplicate -> cya_plat_000054
 ```
 
-Both candidates are resolved as duplicates, preserved in the duplicate-review ledger, and consume no canonical platform or event ID. Their reviewed first-party material may support later enrichment of the existing canonical records.
+All three are preserved in the Batch 59 duplicate-review ledger. Their reviewed first-party material may support later enrichment of the existing canonical records.
+
+Bit2Me Earn (`cya_candidate_000099`) passed the corrected 98-platform scanner as draft-eligible and remains active.
 
 ## Corrected final candidate queue
 
@@ -79,9 +82,9 @@ Both candidates are resolved as duplicates, preserved in the duplicate-review le
 Queue status:             growth_to_100
 Canonical platforms:      98
 Verified baseline SHA:    ef6426842399071c82ce6bfc388347fec3296f66
-Staged candidates:        cya_candidate_000099 / cya_candidate_000100
-Resolved duplicates:      cya_candidate_000097 / cya_candidate_000098
-Next candidate IDs:       cya_candidate_000101 / cya_candidate_000102
+Staged candidates:        cya_candidate_000099 / cya_candidate_000101
+Resolved duplicates:      cya_candidate_000097 / cya_candidate_000098 / cya_candidate_000100
+Next candidate IDs:       cya_candidate_000102 / cya_candidate_000103
 Next platform ID:         cya_plat_000099
 Next event ID:            cya_ev_000340
 Next audit milestone:     100 platforms
@@ -89,31 +92,31 @@ Next audit milestone:     100 platforms
 
 Long-lived `needs_research` candidates remain Goldfinch, Cabital and Outlet Finance and are blocked from silent promotion.
 
-## Replacement candidate-only gate
+## Active final candidate boundary
 
 ### `cya_candidate_000099` — Bit2Me Earn
 
 - current dedicated Bit2Me Earn terms describe users transferring and locking eligible cryptoassets in favor of Bit2Me to receive variable rewards;
 - the Earn terms permit Bit2Me to transfer, dispose of or use transferred/locked assets during the Earn period and document withdrawal, suspension and service-specific risks;
 - separate ETH 2.0 terms document proof-of-stake staking within Bit2Me Earn, but the 2023 ETH rollout date must not be substituted for the broad Earn product launch date;
-- current support material describes reward sources including staking-validation rewards for eligible proof-of-stake assets;
 - ownership/custody treatment must follow the Earn-specific transfer/use terms rather than ordinary wallet custody language;
+- the corrected hardened scan classified Bit2Me Earn as draft-eligible;
 - reviewed sources do not establish one exact original launch date for the broad Earn product.
 
-### `cya_candidate_000100` — KriptoEarn
+### `cya_candidate_000101` — Coinmerce Earn
 
-- current Kriptomat terms define KriptoEarn as a blockchain staking solution and simplified technical interface to staking functionality on individual proof-of-stake protocols;
-- rewards are protocol-derived, approximate, variable and not guaranteed;
-- current terms document withdrawal periods, fees and protocol/network malfunction risk;
-- current product material documents supported staking assets and network-specific lock-up mechanics;
-- ownership/custody interpretation remains unresolved pending joint review of the Kriptomat Terms of Service and KriptoEarn annex;
-- reviewed sources establish current operation but do not establish one exact original launch date.
+- Coinmerce currently offers the Earn Program through a Yield Account in cooperation with Coinmerce Earn B.V.;
+- current first-party terms define the client as lender and Coinmerce Earn as borrower of eligible cryptoassets dedicated to Earn;
+- Earn assets are transferred out of Foundation custody to Coinmerce Earn, which may use them for on-lending and staking with third parties to generate yield;
+- current terms distinguish Yield Account assets dedicated to Earn from ordinary Foundation-held custody assets and document weekly rewards and Yield Account risks;
+- ordinary Coinmerce custody segregation must not be generalized to assets lent into Earn;
+- reviewed sources establish current operation but do not establish one exact original Earn launch date.
 
-Both remain candidate-only until the rerun hardened full-corpus scanner and review-only draft generation pass.
+Coinmerce remains candidate-only until the rerun hardened full-corpus scanner and review-only draft generation pass.
 
 ## Production sequencing rule
 
-1. merge the reviewed candidate-only PR only after corrected scanner and all candidate checks succeed;
+1. merge the reviewed candidate-only PR only after the corrected scanner and all candidate checks succeed;
 2. open a separate canonical PR only for scanner-cleared candidates;
 3. promote only enough records to reach exactly 100 platforms;
 4. merge only after repository, candidate, SEO, preview and representative-surface checks succeed;
@@ -125,7 +128,7 @@ Both remain candidate-only until the rerun hardened full-corpus scanner and revi
 ## Immediate next action
 
 ```text
-1. Rerun Batch 59 candidate-only gates for Bit2Me Earn and KriptoEarn against exact production-verified 98-platform SHA ef6426842399071c82ce6bfc388347fec3296f66.
+1. Rerun Batch 59 candidate-only gates for scanner-cleared Bit2Me Earn and replacement Coinmerce Earn against exact production-verified 98-platform SHA ef6426842399071c82ce6bfc388347fec3296f66.
 2. Resolve any further duplicate without consuming a canonical ID and replace it inside the same candidate-only gate.
 3. Merge candidate-only only when the corrected scanner and all workflows pass.
 4. Open the final canonical promotion PR beginning at cya_plat_000099 and promote only enough reviewed records to reach exactly 100.
