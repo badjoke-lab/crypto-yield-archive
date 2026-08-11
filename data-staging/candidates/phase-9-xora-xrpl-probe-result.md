@@ -72,7 +72,7 @@ The absence of an outbound Payment to the original Binance sending address is no
 
 Normalized repository record:
 
-- `data-staging/candidates/xora-xrpl-payment-research-2026-08-12.json`
+- `data-staging/research/xora-xrpl-payment-research-2026-08-12.json`
 
 GitHub Actions provenance:
 
