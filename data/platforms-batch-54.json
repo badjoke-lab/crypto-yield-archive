@@ -1,0 +1,24 @@
+[
+  {
+    "id": "cya_plat_000091",
+    "slug": "bitstamp-earn-staking",
+    "canonical_name": "Bitstamp Earn Staking",
+    "aliases": ["Bitstamp Earn", "Bitstamp ETH Staking", "Bitstamp Staking"],
+    "type": "exchange_earn",
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": "2021-07-13",
+    "end_date": null,
+    "country_or_origin": "Europe / Global / jurisdiction-dependent",
+    "summary": "Product-scoped record for Bitstamp's custodial staking service under Bitstamp Earn. Bitstamp made Ethereum staking fully public on 13 July 2021 after an April 2021 early-access rollout and continues to offer staking in supported jurisdictions.",
+    "what_happened": "Bitstamp began gradually rolling out Ethereum staking with early access on 22 April 2021 and announced the full public ETH-staking launch under Bitstamp Earn on 13 July 2021. Later first-party material documented additional staking products and jurisdictions. Bitstamp ended ALGO staking on 1 April 2025 because of the Algorand protocol transition, while explicitly directing users to other staking and lending options in Bitstamp Earn rather than announcing an Earn-wide shutdown. Current first-party material documents continuing staking, protocol-derived rewards, a 15% service commission and jurisdiction-specific availability. CYA treats the 13 July 2021 date as the reviewed full public launch and keeps asset, network, legal-entity and jurisdiction boundaries explicit.",
+    "official_url_original": "https://www.bitstamp.net/crypto-staking/",
+    "official_domain_original": "bitstamp.net",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://www.bitstamp.net/crypto-staking/",
+    "confidence": "high",
+    "last_verified_at": "2026-08-11",
+    "uncertainty_notes": "Bitstamp began a gradual ETH-staking rollout in April 2021 before the reviewed full public launch on 13 July 2021. Current staking availability and contracting entity vary by jurisdiction and supported asset. Product-specific staking changes, including the 2025 ALGO wind-down, are not treated as a platform-wide Earn shutdown.",
+    "notes": "Current Bitstamp educational material states that customers maintain full ownership of crypto assets when staking with Bitstamp Earn and that Bitstamp acts as service provider, but CYA does not convert that product statement into a universal guarantee of segregation, principal protection or insolvency outcome across every legal entity and jurisdiction."
+  }
+]
