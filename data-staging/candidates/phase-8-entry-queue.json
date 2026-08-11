@@ -3,13 +3,13 @@
     "phase": 8,
     "status": "growth_to_100",
     "recorded_at": "2026-08-11",
-    "baseline_main_sha": "ad9dca89048b89f5d57825130ff74184a67f4f65",
-    "canonical_platforms": 91,
+    "baseline_main_sha": "22004c36883f2072a63eb1650c9f25f5d02fe832",
+    "canonical_platforms": 92,
     "next_audit_milestone": 100,
-    "staged_candidate_ids": ["cya_candidate_000090"],
+    "staged_candidate_ids": [],
     "resolved_duplicate_ids": ["cya_candidate_000088", "cya_candidate_000089"],
     "next_candidate_ids": ["cya_candidate_000091", "cya_candidate_000092"],
-    "next_platform_id": "cya_plat_000092",
+    "next_platform_id": "cya_plat_000093",
     "next_event_id": "cya_ev_000338",
     "existing_needs_research": [
       {"candidate_id":"cya_candidate_000010","canonical_name":"Goldfinch","blocking_questions":["DeFi/institutional-yield scope","entity and product boundary"]},
@@ -17,6 +17,6 @@
       {"candidate_id":"cya_candidate_000049","canonical_name":"Outlet Finance","blocking_questions":["underlying counterparty model","closure chronology","custody and repayment outcome"]}
     ],
     "promotion_policy": "Candidate-only staging first. No canonical IDs, writes, status changes or outcome inference before reviewed promotion.",
-    "next_action": "Batch 55 hardened scanning resolved Gemini Staking candidate cya_candidate_000089 as an exact duplicate of canonical cya_plat_000014. No platform ID is consumed. Revolut Crypto Staking cya_candidate_000090 remains the sole add_now candidate. If all candidate-only gates pass, promote Revolut separately beginning at cya_plat_000092 and cya_ev_000338 only if a dated event is evidence-backed; otherwise keep launch_date unresolved and do not invent a launch event."
+    "next_action": "After the Revolut canonical promotion merges and its exact production SHA passes Production Surface Check and representative screenshots, stage replacement candidates cya_candidate_000091 and cya_candidate_000092 from the verified 92-platform baseline. Event ID cya_ev_000338 remains unconsumed because no exact Revolut launch event was asserted."
   }
 ]
