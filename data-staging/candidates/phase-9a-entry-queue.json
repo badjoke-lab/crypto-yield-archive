@@ -1,0 +1,34 @@
+[
+  {
+    "phase": "9A",
+    "status": "active_candidate_research",
+    "recorded_at": "2026-08-11",
+    "phase8_finalization_sha": "162c216621687a149ebbfe213960a622667aa391",
+    "phase8_production_surface_check": 193,
+    "canonical_platforms": 100,
+    "scope": "single_platform_incident_led_exception",
+    "staged_candidate_ids": ["cya_candidate_000102"],
+    "candidate_name": "XORA Finance",
+    "next_platform_id": null,
+    "next_event_id": "cya_ev_000340",
+    "canonical_cap": 101,
+    "scanner_result": {
+      "classification": "manual_review_required",
+      "duplicate_clear": true,
+      "eligible_for_draft": false,
+      "canonical_ids_assigned": 0,
+      "canonical_writes_performed": 0
+    },
+    "promotion_policy": "XORA may consume platform 101 only after duplicate, source, on-chain incident, legal-entity, validation, audit, preview and production gates pass. Staging and manual research are active; no platform 102 is authorized by Phase 9A.",
+    "required_research": [
+      "verify reported 29,899.8 XRP deposit transaction and destination context",
+      "independently reproduce treasury address attribution and relevant XRPL history",
+      "verify reported withdrawal request and XRPL settlement state",
+      "preserve attributable XORA support/account narratives",
+      "reproduce any treasury BTC/IOU representation claim before canonical use",
+      "verify operating legal entity and applicable terms version",
+      "archive first-party, DefiLlama and investigation sources"
+    ],
+    "next_action": "Complete manual incident/source/legal-entity research for cya_candidate_000102. Allocate no canonical platform ID until the candidate is explicitly upgraded from needs_research after review."
+  }
+]
