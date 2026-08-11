@@ -1,0 +1,24 @@
+[
+  {
+    "id": "cya_plat_000092",
+    "slug": "revolut-crypto-staking",
+    "canonical_name": "Revolut Crypto Staking",
+    "aliases": ["Revolut Staking", "Revolut Crypto Earn Staking"],
+    "type": "exchange_earn",
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": null,
+    "end_date": null,
+    "country_or_origin": "Europe / Global / jurisdiction-dependent",
+    "summary": "Product-scoped record for Revolut's in-app proof-of-stake crypto staking service. Current first-party materials document multi-asset staking, protocol-derived rewards, token-specific staking and unstaking mechanics, and beneficial-ownership language while Revolut continues holding staked cryptoassets on the customer's behalf.",
+    "what_happened": "Revolut currently offers in-app staking for supported proof-of-stake cryptoassets. Current first-party product, help and legal materials describe delegated staking through third-party validators or partners, network-dependent reward generation, token-specific warm-up and lock-up or unbonding periods, non-guaranteed rewards, market and slashing risk, and jurisdiction-specific fees and availability. Current terms state that Revolut continues holding staked cryptoassets on the user's behalf and that the user remains the beneficial owner. The reviewed first-party sources do not establish one exact original umbrella launch date for Revolut Crypto Staking, so CYA leaves launch_date unresolved and does not create a launch event.",
+    "official_url_original": "https://www.revolut.com/crypto/staking/",
+    "official_domain_original": "revolut.com",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://www.revolut.com/crypto/staking/",
+    "confidence": "high",
+    "last_verified_at": "2026-08-11",
+    "uncertainty_notes": "Current operation and staking mechanics are strongly supported by first-party material, but the reviewed sources do not establish one exact original launch date. Contracting entity, fee schedule, supported tokens, automatic-staking behavior and some safeguards vary by jurisdiction and terms version.",
+    "notes": "Beneficial-ownership language is preserved as an attributed current product/terms statement. It is not converted into a universal conclusion about legal title, asset segregation, principal protection or insolvency treatment across every Revolut entity and jurisdiction."
+  }
+]
