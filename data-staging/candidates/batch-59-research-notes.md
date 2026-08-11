@@ -1,20 +1,19 @@
 # Phase 8 batch 59 candidate research notes
 
 Baseline canonical SHA: `ef6426842399071c82ce6bfc388347fec3296f66`  
-Canonical platforms: 98  
-Initial candidate IDs: `cya_candidate_000097` / `cya_candidate_000098`  
-Replacement candidate IDs: `cya_candidate_000099` / `cya_candidate_000100`
+Canonical platforms: 98
 
-## Initial hardened-scan result
+## Hardened-scan duplicate resolutions
 
-The first final-growth pair was rejected by the hardened full-corpus scanner:
+The final-growth search has so far rejected three candidates as exact canonical duplicates:
 
-- `cya_candidate_000097` Bitvavo Staking → `exact_duplicate` of `cya_plat_000085`;
-- `cya_candidate_000098` Bitpanda Staking → `exact_duplicate` of `cya_plat_000083`.
+- `cya_candidate_000097` Bitvavo Staking → `cya_plat_000085`;
+- `cya_candidate_000098` Bitpanda Staking → `cya_plat_000083`;
+- `cya_candidate_000100` KriptoEarn → `cya_plat_000054`.
 
-Both are removed from the active add-now queue and preserved in `cya-consumed-duplicate-review-batch-59.json`. No canonical platform or event ID is consumed for either duplicate. Their reviewed first-party material may support later enrichment of the existing canonical records.
+All three are preserved in `cya-consumed-duplicate-review-batch-59.json` and consume no canonical IDs. Bit2Me Earn (`cya_candidate_000099`) passed the corrected scan as draft-eligible and remains active.
 
-## Bit2Me Earn
+## Bit2Me Earn — `cya_candidate_000099`
 
 Reviewed first-party basis:
 
@@ -22,7 +21,6 @@ Reviewed first-party basis:
 - the terms state Bit2Me may transfer, dispose of or use transferred/locked cryptoassets during the Earn period at its discretion;
 - rewards are variable, product conditions can change, and withdrawals/suspensions and service-specific risks are documented;
 - separate ETH 2.0 terms document proof-of-stake staking inside Bit2Me Earn and identify a 2023 ETH staking rollout, but that date must not be substituted for the original launch date of the broader Earn product;
-- current support material distinguishes reward sources, including staking-validation rewards for eligible proof-of-stake assets;
 - ownership/custody interpretation must follow the Earn-specific transfer/use terms rather than ordinary Bit2Me wallet custody language.
 
 Primary sources:
@@ -31,28 +29,27 @@ Primary sources:
 - https://legal.bit2me.com/en/support/solutions/articles/35000293201-eth-2-0
 - https://support.bit2me.com/en/support/solutions/articles/35000226814
 
-Decision: `add_now`, subject to the rerun hardened duplicate scanner and review-only draft gate. Keep the broad Earn launch date unresolved. Treat the product as centralized yield with an explicit transfer/use-of-assets boundary and do not infer customer-owned custody while assets are in the Earn arrangement.
+Decision: `add_now`; the corrected hardened scanner classified this candidate as draft-eligible. Keep the broad Earn launch date unresolved and preserve the explicit transfer/use-of-assets boundary.
 
-## KriptoEarn
+## Coinmerce Earn — `cya_candidate_000101`
 
 Reviewed first-party basis:
 
-- current Kriptomat material describes KriptoEarn as a blockchain staking solution and simplified technical interface to staking functionality on individual proof-of-stake protocols;
-- current terms state qualified virtual currencies can be staked through KriptoEarn for in-kind protocol-derived rewards;
-- rewards shown in the interface are approximate, protocol-determined, variable and not guaranteed;
-- current terms document withdrawal periods, fees and protocol/network malfunction risk;
-- current product material documents supported staking assets and network lock-up mechanics;
-- custody/ownership interpretation remains unresolved until the governing Kriptomat Terms of Service and KriptoEarn annex are jointly reviewed for canonical promotion;
-- reviewed sources establish current operation but do not establish one exact original launch date.
+- Coinmerce currently offers the Earn Program through a Yield Account in cooperation with the separate Coinmerce Earn B.V. entity;
+- current first-party terms define the client as lender and Coinmerce Earn as borrower of eligible cryptoassets dedicated to Earn;
+- Earn assets are transferred out of Foundation custody to Coinmerce Earn, which may use them for on-lending and staking with third parties to generate yield;
+- current terms and support material distinguish Yield Account assets dedicated to Earn from ordinary Foundation-held custody assets;
+- current terms describe weekly rewards and material Yield Account risks; the Earn/Yield service is not treated as ordinary MiCAR custody protection;
+- reviewed sources establish current operation but do not establish one exact original Earn launch date.
 
 Primary sources:
 
-- https://kriptomat.io/kriptoearn-terms-of-use/
-- https://kriptomat.io/earn/
-- https://kriptomat.io/
+- https://support.coinmerce.io/en/articles/178721-what-is-earn
+- https://support.coinmerce.io/en/articles/179087-general-terms-and-conditions
+- https://support.coinmerce.io/es/articles/348925-earn-terms-and-conditions
 
-Decision: `add_now`, subject to the rerun hardened duplicate scanner and review-only draft gate. Keep launch date unresolved unless an explicit first-party original-launch source is found. Do not convert marketing language about slashing insurance or staking returns into a general loss guarantee without governing-term support.
+Decision: `add_now`, subject to the rerun hardened scanner and review-only draft gate. Treat Coinmerce Earn as product-scoped centralized yield/lending and do not apply ordinary Coinmerce Foundation custody segregation to assets lent into the Earn Program.
 
 ## Required gate
 
-Only candidate IDs `cya_candidate_000099` and `cya_candidate_000100` remain active for the final growth gate. No canonical platform IDs are assigned here. Hardened scanning against the full 98-platform canonical corpus must pass after the duplicate replacements. Any further duplicate must again be resolved without consuming a canonical ID. The final canonical promotion may add only enough reviewed records to reach exactly 100 platforms; after that, record growth stops for the mandatory full-corpus audit.
+Only `cya_candidate_000099` Bit2Me Earn and `cya_candidate_000101` Coinmerce Earn remain active for the final growth gate. No canonical platform IDs are assigned here. Hardened scanning against the full 98-platform canonical corpus must pass for the corrected pair. Any further duplicate must again be resolved without consuming a canonical ID. The final canonical promotion may add only enough reviewed records to reach exactly 100 platforms; after that, record growth stops for the mandatory full-corpus audit.
