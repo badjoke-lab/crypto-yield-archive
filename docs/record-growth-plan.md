@@ -14,6 +14,7 @@ The public registry under `data/` remains canonical. Research candidates and mac
 | Coverage checkpoint | 40 | Broader platform coverage followed by a full quality audit |
 | Monitoring checkpoint | 60 | Candidate scanning, draft generation, and existing-record monitoring |
 | First mature corpus | 100 | Large enough to support meaningful cross-platform historical comparison |
+| Post-mature expansion | 125 | Resume controlled growth while preserving mature-corpus quality and monitoring |
 
 ## Priority order
 
@@ -26,6 +27,22 @@ The public registry under `data/` remains canonical. Research candidates and mac
 7. Reach 60 platforms while balancing platform types and outcomes.
 8. Add weekly monitoring for existing records.
 9. Continue toward 100 platforms.
+10. Treat 100 platforms as the first mature-corpus audit boundary.
+11. Resume reviewed post-mature growth toward 125 only through an explicit operating decision.
+12. Run another full-corpus audit at 125 before authorizing any further target.
+
+## Post-mature growth guardrails
+
+Growth from 101 toward 125 must preserve all mature-corpus controls:
+
+- candidate-only review and canonical promotion remain separate pull requests;
+- two to three platforms per canonical pull request remains the default for simple cases;
+- one platform per pull request remains required for disputed, multi-entity, bankruptcy, custody, recovery, or unusually evidence-heavy cases;
+- corpus blocker count must remain `0`;
+- the documented quality-debt count must not increase merely to accelerate growth;
+- existing-record monitoring continues in parallel and remains review-only;
+- no candidate, monitoring finding, status change, recovery estimate, legal-entity conclusion, or customer outcome may be published automatically;
+- the 125-platform checkpoint requires a full corpus audit and exact-SHA production verification before any later growth milestone is authorized.
 
 ## Candidate lifecycle
 
