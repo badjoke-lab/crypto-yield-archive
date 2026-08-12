@@ -34,7 +34,7 @@ Claims ongoing:      18
 
 Candidate-only review completed first in PR #187. The exact reviewed candidate head passed candidate audit, full-corpus scan, scanner guard, draft generation, CYA CI, data validation, build, SEO, and preview checks before merge.
 
-This canonical PR is separate from the candidate-only operation and is the first point at which canonical IDs are allocated.
+This canonical PR is separate from the candidate-only operation and is the first point at which canonical platform IDs are allocated.
 
 ## Why this is a one-platform canonical PR
 
@@ -80,7 +80,7 @@ independent return verification
 The batch allocates:
 
 ```text
-cya_ev_000341
+cya_ev_000342
 2026-06-10
 yield_rate_changed
 status effect: none
@@ -88,7 +88,9 @@ status effect: none
 
 The event records the issuer's 1000% APR-equivalent switching campaign because it is a dated, unusually large change in advertised yield terms with explicit eligibility and reward-cap conditions.
 
-It does not change the platform's active status.
+`cya_ev_000341` was not available: exact-head validation identified it as already allocated by the prior Wirex maintenance event in `events-batch-60-maintenance-wirex-20260812.json`. The batch therefore advances to the next verified-unused event ID, `cya_ev_000342`, rather than overwriting historical authority.
+
+The event does not change the platform's active status.
 
 ## Outcome boundary
 
@@ -125,7 +127,7 @@ Hong Kong operator evidence and the Cayman governing-law clause are kept as sepa
 
 ```text
 Platform: cya_plat_000102
-Event:    cya_ev_000341
+Event:    cya_ev_000342
 Evidence: cya_src_b61_0001 through cya_src_b61_0009
 ```
 
