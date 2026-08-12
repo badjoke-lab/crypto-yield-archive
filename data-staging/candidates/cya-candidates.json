@@ -19,7 +19,7 @@
     "duplicate_check": {
       "checked_at": "2026-08-12",
       "matched_platform_ids": [],
-      "notes": "Still duplicate-clear against the 101-platform corpus. Matrixport documents a commercial partnership, not an acquisition."
+      "notes": "Duplicate-clear against the 101-platform corpus in the hardened Phase 10 scanner. Matrixport documents a commercial partnership, not an acquisition."
     },
     "decision": "needs_research",
     "notes": "Phase 10 review confirms CYA scope relevance but not promotion readiness. WOO X records termination of its Cabital fiat integration effective 2022-11-17; that does not establish platform-wide Cabital closure or customer outcome. CABITAL GLOBAL LIMITED (UK company 14888741) was incorporated only in 2023 and dissolved in 2024, so it must not be assumed to be the entity that operated the earlier Cabital Earn product. Resolve the original operating legal entity, first-party product terms/custody, platform-wide closure chronology, and customer repayment/migration outcome before add_now.",
@@ -48,40 +48,11 @@
     "duplicate_check": {
       "checked_at": "2026-08-12",
       "matched_platform_ids": [],
-      "notes": "Still duplicate-clear against the 101-platform corpus."
+      "notes": "Duplicate-clear against the 101-platform corpus in the hardened Phase 10 scanner."
     },
     "decision": "needs_research",
     "notes": "Phase 10 review confirms strong scope fit: Apple's listing identifies Outlet Finance Inc as the developer and describes user funds being converted to digital assets and put to work for monthly rewards, while an official Outlet Medium post documents the platform's crypto-lending origin. However, secondary sources disagree or lack precision on the closure date: one says early 2023 and Dealroom says operations had ceased by October 2023, while Apple's app history shows version 5.0.3 dated 2023-02-21. Do not assign an exact closure date or repayment outcome from these sources. Resolve first-party closure/customer communications, operating-company registration, historical terms/custody and the final customer-fund outcome before add_now.",
     "first_seen_at": "2026-08-05",
-    "last_reviewed_at": "2026-08-12"
-  },
-  {
-    "candidate_id": "cya_candidate_000104",
-    "canonical_name": "Nebeus Renting",
-    "aliases": ["Nebeus", "Nebeus Renting", "Nebeus Earn", "Crypto Renting"],
-    "domain": "nebeus.com",
-    "country_or_origin": "Spain / European Union",
-    "platform_type_guess": "centralized_yield",
-    "status_guess": "active",
-    "major_event": "Active centralized crypto renting/yield service in which users delegate crypto assets for fixed-period rewards; current public legal materials show a material counterparty/entity-documentation inconsistency that must be resolved before canonical promotion",
-    "primary_sources": [
-      "https://nebeus.com/",
-      "https://help.nebeus.com/en/legal/renting-terms-of-use",
-      "https://help.nebeus.com/en/legal/crypto-asset-custody-and-administration-policy",
-      "https://support.nebeus.com/portal/en/kb/articles/renting-terms-of-use"
-    ],
-    "secondary_sources": [
-      "https://support.nebeus.com/portal/en/kb/articles/renting-program-terms-and-information",
-      "https://support.nebeus.com/portal/en/kb/articles/ne"
-    ],
-    "duplicate_check": {
-      "checked_at": "2026-08-12",
-      "matched_platform_ids": [],
-      "notes": "Repository search for Nebeus returned no canonical match before scanner review. Full-corpus duplicate scan remains mandatory."
-    },
-    "decision": "needs_research",
-    "notes": "Strong CYA scope fit and current first-party product evidence. Nebeus currently markets Renting/earn services and its legal materials describe user crypto delegation, lock-up, reward payments, product risks and no deposit-guarantee coverage. However, current public documentation is internally inconsistent on the commercial counterparty: help.nebeus.com material updated May 24, 2026 names Rintral Trading S.L.U. (B66096686), while support.nebeus.com currently presents Renting terms naming Rintral Capital S.L.U. (B21849609) as contractual counterparty. Resolve which terms govern current activations, the relationship between Trading/Capital and the custody provider, and the exact product ownership/custody treatment before add_now. Do not collapse MiCA-regulated custody services into the separately disclosed unregulated Renting service.",
-    "first_seen_at": "2026-08-12",
     "last_reviewed_at": "2026-08-12"
   }
 ]

@@ -1,0 +1,47 @@
+[
+  {
+    "candidate_id": "cya_candidate_000104",
+    "canonical_name": "Nebeus Renting",
+    "aliases": ["Nebeus", "Nebeus Renting", "Nebeus Earn", "Crypto Renting"],
+    "domain": "nebeus.com",
+    "duplicate_check": {
+      "checked_at": "2026-08-12",
+      "matched_platform_ids": ["cya_plat_000046"],
+      "notes": "Hardened Phase 10 full-corpus scanner classified the candidate as an exact duplicate of canonical Nebeus by exact domain and exact alias/name signals."
+    },
+    "decision": "duplicate",
+    "notes": "Do not consume a new canonical platform ID. The newly reviewed 2026 Nebeus Renting terms expose a current legal-entity/counterparty inconsistency between Rintral Trading S.L.U. and Rintral Capital S.L.U.; preserve that finding for a separate evidence/terms upgrade review of existing cya_plat_000046 rather than creating a second Nebeus identity.",
+    "first_seen_at": "2026-08-12",
+    "last_reviewed_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "cya_candidate_000105",
+    "canonical_name": "Wirex X-Accounts",
+    "aliases": ["Wirex X-Account", "Wirex X-Accounts", "X-Account Flexible", "X-Account Plus", "Fixed X-Accounts"],
+    "domain": "wirexapp.com",
+    "duplicate_check": {
+      "checked_at": "2026-08-12",
+      "matched_platform_ids": ["cya_plat_000043"],
+      "notes": "Hardened Phase 10 full-corpus scanner classified the candidate as an exact duplicate of canonical Wirex X-Accounts by exact domain, canonical name and aliases."
+    },
+    "decision": "duplicate",
+    "notes": "Do not consume a new canonical platform ID. Current X-Account Terms explicitly transfer deposited crypto ownership to the applicable Wirex company and the 2026 Wirex One migration FAQ documents regional closure/return behavior. Preserve these sources for a separate current-state and terms upgrade review of existing cya_plat_000043.",
+    "first_seen_at": "2026-08-12",
+    "last_reviewed_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "cya_candidate_000106",
+    "canonical_name": "YouHodler Yield Account",
+    "aliases": ["YouHodler", "YouHodler Yield", "YouHodler Yield Account", "YouHodler Earn"],
+    "domain": "youhodler.com",
+    "duplicate_check": {
+      "checked_at": "2026-08-12",
+      "matched_platform_ids": ["cya_plat_000042"],
+      "notes": "Hardened Phase 10 full-corpus scanner classified the candidate as an exact duplicate of canonical YouHodler by exact domain and exact alias/name signals."
+    },
+    "decision": "duplicate",
+    "notes": "Do not consume a new canonical platform ID. Current YouHodler Yield and jurisdiction-specific Terms may support a separate evidence/entity-boundary refresh of existing cya_plat_000042; do not create a second Yield Account platform identity.",
+    "first_seen_at": "2026-08-12",
+    "last_reviewed_at": "2026-08-12"
+  }
+]
