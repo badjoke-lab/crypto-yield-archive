@@ -1,0 +1,15 @@
+[
+  {
+    "platform_id": "cya_plat_000102",
+    "terms_status": "unclear",
+    "customer_claim_priority": "unknown",
+    "governing_law_or_jurisdiction": "The public website terms state Cayman Islands governing law, while the first-party company page identifies Izakaya Limited and a Hong Kong operating address. The logged-in lending flow appears to present separate contract content that was not available in the reviewed public sources.",
+    "asset_ownership_interpretation": "The reviewed public pages do not clearly establish whether lending transfers legal or beneficial ownership of customer assets, the exact lending counterparty, or how lent assets are deployed, rehypothecated, segregated, or treated in an insolvency.",
+    "bankruptcy_treatment": "Not established by the reviewed public terms.",
+    "withdrawal_limitations": "Lending contracts use selected lock periods and campaign rewards may require specified term completion, eligibility checks, or KYC/application steps. No platform-wide withdrawal suspension is established by the reviewed sources.",
+    "source_evidence_id": "cya_src_b61_0005",
+    "last_verified_at": "2026-08-13",
+    "confidence": "medium",
+    "notes": "Generic website terms are not treated as complete lending-product terms. The Hong Kong operator identity and Cayman governing-law clause are preserved separately rather than reconciled by inference. Reverify if IZAKA-YA publishes public lending-contract terms that resolve counterparty, ownership, custody deployment, insolvency treatment, insurance, or regulatory authorization."
+  }
+]

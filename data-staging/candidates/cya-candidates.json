@@ -54,34 +54,5 @@
     "notes": "Phase 10 review confirms strong scope fit: Apple's listing identifies Outlet Finance Inc as the developer and describes user funds being converted to digital assets and put to work for monthly rewards, while an official Outlet Medium post documents the platform's crypto-lending origin. However, secondary sources disagree or lack precision on the closure date: one says early 2023 and Dealroom says operations had ceased by October 2023, while Apple's app history shows version 5.0.3 dated 2023-02-21. Do not assign an exact closure date or repayment outcome from these sources. Resolve first-party closure/customer communications, operating-company registration, historical terms/custody and the final customer-fund outcome before add_now.",
     "first_seen_at": "2026-08-05",
     "last_reviewed_at": "2026-08-12"
-  },
-  {
-    "candidate_id": "cya_candidate_000107",
-    "canonical_name": "IZAKA-YA",
-    "aliases": ["IZAKAYA", "Izakaya", "IZAKA-YA Wallet"],
-    "domain": "izakaya.tech",
-    "country_or_origin": "Hong Kong",
-    "platform_type_guess": "centralized_yield",
-    "status_guess": "active",
-    "major_event": "Active crypto lending wallet operated by Izakaya Limited; first-party materials document periodic interest, configurable lending terms, automatic return of principal plus interest at lock expiry, and multiple temporary high-annualized-rate campaigns during 2026",
-    "primary_sources": [
-      "https://izakaya.tech/en/",
-      "https://izakaya.tech/about/",
-      "https://support-izakaya.zendesk.com/hc/ja/articles/5134468067102-%E3%83%AC%E3%83%B3%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E6%96%B9%E6%B3%95%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6",
-      "https://support-izakaya.zendesk.com/hc/en-us/articles/5065673049886-How-do-I-start-lending",
-      "https://izakaya.tech/termsandconditions/",
-      "https://izakaya.tech/en/news/izakaya-33-campaign-june/",
-      "https://izakaya.tech/en/news/100matsuri-summer/"
-    ],
-    "secondary_sources": [],
-    "duplicate_check": {
-      "checked_at": "2026-08-13",
-      "matched_platform_ids": [],
-      "notes": "Exact repository searches for IZAKA-YA / IZAKAYA / izakaya.tech found no canonical or staging identity match before allocation. Candidate ID 000107 was allocated only after reading Phase 10 consumed ledgers and confirming 000103-000106 were already used; the hardened full-corpus scanner remains authoritative before canonical promotion."
-    },
-    "decision": "add_now",
-    "notes": "Scope fit and current operation are directly supported by first-party sources. The public company page identifies Izakaya Limited at a Hong Kong address and states service start in December 2023 without an exact day. The public lending procedure requires a logged-in wallet balance, amount and term selection, review of estimated interest and contract content, and states that principal plus interest are automatically returned to the wallet after the lock period. The public website terms are generic website terms rather than complete lending-product terms and specify Cayman Islands governing law, while the operator page identifies Hong Kong; do not silently infer a lending counterparty, custody ownership transfer, deposit-insurance status, or regulatory authorization. Advertised 12%, 33%, 100% and similar annualized rates are issuer claims/promotions, not verified realized customer returns. No adverse customer-outcome event has been established; an active canonical record should preserve outcome as unknown/not-applicable under the schema rather than infer repayment performance.",
-    "first_seen_at": "2026-08-12",
-    "last_reviewed_at": "2026-08-13"
   }
 ]
