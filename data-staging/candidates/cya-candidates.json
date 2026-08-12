@@ -56,35 +56,6 @@
     "last_reviewed_at": "2026-08-12"
   },
   {
-    "candidate_id": "cya_candidate_000103",
-    "canonical_name": "Abra Earn",
-    "aliases": ["Abra", "Plutus Lending", "Abra Earn", "Abra Boost"],
-    "domain": "abra.com",
-    "country_or_origin": "United States",
-    "platform_type_guess": "crypto_interest_account",
-    "status_guess": "operations_ended",
-    "major_event": "Abra Earn offered retail crypto interest accounts from around July 2020; U.S. interest-bearing products and broader U.S. operations were later wound down under state and federal regulatory actions, with remaining customer virtual assets subject to return arrangements",
-    "primary_sources": [
-      "https://www.sec.gov/newsroom/press-releases/2024-105",
-      "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-26221",
-      "https://www.csbs.org/newsroom/state-financial-regulators-settle-abra-return-cryptocurrency-assets",
-      "https://dfi.wa.gov/news/press/washington-dfi-joins-csbs-regulators-multistate-settlement-abra-cease-operations-and"
-    ],
-    "secondary_sources": [
-      "https://ssb.texas.gov/news-publications/order-no-enf-24-cdo-1881",
-      "https://dfi.wa.gov/securities-enforcement-actions/plutus-financial-holdings-inc-plutus-financial-inc-plutus-lending"
-    ],
-    "duplicate_check": {
-      "checked_at": "2026-08-12",
-      "matched_platform_ids": [],
-      "notes": "Repository searches for Abra Earn and Plutus Lending returned no canonical match before scanner review. Full-corpus duplicate scan remains mandatory."
-    },
-    "decision": "add_now",
-    "notes": "Evidence-rich CeFi candidate. SEC records identify Plutus Lending LLC d/b/a Abra as the operator of Abra Earn, state that the product began around July 2020, describe users tendering crypto assets in exchange for variable interest, and record a final federal judgment in January 2025. CSBS and Washington DFI document a multistate U.S. wind-down and return of remaining virtual assets, with up to $82.1 million to be returned. Do not infer that every customer was fully repaid merely from the settlement ceiling; customer outcome must follow the strongest reviewed settlement/return evidence. Keep Abra Earn product history distinct from later Abra Boost and from any current non-U.S. Abra activity.",
-    "first_seen_at": "2026-08-12",
-    "last_reviewed_at": "2026-08-12"
-  },
-  {
     "candidate_id": "cya_candidate_000104",
     "canonical_name": "Nebeus Renting",
     "aliases": ["Nebeus", "Nebeus Renting", "Nebeus Earn", "Crypto Renting"],
