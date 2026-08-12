@@ -81,13 +81,22 @@ IZAKAYA
 izakaya.tech
 ```
 
-The candidate is assigned staging ID:
+The first attempted staging ID, `cya_candidate_000050`, was rejected by corpus audit because that ID already exists in historical consumed ledger `cya-consumed-batch-35.json`. Phase 10 consumed ledgers were then read directly and confirmed the recent assignments:
 
 ```text
-cya_candidate_000050
+cya_candidate_000103  Abra Earn
+cya_candidate_000104  Nebeus Renting
+cya_candidate_000105  Wirex X-Accounts
+cya_candidate_000106  YouHodler Yield Account
 ```
 
-No canonical platform or event ID is allocated here. The hardened full-corpus candidate scanner remains authoritative for duplicate blocking.
+An exact repository search found no use of the next ID. IZAKA-YA is therefore assigned:
+
+```text
+cya_candidate_000107
+```
+
+No canonical platform or event ID is allocated here. The hardened full-corpus candidate scanner and corpus audit remain authoritative for duplicate and ID-collision blocking.
 
 ## Existing queue
 
