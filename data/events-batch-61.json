@@ -1,0 +1,17 @@
+[
+  {
+    "id": "cya_ev_000342",
+    "platform_id": "cya_plat_000102",
+    "event_type": "yield_rate_changed",
+    "event_date": "2026-06-10",
+    "title": "IZAKA-YA advertised a 1000% APR-equivalent switching campaign",
+    "description": "IZAKA-YA announced a campaign for users transferring assets from other exchanges or wallets. The first step advertised total rewards equivalent to 1000% APR for a three-day lending period, combining the normal or campaign lending rate with an additional reward and subject to eligibility requirements and a reward cap.",
+    "confidence": "high",
+    "impact_level": "medium",
+    "event_status_effect": "none",
+    "source_count": 1,
+    "sort_order": 1,
+    "counterparty_name": null,
+    "notes": "This event records an issuer-advertised promotional rate and its conditions. It is not evidence of verified realized customer returns, universal payout, platform solvency, or a change in active status."
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "platform_id": "cya_plat_000102",
+    "product_name": "IZAKA-YA Lending",
+    "product_type": "centralized_yield",
+    "advertised_yield_range": "Normal public surface up to 12% APY; temporary 2026 campaigns advertised 33%, 100%, 500%, and 1000% annualized-equivalent reward rates subject to term, eligibility, and reward-cap conditions.",
+    "lockup_or_withdrawal_terms": "Public lending flows allow selection of lending amount and period and state that principal plus interest return to the IZAKA-YA wallet after the lock period. Campaign-specific conditions may require completing a term or additional eligibility steps to receive promotional rewards.",
+    "custody_or_counterparty_model": "Account-based IZAKA-YA wallet; the reviewed public sources do not fully resolve the exact lending counterparty, legal ownership transfer, asset deployment or rehypothecation mechanics.",
+    "source_ids": [
+      "cya_src_b61_0001",
+      "cya_src_b61_0003",
+      "cya_src_b61_0004",
+      "cya_src_b61_0006",
+      "cya_src_b61_0007",
+      "cya_src_b61_0008",
+      "cya_src_b61_0009"
+    ],
+    "last_verified_at": "2026-08-13",
+    "confidence": "medium",
+    "notes": "Headline promotional annualized rates are issuer-advertised campaign formulas and are not treated as verified realized customer returns."
+  }
+]

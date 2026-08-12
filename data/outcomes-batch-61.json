@@ -1,0 +1,14 @@
+[
+  {
+    "platform_id": "cya_plat_000102",
+    "outcome_status": "not_applicable",
+    "estimated_recovery_rate": "not_applicable",
+    "repayment_method": "Not applicable; IZAKA-YA remains an active platform and no failure, insolvency, withdrawal freeze, or customer-claims process is established by the reviewed sources.",
+    "claim_process_url": "https://izakaya.tech/en/",
+    "jurisdictions": ["Hong Kong", "Global"],
+    "affected_products": ["IZAKA-YA Lending"],
+    "last_verified_at": "2026-08-13",
+    "confidence": "medium",
+    "notes": "Public lending instructions describe contractual product mechanics, including principal plus interest returning to the wallet after lock expiry, but those instructions are not evidence of universal realized repayment. No adverse customer outcome is inferred."
+  }
+]

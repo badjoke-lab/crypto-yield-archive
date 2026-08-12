@@ -1,0 +1,16 @@
+[
+  {
+    "candidate_id": "cya_candidate_000107",
+    "canonical_name": "IZAKA-YA",
+    "domain": "izakaya.tech",
+    "decision": "already_recorded",
+    "duplicate_check": {
+      "checked_at": "2026-08-13",
+      "matched_platform_ids": ["cya_plat_000102"],
+      "notes": "Promoted only after candidate-only PR #187 and the hardened full-corpus scanner found no canonical duplicate against the 101-platform corpus."
+    },
+    "notes": "Promoted in Phase 10 canonical batch 61 as cya_plat_000102. Event cya_ev_000342 records the 2026-06-10 issuer-advertised 1000% APR-equivalent switching campaign. Promotional annualized rates remain issuer claims rather than verified realized customer returns, and unresolved lending counterparty, ownership, custody-deployment, insurance, and regulatory questions remain explicit in the canonical terms-risk record.",
+    "first_seen_at": "2026-08-12",
+    "last_reviewed_at": "2026-08-13"
+  }
+]
