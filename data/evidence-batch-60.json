@@ -98,11 +98,11 @@
     "url": "https://x.com/gimgyeongh62101/status/2084206277757161565",
     "publisher": "Hwan (@gimgyeongh62101)",
     "published_at": "2026-08-03",
-    "archived_url": null,
+    "archived_url": "https://github.com/badjoke-lab/crypto-yield-archive/blob/main/docs/research/xora-social-evidence-verification-2026-08-12.md",
     "accessed_at": "2026-08-12",
     "reliability": "low",
     "claim_scope": "event",
-    "notes": "Claimant-published post with screenshots. One image depicts a DM interface labeled Xora Finance / @xora_finance tying destination tag 287588244 to a manual AML hold and also shows a Binance 29,899.8 XRP withdrawal matching the independently reproduced transaction; another depicts a conflicting phishing/no-account explanation. CYA does not treat the screenshots as authenticated XORA internal records."
+    "notes": "Claimant-published post with screenshots. One image depicts a DM interface labeled Xora Finance / @xora_finance tying destination tag 287588244 to a manual AML hold and also shows a Binance 29,899.8 XRP withdrawal matching the independently reproduced transaction; another depicts a conflicting phishing/no-account explanation. CYA does not treat the screenshots as authenticated XORA internal records. Privacy-reviewed copies and retrieval provenance are durably preserved in repository history at the archived_url."
   },
   {
     "id": "cya_src_b60_0008",
@@ -148,5 +148,20 @@
     "reliability": "medium",
     "claim_scope": "event",
     "notes": "Third-party investigation compiling multiple reported withdrawal issues, transaction observations and conflicting account explanations. CYA treats its conclusions as attributed investigative analysis and independently verifies only the XRPL facts used in the canonical record."
+  },
+  {
+    "id": "cya_src_b60_0011",
+    "platform_id": "cya_plat_000101",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "XORA Privacy Policy — AML review information and controls",
+    "url": "https://xora.finance/privacy",
+    "publisher": "XORA",
+    "published_at": "2026-07-31",
+    "archived_url": null,
+    "accessed_at": "2026-08-12",
+    "reliability": "high",
+    "claim_scope": "status",
+    "notes": "First-party policy describing collection of XRP/TRX deposit and withdrawal records, destination tags, transaction hashes, and AML-review information, and use of identity, wallet-ownership, sanctions, fraud, and AML reviews. This supports the existence of XORA's published AML-review process and account/transaction data model only; it does not authenticate the claimant-published DM or prove that the documented claimant was validly placed on an AML hold."
   }
 ]
