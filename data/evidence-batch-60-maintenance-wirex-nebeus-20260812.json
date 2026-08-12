@@ -1,0 +1,32 @@
+[
+  {
+    "id": "cya_src_b60_0012",
+    "platform_id": "cya_plat_000043",
+    "event_id": "cya_ev_000341",
+    "source_type": "official_statement",
+    "title": "Passaggio a Wirex One? Tutto quello che devi sapere",
+    "url": "https://help.wirexapp.com/it/article/wirex-one-upgrade-faq-1685",
+    "publisher": "Wirex",
+    "published_at": null,
+    "archived_url": null,
+    "accessed_at": "2026-08-12",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "Official Wirex migration FAQ. It supports a regional Classic Wirex migration/closure of X-Accounts in the EEA, UK and Australia after 30 June 2026, with balances returned to the main balance. It does not support a global X-Accounts shutdown."
+  },
+  {
+    "id": "cya_src_b60_0013",
+    "platform_id": "cya_plat_000046",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "Renting Terms of Use",
+    "url": "https://support.nebeus.com/portal/en/kb/articles/renting-terms-of-use",
+    "publisher": "Nebeus",
+    "published_at": "2026-05-24",
+    "archived_url": null,
+    "accessed_at": "2026-08-12",
+    "reliability": "high",
+    "claim_scope": "terms_risk",
+    "notes": "This first-party support portal terms page identifies Rintral Capital S.L.U. as the Renting counterparty. A separate current Nebeus first-party Renting Terms page identifies Rintral Trading S.L.U. in the relevant Renting/services terms. Preserve the discrepancy and do not infer a single universal operating legal entity from either source alone."
+  }
+]
