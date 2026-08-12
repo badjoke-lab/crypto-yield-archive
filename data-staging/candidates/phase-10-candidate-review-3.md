@@ -1,61 +1,71 @@
 # Phase 10 candidate review 3 — 2026-08-12
 
-Status: candidate-only review / Wirex X-Accounts proposed add_now / no canonical IDs allocated
+Status: candidate-only review / three exact duplicates resolved / no draft-eligible candidate / no canonical IDs allocated
 
 ## Baseline
 
-This review follows merged Phase 10 candidate review 2, which resolved the attempted Abra Earn candidate as an exact duplicate of canonical `cya_plat_000013`. The active queue before this review contained Cabital, Outlet Finance and Nebeus Renting, all `needs_research`.
+This review follows merged Phase 10 candidate review 2, which resolved attempted Abra Earn candidate `cya_candidate_000103` as an exact duplicate of canonical `cya_plat_000013`.
 
 No `cya_plat_000102` or `cya_ev_000341` record is created here.
 
-## Wirex X-Accounts — add_now pending scanner
+## Automated scanner result
 
-Wirex X-Accounts have unusually explicit current first-party terms for CYA's custody/ownership taxonomy.
-
-Current X-Account Terms state that:
-
-- the product allows users to earn interest on crypto assets transferred into X-Accounts;
-- Flexible, Plus and Fixed variants have distinct liquidity/lock-up rules;
-- an X-Account is not a checking, savings, bank or deposit account and is not protected by government-backed depositor compensation, insurance or guarantee schemes;
-- when crypto assets are deposited into an X-Account, ownership is transferred to the applicable Wirex company;
-- Wirex may use, hold or manage those assets at its discretion for operational, investment or other purposes;
-- Flexible X-Accounts may be withdrawn at any time, while Plus and Fixed variants impose product-specific lock/redemption periods.
-
-Current regional transition evidence is also material. Wirex's Wirex One migration FAQ states that the old Wirex App stopped supporting transactions for EEA, UK and Australia after 2026-06-30, with X-Accounts closed and balances returned to the main account for users who had not upgraded. Other regional timelines may differ. Current Wirex status material still references X-Accounts, so the correct candidate status is `limited`, not globally `operations_ended`.
-
-Legal-entity boundary:
-
-- the X-Account Terms expressly make the counterparty the Wirex company identified by the user's applicable Crypto-Assets Terms;
-- UK regulatory information currently identifies cryptoasset services as provided by Wirex Digital Services s.r.l., not Wirex Limited;
-- CYA must preserve the jurisdiction-dependent counterparty boundary rather than inventing one global legal entity.
-
-Candidate decision: `add_now`, subject to the full-corpus duplicate scanner and generated-draft review.
-
-## YouHodler Yield Account — needs_research
-
-YouHodler has strong current scope fit:
-
-- its Yield Account currently advertises weekly returns across supported crypto assets and flexible withdrawals;
-- Swiss-facing Terms identify YouHodler SA, registration `CHE-336.197.657`, as the contracting company;
-- current legal materials describe AML investigation powers and broader platform services.
-
-Promotion is not yet justified because the reviewed general terms do not establish Yield Account-specific ownership/counterparty mechanics with the same precision as Wirex, and YouHodler applies jurisdiction-specific entities and terms, including an Italian entity for some users.
-
-Candidate decision: `needs_research` until Yield-specific custody/ownership and the applicable contractual entity are resolved.
-
-## Existing research candidates
-
-Cabital, Outlet Finance and Nebeus Renting remain `needs_research`; their evidence thresholds are unchanged.
-
-## Result before automated gate
+Five active candidates were scanned against all 101 canonical platforms.
 
 ```text
-Cabital:                  needs_research
-Outlet Finance:           needs_research
-Nebeus Renting:           needs_research
-Wirex X-Accounts:         add_now -> scanner/draft required
-YouHodler Yield Account:  needs_research
-Canonical IDs:            none allocated
+Cabital:                  manual_review_required / duplicate-clear
+Outlet Finance:           manual_review_required / duplicate-clear
+Nebeus Renting:           exact_duplicate -> cya_plat_000046
+Wirex X-Accounts:         exact_duplicate -> cya_plat_000043
+YouHodler Yield Account:  exact_duplicate -> cya_plat_000042
+Draft-eligible:            0
 ```
 
-If Wirex is duplicate-clear and draft-eligible, canonical promotion must occur in a separate PR beginning with `cya_plat_000102`. A scanner collision consumes no canonical ID.
+The attempted Wirex `add_now` decision was therefore blocked by the safety guard exactly as intended. No canonical ID was consumed.
+
+## Nebeus — duplicate of `cya_plat_000046`
+
+The full-corpus scanner matched the current Nebeus Renting candidate to existing canonical Nebeus by exact domain and exact product aliases.
+
+The newly reviewed 2026 terms remain useful because current public Nebeus documentation appears internally inconsistent on the Renting commercial counterparty:
+
+- `help.nebeus.com` material updated 2026-05-24 names `Rintral Trading, S.L.U.` (B66096686);
+- `support.nebeus.com` currently exposes Renting terms naming `Rintral Capital S.L.U.` (B21849609).
+
+This is now an evidence/entity-boundary maintenance question for `cya_plat_000046`, not a new platform candidate.
+
+## Wirex X-Accounts — duplicate of `cya_plat_000043`
+
+The scanner matched the candidate by exact canonical name, exact aliases and exact domain.
+
+The newly reviewed current sources remain valuable maintenance evidence:
+
+- current X-Account Terms state that deposited crypto ownership transfers to the applicable Wirex company;
+- Wirex may use, hold or manage the assets at its discretion;
+- X-Accounts are not bank/deposit accounts and are not government-insured;
+- Wirex's 2026 Wirex One FAQ documents regional X-Account closure and return of balances for EEA/UK/Australia after 2026-06-30, while other regional timelines may differ.
+
+These facts should be reviewed against existing `cya_plat_000043` in a separate evidence/status/terms maintenance PR, not represented as platform 102.
+
+## YouHodler — duplicate of `cya_plat_000042`
+
+The scanner matched the candidate by exact domain and exact Yield Account aliases.
+
+Current YouHodler Yield and jurisdiction-specific Terms may support a refresh of the existing platform's current service, entity and product-boundary evidence. They do not justify a second canonical identity.
+
+## Remaining active candidates
+
+After resolving the three duplicates, the active queue returns to:
+
+```text
+Cabital:         needs_research / duplicate-clear
+Outlet Finance:  needs_research / duplicate-clear
+```
+
+Both remain below public-quality threshold. Their evidence bar is not lowered merely to allocate platform 102.
+
+## Result
+
+Nebeus, Wirex and YouHodler are moved to `cya-consumed-duplicate-review-phase-10-3.json`. Their newly reviewed sources should be handled as existing-record maintenance work where useful.
+
+The next growth search must query the canonical corpus through the hardened scanner before any `add_now` promotion. Platform `cya_plat_000102` and event `cya_ev_000341` remain unused.
