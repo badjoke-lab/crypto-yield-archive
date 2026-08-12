@@ -1,0 +1,15 @@
+[
+  {
+    "id": "cya_ev_000341",
+    "platform_id": "cya_plat_000043",
+    "event_type": "other",
+    "event_date": "2026-06-30",
+    "title": "Wirex One migration closes Classic X-Accounts in EEA, UK and Australia",
+    "description": "Wirex's migration FAQ set 30 June 2026 as the deadline for Classic Wirex support in the EEA, UK and Australia and states that active Classic X-Accounts in those regions are closed with funds returned to the main balance as part of the Wirex One migration.",
+    "impact_level": "high",
+    "event_status_effect": "limited",
+    "confidence": "high",
+    "source_count": 1,
+    "notes": "Regional Classic Wirex migration event only. Do not interpret this as a global shutdown of X-Accounts; Wirex One and current Wirex materials continue to describe X-Accounts."
+  }
+]
