@@ -1,0 +1,17 @@
+[
+  {
+    "candidate_id": "cya_candidate_000108",
+    "canonical_name": "MEXC Earn",
+    "aliases": ["MEXC Savings", "MEXC Flexible Savings", "MEXC Fixed Savings", "MEXC On-Chain Earn", "MEXC Auto-Earn"],
+    "domain": "mexc.com",
+    "duplicate_check": {
+      "checked_at": "2026-08-13",
+      "matched_platform_ids": ["cya_plat_000073"],
+      "notes": "Hardened Phase 10 full-corpus scanner classified the staged MEXC Earn candidate as an exact duplicate of canonical cya_plat_000073, MEXC Savings. Direct canonical review confirmed platform 73 already covers MEXC Flexible Savings and Fixed Savings at mexc.com and explicitly records the Feb 4, 2026 hourly-interest change plus current March 2026 Earn terms."
+    },
+    "decision": "duplicate",
+    "notes": "Do not consume a new canonical platform ID. Canonical MEXC Savings already uses the MEXC Earn surface and records active Flexible/Fixed Savings, variable non-guaranteed APR, principal-loss and asset-use risks, and product-level 2026 maintenance. Newly reviewed MEXC materials confirm the existing record rather than establish a second platform identity. On-Chain Earn, Hold and Earn, Futures Earn and other MEXC product families remain outside the scoped MEXC Savings identity unless separately reviewed under a distinct product-identity decision; do not broaden platform 73 or create a duplicate solely because the current MEXC navigation uses the umbrella Earn label.",
+    "first_seen_at": "2026-08-12",
+    "last_reviewed_at": "2026-08-13"
+  }
+]
