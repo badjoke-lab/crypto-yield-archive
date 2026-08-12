@@ -56,7 +56,7 @@
     "last_reviewed_at": "2026-08-12"
   },
   {
-    "candidate_id": "cya_candidate_000050",
+    "candidate_id": "cya_candidate_000107",
     "canonical_name": "IZAKA-YA",
     "aliases": ["IZAKAYA", "Izakaya", "IZAKA-YA Wallet"],
     "domain": "izakaya.tech",
@@ -77,7 +77,7 @@
     "duplicate_check": {
       "checked_at": "2026-08-13",
       "matched_platform_ids": [],
-      "notes": "Exact repository searches for IZAKA-YA / IZAKAYA / izakaya.tech found no canonical or staging identity match before allocation. Candidate still must pass the hardened full-corpus scanner before canonical promotion."
+      "notes": "Exact repository searches for IZAKA-YA / IZAKAYA / izakaya.tech found no canonical or staging identity match before allocation. Candidate ID 000107 was allocated only after reading Phase 10 consumed ledgers and confirming 000103-000106 were already used; the hardened full-corpus scanner remains authoritative before canonical promotion."
     },
     "decision": "add_now",
     "notes": "Scope fit and current operation are directly supported by first-party sources. The public company page identifies Izakaya Limited at a Hong Kong address and states service start in December 2023 without an exact day. The public lending procedure requires a logged-in wallet balance, amount and term selection, review of estimated interest and contract content, and states that principal plus interest are automatically returned to the wallet after the lock period. The public website terms are generic website terms rather than complete lending-product terms and specify Cayman Islands governing law, while the operator page identifies Hong Kong; do not silently infer a lending counterparty, custody ownership transfer, deposit-insurance status, or regulatory authorization. Advertised 12%, 33%, 100% and similar annualized rates are issuer claims/promotions, not verified realized customer returns. No adverse customer-outcome event has been established; an active canonical record should preserve outcome as unknown/not-applicable under the schema rather than infer repayment performance.",
