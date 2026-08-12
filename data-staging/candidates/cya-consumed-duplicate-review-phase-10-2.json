@@ -1,0 +1,17 @@
+[
+  {
+    "candidate_id": "cya_candidate_000103",
+    "canonical_name": "Abra Earn",
+    "aliases": ["Abra", "Plutus Lending", "Abra Earn", "Abra Boost"],
+    "domain": "abra.com",
+    "duplicate_check": {
+      "checked_at": "2026-08-12",
+      "matched_platform_ids": ["cya_plat_000013"],
+      "notes": "The hardened full-corpus candidate scanner classified Abra Earn as an exact duplicate of canonical cya_plat_000013 by exact normalized candidate name and alias match."
+    },
+    "decision": "duplicate",
+    "notes": "Do not create another Abra Earn platform identity or consume a canonical platform ID. The newly reviewed SEC, CSBS and Washington regulator sources may support later evidence-backed enrichment of existing cya_plat_000013, including operator identity, product period, U.S. wind-down, final federal judgment and asset-return settlement. Keep Abra Earn product history distinct from later Abra Boost when enriching the existing canonical record.",
+    "first_seen_at": "2026-08-12",
+    "last_reviewed_at": "2026-08-12"
+  }
+]
