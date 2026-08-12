@@ -1,6 +1,6 @@
 # Phase 10 candidate review 5 — MEXC Earn — 2026-08-13
 
-Status: candidate-only review / MEXC Earn staged `add_now` / canonical IDs not allocated
+Status: candidate-only review / `duplicate` / canonical `cya_plat_000073` / no canonical IDs allocated
 
 ## Baseline
 
@@ -26,39 +26,74 @@ IZAKA-YA platform 102 passed exact-merge-SHA Production Surface Check before thi
 
 This PR is staging-only. It does not create a public platform record and does not allocate canonical platform/event IDs.
 
-## MEXC Earn — add_now candidate
+## Initial review
 
-MEXC Earn is a direct CYA scope match.
+Current first-party evidence confirms an active MEXC yield service covering Flexible Savings, Fixed Savings, On-Chain Earn and Auto-Earn.
 
-Current first-party evidence supports an active MEXC yield service covering:
+The current MEXC Earn Service Agreement states that users deposit, stake, or allocate digital assets for a fixed or flexible period to generate Return. Current MEXC materials also separate centralized savings products from On-Chain Earn, where third-party DApps and protocols operate underlying opportunities.
+
+The initial candidate was staged as:
 
 ```text
-Flexible Savings
-Fixed Savings
-On-Chain Earn
-Auto-Earn
+cya_candidate_000108
+MEXC Earn
+add_now
 ```
 
-MEXC's current Earn page describes the service as a one-stop platform for earning from crypto holdings. The current Earn guide says Flexible Savings allows interest with flexible redemption, Fixed Savings locks assets for a selected term, and On-Chain Earn provides access to on-chain earning opportunities from an MEXC Spot account.
+That provisional decision was intentionally subject to the hardened full-corpus scanner.
 
-The current MEXC Earn Service Agreement states that users deposit, stake, or allocate digital assets for a fixed or flexible period to generate Return. It also separates the centralized savings products from On-Chain Earn, where third-party DApps and protocols operate the underlying opportunities.
+## Scanner result
 
-## Status and product-maintenance evidence
+The exact-head Phase 10 Candidate scan blocked the provisional `add_now` decision:
 
-The service remains active in 2026.
+```text
+exact_duplicate -> cya_plat_000073
+```
 
-Two current first-party maintenance events were reviewed:
+Direct canonical inspection then confirmed:
 
-- Flexible Savings interest calculation changed from daily to hourly effective 2026-02-04.
-- MEXC announced delisting of selected Fixed/Flexible Savings products effective 2026-02-27 while stating that existing stakings could continue under their original terms.
+```text
+cya_plat_000073
+slug: mexc-savings
+canonical_name: MEXC Savings
+aliases:
+  MEXC Earn Savings
+  MEXC Flexible Savings
+  MEXC Fixed Savings
+status: active
+```
 
-These are product-level maintenance changes. They do not establish platform failure, insolvency, or an adverse customer-outcome event.
+The existing record is a product-scoped MEXC Savings identity at `mexc.com` and already documents current 2026 Flexible/Fixed Savings behavior, variable non-guaranteed APR, asset-use/principal-loss risks, and the Feb 4, 2026 change from daily to hourly Flexible Savings interest calculation.
+
+Therefore the correct decision is:
+
+```text
+duplicate
+matched platform: cya_plat_000073
+```
+
+No new canonical platform ID is justified.
+
+## Product-scope boundary
+
+The broader current MEXC umbrella also includes:
+
+```text
+On-Chain Earn
+Hold and Earn
+Futures Earn
+other Earn families
+```
+
+Canonical platform 73 explicitly scopes itself to Flexible Savings and Fixed Savings and states that other MEXC Earn families are outside that identity unless separately reviewed.
+
+This review does not silently broaden platform 73 merely because current navigation uses the umbrella `MEXC Earn` label. A future separate product candidate would need its own identity and evidence analysis rather than reusing the umbrella name to create a duplicate of Savings.
 
 ## Return-claim boundary
 
-MEXC's current legal terms explicitly state that published APR/APY or representations of possible return are estimates and are not guaranteed.
+MEXC's current legal terms state that published APR/APY or representations of possible return are estimates and are not guaranteed.
 
-CYA must therefore preserve any current or historical MEXC Earn rate as:
+CYA therefore continues to treat any MEXC Earn/Savings rate as:
 
 ```text
 issuer-advertised / estimated return
@@ -73,80 +108,69 @@ proof of solvency
 proof of universal payout
 ```
 
-The live Earn page is dynamic and can display very high headline estimated APR values for individual products. Those dynamic values should not be promoted into a durable canonical fact without a dated product/event source and explicit conditions.
+The dynamic live Earn page can display high headline estimated APR values for individual products. Those changing values are not durable canonical facts without dated product/event evidence and conditions.
 
-## Fixed / flexible / on-chain boundary
+## Current maintenance review
 
-The product family contains materially different risk and redemption models.
+The newly reviewed 2026 sources materially confirm, rather than contradict, the existing platform 73 record:
 
-### Flexible Savings
+- Flexible Savings changed from daily to hourly interest effective 2026-02-04.
+- Current Earn terms state APR is variable and not guaranteed.
+- Fixed Savings remains term-locked under current terms.
+- MEXC can add/remove individual Savings products.
+- Current broader Earn terms describe On-Chain Earn as third-party DApp/protocol exposure.
 
-Current terms describe flexible redemption and periodic return accrual/distribution, subject to product availability and MEXC's ability to change or delist products.
+Because platform 73 was already last verified on 2026-08-09 with the March 2026 Earn agreement and the same hourly-interest update, this candidate review does not create a redundant four-day-later canonical maintenance PR merely to restate unchanged facts.
 
-### Fixed Savings
+## Legal / jurisdiction boundary
 
-Current terms state assets are locked until the selected term expires, after which principal and Return are credited. Product instructions are contract mechanics, not evidence of universal realized repayment.
+Current Earn terms identify `MEXC Global`; the broader User Agreement identifies `MEXC Trading Platform` and affiliates without establishing one unambiguous incorporation jurisdiction for the Earn contracting entity in the reviewed public text.
 
-### On-Chain Earn
-
-Current terms state that MEXC aggregates third-party DApp/protocol opportunities. MEXC states that it does not assess, manage, operate, control, or supervise those DApps. Returns and redemption timing can depend on protocol rules, validators, network conditions, smart-contract behavior, quotas, lockups, epochs, or third-party constraints.
-
-Canonical promotion should therefore use a centralized-yield platform classification while preserving third-party/on-chain exposure as product and terms-risk detail rather than misclassifying the whole MEXC Earn service as a decentralized platform.
-
-## Legal-entity / jurisdiction boundary
-
-The current Earn agreement identifies the contracting party as `MEXC Global`. The broader User Agreement identifies `MEXC Trading Platform` and affiliated companies but does not, in the reviewed public text, establish one unambiguous incorporation jurisdiction for the Earn contracting entity.
-
-Accordingly candidate origin is:
+The existing canonical record uses:
 
 ```text
-Global
+Global / jurisdiction-dependent
 ```
 
-Do not infer Seychelles or another country from historical exchange-profile material without direct current legal authority.
+This review finds no basis to replace that with an inferred Seychelles or other country label.
 
-The Earn agreement and broader MEXC terms also contain changing prohibited-jurisdiction lists. Those are service-availability restrictions, not evidence of operator origin.
+Changing prohibited-jurisdiction lists remain service-availability context, not operator-origin evidence.
 
-## Duplicate check
+## Candidate ledger handling
 
-Exact repository searches before staging found no existing CYA identity match for:
-
-```text
-MEXC
-MEXC Earn
-mexc.com
-MEXC Savings
-Simple Earn
-```
-
-Exact repository search also found no prior use of:
+The staged ID remains historically traceable as:
 
 ```text
 cya_candidate_000108
 ```
 
-The candidate is therefore staged as:
+It is removed from the active candidate ledger and preserved in:
 
 ```text
-cya_candidate_000108
+data-staging/candidates/cya-consumed-duplicate-review-phase-10-5.json
 ```
 
-The hardened candidate corpus audit and full-corpus scanner remain authoritative. If they identify a historical consumed/rejected ID or identity collision, the staging ID or decision must be corrected before merge.
+mapped to:
+
+```text
+cya_plat_000073
+```
+
+The original external watchlist remains discovery-only and is not used as canonical evidence.
 
 ## Existing queue
 
 Cabital and Outlet Finance remain `needs_research` with unchanged evidence thresholds.
 
-Expected active candidate queue after this review:
+Active queue after this duplicate review:
 
 ```text
 Cabital:        needs_research
 Outlet Finance: needs_research
-MEXC Earn:      add_now (subject to scanner)
 ```
 
 ## Next action
 
-Run the exact-head candidate audit, full-corpus scanner, scanner guard, draft generator, data validation, CYA CI, build/SEO and preview checks.
+Re-run the exact-head candidate corpus audit, scanner/guard, data validation, CYA CI, build/SEO and preview checks after removing MEXC Earn from the active ledger.
 
-If MEXC Earn remains duplicate-clear, ID-collision-clear and draft-eligible, merge this candidate-only review first. Canonical promotion must then occur in a separate reviewed PR and only that later PR may allocate the next canonical platform/event/evidence records.
+If all checks pass, merge this duplicate-review PR. No canonical promotion PR is needed for MEXC Earn/Savings. Issue #186 then advances directly to the next discovery candidate, BTCC Earn.
