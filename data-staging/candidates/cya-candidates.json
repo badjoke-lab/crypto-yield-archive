@@ -1,5 +1,58 @@
 [
-  {"candidate_id":"cya_candidate_000010","canonical_name":"Goldfinch","aliases":["Goldfinch Protocol","Goldfinch Prime","Goldfinch V1"],"domain":"goldfinch.finance","country_or_origin":"Global / United States","platform_type_guess":"institutional_lending","status_guess":"limited","major_event":"Goldfinch Prime wind-down, full Prime investor redemption, contract pause, and transition of the legacy protocol to maintenance mode for borrower recoveries","primary_sources":["https://t.co/yX2fb2TYui","https://www.goldfinch.finance/"],"secondary_sources":[],"duplicate_check":{"checked_at":"2026-07-25","matched_platform_ids":[],"notes":"No Goldfinch or Goldfinch Prime canonical platform was found in the current repository review. A full candidate audit remains required before any promotion."},"decision":"needs_research","notes":"The first-party governance proposal moves the legacy Goldfinch protocol into recovery-only maintenance mode and winds down Goldfinch Prime. A 7 July update states that Prime investors were fully redeemed, no new deposits are accepted, and the contract was paused, while legacy V1 borrower pools remain in payment or recovery. CYA focuses on CeFi and does not prioritize DeFi lending protocols in its initial scope, so this is staged for an explicit scope and entity-boundary decision rather than forced into canonical data.","first_seen_at":"2026-07-25","last_reviewed_at":"2026-07-25"},
-  {"candidate_id":"cya_candidate_000045","canonical_name":"Cabital","aliases":["Cabital Earn","Cabital Crypto Earn","Cabital Connect"],"domain":"cabital.com","country_or_origin":"Singapore / Europe / Global","platform_type_guess":"centralized_yield","status_guess":"unknown","major_event":"Cabital operated consumer crypto Earn and payments products and announced a 2022 fiat on-and-off-ramp partnership with Matrixport; later product closure, entity status, customer migration and outcome remain unresolved","primary_sources":["https://www.cabital.com/","https://blog.matrixport.com/announcements/matrixport-partners-with-cabital/"],"secondary_sources":["https://find-and-update.company-information.service.gov.uk/company/14888741"],"duplicate_check":{"checked_at":"2026-08-05","matched_platform_ids":[],"notes":"The hardened scanner classified Cabital as duplicate-clear. The reviewed Matrixport source describes a commercial partnership and integration of Cabital Connect, not an acquisition."},"decision":"needs_research","notes":"Retained for a later batch with the unsupported acquisition premise removed. Confirm the operating legal entities, product boundary, closure, custody and customer outcome.","first_seen_at":"2026-08-05","last_reviewed_at":"2026-08-05"},
-  {"candidate_id":"cya_candidate_000049","canonical_name":"Outlet Finance","aliases":["Outlet","Outlet Savings","Outlet Earn"],"domain":"outlet.finance","country_or_origin":"United States","platform_type_guess":"crypto_interest_account","status_guess":"operations_ended","major_event":"Consumer yield account app whose counterparty model, closure and repayment status require review","primary_sources":["https://outlet.finance/"],"secondary_sources":[],"duplicate_check":{"checked_at":"2026-08-05","matched_platform_ids":[],"notes":"The hardened scanner classified Outlet Finance as duplicate-clear. It remains needs_research because closure chronology, counterparties, customer communications, legal entities and repayment outcome are not adequately sourced."},"decision":"needs_research","notes":"Retained for a later batch. Confirm operating company, product terms, underlying yield counterparties, custody/ownership, closure date and repayment outcome.","first_seen_at":"2026-08-05","last_reviewed_at":"2026-08-05"}
+  {
+    "candidate_id": "cya_candidate_000045",
+    "canonical_name": "Cabital",
+    "aliases": ["Cabital Earn", "Cabital Crypto Earn", "Cabital Connect"],
+    "domain": "cabital.com",
+    "country_or_origin": "Singapore / Europe / Global",
+    "platform_type_guess": "centralized_yield",
+    "status_guess": "unknown",
+    "major_event": "Cabital operated consumer crypto Earn and payments products; partner integrations were terminated in late 2022, but platform-wide closure, operating entity, customer migration and outcome remain unresolved",
+    "primary_sources": [
+      "https://www.cabital.com/",
+      "https://blog.matrixport.com/announcements/matrixport-partners-with-cabital/"
+    ],
+    "secondary_sources": [
+      "https://support.woox.io/hc/en-us/articles/12485806745881-Buy-crypto-with-fiat-currencies-Cabital-Service-Termination-Notice",
+      "https://find-and-update.company-information.service.gov.uk/company/14888741"
+    ],
+    "duplicate_check": {
+      "checked_at": "2026-08-12",
+      "matched_platform_ids": [],
+      "notes": "Still duplicate-clear against the 101-platform corpus. Matrixport documents a commercial partnership, not an acquisition."
+    },
+    "decision": "needs_research",
+    "notes": "Phase 10 review confirms CYA scope relevance but not promotion readiness. WOO X records termination of its Cabital fiat integration effective 2022-11-17; that does not establish platform-wide Cabital closure or customer outcome. CABITAL GLOBAL LIMITED (UK company 14888741) was incorporated only in 2023 and dissolved in 2024, so it must not be assumed to be the entity that operated the earlier Cabital Earn product. Resolve the original operating legal entity, first-party product terms/custody, platform-wide closure chronology, and customer repayment/migration outcome before add_now.",
+    "first_seen_at": "2026-08-05",
+    "last_reviewed_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "cya_candidate_000049",
+    "canonical_name": "Outlet Finance",
+    "aliases": ["Outlet", "Outlet Savings", "Outlet Earn"],
+    "domain": "outlet.finance",
+    "country_or_origin": "United States",
+    "platform_type_guess": "crypto_interest_account",
+    "status_guess": "operations_ended",
+    "major_event": "Consumer digital-asset rewards / crypto savings app that later ceased operations; exact closure chronology, counterparty model, terms and customer repayment outcome require stronger evidence",
+    "primary_sources": [
+      "https://outlet.finance/",
+      "https://apps.apple.com/us/app/outlet-digital-asset-rewards/id1475723731",
+      "https://medium.com/outlet-finance/how-to-lend-and-utilize-dai-like-an-expert-a97662cccf7"
+    ],
+    "secondary_sources": [
+      "https://www.cultofmoney.com/outlet-finance-review/",
+      "https://app.dealroom.co/companies/outlet_1",
+      "https://www.producthunt.com/products/outlet-finance"
+    ],
+    "duplicate_check": {
+      "checked_at": "2026-08-12",
+      "matched_platform_ids": [],
+      "notes": "Still duplicate-clear against the 101-platform corpus."
+    },
+    "decision": "needs_research",
+    "notes": "Phase 10 review confirms strong scope fit: Apple's listing identifies Outlet Finance Inc as the developer and describes user funds being converted to digital assets and put to work for monthly rewards, while an official Outlet Medium post documents the platform's crypto-lending origin. However, secondary sources disagree or lack precision on the closure date: one says early 2023 and Dealroom says operations had ceased by October 2023, while Apple's app history shows version 5.0.3 dated 2023-02-21. Do not assign an exact closure date or repayment outcome from these sources. Resolve first-party closure/customer communications, operating-company registration, historical terms/custody and the final customer-fund outcome before add_now.",
+    "first_seen_at": "2026-08-05",
+    "last_reviewed_at": "2026-08-12"
+  }
 ]
