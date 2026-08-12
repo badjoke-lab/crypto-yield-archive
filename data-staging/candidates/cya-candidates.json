@@ -54,33 +54,5 @@
     "notes": "Phase 10 review confirms strong scope fit: Apple's listing identifies Outlet Finance Inc as the developer and describes user funds being converted to digital assets and put to work for monthly rewards, while an official Outlet Medium post documents the platform's crypto-lending origin. However, secondary sources disagree or lack precision on the closure date: one says early 2023 and Dealroom says operations had ceased by October 2023, while Apple's app history shows version 5.0.3 dated 2023-02-21. Do not assign an exact closure date or repayment outcome from these sources. Resolve first-party closure/customer communications, operating-company registration, historical terms/custody and the final customer-fund outcome before add_now.",
     "first_seen_at": "2026-08-05",
     "last_reviewed_at": "2026-08-12"
-  },
-  {
-    "candidate_id": "cya_candidate_000108",
-    "canonical_name": "MEXC Earn",
-    "aliases": ["MEXC Savings", "MEXC Flexible Savings", "MEXC Fixed Savings", "MEXC On-Chain Earn", "MEXC Auto-Earn"],
-    "domain": "mexc.com",
-    "country_or_origin": "Global",
-    "platform_type_guess": "centralized_yield",
-    "status_guess": "active",
-    "major_event": "Active MEXC yield platform offering Flexible Savings, Fixed Savings and On-Chain Earn; Flexible Savings interest calculation changed from daily to hourly effective 2026-02-04, while MEXC continues to add and delist individual Earn products",
-    "primary_sources": [
-      "https://www.mexc.com/earn",
-      "https://www.mexc.com/support/article/mexc-earn-service-agreement-17827791528848",
-      "https://www.mexc.com/learn/article/what-is-mexc-earn-/1",
-      "https://www.mexc.com/announcements/article/flexible-savings-upgrade-17827791533333",
-      "https://www.mexc.com/announcements/article/earn-update-17827791533854",
-      "https://www.mexc.com/terms"
-    ],
-    "secondary_sources": [],
-    "duplicate_check": {
-      "checked_at": "2026-08-13",
-      "matched_platform_ids": [],
-      "notes": "Exact repository searches for MEXC, mexc.com, MEXC Earn, Savings and Simple Earn returned no CYA canonical or staging identity match before allocation. Exact search found no prior use of cya_candidate_000108. The hardened full-corpus candidate scanner remains authoritative before canonical promotion."
-    },
-    "decision": "add_now",
-    "notes": "Current first-party MEXC sources directly establish a live Earn service. MEXC describes Flexible Savings, Fixed Savings and On-Chain Earn, with Auto-Earn for selected idle Spot assets. The current Earn agreement states that MEXC users deposit/stake/allocate digital assets for fixed or flexible terms to generate returns; Flexible Savings can be redeemed on demand, Fixed Savings locks assets until term expiry, and On-Chain Earn routes opportunities through third-party DApps/protocols. The agreement identifies the contracting party only as MEXC Global and the broader User Agreement as MEXC Trading Platform; reviewed public terms do not establish a single operator incorporation jurisdiction, so use Global rather than infer Seychelles or another country. The agreement explicitly says APR/APY and possible returns are estimates and not guaranteed, while On-Chain Earn adds third-party protocol, smart-contract, network and redemption-timing risk. Jurisdiction access is restricted and changes over time; preserve restrictions as service-availability context rather than country_of_origin. The Feb 4, 2026 hourly-interest upgrade and Feb 27, 2026 delisting of selected savings products show active product maintenance, not platform failure. Any current headline APR shown on the Earn page is dynamic issuer-advertised data, not verified realized customer return.",
-    "first_seen_at": "2026-08-12",
-    "last_reviewed_at": "2026-08-13"
   }
 ]
