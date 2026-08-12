@@ -54,5 +54,63 @@
     "notes": "Phase 10 review confirms strong scope fit: Apple's listing identifies Outlet Finance Inc as the developer and describes user funds being converted to digital assets and put to work for monthly rewards, while an official Outlet Medium post documents the platform's crypto-lending origin. However, secondary sources disagree or lack precision on the closure date: one says early 2023 and Dealroom says operations had ceased by October 2023, while Apple's app history shows version 5.0.3 dated 2023-02-21. Do not assign an exact closure date or repayment outcome from these sources. Resolve first-party closure/customer communications, operating-company registration, historical terms/custody and the final customer-fund outcome before add_now.",
     "first_seen_at": "2026-08-05",
     "last_reviewed_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "cya_candidate_000103",
+    "canonical_name": "Abra Earn",
+    "aliases": ["Abra", "Plutus Lending", "Abra Earn", "Abra Boost"],
+    "domain": "abra.com",
+    "country_or_origin": "United States",
+    "platform_type_guess": "crypto_interest_account",
+    "status_guess": "operations_ended",
+    "major_event": "Abra Earn offered retail crypto interest accounts from around July 2020; U.S. interest-bearing products and broader U.S. operations were later wound down under state and federal regulatory actions, with remaining customer virtual assets subject to return arrangements",
+    "primary_sources": [
+      "https://www.sec.gov/newsroom/press-releases/2024-105",
+      "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-26221",
+      "https://www.csbs.org/newsroom/state-financial-regulators-settle-abra-return-cryptocurrency-assets",
+      "https://dfi.wa.gov/news/press/washington-dfi-joins-csbs-regulators-multistate-settlement-abra-cease-operations-and"
+    ],
+    "secondary_sources": [
+      "https://ssb.texas.gov/news-publications/order-no-enf-24-cdo-1881",
+      "https://dfi.wa.gov/securities-enforcement-actions/plutus-financial-holdings-inc-plutus-financial-inc-plutus-lending"
+    ],
+    "duplicate_check": {
+      "checked_at": "2026-08-12",
+      "matched_platform_ids": [],
+      "notes": "Repository searches for Abra Earn and Plutus Lending returned no canonical match before scanner review. Full-corpus duplicate scan remains mandatory."
+    },
+    "decision": "add_now",
+    "notes": "Evidence-rich CeFi candidate. SEC records identify Plutus Lending LLC d/b/a Abra as the operator of Abra Earn, state that the product began around July 2020, describe users tendering crypto assets in exchange for variable interest, and record a final federal judgment in January 2025. CSBS and Washington DFI document a multistate U.S. wind-down and return of remaining virtual assets, with up to $82.1 million to be returned. Do not infer that every customer was fully repaid merely from the settlement ceiling; customer outcome must follow the strongest reviewed settlement/return evidence. Keep Abra Earn product history distinct from later Abra Boost and from any current non-U.S. Abra activity.",
+    "first_seen_at": "2026-08-12",
+    "last_reviewed_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "cya_candidate_000104",
+    "canonical_name": "Nebeus Renting",
+    "aliases": ["Nebeus", "Nebeus Renting", "Nebeus Earn", "Crypto Renting"],
+    "domain": "nebeus.com",
+    "country_or_origin": "Spain / European Union",
+    "platform_type_guess": "centralized_yield",
+    "status_guess": "active",
+    "major_event": "Active centralized crypto renting/yield service in which users delegate crypto assets for fixed-period rewards; current public legal materials show a material counterparty/entity-documentation inconsistency that must be resolved before canonical promotion",
+    "primary_sources": [
+      "https://nebeus.com/",
+      "https://help.nebeus.com/en/legal/renting-terms-of-use",
+      "https://help.nebeus.com/en/legal/crypto-asset-custody-and-administration-policy",
+      "https://support.nebeus.com/portal/en/kb/articles/renting-terms-of-use"
+    ],
+    "secondary_sources": [
+      "https://support.nebeus.com/portal/en/kb/articles/renting-program-terms-and-information",
+      "https://support.nebeus.com/portal/en/kb/articles/ne"
+    ],
+    "duplicate_check": {
+      "checked_at": "2026-08-12",
+      "matched_platform_ids": [],
+      "notes": "Repository search for Nebeus returned no canonical match before scanner review. Full-corpus duplicate scan remains mandatory."
+    },
+    "decision": "needs_research",
+    "notes": "Strong CYA scope fit and current first-party product evidence. Nebeus currently markets Renting/earn services and its legal materials describe user crypto delegation, lock-up, reward payments, product risks and no deposit-guarantee coverage. However, current public documentation is internally inconsistent on the commercial counterparty: help.nebeus.com material updated May 24, 2026 names Rintral Trading S.L.U. (B66096686), while support.nebeus.com currently presents Renting terms naming Rintral Capital S.L.U. (B21849609) as contractual counterparty. Resolve which terms govern current activations, the relationship between Trading/Capital and the custody provider, and the exact product ownership/custody treatment before add_now. Do not collapse MiCA-regulated custody services into the separately disclosed unregulated Renting service.",
+    "first_seen_at": "2026-08-12",
+    "last_reviewed_at": "2026-08-12"
   }
 ]
