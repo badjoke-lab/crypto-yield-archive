@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "candidate_id": "cya_candidate_000010",
+    "canonical_name": "Goldfinch",
+    "aliases": ["Goldfinch Protocol", "Goldfinch Prime", "Goldfinch V1"],
+    "domain": "goldfinch.finance",
+    "country_or_origin": "Global / United States",
+    "platform_type_guess": "institutional_lending",
+    "status_guess": "limited",
+    "major_event": "Goldfinch Prime wind-down, full Prime investor redemption, contract pause, and transition of the legacy protocol to maintenance mode for borrower recoveries",
+    "primary_sources": [
+      "https://gov.goldfinch.finance/t/gip-87-maintenance-mode-of-goldfinch-operations-and-wind-down-goldfinch-prime/2202",
+      "https://www.goldfinch.finance/"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-12",
+      "matched_platform_ids": [],
+      "notes": "No canonical Goldfinch match. Rejection is based on current CYA scope, not duplication."
+    },
+    "decision": "out_of_scope",
+    "notes": "Phase 10 scope review confirms that Goldfinch is fundamentally a DeFi lending protocol rather than a CeFi lending/yield platform. Goldfinch governance GIP-87 and its July 7, 2026 follow-up establish an orderly Goldfinch Prime wind-down, full Prime investor redemption, contract pause, and legacy V1 recovery-only maintenance. Those facts are historically relevant but do not override CYA's fixed README scope, which focuses on CeFi lending/yield and explicitly does not prioritize DeFi lending protocols or pool-level records. Keeping Goldfinch in the active queue would repeatedly consume CeFi-growth research capacity and risk mixing protocol/pool outcomes with platform-level customer outcomes. This decision is scope-based, not an adverse assessment of Goldfinch, and may be revisited only if CYA formally expands its scope.",
+    "first_seen_at": "2026-07-25",
+    "last_reviewed_at": "2026-08-12"
+  }
+]
