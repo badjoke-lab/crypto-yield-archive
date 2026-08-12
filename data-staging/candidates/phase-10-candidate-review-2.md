@@ -1,6 +1,6 @@
 # Phase 10 candidate review 2 — 2026-08-12
 
-Status: candidate-only review / one draft-eligible candidate proposed / no canonical IDs allocated
+Status: candidate-only review / Abra exact duplicate resolved / no draft-eligible candidate / no canonical IDs allocated
 
 ## Baseline
 
@@ -8,27 +8,28 @@ This review starts from production-verified main SHA `453ce7d42a6e950cf309a26bd1
 
 No `cya_plat_000102` or `cya_ev_000341` record is created here.
 
-## Abra Earn — add_now pending scanner
+## Abra Earn — exact duplicate of canonical `cya_plat_000013`
 
-Abra Earn is a strong CeFi interest-account candidate with unusually strong regulator-sourced history.
+Abra Earn was initially staged as `add_now` because SEC, CSBS and Washington regulator sources provide unusually strong product and regulatory history. The hardened full-corpus candidate scanner correctly stopped promotion and classified the candidate as an `exact_duplicate` of canonical `cya_plat_000013` by exact normalized name and alias match.
 
-Reviewed public-authority evidence supports:
+Reviewed public-authority evidence still provides useful enrichment material for the existing canonical Abra record:
 
 - Plutus Lending LLC did business as Abra and operated the retail `Abra Earn` product;
 - the SEC states Abra Earn began around July 2020 and let users tender crypto assets to Abra for variable interest;
 - the SEC records that Abra used customer crypto assets in various ways to generate income and fund interest payments;
 - at peak the program held approximately $600 million, nearly $500 million from U.S. investors;
 - the SEC filed settled charges in 2024 and a federal court entered final judgment on 2025-01-13 with a $1.65 million civil penalty;
-- CSBS and Washington DFI document a multistate settlement for Abra's U.S. wind-down and return of remaining virtual assets, with up to $82.1 million to be returned to customers;
-- Washington securities records separately identify Abra Earn as an interest-bearing crypto account offered from July 2020 through October 2022 in the state.
+- CSBS and Washington DFI document a multistate U.S. wind-down and return of remaining virtual assets, with up to $82.1 million to be returned to customers.
 
 Boundary:
 
-- do not infer that every customer was fully repaid merely from the $82.1 million settlement ceiling;
-- keep Abra Earn distinct from the later accredited-investor Abra Boost product;
+- no second Abra platform identity may be created;
+- no canonical platform ID is consumed;
+- do not infer that every customer was fully repaid merely from the settlement ceiling;
+- keep Abra Earn distinct from later Abra Boost when enriching `cya_plat_000013`;
 - do not generalize the ended U.S. Earn product into a claim that every Abra business globally ceased.
 
-Candidate decision: `add_now`, subject to the hardened full-corpus duplicate scanner and candidate-draft review.
+The attempted candidate is removed from the active queue and preserved in `cya-consumed-duplicate-review-phase-10-2.json`.
 
 ## Nebeus Renting — needs_research
 
@@ -54,14 +55,27 @@ Candidate decision: `needs_research` until the currently governing activation te
 
 Cabital and Outlet Finance remain `needs_research`; their evidence thresholds are not lowered to accelerate growth.
 
-## Result before automated gate
+## Automated gate result
+
+The hardened scanner examined the attempted `add_now` candidate against all 101 canonical platforms and returned:
+
+```text
+Abra Earn candidate:  exact_duplicate
+Canonical match:      cya_plat_000013
+Eligible for draft:   false
+Canonical ID used:    none
+```
+
+After resolving the duplicate, the active queue contains only manual-review candidates:
 
 ```text
 Cabital:         needs_research
 Outlet Finance:  needs_research
-Abra Earn:       add_now -> scanner/draft required
 Nebeus Renting:  needs_research
+Draft-eligible:  0
 Canonical IDs:   none allocated
 ```
 
-If Abra is duplicate-clear and draft-eligible, canonical promotion must occur in a separate PR beginning with `cya_plat_000102`. If the scanner finds a collision or material scope issue, no canonical ID is consumed.
+## Next action
+
+Do not manufacture platform 102 from the remaining research cases. Continue evidence recovery for Nebeus/Cabital/Outlet and discover fresh CeFi lending/yield candidates against the full 101-platform corpus. Any future `add_now` candidate must pass the scanner before a separate canonical promotion PR can allocate `cya_plat_000102`.
