@@ -22,5 +22,31 @@
     "notes": "Phase 10 scope review confirms that Goldfinch is fundamentally a DeFi lending protocol rather than a CeFi lending/yield platform. Goldfinch governance GIP-87 and its July 7, 2026 follow-up establish an orderly Goldfinch Prime wind-down, full Prime investor redemption, contract pause, and legacy V1 recovery-only maintenance. Those facts are historically relevant but do not override CYA's fixed README scope, which focuses on CeFi lending/yield and explicitly does not prioritize DeFi lending protocols or pool-level records. Keeping Goldfinch in the active queue would repeatedly consume CeFi-growth research capacity and risk mixing protocol/pool outcomes with platform-level customer outcomes. This decision is scope-based, not an adverse assessment of Goldfinch, and may be revisited only if CYA formally expands its scope.",
     "first_seen_at": "2026-07-25",
     "last_reviewed_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "cya_candidate_000110",
+    "canonical_name": "WeFi",
+    "aliases": ["WeFi Deobank", "WFI", "WeFi Cloud-Based Mining", "WeFi CBM"],
+    "domain": "wefi.co",
+    "country_or_origin": "Costa Rica / Canada / jurisdiction-dependent",
+    "platform_type_guess": "cloud_mining_token_rewards",
+    "status_guess": "active",
+    "major_event": "Current WeFi operates an onchain/deobank-style crypto platform with WFI cloud-based mining and loyalty/token rewards; the public site also markets up to 18% APR around stablecoins while separately stating that high-yield stablecoin savings and loans are coming soon",
+    "primary_sources": [
+      "https://www.wefi.co/",
+      "https://documents.wefi.co/terms_and_conditions_wefi.pdf",
+      "https://www.wefi.co/technology",
+      "https://gitbook.wefi.co/"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-13",
+      "matched_platform_ids": [],
+      "notes": "Exact CYA repository searches for WeFi, wefi.co and wefi.xyz returned no canonical identity match before this scope decision. The Issue #186 discovery identity resolves to the current wefi.co ecosystem promoted in Japanese high-yield/mining material, not the separate legacy WeFi Finance lending protocol at wefi.xyz."
+    },
+    "decision": "out_of_scope",
+    "notes": "Phase 10 identity/scope review resolves the watchlist item to the current WeFi ecosystem at wefi.co. First-party material describes Cloud-Based Mining as hardware-free WFI token distribution/reward infrastructure and the current platform as exchange, payments, custody, cards and token/loyalty infrastructure. The June 1, 2026 Terms state that WeFi is not a bank, does not accept deposits on a banking balance sheet, and does not use user funds for lending or credit creation. The public site uses yield/APR language and shows 'up to 18% APR' around stablecoins, but the same current surface explicitly labels high-yield stablecoin savings up to 18% and loans as 'coming soon'; reviewed sources therefore do not establish a live CeFi interest/savings product with durable deposit, return, redemption and counterparty mechanics. CYA's fixed scope focuses on CeFi lending and yield platforms and does not treat token mining/distribution by itself as a yield-platform record. The separate wefi.xyz identity is a DeFi lending/leverage protocol and is also outside the initial CeFi-focused scope. Do not create a canonical CYA platform from either identity under this watchlist item. Re-review wefi.co if a live stablecoin savings/interest product launches with first-party terms and product mechanics.",
+    "first_seen_at": "2026-08-12",
+    "last_reviewed_at": "2026-08-13"
   }
 ]
