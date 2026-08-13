@@ -1,0 +1,16 @@
+[
+  {
+    "candidate_id": "cya_candidate_000112",
+    "canonical_name": "JBank",
+    "domain": "jbank.vip",
+    "decision": "already_recorded",
+    "duplicate_check": {
+      "checked_at": "2026-08-13",
+      "matched_platform_ids": ["cya_plat_000104"],
+      "notes": "Promoted only after the candidate-only JBank lane passed the hardened full-corpus candidate scan and all exact-head validation gates."
+    },
+    "notes": "Promoted in canonical batch 63 as cya_plat_000104. JBank is included as a narrow historically significant staking/outcome exception despite the general DeFi deprioritization. Event cya_ev_000344 records the 2025-12-04 International Version release/return change for unsold long-term staked assets. JUC/JUB token chronology and universal completion of asset release remain unresolved and are explicitly preserved as uncertainty.",
+    "first_seen_at": "2026-08-12",
+    "last_reviewed_at": "2026-08-13"
+  }
+]
