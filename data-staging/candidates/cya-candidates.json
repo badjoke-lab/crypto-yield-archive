@@ -85,5 +85,31 @@
     "notes": "Phase 10 first pass confirms strong CYA adjacency but does not yet support canonical promotion. First-party 9D docs describe an RWA infrastructure that explicitly includes yield generation, BTC-mining yield, a DeFi-native lending protocol, AI-managed funds and trading. CoinChief's current official surface contains an Earn navigation item and multiple official 9D Assets/CCP announcements, supporting an operational relationship. Secondary user-facing material says 9D staking is performed inside CoinChief and describes daily rewards/asset-pack mechanics, but those referral/support pages are discovery evidence only and must not be used to establish canonical return or redemption terms. Resolve first-party staking product terms, exact deposit/lockup/redemption mechanics, the CoinChief/9D legal and contractual relationship, custody/asset ownership, whether StaX/9D token participation is a centralized Earn product versus token/RWA participation, and the launch date before add_now. Do not convert community claims such as daily 1% or monthly 20% into issuer-verified or realized yield. CoinChief's public site currently identifies Coin Chief Tech INC and is independently listed as an exchange, but licensing/safety claims must be separately verified before use as canonical protection claims.",
     "first_seen_at": "2026-08-12",
     "last_reviewed_at": "2026-08-13"
+  },
+  {
+    "candidate_id": "cya_candidate_000113",
+    "canonical_name": "Zenta System",
+    "aliases": ["Zenta", "ZENTA SYSTEM", "ZENTA SYSTEM LIMITED", "Zenta Core", "Zenta Stake"],
+    "domain": "zenta-system.com",
+    "country_or_origin": "United States / claimed Washington registration / operator unresolved",
+    "platform_type_guess": "centralized_yield",
+    "status_guess": "active",
+    "major_event": "Current Zenta System discovery material describes active USDT/BTC/ETH deposit plans with business-day returns, term lockups and referral compensation, but the official zenta-system.com surface is JavaScript-only in the available crawler and first-party legal/product terms have not yet been retrieved for canonical verification",
+    "primary_sources": [
+      "https://zenta-system.com/"
+    ],
+    "secondary_sources": [
+      "https://bitradexinfo.com/info/zenta-system/",
+      "https://crypto-ai-info.com/info/zenta-system/",
+      "https://behindmlm.com/mlm-reviews/zenta-system-review-multi-ruse-mlm-crypto-ponzi/",
+      "https://note.com/next_asset_lab/n/nc2a509fdbdd7"
+    ],
+    "duplicate_check": {
+      "checked_at": "2026-08-13",
+      "matched_platform_ids": [],
+      "notes": "Exact CYA repository searches for Zenta, zenta-system.com, zenta.exchange and cya_candidate_000113 returned no canonical or staging identity match before allocation. The watchlist target is provisionally resolved to zenta-system.com, not the unrelated zenta.exchange portfolio-tracker identity. Hardened full-corpus scanning remains authoritative."
+    },
+    "decision": "needs_research",
+    "notes": "Phase 10 first pass confirms strong CYA scope fit but not promotion readiness. Multiple independent/referral discovery sources consistently describe One Day, Core, Base and Stake programs using USDT/BTC/ETH, with daily/business-day return ranges, term lockups and differing principal/reward release mechanics. Those figures and mechanics are not promoted because the available official zenta-system.com page renders only a JavaScript shell to the research crawler and no first-party Terms, plan contract, custody/asset-use terms or withdrawal agreement has yet been retrieved. Secondary sources also claim a Washington entity named ZENTA SYSTEM LIMITED (UBI 606145475), a CertiK audit, AI/DeFi/arbitrage/computing revenue sources and multi-level referral compensation; none of those claims should be canonicalized until checked directly against the relevant first-party or government/security-audit authority. Resolve legal operator, first-party product terms, custody/asset ownership/reuse, exact plan and redemption rules, launch chronology, source-of-yield claims and any regulatory/licensing representation before add_now. Do not classify the platform as a Ponzi/scam based on a review site and do not convert advertised daily rates into verified realized yield."
   }
 ]
