@@ -111,5 +111,31 @@
     },
     "decision": "needs_research",
     "notes": "Phase 10 first pass confirms strong CYA scope fit but not promotion readiness. Multiple independent/referral discovery sources consistently describe One Day, Core, Base and Stake programs using USDT/BTC/ETH, with daily/business-day return ranges, term lockups and differing principal/reward release mechanics. Those figures and mechanics are not promoted because the available official zenta-system.com page renders only a JavaScript shell to the research crawler and no first-party Terms, plan contract, custody/asset-use terms or withdrawal agreement has yet been retrieved. Secondary sources also claim a Washington entity named ZENTA SYSTEM LIMITED (UBI 606145475), a CertiK audit, AI/DeFi/arbitrage/computing revenue sources and multi-level referral compensation; none of those claims should be canonicalized until checked directly against the relevant first-party or government/security-audit authority. Resolve legal operator, first-party product terms, custody/asset ownership/reuse, exact plan and redemption rules, launch chronology, source-of-yield claims and any regulatory/licensing representation before add_now. Do not classify the platform as a Ponzi/scam based on a review site and do not convert advertised daily rates into verified realized yield."
+  },
+  {
+    "candidate_id": "cya_candidate_000116",
+    "canonical_name": "iOrca",
+    "aliases": ["ORCA", "ORCA System", "iOrca", "OC Agent"],
+    "domain": "ocagent.io",
+    "country_or_origin": "Global / operator jurisdiction unresolved",
+    "platform_type_guess": "centralized_yield_ai_arbitrage",
+    "status_guess": "active",
+    "major_event": "Current iOrca/ORCA discovery material describes USDT-funded fixed-term yield packages whose advertised returns are attributed to AI-assisted prediction-market arbitrage; the live dapp.ocagent.io registration surface identifies itself as iOrca, requires wallet connection and agreement to Terms, Privacy and Risk Disclosure, but first-party product and legal terms are not yet available in a stable researchable form",
+    "primary_sources": [
+      "https://dapp.ocagent.io/home/login/create?ref=31409255"
+    ],
+    "secondary_sources": [
+      "https://note.com/bakuniki_japan/n/nfb3ad33d81e6",
+      "https://note.com/rich_tucan5943/n/nb4c463026440"
+    ],
+    "duplicate_check": {
+      "checked_at": "2026-08-13",
+      "matched_platform_ids": [],
+      "notes": "Exact CYA repository searches for iOrca, ocagent.io, ORCA System, orca.so and cya_candidate_000116 returned no identity match before staging. The Issue #186 watchlist target is the iOrca/OC Agent yield program at dapp.ocagent.io, not the unrelated Solana Orca DEX at orca.so."
+    },
+    "decision": "needs_research",
+    "notes": "Phase 10 identity review resolves the watchlist ORCA item to the live iOrca registration surface under dapp.ocagent.io. The official registration page requires username, affiliate code, wallet connection and acceptance of Terms of Service, Privacy Policy and Risk Disclosure, establishing an active financial-product surface but not the underlying economic contract. Current Japanese discovery/referral material consistently describes BNB-chain USDT deposits, minimum participation around 100 USDT, 10/90/180/360-day packages, principal lockups, daily USDT rewards sent to a wallet, check-in-based reward increases, referral ranks and a temporary doubled-deposit campaign; it attributes yield to AI agents exploiting price/probability differences across prediction markets. Those mechanics and rates remain discovery claims because the first-party Terms/Risk pages could not be retrieved reliably in this pass and no stable first-party documentation for package rates, custody, asset reuse, redemption, source of yield or operator identity was found. A claimed relationship to Nodepay is likewise unverified and must not be canonicalized. Resolve legal operator/jurisdiction, first-party Terms and Risk Disclosure, deposit/custody/asset-use treatment, package lock/redemption rules, reward calculation, withdrawal rights, launch chronology, source-of-yield claims and any campaign liabilities before add_now. Do not confuse this candidate with Orca's Solana AMM/xORCA staking product and do not convert advertised daily rates or campaign credits into verified realized return or principal repayment.",
+    "first_seen_at": "2026-08-12",
+    "last_reviewed_at": "2026-08-13"
   }
 ]
