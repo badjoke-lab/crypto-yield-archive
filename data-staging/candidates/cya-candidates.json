@@ -95,9 +95,7 @@
     "platform_type_guess": "centralized_yield",
     "status_guess": "active",
     "major_event": "Current Zenta System discovery material describes active USDT/BTC/ETH deposit plans with business-day returns, term lockups and referral compensation, but the official zenta-system.com surface is JavaScript-only in the available crawler and first-party legal/product terms have not yet been retrieved for canonical verification",
-    "primary_sources": [
-      "https://zenta-system.com/"
-    ],
+    "primary_sources": ["https://zenta-system.com/"],
     "secondary_sources": [
       "https://bitradexinfo.com/info/zenta-system/",
       "https://crypto-ai-info.com/info/zenta-system/",
@@ -121,9 +119,7 @@
     "platform_type_guess": "centralized_yield_ai_arbitrage",
     "status_guess": "active",
     "major_event": "Current iOrca/ORCA discovery material describes USDT-funded fixed-term yield packages whose advertised returns are attributed to AI-assisted prediction-market arbitrage; the live dapp.ocagent.io registration surface identifies itself as iOrca, requires wallet connection and agreement to Terms, Privacy and Risk Disclosure, but first-party product and legal terms are not yet available in a stable researchable form",
-    "primary_sources": [
-      "https://dapp.ocagent.io/home/login/create?ref=31409255"
-    ],
+    "primary_sources": ["https://dapp.ocagent.io/home/login/create?ref=31409255"],
     "secondary_sources": [
       "https://note.com/bakuniki_japan/n/nfb3ad33d81e6",
       "https://note.com/rich_tucan5943/n/nb4c463026440"
@@ -136,6 +132,61 @@
     "decision": "needs_research",
     "notes": "Phase 10 identity review resolves the watchlist ORCA item to the live iOrca registration surface under dapp.ocagent.io. The official registration page requires username, affiliate code, wallet connection and acceptance of Terms of Service, Privacy Policy and Risk Disclosure, establishing an active financial-product surface but not the underlying economic contract. Current Japanese discovery/referral material consistently describes BNB-chain USDT deposits, minimum participation around 100 USDT, 10/90/180/360-day packages, principal lockups, daily USDT rewards sent to a wallet, check-in-based reward increases, referral ranks and a temporary doubled-deposit campaign; it attributes yield to AI agents exploiting price/probability differences across prediction markets. Those mechanics and rates remain discovery claims because the first-party Terms/Risk pages could not be retrieved reliably in this pass and no stable first-party documentation for package rates, custody, asset reuse, redemption, source of yield or operator identity was found. A claimed relationship to Nodepay is likewise unverified and must not be canonicalized. Resolve legal operator/jurisdiction, first-party Terms and Risk Disclosure, deposit/custody/asset-use treatment, package lock/redemption rules, reward calculation, withdrawal rights, launch chronology, source-of-yield claims and any campaign liabilities before add_now. Do not confuse this candidate with Orca's Solana AMM/xORCA staking product and do not convert advertised daily rates or campaign credits into verified realized return or principal repayment.",
     "first_seen_at": "2026-08-12",
+    "last_reviewed_at": "2026-08-13"
+  },
+  {
+    "candidate_id": "cya_candidate_000120",
+    "canonical_name": "WhiteBIT",
+    "aliases": ["WhiteBIT Earn", "WhiteBIT Crypto Lending", "SMART-staking", "SMART staking", "U EARN"],
+    "domain": "whitebit.com",
+    "country_or_origin": "Europe / global multi-entity exchange",
+    "platform_type_guess": "exchange_earn",
+    "status_guess": "active",
+    "major_event": "WhiteBIT currently operates Crypto Lending under its Earn/U EARN product family, offering flexible and fixed lending plans in which users lend digital assets to WhiteBIT for interest; first-party terms and product documentation describe plan durations, early closure, hourly/daily flexible accrual and fixed-term maturity mechanics",
+    "primary_sources": [
+      "https://whitebit.com/terms",
+      "https://whitebit.com/earn/crypto-lending/list/flex",
+      "https://whitebit.com/earn/crypto-lending/list/fixed",
+      "https://docs.whitebit.com/products/lending/overview",
+      "https://blog.whitebit.com/en/what-is-whitebit-earn/",
+      "https://blog.whitebit.com/en/new-long-term-crypto-lending-plans/"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-13",
+      "matched_platform_ids": [],
+      "notes": "Exact repository search for WhiteBIT returned no indexed CYA identity match before staging; exact candidate ID search found no use of cya_candidate_000120. Hardened full-corpus scanning on the exact PR head remains authoritative."
+    },
+    "decision": "add_now",
+    "notes": "Direct first-party material establishes current CeFi lending mechanics. WhiteBIT's User Agreement defines Crypto Lending as lending digital assets to WhiteBIT for income. Current product documentation supports flexible plans with no lock, hourly calculation and daily crediting, plus fixed plans with term-based maturity and early-close conditions. The platform formerly branded the product SMART-staking and later WhiteBIT Earn/U EARN. Current advertised rates, safety language and statements about asset use remain issuer claims and must not be treated as independently verified realized returns, guarantees, reserve proof or solvency evidence. Legal/entity scope must follow the applicable WhiteBIT agreement and customer jurisdiction rather than assuming one universal counterparty.",
+    "first_seen_at": "2026-08-13",
+    "last_reviewed_at": "2026-08-13"
+  },
+  {
+    "candidate_id": "cya_candidate_000121",
+    "canonical_name": "CoinEx",
+    "aliases": ["CoinEx Financial", "CoinEx Financial Account", "CoinEx Finance"],
+    "domain": "coinex.com",
+    "country_or_origin": "Global / exchange service",
+    "platform_type_guess": "exchange_earn",
+    "status_guess": "active",
+    "major_event": "CoinEx operates a Financial Account product in which users transfer supported crypto assets from Spot into a financial balance and receive compound interest derived from a share of margin-borrowing interest; current first-party announcements document continued asset additions/removals and automatic transfer back to Spot when a Financial Account asset is delisted",
+    "primary_sources": [
+      "https://support.coinex.com/hc/en-us/articles/360034808894-How-to-Enter-Financial-Account",
+      "https://www.coinex.com/en/announcements/detail/39787657305108",
+      "https://www.coinex.com/en/announcements/detail/33948523678868",
+      "https://www.coinex.com/en/blog/1605-coinex-providing-versatile-financial-options",
+      "https://docs.coinex.com/api/v2/assets/balance/http/get-financial-balance"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-13",
+      "matched_platform_ids": [],
+      "notes": "Exact repository search for CoinEx returned no indexed CYA identity match before staging; exact candidate ID search found no use of cya_candidate_000121. Hardened full-corpus scanning on the exact PR head remains authoritative."
+    },
+    "decision": "add_now",
+    "notes": "First-party CoinEx material describes Financial Account as an interest-bearing crypto balance. CoinEx states that 70% of interest income from coins borrowed for margin trading is allocated to Financial Account users in proportion to their holdings, with compound interest and flexible transfers. A 2025 delisting notice documents that assets are automatically transferred to Spot after a Financial service is closed for a delisted asset and warns that transfers can queue if idle Financial Account assets are insufficient until borrowers return coins. These are important product/liquidity terms, not proof of loss or insolvency. Advertised yields and product claims remain issuer statements. Legal counterparty, custody and jurisdictional entity details must be preserved as uncertain unless directly established by applicable terms before canonical promotion.",
+    "first_seen_at": "2026-08-13",
     "last_reviewed_at": "2026-08-13"
   }
 ]
