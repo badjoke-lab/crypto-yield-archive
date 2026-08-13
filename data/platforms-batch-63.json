@@ -1,0 +1,24 @@
+[
+  {
+    "id": "cya_plat_000104",
+    "slug": "jbank",
+    "canonical_name": "JBank",
+    "aliases": ["JBANK", "JBank Protocol", "JBank Staking", "JUC (JBank)", "JUB Staking"],
+    "type": "defi_lending",
+    "status": "limited",
+    "failure_reason": null,
+    "launch_date": null,
+    "end_date": null,
+    "country_or_origin": "Global / decentralized / JuCoin-associated",
+    "summary": "Decentralized self-custody banking protocol launched by JuCoin with staking and lending functions. JBank remains online, but a 4 December 2025 first-party notice changed the return and release path for unsold long-term staked assets by moving them into an International Version with either delayed or performance-based release and no static returns during the waiting or unlocking period.",
+    "what_happened": "JuCoin described JBank as an already-launched Web3 decentralized self-custody banking and financial protocol in June 2025. Later JBank material documented Flexible, 180-day and 365-day staking with auto-compounding rewards. On 4 December 2025 JBank announced an International Version for users whose long-term staked assets had not been sold: users could wait for release to begin after six months or accelerate release through performance-based unlocking, while static returns would not accrue during either route. CYA treats this material change in access and return mechanics as sufficient historical relevance for a narrow DeFi/staking exception, while preserving that JBank is self-custodial/on-chain rather than a centralized deposit account.",
+    "official_url_original": "https://jbank.vip/",
+    "official_domain_original": "jbank.vip",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://jbank.vip/",
+    "confidence": "medium",
+    "last_verified_at": "2026-08-13",
+    "uncertainty_notes": "The exact original JBank protocol launch date was not established. JuCoin's June 2025 notice calls the project token JUC on JuChain, while later/current JBank material uses JUB; the reviewed sources do not establish the exact rename, migration or replacement chronology. The December 2025 notice describes release beginning after six months or performance-based acceleration, but the reviewed evidence does not establish universal completion of release for all affected long-term stakers.",
+    "notes": "JBank is included as a historically significant staking/outcome exception despite CYA's general DeFi deprioritization. Public phrases such as guaranteed returns, predictable rewards or high APY are issuer/project marketing claims and are not treated as verified realized yield, principal protection or proof of solvency."
+  }
+]
