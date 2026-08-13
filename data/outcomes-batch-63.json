@@ -1,0 +1,18 @@
+[
+  {
+    "platform_id": "cya_plat_000104",
+    "outcome_status": "unknown",
+    "estimated_recovery_rate": "Not established. JBank's 4 December 2025 notice describes release beginning after six months for one International Version path or accelerated release through performance-based unlocking, but the reviewed sources do not establish universal completion or a verified aggregate release rate for affected long-term stakers.",
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": "Issuer-described delayed release after six months or performance-based accelerated unlocking; completion unverified.",
+    "claim_process_url": null,
+    "affected_products": ["JBank long-term staking", "JBank International Version"],
+    "claim_classes": ["Long-term stakers with unsold assets affected by the International Version rules"],
+    "jurisdictions": ["Global / decentralized"],
+    "as_of": "2026-08-13",
+    "last_verified_at": "2026-08-13",
+    "notes": "Unknown does not mean no recovery. The issuer notice provides a release mechanism but CYA did not find first-party evidence proving that every affected long-term position had been fully released by the verification date. No static returns were to accrue during the described waiting/unlocking routes.",
+    "confidence": "medium"
+  }
+]

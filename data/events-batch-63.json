@@ -1,0 +1,16 @@
+[
+  {
+    "id": "cya_ev_000344",
+    "platform_id": "cya_plat_000104",
+    "event_type": "other",
+    "event_date": "2025-12-04",
+    "title": "JBank announces International Version release rules for long-term staking",
+    "description": "JBank announced an International Version for unsold long-term staked assets. The notice described release beginning after six months without user action or accelerated release through performance-based unlocking, and stated that no static returns would be generated during the waiting or unlocking period.",
+    "confidence": "high",
+    "impact_level": "high",
+    "event_status_effect": "limited",
+    "source_count": 1,
+    "sort_order": 1,
+    "notes": "This event records an issuer-described change in access and return mechanics, not proof that all affected assets were subsequently released or that any advertised prior return was realized."
+  }
+]

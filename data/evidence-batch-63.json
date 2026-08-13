@@ -1,0 +1,62 @@
+[
+  {
+    "id": "cya_src_b63_0001",
+    "platform_id": "cya_plat_000104",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "JuCoin Will Launch JUC/USDT Trading Pair on June 10, 2025",
+    "url": "https://support.jucoin.blog/hc/en-001/articles/47754272705433-JuCoin-Will-Launch-JUC-USDT-Trading-Pair-on-June-10-2025-at-12-00-UTC",
+    "publisher": "JuCoin / Ju.com",
+    "published_at": "2025-06-07",
+    "archived_url": "https://web.archive.org/web/*/https://support.jucoin.blog/hc/en-001/articles/47754272705433-JuCoin-Will-Launch-JUC-USDT-Trading-Pair-on-June-10-2025-at-12-00-UTC",
+    "accessed_at": "2026-08-13",
+    "reliability": "high",
+    "claim_scope": "entity",
+    "notes": "JuCoin first-party notice identifies JUC (JBank) as a Web3 decentralized self-custody banking and financial protocol launched by JuCoin, names JuChain and points to jbank.vip as the official website. It proves JBank existed by June 2025 but does not establish the exact original protocol launch day."
+  },
+  {
+    "id": "cya_src_b63_0002",
+    "platform_id": "cya_plat_000104",
+    "event_id": "cya_ev_000344",
+    "source_type": "official_statement",
+    "title": "JBank official website and International Version notice",
+    "url": "https://jbank.vip/",
+    "publisher": "JBank",
+    "published_at": "2025-12-04",
+    "archived_url": "https://web.archive.org/web/*/https://jbank.vip/",
+    "accessed_at": "2026-08-13",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "Current official JBank surface describes the self-custody protocol, staking/lending/POL mechanics and reproduces a dated 4 December 2025 notice for long-term staked assets. The notice describes delayed or performance-based release and says static returns do not accrue during the waiting/unlocking routes."
+  },
+  {
+    "id": "cya_src_b63_0003",
+    "platform_id": "cya_plat_000104",
+    "event_id": null,
+    "source_type": "community_reference",
+    "title": "JBank Project | Unlock the Power of On-Chain Staking with JUB",
+    "url": "https://www.ju.com/zh-HK/community/post/555837254138250752",
+    "publisher": "JBank Project on JU Square",
+    "published_at": "2025-11-04",
+    "archived_url": "https://web.archive.org/web/*/https://www.ju.com/zh-HK/community/post/555837254138250752",
+    "accessed_at": "2026-08-13",
+    "reliability": "medium",
+    "claim_scope": "entity",
+    "notes": "Project-authored JU Square post documents Flexible, 180-day and 365-day JUB staking with auto-compounding rewards every eight hours and describes the model as self-custodial. JU Square labels community content as third-party, so CYA uses this as supporting product evidence rather than sole authority for safety or realized-return claims."
+  },
+  {
+    "id": "cya_src_b63_0004",
+    "platform_id": "cya_plat_000104",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "JuChain Early-Stage Potential Projects — JBank",
+    "url": "https://blog.ju.com/juchain-early-stage-potential-projects-2/",
+    "publisher": "Ju.com",
+    "published_at": "2025-06-01",
+    "archived_url": "https://web.archive.org/web/*/https://blog.ju.com/juchain-early-stage-potential-projects-2/",
+    "accessed_at": "2026-08-13",
+    "reliability": "high",
+    "claim_scope": "entity",
+    "notes": "Ju.com ecosystem article describes JBank as a native decentralized self-custody banking protocol in the JuChain ecosystem with account management, on-chain lending, AI wealth-management and payment functions. Used for protocol scope, not as proof of guaranteed return or customer outcome."
+  }
+]

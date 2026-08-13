@@ -1,0 +1,11 @@
+[
+  {
+    "platform_id": "cya_plat_000104",
+    "terms_status": "unclear",
+    "asset_ownership_interpretation": "JBank markets the protocol as decentralized and self-custodial, but staking necessarily places assets under smart-contract/protocol rules and the 4 December 2025 International Version notice says affected long-term staked assets are transferred into that system for management. The reviewed public material does not establish a conventional segregated-deposit structure or an unconditional right to immediate withdrawal while assets are subject to long-term staking or International Version release rules.",
+    "affected_product": "JBank Staking / International Version",
+    "source_evidence_id": "cya_src_b63_0002",
+    "notes": "The issuer-described release paths are six-month delayed release or performance-based accelerated unlocking, with no static returns during those periods. CYA does not treat self-custody marketing, guaranteed-return wording, POL reserves or protocol mechanics as a legal principal guarantee. JUC/JUB token continuity remains unresolved.",
+    "confidence": "medium"
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "platform_id": "cya_plat_000104",
+    "product_type": "staking_like_yield",
+    "product_name": "JBank Staking",
+    "custody_model": "JBank describes itself as decentralized and self-custodial, with users interacting through on-chain protocol mechanics rather than depositing into a conventional bank account. However, the 4 December 2025 International Version notice says affected long-term staked assets are transferred into that system for management, so CYA does not infer unrestricted user control or a simple customer-owned custody model for assets while they are staked or being released.",
+    "yield_source": "JBank/project material describes an Olympus DAO-inspired algorithmic staking model around JUB, Protocol Owned Liquidity, range stabilization and auto-compounding rewards. These are protocol/issuer descriptions of token and treasury mechanics; CYA does not treat advertised APY or the phrase guaranteed returns as independently verified cash yield or principal protection.",
+    "risk_notes": "Risks include smart-contract/protocol risk, JUB/JUC token-price and token-identity uncertainty, long-term lockups, changing protocol rules, performance-based unlocking conditions, suspension of static returns during the International Version waiting/unlocking period, and unresolved evidence about whether all affected positions completed release."
+  }
+]
