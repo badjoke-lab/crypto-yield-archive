@@ -1,0 +1,47 @@
+[
+  {
+    "id": "cya_src_b61_0011",
+    "platform_id": "cya_plat_000102",
+    "event_id": "cya_ev_000345",
+    "source_type": "official_statement",
+    "title": "CryptoPanda×IZAKAYA JPYRレンディングキャンペーン！",
+    "url": "https://cryptopanda.app/campaign/zxeztggo/",
+    "publisher": "CryptoPanda",
+    "published_at": "2026-02-09",
+    "archived_url": "https://web.archive.org/web/*/https://cryptopanda.app/campaign/zxeztggo/",
+    "accessed_at": "2026-08-13",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "CryptoPanda first-party campaign page explicitly calls IZAKA-YA its partner and describes a flow in which users purchase JPYR through CryptoPanda and then select a JPYR lending term on IZAKA-YA. Used to establish the lending-related commercial/product relationship. Promotional lending-rate and reward figures are issuer/promoter terms, not verified realized returns."
+  },
+  {
+    "id": "cya_src_b61_0012",
+    "platform_id": "cya_plat_000102",
+    "event_id": "cya_ev_000345",
+    "source_type": "official_statement",
+    "title": "IZKY token BTSE listing commemorative campaign",
+    "url": "https://cryptopanda.app/campaign/cryptopanda-izakaya/",
+    "publisher": "CryptoPanda",
+    "published_at": "2026-03-31",
+    "archived_url": "https://web.archive.org/web/*/https://cryptopanda.app/campaign/cryptopanda-izakaya/",
+    "accessed_at": "2026-08-13",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "Later CryptoPanda first-party campaign material again identifies collaboration with partner IZAKA-YA and ties JPYR purchase on CryptoPanda to a 10-day IZAKA-YA lending flow. Used as continuing corroboration of the relationship. Headline promotional rates and combined benefit examples are not treated as verified realized yield."
+  },
+  {
+    "id": "cya_src_b61_0013",
+    "platform_id": "cya_plat_000102",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "IZAKAYA × CryptoPanda IZKY token campaign",
+    "url": "https://izakaya.tech/campaign/OC1SVax6",
+    "publisher": "IZAKA-YA",
+    "published_at": "2025-05-01",
+    "archived_url": "https://web.archive.org/web/*/https://izakaya.tech/campaign/OC1SVax6",
+    "accessed_at": "2026-08-13",
+    "reliability": "high",
+    "claim_scope": "entity",
+    "notes": "IZAKA-YA first-party campaign page independently documents a CryptoPanda collaboration, requiring registration with both services and linking CryptoPanda activity to the IZAKA-YA wallet. This is cross-party corroboration of an established commercial/product relationship and does not make CryptoPanda a separate CYA yield platform."
+  }
+]
