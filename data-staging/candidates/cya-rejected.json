@@ -75,5 +75,34 @@
     "notes": "Phase 10 identity review resolves the Issue #186 XERA watchlist item to the current Luxera/XERA DAO ecosystem at xeradao.com. First-party about material describes XERA primarily as a DAO token/payment ecosystem and states that the protocol is non-custodial, that no one can access or control stakers' funds, and that independent node operators participate in the protocol. Current user-facing material confirms active wallet-connected XERA staking and lock periods, but those referral guides and third-party Luxera promotional sites are discovery/support evidence and must not establish canonical return rates or safety claims. Under CYA's fixed initial scope, generic non-custodial token staking without a verified major suspension, customer-outcome, failure, or regulatory event is not prioritized and should not consume a canonical platform ID. This is a scope decision only, not a fraud, safety, solvency or return-quality classification. A separate ASIC/Moneysmart investor-alert entry exists for Xera/Xera Global at xera.pro and web.xera.pro, added in April 2024; that older identity predates and is not evidence against the current xeradao.com Luxera identity, so the two must not be conflated. Re-review Luxera/XERA DAO only if CYA expands its scope or if first-party/regulatory evidence establishes a material staking freeze, access/outcome event, shutdown, or other historically significant change. Advertised staking rates remain issuer/promoter claims and are not verified realized yield.",
     "first_seen_at": "2026-08-12",
     "last_reviewed_at": "2026-08-13"
+  },
+  {
+    "candidate_id": "cya_candidate_000115",
+    "canonical_name": "Crypto DAO",
+    "aliases": ["CDAO", "C·DAO", "CryptoDAO", "Crypto DAO PRO"],
+    "domain": "cryptodao.pro",
+    "country_or_origin": "Global / decentralized / operator jurisdiction unresolved",
+    "platform_type_guess": "defi_staking_rebase",
+    "status_guess": "active",
+    "major_event": "Current Crypto DAO operates an on-chain PRO-token staking/bonding ecosystem with rebase rewards, DAO rewards, governance and referral/team functions; the project's public smart-contract repository includes staking, treasury, reserve-backing and bonding contracts, while current interfaces remain active",
+    "primary_sources": [
+      "https://www.cryptodao.pro/",
+      "https://www.cryptodao.club/",
+      "https://github.com/CDAOIT/cryptodao-docs",
+      "https://github.com/CDAOIT/cryptodao-docs/blob/main/StakingPool.sol"
+    ],
+    "secondary_sources": [
+      "https://note.com/fond_flea9887/n/n142a9ae95d36",
+      "https://note.com/freetravel55555/n/n3675a26a4194"
+    ],
+    "duplicate_check": {
+      "checked_at": "2026-08-13",
+      "matched_platform_ids": [],
+      "notes": "Exact CYA repository searches for Crypto DAO, cryptodao.pro, cryptodao.club and cya_candidate_000115 returned no canonical or staging match before this decision. The current cryptodao.pro identity is not the unrelated legacy cryptodao.com exchange listing/history."
+    },
+    "decision": "out_of_scope",
+    "notes": "Phase 10 identity/scope review resolves the watchlist CDAO item to the current Crypto DAO at cryptodao.pro, with a live companion interface at cryptodao.club and a public repository self-described as the official Crypto DAO documentation repository. The live interface exposes staking, sub-token staking, bonds, DAO rewards, governance and swap functions and links referral activity back to cryptodao.pro. The project's StakingPool smart contract implements on-chain stake/unstake and rebase mechanics around token contracts and a reward manager, supporting classification as a DeFi/on-chain staking protocol rather than a centralized interest account. Current user-facing guides describe PRO staking, fixed lock periods, auto-compounding/rebase earnings, vesting and referral mechanics, but those guides are discovery/support evidence and must not establish canonical rates or realized returns. No verified major shutdown, staking freeze, customer-loss/outcome process, or regulator action tied to the current cryptodao.pro identity was found in this first pass. Under CYA's fixed initial scope, generic DeFi/rebase token staking without a historically significant suspension/outcome/failure event is not prioritized and should not consume a canonical platform ID. This is a scope decision only, not a fraud, safety, solvency or sustainability classification. Re-review if CYA expands into generic DeFi staking or if authoritative evidence establishes a material withdrawal/staking restriction, protocol failure, regulator action or customer-outcome event. Any advertised APR/APY or theoretical compounding result remains an issuer/promoter claim, not verified realized yield.",
+    "first_seen_at": "2026-08-12",
+    "last_reviewed_at": "2026-08-13"
   }
 ]
