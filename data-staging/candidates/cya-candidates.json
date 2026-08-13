@@ -54,5 +54,36 @@
     "notes": "Phase 10 review confirms strong scope fit: Apple's listing identifies Outlet Finance Inc as the developer and describes user funds being converted to digital assets and put to work for monthly rewards, while an official Outlet Medium post documents the platform's crypto-lending origin. However, secondary sources disagree or lack precision on the closure date: one says early 2023 and Dealroom says operations had ceased by October 2023, while Apple's app history shows version 5.0.3 dated 2023-02-21. Do not assign an exact closure date or repayment outcome from these sources. Resolve first-party closure/customer communications, operating-company registration, historical terms/custody and the final customer-fund outcome before add_now.",
     "first_seen_at": "2026-08-05",
     "last_reviewed_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "cya_candidate_000111",
+    "canonical_name": "9D Assets",
+    "aliases": ["9D", "9DAssets", "9D Assets Staking", "9D × Coin Chief", "9D Assets / CCP"],
+    "domain": "9d-assets.gitbook.io",
+    "country_or_origin": "Global / operator jurisdiction unresolved",
+    "platform_type_guess": "exchange_staking_rwa_yield",
+    "status_guess": "active",
+    "major_event": "Active 9D Assets ecosystem is promoted and accessed through CoinChief with staking/yield participation; first-party 9D documentation attributes yield generation to BTC mining, DeFi lending, AI-managed funds and trading, while current CoinChief surfaces show an Earn section and official 9D Assets/CCP announcements",
+    "primary_sources": [
+      "https://9d-assets.gitbook.io/9d-assets-docs/what-is-9d",
+      "https://9d-assets.gitbook.io/9d-assets-docs/what-is-9d/the-9-pillars-of-9d",
+      "https://9d-assets.gitbook.io/9d-assets-docs/faqs",
+      "https://9d-assets.gitbook.io/9d-assets-docs/roadmap",
+      "https://www.coinchief.live/en_US/"
+    ],
+    "secondary_sources": [
+      "https://coinmarketcap.com/exchanges/coinchief/",
+      "https://note.com/9dassets/n/n6c269c73a82d",
+      "https://note.com/9dassets/n/n44c20c5960b8"
+    ],
+    "duplicate_check": {
+      "checked_at": "2026-08-13",
+      "matched_platform_ids": [],
+      "notes": "Exact repository searches for 9D Assets, Coin Chief and coinchief returned no canonical CYA identity match before staging. Exact search found no prior use of cya_candidate_000111. The hardened full-corpus candidate scanner remains authoritative before any promotion."
+    },
+    "decision": "needs_research",
+    "notes": "Phase 10 first pass confirms strong CYA adjacency but does not yet support canonical promotion. First-party 9D docs describe an RWA infrastructure that explicitly includes yield generation, BTC-mining yield, a DeFi-native lending protocol, AI-managed funds and trading. CoinChief's current official surface contains an Earn navigation item and multiple official 9D Assets/CCP announcements, supporting an operational relationship. Secondary user-facing material says 9D staking is performed inside CoinChief and describes daily rewards/asset-pack mechanics, but those referral/support pages are discovery evidence only and must not be used to establish canonical return or redemption terms. Resolve first-party staking product terms, exact deposit/lockup/redemption mechanics, the CoinChief/9D legal and contractual relationship, custody/asset ownership, whether StaX/9D token participation is a centralized Earn product versus token/RWA participation, and the launch date before add_now. Do not convert community claims such as daily 1% or monthly 20% into issuer-verified or realized yield. CoinChief's public site currently identifies Coin Chief Tech INC and is independently listed as an exchange, but licensing/safety claims must be separately verified before use as canonical protection claims.",
+    "first_seen_at": "2026-08-12",
+    "last_reviewed_at": "2026-08-13"
   }
 ]
