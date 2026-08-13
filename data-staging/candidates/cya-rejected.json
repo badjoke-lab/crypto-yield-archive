@@ -104,5 +104,32 @@
     "notes": "Phase 10 identity/scope review resolves the watchlist CDAO item to the current Crypto DAO at cryptodao.pro, with a live companion interface at cryptodao.club and a public repository self-described as the official Crypto DAO documentation repository. The live interface exposes staking, sub-token staking, bonds, DAO rewards, governance and swap functions and links referral activity back to cryptodao.pro. The project's StakingPool smart contract implements on-chain stake/unstake and rebase mechanics around token contracts and a reward manager, supporting classification as a DeFi/on-chain staking protocol rather than a centralized interest account. Current user-facing guides describe PRO staking, fixed lock periods, auto-compounding/rebase earnings, vesting and referral mechanics, but those guides are discovery/support evidence and must not establish canonical rates or realized returns. No verified major shutdown, staking freeze, customer-loss/outcome process, or regulator action tied to the current cryptodao.pro identity was found in this first pass. Under CYA's fixed initial scope, generic DeFi/rebase token staking without a historically significant suspension/outcome/failure event is not prioritized and should not consume a canonical platform ID. This is a scope decision only, not a fraud, safety, solvency or sustainability classification. Re-review if CYA expands into generic DeFi staking or if authoritative evidence establishes a material withdrawal/staking restriction, protocol failure, regulator action or customer-outcome event. Any advertised APR/APY or theoretical compounding result remains an issuer/promoter claim, not verified realized yield.",
     "first_seen_at": "2026-08-12",
     "last_reviewed_at": "2026-08-13"
+  },
+  {
+    "candidate_id": "cya_candidate_000117",
+    "canonical_name": "CryptoPawn",
+    "aliases": ["Crypto Pawn", "CryptoPawn Japan", "CryptoPawn by BitHills"],
+    "domain": "cryptopawn.io",
+    "country_or_origin": "Japan",
+    "platform_type_guess": "crypto_collateralized_borrowing",
+    "status_guess": "active",
+    "major_event": "Current CryptoPawn is a borrower-side crypto-collateralized cash-loan service operated by BitHills Inc.; customers pledge crypto assets as collateral and receive Japanese-yen loans, while staking rewards, airdrops and similar economic rights arising from collateral belong to BitHills unless it chooses to pass some or all of them to the borrower",
+    "primary_sources": [
+      "https://cryptopawn.io/",
+      "https://cryptopawn.io/faq/",
+      "https://cryptopawn.io/company/",
+      "https://cryptopawn.io/privacy/",
+      "https://lp.cryptopawn.io/"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-13",
+      "matched_platform_ids": [],
+      "notes": "Exact CYA repository searches for CryptoPawn and cya_candidate_000117 returned no existing identity match before staging. The Issue #186 target resolves to the Japanese cryptopawn.io service operated by BitHills Inc.; it is distinct from the separate US cryptopawn.com / CryptoPawn, Inc. pawn-lending identity."
+    },
+    "decision": "out_of_scope",
+    "notes": "Phase 10 identity/scope review resolves the watchlist CryptoPawn item to cryptopawn.io, operated by BitHills Inc. First-party company, FAQ and service pages consistently describe a borrower-side product: a customer pledges BTC, ETH, USDT and other crypto assets as collateral, receives a cash/Japanese-yen loan, pays borrowing interest and receives the collateral back after repayment. The FAQ states that staking rewards, airdrops, hard-fork rights and other economic value arising from pledged collateral belong to BitHills during the custody period, with any pass-through to the customer left to BitHills' discretion. That clause does not establish a public depositor interest/yield account; it is part of the collateral-loan economics. CYA's fixed initial scope is a CeFi lending/yield archive centered on customer-side yield/interest products and historically significant access/outcome events, not a general catalog of crypto-backed borrowing services. No separate public lender/investor yield product tied to the cryptopawn.io identity was found in the reviewed first-party material. Accordingly this identity is out of current CYA scope. This is a scope decision only and is not a safety, solvency, licensing, tax or return-quality assessment. Do not import claims from the separate cryptopawn.com identity into this record. Re-review only if BitHills launches a public crypto interest/lending product for depositors or if CYA formally expands to borrower-side crypto-backed lending.",
+    "first_seen_at": "2026-08-12",
+    "last_reviewed_at": "2026-08-13"
   }
 ]
