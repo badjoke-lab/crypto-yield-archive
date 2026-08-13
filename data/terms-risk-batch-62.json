@@ -1,0 +1,11 @@
+[
+  {
+    "platform_id": "cya_plat_000103",
+    "terms_status": "varies_by_product",
+    "asset_ownership_interpretation": "Current BTCC Earn support describes centralized subscription and redemption through the BTCC wallet but does not establish a universal segregated-deposit, trust, bankruptcy-remote, or insured ownership structure for Earn assets. CYA therefore does not treat product-return mechanics or VASP-register language as a principal-protection or asset-segregation guarantee.",
+    "affected_product": "BTCC Earn",
+    "source_evidence_id": "cya_src_b62_0003",
+    "notes": "Flexible Earn permits redemption under current product rules, while Fixed Earn is term-based and early redemption forfeits interest. Current product surfaces warn that annualized returns are not actual or guaranteed returns. BTCC POLAND LIMITED is identified in current first-party disclosures, with legacy Lithuania handling for some historic EU accounts; account/entity treatment remains jurisdiction-dependent.",
+    "confidence": "high"
+  }
+]

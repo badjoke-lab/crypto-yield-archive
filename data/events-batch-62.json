@@ -1,0 +1,16 @@
+[
+  {
+    "id": "cya_ev_000343",
+    "platform_id": "cya_plat_000103",
+    "event_type": "launched",
+    "event_date": "2026-02-11",
+    "title": "BTCC launches BTCC Earn",
+    "description": "BTCC announced the launch of BTCC Earn with a Flexible Earn product advertised at up to 20% APY and a limited new-user two-day Fixed Earn promotion advertised at 300% APY.",
+    "confidence": "high",
+    "impact_level": "high",
+    "event_status_effect": "active",
+    "source_count": 1,
+    "sort_order": 1,
+    "notes": "This is the verified first-party BTCC Earn launch date. The headline APY figures are issuer-advertised product terms and are not treated as independently verified realized returns."
+  }
+]
