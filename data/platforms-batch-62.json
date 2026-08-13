@@ -1,0 +1,24 @@
+[
+  {
+    "id": "cya_plat_000103",
+    "slug": "btcc-earn",
+    "canonical_name": "BTCC Earn",
+    "aliases": ["BTCC Flexible Earn", "BTCC Fixed Earn", "BTCC Simple Earn", "BTCC Flexible Savings"],
+    "type": "exchange_earn",
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": "2026-02-11",
+    "end_date": null,
+    "country_or_origin": "Poland / jurisdiction-dependent",
+    "summary": "Product-scoped record for BTCC Earn, launched on 11 February 2026 with Flexible Earn and a limited new-user Fixed Earn promotion. Current first-party support continues to document flexible and fixed interest-bearing subscription products, while current product surfaces warn that annualized returns are not actual or guaranteed returns.",
+    "what_happened": "BTCC launched BTCC Earn on 11 February 2026. The launch announcement advertised Flexible Earn at up to 20% APY and a new-user two-day Fixed Earn promotion at 300% APY. Current support documentation states that Flexible Earn accrues and settles interest hourly and can be redeemed at any time, while current Fixed Earn is term-based and early redemption forfeits interest. CYA preserves these rates and return mechanics as issuer-advertised product terms rather than verified realized customer returns. Current BTCC disclosures identify BTCC POLAND LIMITED as BTCC while preserving legacy BTCC Lithuania Limited UAB handling for certain historic EU accounts, so operator treatment remains jurisdiction-dependent.",
+    "official_url_original": "https://www.btcc.com/en-US/earn/simple-earn?source=menu",
+    "official_domain_original": "btcc.com",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://www.btcc.com/en-US/earn/simple-earn",
+    "confidence": "high",
+    "last_verified_at": "2026-08-13",
+    "uncertainty_notes": "Current first-party support/privacy material identifies BTCC POLAND LIMITED in Lodz, Poland, but historic EU account services can involve BTCC Lithuania Limited UAB and product access varies by jurisdiction. CYA therefore does not treat Poland as one universal historical contracting entity for every account. Public support establishes product mechanics, not universal realized yield, repayment performance, deposit insurance, or principal protection.",
+    "notes": "The broader BTCC exchange, futures, copy trading and other non-Earn products are outside this product identity. The current Simple Earn surface explicitly warns that annualized return does not represent actual or guaranteed return."
+  }
+]

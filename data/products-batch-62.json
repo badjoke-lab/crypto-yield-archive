@@ -1,0 +1,10 @@
+[
+  {
+    "platform_id": "cya_plat_000103",
+    "product_type": "exchange_earn",
+    "product_name": "BTCC Earn",
+    "custody_model": "Current BTCC support describes subscription from assets held in the BTCC wallet/account and redemption or maturity credit back to that wallet. The reviewed public product sources do not establish a segregated bank-deposit, trust, insurance, or bankruptcy-remote structure for Earn assets.",
+    "yield_source": "BTCC publishes product-specific APY figures for Flexible and Fixed Earn, but the reviewed public sources do not establish one universal underlying yield source for all Earn returns. The current product surface explicitly warns that annualized returns are not actual or guaranteed returns.",
+    "risk_notes": "Risks include centralized-platform exposure, variable advertised yields, fixed-term lockups, loss of fixed-term interest on early redemption, high-frequency subscribe/redeem risk-control restrictions, changing product eligibility and jurisdiction restrictions. Headline 20% and 300% APY figures are issuer-advertised terms rather than independently verified realized returns."
+  }
+]

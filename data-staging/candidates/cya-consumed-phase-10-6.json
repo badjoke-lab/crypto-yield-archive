@@ -1,0 +1,16 @@
+[
+  {
+    "candidate_id": "cya_candidate_000109",
+    "canonical_name": "BTCC Earn",
+    "domain": "btcc.com",
+    "decision": "already_recorded",
+    "duplicate_check": {
+      "checked_at": "2026-08-13",
+      "matched_platform_ids": ["cya_plat_000103"],
+      "notes": "Promoted only after candidate-only PR #190 passed the candidate corpus audit, hardened full-corpus scan, scanner guard, draft generation, data validation, CYA CI, build, SEO and preview checks on the exact candidate head."
+    },
+    "notes": "Promoted in Phase 10 canonical batch 62 as cya_plat_000103. Event cya_ev_000343 records the verified 2026-02-11 BTCC Earn launch. Headline 20% and 300% APY values remain issuer-advertised product terms, not verified realized customer returns. Current operator disclosures identify BTCC POLAND LIMITED while preserving legacy Lithuania handling for some historic EU accounts, so jurisdiction treatment remains explicit rather than inferred as universal.",
+    "first_seen_at": "2026-08-12",
+    "last_reviewed_at": "2026-08-13"
+  }
+]
