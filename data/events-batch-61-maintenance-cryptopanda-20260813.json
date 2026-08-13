@@ -1,0 +1,17 @@
+[
+  {
+    "id": "cya_ev_000345",
+    "platform_id": "cya_plat_000102",
+    "event_type": "other",
+    "event_date": "2026-02-09",
+    "title": "CryptoPanda and IZAKA-YA announce JPYR purchase-and-lend collaboration",
+    "description": "CryptoPanda announced a collaboration with partner IZAKA-YA in which users purchasing JPYR through CryptoPanda could participate in a JPYR lending campaign on IZAKA-YA, including a 10-day lending option and campaign benefits tied to purchased and lent amounts.",
+    "confidence": "high",
+    "impact_level": "medium",
+    "event_status_effect": "none",
+    "source_count": 2,
+    "sort_order": 1,
+    "counterparty_name": "CryptoPanda",
+    "notes": "This event records first-party evidence of the CryptoPanda-to-IZAKA-YA commercial/product relationship requested by Issue #186. Campaign annualized-rate and reward figures remain issuer/promoter terms and are not treated as verified realized returns. CryptoPanda is not separately canonicalized as a CYA yield platform."
+  }
+]
