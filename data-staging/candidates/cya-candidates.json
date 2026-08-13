@@ -85,5 +85,31 @@
     "notes": "Phase 10 first pass confirms strong CYA adjacency but does not yet support canonical promotion. First-party 9D docs describe an RWA infrastructure that explicitly includes yield generation, BTC-mining yield, a DeFi-native lending protocol, AI-managed funds and trading. CoinChief's current official surface contains an Earn navigation item and multiple official 9D Assets/CCP announcements, supporting an operational relationship. Secondary user-facing material says 9D staking is performed inside CoinChief and describes daily rewards/asset-pack mechanics, but those referral/support pages are discovery evidence only and must not be used to establish canonical return or redemption terms. Resolve first-party staking product terms, exact deposit/lockup/redemption mechanics, the CoinChief/9D legal and contractual relationship, custody/asset ownership, whether StaX/9D token participation is a centralized Earn product versus token/RWA participation, and the launch date before add_now. Do not convert community claims such as daily 1% or monthly 20% into issuer-verified or realized yield. CoinChief's public site currently identifies Coin Chief Tech INC and is independently listed as an exchange, but licensing/safety claims must be separately verified before use as canonical protection claims.",
     "first_seen_at": "2026-08-12",
     "last_reviewed_at": "2026-08-13"
+  },
+  {
+    "candidate_id": "cya_candidate_000112",
+    "canonical_name": "JBank",
+    "aliases": ["JBANK", "JBank Protocol", "JBank Staking", "JUC (JBank)", "JUB Staking"],
+    "domain": "jbank.vip",
+    "country_or_origin": "Global / decentralized / JuCoin-associated",
+    "platform_type_guess": "defi_lending",
+    "status_guess": "limited",
+    "major_event": "JuCoin-launched decentralized self-custody banking protocol with flexible/180-day/365-day auto-compounding staking; on 2025-12-04 JBank announced an International Version path for unsold long-term staked assets under which release begins after six months or can be accelerated through performance, with no static returns during the waiting/unlocking period",
+    "primary_sources": [
+      "https://jbank.vip/",
+      "https://support.jucoin.blog/hc/en-001/articles/47754272705433-JuCoin-Will-Launch-JUC-USDT-Trading-Pair-on-June-10-2025-at-12-00-UTC",
+      "https://www.ju.com/zh-HK/community/post/555837254138250752",
+      "https://blog.ju.com/juchain-early-stage-potential-projects-2/"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-13",
+      "matched_platform_ids": [],
+      "notes": "Exact repository searches for JBank, jbank.vip and JuCoin returned no existing CYA identity match before staging. Exact search found no prior use of cya_candidate_000112. The hardened full-corpus scanner remains authoritative before canonical promotion."
+    },
+    "decision": "add_now",
+    "notes": "Phase 10 review treats JBank as a narrow exception to CYA's normal DeFi deprioritization because the product has a historically significant staking/outcome change. First-party JBank material identifies a decentralized self-custody protocol launched by JuCoin and currently exposes staking plus lending/POL mechanics. A project-authored Ju.com community post dated 2025-11-04 documents Flexible, 180-day and 365-day staking with auto-compounding rewards every eight hours. JBank's own current site reproduces a dated 2025-12-04 notice for long-term staked assets: users choosing the International Version can wait six months for release or use performance-based accelerated unlocking, and static returns do not accrue during either waiting/unlocking route. This creates direct CYA relevance around changed return and access mechanics even though the underlying protocol is decentralized. Preserve self-custody/on-chain architecture rather than misclassifying it as a centralized deposit account. Do not convert JBank's 'guaranteed returns', high-APY, or predictable-return marketing into verified realized return or principal protection. The June 2025 JuCoin listing notice calls the JBank token JUC on JuChain, while later JBank materials use JUB; the exact JUC-to-JUB token migration/rename chronology remains unresolved and must be stated as uncertainty rather than silently harmonized. The reviewed sources do not establish that every long-term staker completed release after the six-month period, so customer outcome must remain unknown unless stronger evidence is found.",
+    "first_seen_at": "2026-08-12",
+    "last_reviewed_at": "2026-08-13"
   }
 ]
