@@ -54,32 +54,5 @@
     "notes": "Phase 10 review confirms strong scope fit: Apple's listing identifies Outlet Finance Inc as the developer and describes user funds being converted to digital assets and put to work for monthly rewards, while an official Outlet Medium post documents the platform's crypto-lending origin. However, secondary sources disagree or lack precision on the closure date: one says early 2023 and Dealroom says operations had ceased by October 2023, while Apple's app history shows version 5.0.3 dated 2023-02-21. Do not assign an exact closure date or repayment outcome from these sources. Resolve first-party closure/customer communications, operating-company registration, historical terms/custody and the final customer-fund outcome before add_now.",
     "first_seen_at": "2026-08-05",
     "last_reviewed_at": "2026-08-12"
-  },
-  {
-    "candidate_id": "cya_candidate_000109",
-    "canonical_name": "BTCC Earn",
-    "aliases": ["BTCC Flexible Earn", "BTCC Fixed Earn", "BTCC Simple Earn", "BTCC Flexible Savings"],
-    "domain": "btcc.com",
-    "country_or_origin": "Poland / jurisdiction-dependent",
-    "platform_type_guess": "exchange_earn",
-    "status_guess": "active",
-    "major_event": "BTCC launched BTCC Earn on 2026-02-11 with a Flexible Earn product advertised at up to 20% APY and a limited new-user two-day Fixed Earn promotion advertised at 300% APY; current first-party support continues to document active Flexible and Fixed Earn mechanics",
-    "primary_sources": [
-      "https://www.btcc.com/en-US/newsroom/feature-releases/btcc-launches-btcc-earn-with-flexible-20-apy",
-      "https://www.btcc.com/en-US/support-center/detail/54865646101913",
-      "https://www.btcc.com/en-US/earn/simple-earn?source=menu",
-      "https://www.btcc.com/en-US/detail/142638",
-      "https://www.btcc.com/en-US/btcc-updates/company-news/btcc-earn-tops-50m-usdt-in-total-subscriptions"
-    ],
-    "secondary_sources": [],
-    "duplicate_check": {
-      "checked_at": "2026-08-13",
-      "matched_platform_ids": [],
-      "notes": "Exact repository searches for BTCC Earn, BTCC Savings and btcc.com returned no CYA canonical or staging identity match before allocation, and exact search found no prior use of cya_candidate_000109. The hardened candidate corpus audit and full-corpus scanner remain authoritative before canonical promotion."
-    },
-    "decision": "add_now",
-    "notes": "First-party launch material establishes an exact BTCC Earn launch date of 2026-02-11. Current support defines BTCC Earn as an interest-earning product with Flexible Earn and Fixed Earn. Flexible Earn settles interest hourly and permits redemption at any time; Fixed Earn is currently a fixed-term new-user product, with early redemption forfeiting interest. Statements that principal and interest return to the wallet describe product mechanics, not independently verified universal repayment. BTCC's launch and milestone pages advertise up to 20% APY for Flexible Earn and a 300% APY two-day new-user fixed-term promotion; preserve those strictly as issuer-advertised rates and conditions. The current Simple Earn surface warns that annualized return does not represent actual or guaranteed return. Current first-party privacy/support surfaces identify BTCC POLAND LIMITED as BTCC, registered in Lodz, Poland, while legacy pre-2026 EU account services could involve BTCC Lithuania Limited UAB and product access remains jurisdiction-dependent; use Poland / jurisdiction-dependent rather than infer one universal entity for every historical account. No insolvency, platform-wide withdrawal freeze, haircut, or customer-claims event is established by this review."
-    ,"first_seen_at": "2026-08-12",
-    "last_reviewed_at": "2026-08-13"
   }
 ]
