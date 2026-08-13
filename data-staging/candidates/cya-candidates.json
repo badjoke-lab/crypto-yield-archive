@@ -137,5 +137,58 @@
     "notes": "Phase 10 identity review resolves the watchlist ORCA item to the live iOrca registration surface under dapp.ocagent.io. The official registration page requires username, affiliate code, wallet connection and acceptance of Terms of Service, Privacy Policy and Risk Disclosure, establishing an active financial-product surface but not the underlying economic contract. Current Japanese discovery/referral material consistently describes BNB-chain USDT deposits, minimum participation around 100 USDT, 10/90/180/360-day packages, principal lockups, daily USDT rewards sent to a wallet, check-in-based reward increases, referral ranks and a temporary doubled-deposit campaign; it attributes yield to AI agents exploiting price/probability differences across prediction markets. Those mechanics and rates remain discovery claims because the first-party Terms/Risk pages could not be retrieved reliably in this pass and no stable first-party documentation for package rates, custody, asset reuse, redemption, source of yield or operator identity was found. A claimed relationship to Nodepay is likewise unverified and must not be canonicalized. Resolve legal operator/jurisdiction, first-party Terms and Risk Disclosure, deposit/custody/asset-use treatment, package lock/redemption rules, reward calculation, withdrawal rights, launch chronology, source-of-yield claims and any campaign liabilities before add_now. Do not confuse this candidate with Orca's Solana AMM/xORCA staking product and do not convert advertised daily rates or campaign credits into verified realized return or principal repayment.",
     "first_seen_at": "2026-08-12",
     "last_reviewed_at": "2026-08-13"
+  },
+  {
+    "candidate_id": "cya_candidate_000118",
+    "canonical_name": "Kraken",
+    "aliases": ["Kraken Earn", "Kraken Opt-In Rewards", "Kraken Auto Earn", "Kraken Bonded Earn"],
+    "domain": "kraken.com",
+    "country_or_origin": "United States / global multi-entity service",
+    "platform_type_guess": "exchange_earn",
+    "status_guess": "active",
+    "major_event": "Kraken currently operates Opt-In Rewards, Auto Earn and Bonded Earn products that allocate eligible idle account balances to reward programs; current first-party material distinguishes Opt-In Rewards from onchain staking and documents flexible and fixed/bonded reward mechanics, weekly payouts, jurisdictional restrictions and product-specific terms",
+    "primary_sources": [
+      "https://support.kraken.com/articles/360044886311-overview-of-opt-in-rewards-on-kraken",
+      "https://support.kraken.com/articles/overview-of-auto-earn-on-kraken",
+      "https://support.kraken.com/articles/overview-of-bonded-earn",
+      "https://www.kraken.com/legal/global-terms",
+      "https://www.kraken.com/legal/us-oir-terms"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-13",
+      "matched_platform_ids": [],
+      "notes": "Exact repository search for Kraken returned no indexed CYA identity match before staging; exact candidate ID search found no use of cya_candidate_000118. Hardened full-corpus candidate scanning on the PR head is authoritative and may still reject promotion if a canonical alias/domain match exists."
+    },
+    "decision": "add_now",
+    "notes": "Phase 10 discovery finds direct current first-party product and legal terms. Kraken's July 2026 Opt-In Rewards documentation states that the product earns rewards on otherwise idle Kraken account balances and is distinct from onchain staking; flexible and fixed/bonded variants have different availability and access restrictions, and rewards are paid weekly in kind. Auto Earn automatically allocates eligible balances into regional Staking, Opt-In or Stablecoin reward programs and leaves eligible Auto Earn assets available to trade or withdraw. Global terms establish that the contracting Kraken/Payward entity varies by customer jurisdiction; U.S. Opt-In Rewards terms separately identify Payward, Inc. as the U.S. OIR provider. Canonical treatment should therefore be brand/platform-level with multi-entity jurisdiction uncertainty preserved rather than inventing one universal legal counterparty. Current reward rates are variable product terms and must not be represented as realized returns or guarantees.",
+    "first_seen_at": "2026-08-13",
+    "last_reviewed_at": "2026-08-13"
+  },
+  {
+    "candidate_id": "cya_candidate_000119",
+    "canonical_name": "Phemex",
+    "aliases": ["Phemex Earn", "Phemex Savings", "Phemex Flexible Savings", "Phemex Fixed Savings"],
+    "domain": "phemex.com",
+    "country_or_origin": "Global / multi-entity service",
+    "platform_type_guess": "exchange_earn",
+    "status_guess": "active",
+    "major_event": "Phemex currently operates Phemex Earn/Savings products; first-party help and Terms of Use describe interest-generating flexible savings, historical/fixed savings mechanics, account deduction and reward distribution, redemption rights and a multi-entity service structure",
+    "primary_sources": [
+      "https://phemex.com/help-center/what-are-the-earn-crypto-savings-accounts",
+      "https://phemex.com/help-center/how-do-i-earn-crypto-with-phemexs-savings-accounts",
+      "https://phemex.com/help-center/phemex-terms-of-use",
+      "https://phemex.com/help-center/phemex-earn-and-wealth-management-passive-income-guide"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-13",
+      "matched_platform_ids": [],
+      "notes": "Exact repository search for Phemex returned no indexed CYA identity match before staging; exact candidate ID search found no use of cya_candidate_000119. Hardened full-corpus candidate scanning on the PR head is authoritative and may still reject promotion if a canonical alias/domain match exists."
+    },
+    "decision": "add_now",
+    "notes": "Phase 10 discovery finds direct current first-party product and agreement evidence. Phemex describes Savings as interest-generating accounts for deposited cryptocurrencies. Current help material states Flexible Savings remain available while Fixed Savings are currently unavailable, and documents daily interest plus redemption mechanics; the broader Phemex Terms of Use includes specific Phemex Savings provisions governing Flexible and Fixed Savings, deduction of subscribed Earn Assets, redemption restrictions for fixed terms and distribution of principal plus Reward at maturity. Phemex defines the service provider as the relevant Phemex Exchange/group entity, so canonical records must preserve multi-entity/jurisdiction uncertainty rather than assign one universal counterparty without a customer-jurisdiction context. Product APYs and safety statements are issuer claims and must not be treated as independently verified realized returns, reserve proof or guarantees.",
+    "first_seen_at": "2026-08-13",
+    "last_reviewed_at": "2026-08-13"
   }
 ]
