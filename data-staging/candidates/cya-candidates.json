@@ -81,5 +81,22 @@
     "notes": "Phase 10 identity review resolves the watchlist ORCA item to the live iOrca registration surface under dapp.ocagent.io. The official registration page requires username, affiliate code, wallet connection and acceptance of Terms of Service, Privacy Policy and Risk Disclosure, establishing an active financial-product surface but not the underlying economic contract. Current Japanese discovery/referral material consistently describes BNB-chain USDT deposits, minimum participation around 100 USDT, 10/90/180/360-day packages, principal lockups, daily USDT rewards sent to a wallet, check-in-based reward increases, referral ranks and a temporary doubled-deposit campaign; it attributes yield to AI agents exploiting price/probability differences across prediction markets. Those mechanics and rates remain discovery claims because the first-party Terms/Risk pages could not be retrieved reliably in this pass and no stable first-party documentation for package rates, custody, asset reuse, redemption, source of yield or operator identity was found. A claimed relationship to Nodepay is likewise unverified and must not be canonicalized. Resolve legal operator/jurisdiction, first-party Terms and Risk Disclosure, deposit/custody/asset-use treatment, package lock/redemption rules, reward calculation, withdrawal rights, launch chronology, source-of-yield claims and any campaign liabilities before add_now. Do not confuse this candidate with Orca's Solana AMM/xORCA staking product and do not convert advertised daily rates or campaign credits into verified realized return or principal repayment.",
     "first_seen_at": "2026-08-12",
     "last_reviewed_at": "2026-08-13"
+  },
+  {
+    "candidate_id": "cya_candidate_000127",
+    "canonical_name": "Bitget Simple Earn",
+    "aliases": ["Bitget Earn", "Bitget Savings", "Bitget Flexible Savings", "Bitget Fixed Savings", "Simple Earn"],
+    "domain": "bitget.com",
+    "country_or_origin": "Global / legal entity varies by jurisdiction",
+    "platform_type_guess": "centralized_yield",
+    "status_guess": "active",
+    "major_event": "Active Bitget Earn / Simple Earn savings platform with flexible and fixed crypto yield products; first-party history proves Flexible Savings products were offered by August 2022, while current terms describe third-party asset management and principal-loss risk",
+    "primary_sources": ["https://www.bitget.com/earning/savings", "https://www.bitget.com/ja/support/articles/12560603797489", "https://www.bitget.com/ja/support/articles/9966503634713"],
+    "secondary_sources": [],
+    "duplicate_check": {"checked_at": "2026-08-15", "matched_platform_ids": [], "notes": "Exact repository searches for Bitget, Bitget Earn and cya_candidate_000127 returned no indexed canonical or staging identity match before allocation. Hardened full-corpus scanning on the exact PR head remains authoritative."},
+    "decision": "add_now",
+    "notes": "Current first-party Simple Earn pages establish a live CYA-scope savings/yield product. Flexible products accrue hourly or daily interest, subscribed funds are deducted from the user's spot account and interest is credited back to the spot account; current product pages also list fixed-term products. Current Simple Earn Terms state that Bitget acts solely as platform provider for Simple Earn while users' digital assets are managed by third parties that may or may not hold applicable licenses, and warn that principal may not be recovered. A first-party 2022-08-29 announcement proves Bitget Earn Flexible Savings products existed by that date. Preserve legal-entity and jurisdiction ambiguity rather than inferring one global operator. Current and historical APRs, principal-guarantee marketing language, product safety language and third-party management descriptions remain issuer terms/claims and are not independently verified realized returns, guarantees, reserve proof, insurance or solvency evidence.",
+    "first_seen_at": "2026-08-15",
+    "last_reviewed_at": "2026-08-15"
   }
 ]
