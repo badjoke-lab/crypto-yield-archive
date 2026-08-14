@@ -1,0 +1,24 @@
+[
+  {
+    "id": "cya_plat_000111",
+    "slug": "fuelhash-cryptolending",
+    "canonical_name": "FUELHASH CRYPTOLENDING",
+    "aliases": ["CRYPTOLENDING", "FUELHASH Crypto Lending", "FUELHASH クリプトレンディング", "クリプトレンディング", "CRYPTOTREND"],
+    "type": "cefi_lending",
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": "2022-11-07",
+    "end_date": null,
+    "country_or_origin": "Japan",
+    "summary": "Active Japanese crypto-asset lending service operated by 株式会社FUELHASH. Current terms define direct customer-to-FUELHASH lending contracts with flexible and fixed lending mechanics, including fixed-rate CRYPTOLENDING and variable-rate CRYPTOTREND products.",
+    "what_happened": "FUELHASH announced CRYPTOLENDING on 2022-11-02 for service start on 2022-11-07. Current first-party terms continue to define a direct crypto-asset lending arrangement in which users lend eligible assets or tokens to FUELHASH and the company owes return of the same type and quantity plus contractual interest. The terms distinguish flexible lending from fixed lending, with fixed lending including the fixed-rate CRYPTOLENDING product and variable-rate CRYPTOTREND. They also state that the service is not crypto-asset exchange business, that the exchange-business segregated-management obligations described in the terms do not apply, and that FUELHASH may be unable to return borrowed customer assets if the company fails. CYA records current marketing statements such as high rates, stable operation and principal-guarantee language strictly as operator claims and not as independently verified guarantees, licensing validation, insurance, reserve proof, realized returns or solvency evidence.",
+    "official_url_original": "https://fuel-hash.com/product/cryptolending/",
+    "official_domain_original": "fuel-hash.com",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://fuel-hash.com/product/cryptolending/",
+    "confidence": "high",
+    "last_verified_at": "2026-08-15",
+    "uncertainty_notes": "The reviewed first-party material establishes the 2022-11-07 service start and current contract mechanics, but does not independently establish the economic source of every interest payment, current solvency, reserve sufficiency or universal realized repayment. Current marketing uses principal-guarantee language while the Terms separately disclose that company failure can make return of borrowed assets impossible; CYA preserves both statements without converting the marketing claim into an independent guarantee.",
+    "notes": "Promoted in Phase 10 from duplicate-clear candidate cya_candidate_000129 after candidate-only PR #229 passed the hardened full-corpus scanner against the 110-platform canonical corpus."
+  }
+]
