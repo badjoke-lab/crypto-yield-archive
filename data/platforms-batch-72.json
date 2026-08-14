@@ -1,0 +1,24 @@
+[
+  {
+    "id": "cya_plat_000113",
+    "slug": "line-bitmax-lending",
+    "canonical_name": "LINE BITMAX 暗号資産貸出サービス",
+    "aliases": ["LINE BITMAX Lending", "BITMAX 暗号資産貸出サービス", "BITMAX Lending", "LINE BITMAX 貸出"],
+    "type": "cefi_lending",
+    "status": "operations_ended",
+    "failure_reason": "voluntary_shutdown",
+    "launch_date": "2020-10-07",
+    "end_date": "2026-06-01",
+    "country_or_origin": "Japan",
+    "summary": "Historical crypto-asset lending service within LINE BITMAX. The service launched in October 2020, later offered variable- and fixed-period lending, and ended as LINE Xenesis shut down the entire LINE BITMAX service in 2026.",
+    "what_happened": "LVC Corporation announced the BITMAX crypto-asset lending service for launch on 2020-10-07. Later first-party help material documents variable-period and fixed-period courses in which users lent crypto assets to the operator and received lending fees. LINE BITMAX later operated under LINE Xenesis株式会社. On 2026-03-03 LINE Xenesis / LY Corporation announced that LINE BITMAX would end on 2026-06-01. The official shutdown site states that new lending applications were stopped and existing lending contracts would be ended sequentially during the shutdown process. CYA uses 2026-06-01 as the platform/product-family end date while preserving that individual lending contracts may have ended earlier. The shutdown asset-return procedure is recorded as a service-end process, not proof of universal historical lending performance.",
+    "official_url_original": "https://www.bitmax.me/",
+    "official_domain_original": "bitmax.me",
+    "official_url_status": "repurposed",
+    "archived_url": "https://web.archive.org/web/*/https://www.bitmax.me/",
+    "confidence": "high",
+    "last_verified_at": "2026-08-15",
+    "uncertainty_notes": "Launch-era operator was LVC Corporation while shutdown-era operator was LINE Xenesis株式会社. The exact termination date of every individual lending contract is not established as identical to the 2026-06-01 platform shutdown date. Historical campaign and lending rates remain issuer terms rather than verified realized returns.",
+    "notes": "Promoted in Phase 10 from duplicate-clear candidate cya_candidate_000131 after candidate-only PR #235 passed the hardened full-corpus scanner against the 112-platform canonical corpus."
+  }
+]
