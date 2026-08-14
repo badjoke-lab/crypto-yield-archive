@@ -1,0 +1,11 @@
+[
+  {
+    "platform_id": "cya_plat_000113",
+    "terms_status": "platform_owned",
+    "asset_ownership_interpretation": "First-party LINE BITMAX help material states that customers lend crypto assets to the operator in exchange for lending fees. CYA therefore uses `platform_owned` to represent borrower-counterparty economic exposure during the lending contract. The reviewed public sources do not establish every historical contract variation, insolvency priority or legal treatment with enough precision to make broader claims beyond the direct lending relationship.",
+    "affected_product": "LINE BITMAX 暗号資産貸出サービス",
+    "source_evidence_id": "cya_src_b72_0002",
+    "notes": "Variable-period and fixed-period courses had different cancellation/return mechanics. Historical campaign and lending rates remain issuer terms. The service shutdown process and remaining-balance return procedure do not prove universal historical lending repayment.",
+    "confidence": "medium"
+  }
+]
