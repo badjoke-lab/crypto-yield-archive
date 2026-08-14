@@ -2,7 +2,11 @@
   {
     "candidate_id": "cya_candidate_000045",
     "canonical_name": "Cabital",
-    "aliases": ["Cabital Earn", "Cabital Crypto Earn", "Cabital Connect"],
+    "aliases": [
+      "Cabital Earn",
+      "Cabital Crypto Earn",
+      "Cabital Connect"
+    ],
     "domain": "cabital.com",
     "country_or_origin": "Singapore / Europe / Global",
     "platform_type_guess": "centralized_yield",
@@ -29,7 +33,11 @@
   {
     "candidate_id": "cya_candidate_000049",
     "canonical_name": "Outlet Finance",
-    "aliases": ["Outlet", "Outlet Savings", "Outlet Earn"],
+    "aliases": [
+      "Outlet",
+      "Outlet Savings",
+      "Outlet Earn"
+    ],
     "domain": "outlet.finance",
     "country_or_origin": "United States",
     "platform_type_guess": "crypto_interest_account",
@@ -58,7 +66,13 @@
   {
     "candidate_id": "cya_candidate_000111",
     "canonical_name": "9D Assets",
-    "aliases": ["9D", "9DAssets", "9D Assets Staking", "9D × Coin Chief", "9D Assets / CCP"],
+    "aliases": [
+      "9D",
+      "9DAssets",
+      "9D Assets Staking",
+      "9D × Coin Chief",
+      "9D Assets / CCP"
+    ],
     "domain": "9d-assets.gitbook.io",
     "country_or_origin": "Global / operator jurisdiction unresolved",
     "platform_type_guess": "exchange_staking_rwa_yield",
@@ -89,7 +103,13 @@
   {
     "candidate_id": "cya_candidate_000113",
     "canonical_name": "Zenta System",
-    "aliases": ["Zenta", "ZENTA SYSTEM", "ZENTA SYSTEM LIMITED", "Zenta Core", "Zenta Stake"],
+    "aliases": [
+      "Zenta",
+      "ZENTA SYSTEM",
+      "ZENTA SYSTEM LIMITED",
+      "Zenta Core",
+      "Zenta Stake"
+    ],
     "domain": "zenta-system.com",
     "country_or_origin": "United States / claimed Washington registration / operator unresolved",
     "platform_type_guess": "centralized_yield",
@@ -115,7 +135,12 @@
   {
     "candidate_id": "cya_candidate_000116",
     "canonical_name": "iOrca",
-    "aliases": ["ORCA", "ORCA System", "iOrca", "OC Agent"],
+    "aliases": [
+      "ORCA",
+      "ORCA System",
+      "iOrca",
+      "OC Agent"
+    ],
     "domain": "ocagent.io",
     "country_or_origin": "Global / operator jurisdiction unresolved",
     "platform_type_guess": "centralized_yield_ai_arbitrage",
@@ -137,5 +162,37 @@
     "notes": "Phase 10 identity review resolves the watchlist ORCA item to the live iOrca registration surface under dapp.ocagent.io. The official registration page requires username, affiliate code, wallet connection and acceptance of Terms of Service, Privacy Policy and Risk Disclosure, establishing an active financial-product surface but not the underlying economic contract. Current Japanese discovery/referral material consistently describes BNB-chain USDT deposits, minimum participation around 100 USDT, 10/90/180/360-day packages, principal lockups, daily USDT rewards sent to a wallet, check-in-based reward increases, referral ranks and a temporary doubled-deposit campaign; it attributes yield to AI agents exploiting price/probability differences across prediction markets. Those mechanics and rates remain discovery claims because the first-party Terms/Risk pages could not be retrieved reliably in this pass and no stable first-party documentation for package rates, custody, asset reuse, redemption, source of yield or operator identity was found. A claimed relationship to Nodepay is likewise unverified and must not be canonicalized. Resolve legal operator/jurisdiction, first-party Terms and Risk Disclosure, deposit/custody/asset-use treatment, package lock/redemption rules, reward calculation, withdrawal rights, launch chronology, source-of-yield claims and any campaign liabilities before add_now. Do not confuse this candidate with Orca's Solana AMM/xORCA staking product and do not convert advertised daily rates or campaign credits into verified realized return or principal repayment.",
     "first_seen_at": "2026-08-12",
     "last_reviewed_at": "2026-08-13"
+  },
+  {
+    "candidate_id": "cya_candidate_000124",
+    "canonical_name": "HashHub Lending",
+    "aliases": [
+      "HashHubレンディング",
+      "HashHub Lending",
+      "HashHub Lending Service"
+    ],
+    "domain": "hashhub-lending.com",
+    "country_or_origin": "Japan",
+    "platform_type_guess": "centralized_lending",
+    "status_guess": "active",
+    "major_event": "Active Japanese crypto-asset lending service currently operated by SBI Digital Finance Inc.; on 2024-04-01 the HashHub Lending business and related contractual rights and obligations transferred from HashHub Inc. to the newly established SBI Digital Finance Inc. through a company split",
+    "primary_sources": [
+      "https://www.hashhub-lending.com/",
+      "https://www.hashhub-lending.com/about",
+      "https://support.hashhub-lending.com/hc/ja/articles/9110980248847-%E4%BC%9A%E7%A4%BE%E5%88%86%E5%89%B2%E3%81%AB%E3%82%88%E3%82%8B%E6%96%B0%E4%BC%9A%E7%A4%BE%E8%A8%AD%E7%AB%8B%E5%8F%8A%E3%81%B3%E7%B5%84%E7%B9%94%E5%86%8D%E7%B7%A8%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B",
+      "https://support.hashhub-lending.com/hc/ja/articles/16324291830031-2026%E5%B9%B47%E6%9C%88-%E8%B2%B8%E5%80%9F%E6%96%99%E7%8E%87%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B",
+      "https://support.hashhub-lending.com/hc/ja/articles/360002985995-%E4%BC%9A%E7%A4%BE%E3%81%8C%E7%A0%B4%E7%B6%BB%E3%81%97%E3%81%9F%E5%A0%B4%E5%90%88%E3%81%AB%E8%B2%B8%E3%81%97%E5%87%BA%E3%81%97%E3%81%9F%E8%B3%87%E7%94%A3%E3%81%AF%E4%BF%9D%E8%AD%B7%E3%81%95%E3%82%8C%E3%81%BE%E3%81%99%E3%81%8B",
+      "https://support.hashhub-lending.com/hc/ja/articles/5496711088655-%E8%B2%B8%E3%81%97%E5%87%BA%E3%81%97%E6%9D%A1%E4%BB%B6%E3%82%92%E6%95%99%E3%81%88%E3%81%A6%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-14",
+      "matched_platform_ids": [],
+      "notes": "Exact repository searches for HashHub Lending, hashhub-lending.com and SBI Digital Finance returned no indexed canonical or staging identity match before allocation. Hardened full-corpus scanning on the exact PR head remains authoritative."
+    },
+    "decision": "add_now",
+    "notes": "First-party current materials establish a live CYA-scope lending product and current operator SBI Digital Finance Inc. Customers lend crypto to the company and receive lending fees according to published terms/rates; the company says borrowed assets may be used through arbitrage, third-party lending, staking and DeFi. Current July 2026 materials show active BTC, ETH, USDC, XRP and SOL lending while DAI fee accrual stopped from 2026-07-01 following closure of new DAI intake on 2026-05-20. Return requests are currently described as settling at the beginning of the second month after application, with asset-specific return fees. First-party legal FAQ characterizes the arrangement as a crypto-asset (quasi-)consumption loan and says the operator is neither a crypto exchange nor custodian; this is the operator's legal interpretation, not independent legal advice. The 2024 company-split notice provides an exact historical operator transition on 2024-04-01, when HashHub Lending-related rights and obligations moved from HashHub Inc. to SBI Digital Finance Inc. Rates, security/risk-management claims and asset-deployment descriptions remain issuer claims and must not be treated as independently verified realized returns, reserve proof, guarantees or solvency evidence.",
+    "first_seen_at": "2026-08-14",
+    "last_reviewed_at": "2026-08-14"
   }
 ]
