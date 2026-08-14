@@ -137,30 +137,5 @@
     "notes": "Phase 10 identity review resolves the watchlist ORCA item to the live iOrca registration surface under dapp.ocagent.io. The official registration page requires username, affiliate code, wallet connection and acceptance of Terms of Service, Privacy Policy and Risk Disclosure, establishing an active financial-product surface but not the underlying economic contract. Current Japanese discovery/referral material consistently describes BNB-chain USDT deposits, minimum participation around 100 USDT, 10/90/180/360-day packages, principal lockups, daily USDT rewards sent to a wallet, check-in-based reward increases, referral ranks and a temporary doubled-deposit campaign; it attributes yield to AI agents exploiting price/probability differences across prediction markets. Those mechanics and rates remain discovery claims because the first-party Terms/Risk pages could not be retrieved reliably in this pass and no stable first-party documentation for package rates, custody, asset reuse, redemption, source of yield or operator identity was found. A claimed relationship to Nodepay is likewise unverified and must not be canonicalized. Resolve legal operator/jurisdiction, first-party Terms and Risk Disclosure, deposit/custody/asset-use treatment, package lock/redemption rules, reward calculation, withdrawal rights, launch chronology, source-of-yield claims and any campaign liabilities before add_now. Do not confuse this candidate with Orca's Solana AMM/xORCA staking product and do not convert advertised daily rates or campaign credits into verified realized return or principal repayment.",
     "first_seen_at": "2026-08-12",
     "last_reviewed_at": "2026-08-13"
-  },
-  {
-    "candidate_id": "cya_candidate_000122",
-    "canonical_name": "Smart Crypto Lending",
-    "aliases": ["SCL", "SmartCryptoLending", "スマートクリプトレンディング"],
-    "domain": "scllending.com",
-    "country_or_origin": "Japan",
-    "platform_type_guess": "centralized_lending",
-    "status_guess": "active",
-    "major_event": "Smart Crypto Lending launched in June 2025 as a centralized crypto lending service in which customers lend crypto assets to Mirising Co., Ltd. for fixed terms and receive the same asset plus contract interest at maturity, subject to withdrawal, market and counterparty-risk terms",
-    "primary_sources": [
-      "https://scllending.com/",
-      "https://scllending.com/terms/",
-      "https://scllending.com/company/"
-    ],
-    "secondary_sources": [],
-    "duplicate_check": {
-      "checked_at": "2026-08-13",
-      "matched_platform_ids": [],
-      "notes": "Exact CYA repository searches for Smart Crypto Lending, scllending.com and ミライジング returned no indexed canonical or staging identity match before allocation. Exact candidate search found no prior use of cya_candidate_000122. The hardened full-corpus scanner on the exact PR head remains authoritative."
-    },
-    "decision": "add_now",
-    "notes": "First-party company information identifies ミライジング株式会社 as operator and states a June 2025 service start. The current terms define individual crypto consumption-loan contracts: users transfer crypto to the company's designated wallet, the company borrows it for a selected term, and at maturity owes the same asset plus contract interest. Terms describe 1/3/6/12-month plans, maturity withdrawal requests, a stated seven-business-day return process after withdrawal application, rate-change authority, and explicit risks including that the transaction is not a deposit, is not deposit-insured, borrowed crypto is not subject to statutory segregated management under the cited exchange-business framework, the loans are unsecured, and principal/interest may not be returned if the company fails. The public site currently lists BTC, ETH, ADA, TRON, USDC and USDT lending and describes portfolio deployment through multiple crypto investment destinations. All advertised rates, security/risk-management language and investment-strategy descriptions remain issuer claims; they are not independently verified realized returns, reserve proof, guarantees or solvency evidence.",
-    "first_seen_at": "2026-08-13",
-    "last_reviewed_at": "2026-08-13"
   }
 ]
