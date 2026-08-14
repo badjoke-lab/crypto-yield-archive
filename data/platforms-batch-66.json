@@ -1,0 +1,24 @@
+[
+  {
+    "id": "cya_plat_000107",
+    "slug": "hashhub-lending",
+    "canonical_name": "HashHub Lending",
+    "aliases": ["HashHubレンディング", "HashHub Lending Service"],
+    "type": "cefi_lending",
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": null,
+    "end_date": null,
+    "country_or_origin": "Japan",
+    "summary": "Active Japanese centralized crypto-asset lending service currently operated by SBI Digital Finance Inc. Customers lend crypto assets to the operator under a lending / quasi-consumption-loan structure and receive lending fees according to published conditions.",
+    "what_happened": "HashHub Lending remains active under SBIデジタルファイナンス株式会社. On 2024-04-01, a company split transferred the HashHub Lending service and related contractual rights and obligations from 株式会社HashHub to the newly established SBIデジタルファイナンス株式会社. Current first-party materials describe customer assets as borrowed by the operator and potentially deployed through arbitrage, third-party lending, staking and DeFi. In 2026, new DAI lending intake ended on 2026-05-20 and DAI lending-fee accrual stopped from 2026-07-01, while BTC, ETH, USDC, XRP and SOL lending remained advertised. Published rates, security language and deployment descriptions are issuer claims, not independent evidence of realized returns, reserves, guarantees or solvency.",
+    "official_url_original": "https://www.hashhub-lending.com/",
+    "official_domain_original": "hashhub-lending.com",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://www.hashhub-lending.com/",
+    "confidence": "high",
+    "last_verified_at": "2026-08-14",
+    "uncertainty_notes": "The reviewed first-party material does not establish a sufficiently reliable exact original launch day, so launch_date remains unset. Current lending-fee rates, security/risk-management statements, asset-deployment descriptions and legal/regulatory characterizations remain issuer statements and may change. The operator-transition event is exact to 2024-04-01 from first-party company-split documentation.",
+    "notes": "Promoted in Phase 10 from duplicate-clear candidate cya_candidate_000124 after candidate-only PR #215 passed the hardened full-corpus scanner with one draft-eligible candidate."
+  }
+]
