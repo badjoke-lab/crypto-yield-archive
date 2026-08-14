@@ -1,0 +1,47 @@
+[
+  {
+    "id": "cya_src_b64_0001",
+    "platform_id": "cya_plat_000105",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "会社情報｜あなたの資産を最大限に活かすレンディング",
+    "url": "https://scllending.com/company/",
+    "publisher": "Smart Crypto Lending / ミライジング株式会社",
+    "published_at": null,
+    "archived_url": "https://web.archive.org/web/*/https://scllending.com/company/",
+    "accessed_at": "2026-08-14",
+    "reliability": "high",
+    "claim_scope": "launch_date",
+    "notes": "First-party company page identifies ミライジング株式会社 as the operator and lists Smart Crypto Lending's service start as June 2025. It does not establish an exact launch day, so CYA does not populate a synthetic YYYY-MM-DD launch_date."
+  },
+  {
+    "id": "cya_src_b64_0002",
+    "platform_id": "cya_plat_000105",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "ご利用契約約款",
+    "url": "https://scllending.com/terms/",
+    "publisher": "Smart Crypto Lending / ミライジング株式会社",
+    "published_at": null,
+    "archived_url": "https://web.archive.org/web/*/https://scllending.com/terms/",
+    "accessed_at": "2026-08-14",
+    "reliability": "high",
+    "claim_scope": "terms_risk",
+    "notes": "First-party terms define individual crypto consumption-loan contracts, 1/3/6/12-month terms, company-designated-wallet funding, same-asset interest, maturity withdrawal requests and a stated seven-business-day return process. They also state that the transaction is not a deposit, is not deposit-insured, borrowed crypto is not subject to statutory segregated management under the cited exchange-business framework, the lending is unsecured, and principal/interest may not be returned if the company fails. The terms also permit rate changes and defined withdrawal delay/refusal conditions."
+  },
+  {
+    "id": "cya_src_b64_0003",
+    "platform_id": "cya_plat_000105",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "選べるプラン＆自動更新！SCLの暗号資産レンディングで柔軟な運用",
+    "url": "https://scllending.com/",
+    "publisher": "Smart Crypto Lending",
+    "published_at": null,
+    "archived_url": "https://web.archive.org/web/*/https://scllending.com/",
+    "accessed_at": "2026-08-14",
+    "reliability": "high",
+    "claim_scope": "entity",
+    "notes": "Current first-party product surface lists BTC, ETH, ADA, TRON, USDC and USDT lending, fixed-term plans and issuer-advertised rates, and describes diversified crypto investment destinations plus cold-wallet/security controls. CYA uses the page to verify the active product surface only; its rate, safety, custody and investment-strategy claims are not independently verified realized return, reserve proof, guarantee or solvency evidence."
+  }
+]
