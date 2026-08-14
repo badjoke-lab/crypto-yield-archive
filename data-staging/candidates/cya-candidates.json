@@ -81,22 +81,5 @@
     "notes": "Phase 10 identity review resolves the watchlist ORCA item to the live iOrca registration surface under dapp.ocagent.io. The official registration page requires username, affiliate code, wallet connection and acceptance of Terms of Service, Privacy Policy and Risk Disclosure, establishing an active financial-product surface but not the underlying economic contract. Current Japanese discovery/referral material consistently describes BNB-chain USDT deposits, minimum participation around 100 USDT, 10/90/180/360-day packages, principal lockups, daily USDT rewards sent to a wallet, check-in-based reward increases, referral ranks and a temporary doubled-deposit campaign; it attributes yield to AI agents exploiting price/probability differences across prediction markets. Those mechanics and rates remain discovery claims because the first-party Terms/Risk pages could not be retrieved reliably in this pass and no stable first-party documentation for package rates, custody, asset reuse, redemption, source of yield or operator identity was found. A claimed relationship to Nodepay is likewise unverified and must not be canonicalized. Resolve legal operator/jurisdiction, first-party Terms and Risk Disclosure, deposit/custody/asset-use treatment, package lock/redemption rules, reward calculation, withdrawal rights, launch chronology, source-of-yield claims and any campaign liabilities before add_now. Do not confuse this candidate with Orca's Solana AMM/xORCA staking product and do not convert advertised daily rates or campaign credits into verified realized return or principal repayment.",
     "first_seen_at": "2026-08-12",
     "last_reviewed_at": "2026-08-13"
-  },
-  {
-    "candidate_id": "cya_candidate_000131",
-    "canonical_name": "LINE BITMAX 暗号資産貸出サービス",
-    "aliases": ["LINE BITMAX Lending", "BITMAX 暗号資産貸出サービス", "BITMAX Lending", "LINE BITMAX 貸出"],
-    "domain": "bitmax.me",
-    "country_or_origin": "Japan",
-    "platform_type_guess": "centralized_lending",
-    "status_guess": "operations_ended",
-    "major_event": "BITMAX launched its crypto-asset lending service on 2020-10-07; later help material documents variable-period and fixed-period lending, while LINE Xenesis announced the entire LINE BITMAX service would end on 2026-06-01 and the official shutdown plan states lending applications were stopped and existing lending contracts would be ended sequentially",
-    "primary_sources": ["https://prtimes.jp/main/html/rd/p/000002592.000001594.html", "https://help2.line.me/BitMax/?contentId=20018753", "https://www.lycorp.co.jp/ja/news/release/020165/", "https://www.bitmax.me/endofservice_info"],
-    "secondary_sources": [],
-    "duplicate_check": {"checked_at": "2026-08-15", "matched_platform_ids": [], "notes": "Exact repository searches for BITMAX, LINE BITMAX and cya_candidate_000131 returned no indexed canonical or staging identity match before allocation. Hardened full-corpus scanning on the exact PR head remains authoritative."},
-    "decision": "add_now",
-    "notes": "Issuer-distributed launch material states that LVC Corporation would start BITMAX's crypto-asset lending service on 2020-10-07, with users lending crypto assets and receiving lending fees. Later first-party help material documents variable-period and fixed-period courses; fixed-period lending generally could not be cancelled during the term and principal plus lending fee were returned after maturity under published mechanics. LINE BITMAX later operated under LINE Xenesis株式会社. On 2026-03-03 LINE Xenesis / LY Corporation announced that the entire LINE BITMAX service would end on 2026-06-01; the official shutdown site states lending applications were stopped and existing lending contracts would be ended sequentially. Do not invent a single final date for every lending contract if individual contracts ended earlier than the platform shutdown. The shutdown site's asset-return procedure for remaining balances is not evidence of universal historical lending performance. Launch/campaign/later lending rates are issuer terms rather than independently verified realized returns. Preserve the launch-era LVC and shutdown-era LINE Xenesis operator transition rather than collapsing legal-entity history by inference.",
-    "first_seen_at": "2026-08-15",
-    "last_reviewed_at": "2026-08-15"
   }
 ]
