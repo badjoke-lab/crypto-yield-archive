@@ -101,5 +101,32 @@
     "notes": "Phase 10 identity review resolves the watchlist ORCA item to the live iOrca registration surface under dapp.ocagent.io. The official registration page requires username, affiliate code, wallet connection and acceptance of Terms of Service, Privacy Policy and Risk Disclosure, establishing an active financial-product surface but not the underlying economic contract. Current Japanese discovery/referral material consistently describes BNB-chain USDT deposits, minimum participation around 100 USDT, 10/90/180/360-day packages, principal lockups, daily USDT rewards sent to a wallet, check-in-based reward increases, referral ranks and a temporary doubled-deposit campaign; it attributes yield to AI agents exploiting price/probability differences across prediction markets. Those mechanics and rates remain discovery claims because the first-party Terms/Risk pages could not be retrieved reliably in this pass and no stable first-party documentation for package rates, custody, asset reuse, redemption, source of yield or operator identity was found. A claimed relationship to Nodepay is likewise unverified and must not be canonicalized. Resolve legal operator/jurisdiction, first-party Terms and Risk Disclosure, deposit/custody/asset-use treatment, package lock/redemption rules, reward calculation, withdrawal rights, launch chronology, source-of-yield claims and any campaign liabilities before add_now. Do not confuse this candidate with Orca's Solana AMM/xORCA staking product and do not convert advertised daily rates or campaign credits into verified realized return or principal repayment.",
     "first_seen_at": "2026-08-12",
     "last_reviewed_at": "2026-08-13"
+  },
+  {
+    "candidate_id": "cya_candidate_000125",
+    "canonical_name": "Coincheck Lending",
+    "aliases": ["Coincheck 貸暗号資産サービス", "Coincheck貸暗号資産サービス", "Coincheck Lending", "Coincheck 貸仮想通貨サービス"],
+    "domain": "coincheck.com",
+    "country_or_origin": "Japan",
+    "platform_type_guess": "centralized_lending",
+    "status_guess": "active",
+    "major_event": "Active Coincheck crypto-asset lending product in which customers enter fixed-term consumption-loan contracts with Coincheck and receive same-quantity/equivalent crypto plus a usage fee at maturity; current first-party material expressly separates the lending product from Coincheck's regulated exchange service and discloses unsecured counterparty risk",
+    "primary_sources": [
+      "https://coincheck.com/ja/lending",
+      "https://faq.coincheck.com/answer/687a2e7d497dbe6af46ff89d/",
+      "https://faq.coincheck.com/answer/687a32a3ca438c3096a93493/",
+      "https://faq.coincheck.com/answer/688201b87d0768e3979bb216/",
+      "https://corporate.coincheck.com/news/ySZXYCJx"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-14",
+      "matched_platform_ids": [],
+      "notes": "Exact repository searches for Coincheck 貸暗号資産 and coincheck.com/ja/lending returned no indexed canonical or staging identity match before allocation. Exact search found no prior use of cya_candidate_000125. Hardened full-corpus scanning on the exact PR head remains authoritative."
+    },
+    "decision": "add_now",
+    "notes": "Current first-party product and FAQ pages establish a live CYA-scope centralized lending contract. Coincheck states that users lend crypto under a fixed-term consumption-loan agreement, Coincheck returns the same quantity/equivalent asset plus a usage fee at maturity, and current terms are offered across 14/30/90/180/365-day periods. The product page expressly says the lending service is not a crypto-asset exchange service under the exchange-business framework, borrowed assets are not subject to that framework's segregated-management requirements, the contract is unsecured, the service is not a deposit or deposit-insurance product, and customer assets may not be returned if Coincheck fails. Current borrowing capacity is capped by asset and term and applications are approved as capacity becomes available. A first-party 2023-03-22 notice documents an amendment to the lending terms, proving product history by that date, but does not establish the original launch day. Published annualized rates, registration/status descriptions and operational claims remain issuer statements; exchange registration must not be presented as principal protection for the separate lending contract.",
+    "first_seen_at": "2026-08-14",
+    "last_reviewed_at": "2026-08-14"
   }
 ]
