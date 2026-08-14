@@ -1,0 +1,24 @@
+[
+  {
+    "id": "cya_plat_000105",
+    "slug": "smart-crypto-lending",
+    "canonical_name": "Smart Crypto Lending",
+    "aliases": ["SCL", "SmartCryptoLending", "スマートクリプトレンディング"],
+    "type": "cefi_lending",
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": null,
+    "end_date": null,
+    "country_or_origin": "Japan",
+    "summary": "Active Japanese centralized crypto lending service operated by Mirising Co., Ltd. The company states that Smart Crypto Lending began in June 2025, while the current terms define fixed-term crypto consumption-loan contracts under which customers lend crypto to the company and receive the same asset plus contract interest at maturity.",
+    "what_happened": "Mirising Co., Ltd. states that Smart Crypto Lending began service in June 2025, but does not publish an exact launch day, so CYA leaves launch_date unset rather than inventing a date. Current first-party terms define 1-, 3-, 6- and 12-month crypto lending contracts. Customers send crypto to a company-designated wallet; after the term, principal plus same-asset interest is placed in the customer's service wallet and may be withdrawn under the published process. The terms also state that the transaction is not a deposit, is not deposit-insured, the borrowed crypto is not subject to statutory segregated management under the cited exchange-business framework, and the lending is unsecured. Current website rates, cold-wallet/security language, risk-management descriptions and investment-strategy statements are preserved only as issuer claims, not independent proof of realized returns, reserves, solvency or principal protection.",
+    "official_url_original": "https://scllending.com/",
+    "official_domain_original": "scllending.com",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://scllending.com/",
+    "confidence": "high",
+    "last_verified_at": "2026-08-14",
+    "uncertainty_notes": "The first-party company page establishes only a June 2025 service-start month, not an exact launch day. Current published rates and product/security descriptions can change and are not independently verified performance, reserve, insurance or solvency evidence. The terms permit rate changes and describe circumstances in which withdrawals can be delayed or refused, including market stress, concentrated return requests, legal or operational constraints.",
+    "notes": "Promoted in Phase 10 from duplicate-clear candidate cya_candidate_000122 after candidate-only PR #209 passed the hardened full-corpus scanner as the sole draft-eligible candidate."
+  }
+]
