@@ -1,0 +1,16 @@
+[
+  {
+    "id": "cya_ev_000348",
+    "platform_id": "cya_plat_000112",
+    "event_type": "launched",
+    "event_date": "2022-01-26",
+    "title": "SBI VC Trade launches 貸コイン",
+    "description": "SBI VC Trade announced the start of its 貸コイン crypto-asset lending service on 2022-01-26 on the new VCTRADE service.",
+    "confidence": "high",
+    "impact_level": "high",
+    "event_status_effect": "active",
+    "source_count": 1,
+    "sort_order": 1,
+    "notes": "First-party launch authority. The launch date does not validate later campaign rates or repayment performance."
+  }
+]
