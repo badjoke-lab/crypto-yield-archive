@@ -1,0 +1,16 @@
+[
+  {
+    "id": "cya_ev_000347",
+    "platform_id": "cya_plat_000111",
+    "event_type": "launched",
+    "event_date": "2022-11-07",
+    "title": "FUELHASH launches CRYPTOLENDING",
+    "description": "FUELHASH announced CRYPTOLENDING on 2022-11-02 and stated that the crypto-asset lending service would begin operation on 2022-11-07.",
+    "confidence": "high",
+    "impact_level": "high",
+    "event_status_effect": "active",
+    "source_count": 1,
+    "sort_order": 1,
+    "notes": "This is a first-party verified service launch date. The launch establishes product history but does not validate later advertised rates, principal-guarantee language, realized returns or solvency."
+  }
+]

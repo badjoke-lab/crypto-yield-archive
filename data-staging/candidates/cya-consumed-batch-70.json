@@ -1,0 +1,16 @@
+[
+  {
+    "candidate_id": "cya_candidate_000129",
+    "canonical_name": "FUELHASH CRYPTOLENDING",
+    "domain": "fuel-mining.com",
+    "decision": "already_recorded",
+    "duplicate_check": {
+      "checked_at": "2026-08-15",
+      "matched_platform_ids": ["cya_plat_000111"],
+      "notes": "Promoted only after candidate-only PR #229 and the hardened full-corpus scanner found no canonical duplicate against the 110-platform corpus."
+    },
+    "notes": "Promoted in Phase 10 canonical batch 70 as cya_plat_000111 with launch event cya_ev_000347 dated 2022-11-07. Current first-party Terms define direct lending to 株式会社FUELHASH, non-exchange-business treatment, non-deposit status and explicit company-failure non-return risk. Current marketing claims including principal-guarantee/stable-operation language remain operator statements rather than independently verified guarantees, licensing validation, insurance, reserve proof, realized returns or solvency evidence.",
+    "first_seen_at": "2026-08-15",
+    "last_reviewed_at": "2026-08-15"
+  }
+]
