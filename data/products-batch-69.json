@@ -1,0 +1,10 @@
+[
+  {
+    "platform_id": "cya_plat_000110",
+    "product_type": "centralized_yield",
+    "product_name": "PBR LENDING",
+    "custody_model": "Current first-party Terms characterize PBR LENDING as a crypto-asset consumption-loan arrangement in which customers lend assets to Portobello Road株式会社. The Terms state that borrowed assets are outside statutory segregated-management treatment for crypto-asset exchange business. They also describe operational separation from company assets but explicitly do not promise legally complete trust protection, and state that customer claims are general claims in insolvency. CYA therefore records borrower-counterparty exposure rather than protected exchange custody.",
+    "yield_source": "Portobello Road states that borrowed crypto is used in crypto-market operations and/or business investments and that part of the resulting revenue funds contractual customer interest. CYA records this as the operator's stated yield model; the reviewed sources do not independently verify investment performance, reserves, profitability or the economic source of every interest payment.",
+    "risk_notes": "Current plans include Regular Lending with a shorter initial lock and Premium Lending with a longer fixed lock. Current first-party disclosures identify counterparty, liquidity, system and regulatory risks and state that asset return can become difficult or impossible if the company or its lending/investment counterparties fail. Advertised rates, campaigns, supported assets and return procedures can change."
+  }
+]
