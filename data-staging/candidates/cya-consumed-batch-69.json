@@ -1,0 +1,16 @@
+[
+  {
+    "candidate_id": "cya_candidate_000128",
+    "canonical_name": "PBR LENDING",
+    "domain": "pbr-portobelloroad.com",
+    "decision": "already_recorded",
+    "duplicate_check": {
+      "checked_at": "2026-08-15",
+      "matched_platform_ids": ["cya_plat_000110"],
+      "notes": "Promoted only after candidate-only PR #226 and the hardened full-corpus scanner found no canonical duplicate against the 109-platform corpus."
+    },
+    "notes": "Promoted in Phase 10 canonical batch 69 as cya_plat_000110. Current first-party Terms define customer-to-Portobello Road株式会社 crypto-asset consumption loans and explicitly disclose unsecured borrower-counterparty exposure, non-deposit status, non-application of exchange-business segregated-management treatment and general-creditor insolvency treatment. Advertised rates, security statements, internal reserve claims, business-investment performance and repayment claims remain issuer statements rather than independently verified realized performance, guarantees, reserves or solvency evidence.",
+    "first_seen_at": "2026-08-15",
+    "last_reviewed_at": "2026-08-15"
+  }
+]
