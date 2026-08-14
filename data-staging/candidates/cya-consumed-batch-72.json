@@ -1,0 +1,16 @@
+[
+  {
+    "candidate_id": "cya_candidate_000131",
+    "canonical_name": "LINE BITMAX 暗号資産貸出サービス",
+    "domain": "bitmax.me",
+    "decision": "already_recorded",
+    "duplicate_check": {
+      "checked_at": "2026-08-15",
+      "matched_platform_ids": ["cya_plat_000113"],
+      "notes": "Promoted only after candidate-only PR #235 and the hardened full-corpus scanner found no canonical duplicate against the 112-platform corpus."
+    },
+    "notes": "Promoted in Phase 10 canonical batch 72 as cya_plat_000113 with launch event cya_ev_000349 and operations-ended event cya_ev_000350. The platform-wide end date is 2026-06-01; individual lending contracts may have ended earlier during the staged shutdown. Operator history preserves launch-era LVC Corporation and shutdown-era LINE Xenesis株式会社. Historical rates remain issuer terms and the shutdown return procedure is not treated as proof of universal historical lending performance.",
+    "first_seen_at": "2026-08-15",
+    "last_reviewed_at": "2026-08-15"
+  }
+]
