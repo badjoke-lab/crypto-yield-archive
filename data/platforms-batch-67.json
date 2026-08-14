@@ -1,0 +1,24 @@
+[
+  {
+    "id": "cya_plat_000108",
+    "slug": "coincheck-lending",
+    "canonical_name": "Coincheck Lending",
+    "aliases": ["Coincheck 貸暗号資産サービス", "Coincheck貸暗号資産サービス", "Coincheck 貸仮想通貨サービス"],
+    "type": "cefi_lending",
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": null,
+    "end_date": null,
+    "country_or_origin": "Japan",
+    "summary": "Active centralized crypto-asset lending product operated by Coincheck, Inc. Customers enter fixed-term crypto consumption-loan contracts with Coincheck and receive the same quantity/equivalent crypto plus a contract usage fee at maturity under current product terms.",
+    "what_happened": "Coincheck Lending remains active in 2026. Current first-party materials describe fixed-term 14, 30, 90, 180 and 365-day lending arrangements subject to Coincheck approval and borrowing-capacity limits. The product page expressly distinguishes the lending contract from Coincheck's registered crypto-asset exchange service: borrowed lending assets are not covered by the exchange-business segregated-management framework, the contract is unsecured, and the service is not a deposit or deposit-insurance product. Coincheck warns that lent crypto may not be returned if the company fails. Published annualized rates and operational/regulatory descriptions are issuer statements, not independent proof of realized returns, principal protection or solvency.",
+    "official_url_original": "https://coincheck.com/ja/lending",
+    "official_domain_original": "coincheck.com",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://coincheck.com/ja/lending",
+    "confidence": "high",
+    "last_verified_at": "2026-08-14",
+    "uncertainty_notes": "The reviewed first-party evidence confirms the product existed by a 2023-03-22 lending-terms amendment and remains active in 2026, but does not establish a sufficiently reliable exact original launch day. No launch date or launch event is invented. Current annualized rates, borrowing capacity and product availability may change.",
+    "notes": "Promoted in Phase 10 from duplicate-clear candidate cya_candidate_000125 after candidate-only PR #218 passed the hardened full-corpus scanner with exactly one draft-eligible candidate."
+  }
+]
