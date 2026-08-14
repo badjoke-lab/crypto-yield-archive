@@ -1,0 +1,24 @@
+[
+  {
+    "id": "cya_plat_000112",
+    "slug": "sbi-vc-trade-lending",
+    "canonical_name": "SBI VC Trade 貸コイン",
+    "aliases": ["SBI VCトレード 貸コイン", "SBI VC Trade Lending", "貸コイン", "VCTRADE 貸コイン"],
+    "type": "cefi_lending",
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": "2022-01-26",
+    "end_date": null,
+    "country_or_origin": "Japan",
+    "summary": "Active crypto-asset lending service operated by SBI VCトレード株式会社. Customers lend eligible crypto assets or electronic payment instruments to SBI VC Trade under consumption-loan terms and receive the same asset principal plus a contractual lending fee.",
+    "what_happened": "SBI VC Trade announced the start of 貸コイン on 2022-01-26. Current first-party materials continue to describe the product as a consumption-loan transaction, with principal plus a usage/lending fee returned in the same eligible asset under course-specific terms and no mid-term cancellation after the applicable cutoff or contract formation. Current disclosures identify return risk because lent assets are managed as SBI VC Trade assets. A first-party Flare lending disclosure further states for that contract that lent assets fall outside exchange-custody segregated-management treatment, SBI VC Trade may relend borrowed assets, the lending is unsecured, and insolvency can cause partial or total non-return. CYA preserves product-specific differences and does not assume every current course uses the Flare-specific contract verbatim.",
+    "official_url_original": "https://www.sbivc.co.jp/services/lending",
+    "official_domain_original": "sbivc.co.jp",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://www.sbivc.co.jp/services/lending",
+    "confidence": "high",
+    "last_verified_at": "2026-08-15",
+    "uncertainty_notes": "Current lending assets, course lengths, annual rates and product-specific legal documents can change. The Flare disclosure is strong first-party evidence of SBI VC Trade's lending legal model but is product-specific and is not generalized verbatim to every course. SBI VC Trade's exchange registration is not treated as making lent principal segregated, insured or guaranteed.",
+    "notes": "Promoted in Phase 10 from duplicate-clear candidate cya_candidate_000130 after candidate-only PR #232 passed the hardened full-corpus scanner against the 111-platform canonical corpus."
+  }
+]
