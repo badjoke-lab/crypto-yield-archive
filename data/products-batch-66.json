@@ -1,0 +1,10 @@
+[
+  {
+    "platform_id": "cya_plat_000107",
+    "product_type": "centralized_yield",
+    "product_name": "HashHub Lending",
+    "custody_model": "First-party materials characterize HashHub Lending as a crypto-asset (quasi-)consumption-loan arrangement in which customers lend crypto to the operating company and the borrower owes return of principal-equivalent crypto quantity plus lending fees under the contract. CYA therefore records borrower-counterparty exposure rather than segregated customer custody. The operator's legal characterization is a source claim and is not independent legal advice about insolvency priority or title.",
+    "yield_source": "Current first-party materials say borrowed customer crypto may be deployed using arbitrage, lending to third parties, staking and DeFi, with lending fees paid under the service conditions. CYA records those deployment descriptions only as issuer claims and does not independently verify counterparties, strategy allocation, realized returns or risk controls.",
+    "risk_notes": "Current first-party return guidance requires a return application; the lending period continues through the end of the following month and return is then stated to occur within five business days, with asset-specific return fees. Lending-fee rates may change. DAI new lending intake ended on 2026-05-20 and DAI lending-fee accrual stopped from 2026-07-01. Published rates, security/risk-management language and continued operation are not principal guarantees, reserve proof or solvency evidence."
+  }
+]
