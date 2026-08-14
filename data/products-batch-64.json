@@ -1,0 +1,10 @@
+[
+  {
+    "platform_id": "cya_plat_000105",
+    "product_type": "centralized_yield",
+    "product_name": "Smart Crypto Lending",
+    "custody_model": "The terms describe a crypto consumption-loan contract: the customer sends crypto to a company-designated wallet and the company becomes the borrower for the agreed term. After maturity, principal plus same-asset interest is held in the customer's service wallet until withdrawal. The terms state that the transaction is not a deposit, is not deposit-insured, the borrowed crypto is not subject to statutory segregated management under the cited exchange-business framework, and the lending is unsecured. The website's cold-wallet and security statements are issuer claims and are not treated as bankruptcy-remoteness or reserve proof.",
+    "yield_source": "The current website says the company deploys assets across multiple crypto investment destinations, including domestic BTC strategies, overseas crypto funds and USDT/FX-related strategies, with portfolio diversification and monitoring. These are issuer descriptions of asset deployment and are not independently verified sources of realized return.",
+    "risk_notes": "Published terms use fixed 1/3/6/12-month periods and generally do not allow mid-term cancellation. Rates may be changed under the terms. After maturity, withdrawal is requested and the terms state a seven-business-day return process, but also enumerate circumstances in which withdrawal can be delayed or refused. The contract is unsecured, not deposit-insured and not subject to the cited statutory segregated-management regime; counterparty failure, market, liquidity, operational, legal and asset-price risks remain with the customer."
+  }
+]
