@@ -1,0 +1,62 @@
+[
+  {
+    "id": "cya_src_b70_0001",
+    "platform_id": "cya_plat_000111",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "CRYPTOLENDING",
+    "url": "https://fuel-hash.com/product/cryptolending/",
+    "publisher": "株式会社FUELHASH",
+    "published_at": null,
+    "archived_url": "https://web.archive.org/web/*/https://fuel-hash.com/product/cryptolending/",
+    "accessed_at": "2026-08-15",
+    "reliability": "high",
+    "claim_scope": "status",
+    "notes": "Current first-party product surface confirms ongoing CRYPTOLENDING availability and current product positioning. Headline rates, principal-guarantee language, stable-operation statements and partnership/licensing language are operator marketing claims and are not independently verified guarantees, licensing validation, insurance, reserve proof, realized returns or solvency evidence."
+  },
+  {
+    "id": "cya_src_b70_0002",
+    "platform_id": "cya_plat_000111",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "利用規約",
+    "url": "https://fuel-mining.com/terms-of-service",
+    "publisher": "株式会社FUELHASH",
+    "published_at": null,
+    "archived_url": "https://web.archive.org/web/*/https://fuel-mining.com/terms-of-service",
+    "accessed_at": "2026-08-15",
+    "reliability": "high",
+    "claim_scope": "terms_risk",
+    "notes": "Current first-party Terms define direct user-to-FUELHASH lending of eligible crypto assets/tokens, flexible and fixed lending, maturity/return mechanics, non-exchange-business treatment, non-deposit status and explicit company-failure non-return risk."
+  },
+  {
+    "id": "cya_src_b70_0003",
+    "platform_id": "cya_plat_000111",
+    "event_id": "cya_ev_000347",
+    "source_type": "official_statement",
+    "title": "暗号資産レンディングサービス『CRYPTOLENDING』開始のお知らせ",
+    "url": "https://fuel-hash.com/news/product/cryptolending_202211/",
+    "publisher": "株式会社FUELHASH",
+    "published_at": "2022-11-02",
+    "archived_url": "https://web.archive.org/web/*/https://fuel-hash.com/news/product/cryptolending_202211/",
+    "accessed_at": "2026-08-15",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "First-party launch notice establishes the announced CRYPTOLENDING service start date of 2022-11-07. Promotional rates or product advantages in launch material remain issuer claims."
+  },
+  {
+    "id": "cya_src_b70_0004",
+    "platform_id": "cya_plat_000111",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "Company",
+    "url": "https://fuel-hash.com/company/",
+    "publisher": "株式会社FUELHASH",
+    "published_at": null,
+    "archived_url": "https://web.archive.org/web/*/https://fuel-hash.com/company/",
+    "accessed_at": "2026-08-15",
+    "reliability": "high",
+    "claim_scope": "entity",
+    "notes": "Current first-party company information identifies 株式会社FUELHASH as the operator and states company establishment in March 2021. Company descriptions of business quality or performance are not independent safety or solvency evidence."
+  }
+]
