@@ -1,0 +1,62 @@
+[
+  {
+    "id": "cya_src_b71_0001",
+    "platform_id": "cya_plat_000112",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "貸コイン",
+    "url": "https://www.sbivc.co.jp/services/lending",
+    "publisher": "SBI VCトレード株式会社",
+    "published_at": null,
+    "archived_url": "https://web.archive.org/web/*/https://www.sbivc.co.jp/services/lending",
+    "accessed_at": "2026-08-15",
+    "reliability": "high",
+    "claim_scope": "status",
+    "notes": "Current first-party product surface confirms active lending and describes the service as a consumption-loan transaction. Current rates and course terms are issuer product terms and are not independently verified realized returns."
+  },
+  {
+    "id": "cya_src_b71_0002",
+    "platform_id": "cya_plat_000112",
+    "event_id": "cya_ev_000348",
+    "source_type": "official_statement",
+    "title": "貸コインサービス開始のお知らせ",
+    "url": "https://www.sbivc.co.jp/newsview/kcyxc7j-lkpq",
+    "publisher": "SBI VCトレード株式会社",
+    "published_at": "2022-01-26",
+    "archived_url": "https://web.archive.org/web/*/https://www.sbivc.co.jp/newsview/kcyxc7j-lkpq",
+    "accessed_at": "2026-08-15",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "First-party authority for the 2022-01-26 service launch."
+  },
+  {
+    "id": "cya_src_b71_0003",
+    "platform_id": "cya_plat_000112",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "Flare 貸コイン契約に関するリスク説明",
+    "url": "https://www.sbivc.co.jp/newsview/flarecovenants",
+    "publisher": "SBI VCトレード株式会社",
+    "published_at": null,
+    "archived_url": "https://web.archive.org/web/*/https://www.sbivc.co.jp/newsview/flarecovenants",
+    "accessed_at": "2026-08-15",
+    "reliability": "high",
+    "claim_scope": "terms_risk",
+    "notes": "Product-specific first-party disclosure states that lent assets are outside exchange-custody segregated-management treatment, SBI VC Trade may relend them, the loan is unsecured, and insolvency can cause partial or total non-return. Do not generalize the Flare-specific contract verbatim to all courses."
+  },
+  {
+    "id": "cya_src_b71_0004",
+    "platform_id": "cya_plat_000112",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "法令・規約等",
+    "url": "https://www.sbivc.co.jp/legal-information",
+    "publisher": "SBI VCトレード株式会社",
+    "published_at": null,
+    "archived_url": "https://web.archive.org/web/*/https://www.sbivc.co.jp/legal-information",
+    "accessed_at": "2026-08-15",
+    "reliability": "high",
+    "claim_scope": "entity",
+    "notes": "Current first-party legal-information hub for SBI VC Trade. Exchange registration or exchange-custody protections are not treated as extending automatically to lending principal."
+  }
+]
