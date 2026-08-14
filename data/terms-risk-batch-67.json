@@ -1,0 +1,11 @@
+[
+  {
+    "platform_id": "cya_plat_000108",
+    "terms_status": "platform_owned",
+    "asset_ownership_interpretation": "Current first-party materials define Coincheck Lending as a crypto-asset consumption-loan contract and expressly state that crypto borrowed under the lending product is not subject to the segregated-management framework for Coincheck's crypto-asset exchange business. The contract is unsecured and the service is not a deposit or deposit-insurance product. CYA therefore treats the economic structure as platform-owned / borrower-counterparty exposure during the loan. This does not independently determine legal title or insolvency priority beyond Coincheck's published contract/risk description.",
+    "affected_product": "Coincheck 貸暗号資産サービス",
+    "source_evidence_id": "cya_src_b67_0001",
+    "notes": "Coincheck warns that lent crypto may not be returned if the company fails. Current rates, lending terms and borrowing-capacity limits can change. Coincheck's exchange-business registration must not be presented as principal protection for this separate lending contract.",
+    "confidence": "high"
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "candidate_id": "cya_candidate_000125",
+    "canonical_name": "Coincheck Lending",
+    "domain": "coincheck.com",
+    "decision": "already_recorded",
+    "duplicate_check": {
+      "checked_at": "2026-08-14",
+      "matched_platform_ids": ["cya_plat_000108"],
+      "notes": "Candidate-only PR #218 passed the hardened full-corpus scanner with six active candidates and exactly one draft-eligible candidate before canonical promotion."
+    },
+    "notes": "Promoted in Phase 10 canonical batch 67 as cya_plat_000108 using current first-party Coincheck lending product, service-registration, rate, borrowing-capacity and terms-history evidence. The exact original launch day remains unresolved and is not invented. No event record is allocated. Published annualized rates, operational/security statements and exchange-registration descriptions remain issuer claims and are not treated as independently verified realized return, principal protection or solvency evidence.",
+    "first_seen_at": "2026-08-14",
+    "last_reviewed_at": "2026-08-14"
+  }
+]

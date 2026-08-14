@@ -1,0 +1,10 @@
+[
+  {
+    "platform_id": "cya_plat_000108",
+    "product_type": "centralized_yield",
+    "product_name": "Coincheck 貸暗号資産サービス",
+    "custody_model": "Current first-party materials define the product as a crypto-asset consumption-loan contract in which customers lend crypto to Coincheck for a fixed term. Coincheck expressly states that assets borrowed under this lending product are not subject to the segregated-management framework applicable to its crypto-asset exchange business, the lending contract is unsecured, and the service is not a deposit or deposit-insurance product. CYA therefore records borrower-counterparty exposure rather than segregated customer custody.",
+    "yield_source": "Current first-party materials describe a contractual usage fee paid by Coincheck at maturity based on the lent crypto quantity, term and applicable annualized rate. The reviewed sources do not establish a separately verified underlying investment strategy or realized-return source, so CYA records only Coincheck's contractual payment obligation and published terms.",
+    "risk_notes": "Current product terms include fixed lending periods, Coincheck approval and borrowing-capacity limits. During an active loan, the borrowed crypto cannot be sold or sent elsewhere by the customer until the specified period ends or Coincheck returns it. Coincheck warns that lent assets may not be returned if the company fails. Published annualized rates are issuer terms and are not independently verified realized returns or principal guarantees."
+  }
+]
