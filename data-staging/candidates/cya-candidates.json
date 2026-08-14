@@ -81,5 +81,22 @@
     "notes": "Phase 10 identity review resolves the watchlist ORCA item to the live iOrca registration surface under dapp.ocagent.io. The official registration page requires username, affiliate code, wallet connection and acceptance of Terms of Service, Privacy Policy and Risk Disclosure, establishing an active financial-product surface but not the underlying economic contract. Current Japanese discovery/referral material consistently describes BNB-chain USDT deposits, minimum participation around 100 USDT, 10/90/180/360-day packages, principal lockups, daily USDT rewards sent to a wallet, check-in-based reward increases, referral ranks and a temporary doubled-deposit campaign; it attributes yield to AI agents exploiting price/probability differences across prediction markets. Those mechanics and rates remain discovery claims because the first-party Terms/Risk pages could not be retrieved reliably in this pass and no stable first-party documentation for package rates, custody, asset reuse, redemption, source of yield or operator identity was found. A claimed relationship to Nodepay is likewise unverified and must not be canonicalized. Resolve legal operator/jurisdiction, first-party Terms and Risk Disclosure, deposit/custody/asset-use treatment, package lock/redemption rules, reward calculation, withdrawal rights, launch chronology, source-of-yield claims and any campaign liabilities before add_now. Do not confuse this candidate with Orca's Solana AMM/xORCA staking product and do not convert advertised daily rates or campaign credits into verified realized return or principal repayment.",
     "first_seen_at": "2026-08-12",
     "last_reviewed_at": "2026-08-13"
+  },
+  {
+    "candidate_id": "cya_candidate_000129",
+    "canonical_name": "FUELHASH CRYPTOLENDING",
+    "aliases": ["CRYPTOLENDING", "FUELHASH Crypto Lending", "FUELHASH クリプトレンディング", "クリプトレンディング", "CRYPTOTREND"],
+    "domain": "fuel-mining.com",
+    "country_or_origin": "Japan",
+    "platform_type_guess": "centralized_lending",
+    "status_guess": "active",
+    "major_event": "FUELHASH announced CRYPTOLENDING on 2022-11-02 for service launch on 2022-11-07; current first-party terms define direct user-to-FUELHASH crypto lending with flexible and fixed plans, including CRYPTOTREND, and explicitly disclose non-exchange-business status and company-failure non-return risk",
+    "primary_sources": ["https://fuel-hash.com/product/cryptolending/", "https://fuel-mining.com/terms-of-service", "https://fuel-hash.com/news/product/cryptolending_202211/", "https://fuel-hash.com/company/"],
+    "secondary_sources": [],
+    "duplicate_check": {"checked_at": "2026-08-15", "matched_platform_ids": [], "notes": "Exact repository searches for FUELHASH, fuel-mining.com and cya_candidate_000129 returned no indexed canonical or staging identity match before allocation. Hardened full-corpus scanning on the exact PR head remains authoritative."},
+    "decision": "add_now",
+    "notes": "Current first-party Terms define CRYPTOLENDING as a service in which users lend eligible crypto assets/tokens directly to 株式会社FUELHASH and FUELHASH owes return of the same type and quantity plus contractual interest. The Terms define flexible lending and fixed lending; fixed lending includes the product marketed as CRYPTOLENDING and the variable-rate CRYPTOTREND product. Fixed lending generally cannot be cancelled during its term, and at maturity principal plus interest are returned to the flexible-lending balance under the published mechanics. The Terms state the service is not crypto-asset exchange business and therefore statutory exchange-business segregated-management duties do not apply; they expressly warn that FUELHASH may be unable to return borrowed assets if it fails, and state the service is not a bank deposit or deposit-like product. The current marketing page separately advertises high rates, a Singapore CMS-license-holder partnership, stable operation and principal guarantee. CYA must preserve the conflict/boundary: those are operator marketing claims and must not be represented as independently verified guarantees, licensing validation, insurance, reserve proof, realized returns or solvency evidence. First-party launch notice establishes service start on 2022-11-07.",
+    "first_seen_at": "2026-08-15",
+    "last_reviewed_at": "2026-08-15"
   }
 ]
