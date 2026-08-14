@@ -1,0 +1,24 @@
+[
+  {
+    "id": "cya_plat_000106",
+    "slug": "bitlending",
+    "canonical_name": "BitLending",
+    "aliases": ["Bit Lending", "ビットレンディング"],
+    "type": "cefi_lending",
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": null,
+    "end_date": null,
+    "country_or_origin": "Japan",
+    "summary": "Active Japanese centralized crypto lending service operated by J-CAM. First-party materials describe a crypto consumption-loan structure in which customers lend crypto to the company and receive lending fees, with the company owing return of the same type and quantity of crypto under the individual contract.",
+    "what_happened": "BitLending currently operates as a Japanese crypto lending service of 株式会社J-CAM. Current first-party terms state that an individual lending contract is formed when a user sends an eligible crypto asset to the company-designated wallet and the required conditions are met. The company sets the lending-fee rate under the agreement, monthly lending fees are credited into the lent balance, and users generally cannot request return for the first 30 days. After a valid return request, the terms state that the company normally sends the same type and quantity of crypto within seven business days, while also permitting postponement when concentrated return requests or similar conditions make timely return difficult. Public APYs, security controls, asset-deployment descriptions and regulatory-readiness statements are recorded only as issuer claims, not independent proof of realized return, reserves, solvency, guarantees or regulatory approval.",
+    "official_url_original": "https://bitlending.jp/",
+    "official_domain_original": "bitlending.jp",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://bitlending.jp/",
+    "confidence": "high",
+    "last_verified_at": "2026-08-14",
+    "uncertainty_notes": "The exact original service launch day has not been established from the reviewed first-party material, so launch_date remains unset rather than inferred. Current lending-fee/APY figures and statements concerning cold-wallet/security controls, portfolio construction, asset deployment, risk management and future regulatory compliance are issuer claims and may change. The terms allow lending conditions and rates to change and allow return timing to be postponed in defined circumstances.",
+    "notes": "Promoted in Phase 10 from duplicate-clear candidate cya_candidate_000123 after candidate-only PR #212 passed the hardened full-corpus scanner with one draft-eligible candidate."
+  }
+]
