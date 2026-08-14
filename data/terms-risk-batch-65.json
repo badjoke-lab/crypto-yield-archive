@@ -1,0 +1,11 @@
+[
+  {
+    "platform_id": "cya_plat_000106",
+    "terms_status": "platform_owned",
+    "asset_ownership_interpretation": "First-party materials expressly characterize the arrangement as crypto lending / a consumption-loan transaction to 株式会社J-CAM. Current terms state that the individual contract forms when the user sends eligible crypto to the company-designated wallet and required conditions are satisfied, and that the company later owes the same type and quantity of crypto. CYA therefore treats the economic structure as platform-owned / borrower-counterparty exposure during the loan, rather than segregated customer custody. This classification does not by itself establish insolvency treatment or legal title beyond the reviewed contract language.",
+    "affected_product": "BitLending",
+    "source_evidence_id": "cya_src_b65_0002",
+    "notes": "Current terms give the company discretion to set lending-fee rates and permit changes to lending conditions for reasonable reasons. Users generally cannot request return for the first 30 days. Following a valid request, the company states that same-type/same-quantity crypto is normally returned within seven business days, but the terms permit postponement when concentrated return requests or similar circumstances make timely return difficult and permit rejection in specified compliance cases. Current marketing APYs, security controls and investment descriptions are not independent guarantees.",
+    "confidence": "high"
+  }
+]
