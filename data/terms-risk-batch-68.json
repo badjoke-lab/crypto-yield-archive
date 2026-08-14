@@ -1,0 +1,11 @@
+[
+  {
+    "platform_id": "cya_plat_000109",
+    "terms_status": "platform_owned",
+    "asset_ownership_interpretation": "Current first-party materials characterize GMO Coin Lending Basic as a crypto-asset consumption-loan arrangement and expressly state that the lending transaction is not a crypto-asset exchange transaction and that borrowed assets are not subject to the exchange-business segregated-management requirements. GMO Coin also states that the product is not a deposit or deposit-insurance product and warns that lent assets may not be returned if the company fails. CYA therefore treats the economic structure as platform-owned / borrower-counterparty exposure during the lending term. This does not independently determine legal title or insolvency priority beyond the operator's published terms.",
+    "affected_product": "GMOコイン 貸暗号資産ベーシック",
+    "source_evidence_id": "cya_src_b68_0001",
+    "notes": "Current rates, courses, recruitment capacity and early-termination terms can change. Exchange-business registration and segregated-management rules applicable to exchange transactions must not be presented as principal protection for this separate lending contract.",
+    "confidence": "high"
+  }
+]

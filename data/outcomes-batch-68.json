@@ -1,0 +1,18 @@
+[
+  {
+    "platform_id": "cya_plat_000109",
+    "outcome_status": "not_applicable",
+    "estimated_recovery_rate": "not_applicable",
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": "Not applicable; GMO Coin Lending Basic is currently presented as active and the reviewed first-party sources do not establish a platform-wide failure, restructuring, claims process or customer-loss event.",
+    "claim_process_url": null,
+    "affected_products": ["GMOコイン 貸暗号資産ベーシック"],
+    "claim_classes": [],
+    "jurisdictions": ["Japan"],
+    "as_of": "2026-08-14",
+    "last_verified_at": "2026-08-14",
+    "notes": "Contractual maturity/return terms and continued operation do not prove universal realized repayment or solvency. Current first-party disclosures expressly warn that lent assets may not be returned if GMO Coin fails.",
+    "confidence": "high"
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "id": "cya_plat_000109",
+    "slug": "gmo-coin-lending-basic",
+    "canonical_name": "GMO Coin Lending Basic",
+    "aliases": ["GMOコイン 貸暗号資産ベーシック", "貸暗号資産ベーシック", "GMO Coin Crypto Lending Basic"],
+    "type": "cefi_lending",
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": null,
+    "end_date": null,
+    "country_or_origin": "Japan",
+    "summary": "Active fixed-term crypto-asset lending product operated by GMOコイン株式会社. Customers lend crypto assets to GMO Coin and receive lending fees under the applicable Basic course and current product rules.",
+    "what_happened": "GMO Coin Lending Basic remains active in 2026, with first-party recruitment notices confirming continued intake for selected assets and terms subject to capacity. First-party records show the predecessor '貸暗号資産' service was already operating in June 2020 and underwent course/rate changes effective July 2020, but the reviewed evidence does not establish the exact original launch day. Current product disclosures characterize the transaction as a crypto-asset consumption loan, state that it is not a crypto-asset exchange transaction, state that borrowed assets are not subject to exchange-business segregated-management requirements, and warn that lent assets may not be returned if GMO Coin fails. Published lending rates, course availability and risk/operational statements are issuer terms and claims, not independent evidence of realized returns, guarantees, reserves or solvency.",
+    "official_url_original": "https://coin.z.com/jp/corp/product/info/lending/",
+    "official_domain_original": "coin.z.com",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://coin.z.com/jp/corp/product/info/lending/",
+    "confidence": "high",
+    "last_verified_at": "2026-08-14",
+    "uncertainty_notes": "First-party materials establish the lending service by June 2020 and current operation in 2026, but do not establish a sufficiently reliable exact original launch date. Current lending rates, asset/term availability, capacity and early-termination terms can change. This record is Basic only; the separate Premium product adds derivative / yen-conversion mechanics and is not silently combined here.",
+    "notes": "Promoted in Phase 10 from duplicate-clear candidate cya_candidate_000126 after candidate-only PR #221 passed the hardened full-corpus scanner with exactly one draft-eligible candidate."
+  }
+]
