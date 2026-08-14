@@ -1,0 +1,30 @@
+[
+  {
+    "id": "cya_ev_000349",
+    "platform_id": "cya_plat_000113",
+    "event_type": "launched",
+    "event_date": "2020-10-07",
+    "title": "BITMAX launches crypto-asset lending",
+    "description": "LVC Corporation announced that BITMAX would begin its crypto-asset lending service on 2020-10-07.",
+    "confidence": "high",
+    "impact_level": "high",
+    "event_status_effect": "active",
+    "source_count": 1,
+    "sort_order": 1,
+    "notes": "Issuer-distributed launch authority. Launch campaign rates are not treated as verified realized returns."
+  },
+  {
+    "id": "cya_ev_000350",
+    "platform_id": "cya_plat_000113",
+    "event_type": "operations_ended",
+    "event_date": "2026-06-01",
+    "title": "LINE BITMAX service ends",
+    "description": "LINE Xenesis ended the LINE BITMAX service on 2026-06-01 after announcing the shutdown on 2026-03-03; the official shutdown plan states that lending applications were stopped and existing lending contracts would be ended sequentially.",
+    "confidence": "high",
+    "impact_level": "critical",
+    "event_status_effect": "operations_ended",
+    "source_count": 2,
+    "sort_order": 2,
+    "notes": "The event date is the platform-wide shutdown date. Individual lending contracts may have ended earlier during the staged shutdown process."
+  }
+]
