@@ -1,0 +1,16 @@
+[
+  {
+    "candidate_id": "cya_candidate_000124",
+    "canonical_name": "HashHub Lending",
+    "domain": "hashhub-lending.com",
+    "decision": "already_recorded",
+    "duplicate_check": {
+      "checked_at": "2026-08-14",
+      "matched_platform_ids": ["cya_plat_000107"],
+      "notes": "Candidate-only PR #215 passed the hardened full-corpus scanner with six active candidates and exactly one draft-eligible candidate before canonical promotion."
+    },
+    "notes": "Promoted in Phase 10 canonical batch 66 as cya_plat_000107 using first-party HashHub Lending / SBI Digital Finance service, company-split, rate, return and contract-risk evidence. The exact original launch day remains unresolved and is not invented. The exact 2024-04-01 operator and contractual-rights transfer is preserved as cya_ev_000345. Current rates, security/risk-management and asset-deployment statements remain issuer claims rather than independently verified realized return, reserve proof, guarantee or solvency evidence.",
+    "first_seen_at": "2026-08-14",
+    "last_reviewed_at": "2026-08-14"
+  }
+]
