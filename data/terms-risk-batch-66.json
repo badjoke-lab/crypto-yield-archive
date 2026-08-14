@@ -1,0 +1,11 @@
+[
+  {
+    "platform_id": "cya_plat_000107",
+    "terms_status": "platform_owned",
+    "asset_ownership_interpretation": "First-party materials characterize HashHub Lending as a crypto-asset (quasi-)consumption-loan arrangement: customers lend crypto to the operating company, and the borrower has contractual obligations to return principal-equivalent crypto quantity and lending fees. Current materials also state that borrowed assets may be deployed through arbitrage, third-party lending, staking and DeFi. CYA therefore treats the economic structure as platform-owned / borrower-counterparty exposure during the loan rather than segregated customer custody. This classification does not independently determine legal title or insolvency priority.",
+    "affected_product": "HashHub Lending",
+    "source_evidence_id": "cya_src_b66_0005",
+    "notes": "Current first-party guidance states that return requires an application, the lending period runs through the end of the following month, and return is then executed within five business days, with return fees applying. Monthly lending-fee rates may change. The operator-transition on 2024-04-01 transferred HashHub Lending contractual rights and obligations to SBI Digital Finance. Published rates, security claims and asset-deployment descriptions are not independent guarantees of principal protection or solvency.",
+    "confidence": "high"
+  }
+]
