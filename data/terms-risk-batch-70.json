@@ -1,0 +1,11 @@
+[
+  {
+    "platform_id": "cya_plat_000111",
+    "terms_status": "platform_owned",
+    "asset_ownership_interpretation": "Current first-party Terms define CRYPTOLENDING as a lending arrangement in which eligible crypto assets/tokens are lent by the user to 株式会社FUELHASH and FUELHASH owes return of the same type and quantity plus contractual interest. The Terms state that this is not crypto-asset exchange business and that the exchange-business segregated-management obligations described there do not apply; they also state that the service is not a bank deposit or deposit-like product and warn that FUELHASH failure may make return impossible. CYA therefore uses `platform_owned` to represent the borrower-counterparty economic exposure during the lending contract, without making a broader legal-title conclusion beyond the published terms.",
+    "affected_product": "FUELHASH CRYPTOLENDING / CRYPTOTREND",
+    "source_evidence_id": "cya_src_b70_0002",
+    "notes": "Current marketing uses principal-guarantee and stable-operation language, but the Terms independently disclose company-failure non-return risk. CYA preserves that distinction and does not convert marketing claims into independent guarantees, insurance, reserve proof, licensing validation or solvency evidence.",
+    "confidence": "high"
+  }
+]
