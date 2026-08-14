@@ -81,5 +81,22 @@
     "notes": "Phase 10 identity review resolves the watchlist ORCA item to the live iOrca registration surface under dapp.ocagent.io. The official registration page requires username, affiliate code, wallet connection and acceptance of Terms of Service, Privacy Policy and Risk Disclosure, establishing an active financial-product surface but not the underlying economic contract. Current Japanese discovery/referral material consistently describes BNB-chain USDT deposits, minimum participation around 100 USDT, 10/90/180/360-day packages, principal lockups, daily USDT rewards sent to a wallet, check-in-based reward increases, referral ranks and a temporary doubled-deposit campaign; it attributes yield to AI agents exploiting price/probability differences across prediction markets. Those mechanics and rates remain discovery claims because the first-party Terms/Risk pages could not be retrieved reliably in this pass and no stable first-party documentation for package rates, custody, asset reuse, redemption, source of yield or operator identity was found. A claimed relationship to Nodepay is likewise unverified and must not be canonicalized. Resolve legal operator/jurisdiction, first-party Terms and Risk Disclosure, deposit/custody/asset-use treatment, package lock/redemption rules, reward calculation, withdrawal rights, launch chronology, source-of-yield claims and any campaign liabilities before add_now. Do not confuse this candidate with Orca's Solana AMM/xORCA staking product and do not convert advertised daily rates or campaign credits into verified realized return or principal repayment.",
     "first_seen_at": "2026-08-12",
     "last_reviewed_at": "2026-08-13"
+  },
+  {
+    "candidate_id": "cya_candidate_000130",
+    "canonical_name": "SBI VC Trade 貸コイン",
+    "aliases": ["SBI VCトレード 貸コイン", "SBI VC Trade Lending", "貸コイン", "VCTRADE 貸コイン"],
+    "domain": "sbivc.co.jp",
+    "country_or_origin": "Japan",
+    "platform_type_guess": "centralized_lending",
+    "status_guess": "active",
+    "major_event": "SBI VC Trade announced the start of its 貸コイン crypto lending service on 2022-01-26; the current product remains active and is explicitly described as a consumption-loan transaction in which customers lend assets to SBI VC Trade and receive principal plus a usage/lending fee at maturity",
+    "primary_sources": ["https://www.sbivc.co.jp/services/lending", "https://www.sbivc.co.jp/newsview/kcyxc7j-lkpq", "https://www.sbivc.co.jp/newsview/flarecovenants", "https://www.sbivc.co.jp/legal-information"],
+    "secondary_sources": [],
+    "duplicate_check": {"checked_at": "2026-08-15", "matched_platform_ids": [], "notes": "Exact repository searches for SBI VC, sbivc.co.jp, 貸コイン and cya_candidate_000130 returned no indexed canonical or staging identity match before allocation. Hardened full-corpus scanning on the exact PR head remains authoritative."},
+    "decision": "add_now",
+    "notes": "First-party launch notice establishes service start on 2022-01-26. The current lending page describes 貸コイン as a consumptive loan, with principal plus a usage/lending fee returned in the same crypto/electronic-payment asset under course terms and no mid-term cancellation after contract formation/cutoff. Current FAQ language explicitly identifies price risk, return risk arising from the assets being managed as SBI VC Trade assets, and inability to cancel during the lending period. First-party Flare lending disclosures document the lending legal model in more detail: lent assets fall outside Payment Services Act segregated-management treatment for exchange custody, the customer does not obtain the exchange-custody priority right described there, SBI VC Trade may relend borrowed assets, the lending is unsecured, and company insolvency can cause partial or total non-return. Do not assume every current lending asset/course uses the Flare-specific contract verbatim; preserve product-specific differences. Current/campaign annual rates are issuer terms, not independently verified realized returns. SBI VC Trade's exchange registration does not make lent principal segregated, insured or guaranteed; its own lending risk disclosure expressly distinguishes lent assets from exchange-custody segregated assets.",
+    "first_seen_at": "2026-08-15",
+    "last_reviewed_at": "2026-08-15"
   }
 ]
