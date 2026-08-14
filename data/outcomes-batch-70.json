@@ -1,0 +1,18 @@
+[
+  {
+    "platform_id": "cya_plat_000111",
+    "outcome_status": "not_applicable",
+    "estimated_recovery_rate": "not_applicable",
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": "Not applicable; FUELHASH CRYPTOLENDING is currently presented as active and the reviewed first-party sources do not establish a platform-wide failure, restructuring, claims process or customer-loss event.",
+    "claim_process_url": null,
+    "affected_products": ["FUELHASH CRYPTOLENDING", "CRYPTOTREND"],
+    "claim_classes": [],
+    "jurisdictions": ["Japan"],
+    "as_of": "2026-08-15",
+    "last_verified_at": "2026-08-15",
+    "notes": "Current operation and contractual return mechanics do not prove universal realized repayment or solvency. The current Terms expressly disclose that FUELHASH failure can make return of borrowed customer assets impossible; marketing principal-guarantee language is not treated as independent proof of principal protection.",
+    "confidence": "high"
+  }
+]
