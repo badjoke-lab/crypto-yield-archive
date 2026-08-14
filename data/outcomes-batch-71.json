@@ -1,0 +1,18 @@
+[
+  {
+    "platform_id": "cya_plat_000112",
+    "outcome_status": "not_applicable",
+    "estimated_recovery_rate": "not_applicable",
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": "Not applicable; SBI VC Trade 貸コイン is currently presented as active and the reviewed first-party sources do not establish a platform-wide failure, restructuring, claims process or customer-loss event.",
+    "claim_process_url": null,
+    "affected_products": ["SBI VC Trade 貸コイン"],
+    "claim_classes": [],
+    "jurisdictions": ["Japan"],
+    "as_of": "2026-08-15",
+    "last_verified_at": "2026-08-15",
+    "notes": "Current operation and contractual return mechanics do not prove universal realized repayment or solvency. Product-specific lending disclosures expressly preserve borrower/counterparty and insolvency non-return risk.",
+    "confidence": "high"
+  }
+]

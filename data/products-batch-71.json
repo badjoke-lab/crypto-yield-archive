@@ -1,0 +1,10 @@
+[
+  {
+    "platform_id": "cya_plat_000112",
+    "product_type": "centralized_yield",
+    "product_name": "SBI VC Trade 貸コイン",
+    "custody_model": "Current first-party materials characterize 貸コイン as a consumption-loan transaction in which customers lend eligible crypto assets or electronic payment instruments to SBI VCトレード株式会社. A product-specific Flare disclosure states that lent assets are outside the exchange-custody segregated-management treatment described there, may be rel lent by SBI VC Trade, and are exposed to unsecured borrower/counterparty risk. CYA records borrower-counterparty exposure rather than protected exchange custody.",
+    "yield_source": "The reviewed public product materials establish contractual lending fees but do not establish the economic source of every lending-fee payment with sufficient specificity for an independent CYA conclusion. No yield source is inferred from the operator's exchange business, campaigns or headline rates.",
+    "risk_notes": "Current public materials state that the product cannot be cancelled mid-term after the applicable cutoff or contract formation and identify return risk because lent assets are managed as SBI VC Trade assets. A Flare-specific disclosure states that insolvency can cause partial or total non-return and that the loan is unsecured. Product-specific terms vary and must not be generalized verbatim across all current courses."
+  }
+]

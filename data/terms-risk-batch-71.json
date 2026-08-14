@@ -1,0 +1,11 @@
+[
+  {
+    "platform_id": "cya_plat_000112",
+    "terms_status": "platform_owned",
+    "asset_ownership_interpretation": "Current first-party material defines 貸コイン as a consumption-loan arrangement to SBI VCトレード株式会社. A product-specific Flare lending disclosure states that lent assets are outside exchange-custody segregated-management treatment, the customer does not receive the exchange-custody priority right described there, SBI VC Trade may relend the assets, the lending is unsecured, and insolvency can cause partial or total non-return. CYA therefore uses `platform_owned` to represent borrower-counterparty economic exposure during the lending contract, while preserving that exact contractual terms can differ by asset/course.",
+    "affected_product": "SBI VC Trade 貸コイン",
+    "source_evidence_id": "cya_src_b71_0003",
+    "notes": "SBI VC Trade's crypto-asset exchange registration does not make lending principal segregated, insured or guaranteed. The Flare disclosure is product-specific and is not generalized verbatim to every current or historical course. Current/campaign annual rates remain issuer terms rather than verified realized returns.",
+    "confidence": "high"
+  }
+]

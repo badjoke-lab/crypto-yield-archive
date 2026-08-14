@@ -1,0 +1,16 @@
+[
+  {
+    "candidate_id": "cya_candidate_000130",
+    "canonical_name": "SBI VC Trade 貸コイン",
+    "domain": "sbivc.co.jp",
+    "decision": "already_recorded",
+    "duplicate_check": {
+      "checked_at": "2026-08-15",
+      "matched_platform_ids": ["cya_plat_000112"],
+      "notes": "Promoted only after candidate-only PR #232 and the hardened full-corpus scanner found no canonical duplicate against the 111-platform corpus."
+    },
+    "notes": "Promoted in Phase 10 canonical batch 71 as cya_plat_000112 with launch event cya_ev_000348 dated 2022-01-26. Current first-party materials define a consumption-loan product and preserve borrower/counterparty risk. A product-specific Flare disclosure states that lent assets are outside exchange-custody segregated-management treatment, may be rel lent by SBI VC Trade, are unsecured, and can suffer partial or total non-return in insolvency. Product-specific differences remain explicit; current/campaign rates remain issuer terms rather than verified realized returns.",
+    "first_seen_at": "2026-08-15",
+    "last_reviewed_at": "2026-08-15"
+  }
+]

@@ -10,7 +10,11 @@
     "major_event": "Cabital operated consumer crypto Earn and payments products; partner integrations were terminated in late 2022, but platform-wide closure, operating entity, customer migration and outcome remain unresolved",
     "primary_sources": ["https://www.cabital.com/", "https://blog.matrixport.com/announcements/matrixport-partners-with-cabital/"],
     "secondary_sources": ["https://support.woox.io/hc/en-us/articles/12485806745881-Buy-crypto-with-fiat-currencies-Cabital-Service-Termination-Notice", "https://find-and-update.company-information.service.gov.uk/company/14888741"],
-    "duplicate_check": {"checked_at": "2026-08-12", "matched_platform_ids": [], "notes": "Duplicate-clear against the 101-platform corpus in the hardened Phase 10 scanner. Matrixport documents a commercial partnership, not an acquisition."},
+    "duplicate_check": {
+      "checked_at": "2026-08-12",
+      "matched_platform_ids": [],
+      "notes": "Duplicate-clear against the 101-platform corpus in the hardened Phase 10 scanner. Matrixport documents a commercial partnership, not an acquisition."
+    },
     "decision": "needs_research",
     "notes": "Phase 10 review confirms CYA scope relevance but not promotion readiness. WOO X records termination of its Cabital fiat integration effective 2022-11-17; that does not establish platform-wide Cabital closure or customer outcome. CABITAL GLOBAL LIMITED (UK company 14888741) was incorporated only in 2023 and dissolved in 2024, so it must not be assumed to be the entity that operated the earlier Cabital Earn product. Resolve the original operating legal entity, first-party product terms/custody, platform-wide closure chronology, and customer repayment/migration outcome before add_now.",
     "first_seen_at": "2026-08-05",
@@ -27,7 +31,11 @@
     "major_event": "Consumer digital-asset rewards / crypto savings app that later ceased operations; exact closure chronology, counterparty model, terms and customer repayment outcome require stronger evidence",
     "primary_sources": ["https://outlet.finance/", "https://apps.apple.com/us/app/outlet-digital-asset-rewards/id1475723731", "https://medium.com/outlet-finance/how-to-lend-and-utilize-dai-like-an-expert-a97662cccf7"],
     "secondary_sources": ["https://www.cultofmoney.com/outlet-finance-review/", "https://app.dealroom.co/companies/outlet_1", "https://www.producthunt.com/products/outlet-finance"],
-    "duplicate_check": {"checked_at": "2026-08-12", "matched_platform_ids": [], "notes": "Duplicate-clear against the 101-platform corpus in the hardened Phase 10 scanner."},
+    "duplicate_check": {
+      "checked_at": "2026-08-12",
+      "matched_platform_ids": [],
+      "notes": "Duplicate-clear against the 101-platform corpus in the hardened Phase 10 scanner."
+    },
     "decision": "needs_research",
     "notes": "Phase 10 review confirms strong scope fit: Apple's listing identifies Outlet Finance Inc as the developer and describes user funds being converted to digital assets and put to work for monthly rewards, while an official Outlet Medium post documents the platform's crypto-lending origin. However, secondary sources disagree or lack precision on the closure date: one says early 2023 and Dealroom says operations had ceased by October 2023, while Apple's app history shows version 5.0.3 dated 2023-02-21. Do not assign an exact closure date or repayment outcome from these sources. Resolve first-party closure/customer communications, operating-company registration, historical terms/custody and the final customer-fund outcome before add_now.",
     "first_seen_at": "2026-08-05",
@@ -44,7 +52,11 @@
     "major_event": "Active 9D Assets ecosystem is promoted and accessed through CoinChief with staking/yield participation; first-party 9D documentation attributes yield generation to BTC mining, DeFi lending, AI-managed funds and trading, while current CoinChief surfaces show an Earn section and official 9D Assets/CCP announcements",
     "primary_sources": ["https://9d-assets.gitbook.io/9d-assets-docs/what-is-9d", "https://9d-assets.gitbook.io/9d-assets-docs/what-is-9d/the-9-pillars-of-9d", "https://9d-assets.gitbook.io/9d-assets-docs/faqs", "https://9d-assets.gitbook.io/9d-assets-docs/roadmap", "https://www.coinchief.live/en_US/"],
     "secondary_sources": ["https://coinmarketcap.com/exchanges/coinchief/", "https://note.com/9dassets/n/n6c269c73a82d", "https://note.com/9dassets/n/n44c20c5960b8"],
-    "duplicate_check": {"checked_at": "2026-08-13", "matched_platform_ids": [], "notes": "Exact repository searches for 9D Assets, Coin Chief and coinchief returned no canonical CYA identity match before staging. Exact search found no prior use of cya_candidate_000111. The hardened full-corpus candidate scanner remains authoritative before any promotion."},
+    "duplicate_check": {
+      "checked_at": "2026-08-13",
+      "matched_platform_ids": [],
+      "notes": "Exact repository searches for 9D Assets, Coin Chief and coinchief returned no canonical CYA identity match before staging. Exact search found no prior use of cya_candidate_000111. The hardened full-corpus candidate scanner remains authoritative before any promotion."
+    },
     "decision": "needs_research",
     "notes": "Phase 10 first pass confirms strong CYA adjacency but does not yet support canonical promotion. First-party 9D docs describe an RWA infrastructure that explicitly includes yield generation, BTC-mining yield, a DeFi-native lending protocol, AI-managed funds and trading. CoinChief's current official surface contains an Earn navigation item and multiple official 9D Assets/CCP announcements, supporting an operational relationship. Secondary user-facing material says 9D staking is performed inside CoinChief and describes daily rewards/asset-pack mechanics, but those referral/support pages are discovery evidence only and must not be used to establish canonical return or redemption terms. Resolve first-party staking product terms, exact deposit/lockup/redemption mechanics, the CoinChief/9D legal and contractual relationship, custody/asset ownership, whether StaX/9D token participation is a centralized Earn product versus token/RWA participation, and the launch date before add_now. Do not convert community claims such as daily 1% or monthly 20% into issuer-verified or realized yield. CoinChief's public site currently identifies Coin Chief Tech INC and is independently listed as an exchange, but licensing/safety claims must be separately verified before use as canonical protection claims.",
     "first_seen_at": "2026-08-12",
@@ -61,7 +73,11 @@
     "major_event": "Current Zenta System discovery material describes active USDT/BTC/ETH deposit plans with business-day returns, term lockups and referral compensation, but the official zenta-system.com surface is JavaScript-only in the available crawler and first-party legal/product terms have not yet been retrieved for canonical verification",
     "primary_sources": ["https://zenta-system.com/"],
     "secondary_sources": ["https://bitradexinfo.com/info/zenta-system/", "https://crypto-ai-info.com/info/zenta-system/", "https://behindmlm.com/mlm-reviews/zenta-system-review-multi-ruse-mlm-crypto-ponzi/", "https://note.com/next_asset_lab/n/nc2a509fdbdd7"],
-    "duplicate_check": {"checked_at": "2026-08-13", "matched_platform_ids": [], "notes": "Exact CYA repository searches for Zenta, zenta-system.com, zenta.exchange and cya_candidate_000113 returned no canonical or staging identity match before allocation. The watchlist target is provisionally resolved to zenta-system.com, not the unrelated zenta.exchange portfolio-tracker identity. Hardened full-corpus scanning remains authoritative."},
+    "duplicate_check": {
+      "checked_at": "2026-08-13",
+      "matched_platform_ids": [],
+      "notes": "Exact CYA repository searches for Zenta, zenta-system.com, zenta.exchange and cya_candidate_000113 returned no canonical or staging identity match before allocation. The watchlist target is provisionally resolved to zenta-system.com, not the unrelated zenta.exchange portfolio-tracker identity. Hardened full-corpus scanning remains authoritative."
+    },
     "decision": "needs_research",
     "notes": "Phase 10 first pass confirms strong CYA scope fit but not promotion readiness. Multiple independent/referral discovery sources consistently describe One Day, Core, Base and Stake programs using USDT/BTC/ETH, with daily/business-day return ranges, term lockups and differing principal/reward release mechanics. Those figures and mechanics are not promoted because the available official zenta-system.com page renders only a JavaScript shell to the research crawler and no first-party Terms, plan contract, custody/asset-use terms or withdrawal agreement has yet been retrieved. Secondary sources also claim a Washington entity named ZENTA SYSTEM LIMITED (UBI 606145475), a CertiK audit, AI/DeFi/arbitrage/computing revenue sources and multi-level referral compensation; none of those claims should be canonicalized until checked directly against the relevant first-party or government/security-audit authority. Resolve legal operator, first-party product terms, custody/asset ownership/reuse, exact plan and redemption rules, launch chronology, source-of-yield claims and any regulatory/licensing representation before add_now. Do not classify the platform as a Ponzi/scam based on a review site and do not convert advertised daily rates into verified realized yield."
   },
@@ -76,27 +92,14 @@
     "major_event": "Current iOrca/ORCA discovery material describes USDT-funded fixed-term yield packages whose advertised returns are attributed to AI-assisted prediction-market arbitrage; the live dapp.ocagent.io registration surface identifies itself as iOrca, requires wallet connection and agreement to Terms, Privacy and Risk Disclosure, but first-party product and legal terms are not yet available in a stable researchable form",
     "primary_sources": ["https://dapp.ocagent.io/home/login/create?ref=31409255"],
     "secondary_sources": ["https://note.com/bakuniki_japan/n/nfb3ad33d81e6", "https://note.com/rich_tucan5943/n/nb4c463026440"],
-    "duplicate_check": {"checked_at": "2026-08-13", "matched_platform_ids": [], "notes": "Exact CYA repository searches for iOrca, ocagent.io, ORCA System, orca.so and cya_candidate_000116 returned no identity match before staging. The Issue #186 watchlist target is the iOrca/OC Agent yield program at dapp.ocagent.io, not the unrelated Solana Orca DEX at orca.so."},
+    "duplicate_check": {
+      "checked_at": "2026-08-13",
+      "matched_platform_ids": [],
+      "notes": "Exact CYA repository searches for iOrca, ocagent.io, ORCA System, orca.so and cya_candidate_000116 returned no identity match before staging. The Issue #186 watchlist target is the iOrca/OC Agent yield program at dapp.ocagent.io, not the unrelated Solana Orca DEX at orca.so."
+    },
     "decision": "needs_research",
     "notes": "Phase 10 identity review resolves the watchlist ORCA item to the live iOrca registration surface under dapp.ocagent.io. The official registration page requires username, affiliate code, wallet connection and acceptance of Terms of Service, Privacy Policy and Risk Disclosure, establishing an active financial-product surface but not the underlying economic contract. Current Japanese discovery/referral material consistently describes BNB-chain USDT deposits, minimum participation around 100 USDT, 10/90/180/360-day packages, principal lockups, daily USDT rewards sent to a wallet, check-in-based reward increases, referral ranks and a temporary doubled-deposit campaign; it attributes yield to AI agents exploiting price/probability differences across prediction markets. Those mechanics and rates remain discovery claims because the first-party Terms/Risk pages could not be retrieved reliably in this pass and no stable first-party documentation for package rates, custody, asset reuse, redemption, source of yield or operator identity was found. A claimed relationship to Nodepay is likewise unverified and must not be canonicalized. Resolve legal operator/jurisdiction, first-party Terms and Risk Disclosure, deposit/custody/asset-use treatment, package lock/redemption rules, reward calculation, withdrawal rights, launch chronology, source-of-yield claims and any campaign liabilities before add_now. Do not confuse this candidate with Orca's Solana AMM/xORCA staking product and do not convert advertised daily rates or campaign credits into verified realized return or principal repayment.",
     "first_seen_at": "2026-08-12",
     "last_reviewed_at": "2026-08-13"
-  },
-  {
-    "candidate_id": "cya_candidate_000130",
-    "canonical_name": "SBI VC Trade 貸コイン",
-    "aliases": ["SBI VCトレード 貸コイン", "SBI VC Trade Lending", "貸コイン", "VCTRADE 貸コイン"],
-    "domain": "sbivc.co.jp",
-    "country_or_origin": "Japan",
-    "platform_type_guess": "centralized_lending",
-    "status_guess": "active",
-    "major_event": "SBI VC Trade announced the start of its 貸コイン crypto lending service on 2022-01-26; the current product remains active and is explicitly described as a consumption-loan transaction in which customers lend assets to SBI VC Trade and receive principal plus a usage/lending fee at maturity",
-    "primary_sources": ["https://www.sbivc.co.jp/services/lending", "https://www.sbivc.co.jp/newsview/kcyxc7j-lkpq", "https://www.sbivc.co.jp/newsview/flarecovenants", "https://www.sbivc.co.jp/legal-information"],
-    "secondary_sources": [],
-    "duplicate_check": {"checked_at": "2026-08-15", "matched_platform_ids": [], "notes": "Exact repository searches for SBI VC, sbivc.co.jp, 貸コイン and cya_candidate_000130 returned no indexed canonical or staging identity match before allocation. Hardened full-corpus scanning on the exact PR head remains authoritative."},
-    "decision": "add_now",
-    "notes": "First-party launch notice establishes service start on 2022-01-26. The current lending page describes 貸コイン as a consumptive loan, with principal plus a usage/lending fee returned in the same crypto/electronic-payment asset under course terms and no mid-term cancellation after contract formation/cutoff. Current FAQ language explicitly identifies price risk, return risk arising from the assets being managed as SBI VC Trade assets, and inability to cancel during the lending period. First-party Flare lending disclosures document the lending legal model in more detail: lent assets fall outside Payment Services Act segregated-management treatment for exchange custody, the customer does not obtain the exchange-custody priority right described there, SBI VC Trade may relend borrowed assets, the lending is unsecured, and company insolvency can cause partial or total non-return. Do not assume every current lending asset/course uses the Flare-specific contract verbatim; preserve product-specific differences. Current/campaign annual rates are issuer terms, not independently verified realized returns. SBI VC Trade's exchange registration does not make lent principal segregated, insured or guaranteed; its own lending risk disclosure expressly distinguishes lent assets from exchange-custody segregated assets.",
-    "first_seen_at": "2026-08-15",
-    "last_reviewed_at": "2026-08-15"
   }
 ]
