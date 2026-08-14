@@ -1,0 +1,16 @@
+[
+  {
+    "candidate_id": "cya_candidate_000126",
+    "canonical_name": "GMO Coin Lending Basic",
+    "domain": "coin.z.com",
+    "decision": "already_recorded",
+    "duplicate_check": {
+      "checked_at": "2026-08-14",
+      "matched_platform_ids": ["cya_plat_000109"],
+      "notes": "Candidate-only PR #221 passed the hardened full-corpus scanner with six active candidates and exactly one draft-eligible candidate before canonical promotion."
+    },
+    "notes": "Promoted in Phase 10 canonical batch 68 as cya_plat_000109 using current first-party GMO Coin Basic product/risk materials, a 2026 recruitment notice, a 2020 service-change notice, and a current 2026 product explainer. The exact original launch day remains unresolved and is not invented. Scope is Basic only; Premium remains outside this canonical identity pending separate product/history review. Published rates, capacity and operating/risk statements remain issuer terms/claims rather than independently verified realized return, reserve proof, guarantee or solvency evidence.",
+    "first_seen_at": "2026-08-14",
+    "last_reviewed_at": "2026-08-14"
+  }
+]
