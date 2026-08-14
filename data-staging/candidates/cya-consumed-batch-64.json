@@ -1,0 +1,16 @@
+[
+  {
+    "candidate_id": "cya_candidate_000122",
+    "canonical_name": "Smart Crypto Lending",
+    "domain": "scllending.com",
+    "decision": "already_recorded",
+    "duplicate_check": {
+      "checked_at": "2026-08-14",
+      "matched_platform_ids": ["cya_plat_000105"],
+      "notes": "Candidate-only PR #209 passed the hardened full-corpus scanner with Smart Crypto Lending as the sole draft-eligible candidate before canonical promotion. It was then promoted as Phase 10 canonical batch 64."
+    },
+    "notes": "Promoted as cya_plat_000105 using first-party company, terms and product evidence. CYA preserves the June 2025 service-start month without inventing an exact day, records the consumption-loan / unsecured counterparty structure, and treats all advertised rates, security statements and investment-strategy descriptions as issuer claims rather than independently verified realized returns, reserve proof, guarantees or solvency evidence.",
+    "first_seen_at": "2026-08-13",
+    "last_reviewed_at": "2026-08-14"
+  }
+]
