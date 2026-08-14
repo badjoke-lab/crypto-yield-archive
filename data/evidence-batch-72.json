@@ -1,0 +1,62 @@
+[
+  {
+    "id": "cya_src_b72_0001",
+    "platform_id": "cya_plat_000113",
+    "event_id": "cya_ev_000349",
+    "source_type": "official_statement",
+    "title": "BITMAX crypto-asset lending service launch announcement",
+    "url": "https://prtimes.jp/main/html/rd/p/000002592.000001594.html",
+    "publisher": "LINE株式会社",
+    "published_at": "2020-10-06",
+    "archived_url": "https://web.archive.org/web/*/https://prtimes.jp/main/html/rd/p/000002592.000001594.html",
+    "accessed_at": "2026-08-15",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "Issuer-distributed LINE release establishing service launch on 2020-10-07. The launch campaign rate is an issuer term, not verified realized return."
+  },
+  {
+    "id": "cya_src_b72_0002",
+    "platform_id": "cya_plat_000113",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "LINE BITMAX crypto-asset lending help",
+    "url": "https://help2.line.me/BitMax/?contentId=20018753",
+    "publisher": "LINE BITMAX",
+    "published_at": null,
+    "archived_url": "https://web.archive.org/web/*/https://help2.line.me/BitMax/?contentId=20018753",
+    "accessed_at": "2026-08-15",
+    "reliability": "high",
+    "claim_scope": "terms_risk",
+    "notes": "First-party help material describes users lending crypto assets to the operator in exchange for lending fees and documents variable-period and fixed-period product types. Product limits/rates are time-sensitive."
+  },
+  {
+    "id": "cya_src_b72_0003",
+    "platform_id": "cya_plat_000113",
+    "event_id": "cya_ev_000350",
+    "source_type": "official_statement",
+    "title": "LINE Xenesis announces LINE BITMAX service shutdown",
+    "url": "https://www.lycorp.co.jp/ja/news/release/020165/",
+    "publisher": "LINEヤフー株式会社",
+    "published_at": "2026-03-03",
+    "archived_url": "https://web.archive.org/web/*/https://www.lycorp.co.jp/ja/news/release/020165/",
+    "accessed_at": "2026-08-15",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "First-party group announcement establishing planned LINE BITMAX shutdown on 2026-06-01 and the shutdown rationale as management-resource reallocation amid changing market conditions and competition."
+  },
+  {
+    "id": "cya_src_b72_0004",
+    "platform_id": "cya_plat_000113",
+    "event_id": "cya_ev_000350",
+    "source_type": "official_statement",
+    "title": "LINE BITMAX service-end information",
+    "url": "https://www.bitmax.me/endofservice_info",
+    "publisher": "LINE Xenesis株式会社",
+    "published_at": null,
+    "archived_url": "https://web.archive.org/web/*/https://www.bitmax.me/endofservice_info",
+    "accessed_at": "2026-08-15",
+    "reliability": "high",
+    "claim_scope": "customer_outcome",
+    "notes": "Official shutdown site states lending applications were stopped, existing lending contracts would be ended sequentially, and remaining balances would be handled under the announced service-end return procedure. This does not prove universal historical lending repayment."
+  }
+]
