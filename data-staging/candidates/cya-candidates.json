@@ -81,22 +81,5 @@
     "notes": "Phase 10 identity review resolves the watchlist ORCA item to the live iOrca registration surface under dapp.ocagent.io. The official registration page requires username, affiliate code, wallet connection and acceptance of Terms of Service, Privacy Policy and Risk Disclosure, establishing an active financial-product surface but not the underlying economic contract. Current Japanese discovery/referral material consistently describes BNB-chain USDT deposits, minimum participation around 100 USDT, 10/90/180/360-day packages, principal lockups, daily USDT rewards sent to a wallet, check-in-based reward increases, referral ranks and a temporary doubled-deposit campaign; it attributes yield to AI agents exploiting price/probability differences across prediction markets. Those mechanics and rates remain discovery claims because the first-party Terms/Risk pages could not be retrieved reliably in this pass and no stable first-party documentation for package rates, custody, asset reuse, redemption, source of yield or operator identity was found. A claimed relationship to Nodepay is likewise unverified and must not be canonicalized. Resolve legal operator/jurisdiction, first-party Terms and Risk Disclosure, deposit/custody/asset-use treatment, package lock/redemption rules, reward calculation, withdrawal rights, launch chronology, source-of-yield claims and any campaign liabilities before add_now. Do not confuse this candidate with Orca's Solana AMM/xORCA staking product and do not convert advertised daily rates or campaign credits into verified realized return or principal repayment.",
     "first_seen_at": "2026-08-12",
     "last_reviewed_at": "2026-08-13"
-  },
-  {
-    "candidate_id": "cya_candidate_000128",
-    "canonical_name": "PBR LENDING",
-    "aliases": ["PBR Lending", "Portobello Road PBR LENDING", "PBR レンディング"],
-    "domain": "pbr-portobelloroad.com",
-    "country_or_origin": "Japan",
-    "platform_type_guess": "centralized_lending",
-    "status_guess": "active",
-    "major_event": "Active Japanese crypto-asset lending service operated by Portobello Road株式会社; current first-party terms define customer-to-company crypto consumption loans, published Regular/Premium lending plans, and explicit unsecured counterparty and insolvency risk",
-    "primary_sources": ["https://www.pbr-portobelloroad.com/", "https://portobelloroad.co.jp/policies/terms/", "https://portobelloroad.co.jp/policies/loan-disclosure/", "https://portobelloroad.co.jp/overview/"],
-    "secondary_sources": [],
-    "duplicate_check": {"checked_at": "2026-08-15", "matched_platform_ids": [], "notes": "Exact repository searches for PBR LENDING, portobelloroad.co.jp and cya_candidate_000128 returned no indexed canonical or staging identity match before allocation. Hardened full-corpus scanning on the exact PR head remains authoritative."},
-    "decision": "add_now",
-    "notes": "Current first-party Terms define PBR LENDING as crypto-asset consumption-loan transactions between customers and Portobello Road株式会社. Individual contracts are formed after a customer funds the lending-preparation wallet, selects a lending plan/asset/quantity, submits a lending request and the company processes the loan. Current Terms distinguish Regular and Premium Lending plans with different lock periods and advertised rates. The risk and consent terms state that the arrangement is not a deposit or deposit-like product, is not deposit-insured, is not crypto-asset exchange business, and borrowed assets are outside statutory segregated-management treatment; the company provides no physical or personal collateral. Current asset-management terms state that borrowed assets are operationally separated from company assets but not held in a legally complete trust, and customer claims become general claims alongside other creditors in insolvency. First-party disclosures identify counterparty, liquidity, system and regulatory risks and state that the company uses borrowed crypto in crypto operations and/or business investments. Advertised rates, security claims, internal reserve/accumulation-fund claims, business-investment performance and repayment claims remain issuer statements and must not be treated as independently verified realized performance, guarantees, reserves or solvency evidence.",
-    "first_seen_at": "2026-08-15",
-    "last_reviewed_at": "2026-08-15"
   }
 ]
