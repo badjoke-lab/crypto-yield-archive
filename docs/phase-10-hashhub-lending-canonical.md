@@ -12,7 +12,7 @@ Promote duplicate-clear candidate `cya_candidate_000124` as canonical platform `
 ## Canonical allocation
 
 - platform: `cya_plat_000107`
-- event: `cya_ev_000345`
+- event: `cya_ev_000346`
 - evidence: `cya_src_b66_0001` through `cya_src_b66_0006`
 - outcome: one batch-66 record
 - product: one batch-66 record
@@ -45,11 +45,13 @@ A first-party company-split notice establishes an exact effective date of 2024-0
 The repository event enum has no dedicated operator-transfer value. The event is therefore recorded as:
 
 ```text
-id: cya_ev_000345
+id: cya_ev_000346
 event_type: other
 event_date: 2024-04-01
 event_status_effect: none
 ```
+
+`cya_ev_000345` is already used by the CryptoPanda / IZAKA-YA maintenance event, so this promotion deliberately uses the next collision-free ID and relies on the full-corpus validator as authority.
 
 This is an operator / contractual-counterparty transition, not a shutdown, acquisition, insolvency, claims event or evidence of customer impairment.
 
