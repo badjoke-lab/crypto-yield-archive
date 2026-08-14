@@ -1,0 +1,11 @@
+[
+  {
+    "platform_id": "cya_plat_000110",
+    "terms_status": "platform_owned",
+    "asset_ownership_interpretation": "Current first-party Terms define PBR LENDING as crypto-asset consumption-loan transactions between customers and Portobello Road株式会社. The Terms state that the lending transaction is not a deposit, is not deposit-insured, is not crypto-asset exchange business, and that borrowed assets are outside statutory segregated-management treatment. They say no physical or personal collateral is provided. Although the operator describes operational separation of borrowed assets from company assets, it expressly says this is not legally complete trust protection and that customer claims become general claims alongside other creditors in insolvency. CYA therefore treats the economic structure as platform-owned / borrower-counterparty exposure during the lending contract, without making a broader legal-title determination beyond the published terms.",
+    "affected_product": "PBR LENDING",
+    "source_evidence_id": "cya_src_b69_0002",
+    "notes": "Current advertised rates, lock periods, supported assets and return procedures can change. Operator claims about security, internal reserves, business investments and repayment performance must not be presented as independent guarantees, reserve proof or solvency evidence.",
+    "confidence": "high"
+  }
+]
