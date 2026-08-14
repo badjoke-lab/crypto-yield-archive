@@ -1,0 +1,62 @@
+[
+  {
+    "id": "cya_src_b69_0001",
+    "platform_id": "cya_plat_000110",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "PBR LENDING",
+    "url": "https://www.pbr-portobelloroad.com/",
+    "publisher": "Portobello Road株式会社",
+    "published_at": null,
+    "archived_url": "https://web.archive.org/web/*/https://www.pbr-portobelloroad.com/",
+    "accessed_at": "2026-08-15",
+    "reliability": "high",
+    "claim_scope": "status",
+    "notes": "Current first-party service surface confirms active PBR LENDING operations, supported assets and Regular/Premium lending plans. Advertised rates and promotional claims remain issuer statements, not independently verified realized returns or guarantees."
+  },
+  {
+    "id": "cya_src_b69_0002",
+    "platform_id": "cya_plat_000110",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "ご利用約款",
+    "url": "https://portobelloroad.co.jp/policies/terms/",
+    "publisher": "Portobello Road株式会社",
+    "published_at": null,
+    "archived_url": "https://web.archive.org/web/*/https://portobelloroad.co.jp/policies/terms/",
+    "accessed_at": "2026-08-15",
+    "reliability": "high",
+    "claim_scope": "terms_risk",
+    "notes": "Current first-party Terms define PBR LENDING as customer-to-company crypto-asset consumption-loan transactions, explain individual-contract formation, Regular/Premium plan mechanics, return and interest treatment, and state that the arrangement is not deposit-insured or crypto-asset exchange business. The Terms also state there is no physical or personal collateral and describe customer claims as general claims in insolvency."
+  },
+  {
+    "id": "cya_src_b69_0003",
+    "platform_id": "cya_plat_000110",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "暗号資産消費貸借取引に関する重要事項説明書",
+    "url": "https://portobelloroad.co.jp/policies/loan-disclosure/",
+    "publisher": "Portobello Road株式会社",
+    "published_at": null,
+    "archived_url": "https://web.archive.org/web/*/https://portobelloroad.co.jp/policies/loan-disclosure/",
+    "accessed_at": "2026-08-15",
+    "reliability": "high",
+    "claim_scope": "terms_risk",
+    "notes": "First-party risk disclosure says borrowed customer crypto is used in various forms of operation and/or business investment and identifies price, counterparty, liquidity, system and regulatory risks. It states that failure of the company or lending/investment counterparties can make asset return difficult or impossible. The described yield model is an operator statement, not independently verified investment performance."
+  },
+  {
+    "id": "cya_src_b69_0004",
+    "platform_id": "cya_plat_000110",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "企業情報",
+    "url": "https://portobelloroad.co.jp/overview/",
+    "publisher": "Portobello Road株式会社",
+    "published_at": null,
+    "archived_url": "https://web.archive.org/web/*/https://portobelloroad.co.jp/overview/",
+    "accessed_at": "2026-08-15",
+    "reliability": "high",
+    "claim_scope": "entity",
+    "notes": "Current first-party company page identifies Portobello Road株式会社 as the operator of PBR LENDING and describes its crypto-asset lending business and stated use of borrowed assets in business activity. Company descriptions of performance and sustainability are not independent solvency evidence."
+  }
+]
