@@ -1,0 +1,62 @@
+[
+  {
+    "id": "cya_src_b68_0001",
+    "platform_id": "cya_plat_000109",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "貸暗号資産ベーシック",
+    "url": "https://coin.z.com/jp/corp/product/info/lending/",
+    "publisher": "GMOコイン株式会社",
+    "published_at": null,
+    "archived_url": "https://web.archive.org/web/*/https://coin.z.com/jp/corp/product/info/lending/",
+    "accessed_at": "2026-08-14",
+    "reliability": "high",
+    "claim_scope": "terms_risk",
+    "notes": "Current first-party product page describes Basic lending courses and the customer-to-GMO Coin lending arrangement. Current risk disclosures state that the service is not a deposit/deposit-insurance product, characterize the transaction as a crypto-asset consumption loan, warn that lent assets may not be returned if GMO Coin fails, and distinguish the lending transaction from the crypto-asset exchange business and its segregated-management requirements. Published rates and availability are issuer terms, not verified realized returns."
+  },
+  {
+    "id": "cya_src_b68_0002",
+    "platform_id": "cya_plat_000109",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "貸暗号資産ベーシック BTC、ZPG、ZPGAG、ZPGPT募集のお知らせ",
+    "url": "https://coin.z.com/jp/news/2026/05/15951/",
+    "publisher": "GMOコイン株式会社",
+    "published_at": "2026-05-13",
+    "archived_url": "https://web.archive.org/web/*/https://coin.z.com/jp/news/2026/05/15951/",
+    "accessed_at": "2026-08-14",
+    "reliability": "high",
+    "claim_scope": "status",
+    "notes": "First-party 2026 recruitment notice confirms ongoing Basic lending intake for selected assets and courses and states that recruitment may stop or applications may be cancelled when capacity is exceeded. Advertised annualized rates are current issuer terms, not independently verified realized return."
+  },
+  {
+    "id": "cya_src_b68_0003",
+    "platform_id": "cya_plat_000109",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "「貸暗号資産」サービス変更のご案内およびお客さま同意のお願い",
+    "url": "https://coin.z.com/jp/news/2020/06/6301/",
+    "publisher": "GMOコイン株式会社",
+    "published_at": "2020-06-10",
+    "archived_url": "https://web.archive.org/web/*/https://coin.z.com/jp/news/2020/06/6301/",
+    "accessed_at": "2026-08-14",
+    "reliability": "high",
+    "claim_scope": "entity",
+    "notes": "First-party notice proves the predecessor 貸暗号資産 service was already operating by June 2020 and documents course/rate changes effective for lending starting 2020-07-15. It does not establish the original service launch date."
+  },
+  {
+    "id": "cya_src_b68_0004",
+    "platform_id": "cya_plat_000109",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "貸暗号資産ベーシックとは？初心者向けに知っておきたいポイントを解説",
+    "url": "https://coin.z.com/jp/column/beginners-lending/",
+    "publisher": "GMOコイン株式会社",
+    "published_at": "2026-07-24",
+    "archived_url": "https://web.archive.org/web/*/https://coin.z.com/jp/column/beginners-lending/",
+    "accessed_at": "2026-08-14",
+    "reliability": "high",
+    "claim_scope": "terms_risk",
+    "notes": "Current first-party explainer describes Basic as lending crypto to GMO Coin for lending fees, notes that asset/course recruitment is intermittent, and states that early termination can forfeit lending fees and may incur a fee. Marketing examples and rates remain issuer illustrations rather than verified customer performance."
+  }
+]
