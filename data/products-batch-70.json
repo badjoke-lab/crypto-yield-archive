@@ -1,0 +1,10 @@
+[
+  {
+    "platform_id": "cya_plat_000111",
+    "product_type": "centralized_yield",
+    "product_name": "FUELHASH CRYPTOLENDING / CRYPTOTREND",
+    "custody_model": "Current first-party Terms define a direct lending contract in which the user lends eligible crypto assets/tokens to 株式会社FUELHASH and FUELHASH owes return of the same type and quantity plus contractual interest. The Terms state that the service is not crypto-asset exchange business and that the exchange-business segregated-management obligations described there do not apply. CYA therefore records borrower-counterparty exposure during the lending contract rather than protected exchange custody or a deposit-insurance structure.",
+    "yield_source": "The exact economic source of contractual interest is not established by the reviewed public Terms and product pages with sufficient specificity for an independent CYA conclusion. CYA does not infer a yield source from marketing language, partnerships or headline rates.",
+    "risk_notes": "Current Terms distinguish flexible lending and fixed lending. Fixed lending includes the fixed-rate CRYPTOLENDING product and variable-rate CRYPTOTREND, is generally non-cancellable during the lending period, and returns principal plus interest to the flexible-lending balance at maturity under the published mechanics. The Terms expressly warn that FUELHASH failure can make return of borrowed assets impossible. Current marketing claims of principal guarantee or stable operation do not override that contractual risk disclosure and are not treated as independent guarantees."
+  }
+]
