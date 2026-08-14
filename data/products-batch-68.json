@@ -1,0 +1,10 @@
+[
+  {
+    "platform_id": "cya_plat_000109",
+    "product_type": "centralized_yield",
+    "product_name": "GMOコイン 貸暗号資産ベーシック",
+    "custody_model": "Current first-party materials characterize Basic as a crypto-asset consumption-loan arrangement in which customers lend crypto assets to GMO Coin for a fixed course. GMO Coin states that this lending transaction is not a crypto-asset exchange transaction and that borrowed assets are not subject to the segregated-management requirements applicable to its exchange business. CYA therefore records borrower-counterparty exposure rather than segregated customer custody.",
+    "yield_source": "Current first-party materials describe a contractual lending fee paid according to the lent asset, quantity, lending period and applicable course. The reviewed sources do not establish a separately verified underlying investment strategy or realized-return source, so CYA records only the contractual fee terms and does not infer how GMO Coin economically funds them.",
+    "risk_notes": "Current terms provide asset/course-specific fixed lending periods and recruitment capacity. Loaned assets are unavailable for normal sale/withdrawal during the term; early termination may forfeit the lending fee and may involve a termination fee. GMO Coin warns that lent assets may not be returned if the company fails. Current rates, recruitment availability and capacity can change and are not principal guarantees."
+  }
+]
