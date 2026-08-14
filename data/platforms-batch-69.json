@@ -1,0 +1,24 @@
+[
+  {
+    "id": "cya_plat_000110",
+    "slug": "pbr-lending",
+    "canonical_name": "PBR LENDING",
+    "aliases": ["PBR Lending", "Portobello Road PBR LENDING", "PBR レンディング"],
+    "type": "cefi_lending",
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": null,
+    "end_date": null,
+    "country_or_origin": "Japan",
+    "summary": "Active Japanese crypto-asset lending service operated by Portobello Road株式会社. Customers lend crypto assets to the company under consumption-loan contracts and receive contractual interest under Regular or Premium lending plans.",
+    "what_happened": "PBR LENDING is currently active and is presented by Portobello Road株式会社 as its crypto-asset lending business. Current first-party terms define individual customer-to-company crypto-asset consumption-loan contracts, with Regular and Premium plans using different lock periods and advertised rates. The operator states that borrowed crypto is used in crypto-market operations and/or business investments. Current terms also state that the arrangement is not a deposit or deposit-insurance product, is not crypto-asset exchange business, provides no physical or personal collateral, and leaves customers as general creditors in company insolvency. CYA records the operator's published economic model and contractual terms without treating advertised rates, security claims, internal reserve claims, business-investment performance or repayment claims as independently verified realized performance, guarantees, reserves or solvency evidence.",
+    "official_url_original": "https://www.pbr-portobelloroad.com/",
+    "official_domain_original": "pbr-portobelloroad.com",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://www.pbr-portobelloroad.com/",
+    "confidence": "high",
+    "last_verified_at": "2026-08-15",
+    "uncertainty_notes": "The current public site describes a third-anniversary campaign, but the reviewed first-party sources do not establish a sufficiently reliable exact original launch date, so launch_date remains null. Advertised rates, campaign terms, asset support and lock/return procedures can change. Operational separation language in the Terms is not treated as legal trust protection; the same Terms state that customers become general creditors in insolvency.",
+    "notes": "Promoted in Phase 10 from duplicate-clear candidate cya_candidate_000128 after candidate-only PR #226 passed the hardened full-corpus scanner with exactly one draft-eligible candidate."
+  }
+]
