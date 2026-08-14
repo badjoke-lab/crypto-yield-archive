@@ -1,0 +1,11 @@
+[
+  {
+    "platform_id": "cya_plat_000105",
+    "terms_status": "platform_owned",
+    "asset_ownership_interpretation": "The first-party agreement is explicitly structured as an individual crypto consumption loan to ミライジング株式会社. The customer sends the asset to a company-designated wallet; the company is the borrower and owes return of the same type and quantity plus contractual interest after the agreed term. The terms state that the borrowed crypto is not subject to statutory segregated management under the cited exchange-business framework and that the transaction is unsecured. CYA therefore treats the contractual asset position as platform-owned / counterparty-exposure rather than segregated customer custody during the loan term.",
+    "affected_product": "Smart Crypto Lending",
+    "source_evidence_id": "cya_src_b64_0002",
+    "notes": "The contract is not a deposit and is not deposit-insured. Published terms define 1/3/6/12-month lending periods, permit rate changes, and state that after maturity withdrawal applications are normally returned within seven business days. They also enumerate circumstances in which withdrawal can be delayed or refused, including market stress, concentrated return requests, legal constraints and operational conditions. The terms expressly warn that principal and interest may not be returned if the company fails. Current marketing rates and cold-wallet/security statements are not independent guarantees.",
+    "confidence": "high"
+  }
+]
