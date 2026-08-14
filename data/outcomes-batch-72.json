@@ -1,0 +1,18 @@
+[
+  {
+    "platform_id": "cya_plat_000113",
+    "outcome_status": "not_applicable",
+    "estimated_recovery_rate": "not_applicable",
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": "LINE Xenesis announced a staged LINE BITMAX shutdown. The official shutdown site states that lending applications were stopped, existing lending contracts would be ended sequentially, and remaining customer balances after service end would be handled under the announced return/conversion procedure.",
+    "claim_process_url": "https://www.bitmax.me/endofservice_info",
+    "affected_products": ["LINE BITMAX 暗号資産貸出サービス"],
+    "claim_classes": [],
+    "jurisdictions": ["Japan"],
+    "as_of": "2026-08-15",
+    "last_verified_at": "2026-08-15",
+    "notes": "This was an orderly service shutdown rather than a CYA-established insolvency or claims-loss event. The published service-end return procedure is not evidence that every historical lending contract achieved its advertised return or that every customer outcome has been independently verified.",
+    "confidence": "high"
+  }
+]
