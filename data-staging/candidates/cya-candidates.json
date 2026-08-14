@@ -81,22 +81,5 @@
     "notes": "Phase 10 identity review resolves the watchlist ORCA item to the live iOrca registration surface under dapp.ocagent.io. The official registration page requires username, affiliate code, wallet connection and acceptance of Terms of Service, Privacy Policy and Risk Disclosure, establishing an active financial-product surface but not the underlying economic contract. Current Japanese discovery/referral material consistently describes BNB-chain USDT deposits, minimum participation around 100 USDT, 10/90/180/360-day packages, principal lockups, daily USDT rewards sent to a wallet, check-in-based reward increases, referral ranks and a temporary doubled-deposit campaign; it attributes yield to AI agents exploiting price/probability differences across prediction markets. Those mechanics and rates remain discovery claims because the first-party Terms/Risk pages could not be retrieved reliably in this pass and no stable first-party documentation for package rates, custody, asset reuse, redemption, source of yield or operator identity was found. A claimed relationship to Nodepay is likewise unverified and must not be canonicalized. Resolve legal operator/jurisdiction, first-party Terms and Risk Disclosure, deposit/custody/asset-use treatment, package lock/redemption rules, reward calculation, withdrawal rights, launch chronology, source-of-yield claims and any campaign liabilities before add_now. Do not confuse this candidate with Orca's Solana AMM/xORCA staking product and do not convert advertised daily rates or campaign credits into verified realized return or principal repayment.",
     "first_seen_at": "2026-08-12",
     "last_reviewed_at": "2026-08-13"
-  },
-  {
-    "candidate_id": "cya_candidate_000126",
-    "canonical_name": "GMO Coin Lending Basic",
-    "aliases": ["GMOコイン 貸暗号資産ベーシック", "貸暗号資産ベーシック", "GMO Coin Crypto Lending Basic"],
-    "domain": "coin.z.com",
-    "country_or_origin": "Japan",
-    "platform_type_guess": "centralized_lending",
-    "status_guess": "active",
-    "major_event": "Active GMO Coin fixed-term crypto lending product in which customers lend crypto assets to GMO Coin for lending fees; current first-party materials expressly separate the lending transaction from the exchange business and disclose unsecured / non-segregated borrower-counterparty risk",
-    "primary_sources": ["https://coin.z.com/jp/corp/product/info/lending/"],
-    "secondary_sources": [],
-    "duplicate_check": {"checked_at": "2026-08-14", "matched_platform_ids": [], "notes": "Exact repository searches for GMOコイン 貸暗号資産, coin.z.com/jp/corp/product/info/lending and cya_candidate_000126 returned no indexed canonical or staging identity match before allocation. Hardened full-corpus scanning on the exact PR head remains authoritative."},
-    "decision": "add_now",
-    "notes": "Current first-party product/risk materials establish a live CYA-scope centralized lending contract. GMO Coin describes 貸暗号資産ベーシック as customers lending crypto assets to the company in exchange for lending fees under defined courses. Current 2026 first-party recruitment notices confirm continued intake for selected assets and terms subject to capacity. The product disclosure states that the lending service is not a deposit or deposit-insurance product, characterizes the transaction as a crypto-asset consumption loan, warns that lent assets may not be returned if GMO Coin fails, states that the lending transaction is not a crypto-asset exchange transaction and that borrowed assets are not subject to the exchange-business segregated-management requirements, and restricts use/sale/withdrawal of assets during the lending period. Published rates, capacity, course availability and operational/risk language remain issuer terms/claims. Scope is Basic only; 貸暗号資産プレミアム has additional derivative/yen-conversion mechanics and must not be silently merged into this candidate.",
-    "first_seen_at": "2026-08-14",
-    "last_reviewed_at": "2026-08-14"
   }
 ]
