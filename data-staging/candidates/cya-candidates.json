@@ -137,32 +137,5 @@
     "notes": "Phase 10 identity review resolves the watchlist ORCA item to the live iOrca registration surface under dapp.ocagent.io. The official registration page requires username, affiliate code, wallet connection and acceptance of Terms of Service, Privacy Policy and Risk Disclosure, establishing an active financial-product surface but not the underlying economic contract. Current Japanese discovery/referral material consistently describes BNB-chain USDT deposits, minimum participation around 100 USDT, 10/90/180/360-day packages, principal lockups, daily USDT rewards sent to a wallet, check-in-based reward increases, referral ranks and a temporary doubled-deposit campaign; it attributes yield to AI agents exploiting price/probability differences across prediction markets. Those mechanics and rates remain discovery claims because the first-party Terms/Risk pages could not be retrieved reliably in this pass and no stable first-party documentation for package rates, custody, asset reuse, redemption, source of yield or operator identity was found. A claimed relationship to Nodepay is likewise unverified and must not be canonicalized. Resolve legal operator/jurisdiction, first-party Terms and Risk Disclosure, deposit/custody/asset-use treatment, package lock/redemption rules, reward calculation, withdrawal rights, launch chronology, source-of-yield claims and any campaign liabilities before add_now. Do not confuse this candidate with Orca's Solana AMM/xORCA staking product and do not convert advertised daily rates or campaign credits into verified realized return or principal repayment.",
     "first_seen_at": "2026-08-12",
     "last_reviewed_at": "2026-08-13"
-  },
-  {
-    "candidate_id": "cya_candidate_000123",
-    "canonical_name": "BitLending",
-    "aliases": ["Bit Lending", "ビットレンディング"],
-    "domain": "bitlending.jp",
-    "country_or_origin": "Japan",
-    "platform_type_guess": "cefi_lending",
-    "status_guess": "active",
-    "major_event": "Active Japanese centralized crypto lending service operated by J-CAM in which customers lend crypto to the company and receive lending fees / interest under individual crypto consumption-loan contracts",
-    "primary_sources": [
-      "https://bitlending.jp/",
-      "https://bitlending.jp/terms/",
-      "https://bitlending.jp/introduction/",
-      "https://bitlending.jp/customer-support/company-profile/",
-      "https://bitlending.jp/service-guide/how-to-lend/"
-    ],
-    "secondary_sources": [],
-    "duplicate_check": {
-      "checked_at": "2026-08-14",
-      "matched_platform_ids": [],
-      "notes": "Exact CYA repository searches for BitLending and bitlending.jp returned no indexed canonical or staging identity match before allocation. Exact search found no prior use of cya_candidate_000123. The hardened full-corpus scanner on the exact PR head remains authoritative."
-    },
-    "decision": "add_now",
-    "notes": "First-party BitLending materials identify 株式会社J-CAM as operator and explicitly describe a crypto consumption-loan structure: customers lend crypto to BitLending, which returns the same amount/equivalent asset plus lending fees or interest. Current first-party surfaces document ongoing BTC, ETH, XRP, SOL, USDT and USDC lending, monthly fee crediting, return mechanics, minimum quantities and issuer-advertised APYs. Current terms govern individual lending contracts and allow lending rates to be set or changed under the agreement. The exact original launch date has not yet been established from the reviewed first-party material and must not be invented. Current APYs, security controls, portfolio/investment descriptions and regulatory-readiness statements remain issuer claims and must not be treated as independently verified realized return, reserve proof, principal guarantee, solvency evidence or regulatory approval.",
-    "first_seen_at": "2026-08-14",
-    "last_reviewed_at": "2026-08-14"
   }
 ]

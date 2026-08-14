@@ -1,0 +1,10 @@
+[
+  {
+    "platform_id": "cya_plat_000106",
+    "product_type": "centralized_yield",
+    "product_name": "BitLending",
+    "custody_model": "First-party materials describe an individual crypto lending / consumption-loan contract with 株式会社J-CAM. A contract is formed when the customer sends an eligible crypto asset to the company-designated wallet and required conditions are met; the company then owes same-type/same-quantity crypto on return. This is counterparty lending exposure rather than a claim that the customer's original coins remain segregated. Public security and wallet-control descriptions are issuer claims and are not treated as bankruptcy-remoteness or reserve proof.",
+    "yield_source": "The current BitLending website says customer crypto is deployed through the company's crypto investment operations and external investment relationships / portfolio construction, with resulting revenue shared through lending fees. CYA records those asset-deployment descriptions only as issuer claims and does not independently verify the investment counterparties, portfolio composition or realized returns.",
+    "risk_notes": "Current terms generally prevent return requests during the first 30 days of an individual contract. After a valid request, the company states that same-type/same-quantity crypto is normally returned within seven business days, while the terms permit postponement when concentrated return requests or similar conditions make timely return difficult and permit rejection in specified compliance/operational cases. Lending-fee rates and lending conditions can change. Current APYs and security/risk-management statements are not principal guarantees, reserve proof or solvency evidence."
+  }
+]

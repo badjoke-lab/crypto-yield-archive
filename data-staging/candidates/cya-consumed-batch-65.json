@@ -1,0 +1,16 @@
+[
+  {
+    "candidate_id": "cya_candidate_000123",
+    "canonical_name": "BitLending",
+    "domain": "bitlending.jp",
+    "decision": "already_recorded",
+    "duplicate_check": {
+      "checked_at": "2026-08-14",
+      "matched_platform_ids": ["cya_plat_000106"],
+      "notes": "Candidate-only PR #212 passed the hardened full-corpus scanner with six active candidates and exactly one draft-eligible candidate before canonical promotion."
+    },
+    "notes": "Promoted in Phase 10 canonical batch 65 as cya_plat_000106 using first-party J-CAM / BitLending company, terms, introduction and lending-guide evidence. The exact launch day remains unresolved and is not invented. Current APYs, security controls, investment/portfolio descriptions and regulatory-readiness statements remain issuer claims rather than independently verified realized return, reserve proof, principal guarantee, solvency evidence or regulatory approval.",
+    "first_seen_at": "2026-08-14",
+    "last_reviewed_at": "2026-08-14"
+  }
+]

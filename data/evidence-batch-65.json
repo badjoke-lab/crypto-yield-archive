@@ -1,0 +1,62 @@
+[
+  {
+    "id": "cya_src_b65_0001",
+    "platform_id": "cya_plat_000106",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "運営会社情報｜暗号資産レンディングのビットレンディング",
+    "url": "https://bitlending.jp/customer-support/company-profile/",
+    "publisher": "BitLending / 株式会社J-CAM",
+    "published_at": null,
+    "archived_url": "https://web.archive.org/web/*/https://bitlending.jp/customer-support/company-profile/",
+    "accessed_at": "2026-08-14",
+    "reliability": "high",
+    "claim_scope": "entity",
+    "notes": "First-party company profile identifies 株式会社J-CAM as the operator and lists the crypto lending platform BitLending as a company business. It supports identity/operator attribution, not an exact service launch date."
+  },
+  {
+    "id": "cya_src_b65_0002",
+    "platform_id": "cya_plat_000106",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "利用規約",
+    "url": "https://bitlending.jp/terms/",
+    "publisher": "BitLending / 株式会社J-CAM",
+    "published_at": null,
+    "archived_url": "https://web.archive.org/web/*/https://bitlending.jp/terms/",
+    "accessed_at": "2026-08-14",
+    "reliability": "high",
+    "claim_scope": "terms_risk",
+    "notes": "Current first-party terms state that an individual contract forms after an eligible crypto asset is sent to the company-designated wallet and required conditions are met. They allow the company to set lending-fee rates and change lending conditions for reasonable reasons, impose a 30-day initial period before return can be requested, normally require same-type/same-quantity return within seven business days after a valid request, and permit return timing to be postponed when concentrated requests or similar conditions make timely return difficult."
+  },
+  {
+    "id": "cya_src_b65_0003",
+    "platform_id": "cya_plat_000106",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "はじめての暗号資産レンディング｜ビットレンディング",
+    "url": "https://bitlending.jp/introduction/",
+    "publisher": "BitLending",
+    "published_at": null,
+    "archived_url": "https://web.archive.org/web/*/https://bitlending.jp/introduction/",
+    "accessed_at": "2026-08-14",
+    "reliability": "high",
+    "claim_scope": "entity",
+    "notes": "First-party introduction describes the product as a consumption-loan transaction: BitLending borrows customer crypto for a period and returns the same quantity/equivalent asset plus interest. Current headline rates and security language on this page are issuer claims and are not independently verified performance or protection guarantees."
+  },
+  {
+    "id": "cya_src_b65_0004",
+    "platform_id": "cya_plat_000106",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "貸出について",
+    "url": "https://bitlending.jp/service-guide/how-to-lend/",
+    "publisher": "BitLending",
+    "published_at": null,
+    "archived_url": "https://web.archive.org/web/*/https://bitlending.jp/service-guide/how-to-lend/",
+    "accessed_at": "2026-08-14",
+    "reliability": "high",
+    "claim_scope": "entity",
+    "notes": "Current first-party lending guide documents active BTC, ETH, XRP, SOL, USDT and USDC lending, minimum quantities, lending-fee calculation and monthly crediting. Current published rates are issuer-advertised terms and not verified realized customer returns."
+  }
+]
