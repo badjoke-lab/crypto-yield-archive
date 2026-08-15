@@ -1,0 +1,16 @@
+[
+  {
+    "id": "cya_ev_000353",
+    "platform_id": "cya_plat_000025",
+    "event_type": "lawsuit",
+    "event_date": "2023-02-18",
+    "title": "Stablegains customers file U.S. securities-related lawsuit",
+    "description": "Alec and Artin Ohanian filed a federal lawsuit against Stablegains Inc. in the Central District of California alleging that the platform misled customers about its UST and Anchor exposure and asserting securities-related claims.",
+    "confidence": "high",
+    "impact_level": "high",
+    "event_status_effect": "none",
+    "source_count": 2,
+    "sort_order": 4,
+    "notes": "This records the filing of allegations, not an adjudicated finding, settlement, or customer-recovery result."
+  }
+]
