@@ -1,0 +1,32 @@
+[
+  {
+    "id": "cya_src_b75_0001",
+    "platform_id": "cya_plat_000018",
+    "event_id": "cya_ev_000075",
+    "source_type": "news_article",
+    "title": "P2P bitcoin lending service BTCjam shuts down",
+    "url": "https://www.cryptoninjas.net/2017/05/26/p2p-bitcoin-lending-service-btcjam-shuts/",
+    "publisher": "CryptoNinjas",
+    "published_at": "2017-05-26",
+    "archived_url": null,
+    "accessed_at": "2026-08-16",
+    "reliability": "medium",
+    "claim_scope": "customer_outcome",
+    "notes": "Contemporaneous report reproducing BTCJam's closure notice and FAQ: no new loans, active borrowers could keep repaying, repayment functionality would remain until loans were fully repaid or defaulted, and stored BTC could be withdrawn until 2018-07-01. This supports a controlled wind-down model. It does not prove that every borrower repaid, every lender recovered fully, or every stored balance was withdrawn."
+  },
+  {
+    "id": "cya_src_b75_0002",
+    "platform_id": "cya_plat_000018",
+    "event_id": "cya_ev_000075",
+    "source_type": "news_article",
+    "title": "Bitcoin lending platform BTCJam announces closure",
+    "url": "https://www.econotimes.com/Bitcoin-lending-platform-BTCJam-announces-closure-726756",
+    "publisher": "EconoTimes",
+    "published_at": "2017-05-26",
+    "archived_url": null,
+    "accessed_at": "2026-08-16",
+    "reliability": "medium",
+    "claim_scope": "customer_outcome",
+    "notes": "Independent contemporaneous reproduction of BTCJam's closure statement confirms the 2018-07-01 stored-BTC withdrawal deadline and continued repayment functionality until active loans were repaid or defaulted. Loan-level defaults remain borrower outcomes rather than evidence of platform insolvency."
+  }
+]
