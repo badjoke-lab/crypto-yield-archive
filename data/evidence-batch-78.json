@@ -1,0 +1,32 @@
+[
+  {
+    "id": "cya_src_b78_0001",
+    "platform_id": "cya_plat_000034",
+    "event_id": "cya_ev_000354",
+    "source_type": "news_article",
+    "title": "Crypto investors cry foul as Finblox converts deposits to tokens to offset 3AC losses",
+    "url": "https://www.dlnews.com/articles/deals/crypto-lender-finblox-freezes-deposits-and-issues-fbx-token/",
+    "publisher": "DL News",
+    "published_at": "2023-05-31",
+    "archived_url": null,
+    "accessed_at": "2026-08-16",
+    "reliability": "medium",
+    "claim_scope": "customer_outcome",
+    "notes": "Detailed contemporaneous reporting documents the FBX debt-conversion process, several customers who said they recovered deposits in full, and CEO Peter Hoang's statement that Finblox had run a test buyback scheme for some users. It also documents customers reporting unresolved losses. CYA therefore treats this as evidence of partial/selective recovery, not universal repayment."
+  },
+  {
+    "id": "cya_src_b78_0002",
+    "platform_id": "cya_plat_000034",
+    "event_id": "cya_ev_000354",
+    "source_type": "news_article",
+    "title": "Finblox shutters three years after losing millions of dollars worth of customer deposits",
+    "url": "https://www.dlnews.com/articles/web3/finblox-shuts-down-three-years-after-losing-millions-of-dollars-worth-of-customer-deposits/",
+    "publisher": "DL News",
+    "published_at": "2025-07-09",
+    "archived_url": null,
+    "accessed_at": "2026-08-16",
+    "reliability": "medium",
+    "claim_scope": "customer_outcome",
+    "notes": "Later reporting at platform closure confirms that customer funds had been converted into FBX and that customers continued to report unrecovered losses. This supports a mixed/partial outcome and argues against treating earlier selective recoveries as universal completion."
+  }
+]
