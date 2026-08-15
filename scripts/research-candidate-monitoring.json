@@ -1,0 +1,18 @@
+[
+  {
+    "candidate_id": "cya_candidate_000113",
+    "name": "Zenta System",
+    "url": "https://zenta-system.com/",
+    "allowed_hosts": ["zenta-system.com", "www.zenta-system.com"],
+    "status": "needs_research",
+    "canonical_record": false
+  },
+  {
+    "candidate_id": "cya_candidate_000116",
+    "name": "iOrca / OC Agent",
+    "url": "https://dapp.ocagent.io/",
+    "allowed_hosts": ["dapp.ocagent.io", "ocagent.io", "www.ocagent.io"],
+    "status": "needs_research",
+    "canonical_record": false
+  }
+]
