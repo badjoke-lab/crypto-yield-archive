@@ -1,0 +1,16 @@
+[
+  {
+    "id": "cya_ev_000351",
+    "platform_id": "cya_plat_000017",
+    "event_type": "customer_repayment_started",
+    "event_date": "2023-01-12",
+    "title": "Federal court orders BitConnect restitution distribution",
+    "description": "A U.S. federal court ordered $17,646,801 in restitution to be distributed to approximately 800 identified BitConnect victims in more than 40 countries through the Glenn Arcaro criminal case.",
+    "confidence": "high",
+    "impact_level": "high",
+    "event_status_effect": "none",
+    "source_count": 2,
+    "sort_order": 5,
+    "notes": "This is an enforcement-linked victim recovery milestone, not a normal BitConnect repayment program and not evidence that all BitConnect victims recovered or that a platform-wide recovery percentage can be calculated."
+  }
+]
