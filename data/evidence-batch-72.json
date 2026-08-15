@@ -1,0 +1,62 @@
+[
+  {
+    "id": "cya_src_b72_0001",
+    "platform_id": "cya_plat_000113",
+    "event_id": "cya_ev_000349",
+    "source_type": "official_statement",
+    "title": "BITMAX 暗号資産貸出サービス開始",
+    "url": "https://prtimes.jp/main/html/rd/p/000002592.000001594.html",
+    "publisher": "LVC Corporation / LINE",
+    "published_at": "2020-10-07",
+    "archived_url": "https://web.archive.org/web/*/https://prtimes.jp/main/html/rd/p/000002592.000001594.html",
+    "accessed_at": "2026-08-15",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "Issuer-distributed launch material for BITMAX crypto-asset lending. Campaign/lending rates are issuer terms, not independently verified realized returns."
+  },
+  {
+    "id": "cya_src_b72_0002",
+    "platform_id": "cya_plat_000113",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "LINE BITMAX 暗号資産貸出サービス help",
+    "url": "https://help2.line.me/BitMax/?contentId=20018753",
+    "publisher": "LINE BITMAX",
+    "published_at": null,
+    "archived_url": "https://web.archive.org/web/*/https://help2.line.me/BitMax/?contentId=20018753",
+    "accessed_at": "2026-08-15",
+    "reliability": "high",
+    "claim_scope": "terms_risk",
+    "notes": "First-party product help documents variable-period and fixed-period lending mechanics. Time-sensitive rates and limits are not generalized beyond the documented product terms."
+  },
+  {
+    "id": "cya_src_b72_0003",
+    "platform_id": "cya_plat_000113",
+    "event_id": "cya_ev_000350",
+    "source_type": "official_statement",
+    "title": "LINE BITMAX サービス終了のお知らせ",
+    "url": "https://www.lycorp.co.jp/ja/news/release/020165/",
+    "publisher": "LY Corporation / LINE Xenesis株式会社",
+    "published_at": "2026-03-03",
+    "archived_url": "https://web.archive.org/web/*/https://www.lycorp.co.jp/ja/news/release/020165/",
+    "accessed_at": "2026-08-15",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "First-party authority for the planned 2026-06-01 end of the overall LINE BITMAX service."
+  },
+  {
+    "id": "cya_src_b72_0004",
+    "platform_id": "cya_plat_000113",
+    "event_id": "cya_ev_000350",
+    "source_type": "official_statement",
+    "title": "LINE BITMAX サービス終了案内",
+    "url": "https://www.bitmax.me/endofservice_info",
+    "publisher": "LINE Xenesis株式会社",
+    "published_at": null,
+    "archived_url": "https://web.archive.org/web/*/https://www.bitmax.me/endofservice_info",
+    "accessed_at": "2026-08-15",
+    "reliability": "high",
+    "claim_scope": "status",
+    "notes": "Official shutdown plan states lending applications were stopped and existing lending contracts would be ended sequentially. Remaining-balance conversion and return procedures are service-end mechanics, not proof of universal historical lending repayment."
+  }
+]
