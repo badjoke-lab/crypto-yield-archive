@@ -5,7 +5,7 @@
     "estimated_recovery_rate": "Not classified. Reviewed sources establish the August 2022 suspension of BlueBenx Finance withdrawals and later CVM enforcement, but they do not establish a uniform customer repayment, recovery percentage or completed claim process.",
     "repayment_started_at": null,
     "repayment_completed_at": null,
-    "repayment_method": "No verified universal repayment or claim process identified in the reviewed sources",
+    "repayment_method": "No verified universal repayment or claim process identified in the reviewed authoritative sources",
     "claim_process_url": null,
     "affected_products": [
       "CriptoSavings",
@@ -21,9 +21,9 @@
     "jurisdictions": [
       "Brazil"
     ],
-    "as_of": "2026-08-09",
-    "last_verified_at": "2026-08-09",
-    "notes": "The CVM enforcement record is not a customer-recovery record. CYA does not infer that the later administrative sanctions created, completed or replaced a customer repayment process. The platform's claimed 2022 hack is not used to calculate losses or recovery.",
+    "as_of": "2026-08-16",
+    "last_verified_at": "2026-08-16",
+    "notes": "Stage 2 re-review checked the primary CVM record through the final 2025 administrative sanctions and additional CVM settlement-process material. Those records establish regulatory findings and sanctions but do not establish insolvency or liquidation, a creditor claim process, a completed customer distribution, or a uniform recovery percentage. A 2024 CVM settlement-proposal review noted the absence of a proposal to return alleged benefits or compensate alleged diffuse market damages, but that is not evidence that individual customers received no recovery. `unknown` is therefore retained fail-close. The platform's claimed 2022 hack is not used to calculate losses or recovery, and absence of a public repayment record located in this review is not treated as proof of no recovery.",
     "confidence": "high"
   },
   {

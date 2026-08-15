@@ -1,0 +1,17 @@
+[
+  {
+    "id": "cya_src_b74_0001",
+    "platform_id": "cya_plat_000057",
+    "event_id": null,
+    "source_type": "regulatory_notice",
+    "title": "CVM commitment-proposal review did not establish customer compensation",
+    "url": "https://www.gov.br/cvm/pt-br/assuntos/noticias/2024/cvm-aceita-termo-de-compromisso-com-jupter-participacoes-s-a-e-administradores",
+    "publisher": "Comissão de Valores Mobiliários",
+    "published_at": "2024-01-30",
+    "archived_url": null,
+    "accessed_at": "2026-08-16",
+    "reliability": "high",
+    "claim_scope": "customer_outcome",
+    "notes": "Primary CVM material concerning a proposed settlement by two BlueBenx-related respondents states that the proposal did not include correction of the alleged irregularities through return of the benefit obtained or compensation for alleged diffuse market damages. This is regulatory-process evidence only. It does not establish that individual BlueBenx customers received no recovery, and it is not treated as a creditor or repayment proceeding."
+  }
+]
