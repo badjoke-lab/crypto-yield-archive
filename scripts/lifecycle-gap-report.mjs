@@ -60,7 +60,7 @@ const stagePatterns = {
     /claim/, /creditor/, /proof of claim/, /bar date/, /customer claim/, /distribution plan/, /reorganization plan/,
   ],
   recovery: [
-    /repay/, /repayment/, /recover/, /distribution/, /payout/, /return of assets/, /settlement/, /redemption completed/,
+    /repay/, /repayment/, /recover/, /distribution/, /payout/, /return of assets/, /returned to users/, /settlement/, /redemption completed/,
   ],
 };
 
