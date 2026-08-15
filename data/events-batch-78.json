@@ -1,0 +1,16 @@
+[
+  {
+    "id": "cya_ev_000354",
+    "platform_id": "cya_plat_000034",
+    "event_type": "customer_repayment_started",
+    "event_date": "2023-02-01",
+    "title": "Finblox uses FBX conversion and selective buybacks for affected balances",
+    "description": "Finblox used a recovery approach that included converting affected customer debt into FBX tokens and a buyback programme; contemporaneous reporting documented several customers who received their deposited cash back while others continued to report unresolved losses.",
+    "confidence": "medium",
+    "impact_level": "high",
+    "event_status_effect": "none",
+    "source_count": 2,
+    "sort_order": 4,
+    "notes": "The exact February 2023 start day is not established, so the event date is month-level represented as 2023-02-01. Selective full recoveries do not establish universal repayment, and FBX conversion is not treated as cash repayment at par."
+  }
+]
