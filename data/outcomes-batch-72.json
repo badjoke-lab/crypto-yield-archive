@@ -1,0 +1,18 @@
+[
+  {
+    "platform_id": "cya_plat_000113",
+    "outcome_status": "not_applicable",
+    "estimated_recovery_rate": "not_applicable",
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": "Not applicable as a failure-recovery process. LINE BITMAX ended its service through an announced shutdown process; the official shutdown plan describes sequential termination of lending contracts and a conversion-and-return procedure for remaining customer crypto assets and yen balances.",
+    "claim_process_url": null,
+    "affected_products": ["LINE BITMAX 暗号資産貸出サービス"],
+    "claim_classes": [],
+    "jurisdictions": ["Japan"],
+    "as_of": "2026-08-15",
+    "last_verified_at": "2026-08-15",
+    "notes": "The service-end asset-return procedure is not evidence of universal historical lending performance, a recovery percentage, or a completed claims process. CYA does not invent a common final date for all outstanding lending contracts.",
+    "confidence": "high"
+  }
+]

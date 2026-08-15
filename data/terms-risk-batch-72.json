@@ -1,0 +1,11 @@
+[
+  {
+    "platform_id": "cya_plat_000113",
+    "terms_status": "platform_owned",
+    "asset_ownership_interpretation": "The reviewed materials describe customers lending crypto assets to BITMAX under a lending contract in exchange for contractual lending fees. CYA therefore represents borrower/counterparty economic exposure during the contract and does not infer segregated custody, insurance or guaranteed principal from the exchange service. Exact historical legal terms may vary across lending courses and periods.",
+    "affected_product": "LINE BITMAX 暗号資産貸出サービス",
+    "source_evidence_id": "cya_src_b72_0002",
+    "notes": "Fixed-period lending generally could not be cancelled during the term under the reviewed first-party product mechanics. Published rates and campaigns remain issuer terms, not verified realized returns. The shutdown process ended contracts sequentially rather than establishing one universal contract end date.",
+    "confidence": "high"
+  }
+]

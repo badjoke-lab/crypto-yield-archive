@@ -1,0 +1,10 @@
+[
+  {
+    "platform_id": "cya_plat_000113",
+    "product_type": "centralized_yield",
+    "product_name": "LINE BITMAX 暗号資産貸出サービス",
+    "custody_model": "The reviewed first-party materials describe a lending arrangement in which users lend crypto assets to BITMAX and receive contractual lending fees. CYA records borrower/counterparty exposure during the lending contract and does not infer exchange-custody protection, insurance or guaranteed principal from the surrounding exchange service.",
+    "yield_source": "The reviewed public materials establish contractual lending fees but do not establish an independently verified economic source for every lending-fee payment. Launch campaigns and later published lending rates remain issuer product terms rather than verified realized returns.",
+    "risk_notes": "Later first-party help material documents variable-period and fixed-period courses. Fixed-period lending generally could not be cancelled during the term under the published mechanics. The LINE BITMAX shutdown plan states lending applications were stopped and existing contracts would be ended sequentially; CYA does not invent one universal lending-contract end date or treat shutdown asset-return procedures as proof of universal historical lending performance."
+  }
+]
