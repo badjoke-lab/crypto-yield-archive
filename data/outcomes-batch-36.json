@@ -10,9 +10,9 @@
     "affected_products": ["FTX App Earn", "FTX Earn program balances reflected in customer account histories"],
     "claim_classes": ["Allowed customer entitlement claims", "Allowed convenience claims where applicable", "Other allowed FTX customer claims according to the relevant debtor entity and Plan class"],
     "jurisdictions": ["FTX.com and supported FTX debtor jurisdictions", "United States where applicable", "Other eligible jurisdictions under the confirmed Plan"],
-    "as_of": "2026-08-09",
-    "last_verified_at": "2026-08-09",
-    "notes": "FTX support confirms that account history includes amounts earned through the Earn program. CYA does not treat published Dotcom, U.S., Convenience or other claim-class distribution percentages as a product-specific FTX Earn recovery rate. Some claims remain disputed or ineligible for distribution pending reconciliation.",
+    "as_of": "2026-08-16",
+    "last_verified_at": "2026-08-16",
+    "notes": "Stage 2 review confirms that FTX support continues to include Earn-program amounts in petition-date account histories and to treat pending withdrawals through bankruptcy claims where applicable. CYA does not treat published Dotcom, U.S., Convenience or other claim-class distribution percentages as a product-specific FTX Earn recovery rate. Some claims remain disputed or ineligible for distribution pending reconciliation, and affiliate/entity differences remain explicit.",
     "confidence": "high"
   },
   {
