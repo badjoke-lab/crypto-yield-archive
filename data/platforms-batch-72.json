@@ -1,0 +1,24 @@
+[
+  {
+    "id": "cya_plat_000113",
+    "slug": "line-bitmax-lending",
+    "canonical_name": "LINE BITMAX 暗号資産貸出サービス",
+    "aliases": ["LINE BITMAX Lending", "BITMAX 暗号資産貸出サービス", "BITMAX Lending", "LINE BITMAX 貸出"],
+    "type": "cefi_lending",
+    "status": "operations_ended",
+    "failure_reason": null,
+    "launch_date": "2020-10-07",
+    "end_date": "2026-06-01",
+    "country_or_origin": "Japan",
+    "summary": "Historical crypto-asset lending service launched by LVC Corporation for BITMAX and later operated within LINE BITMAX under LINE Xenesis株式会社. The overall LINE BITMAX service ended on 2026-06-01.",
+    "what_happened": "LVC Corporation announced BITMAX crypto-asset lending with service start on 2020-10-07. Later first-party help material documents variable-period and fixed-period lending courses, including fixed-term contracts that generally could not be cancelled during the term and returned principal plus a contractual lending fee at maturity under the published mechanics. LINE BITMAX later operated under LINE Xenesis株式会社. On 2026-03-03 LINE Xenesis / LY Corporation announced that the entire LINE BITMAX service would end on 2026-06-01. The shutdown plan states that lending applications were stopped and existing lending contracts would be ended sequentially. The platform shutdown date is not treated as the exact end date of every individual lending contract. Remaining customer crypto assets after service end were subject to the published conversion-and-return procedure; that procedure is not treated as proof of universal historical lending performance.",
+    "official_url_original": "https://www.bitmax.me/endofservice_info",
+    "official_domain_original": "bitmax.me",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://www.bitmax.me/endofservice_info",
+    "confidence": "high",
+    "last_verified_at": "2026-08-15",
+    "uncertainty_notes": "The exact final date of every outstanding lending contract is not established as a single date. Launch and later published lending rates are issuer product terms, not independently verified realized returns. Preserve the launch-era LVC Corporation and shutdown-era LINE Xenesis株式会社 operator transition.",
+    "notes": "Promoted in Phase 10 from duplicate-clear candidate cya_candidate_000131 after candidate-only PR #235 passed the hardened exact-head scanner against the 112-platform canonical corpus."
+  }
+]
