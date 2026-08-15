@@ -69,9 +69,9 @@
     "publisher": "FTX",
     "published_at": "2026-07-24",
     "archived_url": null,
-    "accessed_at": "2026-08-09",
+    "accessed_at": "2026-08-16",
     "reliability": "high",
     "claim_scope": "customer_outcome",
-    "notes": "Current FTX support describes ongoing claim reconciliation and July 2026 distribution eligibility. Distribution status depends on allowed claim status, jurisdiction, KYC, tax and provider requirements; these conditions prevent CYA from assigning one universal FTX Earn recovery result."
+    "notes": "Current FTX support describes ongoing claim reconciliation and distribution eligibility. It also states that FTX EU customers with pending cryptocurrency withdrawals on 11 November 2022 should have filed claims in the U.S. bankruptcy proceedings for those pending withdrawals. This is direct evidence that withdrawal impairment existed by the petition-date context for at least an identified FTX affiliate/customer cohort; CYA does not infer one exact global withdrawal-halt start date or one contracting entity for every FTX Earn user. Distribution status remains claim-class and eligibility dependent, so no universal FTX Earn recovery result is assigned."
   }
 ]
