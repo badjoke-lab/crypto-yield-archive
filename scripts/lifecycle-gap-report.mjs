@@ -20,11 +20,9 @@ const platforms = loadGroup('platforms');
 const events = loadGroup('events');
 const outcomes = loadGroup('outcomes');
 const evidence = loadGroup('evidence');
-const termsRisk = loadGroup('terms-risk');
 
 const eventsByPlatform = new Map();
 const evidenceByPlatform = new Map();
-const termsByPlatform = new Map();
 const outcomeByPlatform = new Map(outcomes.map((row) => [row.platform_id, row]));
 
 for (const row of events) {
@@ -36,11 +34,6 @@ for (const row of evidence) {
   const list = evidenceByPlatform.get(row.platform_id) ?? [];
   list.push(row);
   evidenceByPlatform.set(row.platform_id, list);
-}
-for (const row of termsRisk) {
-  const list = termsByPlatform.get(row.platform_id) ?? [];
-  list.push(row);
-  termsByPlatform.set(row.platform_id, list);
 }
 
 const norm = (value) => String(value ?? '')
@@ -84,15 +77,9 @@ function evidenceHasStage(rows, stage) {
 
 const distressStatuses = new Set(['withdrawals_suspended', 'restructuring', 'bankrupt']);
 const historicalStatuses = new Set(['operations_ended', 'withdrawals_suspended', 'restructuring', 'bankrupt']);
-const finalOutcomeStatuses = new Set([
-  'full_repayment',
-  'partial_recovery',
-  'total_loss',
-  'service_ended_assets_returned',
-  'not_applicable',
-]);
+const finalOutcomeStatuses = new Set(['full_repayment', 'partial_repayment', 'no_recovery', 'not_applicable']);
 
-function stagePresence(platform, outcome, platformEvents, platformEvidence) {
+function stagePresence(outcome, platformEvents, platformEvidence) {
   const impairment = eventHasStage(platformEvents, 'impairment') || evidenceHasStage(platformEvidence, 'impairment');
   const insolvency = eventHasStage(platformEvents, 'insolvency') || evidenceHasStage(platformEvidence, 'insolvency');
   const claims = eventHasStage(platformEvents, 'claims') || evidenceHasStage(platformEvidence, 'claims')
@@ -107,16 +94,14 @@ function stagePresence(platform, outcome, platformEvents, platformEvidence) {
 }
 
 function expectedStages(platform, outcome) {
-  const distressed = distressStatuses.has(platform.status)
-    || ['claims_ongoing', 'partial_recovery', 'total_loss', 'full_repayment'].includes(outcome?.outcome_status);
+  const repaymentRecorded = ['full_repayment', 'partial_repayment'].includes(outcome?.outcome_status)
+    || Boolean(outcome?.repayment_started_at)
+    || Boolean(outcome?.repayment_completed_at);
   return {
-    impairment: distressed,
+    impairment: distressStatuses.has(platform.status),
     insolvency: ['restructuring', 'bankrupt'].includes(platform.status),
-    claims: ['restructuring', 'bankrupt'].includes(platform.status)
-      || ['claims_ongoing', 'partial_recovery', 'total_loss', 'full_repayment'].includes(outcome?.outcome_status),
-    recovery: ['claims_ongoing', 'partial_recovery', 'full_repayment'].includes(outcome?.outcome_status)
-      || Boolean(outcome?.repayment_started_at)
-      || Boolean(outcome?.repayment_completed_at),
+    claims: ['restructuring', 'bankrupt'].includes(platform.status),
+    recovery: repaymentRecorded,
     currentOutcome: true,
     finalOutcome: outcome?.outcome_status !== 'claims_ongoing',
   };
@@ -139,18 +124,13 @@ function priorityFor(platform, outcome, missing) {
 
 const rows = [];
 for (const platform of platforms) {
+  if (!historicalStatuses.has(platform.status)) continue;
+
   const outcome = outcomeByPlatform.get(platform.id);
   const platformEvents = eventsByPlatform.get(platform.id) ?? [];
   const platformEvidence = evidenceByPlatform.get(platform.id) ?? [];
-  const platformTerms = termsByPlatform.get(platform.id) ?? [];
 
-  if (!historicalStatuses.has(platform.status)
-      && !outcome
-      && !platformTerms.some((row) => row.terms_status === 'unknown' || row.terms_status === 'unclear')) {
-    continue;
-  }
-
-  const present = stagePresence(platform, outcome, platformEvents, platformEvidence);
+  const present = stagePresence(outcome, platformEvents, platformEvidence);
   const expected = expectedStages(platform, outcome);
   const missing = Object.entries(expected)
     .filter(([, needed]) => needed)
@@ -158,7 +138,7 @@ for (const platform of platforms) {
     .filter((stage) => !present[stage]);
 
   const unresolvedCurrent = !outcome || ['unknown', 'claims_ongoing'].includes(outcome.outcome_status);
-  if (!missing.length && !unresolvedCurrent && historicalStatuses.has(platform.status)) continue;
+  if (!missing.length && !unresolvedCurrent) continue;
 
   rows.push({
     platform_id: platform.id,
@@ -178,7 +158,8 @@ rows.sort((a, b) => b.priority - a.priority
 
 const counts = {
   platforms: platforms.length,
-  lifecycle_rows: rows.length,
+  historical_or_distress_platforms: platforms.filter((row) => historicalStatuses.has(row.status)).length,
+  lifecycle_gap_rows: rows.length,
   missing_outcome: rows.filter((row) => row.outcome_status === 'missing').length,
   unknown_outcome: rows.filter((row) => row.outcome_status === 'unknown').length,
   claims_ongoing: rows.filter((row) => row.outcome_status === 'claims_ongoing').length,
