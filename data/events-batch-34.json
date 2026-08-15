@@ -87,7 +87,7 @@
     "impact_level": "critical",
     "event_status_effect": "bankrupt",
     "status_after": "bankrupt",
-    "source_count": 1,
+    "source_count": 2,
     "confidence": "high"
   }
 ]

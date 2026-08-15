@@ -1,0 +1,32 @@
+[
+  {
+    "id": "cya_src_b73_0001",
+    "platform_id": "cya_plat_000056",
+    "event_id": "cya_ev_000351",
+    "source_type": "court_document",
+    "title": "Singapore High Court records Atom Holdings Cayman compulsory liquidation",
+    "url": "https://www.elitigation.sg/gd/s/2023_SGHC_324",
+    "publisher": "Supreme Court of Singapore",
+    "published_at": "2023-11-15",
+    "archived_url": null,
+    "accessed_at": "2026-08-16",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "Primary court source states that Atom Holdings had been placed under compulsory liquidation in the Cayman Islands as of 2023-07-11 and identifies Quantuma liquidators. This supports the parent-company lifecycle step, not a group-wide liquidation date or customer distribution outcome."
+  },
+  {
+    "id": "cya_src_b73_0002",
+    "platform_id": "cya_plat_000056",
+    "event_id": "cya_ev_000274",
+    "source_type": "official_statement",
+    "title": "Quantuma appointment as liquidator of AAX Asia and AAX Singapore",
+    "url": "https://www.quantuma.com/insights/quantumas-asia-pacific-lead-luke-furler-appointed-liquidator-singapore-entities-global",
+    "publisher": "Quantuma",
+    "published_at": "2023-10-17",
+    "archived_url": null,
+    "accessed_at": "2026-08-16",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "Insolvency practitioner's first-party appointment notice independently confirms Luke Furler's appointment by the Singapore High Court as liquidator of AAX Asia Private Limited and AAX Singapore Private Limited. The appointment establishes liquidation administration, not a completed creditor distribution or recovery percentage."
+  }
+]

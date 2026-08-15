@@ -49,9 +49,9 @@
       "Cayman Islands",
       "Other customer jurisdictions"
     ],
-    "as_of": "2026-08-05",
-    "last_verified_at": "2026-08-05",
-    "notes": "The court-appointed liquidator was expected to investigate group assets and identify creditors. Arrests, complaints, alleged losses and frozen accounts do not prove a uniform customer recovery result. No claim is made that every savings customer contracted with a Singapore entity or that every group entity entered the same proceeding.",
+    "as_of": "2026-08-16",
+    "last_verified_at": "2026-08-16",
+    "notes": "Stage 2 review adds the Cayman compulsory-liquidation step for Atom Holdings and independent insolvency-practitioner confirmation of the Singapore liquidator appointments. The reviewed authoritative materials establish liquidation and creditor/asset investigation but do not establish a uniform completed customer distribution, final recovery percentage or group-wide claim result. `unknown` is therefore retained fail-close. Absence of a public final distribution located in this review is not treated as evidence that no distribution occurred. No claim is made that every savings customer contracted with a Singapore entity or that every AAX group entity entered the same proceeding.",
     "confidence": "high"
   }
 ]
