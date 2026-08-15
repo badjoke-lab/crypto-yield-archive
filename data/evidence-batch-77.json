@@ -1,0 +1,32 @@
+[
+  {
+    "id": "cya_src_b77_0001",
+    "platform_id": "cya_plat_000025",
+    "event_id": "cya_ev_000353",
+    "source_type": "database_reference",
+    "title": "Alec Ohanian et al v. Stablegains, Inc. et al",
+    "url": "https://dockets.justia.com/docket/california/cacdce/2%3A2023cv01245/876049",
+    "publisher": "Justia Dockets & Filings",
+    "published_at": "2023-02-18",
+    "archived_url": null,
+    "accessed_at": "2026-08-16",
+    "reliability": "medium",
+    "claim_scope": "event",
+    "notes": "Docket metadata confirms the federal securities/commodities case filing against Stablegains Inc. in the Central District of California. CYA uses it only to establish the filing event, not the truth of the complaint's allegations or any final disposition."
+  },
+  {
+    "id": "cya_src_b77_0002",
+    "platform_id": "cya_plat_000025",
+    "event_id": "cya_ev_000353",
+    "source_type": "news_article",
+    "title": "Yield platform Stablegains sued for promoting UST as a safe investment",
+    "url": "https://cointelegraph.com/news/yield-platform-stablegains-sued-for-promoting-ust-as-a-safe-investment",
+    "publisher": "Cointelegraph",
+    "published_at": "2023-02-20",
+    "archived_url": null,
+    "accessed_at": "2026-08-16",
+    "reliability": "medium",
+    "claim_scope": "event",
+    "notes": "Contemporaneous reporting identifies the Ohanian complaint and summarizes its allegations. The allegations are not converted into adjudicated findings."
+  }
+]
