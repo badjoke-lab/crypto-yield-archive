@@ -1,0 +1,79 @@
+name: Research Candidate Monitor
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/research-candidate-monitoring.json'
+      - 'scripts/research-candidate-monitor.mjs'
+      - '.github/workflows/research-candidate-monitor.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'scripts/research-candidate-monitoring.json'
+      - 'scripts/research-candidate-monitor.mjs'
+      - '.github/workflows/research-candidate-monitor.yml'
+  schedule:
+    - cron: '17 4 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cya-research-candidate-monitor
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+      - name: Validate candidate monitoring configuration
+        run: node scripts/research-candidate-monitor.mjs --validate
+      - name: Syntax check monitor
+        run: node --check scripts/research-candidate-monitor.mjs
+
+  monitor:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+      - name: Run read-only research candidate monitor
+        env:
+          CYA_CANDIDATE_MONITOR_OUTPUT_DIR: artifacts/research-candidate-monitor
+        run: node scripts/research-candidate-monitor.mjs
+      - name: Guard canonical data
+        shell: bash
+        run: |
+          if git status --porcelain -- data | grep -E 'data/(platforms|events|evidence|outcomes).*\.json'; then
+            echo "Research candidate monitoring changed canonical data."
+            exit 1
+          fi
+      - name: Publish monitoring summary
+        if: always()
+        run: |
+          if [[ -f artifacts/research-candidate-monitor/monitoring-summary.md ]]; then
+            cat artifacts/research-candidate-monitor/monitoring-summary.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo 'Candidate monitoring report was not generated.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Upload private monitoring report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cya-research-candidate-monitor-${{ github.run_id }}
+          path: artifacts/research-candidate-monitor/
+          if-no-files-found: error
+          retention-days: 30
