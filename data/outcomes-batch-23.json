@@ -22,22 +22,26 @@
   },
   {
     "platform_id": "cya_plat_000034",
-    "outcome_status": "unknown",
-    "estimated_recovery_rate": "No verified universal final recovery rate is established for Finblox customers.",
+    "outcome_status": "partial_repayment",
+    "estimated_recovery_rate": "unknown; reviewed reporting establishes selective full recoveries and a buyback mechanism but not a uniform Finblox-wide recovery percentage",
     "repayment_started_at": null,
     "repayment_completed_at": null,
-    "repayment_method": "No verified platform-wide claims or repayment process was found in the reviewed sources",
+    "repayment_method": "mixed recovery path including selective cash repayment/test buybacks and conversion of affected debt into FBX tokens",
     "claim_process_url": null,
     "affected_products": [
       "Finblox Earn",
       "Finblox Crypto Vault",
-      "other custodial balances"
+      "other custodial balances",
+      "reserved balances converted into FBX"
     ],
     "claim_classes": [],
-    "jurisdictions": [],
-    "as_of": "2026-08-03",
-    "last_verified_at": "2026-08-03",
-    "notes": "Reporting records unresolved customer complaints after the 2022 restrictions and the 2025 closure. The reviewed sources do not establish one final customer outcome, distribution process, or recovery percentage.",
+    "jurisdictions": [
+      "Global customer base",
+      "Hong Kong-related customer disputes"
+    ],
+    "as_of": "2026-08-16",
+    "last_verified_at": "2026-08-16",
+    "notes": "Stage 2 review changes the platform-wide outcome from `unknown` to `partial_repayment` because contemporaneous reporting documents actual selective repayments and Finblox's acknowledged test buyback scheme, while later closure reporting still records customers with unresolved losses. FBX debt conversion is not treated as cash or crypto repayment at par, individual full recoveries are not generalized to all users, and the 2026 UK-company dissolution is not evidence that all customer liabilities were resolved. No universal final recovery percentage or completed repayment date is established.",
     "confidence": "medium"
   }
 ]
