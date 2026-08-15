@@ -1,0 +1,32 @@
+[
+  {
+    "id": "cya_src_b76_0001",
+    "platform_id": "cya_plat_000017",
+    "event_id": "cya_ev_000351",
+    "source_type": "regulatory_notice",
+    "title": "Victims of BitConnect Scheme to Receive More than $17 Million to Compensate for Losses",
+    "url": "https://www.justice.gov/usao-sdca/pr/victims-bitconnect-scheme-receive-more-17-million-compensate-losses",
+    "publisher": "U.S. Attorney's Office, Southern District of California",
+    "published_at": "2023-01-12",
+    "archived_url": null,
+    "accessed_at": "2026-08-16",
+    "reliability": "high",
+    "claim_scope": "customer_outcome",
+    "notes": "Primary U.S. government source stating that a federal judge ordered Glenn Arcaro to pay $17,646,801 in restitution to approximately 800 victims in more than 40 countries. This supports a partial recovery/distribution milestone for identified victims, not a complete BitConnect-wide recovery rate."
+  },
+  {
+    "id": "cya_src_b76_0002",
+    "platform_id": "cya_plat_000017",
+    "event_id": "cya_ev_000351",
+    "source_type": "regulatory_notice",
+    "title": "U.S. Attorney's Office Collects $30.7 Million in Civil and Criminal Actions in Fiscal Year 2023",
+    "url": "https://www.justice.gov/usao-sdca/pr/us-attorneys-office-collects-307-million-civil-and-criminal-actions-fiscal-year-2023",
+    "publisher": "U.S. Attorney's Office, Southern District of California",
+    "published_at": "2024-01-19",
+    "archived_url": null,
+    "accessed_at": "2026-08-16",
+    "reliability": "high",
+    "claim_scope": "customer_outcome",
+    "notes": "Primary follow-up confirming that bitcoin recovered in United States v. Glenn Arcaro was sold and resulted in $17,647,813 in restitution paid directly to victims, plus $1,003,900.17 in additional forfeited funds for victims. These figures establish realized enforcement-linked recovery but not full repayment of all BitConnect losses."
+  }
+]
