@@ -122,6 +122,13 @@ function priorityFor(platform, outcome, missing) {
   return score;
 }
 
+function reviewDateFor(platform, outcome) {
+  return outcome?.last_verified_at
+    || outcome?.as_of
+    || platform.last_verified_at
+    || '9999-12-31';
+}
+
 const rows = [];
 for (const platform of platforms) {
   if (!historicalStatuses.has(platform.status)) continue;
@@ -147,35 +154,62 @@ for (const platform of platforms) {
     outcome_status: outcome?.outcome_status ?? 'missing',
     missing,
     unresolved_current: unresolvedCurrent,
+    review_date: reviewDateFor(platform, outcome),
     events: platformEvents.length,
     evidence: platformEvidence.length,
     priority: priorityFor(platform, outcome, missing),
   });
 }
 
-rows.sort((a, b) => b.priority - a.priority
+const severityRows = [...rows].sort((a, b) => b.priority - a.priority
   || a.platform_id.localeCompare(b.platform_id));
+
+const actionableRows = rows
+  .filter((row) => row.missing.length > 0 || ['missing', 'unknown'].includes(row.outcome_status))
+  .sort((a, b) => a.review_date.localeCompare(b.review_date)
+    || b.priority - a.priority
+    || a.platform_id.localeCompare(b.platform_id));
+
+const ongoingWatchRows = rows
+  .filter((row) => row.outcome_status === 'claims_ongoing' && row.missing.length === 0)
+  .sort((a, b) => a.review_date.localeCompare(b.review_date)
+    || b.priority - a.priority
+    || a.platform_id.localeCompare(b.platform_id));
 
 const counts = {
   platforms: platforms.length,
   historical_or_distress_platforms: platforms.filter((row) => historicalStatuses.has(row.status)).length,
-  lifecycle_gap_rows: rows.length,
+  unresolved_inventory_rows: rows.length,
+  next_review_queue_rows: actionableRows.length,
+  ongoing_watch_rows: ongoingWatchRows.length,
   missing_outcome: rows.filter((row) => row.outcome_status === 'missing').length,
   unknown_outcome: rows.filter((row) => row.outcome_status === 'unknown').length,
   claims_ongoing: rows.filter((row) => row.outcome_status === 'claims_ongoing').length,
 };
+
+function printRows(list) {
+  if (!list.length) {
+    console.log('- None.');
+    return;
+  }
+  for (const row of list) {
+    const missing = row.missing.length ? row.missing.join(',') : 'none';
+    console.log(`- P${row.priority} ${row.platform_id} ${row.name} | reviewed=${row.review_date} | status=${row.status} | outcome=${row.outcome_status} | missing=${missing} | events=${row.events} | evidence=${row.evidence}`);
+  }
+}
 
 console.log('# CYA Lifecycle Gap Report');
 console.log('');
 console.log('## Counts');
 for (const [key, value] of Object.entries(counts)) console.log(`- ${key}=${value}`);
 console.log('');
-console.log('## Priority gaps');
-if (!rows.length) {
-  console.log('- None.');
-} else {
-  for (const row of rows) {
-    const missing = row.missing.length ? row.missing.join(',') : 'none';
-    console.log(`- P${row.priority} ${row.platform_id} ${row.name} | status=${row.status} | outcome=${row.outcome_status} | missing=${missing} | events=${row.events} | evidence=${row.evidence}`);
-  }
-}
+console.log('## Unresolved lifecycle inventory');
+printRows(severityRows);
+console.log('');
+console.log('## Next enrichment review queue');
+console.log('- Ordering: oldest canonical review date first, then severity, then platform ID.');
+printRows(actionableRows);
+console.log('');
+console.log('## Ongoing watch');
+console.log('- claims_ongoing records with no detected missing lifecycle stage.');
+printRows(ongoingWatchRows);
