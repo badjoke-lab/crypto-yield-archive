@@ -1,0 +1,16 @@
+[
+  {
+    "id": "cya_ev_000351",
+    "platform_id": "cya_plat_000056",
+    "event_type": "bankruptcy_filed",
+    "event_date": "2023-07-11",
+    "title": "Atom Holdings entered compulsory liquidation in the Cayman Islands",
+    "description": "The Singapore High Court later recorded that Atom Holdings, the Cayman parent within the AAX Group, had been placed under compulsory liquidation in the Cayman Islands as of 2023-07-11, with Quantuma-appointed liquidators. This parent-company liquidation is recorded separately from the later winding up of AAX Asia and AAX Singapore.",
+    "impact_level": "critical",
+    "event_status_effect": "none",
+    "status_after": "withdrawals_suspended",
+    "source_count": 1,
+    "confidence": "high",
+    "notes": "Entity-scoped lifecycle event. It does not establish that every AAX group entity entered the same proceeding on this date, and it does not establish a customer recovery percentage or completed distribution."
+  }
+]
