@@ -1,11 +1,11 @@
 [
   {
     "platform_id": "cya_plat_000035",
-    "outcome_status": "unknown",
-    "estimated_recovery_rate": "Pillow stated that deposits and accrued interest were available for withdrawal before closure, but reviewed sources do not establish universal completed withdrawal.",
+    "outcome_status": "not_applicable",
+    "estimated_recovery_rate": "not_applicable",
     "repayment_started_at": null,
     "repayment_completed_at": null,
-    "repayment_method": "User-initiated bank or crypto withdrawals during the announced wind-down windows",
+    "repayment_method": "Orderly voluntary wind-down with user-initiated bank and crypto withdrawals during announced withdrawal windows",
     "claim_process_url": null,
     "affected_products": [
       "Pillow BTC Case",
@@ -14,11 +14,15 @@
       "other Pillow wallet balances"
     ],
     "claim_classes": [],
-    "jurisdictions": [],
-    "as_of": "2026-08-03",
-    "last_verified_at": "2026-08-03",
-    "notes": "No insolvency or customer-loss process was identified in the reviewed sources. The shutdown notice offered withdrawal access, but availability is not treated as proof that every customer withdrew successfully.",
-    "confidence": "medium"
+    "jurisdictions": [
+      "Singapore",
+      "India",
+      "Global customer base"
+    ],
+    "as_of": "2026-08-16",
+    "last_verified_at": "2026-08-16",
+    "notes": "Stage 2 review resolves the platform-wide outcome semantics as `not_applicable`, not `full_repayment`. Pillow announced a voluntary wind-down rather than an insolvency or creditor-recovery process and told users that deposits and accrued interest were available for withdrawal, with bank withdrawals open through 7 July 2023 and crypto withdrawals through the 31 July 2023 closure. A platform-wide recovery percentage is therefore not the appropriate model. CYA does not claim that every customer completed withdrawal, that every balance was recovered successfully, or that withdrawal availability proves broader solvency beyond the announced wind-down process.",
+    "confidence": "high"
   },
   {
     "platform_id": "cya_plat_000036",
