@@ -23,21 +23,25 @@
   },
   {
     "platform_id": "cya_plat_000038",
-    "outcome_status": "unknown",
-    "estimated_recovery_rate": "Flint stated that principal and accrued interest through the cutoff would be returned, but reviewed sources do not establish universal completed withdrawal.",
+    "outcome_status": "not_applicable",
+    "estimated_recovery_rate": "not_applicable",
     "repayment_started_at": null,
     "repayment_completed_at": null,
-    "repayment_method": "User-initiated unlend and withdrawal through the Flint application",
+    "repayment_method": "Orderly voluntary product wind-down using user-initiated unlend and withdrawal through the Flint application",
     "claim_process_url": null,
     "affected_products": [
       "Flint fixed-yield stablecoin products",
       "other Flint Money yield balances"
     ],
     "claim_classes": [],
-    "jurisdictions": [],
-    "as_of": "2026-08-03",
-    "last_verified_at": "2026-08-03",
-    "notes": "First-party instructions and contemporaneous reporting offered a withdrawal path and stated that funds were safe. Availability and assurances are not treated as proof that every user completed withdrawal or received one uniform recovery.",
-    "confidence": "medium"
+    "jurisdictions": [
+      "India",
+      "Singapore",
+      "Global customer base"
+    ],
+    "as_of": "2026-08-16",
+    "last_verified_at": "2026-08-16",
+    "notes": "Stage 2 review resolves the platform-wide outcome semantics as `not_applicable`, not `full_repayment`. Flint phased out its yield service voluntarily under regulatory uncertainty, published a first-party unlend-and-withdraw procedure, and told users that principal plus interest earned through 23 January 2023 was safe and would be returned. This was not presented as an insolvency, creditor-claims, or common recovery-distribution process, so a platform-wide recovery percentage is not the appropriate model. CYA does not claim that every user completed withdrawal, does not convert Flint's safety assurance into proof of universal completed repayment, and does not invent an exact final service cutoff where the historical sources conflict.",
+    "confidence": "high"
   }
 ]
