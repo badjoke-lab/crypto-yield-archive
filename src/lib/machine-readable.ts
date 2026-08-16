@@ -1,7 +1,7 @@
 import buildMetadata from '../generated/build-metadata.json';
 import { allEvents, allEvidence, allOutcomes, allPlatforms, allProducts, allTermsRisk } from './data';
 
-export const MACHINE_READABLE_SCHEMA_VERSION = '1.1.0';
+export const MACHINE_READABLE_SCHEMA_VERSION = '1.2.0';
 export const DATA_SCHEMA_VERSION = 'cya_registry_public_data_v2';
 
 export const PROJECT = {
@@ -50,6 +50,7 @@ export const PUBLIC_DATA_ROUTES = {
   version: '/version.json',
   manifest: '/data/manifest.json',
   platforms: '/data/platforms.json',
+  platform_record: '/data/platform/{slug}.json',
   events: '/data/events.json',
   evidence: '/data/evidence.json',
   customer_outcomes: '/data/customer-outcomes.json',
@@ -152,6 +153,58 @@ export function getPublicOutcomes() {
       },
     };
   });
+}
+
+export function getPlatformRecordEnvelope(platform: Record<string, any>) {
+  const events = allEvents
+    .filter((event) => event.platform_id === platform.id)
+    .sort((a, b) => {
+      const dateOrder = String(a.event_date || '').localeCompare(String(b.event_date || ''));
+      return dateOrder || String(a.id || '').localeCompare(String(b.id || ''));
+    });
+  const evidence = allEvidence
+    .filter((item) => item.platform_id === platform.id)
+    .sort((a, b) => {
+      const dateOrder = String(a.published_at || '').localeCompare(String(b.published_at || ''));
+      return dateOrder || String(a.id || '').localeCompare(String(b.id || ''));
+    });
+  const customerOutcome = getPublicOutcomes().find((outcome) => outcome.platform_id === platform.id) || null;
+  const products = allProducts
+    .filter((product) => product.platform_id === platform.id)
+    .sort((a, b) => String(a.product_name || '').localeCompare(String(b.product_name || '')) || String(a.id || '').localeCompare(String(b.id || '')));
+  const termsRisk = allTermsRisk.find((terms) => terms.platform_id === platform.id) || null;
+
+  return {
+    schema_version: MACHINE_READABLE_SCHEMA_VERSION,
+    data_schema_version: DATA_SCHEMA_VERSION,
+    project_id: PROJECT.projectId,
+    dataset: 'platform_record',
+    canonical_origin: PROJECT.canonicalOrigin,
+    canonical_only: true,
+    generated_at: buildMetadata.generated_at,
+    build: getBuildMetadata(),
+    record_key: {
+      platform_id: platform.id,
+      slug: platform.slug,
+    },
+    canonical_page: `/platform/${platform.slug}/`,
+    self: `/data/platform/${platform.slug}.json`,
+    record: platform,
+    supporting_records: {
+      events,
+      evidence,
+      customer_outcome: customerOutcome,
+      products,
+      terms_risk: termsRisk,
+    },
+    related_record_counts: {
+      events: events.length,
+      evidence: evidence.length,
+      customer_outcomes: customerOutcome ? 1 : 0,
+      product_profiles: products.length,
+      terms_risk_records: termsRisk ? 1 : 0,
+    },
+  };
 }
 
 export function getDatasetEnvelope(dataset: string, records: unknown[]) {
