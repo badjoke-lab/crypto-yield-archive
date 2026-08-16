@@ -1,0 +1,245 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/compare.css';
+import { allPlatforms, allEvents, allEvidence, allProducts, getOutcome, getTermsRisk, label, year } from '../../lib/data';
+
+const comparisonData = allPlatforms
+  .map((platform) => {
+    const outcome = getOutcome(platform.id);
+    const terms = getTermsRisk(platform.id);
+    const eventCount = allEvents.filter((event) => event.platform_id === platform.id).length;
+    const evidenceCount = allEvidence.filter((source) => source.platform_id === platform.id).length;
+    const productCount = allProducts.filter((product) => product.platform_id === platform.id).length;
+    return {
+      slug: platform.slug,
+      name: platform.canonical_name,
+      type: label(platform.type),
+      status: label(platform.status),
+      outcome: label(outcome?.outcome_status || 'unknown'),
+      failure: label(platform.failure_reason || 'unknown'),
+      terms: label(terms?.terms_status || 'unknown'),
+      origin: platform.country_or_origin || 'Unknown',
+      years: `${year(platform.launch_date)}–${platform.end_date ? year(platform.end_date) : ''}`,
+      confidence: label(platform.confidence || 'unknown'),
+      outcomeConfidence: label(outcome?.confidence || 'unknown'),
+      recovery: outcome?.estimated_recovery_rate || 'Unknown',
+      repaymentStarted: outcome?.repayment_started_at || '—',
+      repaymentCompleted: outcome?.repayment_completed_at || '—',
+      repaymentMethod: outcome?.repayment_method || '—',
+      eventCount,
+      evidenceCount,
+      productCount,
+      domain: platform.official_domain_original || '—',
+      archiveUrl: platform.archived_url || null,
+      claimProcessUrl: outcome?.claim_process_url || null,
+      lastVerified: platform.last_verified_at || '—',
+      detailUrl: `/platform/${platform.slug}/`,
+    };
+  })
+  .sort((a, b) => a.name.localeCompare(b.name));
+---
+<BaseLayout title="Compare platforms | Crypto Yield Archive" description="Compare reviewed crypto lending and yield platform records side by side across status, customer outcomes, failure reasons, terms treatment, recovery, evidence, and lifecycle history.">
+  <article class="compare-page">
+    <header class="compare-head">
+      <div>
+        <p class="kicker">Registry comparison</p>
+        <h1>Compare platforms</h1>
+        <p class="lede">Compare 2–4 reviewed CYA platform records side by side. This is a historical record comparison, not a safety score, ranking, or investment recommendation.</p>
+      </div>
+      <div class="compare-head-note">
+        <strong>Canonical basis</strong>
+        <span>Current reviewed platform, outcome, terms-risk, event, product, and evidence records.</span>
+      </div>
+    </header>
+
+    <section class="compare-picker" aria-labelledby="compare-picker-title">
+      <div class="section-heading">
+        <div><p class="kicker">Selection</p><h2 id="compare-picker-title">Choose records</h2></div>
+        <p>Selections are stored in the URL so the comparison can be copied and reopened.</p>
+      </div>
+
+      <div class="compare-select-grid">
+        {[0, 1, 2, 3].map((index) => (
+          <label class="compare-select-field">
+            <span>Platform {index + 1}</span>
+            <select data-compare-select={index}>
+              <option value="">{index < 2 ? 'Choose a platform' : 'Optional'}</option>
+              {comparisonData.map((platform) => <option value={platform.slug}>{platform.name}</option>)}
+            </select>
+          </label>
+        ))}
+      </div>
+
+      <div class="compare-actions">
+        <button id="copyCompareLink" type="button">Copy comparison link</button>
+        <button id="clearCompare" class="ghost-button" type="button">Clear</button>
+        <span id="compareStatus" class="copy-status" aria-live="polite"></span>
+      </div>
+    </section>
+
+    <section class="compare-results" aria-labelledby="compare-results-title">
+      <div class="section-heading">
+        <div><p class="kicker">Side-by-side record view</p><h2 id="compare-results-title">Comparison</h2></div>
+        <p id="compareCount" aria-live="polite">Choose at least two platforms.</p>
+      </div>
+
+      <div id="compareEmpty" class="compare-empty">
+        <strong>No comparison selected yet.</strong>
+        <p>Choose two or more records above. Only fields already present in reviewed CYA data are shown.</p>
+      </div>
+
+      <div id="compareTableWrap" class="compare-table-wrap" hidden>
+        <table class="compare-table">
+          <thead id="compareHeadRow"></thead>
+          <tbody id="compareBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="compare-method-note" aria-labelledby="compare-method-title">
+      <div><p class="kicker">Interpretation</p><h2 id="compare-method-title">What this comparison means</h2></div>
+      <p>Different platforms can have different legal entities, products, creditor classes, valuation dates, and repayment mechanics. A displayed recovery description is the canonical wording in CYA and must not be read as a directly comparable investment return.</p>
+      <a href="/methodology/">Read methodology →</a>
+    </section>
+  </article>
+
+  <script define:vars={{ comparisonData }}>
+    const dataBySlug = new Map(comparisonData.map((item) => [item.slug, item]));
+    const selects = [...document.querySelectorAll('[data-compare-select]')];
+    const tableWrap = document.querySelector('#compareTableWrap');
+    const headRow = document.querySelector('#compareHeadRow');
+    const body = document.querySelector('#compareBody');
+    const empty = document.querySelector('#compareEmpty');
+    const count = document.querySelector('#compareCount');
+    const status = document.querySelector('#compareStatus');
+
+    const fields = [
+      ['Status', (item) => item.status],
+      ['Customer outcome', (item) => item.outcome],
+      ['Failure reason', (item) => item.failure],
+      ['Terms treatment', (item) => item.terms],
+      ['Type', (item) => item.type],
+      ['Jurisdiction / origin', (item) => item.origin],
+      ['Years', (item) => item.years],
+      ['Entity confidence', (item) => item.confidence],
+      ['Outcome confidence', (item) => item.outcomeConfidence],
+      ['Recovery description', (item) => item.recovery],
+      ['Repayment started', (item) => item.repaymentStarted],
+      ['Repayment completed', (item) => item.repaymentCompleted],
+      ['Repayment method', (item) => item.repaymentMethod],
+      ['Events', (item) => String(item.eventCount)],
+      ['Evidence', (item) => String(item.evidenceCount)],
+      ['Products', (item) => String(item.productCount)],
+      ['Official domain', (item) => item.domain],
+      ['Archive', (item) => item.archiveUrl ? 'Available' : 'Not recorded'],
+      ['Claims process', (item) => item.claimProcessUrl ? 'Available' : 'Not recorded'],
+      ['Last verified', (item) => item.lastVerified],
+    ];
+
+    function selectedSlugs() {
+      const seen = new Set();
+      return selects.map((select) => select.value).filter((slug) => slug && !seen.has(slug) && seen.add(slug));
+    }
+
+    function writeUrl(slugs) {
+      const params = new URLSearchParams();
+      slugs.forEach((slug) => params.append('platform', slug));
+      history.replaceState(null, '', `${location.pathname}${params.size ? `?${params}` : ''}`);
+    }
+
+    function setCellContent(cell, label, item) {
+      const value = fields.find(([field]) => field === label)?.[1](item) ?? '—';
+      if (label === 'Archive' && item.archiveUrl) {
+        const link = document.createElement('a');
+        link.href = item.archiveUrl;
+        link.textContent = value;
+        cell.append(link);
+        return;
+      }
+      if (label === 'Claims process' && item.claimProcessUrl) {
+        const link = document.createElement('a');
+        link.href = item.claimProcessUrl;
+        link.textContent = value;
+        cell.append(link);
+        return;
+      }
+      cell.textContent = value;
+    }
+
+    function render() {
+      const slugs = selectedSlugs();
+      writeUrl(slugs);
+      selects.forEach((select) => {
+        [...select.options].forEach((option) => {
+          option.disabled = Boolean(option.value && option.value !== select.value && slugs.includes(option.value));
+        });
+      });
+
+      const selected = slugs.map((slug) => dataBySlug.get(slug)).filter(Boolean);
+      const ready = selected.length >= 2;
+      tableWrap.hidden = !ready;
+      empty.hidden = ready;
+      count.textContent = ready ? `${selected.length} platforms selected.` : `Choose at least two platforms (${selected.length} selected).`;
+      headRow.replaceChildren();
+      body.replaceChildren();
+      if (!ready) return;
+
+      const row = document.createElement('tr');
+      const fieldHead = document.createElement('th');
+      fieldHead.scope = 'col';
+      fieldHead.textContent = 'Field';
+      row.append(fieldHead);
+      selected.forEach((item) => {
+        const th = document.createElement('th');
+        th.scope = 'col';
+        const link = document.createElement('a');
+        link.href = item.detailUrl;
+        link.textContent = item.name;
+        th.append(link);
+        row.append(th);
+      });
+      headRow.append(row);
+
+      fields.forEach(([field]) => {
+        const tr = document.createElement('tr');
+        const th = document.createElement('th');
+        th.scope = 'row';
+        th.textContent = field;
+        tr.append(th);
+        selected.forEach((item) => {
+          const td = document.createElement('td');
+          td.dataset.label = item.name;
+          setCellContent(td, field, item);
+          tr.append(td);
+        });
+        body.append(tr);
+      });
+    }
+
+    function restore() {
+      const requested = new URLSearchParams(location.search).getAll('platform').filter((slug) => dataBySlug.has(slug)).slice(0, 4);
+      requested.forEach((slug, index) => { if (selects[index]) selects[index].value = slug; });
+      render();
+    }
+
+    selects.forEach((select) => select.addEventListener('change', render));
+    document.querySelector('#clearCompare')?.addEventListener('click', () => {
+      selects.forEach((select) => { select.value = ''; });
+      status.textContent = '';
+      render();
+      selects[0]?.focus();
+    });
+    document.querySelector('#copyCompareLink')?.addEventListener('click', async () => {
+      render();
+      try {
+        await navigator.clipboard.writeText(location.href);
+        status.textContent = 'Comparison link copied.';
+      } catch {
+        status.textContent = 'Copy failed. Use the address bar URL.';
+      }
+      setTimeout(() => { status.textContent = ''; }, 2500);
+    });
+
+    restore();
+  </script>
+</BaseLayout>
