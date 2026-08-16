@@ -6,13 +6,28 @@ import { allPlatforms, allEvents, allEvidence, allOutcomes, allProducts, allTerm
 type AnyRecord = Record<string, unknown>;
 type CountRow = [string, number];
 
-function countBy(records: AnyRecord[], field: string): CountRow[] {
+function countValues(values: Array<string | null | undefined>): CountRow[] {
   const map = new Map<string, number>();
-  for (const record of records) {
-    const value = String(record[field] || 'unknown');
+  for (const raw of values) {
+    const value = raw ? String(raw) : 'unknown';
     map.set(value, (map.get(value) || 0) + 1);
   }
   return Array.from(map.entries()).sort((a, b) => b[1] - a[1] || label(a[0]).localeCompare(label(b[0])));
+}
+
+function countBy(records: AnyRecord[], field: string): CountRow[] {
+  return countValues(records.map((record) => record[field] ? String(record[field]) : 'unknown'));
+}
+
+function countYears(values: Array<string | null | undefined>): CountRow[] {
+  const map = new Map<string, number>();
+  for (const raw of values) {
+    if (!raw) continue;
+    const year = String(raw).slice(0, 4);
+    if (!/^\d{4}$/.test(year)) continue;
+    map.set(year, (map.get(year) || 0) + 1);
+  }
+  return Array.from(map.entries()).sort((a, b) => Number(a[0]) - Number(b[0]));
 }
 
 function pct(count: number, total: number) {
@@ -23,14 +38,35 @@ const statusCounts = countBy(allPlatforms, 'status');
 const typeCounts = countBy(allPlatforms, 'type');
 const failureCounts = countBy(allPlatforms, 'failure_reason');
 const outcomeCounts = countBy(allOutcomes, 'outcome_status');
+const recoveryTypeCounts = countBy(allOutcomes, 'recovery_type');
 const termsCounts = countBy(allTermsRisk, 'terms_status');
 const evidenceReliabilityCounts = countBy(allEvidence, 'reliability');
 const eventTypeCounts = countBy(allEvents, 'event_type');
 const sourceTypeCounts = countBy(allEvidence, 'source_type');
 const confidenceCounts = countBy(allPlatforms, 'confidence');
+
+const endedPlatforms = allPlatforms.filter((platform) => platform.end_date);
+const failureYearCounts = countYears(endedPlatforms.map((platform) => platform.end_date));
+const repaymentOutcomes = allOutcomes.filter((outcome) => outcome.first_repayment_date);
+const repaymentYearCounts = countYears(repaymentOutcomes.map((outcome) => outcome.first_repayment_date));
+
+const evidenceCountByPlatform = new Map<string, number>();
+for (const item of allEvidence) evidenceCountByPlatform.set(item.platform_id, (evidenceCountByPlatform.get(item.platform_id) || 0) + 1);
+function evidenceDepthBand(count: number) {
+  if (count === 0) return '0 sources';
+  if (count === 1) return '1 source';
+  if (count <= 4) return '2–4 sources';
+  return '5+ sources';
+}
+const evidenceDepthCounts = countValues(allPlatforms.map((platform) => evidenceDepthBand(evidenceCountByPlatform.get(platform.id) || 0)));
+
 const archiveCount = allPlatforms.filter((platform) => platform.archived_url).length;
 const knownOriginCount = allPlatforms.filter((platform) => platform.country_or_origin).length;
 const highConfidenceCount = allPlatforms.filter((platform) => platform.confidence === 'high').length;
+const evidenceCoveredPlatformIds = new Set(allEvidence.map((item) => item.platform_id));
+const highEvidencePlatformIds = new Set(allEvidence.filter((item) => item.reliability === 'high').map((item) => item.platform_id));
+const recoveryTypeCoveredCount = allOutcomes.filter((outcome) => outcome.recovery_type).length;
+const repaymentDateCoveredCount = allOutcomes.filter((outcome) => outcome.first_repayment_date).length;
 const latestVerified = allPlatforms.map((platform) => platform.last_verified_at).filter(Boolean).sort().at(-1) || '—';
 
 const sections: { title: string; rows: CountRow[]; total: number; note: string }[] = [
@@ -38,10 +74,16 @@ const sections: { title: string; rows: CountRow[]; total: number; note: string }
   { title: 'Platform type', rows: typeCounts, total: allPlatforms.length, note: 'Service category used by the current entity model.' },
   { title: 'Failure reason', rows: failureCounts, total: allPlatforms.length, note: 'Primary historical driver, including unknown values.' },
   { title: 'Customer outcome', rows: outcomeCounts, total: allOutcomes.length, note: 'Outcome records across repayment, claims, and active comparator cases.' },
+  { title: 'Recovery type', rows: recoveryTypeCounts, total: allOutcomes.length, note: 'Recorded form of customer recovery or distribution; unknown remains explicit.' },
   { title: 'Terms risk', rows: termsCounts, total: allTermsRisk.length, note: 'How deposited assets and contractual treatment are currently classified.' },
   { title: 'Evidence reliability', rows: evidenceReliabilityCounts, total: allEvidence.length, note: 'Source-strength labels assigned to evidence records.' },
   { title: 'Event type', rows: eventTypeCounts, total: allEvents.length, note: 'Recorded historical event categories.' },
   { title: 'Source type', rows: sourceTypeCounts, total: allEvidence.length, note: 'Distribution of official, regulatory, court, archive, and reporting sources.' },
+];
+
+const timelineSections: { title: string; rows: CountRow[]; total: number; note: string }[] = [
+  { title: 'Platform end year', rows: failureYearCounts, total: endedPlatforms.length, note: 'Canonical platform end dates by year. Platforms without an end date are excluded.' },
+  { title: 'First repayment year', rows: repaymentYearCounts, total: repaymentOutcomes.length, note: 'First recorded customer repayment or distribution dates by year. Outcomes without a recorded first repayment date are excluded.' },
 ];
 ---
 <BaseLayout title="Stats | Crypto Yield Archive" description="Registry statistics for Crypto Yield Archive records.">
@@ -49,7 +91,7 @@ const sections: { title: string; rows: CountRow[]; total: number; note: string }
     <div>
       <p class="kicker">Registry analysis</p>
       <h1>Stats</h1>
-      <p class="lede">A measured view of registry scale, composition, evidence coverage, and classification quality. Counts are generated directly from the current canonical JSON.</p>
+      <p class="lede">A measured view of registry scale, failure and recovery timelines, evidence coverage, and classification quality. Counts are generated directly from the current canonical JSON.</p>
     </div>
     <dl class="analytics-meta">
       <div><dt>Last verified</dt><dd>{latestVerified}</dd></div>
@@ -81,7 +123,11 @@ const sections: { title: string; rows: CountRow[]; total: number; note: string }
         <tr><td data-label="Metric">Archive coverage</td><td data-label="Value">{pct(archiveCount, allPlatforms.length)}%</td><td data-label="Count">{archiveCount} / {allPlatforms.length}</td><td data-label="Interpretation">Platforms with an archived URL recorded.</td></tr>
         <tr><td data-label="Metric">Known origin</td><td data-label="Value">{pct(knownOriginCount, allPlatforms.length)}%</td><td data-label="Count">{knownOriginCount} / {allPlatforms.length}</td><td data-label="Interpretation">Platforms with country or origin context.</td></tr>
         <tr><td data-label="Metric">High confidence</td><td data-label="Value">{pct(highConfidenceCount, allPlatforms.length)}%</td><td data-label="Count">{highConfidenceCount} / {allPlatforms.length}</td><td data-label="Interpretation">Entity records currently marked high confidence.</td></tr>
+        <tr><td data-label="Metric">Evidence coverage</td><td data-label="Value">{pct(evidenceCoveredPlatformIds.size, allPlatforms.length)}%</td><td data-label="Count">{evidenceCoveredPlatformIds.size} / {allPlatforms.length}</td><td data-label="Interpretation">Platforms with at least one reviewed evidence record.</td></tr>
+        <tr><td data-label="Metric">High-reliability evidence</td><td data-label="Value">{pct(highEvidencePlatformIds.size, allPlatforms.length)}%</td><td data-label="Count">{highEvidencePlatformIds.size} / {allPlatforms.length}</td><td data-label="Interpretation">Platforms with at least one evidence record marked high reliability.</td></tr>
         <tr><td data-label="Metric">Outcome coverage</td><td data-label="Value">{pct(allOutcomes.length, allPlatforms.length)}%</td><td data-label="Count">{allOutcomes.length} / {allPlatforms.length}</td><td data-label="Interpretation">Platforms with a customer-outcome record.</td></tr>
+        <tr><td data-label="Metric">Recovery type coverage</td><td data-label="Value">{pct(recoveryTypeCoveredCount, allOutcomes.length)}%</td><td data-label="Count">{recoveryTypeCoveredCount} / {allOutcomes.length}</td><td data-label="Interpretation">Outcome records with a recovery type explicitly recorded.</td></tr>
+        <tr><td data-label="Metric">First repayment date coverage</td><td data-label="Value">{pct(repaymentDateCoveredCount, allOutcomes.length)}%</td><td data-label="Count">{repaymentDateCoveredCount} / {allOutcomes.length}</td><td data-label="Interpretation">Outcome records with a first repayment or distribution date recorded.</td></tr>
         <tr><td data-label="Metric">Terms coverage</td><td data-label="Value">{pct(allTermsRisk.length, allPlatforms.length)}%</td><td data-label="Count">{allTermsRisk.length} / {allPlatforms.length}</td><td data-label="Interpretation">Platforms with a terms-risk record.</td></tr>
       </tbody>
     </table>
@@ -107,6 +153,41 @@ const sections: { title: string; rows: CountRow[]; total: number; note: string }
           </div>
         </section>
       ))}
+    </div>
+  </section>
+
+  <section class="analytics-breakdowns" aria-labelledby="timelines-title">
+    <div class="section-heading">
+      <div><p class="kicker">Lifecycle and recovery</p><h2 id="timelines-title">Failure and repayment timelines</h2></div>
+      <p>Timeline counts use reviewed canonical dates only. Missing dates are excluded rather than inferred.</p>
+    </div>
+    <div class="breakdown-grid">
+      {timelineSections.map((section) => (
+        <section class="breakdown-block">
+          <header><h3>{section.title}</h3><p>{section.note}</p></header>
+          <div class="bar-ledger">
+            {section.rows.map(([value, count]) => (
+              <div class="bar-row">
+                <div><strong>{value}</strong><span>{count}</span></div>
+                <div class="bar-track" aria-label={`${value}: ${count} of ${section.total}`}><span style={`width:${pct(count, section.total)}%`}></span></div>
+                <small>{pct(count, section.total)}%</small>
+              </div>
+            ))}
+          </div>
+        </section>
+      ))}
+      <section class="breakdown-block">
+        <header><h3>Evidence depth per platform</h3><p>Reviewed evidence count bands by platform. This measures source depth, not factual certainty by itself.</p></header>
+        <div class="bar-ledger">
+          {evidenceDepthCounts.map(([value, count]) => (
+            <div class="bar-row">
+              <div><strong>{value}</strong><span>{count}</span></div>
+              <div class="bar-track" aria-label={`${value}: ${count} of ${allPlatforms.length}`}><span style={`width:${pct(count, allPlatforms.length)}%`}></span></div>
+              <small>{pct(count, allPlatforms.length)}%</small>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   </section>
 
