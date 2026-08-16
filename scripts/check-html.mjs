@@ -27,10 +27,14 @@ ok(home.includes('href="/support/"'),'home support link');
 for(const platform of platforms)ok(registry.includes(`/platform/${platform.slug}/`),`registry missing ${platform.slug}`);
 ok(registry.includes(`all ${platforms.length} reviewed platform records`),'registry total');
 ok(registry.includes('id="previousPage"')&&registry.includes('id="nextPage"'),'registry pagination controls');
+for(const id of ['recoveryFilter','launchYearFilter','endYearFilter','evidenceReliabilityFilter'])ok(registry.includes(`id="${id}"`),`registry missing ${id}`);
+for(const attr of ['data-recovery=','data-launch-year=','data-end-year=','data-evidence-reliability='])ok(registry.includes(attr),`registry missing ${attr}`);
+ok(registry.includes('Best evidence'),'registry missing evidence-quality label');
+ok(registry.includes('Recovery type'),'registry missing recovery filter label');
 ok(support.includes('What support does not buy'),'support independence section');
 ok(!support.includes('href="/support/"'),'support page self-link');
 ok([...timeline.matchAll(/class=(?:"timeline-record"|timeline-record)/g)].length===events.length,'timeline rows');
 for(const count of [platforms.length,events.length,evidence.length,outcomes.length,products.length,termsRisk.length])ok(stats.includes(`<strong>${count}</strong>`),`stats ${count}`);
 for(const platform of platforms)ok(fs.existsSync(`dist/platform/${platform.slug}/index.html`),`detail ${platform.slug}`);
 
-console.log(JSON.stringify({platforms:platforms.length,events:events.length,evidence:evidence.length,outcomes:outcomes.length,products:products.length,terms_risk:termsRisk.length,claims_ongoing:claimsOngoing,home_record_links:homeRecordLinks.length}));
+console.log(JSON.stringify({platforms:platforms.length,events:events.length,evidence:evidence.length,outcomes:outcomes.length,products:products.length,terms_risk:termsRisk.length,claims_ongoing:claimsOngoing,home_record_links:homeRecordLinks.length,structured_filters:['recovery','launch_year','end_year','best_evidence_reliability']}));
