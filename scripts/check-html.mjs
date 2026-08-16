@@ -35,6 +35,7 @@ ok(support.includes('What support does not buy'),'support independence section')
 ok(!support.includes('href="/support/"'),'support page self-link');
 ok([...timeline.matchAll(/class=(?:"timeline-record"|timeline-record)/g)].length===events.length,'timeline rows');
 for(const count of [platforms.length,events.length,evidence.length,outcomes.length,products.length,termsRisk.length])ok(stats.includes(`<strong>${count}</strong>`),`stats ${count}`);
+for(const text of ['Recovery type','Failure and repayment timelines','Platform end year','First repayment year','Evidence depth per platform','Evidence coverage','High-reliability evidence','First repayment date coverage'])ok(stats.includes(text),`stats missing ${text}`);
 for(const platform of platforms)ok(fs.existsSync(`dist/platform/${platform.slug}/index.html`),`detail ${platform.slug}`);
 
-console.log(JSON.stringify({platforms:platforms.length,events:events.length,evidence:evidence.length,outcomes:outcomes.length,products:products.length,terms_risk:termsRisk.length,claims_ongoing:claimsOngoing,home_record_links:homeRecordLinks.length,structured_filters:['recovery','launch_year','end_year','best_evidence_reliability']}));
+console.log(JSON.stringify({platforms:platforms.length,events:events.length,evidence:evidence.length,outcomes:outcomes.length,products:products.length,terms_risk:termsRisk.length,claims_ongoing:claimsOngoing,home_record_links:homeRecordLinks.length,structured_filters:['recovery','launch_year','end_year','best_evidence_reliability'],stats_expansion:['recovery_type','platform_end_year','first_repayment_year','evidence_depth','coverage_quality']}));
