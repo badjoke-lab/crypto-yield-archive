@@ -5,6 +5,7 @@ const SITE = 'https://cya.badjoke-lab.com';
 const staticPaths = [
   '/',
   '/platforms/',
+  '/compare/',
   '/outcomes/',
   '/bankruptcy-cases/',
   '/failures/',
