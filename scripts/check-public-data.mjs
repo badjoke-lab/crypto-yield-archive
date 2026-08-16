@@ -51,7 +51,7 @@ for (const name of required) assert(fs.existsSync(name), `Missing ${name}`);
 
 const version = readJson('dist/version.json');
 const manifest = readJson('dist/data/manifest.json');
-assert(version.schema_version === '1.1.0', 'version schema mismatch');
+assert(version.schema_version === '1.2.0', 'version schema mismatch');
 assert(version.data?.data_schema_version === 'cya_registry_public_data_v2', 'data schema mismatch');
 assert(version.canonical_origin === 'https://cya.badjoke-lab.com', 'canonical origin mismatch');
 assert(version.canonical_only === true, 'version canonical_only missing');
@@ -59,6 +59,7 @@ assert(isDeepStrictEqual(version.data.record_counts, counts), 'version counts mi
 assert(isDeepStrictEqual(version.data.derived_counts, derived), 'version derived counts mismatch');
 assert(isDeepStrictEqual(version.data.record_count_breakdown, breakdown), 'version breakdown mismatch');
 assert(version.build.generated_at === version.data.generated_at, 'version generated_at mismatch');
+assert(version.data.public_files?.platform_record === '/data/platform/{slug}.json', 'record-level route missing from version');
 
 assert(manifest.schema_version === version.schema_version, 'manifest schema mismatch');
 assert(manifest.data_schema_version === version.data.data_schema_version, 'manifest data schema mismatch');
@@ -70,6 +71,7 @@ assert(isDeepStrictEqual(manifest.record_count_breakdown, breakdown), 'manifest 
 assert(manifest.data_safety?.canonical_only === true, 'manifest canonical_only missing');
 assert(manifest.data_safety?.includes_unreviewed_candidates === false, 'candidate safety flag invalid');
 assert(manifest.data_model?.outcome_scope?.point_in_time_field === 'as_of', 'outcome as_of policy missing');
+assert(manifest.public_files?.platform_record === '/data/platform/{slug}.json', 'record-level route missing from manifest');
 
 const datasetFiles = {
   platforms: ['dist/data/platforms.json', platforms.length],
@@ -103,4 +105,51 @@ for (const outcome of datasets.customer_outcomes.records) {
   assert(Array.isArray(outcome.scope?.jurisdictions), `${outcome.platform_id} lacks jurisdiction scope`);
 }
 
-console.log(JSON.stringify({ ok: true, record_counts: counts, derived_counts: derived, build: version.build }, null, 2));
+const publicOutcomeByPlatform = new Map(datasets.customer_outcomes.records.map((row) => [row.platform_id, row]));
+for (const platform of platforms) {
+  const file = `dist/data/platform/${platform.slug}.json`;
+  assert(fs.existsSync(file), `Missing record-level JSON for ${platform.slug}`);
+  const payload = readJson(file);
+  assert(payload.schema_version === version.schema_version, `${platform.slug} record schema mismatch`);
+  assert(payload.data_schema_version === version.data.data_schema_version, `${platform.slug} record data schema mismatch`);
+  assert(payload.dataset === 'platform_record', `${platform.slug} record dataset mismatch`);
+  assert(payload.canonical_origin === version.canonical_origin, `${platform.slug} record origin mismatch`);
+  assert(payload.canonical_only === true, `${platform.slug} record canonical_only missing`);
+  assert(payload.generated_at === version.data.generated_at, `${platform.slug} record generated_at mismatch`);
+  assert(payload.build.commit === version.build.commit, `${platform.slug} record commit mismatch`);
+  assert(payload.record_key?.platform_id === platform.id && payload.record_key?.slug === platform.slug, `${platform.slug} record key mismatch`);
+  assert(payload.canonical_page === `/platform/${platform.slug}/`, `${platform.slug} canonical page mismatch`);
+  assert(payload.self === `/data/platform/${platform.slug}.json`, `${platform.slug} self route mismatch`);
+  assert(isDeepStrictEqual(payload.record, platform), `${platform.slug} primary record differs from canonical data`);
+
+  const expectedEvents = events
+    .filter((row) => row.platform_id === platform.id)
+    .sort((a, b) => String(a.event_date || '').localeCompare(String(b.event_date || '')) || String(a.id || '').localeCompare(String(b.id || '')));
+  const expectedEvidence = evidence
+    .filter((row) => row.platform_id === platform.id)
+    .sort((a, b) => String(a.published_at || '').localeCompare(String(b.published_at || '')) || String(a.id || '').localeCompare(String(b.id || '')));
+  const expectedProducts = products
+    .filter((row) => row.platform_id === platform.id)
+    .sort((a, b) => String(a.product_name || '').localeCompare(String(b.product_name || '')) || String(a.id || '').localeCompare(String(b.id || '')));
+  const expectedOutcome = publicOutcomeByPlatform.get(platform.id) || null;
+  const expectedTerms = termsRisk.find((row) => row.platform_id === platform.id) || null;
+
+  assert(isDeepStrictEqual(payload.supporting_records?.events, expectedEvents), `${platform.slug} events mismatch`);
+  assert(isDeepStrictEqual(payload.supporting_records?.evidence, expectedEvidence), `${platform.slug} evidence mismatch`);
+  assert(isDeepStrictEqual(payload.supporting_records?.customer_outcome, expectedOutcome), `${platform.slug} outcome mismatch`);
+  assert(isDeepStrictEqual(payload.supporting_records?.products, expectedProducts), `${platform.slug} products mismatch`);
+  assert(isDeepStrictEqual(payload.supporting_records?.terms_risk, expectedTerms), `${platform.slug} terms-risk mismatch`);
+  assert(isDeepStrictEqual(payload.related_record_counts, {
+    events: expectedEvents.length,
+    evidence: expectedEvidence.length,
+    customer_outcomes: expectedOutcome ? 1 : 0,
+    product_profiles: expectedProducts.length,
+    terms_risk_records: expectedTerms ? 1 : 0,
+  }), `${platform.slug} related record counts mismatch`);
+
+  const serialized = JSON.stringify(payload);
+  assert(!serialized.includes('candidate_id'), `${platform.slug} record includes candidate data`);
+  assert(!serialized.includes('data-staging'), `${platform.slug} record includes staging data`);
+}
+
+console.log(JSON.stringify({ ok: true, record_counts: counts, derived_counts: derived, record_level_json: platforms.length, build: version.build }, null, 2));
