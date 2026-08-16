@@ -5,10 +5,32 @@ import { allPlatforms, allEvidence, getOutcome, getTermsRisk, label } from '../.
 const PAGE_SIZE = 25;
 const statusOptions = Array.from(new Set(allPlatforms.map((platform) => platform.status))).sort();
 const outcomeOptions = Array.from(new Set(allPlatforms.map((platform) => getOutcome(platform.id)?.outcome_status || 'unknown'))).sort();
+const recoveryOptions = Array.from(new Set(allPlatforms.map((platform) => getOutcome(platform.id)?.recovery_type || 'unknown'))).sort();
 const failureOptions = Array.from(new Set(allPlatforms.map((platform) => platform.failure_reason || 'unknown'))).sort();
 const termsOptions = Array.from(new Set(allPlatforms.map((platform) => getTermsRisk(platform.id)?.terms_status || 'unknown'))).sort();
 const typeOptions = Array.from(new Set(allPlatforms.map((platform) => platform.type || 'unknown'))).sort();
 const jurisdictionOptions = Array.from(new Set(allPlatforms.map((platform) => platform.country_or_origin).filter(Boolean))).sort();
+const launchYearOptions = Array.from(new Set(allPlatforms.map((platform) => platform.launch_date ? String(platform.launch_date).slice(0, 4) : '').filter(Boolean))).sort((a, b) => Number(b) - Number(a));
+const endYearOptions = Array.from(new Set(allPlatforms.map((platform) => platform.end_date ? String(platform.end_date).slice(0, 4) : '').filter(Boolean))).sort((a, b) => Number(b) - Number(a));
+
+const evidenceByPlatform = new Map();
+for (const item of allEvidence) {
+  const rows = evidenceByPlatform.get(item.platform_id) || [];
+  rows.push(item);
+  evidenceByPlatform.set(item.platform_id, rows);
+}
+const reliabilityRank = { high: 3, medium: 2, low: 1 };
+function evidenceFor(platformId) {
+  return evidenceByPlatform.get(platformId) || [];
+}
+function bestEvidenceReliability(platformId) {
+  const reliability = evidenceFor(platformId)
+    .map((item) => item.reliability)
+    .filter(Boolean)
+    .sort((a, b) => (reliabilityRank[b] || 0) - (reliabilityRank[a] || 0))[0];
+  return reliability || 'none';
+}
+const evidenceReliabilityOptions = ['high', 'medium', 'low', 'none'].filter((value) => allPlatforms.some((platform) => bestEvidenceReliability(platform.id) === value));
 
 function years(platform) {
   const start = platform.launch_date ? String(platform.launch_date).slice(0, 4) : '—';
@@ -23,7 +45,8 @@ function platformMeta(platform) {
 function searchText(platform) {
   const outcome = getOutcome(platform.id);
   const terms = getTermsRisk(platform.id);
-  return [platform.canonical_name, platform.slug, platform.type, label(platform.type), platform.status, label(platform.status), platform.failure_reason, label(platform.failure_reason), platform.official_domain_original, platform.country_or_origin, outcome?.outcome_status, label(outcome?.outcome_status), terms?.terms_status, label(terms?.terms_status), ...(platform.aliases || [])].filter(Boolean).join(' ').toLowerCase();
+  const bestEvidence = bestEvidenceReliability(platform.id);
+  return [platform.canonical_name, platform.slug, platform.type, label(platform.type), platform.status, label(platform.status), platform.failure_reason, label(platform.failure_reason), platform.official_domain_original, platform.country_or_origin, platform.launch_date, platform.end_date, outcome?.outcome_status, label(outcome?.outcome_status), outcome?.recovery_type, label(outcome?.recovery_type), terms?.terms_status, label(terms?.terms_status), bestEvidence, label(bestEvidence), ...(platform.aliases || [])].filter(Boolean).join(' ').toLowerCase();
 }
 ---
 <BaseLayout title="Platform registry | Crypto Yield Archive" description="Search, filter, sort, and page through the complete reviewed Crypto Yield Archive platform registry.">
@@ -31,7 +54,7 @@ function searchText(platform) {
     <header class="editorial-head">
       <p class="kicker">Complete registry</p>
       <h1>Crypto lending and yield platforms</h1>
-      <p class="lede">Search and filter all {allPlatforms.length} reviewed platform records. URL parameters preserve filters, sort order, and page number.</p>
+      <p class="lede">Search and filter all {allPlatforms.length} reviewed platform records by lifecycle, customer outcome, recovery type, dates, jurisdiction, terms treatment, and evidence reliability. URL parameters preserve filters, sort order, and page number.</p>
     </header>
 
     <section class="registry-section" aria-labelledby="platform-registry-title">
@@ -41,10 +64,14 @@ function searchText(platform) {
           <label class="control-field search-field"><span>Search</span><input id="registrySearch" type="search" placeholder="Name, alias, domain, type, outcome…" autocomplete="off" /></label>
           <label class="control-field"><span>Status</span><select id="statusFilter"><option value="">All status</option>{statusOptions.map((status) => <option value={status}>{label(status)}</option>)}</select></label>
           <label class="control-field"><span>Outcome</span><select id="outcomeFilter"><option value="">All outcomes</option>{outcomeOptions.map((outcome) => <option value={outcome}>{label(outcome)}</option>)}</select></label>
+          <label class="control-field"><span>Recovery type</span><select id="recoveryFilter"><option value="">All recovery types</option>{recoveryOptions.map((recovery) => <option value={recovery}>{label(recovery)}</option>)}</select></label>
           <label class="control-field"><span>Product type</span><select id="typeFilter"><option value="">All types</option>{typeOptions.map((type) => <option value={type}>{label(type)}</option>)}</select></label>
           <label class="control-field"><span>Failure</span><select id="failureFilter"><option value="">All failure reasons</option>{failureOptions.map((failure) => <option value={failure}>{label(failure)}</option>)}</select></label>
           <label class="control-field"><span>Terms</span><select id="termsFilter"><option value="">All terms status</option>{termsOptions.map((term) => <option value={term}>{label(term)}</option>)}</select></label>
           <label class="control-field"><span>Jurisdiction</span><select id="jurisdictionFilter"><option value="">All jurisdictions</option>{jurisdictionOptions.map((jurisdiction) => <option value={jurisdiction}>{jurisdiction}</option>)}</select></label>
+          <label class="control-field"><span>Launch year</span><select id="launchYearFilter"><option value="">All launch years</option>{launchYearOptions.map((year) => <option value={year}>{year}</option>)}</select></label>
+          <label class="control-field"><span>End year</span><select id="endYearFilter"><option value="">All end years</option>{endYearOptions.map((year) => <option value={year}>{year}</option>)}</select></label>
+          <label class="control-field"><span>Best evidence</span><select id="evidenceReliabilityFilter"><option value="">All reliability</option>{evidenceReliabilityOptions.map((reliability) => <option value={reliability}>{reliability === 'none' ? 'No evidence' : label(reliability)}</option>)}</select></label>
           <label class="control-field"><span>Claims</span><select id="claimsFilter"><option value="">All customer outcomes</option><option value="ongoing">Ongoing claims only</option></select></label>
           <label class="control-field"><span>Sort</span><select id="sortSelect"><option value="reviewed-desc">Recently reviewed</option><option value="name-asc">Name A–Z</option><option value="name-desc">Name Z–A</option><option value="failure-desc">Failure date newest</option><option value="evidence-desc">Evidence count high first</option></select></label>
           <button id="copyCurrentView" class="ghost-button" type="button">Copy view link</button>
@@ -60,7 +87,11 @@ function searchText(platform) {
               {allPlatforms.map((platform, index) => {
                 const outcome = getOutcome(platform.id);
                 const terms = getTermsRisk(platform.id);
-                const evidenceCount = allEvidence.filter((item) => item.platform_id === platform.id).length;
+                const platformEvidence = evidenceFor(platform.id);
+                const evidenceCount = platformEvidence.length;
+                const bestEvidence = bestEvidenceReliability(platform.id);
+                const launchYear = platform.launch_date ? String(platform.launch_date).slice(0, 4) : '';
+                const endYear = platform.end_date ? String(platform.end_date).slice(0, 4) : '';
                 return (
                   <tr
                     hidden={index >= PAGE_SIZE}
@@ -69,21 +100,25 @@ function searchText(platform) {
                     data-name={platform.canonical_name}
                     data-status={platform.status}
                     data-outcome={outcome?.outcome_status || 'unknown'}
+                    data-recovery={outcome?.recovery_type || 'unknown'}
                     data-type={platform.type || 'unknown'}
                     data-failure={platform.failure_reason || 'unknown'}
                     data-terms={terms?.terms_status || 'unknown'}
                     data-jurisdiction={platform.country_or_origin || ''}
+                    data-launch-year={launchYear}
+                    data-end-year={endYear}
+                    data-evidence-reliability={bestEvidence}
                     data-reviewed={platform.last_verified_at || ''}
                     data-failure-date={platform.end_date || ''}
                     data-evidence={String(evidenceCount)}
                   >
                     <td class="name-cell" data-label="Platform"><a href={`/platform/${platform.slug}/`}><strong>{platform.canonical_name}</strong></a><small>{platformMeta(platform)}</small></td>
                     <td data-label="Status"><span class="chip">{label(platform.status)}</span></td>
-                    <td data-label="Outcome"><span class="chip">{label(outcome?.outcome_status || 'unknown')}</span></td>
+                    <td data-label="Outcome"><span class="chip">{label(outcome?.outcome_status || 'unknown')}</span><small>{label(outcome?.recovery_type || 'unknown')}</small></td>
                     <td data-label="Failure"><span class="chip">{label(platform.failure_reason)}</span></td>
                     <td data-label="Terms"><span class="chip">{label(terms?.terms_status || 'unknown')}</span></td>
                     <td data-label="Years"><strong>{years(platform)}</strong></td>
-                    <td data-label="Evidence / links" class="links-cell"><strong>{evidenceCount} sources</strong><small>{platform.official_domain_original || 'No domain recorded'}</small>{platform.archived_url && <a class="archive-link" href={platform.archived_url}>Archive</a>}</td>
+                    <td data-label="Evidence / links" class="links-cell"><strong>{evidenceCount} sources</strong><small>{evidenceCount ? `${label(bestEvidence)} best · ${platform.official_domain_original || 'No domain recorded'}` : `No evidence · ${platform.official_domain_original || 'No domain recorded'}`}</small>{platform.archived_url && <a class="archive-link" href={platform.archived_url}>Archive</a>}</td>
                   </tr>
                 );
               })}
@@ -102,10 +137,14 @@ function searchText(platform) {
       q: document.querySelector('#registrySearch'),
       status: document.querySelector('#statusFilter'),
       outcome: document.querySelector('#outcomeFilter'),
+      recovery: document.querySelector('#recoveryFilter'),
       type: document.querySelector('#typeFilter'),
       failure: document.querySelector('#failureFilter'),
       terms: document.querySelector('#termsFilter'),
       jurisdiction: document.querySelector('#jurisdictionFilter'),
+      launchYear: document.querySelector('#launchYearFilter'),
+      endYear: document.querySelector('#endYearFilter'),
+      evidenceReliability: document.querySelector('#evidenceReliabilityFilter'),
       claims: document.querySelector('#claimsFilter'),
       sort: document.querySelector('#sortSelect'),
     };
@@ -139,10 +178,14 @@ function searchText(platform) {
       return (!query || row.dataset.search.includes(query))
         && (!state.status || row.dataset.status === state.status)
         && (!state.outcome || row.dataset.outcome === state.outcome)
+        && (!state.recovery || row.dataset.recovery === state.recovery)
         && (!state.type || row.dataset.type === state.type)
         && (!state.failure || row.dataset.failure === state.failure)
         && (!state.terms || row.dataset.terms === state.terms)
         && (!state.jurisdiction || row.dataset.jurisdiction === state.jurisdiction)
+        && (!state.launchYear || row.dataset.launchYear === state.launchYear)
+        && (!state.endYear || row.dataset.endYear === state.endYear)
+        && (!state.evidenceReliability || row.dataset.evidenceReliability === state.evidenceReliability)
         && (!state.claims || row.dataset.outcome === 'claims_ongoing');
     }
 
