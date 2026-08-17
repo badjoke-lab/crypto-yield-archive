@@ -1,0 +1,18 @@
+[
+  {
+    "platform_id": "cya_plat_000116",
+    "outcome_status": "not_applicable",
+    "estimated_recovery_rate": "not_applicable",
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": "Not applicable as a failure-recovery process. BitTrade's lending service remains active in the reviewed first-party material; CYA records current contractual return mechanics and insolvency exposure without converting them into a historical recovery process.",
+    "claim_process_url": null,
+    "affected_products": ["BitTrade 貸暗号資産"],
+    "claim_classes": [],
+    "jurisdictions": ["Japan"],
+    "as_of": "2026-08-17",
+    "last_verified_at": "2026-08-17",
+    "notes": "Current product mechanics do not prove universal historical repayment performance or a realized recovery percentage.",
+    "confidence": "high"
+  }
+]
