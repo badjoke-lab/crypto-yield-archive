@@ -1,0 +1,24 @@
+[
+  {
+    "id": "cya_plat_000116",
+    "slug": "bittrade-lending",
+    "canonical_name": "BitTrade 貸暗号資産",
+    "aliases": ["BitTrade Lending", "ビットトレード 貸暗号資産", "貸して増やす"],
+    "type": "cefi_lending",
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": null,
+    "end_date": null,
+    "country_or_origin": "Japan",
+    "summary": "Active centralized crypto-asset lending service operated by BitTrade. First-party terms describe an unsecured consumption-loan exposure outside statutory segregated management, with offering-specific lending periods and contractual lending fees.",
+    "what_happened": "BitTrade currently operates a crypto-asset lending service. First-party materials state that after application the lent crypto is locked, individual contracts are in principle not cancellable mid-term, and the lent crypto plus contractual lending fee is returned within the published return window after the lending period. BitTrade explicitly states that the service is not crypto-asset exchange business under the Payment Services Act, that lent assets are not subject to statutory segregated management, and that customers have no priority repayment right over other creditors. The agreement is described as an unsecured consumption-loan contract, and BitTrade warns that lent crypto may not be returned if BitTrade fails. Historical first-party campaign records establish prior operation but do not establish the exact original launch day, so CYA does not infer one.",
+    "official_url_original": "https://www.bittrade.co.jp/ja-jp/financial/intro",
+    "official_domain_original": "bittrade.co.jp",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://www.bittrade.co.jp/ja-jp/financial/intro",
+    "confidence": "high",
+    "last_verified_at": "2026-08-17",
+    "uncertainty_notes": "Exact original launch date is not established by the reviewed first-party evidence. Published lending rates are issuer product terms, not independently verified realized returns. Current return mechanics do not establish universal historical repayment performance.",
+    "notes": "Promoted in Phase 10 from duplicate-clear candidate cya_candidate_000134 after candidate-only PR #276 passed the hardened exact-head scanner against the 115-platform canonical corpus."
+  }
+]
