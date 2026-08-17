@@ -1,0 +1,11 @@
+[
+  {
+    "platform_id": "cya_plat_000118",
+    "terms_status": "unknown",
+    "asset_ownership_interpretation": "The reviewed first-party support establishes a fixed-term crypto lending arrangement but does not provide sufficient dedicated lending-term authority in this review pass to characterize lent balances as segregated, insured, trust-protected, or otherwise isolated from operator counterparty exposure. CYA therefore records custody/segregation treatment conservatively and does not generalize ordinary exchange-service protections to lent assets.",
+    "affected_product": "CoinTrade Lending",
+    "source_evidence_id": "cya_src_b83_0002",
+    "notes": "Published reward rates are issuer terms rather than verified realized returns. Mid-term cancellation is generally unavailable; approved exceptions receive no lending reward and incur a cancellation fee equal to 10% of the application quantity. Product-specific insolvency/custody treatment remains unresolved unless stronger dedicated terms are reviewed.",
+    "confidence": "medium"
+  }
+]
