@@ -1,0 +1,16 @@
+[
+  {
+    "id": "cya_ev_000356",
+    "platform_id": "cya_plat_000117",
+    "event_type": "launched",
+    "event_date": "2025-02-28",
+    "title": "OKJ launches 貸暗号資産",
+    "description": "OKJ announced the Web launch of its crypto-asset lending service 貸暗号資産 for 2025-02-28 at 17:00 JST, allowing customers to lend crypto assets to OKJ and receive contractual lending fees under offering-specific terms.",
+    "confidence": "high",
+    "impact_level": "high",
+    "event_status_effect": "active",
+    "source_count": 1,
+    "sort_order": 1,
+    "notes": "First-party launch authority. Published campaign and lending rates remain issuer product terms and are not treated as independently verified realized return."
+  }
+]

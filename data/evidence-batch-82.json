@@ -1,0 +1,47 @@
+[
+  {
+    "id": "cya_src_b82_0001",
+    "platform_id": "cya_plat_000117",
+    "event_id": "cya_ev_000356",
+    "source_type": "official_statement",
+    "title": "〖2025/02/25〗 「貸暗号資産」サービス開始のお知らせ",
+    "url": "https://support.okcoin.jp/hc/ja/articles/43203662050457--2025-02-25-%E8%B2%B8%E6%9A%97%E5%8F%B7%E8%B3%87%E7%94%A3-%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E9%96%8B%E5%A7%8B%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B",
+    "publisher": "OKJ",
+    "published_at": "2025-02-25",
+    "archived_url": "https://web.archive.org/web/*/https://support.okcoin.jp/hc/ja/articles/43203662050457--2025-02-25-%E8%B2%B8%E6%9A%97%E5%8F%B7%E8%B3%87%E7%94%A3-%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E9%96%8B%E5%A7%8B%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B",
+    "accessed_at": "2026-08-17",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "First-party authority for Web service launch at 2025-02-28 17:00 JST. Published campaign rates remain issuer product terms rather than independently verified realized returns."
+  },
+  {
+    "id": "cya_src_b82_0002",
+    "platform_id": "cya_plat_000117",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "貸暗号資産",
+    "url": "https://www.okcoin.jp/pages/products/lending.html",
+    "publisher": "OKJ",
+    "published_at": null,
+    "archived_url": "https://web.archive.org/web/*/https://www.okcoin.jp/pages/products/lending.html",
+    "accessed_at": "2026-08-17",
+    "reliability": "high",
+    "claim_scope": "terms_risk",
+    "notes": "Current first-party authority for lending-fee calculation, lending/return flow, early-cancellation mechanics, non-deposit status, non-segregated treatment of lent assets and possible non-return on OKJ failure."
+  },
+  {
+    "id": "cya_src_b82_0003",
+    "platform_id": "cya_plat_000117",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "貸暗号資産を始める（申請方法）",
+    "url": "https://support.okcoin.jp/hc/ja/articles/43745727619993-%E8%B2%B8%E6%9A%97%E5%8F%B7%E8%B3%87%E7%94%A3%E3%82%92%E5%A7%8B%E3%82%81%E3%82%8B-%E7%94%B3%E8%AB%8B%E6%96%B9%E6%B3%95",
+    "publisher": "OKJ",
+    "published_at": null,
+    "archived_url": "https://web.archive.org/web/*/https://support.okcoin.jp/hc/ja/articles/43745727619993-%E8%B2%B8%E6%9A%97%E5%8F%B7%E8%B3%87%E7%94%A3%E3%82%92%E5%A7%8B%E3%82%81%E3%82%8B-%E7%94%B3%E8%AB%8B%E6%96%B9%E6%B3%95",
+    "accessed_at": "2026-08-17",
+    "reliability": "high",
+    "claim_scope": "status",
+    "notes": "Current first-party application instructions support active availability of the lending product and confirm the consumption-loan agreement acceptance flow."
+  }
+]

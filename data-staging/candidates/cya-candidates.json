@@ -81,22 +81,5 @@
     "notes": "Phase 10 identity review resolves the watchlist ORCA item to the live iOrca registration surface under dapp.ocagent.io. The official registration page requires username, affiliate code, wallet connection and acceptance of Terms of Service, Privacy Policy and Risk Disclosure, establishing an active financial-product surface but not the underlying economic contract. Current Japanese discovery/referral material consistently describes BNB-chain USDT deposits, minimum participation around 100 USDT, 10/90/180/360-day packages, principal lockups, daily USDT rewards sent to a wallet, check-in-based reward increases, referral ranks and a temporary doubled-deposit campaign; it attributes yield to AI agents exploiting price/probability differences across prediction markets. Those mechanics and rates remain discovery claims because the first-party Terms/Risk pages could not be retrieved reliably in this pass and no stable first-party documentation for package rates, custody, asset reuse, redemption, source of yield or operator identity was found. A claimed relationship to Nodepay is likewise unverified and must not be canonicalized. Resolve legal operator/jurisdiction, first-party Terms and Risk Disclosure, deposit/custody/asset-use treatment, package lock/redemption rules, reward calculation, withdrawal rights, launch chronology, source-of-yield claims and any campaign liabilities before add_now. Do not confuse this candidate with Orca's Solana AMM/xORCA staking product and do not convert advertised daily rates or campaign credits into verified realized return or principal repayment.",
     "first_seen_at": "2026-08-12",
     "last_reviewed_at": "2026-08-13"
-  },
-  {
-    "candidate_id": "cya_candidate_000135",
-    "canonical_name": "OKJ",
-    "aliases": ["OKCoinJapan", "OKCoin Japan", "OKJ 貸暗号資産", "OKCoinJapan 貸暗号資産"],
-    "domain": "okcoin.jp",
-    "country_or_origin": "Japan",
-    "platform_type_guess": "exchange_lending",
-    "status_guess": "active",
-    "major_event": "OKJ launched its lending service on 2025-02-28; current first-party materials describe fixed-term crypto consumption-loan products where customers lend crypto to OKJ and receive principal plus contractual lending fees, with early-cancellation rules and explicit non-segregated creditor exposure",
-    "primary_sources": ["https://www.okcoin.jp/pages/products/lending.html", "https://support.okcoin.jp/hc/ja/articles/43203662050457--2025-02-25-%E8%B2%B8%E6%9A%97%E5%8F%B7%E8%B3%87%E7%94%A3-%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E9%96%8B%E5%A7%8B%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B", "https://support.okcoin.jp/hc/ja/articles/43745727619993-%E8%B2%B8%E6%9A%97%E5%8F%B7%E8%B3%87%E7%94%A3%E3%82%92%E5%A7%8B%E3%82%81%E3%82%8B-%E7%94%B3%E8%AB%8B%E6%96%B9%E6%B3%95"],
-    "secondary_sources": [],
-    "duplicate_check": {"checked_at": "2026-08-17", "matched_platform_ids": [], "notes": "Exact repository search for OKJ / OKCoinJapan / 貸暗号資産 returned no indexed CYA identity match before staging. Hardened full-corpus scanning remains authoritative."},
-    "decision": "add_now",
-    "notes": "First-party authority supports exact Web service launch at 2025-02-28 17:00 JST. Current official terms describe principal-plus-lending-fee return after the lending period, allow early cancellation without lending fee, and explicitly state that lent assets are not covered by statutory segregated management and may not be returned if OKJ fails. The product is not a deposit or deposit-insurance-covered product. Published rates are issuer terms, not verified realized returns; current mechanics do not establish universal historical repayment performance.",
-    "first_seen_at": "2026-08-17",
-    "last_reviewed_at": "2026-08-17"
   }
 ]

@@ -1,0 +1,24 @@
+[
+  {
+    "id": "cya_plat_000117",
+    "slug": "okj-lending",
+    "canonical_name": "OKJ 貸暗号資産",
+    "aliases": ["OKJ Lending", "OKCoinJapan 貸暗号資産", "OKCoin Japan Lending"],
+    "type": "cefi_lending",
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": "2025-02-28",
+    "end_date": null,
+    "country_or_origin": "Japan",
+    "summary": "Active centralized crypto-asset lending service operated by OKCoin Japan K.K. (OKJ). First-party materials describe fixed-term crypto consumption-loan products where customers lend crypto assets to OKJ and receive principal plus contractual lending fees.",
+    "what_happened": "OKJ announced the Web launch of its 貸暗号資産 service for 2025-02-28 at 17:00 JST. Current first-party materials state that customers lend crypto assets to OKJ under a consumption-loan arrangement, with principal and contractual lending fees returned according to offering-specific lending and return terms. Early cancellation is available, but no lending fee is paid on early cancellation and return follows the specified return schedule. OKJ explicitly states that the product is not a deposit or deposit-like product, is not covered by deposit insurance, and that lent assets are not subject to statutory segregated management. OKJ warns that lent crypto may not be returned if the company fails.",
+    "official_url_original": "https://www.okcoin.jp/pages/products/lending.html",
+    "official_domain_original": "okcoin.jp",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://www.okcoin.jp/pages/products/lending.html",
+    "confidence": "high",
+    "last_verified_at": "2026-08-17",
+    "uncertainty_notes": "Published lending rates are issuer product terms, not independently verified realized returns. Current contractual mechanics do not establish universal historical repayment performance. Exchange-service custody protections are not generalized to lent balances.",
+    "notes": "Promoted in Phase 10 from duplicate-clear candidate cya_candidate_000135 after candidate-only PR #279 passed the hardened exact-head scanner against the 116-platform canonical corpus."
+  }
+]

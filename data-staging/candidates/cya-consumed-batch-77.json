@@ -1,0 +1,16 @@
+[
+  {
+    "candidate_id": "cya_candidate_000135",
+    "canonical_name": "OKJ 貸暗号資産",
+    "domain": "okcoin.jp",
+    "decision": "already_recorded",
+    "duplicate_check": {
+      "checked_at": "2026-08-17",
+      "matched_platform_ids": ["cya_plat_000117"],
+      "notes": "Promoted only after candidate-only PR #279 and the hardened exact-head scanner found no canonical duplicate against the 116-platform corpus."
+    },
+    "notes": "Promoted in Phase 10 as cya_plat_000117. Exact Web launch is supported at 2025-02-28 17:00 JST. The non-segregated lending exposure and failure non-return risk are preserved; published rates remain issuer terms rather than verified realized returns.",
+    "first_seen_at": "2026-08-17",
+    "last_reviewed_at": "2026-08-17"
+  }
+]
