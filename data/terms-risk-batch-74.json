@@ -1,0 +1,11 @@
+[
+  {
+    "platform_id": "cya_plat_000114",
+    "terms_status": "platform_owned",
+    "asset_ownership_interpretation": "The reviewed materials describe customers lending crypto assets to bitbank under a lending contract in exchange for contractual usage/lending fees. First-party ETHW fork guidance distinguishes lent ETH from the segregated-management balance used for ordinary exchange custody in the documented fork context. CYA therefore represents borrower/counterparty economic exposure during the lending contract and does not infer segregated custody, insurance or guaranteed principal for lent balances. Exact historical legal terms may vary across periods.",
+    "affected_product": "bitbank 暗号資産を貸して増やす",
+    "source_evidence_id": "cya_src_b79_0003",
+    "notes": "Current first-party support documents one-year maturity and early-termination mechanics. Published rates remain issuer terms, not verified realized returns. Current return mechanics are not evidence of universal historical repayment performance.",
+    "confidence": "high"
+  }
+]
