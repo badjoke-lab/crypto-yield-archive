@@ -1,0 +1,24 @@
+[
+  {
+    "id": "cya_plat_000115",
+    "slug": "bitpoint-lending",
+    "canonical_name": "BITPOINT 貸して増やす",
+    "aliases": ["BITPOINT Lending", "ビットポイント 貸して増やす", "BITPOINT 暗号資産レンディング"],
+    "type": "cefi_lending",
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": "2020-11-26",
+    "end_date": null,
+    "country_or_origin": "Japan",
+    "summary": "Active crypto-asset lending service launched by BITPOINT on 2020-11-26. Customers lend crypto assets under a consumption-loan contract and receive equivalent crypto plus a contractual lending fee under the published terms.",
+    "what_happened": "BITPOINT announced the launch of its crypto-asset lending service on 2020-11-26. Current first-party materials describe a consumption-loan contract in which customers lend crypto assets to BITPOINT, with lending periods and lending-fee rates fixed per offering. The current service detail states that equivalent crypto and the lending fee are returned on the day after the lending period ends and that mid-term cancellation is unavailable. BITPOINT explicitly states that the service is not a crypto-asset exchange service under the Payment Services Act and that assets lent through the service are not subject to statutory segregated management. The product is also stated not to be a deposit-like product or deposit-insurance covered.",
+    "official_url_original": "https://www.bitpoint.co.jp/service/lending/",
+    "official_domain_original": "bitpoint.co.jp",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://www.bitpoint.co.jp/service/lending/",
+    "confidence": "high",
+    "last_verified_at": "2026-08-17",
+    "uncertainty_notes": "Published launch/current lending rates are issuer product terms, not independently verified realized returns. Current return mechanics do not establish universal historical repayment performance. Exchange-service custody protections must not be generalized to lent balances.",
+    "notes": "Promoted in Phase 10 from duplicate-clear candidate cya_candidate_000133 after candidate-only PR #273 passed the hardened exact-head scanner against the 114-platform canonical corpus."
+  }
+]

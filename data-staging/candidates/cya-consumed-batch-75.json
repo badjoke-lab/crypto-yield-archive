@@ -1,0 +1,16 @@
+[
+  {
+    "candidate_id": "cya_candidate_000133",
+    "canonical_name": "BITPOINT 貸して増やす",
+    "domain": "bitpoint.co.jp",
+    "decision": "already_recorded",
+    "duplicate_check": {
+      "checked_at": "2026-08-17",
+      "matched_platform_ids": ["cya_plat_000115"],
+      "notes": "Promoted only after candidate-only PR #273 and the hardened exact-head scanner found no canonical duplicate against the 114-platform corpus."
+    },
+    "notes": "Promoted in Phase 10 as cya_plat_000115 with launch event cya_ev_000355. The 2020-11-26 date is supported by first-party launch authority. Published rates remain issuer product terms, and the explicit non-segregated lending custody boundary is preserved.",
+    "first_seen_at": "2026-08-17",
+    "last_reviewed_at": "2026-08-17"
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "id": "cya_ev_000355",
+    "platform_id": "cya_plat_000115",
+    "event_type": "launched",
+    "event_date": "2020-11-26",
+    "title": "BITPOINT launches 貸して増やす",
+    "description": "BITPOINT announced the launch of its crypto-asset lending service 貸して増やす on 2020-11-26, allowing customers to lend crypto assets to BITPOINT and receive contractual lending fees under the published offering terms.",
+    "confidence": "high",
+    "impact_level": "high",
+    "event_status_effect": "active",
+    "source_count": 1,
+    "sort_order": 1,
+    "notes": "First-party launch authority. The launch campaign rate is an issuer product term and is not treated as independently verified realized return."
+  }
+]
