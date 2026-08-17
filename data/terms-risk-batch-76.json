@@ -1,0 +1,11 @@
+[
+  {
+    "platform_id": "cya_plat_000116",
+    "terms_status": "platform_owned",
+    "asset_ownership_interpretation": "The reviewed materials describe customers lending crypto assets to BitTrade under an unsecured consumption-loan contract. BitTrade expressly states that lent assets are not subject to statutory segregated management and that customers have no priority repayment right over other creditors. CYA therefore represents borrower/counterparty economic exposure during the lending period and does not infer exchange-custody protection, deposit protection, insurance or guaranteed principal.",
+    "affected_product": "BitTrade 貸暗号資産",
+    "source_evidence_id": "cya_src_b81_0001",
+    "notes": "Individual contracts are in principle not cancellable mid-term. BitTrade warns that lent crypto may not be returned if it fails. Published rates remain issuer product terms, not verified realized returns.",
+    "confidence": "high"
+  }
+]

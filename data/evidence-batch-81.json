@@ -1,0 +1,47 @@
+[
+  {
+    "id": "cya_src_b81_0001",
+    "platform_id": "cya_plat_000116",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "貸暗号資産",
+    "url": "https://www.bittrade.co.jp/ja-jp/financial/intro",
+    "publisher": "BitTrade",
+    "published_at": null,
+    "archived_url": "https://web.archive.org/web/*/https://www.bittrade.co.jp/ja-jp/financial/intro",
+    "accessed_at": "2026-08-17",
+    "reliability": "high",
+    "claim_scope": "terms_risk",
+    "notes": "Current first-party authority for the lending service, lock/return mechanics, mid-term cancellation boundary, non-segregated custody, unsecured consumption-loan exposure, creditor-priority boundary and possible non-return on BitTrade failure."
+  },
+  {
+    "id": "cya_src_b81_0002",
+    "platform_id": "cya_plat_000116",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "貸暗号資産サービスとは",
+    "url": "https://info.bittrade.co.jp/blog/what-is-lending-service/",
+    "publisher": "BitTrade",
+    "published_at": null,
+    "archived_url": "https://web.archive.org/web/*/https://info.bittrade.co.jp/blog/what-is-lending-service/",
+    "accessed_at": "2026-08-17",
+    "reliability": "high",
+    "claim_scope": "terms_risk",
+    "notes": "First-party explanatory material for the lending product. Published rate examples remain issuer product terms rather than independently verified realized returns."
+  },
+  {
+    "id": "cya_src_b81_0003",
+    "platform_id": "cya_plat_000116",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "キャンペーン情報",
+    "url": "https://info.bittrade.co.jp/campaign-info/",
+    "publisher": "BitTrade",
+    "published_at": null,
+    "archived_url": "https://web.archive.org/web/*/https://info.bittrade.co.jp/campaign-info/",
+    "accessed_at": "2026-08-17",
+    "reliability": "high",
+    "claim_scope": "status",
+    "notes": "First-party campaign archive supports historical operation in earlier periods. It is not used to fabricate an exact original launch date or to treat advertised rates as realized return."
+  }
+]

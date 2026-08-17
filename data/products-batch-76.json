@@ -1,0 +1,10 @@
+[
+  {
+    "platform_id": "cya_plat_000116",
+    "product_type": "centralized_yield",
+    "product_name": "BitTrade 貸暗号資産",
+    "custody_model": "The reviewed first-party materials describe an unsecured consumption-loan contract. BitTrade explicitly states that lent assets are not subject to statutory segregated management and that customers have no priority repayment right over other creditors. CYA therefore records borrower/counterparty exposure and does not infer exchange-custody protection, deposit insurance, insurance, or guaranteed principal for lent balances.",
+    "yield_source": "The reviewed public materials establish contractual lending fees under offering-specific terms but do not independently verify the economic source or realized performance of every fee payment. Published rates remain issuer product terms.",
+    "risk_notes": "Lent crypto is locked after application, individual contracts are in principle not cancellable mid-term, and BitTrade warns that lent crypto may not be returned if BitTrade fails. The service is not deposit-like and is not covered by deposit insurance."
+  }
+]
