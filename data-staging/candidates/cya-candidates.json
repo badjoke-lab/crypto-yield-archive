@@ -29,7 +29,7 @@
     "secondary_sources": ["https://www.cultofmoney.com/outlet-finance-review/", "https://app.dealroom.co/companies/outlet_1", "https://www.producthunt.com/products/outlet-finance"],
     "duplicate_check": {"checked_at": "2026-08-12", "matched_platform_ids": [], "notes": "Duplicate-clear against the 101-platform corpus in the hardened Phase 10 scanner."},
     "decision": "needs_research",
-    "notes": "Phase 10 review confirms strong scope fit: Apple's listing identifies Outlet Finance Inc as the developer and describes user funds being converted to digital assets and put to work for monthly rewards, while an official Outlet Medium post documents the platform's crypto-lending origin. However, secondary sources disagree or lack precision on the closure date: one says early 2023 and Dealroom says operations had ceased by October 2023, while Apple's app history shows version 5.0.3 dated 2023-02-21. Do not assign an exact closure date or repayment outcome from these sources. Resolve first-party closure/customer communications, operating-company registration, historical terms/custody and the final customer-fund outcome before add_now.",
+    "notes": "Phase 10 review confirms strong CYA scope fit: Apple's listing identifies Outlet Finance Inc as the developer and describes user funds being converted to digital assets and put to work for monthly rewards, while an official Outlet Medium post documents the platform's crypto-lending origin. However, secondary sources disagree or lack precision on the closure date: one says early 2023 and Dealroom says operations had ceased by October 2023, while Apple's app history shows version 5.0.3 dated 2023-02-21. Do not assign an exact closure date or repayment outcome from these sources. Resolve first-party closure/customer communications, operating-company registration, historical terms/custody and the final customer-fund outcome before add_now.",
     "first_seen_at": "2026-08-05",
     "last_reviewed_at": "2026-08-12"
   },
@@ -81,5 +81,22 @@
     "notes": "Phase 10 identity review resolves the watchlist ORCA item to the live iOrca registration surface under dapp.ocagent.io. The official registration page requires username, affiliate code, wallet connection and acceptance of Terms of Service, Privacy Policy and Risk Disclosure, establishing an active financial-product surface but not the underlying economic contract. Current Japanese discovery/referral material consistently describes BNB-chain USDT deposits, minimum participation around 100 USDT, 10/90/180/360-day packages, principal lockups, daily USDT rewards sent to a wallet, check-in-based reward increases, referral ranks and a temporary doubled-deposit campaign; it attributes yield to AI agents exploiting price/probability differences across prediction markets. Those mechanics and rates remain discovery claims because the first-party Terms/Risk pages could not be retrieved reliably in this pass and no stable first-party documentation for package rates, custody, asset reuse, redemption, source of yield or operator identity was found. A claimed relationship to Nodepay is likewise unverified and must not be canonicalized. Resolve legal operator/jurisdiction, first-party Terms and Risk Disclosure, deposit/custody/asset-use treatment, package lock/redemption rules, reward calculation, withdrawal rights, launch chronology, source-of-yield claims and any campaign liabilities before add_now. Do not confuse this candidate with Orca's Solana AMM/xORCA staking product and do not convert advertised daily rates or campaign credits into verified realized return or principal repayment.",
     "first_seen_at": "2026-08-12",
     "last_reviewed_at": "2026-08-13"
+  },
+  {
+    "candidate_id": "cya_candidate_000134",
+    "canonical_name": "BitTrade 貸暗号資産",
+    "aliases": ["BitTrade Lending", "ビットトレード 貸暗号資産", "貸して増やす"],
+    "domain": "bittrade.co.jp",
+    "country_or_origin": "Japan",
+    "platform_type_guess": "centralized_lending",
+    "status_guess": "active",
+    "major_event": "BitTrade currently operates a crypto-asset lending service; first-party terms state that lent assets are locked for the lending period and returned with contractual lending fees afterward, while the service is an unsecured consumption-loan exposure outside statutory segregated management and may result in non-return if BitTrade fails",
+    "primary_sources": ["https://www.bittrade.co.jp/ja-jp/financial/intro", "https://info.bittrade.co.jp/blog/what-is-lending-service/", "https://info.bittrade.co.jp/campaign-info/"],
+    "secondary_sources": [],
+    "duplicate_check": {"checked_at": "2026-08-17", "matched_platform_ids": [], "notes": "Exact repository search for BitTrade returned no indexed canonical CYA identity match before staging. Hardened full-corpus scanning on the exact PR head remains authoritative."},
+    "decision": "add_now",
+    "notes": "Current first-party BitTrade material establishes an active centralized crypto-lending product. The lending page states that after application the lent quantity is locked, the lent crypto and lending fee are returned within the published return window after the lending period, and individual contracts are in principle not cancellable mid-term. It expressly states the service is not crypto-asset exchange business under the Payment Services Act, lent assets are not subject to statutory segregated management, customers have no priority repayment right over other creditors, and the contract is an unsecured consumption-loan contract under which lent crypto may not be returned if BitTrade fails. It also states the service is not a deposit/deposit-like product and is not deposit-insurance covered. Historical first-party campaign records establish operation by earlier periods but do not establish an exact original launch day, so no launch date should be invented. Published rates remain issuer terms rather than independently verified realized returns, and current contractual mechanics do not establish universal historical repayment performance.",
+    "first_seen_at": "2026-08-17",
+    "last_reviewed_at": "2026-08-17"
   }
 ]
