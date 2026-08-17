@@ -1,0 +1,11 @@
+[
+  {
+    "platform_id": "cya_plat_000115",
+    "terms_status": "platform_owned",
+    "asset_ownership_interpretation": "The reviewed materials describe customers lending crypto assets to BITPOINT under a consumption-loan contract in exchange for contractual lending fees. BITPOINT explicitly states that lent assets are not subject to statutory segregated management for this service. CYA therefore represents borrower/counterparty economic exposure during the lending period and does not infer exchange-custody protection, deposit protection, insurance or guaranteed principal.",
+    "affected_product": "BITPOINT 貸して増やす",
+    "source_evidence_id": "cya_src_b80_0003",
+    "notes": "Current terms state offering-specific lending periods/rates, no mid-term cancellation, and return/payment after the lending period. Published rates remain issuer terms, not verified realized returns.",
+    "confidence": "high"
+  }
+]
