@@ -1,0 +1,11 @@
+[
+  {
+    "platform_id": "cya_plat_000117",
+    "terms_status": "platform_owned",
+    "asset_ownership_interpretation": "The reviewed materials describe customers lending crypto assets to OKJ under a crypto-asset consumption-loan arrangement. OKJ expressly states that lent assets are not subject to statutory segregated management. CYA therefore represents borrower/counterparty economic exposure during the lending period and does not infer exchange-custody protection, deposit protection, insurance or guaranteed principal.",
+    "affected_product": "OKJ 貸暗号資産",
+    "source_evidence_id": "cya_src_b82_0002",
+    "notes": "The product is not a deposit or deposit-like product and is not covered by deposit insurance. OKJ warns that lent crypto may not be returned if the company fails. Early cancellation produces no lending fee and return follows the offering-specific return schedule. Published rates remain issuer product terms, not verified realized returns.",
+    "confidence": "high"
+  }
+]
