@@ -81,5 +81,22 @@
     "notes": "Phase 10 identity review resolves the watchlist ORCA item to the live iOrca registration surface under dapp.ocagent.io. The official registration page requires username, affiliate code, wallet connection and acceptance of Terms of Service, Privacy Policy and Risk Disclosure, establishing an active financial-product surface but not the underlying economic contract. Current Japanese discovery/referral material consistently describes BNB-chain USDT deposits, minimum participation around 100 USDT, 10/90/180/360-day packages, principal lockups, daily USDT rewards sent to a wallet, check-in-based reward increases, referral ranks and a temporary doubled-deposit campaign; it attributes yield to AI agents exploiting price/probability differences across prediction markets. Those mechanics and rates remain discovery claims because the first-party Terms/Risk pages could not be retrieved reliably in this pass and no stable first-party documentation for package rates, custody, asset reuse, redemption, source of yield or operator identity was found. A claimed relationship to Nodepay is likewise unverified and must not be canonicalized. Resolve legal operator/jurisdiction, first-party Terms and Risk Disclosure, deposit/custody/asset-use treatment, package lock/redemption rules, reward calculation, withdrawal rights, launch chronology, source-of-yield claims and any campaign liabilities before add_now. Do not confuse this candidate with Orca's Solana AMM/xORCA staking product and do not convert advertised daily rates or campaign credits into verified realized return or principal repayment.",
     "first_seen_at": "2026-08-12",
     "last_reviewed_at": "2026-08-13"
+  },
+  {
+    "candidate_id": "cya_candidate_000137",
+    "canonical_name": "CoinTrade Lending",
+    "aliases": ["CoinTradeレンディング", "コイントレードレンディング", "CoinTrade Lending Service"],
+    "domain": "coin-trade.cc",
+    "country_or_origin": "Japan",
+    "platform_type_guess": "exchange_lending",
+    "status_guess": "active",
+    "major_event": "CoinTrade states that it launched lending in June 2024; current first-party support describes an active fixed-term crypto lending service with lending rewards, season-based operation, return procedures and strict mid-term cancellation rules",
+    "primary_sources": ["https://support.coin-trade.cc/hc/ja/articles/21085480166681-CoinTrade-%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%88%E3%83%AC%E3%83%BC%E3%83%89-%E3%81%A8%E3%81%AF%E3%81%A9%E3%82%93%E3%81%AA%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%A7%E3%81%99%E3%81%8B", "https://support.coin-trade.cc/hc/ja/articles/34355137559705-%E3%83%AC%E3%83%B3%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%81%A8%E3%81%AF%E3%81%AA%E3%82%93%E3%81%A7%E3%81%99%E3%81%8B", "https://support.coin-trade.cc/hc/ja/articles/33375433799321-%E3%83%AC%E3%83%B3%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E5%A5%91%E7%B4%84%E6%9C%9F%E9%96%93%E4%B8%AD%E3%81%AE%E4%B8%AD%E9%80%94%E8%A7%A3%E7%B4%84%E3%81%AF%E5%8F%AF%E8%83%BD%E3%81%A7%E3%81%99%E3%81%8B", "https://support.coin-trade.cc/hc/ja/articles/34486687991577-%E8%B3%87%E7%94%A3%E3%81%AE%E8%BF%94%E9%82%84%E3%81%AF%E3%81%84%E3%81%A4%E8%A1%8C%E3%82%8F%E3%82%8C%E3%81%BE%E3%81%99%E3%81%8B"],
+    "secondary_sources": [],
+    "duplicate_check": {"checked_at": "2026-08-17", "matched_platform_ids": [], "notes": "Exact repository search for CoinTrade Lending / CoinTrade Stake / coin-trade.cc / Mercury returned no indexed CYA identity match before staging. Hardened full-corpus scanning remains authoritative."},
+    "decision": "add_now",
+    "notes": "First-party support establishes service launch in June 2024 but not a sufficiently reliable exact original launch day, so no exact date is invented. Current support describes fixed-term lending for rewards, season-based return timing and an in-principle ban on mid-term cancellation; approved exceptions receive no lending reward and incur a cancellation fee equal to 10% of the application quantity. Published rates remain issuer terms, not verified realized returns. Dedicated lending-term custody/segregation treatment should be preserved conservatively and ordinary exchange custody language must not be generalized without product-specific authority.",
+    "first_seen_at": "2026-08-17",
+    "last_reviewed_at": "2026-08-17"
   }
 ]
