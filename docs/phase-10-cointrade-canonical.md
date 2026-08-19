@@ -42,6 +42,10 @@ No launch event is created because the exact original launch day is not establis
 
 Candidate-only PR #284 passed the hardened exact-head scanner against the 117-platform canonical corpus before promotion. The active candidate is removed only as part of this canonical promotion package and is preserved in the consumed-candidate ledger.
 
+## Validation retry note
+
+The first PR-head screenshot workflow became stuck during Playwright dependency installation while all seven other exact-head workflows completed successfully. This documentation-only commit does not change canonical data; it exists to create a fresh exact head so the complete validation set, including representative screenshots, can run again.
+
 ## Result
 
 If this PR passes exact-head validation and is merged, the canonical platform corpus becomes **118 / 125**, leaving **7** platforms before the Phase 10 full-corpus gate.
