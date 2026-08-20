@@ -1,0 +1,11 @@
+[
+  {
+    "platform_id": "cya_plat_000119",
+    "terms_status": "unclear",
+    "asset_ownership_interpretation": "The reviewed first-party material defines a consumption-loan arrangement and says borrowed assets are operated within HashKey Group. It does not establish segregated custody, trust protection, deposit insurance, insurance, reserve backing, or bankruptcy isolation for lent assets. CYA therefore records operator counterparty exposure conservatively.",
+    "affected_product": "HashKey Japan 貸暗号資産",
+    "source_evidence_id": "cya_src_b84_0002",
+    "notes": "The current page states the service is not a deposit or deposit-like product and is not covered by deposit insurance. Mid-term cancellation is unavailable in principle. Published lending rates and HashKey Group operation statements remain issuer terms/claims.",
+    "confidence": "medium"
+  }
+]
