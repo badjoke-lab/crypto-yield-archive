@@ -14,8 +14,6 @@ jobs:
     timeout-minutes: 35
     env:
       SOURCE_SHA: d5ffd036f52cf4789190c95848979f76ce768423
-      GITHUB_SHA: d5ffd036f52cf4789190c95848979f76ce768423
-      GITHUB_REF_NAME: main
       BASE_URL: https://cya.badjoke-lab.com
     steps:
       - name: Checkout exact accepted main
@@ -39,19 +37,26 @@ jobs:
       - name: Verify production Series contract exhaustively
         run: |
           node --input-type=module <<'NODE'
-          import fs from 'node:fs';
-
           const base = process.env.BASE_URL;
           const expectedCommit = process.env.SOURCE_SHA;
           const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-          async function fetchJson(path) {
-            const response = await fetch(`${base}${path}?series_audit=${Date.now()}`, {
-              headers: { 'cache-control': 'no-cache' },
-            });
-            if (!response.ok) throw new Error(`${path}: HTTP ${response.status}`);
+          async function fetchJson(target) {
+            const url = new URL(target, `${base}/`);
+            url.searchParams.set('series_audit', String(Date.now()));
+            const response = await fetch(url, { headers: { 'cache-control': 'no-cache' } });
+            if (!response.ok) throw new Error(`${url.pathname}: HTTP ${response.status}`);
             return response.json();
           }
+
+          async function fetchOk(target) {
+            const url = new URL(target, `${base}/`);
+            url.searchParams.set('series_audit', String(Date.now()));
+            const response = await fetch(url, { redirect: 'follow', headers: { 'cache-control': 'no-cache' } });
+            if (!response.ok) throw new Error(`${url.pathname}: HTTP ${response.status}`);
+          }
+
+          const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 
           let version;
           for (let attempt = 1; attempt <= 40; attempt += 1) {
@@ -67,48 +72,49 @@ jobs:
             await sleep(15000);
           }
 
-          const localRegistry = JSON.parse(fs.readFileSync('dist/data/series/registry.json', 'utf8'));
-          const localIndex = JSON.parse(fs.readFileSync('dist/data/series/index.json', 'utf8'));
-          if (localRegistry.build.commit !== expectedCommit) throw new Error(`local registry commit mismatch: ${localRegistry.build.commit}`);
-          if (localIndex.record_count !== 118 || localIndex.records.length !== 118) throw new Error(`expected 118 local Series records, got ${localIndex.records.length}`);
+          const descriptor = await fetchJson('/data/series/registry.json');
+          const index = await fetchJson('/data/series/index.json');
 
-          const prodRegistry = await fetchJson('/data/series/registry.json');
-          const prodIndex = await fetchJson('/data/series/index.json');
-          if (prodRegistry.build.commit !== expectedCommit || prodIndex.build.commit !== expectedCommit) throw new Error('production Series build commit mismatch');
-          if (prodIndex.record_count !== 118 || prodIndex.records.length !== 118) throw new Error(`expected 118 production Series records, got ${prodIndex.records.length}`);
+          if (descriptor.object_type !== 'registry_descriptor') throw new Error('descriptor object_type mismatch');
+          if (descriptor.registry?.id !== 'crypto-yield-archive') throw new Error('descriptor registry id mismatch');
+          if (descriptor.registry?.origin !== base) throw new Error('descriptor origin mismatch');
+          if (descriptor.canonical_only !== true || descriptor.data_safety?.canonical_only !== true) throw new Error('descriptor canonical-only safety mismatch');
+          if (descriptor.verification?.build?.commit !== expectedCommit) throw new Error(`descriptor build commit mismatch: ${descriptor.verification?.build?.commit}`);
+          if (descriptor.record_counts?.primary_records !== 118 || descriptor.record_counts?.series_records !== 118) throw new Error('descriptor record count mismatch');
 
-          const globalKeys = prodIndex.records.map((item) => item.global_key);
+          if (index.object_type !== 'record_index' || index.registry_id !== 'crypto-yield-archive') throw new Error('index identity mismatch');
+          if (index.canonical_only !== true) throw new Error('index canonical-only mismatch');
+          if (index.verification?.build?.commit !== expectedCommit) throw new Error(`index build commit mismatch: ${index.verification?.build?.commit}`);
+          if (index.record_count !== 118 || index.records?.length !== 118) throw new Error(`expected 118 production Series records, got ${index.records?.length}`);
+
+          const globalKeys = index.records.map((item) => item.global_record_key);
           if (new Set(globalKeys).size !== 118) throw new Error('production global-key uniqueness failed');
 
-          function normalize(value) {
-            if (Array.isArray(value)) return value.map(normalize);
-            if (value && typeof value === 'object') {
-              return Object.fromEntries(Object.entries(value)
-                .filter(([key]) => key !== 'generated_at')
-                .map(([key, child]) => [key, normalize(child)]));
-            }
-            return value;
-          }
-
-          const equal = (a, b) => JSON.stringify(normalize(a)) === JSON.stringify(normalize(b));
-          if (!equal(localRegistry, prodRegistry)) throw new Error('registry descriptor semantic mismatch');
-          if (!equal(localIndex, prodIndex)) throw new Error('registry index semantic mismatch');
-
           let verified = 0;
-          for (const entry of localIndex.records) {
-            const slug = entry.native_key.slug;
-            const localPath = `dist/data/series/records/${slug}.json`;
-            const localEnvelope = JSON.parse(fs.readFileSync(localPath, 'utf8'));
-            const prodEnvelope = await fetchJson(entry.record_url);
-            if (prodEnvelope.build.commit !== expectedCommit) throw new Error(`${slug}: production build commit mismatch`);
-            if (prodEnvelope.global_key !== entry.global_key) throw new Error(`${slug}: global key mismatch`);
-            if (!equal(localEnvelope, prodEnvelope)) throw new Error(`${slug}: native/Series production semantic mismatch`);
+          for (const entry of index.records) {
+            const slug = entry.slug;
+            const native = await fetchJson(entry.native_machine_url);
+            const envelope = await fetchJson(entry.machine_url);
+
+            if (envelope.object_type !== 'record_envelope') throw new Error(`${slug}: object_type mismatch`);
+            if (envelope.registry_id !== 'crypto-yield-archive') throw new Error(`${slug}: registry mismatch`);
+            if (envelope.global_record_key !== entry.global_record_key) throw new Error(`${slug}: global key mismatch`);
+            if (envelope.record_key?.native_record_id !== entry.native_record_id || envelope.record_key?.slug !== slug) throw new Error(`${slug}: record key mismatch`);
+            if (envelope.relationships?.length !== 0) throw new Error(`${slug}: Stage 3 relationships must remain empty`);
+            if (envelope.provenance?.canonical_only !== true || envelope.provenance?.data_safety?.canonical_only !== true) throw new Error(`${slug}: canonical-only provenance mismatch`);
+            if (envelope.verification?.build?.commit !== expectedCommit) throw new Error(`${slug}: production build commit mismatch`);
+
+            if (!same(envelope.current_state?.native?.record, native.record)) throw new Error(`${slug}: native record loss`);
+            if (!same(envelope.current_state?.native?.supporting_records, native.supporting_records)) throw new Error(`${slug}: supporting records loss`);
+            if (!same(envelope.current_state?.native?.related_record_counts, native.related_record_counts)) throw new Error(`${slug}: related counts loss`);
+            if (!same(envelope.events?.records, native.supporting_records?.events ?? [])) throw new Error(`${slug}: event projection mismatch`);
+            if (!same(envelope.evidence?.records, native.supporting_records?.evidence ?? [])) throw new Error(`${slug}: evidence projection mismatch`);
+            if (envelope.urls?.native_machine !== entry.native_machine_url || envelope.urls?.machine !== entry.machine_url || envelope.urls?.human !== entry.human_url) throw new Error(`${slug}: URL projection mismatch`);
             verified += 1;
           }
 
-          for (const route of ['/platforms/', '/compare/', '/stats/', localIndex.records.at(-1).human_url]) {
-            const response = await fetch(`${base}${route}`, { redirect: 'follow', headers: { 'cache-control': 'no-cache' } });
-            if (!response.ok) throw new Error(`${route}: HTTP ${response.status}`);
+          for (const route of ['/platforms/', '/compare/', '/stats/', index.records.at(-1).human_url]) {
+            await fetchOk(route);
           }
 
           console.log(JSON.stringify({
@@ -116,9 +122,10 @@ jobs:
             registry_json: 1,
             index_json: 1,
             record_envelopes: verified,
+            native_dossiers_compared: verified,
             series_json_total: verified + 2,
             global_keys_unique: new Set(globalKeys).size,
             human_routes: 4,
-            production_semantic_equality: true,
+            production_native_series_lossless: true,
           }, null, 2));
           NODE
