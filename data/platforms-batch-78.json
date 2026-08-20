@@ -1,0 +1,24 @@
+[
+  {
+    "id": "cya_plat_000118",
+    "slug": "cointrade-lending",
+    "canonical_name": "CoinTrade Lending",
+    "aliases": ["CoinTradeレンディング", "コイントレードレンディング", "CoinTrade Lending Service"],
+    "type": "cefi_lending",
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": null,
+    "end_date": null,
+    "country_or_origin": "Japan",
+    "summary": "Active fixed-term crypto-asset lending service offered by CoinTrade, operated by Mercury Inc. Customers lend crypto assets for a specified period and receive contractual lending rewards under season-specific terms.",
+    "what_happened": "CoinTrade's current first-party service guide states that its lending service launched in June 2024. Current support materials describe an active fixed-term lending product with season-based applications, lending rewards and return procedures. Mid-term cancellation is in principle unavailable; if an exception is approved, no lending reward is paid and a cancellation fee equal to 10% of the application quantity applies. The reviewed first-party material establishes the launch month but not a sufficiently reliable exact original launch day, so CYA does not manufacture a date.",
+    "official_url_original": "https://support.coin-trade.cc/hc/ja/categories/34317281402137-CoinTrade-Lending",
+    "official_domain_original": "coin-trade.cc",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://support.coin-trade.cc/hc/ja/categories/34317281402137-CoinTrade-Lending",
+    "confidence": "high",
+    "last_verified_at": "2026-08-17",
+    "uncertainty_notes": "The launch month is supported as June 2024, but an exact original launch day is not established. Published lending rates and rewards are issuer product terms, not independently verified realized returns. Dedicated lending-term custody and segregation treatment is not generalized from ordinary exchange-service disclosures without product-specific authority.",
+    "notes": "Promoted in Phase 10 from duplicate-clear candidate cya_candidate_000137 after candidate-only PR #284 passed the hardened exact-head scanner against the 117-platform canonical corpus."
+  }
+]

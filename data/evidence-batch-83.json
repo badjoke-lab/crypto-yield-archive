@@ -1,0 +1,62 @@
+[
+  {
+    "id": "cya_src_b83_0001",
+    "platform_id": "cya_plat_000118",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "CoinTrade（コイントレード）とはどんなサービスですか",
+    "url": "https://support.coin-trade.cc/hc/ja/articles/21085480166681-CoinTrade-%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%88%E3%83%AC%E3%83%BC%E3%83%89-%E3%81%A8%E3%81%AF%E3%81%A9%E3%82%93%E3%81%AA%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%A7%E3%81%99%E3%81%8B",
+    "publisher": "CoinTrade / Mercury Inc.",
+    "published_at": null,
+    "archived_url": "https://web.archive.org/web/*/https://support.coin-trade.cc/hc/ja/articles/21085480166681-CoinTrade-%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%88%E3%83%AC%E3%83%BC%E3%83%89-%E3%81%A8%E3%81%AF%E3%81%A9%E3%82%93%E3%81%AA%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%A7%E3%81%99%E3%81%8B",
+    "accessed_at": "2026-08-17",
+    "reliability": "high",
+    "claim_scope": "status",
+    "notes": "First-party service overview states that CoinTrade launched lending in June 2024 and supports current platform/operator identity. It does not establish an exact original launch day."
+  },
+  {
+    "id": "cya_src_b83_0002",
+    "platform_id": "cya_plat_000118",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "レンディングとはなんですか",
+    "url": "https://support.coin-trade.cc/hc/ja/articles/34355137559705-%E3%83%AC%E3%83%B3%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%81%A8%E3%81%AF%E3%81%AA%E3%82%93%E3%81%A7%E3%81%99%E3%81%8B",
+    "publisher": "CoinTrade / Mercury Inc.",
+    "published_at": null,
+    "archived_url": "https://web.archive.org/web/*/https://support.coin-trade.cc/hc/ja/articles/34355137559705-%E3%83%AC%E3%83%B3%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%81%A8%E3%81%AF%E3%81%AA%E3%82%93%E3%81%A7%E3%81%99%E3%81%8B",
+    "accessed_at": "2026-08-17",
+    "reliability": "high",
+    "claim_scope": "terms_risk",
+    "notes": "First-party definition of the lending product as lending crypto assets for a fixed period in exchange for lending rewards. Published rewards are issuer terms, not verified realized returns."
+  },
+  {
+    "id": "cya_src_b83_0003",
+    "platform_id": "cya_plat_000118",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "レンディング契約期間中の中途解約は可能ですか",
+    "url": "https://support.coin-trade.cc/hc/ja/articles/33375433799321-%E3%83%AC%E3%83%B3%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E5%A5%91%E7%B4%84%E6%9C%9F%E9%96%93%E4%B8%AD%E3%81%AE%E4%B8%AD%E9%80%94%E8%A7%A3%E7%B4%84%E3%81%AF%E5%8F%AF%E8%83%BD%E3%81%A7%E3%81%99%E3%81%8B",
+    "publisher": "CoinTrade / Mercury Inc.",
+    "published_at": null,
+    "archived_url": "https://web.archive.org/web/*/https://support.coin-trade.cc/hc/ja/articles/33375433799321-%E3%83%AC%E3%83%B3%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E5%A5%91%E7%B4%84%E6%9C%9F%E9%96%93%E4%B8%AD%E3%81%AE%E4%B8%AD%E9%80%94%E8%A7%A3%E7%B4%84%E3%81%AF%E5%8F%AF%E8%83%BD%E3%81%A7%E3%81%99%E3%81%8B",
+    "accessed_at": "2026-08-17",
+    "reliability": "high",
+    "claim_scope": "terms_risk",
+    "notes": "First-party authority for the in-principle prohibition on mid-term cancellation and the exception rule: no lending reward and a cancellation fee equal to 10% of the application quantity."
+  },
+  {
+    "id": "cya_src_b83_0004",
+    "platform_id": "cya_plat_000118",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "資産の返還はいつ行われますか",
+    "url": "https://support.coin-trade.cc/hc/ja/articles/34486687991577-%E8%B3%87%E7%94%A3%E3%81%AE%E8%BF%94%E9%82%84%E3%81%AF%E3%81%84%E3%81%A4%E8%A1%8C%E3%82%8F%E3%82%8C%E3%81%BE%E3%81%99%E3%81%8B",
+    "publisher": "CoinTrade / Mercury Inc.",
+    "published_at": null,
+    "archived_url": "https://web.archive.org/web/*/https://support.coin-trade.cc/hc/ja/articles/34486687991577-%E8%B3%87%E7%94%A3%E3%81%AE%E8%BF%94%E9%82%84%E3%81%AF%E3%81%84%E3%81%A4%E8%A1%8C%E3%82%8F%E3%82%8C%E3%81%BE%E3%81%99%E3%81%8B",
+    "accessed_at": "2026-08-17",
+    "reliability": "high",
+    "claim_scope": "terms_risk",
+    "notes": "First-party authority for current season-based return timing and ongoing-operation flow. Current return mechanics are not treated as proof of universal historical repayment performance."
+  }
+]

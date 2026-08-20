@@ -1,0 +1,16 @@
+[
+  {
+    "candidate_id": "cya_candidate_000137",
+    "canonical_name": "CoinTrade Lending",
+    "domain": "coin-trade.cc",
+    "decision": "already_recorded",
+    "duplicate_check": {
+      "checked_at": "2026-08-17",
+      "matched_platform_ids": ["cya_plat_000118"],
+      "notes": "Promoted only after candidate-only PR #284 and the hardened exact-head scanner found no canonical duplicate against the 117-platform corpus."
+    },
+    "notes": "Promoted in Phase 10 as cya_plat_000118. First-party authority establishes launch in June 2024 but not an exact original launch day. Published rewards remain issuer terms, and dedicated lending custody/segregation treatment is preserved conservatively rather than generalized from ordinary exchange disclosures.",
+    "first_seen_at": "2026-08-17",
+    "last_reviewed_at": "2026-08-17"
+  }
+]

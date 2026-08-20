@@ -1,0 +1,10 @@
+[
+  {
+    "platform_id": "cya_plat_000118",
+    "product_type": "centralized_yield",
+    "product_name": "CoinTrade Lending",
+    "custody_model": "The reviewed first-party materials establish a fixed-term lending arrangement but do not provide sufficient product-specific authority in this review pass to generalize ordinary CoinTrade exchange custody or segregation protections to lent balances. CYA therefore records the lending counterparty exposure conservatively and makes no claim of segregated custody, deposit insurance, insurance, or guaranteed principal for lent assets.",
+    "yield_source": "CoinTrade publishes season-specific lending rewards for assets lent for fixed periods. Those published reward rates are issuer product terms and are not independently verified realized returns or evidence of the operator's underlying economic performance.",
+    "risk_notes": "Mid-term cancellation is in principle unavailable. If CoinTrade approves an exception, no lending reward is paid and a cancellation fee equal to 10% of the application quantity applies. Product-specific custody/segregation treatment remains bounded to what dedicated lending terms explicitly support."
+  }
+]
