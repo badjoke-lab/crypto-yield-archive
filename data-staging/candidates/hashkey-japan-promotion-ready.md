@@ -1,0 +1,1 @@
+HashKey Japan canonical promotion package is complete on this branch. Candidate cya_candidate_000140 has been removed from the active ledger and preserved in consumed batch 79. Exact-head PR validation is required before merge.
