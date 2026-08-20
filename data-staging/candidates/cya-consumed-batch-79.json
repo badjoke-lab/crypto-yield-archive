@@ -1,0 +1,16 @@
+[
+  {
+    "candidate_id": "cya_candidate_000140",
+    "canonical_name": "HashKey Japan 貸暗号資産",
+    "domain": "tokyohash.jp",
+    "decision": "already_recorded",
+    "duplicate_check": {
+      "checked_at": "2026-08-20",
+      "matched_platform_ids": ["cya_plat_000119"],
+      "notes": "Promoted only after candidate-only PR #292 and the hardened exact-head scanner found no canonical duplicate against the 118-platform corpus."
+    },
+    "notes": "Promoted in Phase 10 as cya_plat_000119. First-party authority establishes launch on 2021-12-15 under Tokyo Hash and current active HashKey Japan lending mechanics. Published lending rates and HashKey Group operation statements remain issuer terms/claims rather than verified realized returns, reserves, segregation, insurance, solvency or guaranteed repayment.",
+    "first_seen_at": "2026-08-20",
+    "last_reviewed_at": "2026-08-20"
+  }
+]
