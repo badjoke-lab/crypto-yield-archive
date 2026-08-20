@@ -1,0 +1,47 @@
+name: Ledger Series Phase 9 Adapter
+
+on:
+  pull_request:
+    paths:
+      - "src/lib/ledger-series-adapter.ts"
+      - "src/pages/data/series/**"
+      - "src/lib/machine-readable.ts"
+      - "src/lib/data.ts"
+      - "data/**"
+      - "scripts/validate-ledger-series-phase9-adapter.mjs"
+      - ".github/workflows/ledger-series-phase9-adapter.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "src/lib/ledger-series-adapter.ts"
+      - "src/pages/data/series/**"
+      - "src/lib/machine-readable.ts"
+      - "src/lib/data.ts"
+      - "data/**"
+      - "scripts/validate-ledger-series-phase9-adapter.mjs"
+      - ".github/workflows/ledger-series-phase9-adapter.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate-series-adapter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run existing CYA validation suite
+        run: npm test
+
+      - name: Validate Ledger Series adapter
+        run: node scripts/validate-ledger-series-phase9-adapter.mjs
