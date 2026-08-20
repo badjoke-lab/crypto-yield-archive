@@ -13,10 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
-      - name: Checkout accepted main
+      - name: Checkout accepted current main
         uses: actions/checkout@v7
         with:
-          ref: 242bc8d03d3dd12af1dfcbaa16e7da1b3f7051a2
+          ref: be45b87a60ae1ca87b523d0db1c6b3b5f5268ccc
 
       - name: Setup Node
         uses: actions/setup-node@v7
@@ -28,14 +28,14 @@ jobs:
 
       - name: Wait for exact-main production deployment
         env:
-          CYA_EXPECTED_COMMIT: 242bc8d03d3dd12af1dfcbaa16e7da1b3f7051a2
+          CYA_EXPECTED_COMMIT: be45b87a60ae1ca87b523d0db1c6b3b5f5268ccc
           CYA_SMOKE_ATTEMPTS: "24"
           CYA_SMOKE_DELAY_MS: "15000"
         run: node scripts/check-production.mjs
 
       - name: Verify all Series production JSON and native parity
         env:
-          EXPECTED_MAIN: 242bc8d03d3dd12af1dfcbaa16e7da1b3f7051a2
+          EXPECTED_MAIN: be45b87a60ae1ca87b523d0db1c6b3b5f5268ccc
         run: |
           node --input-type=module <<'NODE'
           import assert from 'node:assert/strict';
