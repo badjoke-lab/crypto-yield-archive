@@ -81,5 +81,39 @@
     "notes": "Phase 10 identity review resolves the watchlist ORCA item to the live iOrca registration surface under dapp.ocagent.io. The official registration page requires username, affiliate code, wallet connection and acceptance of Terms of Service, Privacy Policy and Risk Disclosure, establishing an active financial-product surface but not the underlying economic contract. Current Japanese discovery/referral material consistently describes BNB-chain USDT deposits, minimum participation around 100 USDT, 10/90/180/360-day packages, principal lockups, daily USDT rewards sent to a wallet, check-in-based reward increases, referral ranks and a temporary doubled-deposit campaign; it attributes yield to AI agents exploiting price/probability differences across prediction markets. Those mechanics and rates remain discovery claims because the first-party Terms/Risk pages could not be retrieved reliably in this pass and no stable first-party documentation for package rates, custody, asset reuse, redemption, source of yield or operator identity was found. A claimed relationship to Nodepay is likewise unverified and must not be canonicalized. Resolve legal operator/jurisdiction, first-party Terms and Risk Disclosure, deposit/custody/asset-use treatment, package lock/redemption rules, reward calculation, withdrawal rights, launch chronology, source-of-yield claims and any campaign liabilities before add_now. Do not confuse this candidate with Orca's Solana AMM/xORCA staking product and do not convert advertised daily rates or campaign credits into verified realized return or principal repayment.",
     "first_seen_at": "2026-08-12",
     "last_reviewed_at": "2026-08-13"
+  },
+  {
+    "candidate_id": "cya_candidate_000138",
+    "canonical_name": "Phemex Savings",
+    "aliases": ["Phemex Earn", "Phemex Flexible Savings", "Phemex Fixed Savings"],
+    "domain": "phemex.com",
+    "country_or_origin": "Global",
+    "platform_type_guess": "exchange_savings",
+    "status_guess": "active",
+    "major_event": "Current first-party Phemex pages describe an active Savings product; Flexible Savings is currently available with daily interest and redemption while Fixed Savings is currently unavailable.",
+    "primary_sources": ["https://phemex.com/earn-crypto/savings", "https://phemex.com/help-center/how-do-i-earn-crypto-with-phemexs-savings-accounts"],
+    "secondary_sources": [],
+    "duplicate_check": {"checked_at": "2026-08-20", "matched_platform_ids": [], "notes": "Exact repository search for Phemex Savings returned no indexed CYA identity match before staging. Hardened full-corpus scanning remains authoritative."},
+    "decision": "add_now",
+    "notes": "Current first-party guidance states that Phemex Savings historically includes Flexible and Fixed accounts, but only Flexible Savings is currently available. Flexible balances earn daily interest and may be redeemed/withdrawn under current terms. Published APY/APR values are issuer product terms, not independently verified realized returns. Exact original launch date, dedicated custody/asset-reuse treatment, insolvency treatment and complete historical product availability are not inferred beyond the reviewed sources.",
+    "first_seen_at": "2026-08-20",
+    "last_reviewed_at": "2026-08-20"
+  },
+  {
+    "candidate_id": "cya_candidate_000139",
+    "canonical_name": "Bitget Earn / Savings",
+    "aliases": ["Bitget Earn", "Bitget Savings", "Bitget Simple Earn", "Bitget Flexible Savings", "Bitget Fixed Savings"],
+    "domain": "bitget.com",
+    "country_or_origin": "Global",
+    "platform_type_guess": "exchange_savings",
+    "status_guess": "active",
+    "major_event": "Current first-party Bitget Simple Earn / Savings pages describe active flexible and fixed savings products; Bitget announced the launch of Fixed Savings on 2023-03-22.",
+    "primary_sources": ["https://www.bitget.com/ja/finance/savings", "https://www.bitget.com/support/articles/12560603778163", "https://www.bitget.com/support/articles/12560603795668"],
+    "secondary_sources": [],
+    "duplicate_check": {"checked_at": "2026-08-20", "matched_platform_ids": [], "notes": "Exact repository search for Bitget Earn Savings returned no indexed CYA identity match before staging. Hardened full-corpus scanning remains authoritative."},
+    "decision": "add_now",
+    "notes": "Bitget's current Simple Earn/Savings surface remains active and first-party support documents flexible redemption and fixed-term products. The 2023-03-22 announcement is authority for Fixed Savings launch, not necessarily the original launch of all Bitget savings/earn products. Published APRs and marketing statements about principal or interest protection remain issuer claims; CYA does not convert them into independently verified guarantees, realized returns, custody protections or universal repayment history.",
+    "first_seen_at": "2026-08-20",
+    "last_reviewed_at": "2026-08-20"
   }
 ]
