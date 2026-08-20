@@ -1,0 +1,136 @@
+name: Verify CYA Phase 9 Series Production
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/phase9-series-production-verification.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  verify-production:
+    if: github.head_ref == 'agent/phase9-series-production-verification'
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Checkout exact merged main
+        uses: actions/checkout@v7
+        with:
+          ref: 242bc8d03d3dd12af1dfcbaa16e7da1b3f7051a2
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build and validate exact merged main
+        env:
+          GITHUB_SHA: 242bc8d03d3dd12af1dfcbaa16e7da1b3f7051a2
+          GITHUB_REF_NAME: main
+        run: |
+          npm run build
+          node scripts/validate-ledger-series-phase9-adapter.mjs
+
+      - name: Verify complete Series layer on production
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --input-type=commonjs <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
+          const assert = require('assert/strict');
+
+          (async () => {
+            const origin = 'https://cya.badjoke-lab.com';
+            const expectedCommit = '242bc8d03d3dd12af1dfcbaa16e7da1b3f7051a2';
+            const dist = path.resolve('dist');
+            const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+            const readJson = (rel) => JSON.parse(fs.readFileSync(path.join(dist, rel), 'utf8'));
+
+            function normalize(value) {
+              if (Array.isArray(value)) return value.map(normalize);
+              if (value && typeof value === 'object') {
+                const out = {};
+                for (const key of Object.keys(value).sort()) {
+                  if (key === 'generated_at') continue;
+                  out[key] = normalize(value[key]);
+                }
+                return out;
+              }
+              return value;
+            }
+
+            async function fetchJson(rel, attempts = 4) {
+              let last;
+              for (let i = 1; i <= attempts; i++) {
+                try {
+                  const res = await fetch(`${origin}/${rel}?phase9_audit=${Date.now()}_${i}`, {
+                    headers: { 'cache-control': 'no-cache', 'user-agent': 'cya-series-phase9-audit/1.0' },
+                  });
+                  if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+                  return await res.json();
+                } catch (error) {
+                  last = error;
+                  if (i < attempts) await sleep(4000);
+                }
+              }
+              throw new Error(`${rel}: ${last?.message || last}`);
+            }
+
+            let version = null;
+            for (let attempt = 1; attempt <= 60; attempt++) {
+              try {
+                const candidate = await fetchJson('version.json', 1);
+                if (candidate?.build?.commit === expectedCommit) {
+                  version = candidate;
+                  break;
+                }
+              } catch {}
+              await sleep(5000);
+            }
+            if (!version) throw new Error(`production did not converge to exact main ${expectedCommit}`);
+
+            const localDescriptor = readJson('data/series/registry.json');
+            const remoteDescriptor = await fetchJson('data/series/registry.json');
+            assert.equal(remoteDescriptor?.verification?.build?.commit, expectedCommit, 'descriptor build commit mismatch');
+            assert.deepStrictEqual(normalize(remoteDescriptor), normalize(localDescriptor), 'descriptor semantic mismatch');
+
+            const localIndex = readJson('data/series/index.json');
+            const remoteIndex = await fetchJson('data/series/index.json');
+            assert.equal(remoteIndex?.verification?.build?.commit, expectedCommit, 'index build commit mismatch');
+            assert.deepStrictEqual(normalize(remoteIndex), normalize(localIndex), 'index semantic mismatch');
+
+            const count = localIndex.record_count;
+            assert.equal(count, version?.data?.record_counts?.primary_records, 'Series/native production count mismatch');
+            assert.equal(localIndex.records.length, count, 'local Series index count mismatch');
+            assert.equal(new Set(localIndex.records.map((row) => row.global_record_key)).size, count, 'global keys not unique');
+
+            for (const row of localIndex.records) {
+              const rel = `data/series/records/${row.slug}.json`;
+              const local = readJson(rel);
+              const remote = await fetchJson(rel);
+              assert.equal(remote?.verification?.build?.commit, expectedCommit, `${row.slug}: build commit mismatch`);
+              assert.deepStrictEqual(normalize(remote), normalize(local), `${row.slug}: semantic mismatch`);
+            }
+
+            console.log(`CYA Series production equality passed: ${count} envelopes + descriptor + index = ${count + 2} JSON files.`);
+            console.log(`Exact merged main: ${expectedCommit}`);
+          })().catch((error) => {
+            console.error(error);
+            process.exit(1);
+          });
+          NODE
+
+      - name: Verify representative human routes
+        shell: bash
+        run: |
+          set -euo pipefail
+          for route in /platforms/ /compare/ /stats/ /platform/celsius/ /platform/okj-lending/; do
+            curl --fail --silent --show-error --location --retry 4 --retry-delay 3 --output /dev/null "https://cya.badjoke-lab.com${route}"
+            echo "PASS ${route}"
+          done
