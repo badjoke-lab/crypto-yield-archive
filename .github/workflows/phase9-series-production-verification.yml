@@ -30,8 +30,8 @@ jobs:
 
       - name: Build and validate exact merged main
         env:
-          GITHUB_SHA: 242bc8d03d3dd12af1dfcbaa16e7da1b3f7051a2
-          GITHUB_REF_NAME: main
+          CF_PAGES_COMMIT_SHA: 242bc8d03d3dd12af1dfcbaa16e7da1b3f7051a2
+          CF_PAGES_BRANCH: main
         run: |
           npm run build
           node scripts/validate-ledger-series-phase9-adapter.mjs
@@ -97,11 +97,13 @@ jobs:
 
             const localDescriptor = readJson('data/series/registry.json');
             const remoteDescriptor = await fetchJson('data/series/registry.json');
+            assert.equal(localDescriptor?.verification?.build?.commit, expectedCommit, 'local descriptor build commit mismatch');
             assert.equal(remoteDescriptor?.verification?.build?.commit, expectedCommit, 'descriptor build commit mismatch');
             assert.deepStrictEqual(normalize(remoteDescriptor), normalize(localDescriptor), 'descriptor semantic mismatch');
 
             const localIndex = readJson('data/series/index.json');
             const remoteIndex = await fetchJson('data/series/index.json');
+            assert.equal(localIndex?.verification?.build?.commit, expectedCommit, 'local index build commit mismatch');
             assert.equal(remoteIndex?.verification?.build?.commit, expectedCommit, 'index build commit mismatch');
             assert.deepStrictEqual(normalize(remoteIndex), normalize(localIndex), 'index semantic mismatch');
 
@@ -114,6 +116,7 @@ jobs:
               const rel = `data/series/records/${row.slug}.json`;
               const local = readJson(rel);
               const remote = await fetchJson(rel);
+              assert.equal(local?.verification?.build?.commit, expectedCommit, `${row.slug}: local build commit mismatch`);
               assert.equal(remote?.verification?.build?.commit, expectedCommit, `${row.slug}: build commit mismatch`);
               assert.deepStrictEqual(normalize(remote), normalize(local), `${row.slug}: semantic mismatch`);
             }
