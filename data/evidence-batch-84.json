@@ -1,0 +1,47 @@
+[
+  {
+    "id": "cya_src_b84_0001",
+    "platform_id": "cya_plat_000119",
+    "event_id": "cya_ev_000357",
+    "source_type": "official_statement",
+    "title": "貸暗号資産サービス開始のご案内",
+    "url": "https://www.tokyohash.jp/news/20211214/index.html",
+    "publisher": "Tokyo Hash / HashKey Japan",
+    "published_at": "2021-12-15",
+    "archived_url": "https://web.archive.org/web/*/https://www.tokyohash.jp/news/20211214/index.html",
+    "accessed_at": "2026-08-20",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "First-party launch notice establishing service start on 2021-12-15 and the consumption-loan mechanics."
+  },
+  {
+    "id": "cya_src_b84_0002",
+    "platform_id": "cya_plat_000119",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "貸暗号資産",
+    "url": "https://www.tokyohash.jp/lending/index.html",
+    "publisher": "HashKey Japan",
+    "published_at": null,
+    "archived_url": "https://web.archive.org/web/*/https://www.tokyohash.jp/lending/index.html",
+    "accessed_at": "2026-08-20",
+    "reliability": "high",
+    "claim_scope": "terms_risk",
+    "notes": "Current first-party product page establishing active service mechanics, maximum 100-day terms, no mid-term cancellation in principle, crypto-denominated lending fees, HashKey Group deployment statement, and non-deposit / non-deposit-insurance warning."
+  },
+  {
+    "id": "cya_src_b84_0003",
+    "platform_id": "cya_plat_000119",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "口座開設・貸暗号資産開始の流れ",
+    "url": "https://www.tokyohash.jp/flow/index.html",
+    "publisher": "HashKey Japan",
+    "published_at": null,
+    "archived_url": "https://web.archive.org/web/*/https://www.tokyohash.jp/flow/index.html",
+    "accessed_at": "2026-08-20",
+    "reliability": "high",
+    "claim_scope": "status",
+    "notes": "Current first-party onboarding flow supporting continued service availability."
+  }
+]

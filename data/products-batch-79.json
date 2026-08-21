@@ -1,0 +1,10 @@
+[
+  {
+    "platform_id": "cya_plat_000119",
+    "product_type": "centralized_yield",
+    "product_name": "HashKey Japan 貸暗号資産",
+    "custody_model": "Customers lend crypto assets to the operator under a consumption-loan arrangement. The current page states borrowed assets are operated within HashKey Group. CYA does not infer segregated custody, insurance, reserve backing or bankruptcy isolation from that operator statement.",
+    "yield_source": "HashKey Japan publishes contract-specific lending-fee rates and states borrowed assets are operated within HashKey Group. Published rates and deployment descriptions are issuer terms/claims, not independently verified realized returns or proof of underlying investment performance.",
+    "risk_notes": "Lending periods are contract-specific, up to 100 days on the current public page, and mid-term cancellation is unavailable in principle. The service is explicitly not a deposit or deposit-insurance product."
+  }
+]

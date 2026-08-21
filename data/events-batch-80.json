@@ -1,0 +1,16 @@
+[
+  {
+    "id": "cya_ev_000357",
+    "platform_id": "cya_plat_000119",
+    "event_type": "launched",
+    "event_date": "2021-12-15",
+    "title": "Tokyo Hash launches 貸暗号資産",
+    "description": "Tokyo Hash announced that applications for its crypto-asset lending service would begin on 2021-12-15. The service was described as a consumption-loan arrangement with return of the same type/equivalent quantity plus contractual lending fees after the lending period.",
+    "confidence": "high",
+    "impact_level": "high",
+    "event_status_effect": "active",
+    "source_count": 1,
+    "sort_order": 1,
+    "notes": "First-party launch authority. Current branding is HashKey Japan; this event preserves the launch-era Tokyo Hash name without inventing a later rebrand/legal-transition date."
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "id": "cya_plat_000119",
+    "slug": "hashkey-japan-lending",
+    "canonical_name": "HashKey Japan 貸暗号資産",
+    "aliases": ["HashKey Japan Lending", "Tokyo Hash 貸暗号資産", "Tokyo Hash Lending"],
+    "type": "cefi_lending",
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": "2021-12-15",
+    "end_date": null,
+    "country_or_origin": "Japan",
+    "summary": "Active fixed-term crypto-asset lending service currently branded HashKey Japan and launched by Tokyo Hash on 2021-12-15. Customers lend crypto assets under a consumption-loan arrangement and receive the same type/equivalent quantity plus contractual lending fees at maturity.",
+    "what_happened": "Tokyo Hash announced the lending service launch for 2021-12-15. The current HashKey Japan first-party page continues to describe the service as an active fixed-term crypto-asset consumption-loan product, with maximum 100-day lending periods, no mid-term cancellation in principle, crypto-denominated lending fees, and operator-described deployment of borrowed assets within HashKey Group.",
+    "official_url_original": "https://www.tokyohash.jp/lending/index.html",
+    "official_domain_original": "tokyohash.jp",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://www.tokyohash.jp/lending/index.html",
+    "confidence": "high",
+    "last_verified_at": "2026-08-20",
+    "uncertainty_notes": "The 2021-12-15 launch is supported by first-party launch authority under Tokyo Hash. The exact date and legal mechanics of the later Tokyo Hash to HashKey Japan branding/entity transition are not inferred here. Published rates and HashKey Group operation statements remain issuer terms/claims rather than independently verified realized returns, reserves, segregation, insurance, solvency or guaranteed repayment.",
+    "notes": "Promoted in Phase 10 from duplicate-clear candidate cya_candidate_000140 after candidate-only PR #292 passed the hardened exact-head scanner against the 118-platform canonical corpus."
+  }
+]
