@@ -29,7 +29,7 @@
     "secondary_sources": ["https://www.cultofmoney.com/outlet-finance-review/", "https://app.dealroom.co/companies/outlet_1", "https://www.producthunt.com/products/outlet-finance"],
     "duplicate_check": {"checked_at": "2026-08-12", "matched_platform_ids": [], "notes": "Duplicate-clear against the 101-platform corpus in the hardened Phase 10 scanner."},
     "decision": "needs_research",
-    "notes": "Phase 10 review confirms strong scope fit: Apple's listing identifies Outlet Finance Inc as the developer and describes user funds being converted to digital assets and put to work for monthly rewards, while an official Outlet Medium post documents the platform's crypto-lending origin. However, secondary sources disagree or lack precision on the closure date: one says early 2023 and Dealroom says operations had ceased by October 2023, while Apple's app history shows version 5.0.3 dated 2023-02-21. Do not assign an exact closure date or repayment outcome from these sources. Resolve first-party closure/customer communications, operating-company registration, historical terms/custody and the final customer-fund outcome before add_now.",
+    "notes": "Phase 10 review confirms strong CYA scope fit: Apple's listing identifies Outlet Finance Inc as the developer and describes user funds being converted to digital assets and put to work for monthly rewards, while an official Outlet Medium post documents the platform's crypto-lending origin. However, secondary sources disagree or lack precision on the closure date: one says early 2023 and Dealroom says operations had ceased by October 2023, while Apple's app history shows version 5.0.3 dated 2023-02-21. Do not assign an exact closure date or repayment outcome from these sources. Resolve first-party closure/customer communications, operating-company registration, historical terms/custody and the final customer-fund outcome before add_now.",
     "first_seen_at": "2026-08-05",
     "last_reviewed_at": "2026-08-12"
   },
@@ -81,5 +81,22 @@
     "notes": "Phase 10 identity review resolves the watchlist ORCA item to the live iOrca registration surface under dapp.ocagent.io. The official registration page requires username, affiliate code, wallet connection and acceptance of Terms of Service, Privacy Policy and Risk Disclosure, establishing an active financial-product surface but not the underlying economic contract. Current Japanese discovery/referral material consistently describes BNB-chain USDT deposits, minimum participation around 100 USDT, 10/90/180/360-day packages, principal lockups, daily USDT rewards sent to a wallet, check-in-based reward increases, referral ranks and a temporary doubled-deposit campaign; it attributes yield to AI agents exploiting price/probability differences across prediction markets. Those mechanics and rates remain discovery claims because the first-party Terms/Risk pages could not be retrieved reliably in this pass and no stable first-party documentation for package rates, custody, asset reuse, redemption, source of yield or operator identity was found. A claimed relationship to Nodepay is likewise unverified and must not be canonicalized. Resolve legal operator/jurisdiction, first-party Terms and Risk Disclosure, deposit/custody/asset-use treatment, package lock/redemption rules, reward calculation, withdrawal rights, launch chronology, source-of-yield claims and any campaign liabilities before add_now. Do not confuse this candidate with Orca's Solana AMM/xORCA staking product and do not convert advertised daily rates or campaign credits into verified realized return or principal repayment.",
     "first_seen_at": "2026-08-12",
     "last_reviewed_at": "2026-08-13"
+  },
+  {
+    "candidate_id": "cya_candidate_000141",
+    "canonical_name": "bitFlyer 定期貸しコイン",
+    "aliases": ["bitFlyer Lending", "定期貸しコイン", "bitFlyer Crypto Lending"],
+    "domain": "bitflyer.com",
+    "country_or_origin": "Japan",
+    "platform_type_guess": "exchange_lending",
+    "status_guess": "active",
+    "major_event": "bitFlyer currently offers fixed-period crypto-asset lending rounds in which customers lend eligible assets to bitFlyer and receive contractual lending fees; a 2026-05-29 first-party announcement documents the fourth round.",
+    "primary_sources": ["https://bitflyer.com/ja-jp/faq/lending", "https://bitflyer.com/ja-jp/faq/lending/1-1", "https://bitflyer.com/ja-jp/faq/lending/1-4"],
+    "secondary_sources": [],
+    "duplicate_check": {"checked_at": "2026-08-21", "matched_platform_ids": [], "notes": "Pre-staging repository searches for bitFlyer and 定期貸しコイン returned no indexed CYA identity. Hardened full-corpus scanning remains authoritative."},
+    "decision": "add_now",
+    "notes": "Current first-party FAQ defines fixed-period crypto lending and contractual lending fees and states customer-requested mid-term cancellation is unavailable. The reviewed 2026 fourth-round announcement establishes current operation but not the original product launch date, which remains unresolved. Published annual rates remain issuer product terms rather than verified realized returns. Do not infer dedicated lending custody/segregation, insolvency treatment, insurance, guaranteed principal, or universal historical repayment from general exchange operation or current product mechanics.",
+    "first_seen_at": "2026-08-21",
+    "last_reviewed_at": "2026-08-21"
   }
 ]
