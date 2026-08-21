@@ -81,5 +81,22 @@
     "notes": "Phase 10 identity review resolves the watchlist ORCA item to the live iOrca registration surface under dapp.ocagent.io. The official registration page requires username, affiliate code, wallet connection and acceptance of Terms of Service, Privacy Policy and Risk Disclosure, establishing an active financial-product surface but not the underlying economic contract. Current Japanese discovery/referral material consistently describes BNB-chain USDT deposits, minimum participation around 100 USDT, 10/90/180/360-day packages, principal lockups, daily USDT rewards sent to a wallet, check-in-based reward increases, referral ranks and a temporary doubled-deposit campaign; it attributes yield to AI agents exploiting price/probability differences across prediction markets. Those mechanics and rates remain discovery claims because the first-party Terms/Risk pages could not be retrieved reliably in this pass and no stable first-party documentation for package rates, custody, asset reuse, redemption, source of yield or operator identity was found. A claimed relationship to Nodepay is likewise unverified and must not be canonicalized. Resolve legal operator/jurisdiction, first-party Terms and Risk Disclosure, deposit/custody/asset-use treatment, package lock/redemption rules, reward calculation, withdrawal rights, launch chronology, source-of-yield claims and any campaign liabilities before add_now. Do not confuse this candidate with Orca's Solana AMM/xORCA staking product and do not convert advertised daily rates or campaign credits into verified realized return or principal repayment.",
     "first_seen_at": "2026-08-12",
     "last_reviewed_at": "2026-08-13"
+  },
+  {
+    "candidate_id": "cya_candidate_000142",
+    "canonical_name": "Binance Simple Earn",
+    "aliases": ["Binance Earn", "Simple Earn", "Binance Flexible Products", "Binance Locked Products"],
+    "domain": "binance.com",
+    "country_or_origin": "Global / operator jurisdiction product-dependent",
+    "platform_type_guess": "centralized_yield",
+    "status_guess": "active",
+    "major_event": "Current first-party Binance material describes active Simple Earn Flexible and Locked products with subscription, earnings accrual and redemption flows.",
+    "primary_sources": ["https://www.binance.com/en/earn", "https://www.binance.com/en/support/faq/detail/9f4a669836144d3ca4ca3738c2674d42"],
+    "secondary_sources": [],
+    "duplicate_check": {"checked_at": "2026-08-21", "matched_platform_ids": [], "notes": "Repository code search returned no indexed Binance Simple Earn identity before staging. Hardened full-corpus scanning remains authoritative."},
+    "decision": "add_now",
+    "notes": "Current first-party material supports active Flexible/Locked yield products and redemption mechanics. Published APR/yield figures remain issuer terms, not independently verified realized returns. Do not infer product-specific custody, segregation, insurance, insolvency priority, guaranteed principal, universal historical repayment, or an original launch date without dedicated first-party authority.",
+    "first_seen_at": "2026-08-21",
+    "last_reviewed_at": "2026-08-21"
   }
 ]
