@@ -1,0 +1,47 @@
+[
+  {
+    "id": "cya_src_b85_0001",
+    "platform_id": "cya_plat_000120",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "bitFlyer 定期貸しコイン FAQ",
+    "url": "https://bitflyer.com/ja-jp/faq/lending",
+    "publisher": "bitFlyer",
+    "published_at": null,
+    "archived_url": "https://web.archive.org/web/*/https://bitflyer.com/ja-jp/faq/lending",
+    "accessed_at": "2026-08-21",
+    "reliability": "high",
+    "claim_scope": "terms_risk",
+    "notes": "First-party lending FAQ establishes the current fixed-period crypto-asset lending product and contractual lending-fee model. Published rates remain issuer terms rather than verified realized returns."
+  },
+  {
+    "id": "cya_src_b85_0002",
+    "platform_id": "cya_plat_000120",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "bitFlyer 定期貸しコイン FAQ — product mechanics",
+    "url": "https://bitflyer.com/ja-jp/faq/lending/1-1",
+    "publisher": "bitFlyer",
+    "published_at": null,
+    "archived_url": "https://web.archive.org/web/*/https://bitflyer.com/ja-jp/faq/lending/1-1",
+    "accessed_at": "2026-08-21",
+    "reliability": "high",
+    "claim_scope": "status",
+    "notes": "First-party product documentation supporting current lending mechanics. It does not establish the original launch date or universal historical repayment performance."
+  },
+  {
+    "id": "cya_src_b85_0003",
+    "platform_id": "cya_plat_000120",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "bitFlyer 定期貸しコイン FAQ — cancellation",
+    "url": "https://bitflyer.com/ja-jp/faq/lending/1-4",
+    "publisher": "bitFlyer",
+    "published_at": null,
+    "archived_url": "https://web.archive.org/web/*/https://bitflyer.com/ja-jp/faq/lending/1-4",
+    "accessed_at": "2026-08-21",
+    "reliability": "high",
+    "claim_scope": "terms_risk",
+    "notes": "First-party authority that customer-requested mid-term cancellation is unavailable under the current lending product rules."
+  }
+]

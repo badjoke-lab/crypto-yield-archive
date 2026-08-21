@@ -1,0 +1,10 @@
+[
+  {
+    "platform_id": "cya_plat_000120",
+    "product_type": "centralized_yield",
+    "product_name": "bitFlyer 定期貸しコイン",
+    "custody_model": "The reviewed first-party lending materials establish a fixed-period lending arrangement but do not provide sufficient product-specific authority to characterize lent balances as segregated, insured, trust-protected, or otherwise isolated from bitFlyer counterparty exposure. CYA therefore does not generalize ordinary exchange custody protections to lent assets.",
+    "yield_source": "bitFlyer publishes round-specific contractual lending fees for eligible assets lent for fixed periods. Published annualized rates are issuer product terms and are not independently verified realized returns or evidence of the operator's underlying economic performance.",
+    "risk_notes": "Customer-requested mid-term cancellation is unavailable under the current FAQ. Original launch date, lending-specific insolvency treatment, segregation and principal protection remain unresolved unless stronger dedicated first-party authority is reviewed."
+  }
+]
