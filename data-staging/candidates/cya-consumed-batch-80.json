@@ -1,0 +1,16 @@
+[
+  {
+    "candidate_id": "cya_candidate_000141",
+    "canonical_name": "bitFlyer 定期貸しコイン",
+    "domain": "bitflyer.com",
+    "decision": "already_recorded",
+    "duplicate_check": {
+      "checked_at": "2026-08-21",
+      "matched_platform_ids": ["cya_plat_000120"],
+      "notes": "Promoted only after candidate-only PR #296 and the hardened exact-head scanner classified the candidate as duplicate-clear against the 119-platform canonical corpus."
+    },
+    "notes": "Promoted in Phase 10 as cya_plat_000120. Current first-party authority establishes fixed-period crypto lending, contractual lending fees and no customer-requested mid-term cancellation. The original launch date remains unresolved and is not invented.",
+    "first_seen_at": "2026-08-21",
+    "last_reviewed_at": "2026-08-21"
+  }
+]
