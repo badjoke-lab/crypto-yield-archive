@@ -1,0 +1,18 @@
+[
+  {
+    "platform_id": "cya_plat_000120",
+    "outcome_status": "not_applicable",
+    "estimated_recovery_rate": "not_applicable",
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": "Not applicable as a failure-recovery process. bitFlyer 定期貸しコイン remains active in the reviewed first-party material; CYA records current contractual lending mechanics without converting them into a historical recovery process.",
+    "claim_process_url": null,
+    "affected_products": ["bitFlyer 定期貸しコイン"],
+    "claim_classes": [],
+    "jurisdictions": ["Japan"],
+    "as_of": "2026-08-21",
+    "last_verified_at": "2026-08-21",
+    "notes": "Current product operation and contractual return mechanics do not prove universal historical repayment performance or a realized recovery percentage.",
+    "confidence": "high"
+  }
+]
