@@ -1,0 +1,11 @@
+[
+  {
+    "platform_id": "cya_plat_000120",
+    "terms_status": "unknown",
+    "asset_ownership_interpretation": "The reviewed first-party FAQ establishes a fixed-period crypto lending contract but does not provide sufficient dedicated authority to characterize lent balances as segregated, insured, trust-protected or otherwise insulated from operator counterparty exposure. Ordinary exchange custody treatment is not generalized to the lending product.",
+    "affected_product": "bitFlyer 定期貸しコイン",
+    "source_evidence_id": "cya_src_b85_0001",
+    "notes": "Published annual rates remain issuer terms rather than verified realized returns. Customer-requested mid-term cancellation is unavailable. Lending-specific insolvency treatment and principal-protection status remain unresolved without stronger dedicated first-party terms.",
+    "confidence": "medium"
+  }
+]
