@@ -1,0 +1,24 @@
+[
+  {
+    "id": "cya_plat_000120",
+    "slug": "bitflyer-teiki-kashicoin",
+    "canonical_name": "bitFlyer 定期貸しコイン",
+    "aliases": ["bitFlyer Lending", "定期貸しコイン", "bitFlyer Crypto Lending"],
+    "type": "cefi_lending",
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": null,
+    "end_date": null,
+    "country_or_origin": "Japan",
+    "summary": "Active fixed-period crypto-asset lending service offered by bitFlyer. Customers lend eligible crypto assets to bitFlyer for a preset period and receive contractual lending fees under round-specific terms.",
+    "what_happened": "bitFlyer's current first-party FAQ defines 定期貸しコイン as a fixed-period crypto-asset lending service and states that customer-requested mid-term cancellation is unavailable. A first-party 2026-05-29 announcement documents the fourth lending round, confirming continued operation. The reviewed material does not establish the original product launch date, so CYA does not manufacture one.",
+    "official_url_original": "https://bitflyer.com/ja-jp/faq/lending",
+    "official_domain_original": "bitflyer.com",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://bitflyer.com/ja-jp/faq/lending",
+    "confidence": "high",
+    "last_verified_at": "2026-08-21",
+    "uncertainty_notes": "The original launch date is unresolved. Published annual rates are issuer product terms, not independently verified realized returns. Dedicated lending custody, segregation, insolvency priority, insurance and principal protection are not inferred beyond reviewed first-party lending authority.",
+    "notes": "Promoted in Phase 10 from duplicate-clear candidate cya_candidate_000141 after candidate-only PR #296 passed the hardened exact-head scanner against the 119-platform canonical corpus."
+  }
+]
