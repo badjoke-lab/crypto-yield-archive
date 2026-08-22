@@ -1,0 +1,10 @@
+[
+  {
+    "platform_id": "cya_plat_000121",
+    "product_type": "centralized_yield",
+    "product_name": "BitMEX EARN",
+    "custody_model": "Reviewed first-party launch and product notices establish a fixed-term yield product but do not provide sufficient dedicated authority to characterize EARN balances as segregated, insured, trust-protected or otherwise insulated from BitMEX counterparty exposure. Historical insurance-fund backing language is preserved only as an operator claim.",
+    "yield_source": "BitMEX published fixed-term EARN products with contractual interest. Published APRs are issuer product terms and are not independently verified realized returns or evidence of underlying economic performance.",
+    "risk_notes": "Current operational status is unresolved. Contractual principal-plus-interest at maturity does not establish universal historical repayment performance, and ordinary exchange custody protections are not generalized to EARN balances."
+  }
+]
