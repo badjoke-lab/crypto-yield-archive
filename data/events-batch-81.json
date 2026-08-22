@@ -8,7 +8,7 @@
     "description": "BitMEX announced EARN as a fixed-term interest-bearing USDT product on 2021-11-30.",
     "confidence": "high",
     "impact_level": "high",
-    "event_status_effect": "unknown",
+    "event_status_effect": "none",
     "source_count": 1,
     "sort_order": 1,
     "notes": "First-party launch authority. Current operational status remains unresolved in the 2026-08-22 review pass."
