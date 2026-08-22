@@ -81,22 +81,5 @@
     "notes": "Phase 10 identity review resolves the watchlist ORCA item to the live iOrca registration surface under dapp.ocagent.io. The official registration page requires username, affiliate code, wallet connection and acceptance of Terms of Service, Privacy Policy and Risk Disclosure, establishing an active financial-product surface but not the underlying economic contract. Current Japanese discovery/referral material consistently describes BNB-chain USDT deposits, minimum participation around 100 USDT, 10/90/180/360-day packages, principal lockups, daily USDT rewards sent to a wallet, check-in-based reward increases, referral ranks and a temporary doubled-deposit campaign; it attributes yield to AI agents exploiting price/probability differences across prediction markets. Those mechanics and rates remain discovery claims because the first-party Terms/Risk pages could not be retrieved reliably in this pass and no stable first-party documentation for package rates, custody, asset reuse, redemption, source of yield or operator identity was found. A claimed relationship to Nodepay is likewise unverified and must not be canonicalized. Resolve legal operator/jurisdiction, first-party Terms and Risk Disclosure, deposit/custody/asset-use treatment, package lock/redemption rules, reward calculation, withdrawal rights, launch chronology, source-of-yield claims and any campaign liabilities before add_now. Do not confuse this candidate with Orca's Solana AMM/xORCA staking product and do not convert advertised daily rates or campaign credits into verified realized return or principal repayment.",
     "first_seen_at": "2026-08-12",
     "last_reviewed_at": "2026-08-13"
-  },
-  {
-    "candidate_id": "cya_candidate_000144",
-    "canonical_name": "CoinDCX Earn",
-    "aliases": ["CoinDCX Simple Earn", "CoinDCX Earn", "DCX Lend", "CoinDCX Lend"],
-    "domain": "coindcx.com",
-    "country_or_origin": "India / operator and jurisdiction product-specific",
-    "platform_type_guess": "centralized_yield",
-    "status_guess": "active",
-    "major_event": "Current CoinDCX Earn lets users deploy supported virtual digital assets for potential returns over selected durations; current first-party terms disclose variable rates, a minimum holding period, discretionary product changes and risk of partial or complete loss, while legacy DCX Lend documentation establishes earlier crypto-lending functionality.",
-    "primary_sources": ["https://support.coindcx.com/articles/simple-earn/what-is-earn/63dd43d2217f487e38b3e9ad", "https://support.coindcx.com/articles/simple-earn/what-are-the-terms-conditions-for-earn/6381b5352418a07148a93552", "https://support.coindcx.com/articles/simple-earn/where-are-the-assets-deployed-and-how-are-passive-returns-generated/65d31d3857098b7fa85ad831", "https://coindcx.com/assets/pdf/DCXLend.pdf"],
-    "secondary_sources": [],
-    "duplicate_check": {"checked_at": "2026-08-23", "matched_platform_ids": [], "notes": "Repository PR and code searches returned no CoinDCX Earn identity before staging. Hardened full-corpus scanning remains authoritative."},
-    "decision": "add_now",
-    "notes": "Current first-party help material supports current operation and states CoinDCX may deploy user assets across yield-generating opportunities including margin trading and staking. Displayed rates are not treated as guaranteed or realized returns. Legacy DCX Lend and current Earn are linked only as product history; unchanged legal terms, custody and ownership treatment are not inferred across the transition. Original Earn launch date remains unresolved.",
-    "first_seen_at": "2026-08-23",
-    "last_reviewed_at": "2026-08-23"
   }
 ]
