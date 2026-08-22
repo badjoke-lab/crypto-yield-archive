@@ -1,0 +1,24 @@
+[
+  {
+    "id": "cya_plat_000121",
+    "slug": "bitmex-earn",
+    "canonical_name": "BitMEX EARN",
+    "aliases": ["BitMEX Earn", "BitMEX EARN USDT", "BitMEX EARN XBT"],
+    "type": "centralized_yield",
+    "status": "unknown",
+    "failure_reason": null,
+    "launch_date": "2021-11-30",
+    "end_date": null,
+    "country_or_origin": "Global",
+    "summary": "Fixed-term crypto yield product launched by BitMEX in 2021. First-party notices document USDT and later XBT EARN products with contractual principal-plus-interest at maturity; current operational status remains unresolved in this review pass.",
+    "what_happened": "BitMEX announced EARN on 2021-11-30 as a fixed-term interest-bearing product. Later first-party notices expanded the product set. Historical marketing described EARN as backed by the BitMEX insurance fund, but CYA preserves that only as an operator claim and does not treat it as independent proof of solvency, segregation, enforceability or guaranteed repayment.",
+    "official_url_original": "https://www.bitmex.com/blog/introducing-bitmex-earn",
+    "official_domain_original": "bitmex.com",
+    "official_url_status": "unknown",
+    "archived_url": "https://web.archive.org/web/*/https://www.bitmex.com/blog/introducing-bitmex-earn",
+    "confidence": "high",
+    "last_verified_at": "2026-08-22",
+    "uncertainty_notes": "Current product operation is unresolved. Published APRs are issuer terms, not independently verified realized returns. Insurance-fund backing is recorded only as an operator claim.",
+    "notes": "Promoted in Phase 10 from duplicate-clear candidate cya_candidate_000143 after candidate-only PR #302 passed the hardened exact-head scanner against the 120-platform canonical corpus."
+  }
+]

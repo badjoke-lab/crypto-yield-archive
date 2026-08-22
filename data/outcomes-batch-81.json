@@ -1,0 +1,18 @@
+[
+  {
+    "platform_id": "cya_plat_000121",
+    "outcome_status": "not_applicable",
+    "estimated_recovery_rate": "not_applicable",
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": "Not applicable as a failure-recovery process. Reviewed materials establish historical contractual maturity mechanics, while current operating status remains unresolved.",
+    "claim_process_url": null,
+    "affected_products": ["BitMEX EARN"],
+    "claim_classes": [],
+    "jurisdictions": [],
+    "as_of": "2026-08-22",
+    "last_verified_at": "2026-08-22",
+    "notes": "No platform-wide failure or recovery process is established in the reviewed authority. Historical principal-plus-interest terms are not treated as proof of universal repayment performance.",
+    "confidence": "medium"
+  }
+]
