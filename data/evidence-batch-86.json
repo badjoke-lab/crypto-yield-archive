@@ -1,0 +1,17 @@
+[
+  {
+    "id": "cya_src_b86_0001",
+    "platform_id": "cya_plat_000121",
+    "event_id": "cya_ev_000358",
+    "source_type": "official_statement",
+    "title": "Introducing BitMEX EARN",
+    "url": "https://www.bitmex.com/blog/introducing-bitmex-earn",
+    "publisher": "BitMEX",
+    "published_at": "2021-11-30",
+    "archived_url": "https://web.archive.org/web/*/https://www.bitmex.com/blog/introducing-bitmex-earn",
+    "accessed_at": "2026-08-22",
+    "reliability": "high",
+    "claim_scope": "launch",
+    "notes": "First-party launch authority for BitMEX EARN and fixed-term USDT products. Historical insurance-fund backing language is treated only as an operator claim."
+  }
+]
