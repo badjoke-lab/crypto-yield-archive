@@ -1,0 +1,47 @@
+[
+  {
+    "id": "cya_src_b87_0001",
+    "platform_id": "cya_plat_000122",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "What is Earn?",
+    "url": "https://support.coindcx.com/articles/simple-earn/what-is-earn/63dd43d2217f487e38b3e9ad",
+    "publisher": "CoinDCX",
+    "published_at": null,
+    "archived_url": null,
+    "accessed_at": "2026-08-23",
+    "reliability": "high",
+    "claim_scope": "status",
+    "notes": "Current first-party product authority establishing active Earn functionality."
+  },
+  {
+    "id": "cya_src_b87_0002",
+    "platform_id": "cya_plat_000122",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "What are the Terms & Conditions for Earn?",
+    "url": "https://support.coindcx.com/articles/simple-earn/what-are-the-terms-conditions-for-earn/6381b5352418a07148a93552",
+    "publisher": "CoinDCX",
+    "published_at": null,
+    "archived_url": null,
+    "accessed_at": "2026-08-23",
+    "reliability": "high",
+    "claim_scope": "terms_risk",
+    "notes": "First-party terms authority for holding period, variable returns, early-exit consequences, product discretion and loss risk."
+  },
+  {
+    "id": "cya_src_b87_0003",
+    "platform_id": "cya_plat_000122",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "Where are the assets deployed and how are passive returns generated?",
+    "url": "https://support.coindcx.com/articles/simple-earn/where-are-the-assets-deployed-and-how-are-passive-returns-generated/65d31d3857098b7fa85ad831",
+    "publisher": "CoinDCX",
+    "published_at": null,
+    "archived_url": null,
+    "accessed_at": "2026-08-23",
+    "reliability": "high",
+    "claim_scope": "terms_risk",
+    "notes": "First-party authority for asset deployment and described yield sources including margin trading and staking."
+  }
+]
