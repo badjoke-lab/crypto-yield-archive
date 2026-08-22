@@ -1,0 +1,11 @@
+[
+  {
+    "platform_id": "cya_plat_000122",
+    "terms_status": "unclear",
+    "asset_ownership_interpretation": "Current first-party help material states users authorize CoinDCX to deploy supported assets on their behalf, but the reviewed sources do not establish a universal legal-title, segregation, trust or insolvency-priority model for Earn balances. Legacy DCX Lend terms are not generalized to current Earn.",
+    "affected_product": "CoinDCX Earn",
+    "source_evidence_id": "cya_src_b87_0002",
+    "notes": "Variable rates, minimum holding periods, early-exit consequences, service-change discretion and partial/complete-loss risk are preserved as current product terms. Displayed rates are not treated as guaranteed or realized returns.",
+    "confidence": "high"
+  }
+]

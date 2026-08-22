@@ -1,0 +1,24 @@
+[
+  {
+    "id": "cya_plat_000122",
+    "slug": "coindcx-earn",
+    "canonical_name": "CoinDCX Earn",
+    "aliases": ["CoinDCX Simple Earn", "DCX Lend", "CoinDCX Lend"],
+    "type": "centralized_yield",
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": null,
+    "end_date": null,
+    "country_or_origin": "India / product-jurisdiction specific",
+    "summary": "Current CoinDCX Earn product for deploying supported virtual digital assets into yield-generating opportunities for variable returns over selected durations. Legacy DCX Lend is preserved as product history without assuming unchanged legal or custody terms.",
+    "what_happened": "Current first-party help material documents CoinDCX Earn as an active yield product with minimum holding periods, variable earning rates, early-exit consequences, discretionary product changes and partial or complete loss risk. Earlier DCX Lend material establishes historical lending functionality, but the original Earn launch date and continuity of legal terms remain unresolved.",
+    "official_url_original": "https://support.coindcx.com/articles/simple-earn/what-is-earn/63dd43d2217f487e38b3e9ad",
+    "official_domain_original": "coindcx.com",
+    "official_url_status": "live_verified",
+    "archived_url": null,
+    "confidence": "high",
+    "last_verified_at": "2026-08-23",
+    "uncertainty_notes": "Original Earn launch date is unresolved. Legacy DCX Lend and current Earn are linked only as product history; unchanged legal entity, custody, ownership and return mechanics are not inferred.",
+    "notes": "Promoted in Phase 10 from duplicate-clear candidate cya_candidate_000144 after candidate-only PR #306 passed the hardened exact-head scanner against the 121-platform canonical corpus."
+  }
+]
