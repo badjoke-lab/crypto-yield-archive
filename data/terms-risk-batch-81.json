@@ -1,7 +1,7 @@
 [
   {
     "platform_id": "cya_plat_000121",
-    "terms_status": "historical_verified",
+    "terms_status": "unknown",
     "asset_ownership_interpretation": "Reviewed first-party launch materials establish a fixed-term product but do not prove segregation, trust protection, enforceable insurance coverage or insolvency priority for EARN balances. BitMEX insurance-fund backing language is recorded only as an operator claim.",
     "affected_product": "BitMEX EARN",
     "source_evidence_id": "cya_src_b86_0001",
