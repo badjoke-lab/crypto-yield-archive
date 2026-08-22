@@ -11,7 +11,7 @@
     "archived_url": "https://web.archive.org/web/*/https://www.bitmex.com/blog/introducing-bitmex-earn",
     "accessed_at": "2026-08-22",
     "reliability": "high",
-    "claim_scope": "launch",
+    "claim_scope": "launch_date",
     "notes": "First-party launch authority for BitMEX EARN and fixed-term USDT products. Historical insurance-fund backing language is treated only as an operator claim."
   }
 ]
