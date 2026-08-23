@@ -6,6 +6,7 @@
     "rehypothecation": "CoinSwitch states EARN does not lend or loan user crypto to third parties; reviewed material supports staking/validator use rather than lending-based rehypothecation.",
     "withdrawal_terms": "CoinSwitch states users may unlock supported EARN assets, subject to product and blockchain mechanics.",
     "counterparty_risk": "Exposure includes CoinSwitch/Bitcipher operational risk, validator risk and underlying protocol risk.",
-    "notes": "Do not generalize ordinary wallet custody protections or infer insolvency priority from the reviewed EARN materials."
+    "notes": "Do not generalize ordinary wallet custody protections or infer insolvency priority from the reviewed EARN materials.",
+    "confidence": "medium"
   }
 ]
