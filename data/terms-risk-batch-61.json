@@ -7,9 +7,9 @@
     "asset_ownership_interpretation": "The reviewed public pages do not clearly establish whether lending transfers legal or beneficial ownership of customer assets, the exact lending counterparty, or how lent assets are deployed, rehypothecated, segregated, or treated in an insolvency.",
     "bankruptcy_treatment": "Not established by the reviewed public terms.",
     "withdrawal_limitations": "Lending contracts use selected lock periods and campaign rewards may require specified term completion, eligibility checks, or KYC/application steps. No platform-wide withdrawal suspension is established by the reviewed sources.",
-    "source_evidence_id": "cya_src_b61_0005",
-    "last_verified_at": "2026-08-13",
+    "source_evidence_id": "cya_src_b61_0012",
+    "last_verified_at": "2026-08-23",
     "confidence": "medium",
-    "notes": "Generic website terms are not treated as complete lending-product terms. The Hong Kong operator identity and Cayman governing-law clause are preserved separately rather than reconciled by inference. Reverify if IZAKA-YA publishes public lending-contract terms that resolve counterparty, ownership, custody deployment, insolvency treatment, insurance, or regulatory authorization."
+    "notes": "A current first-party lending article explicitly states that crypto-lending principal is not guaranteed. Generic website terms are not treated as complete lending-product terms. The Hong Kong operator identity and Cayman governing-law clause are preserved separately rather than reconciled by inference. Reverify if IZAKA-YA publishes public lending-contract terms that resolve counterparty, ownership, custody deployment, insolvency treatment, insurance, regulatory authorization, or the economic source of promotional yields."
   }
 ]
