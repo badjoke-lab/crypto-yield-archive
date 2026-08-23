@@ -2,323 +2,40 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { allPlatforms, getEvents, getEvidence, getOutcome, getProducts, getTermsRisk, label } from '../../lib/data';
 
-export function getStaticPaths() {
-  return allPlatforms.map((platform) => ({ params: { slug: platform.slug }, props: { platform } }));
-}
-
+export function getStaticPaths() { return allPlatforms.map((platform) => ({ params: { slug: platform.slug }, props: { platform } })); }
 const { platform } = Astro.props;
 const events = getEvents(platform.id).sort((a, b) => String(a.event_date).localeCompare(String(b.event_date)));
 const evidence = getEvidence(platform.id);
 const outcome = getOutcome(platform.id);
 const products = getProducts(platform.id);
 const terms = getTermsRisk(platform.id);
-
-const pageUrl = `https://cya.badjoke-lab.com/platform/${platform.slug}/`;
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline: `${platform.canonical_name} platform record`,
-  name: platform.canonical_name,
-  description: platform.summary,
-  url: pageUrl,
-  isPartOf: { '@type': 'WebSite', name: 'Crypto Yield Archive', url: 'https://cya.badjoke-lab.com/' },
-  about: {
-    '@type': 'Organization',
-    name: platform.canonical_name,
-    url: platform.official_url_original || undefined,
-    sameAs: platform.archived_url ? [platform.archived_url] : undefined,
-  },
-  dateModified: platform.last_verified_at,
-  keywords: [
-    'crypto lending', 'crypto yield', 'customer outcome', label(platform.type), label(platform.status),
-    label(platform.failure_reason), label(outcome?.outcome_status), label(terms?.terms_status),
-  ].filter(Boolean).join(', '),
-};
-
-const evidenceById = new Map(evidence.map((source) => [source.id, source]));
-const evidenceByEvent = new Map();
-for (const source of evidence) {
-  if (!source.event_id) continue;
-  const list = evidenceByEvent.get(source.event_id) || [];
-  list.push(source);
-  evidenceByEvent.set(source.event_id, list);
-}
-const evidenceByClaim = Array.from(
-  evidence.reduce((map, source) => {
-    const key = source.claim_scope || 'other';
-    const list = map.get(key) || [];
-    list.push(source);
-    map.set(key, list);
-    return map;
-  }, new Map())
-).sort(([a], [b]) => String(a).localeCompare(String(b)));
-
-const claimOptions = Array.from(new Set(evidence.map((source) => source.claim_scope || 'other'))).sort();
-const reliabilityOptions = Array.from(new Set(evidence.map((source) => source.reliability || 'unknown'))).sort();
-const sourceTypeOptions = Array.from(new Set(evidence.map((source) => source.source_type || 'other'))).sort();
+const text = (value) => String(value || '').toLowerCase();
+const eventText = events.map((event) => `${event.event_type || ''} ${event.title || ''} ${event.description || ''}`).join(' ').toLowerCase();
+const concerns = [];
+if (!outcome || !outcome.outcome_status || outcome.outcome_status === 'unknown') concerns.push(['Customer outcome', 'Unresolved']);
+if (!terms || !terms.terms_status || terms.terms_status === 'unknown') concerns.push(['Terms / asset treatment', 'Unresolved']);
+if (text(platform.uncertainty_notes) && !text(platform.uncertainty_notes).includes('no material')) concerns.push(['Known unknowns', 'Recorded']);
+if (/withdraw|suspend|freeze|halt/.test(eventText)) concerns.push(['Withdrawal / service restriction', 'Material event recorded']);
+if (/regulat|enforcement|sec |fca |fsa |order|fine/.test(eventText)) concerns.push(['Regulatory record', 'Material event recorded']);
+if (/bankrupt|insolven|liquidat|restructur|failure/.test(eventText)) concerns.push(['Failure / insolvency chain', 'Material event recorded']);
+if (/apy|apr|yield|interest|reward|promot/.test(eventText)) concerns.push(['Yield history', 'Material yield event recorded']);
 const lowEvidence = evidence.filter((source) => source.reliability === 'low');
-const sourceReviewEvidence = evidence.filter((source) => {
-  const notes = String(source.notes || '').toLowerCase();
-  return notes.includes('verify') || notes.includes('replace') || notes.includes('stronger source') || notes.includes('source review');
-});
-
-const relatedPlatforms = allPlatforms
-  .filter((item) => item.id !== platform.id)
-  .map((item) => {
-    let score = 0;
-    if (item.failure_reason && item.failure_reason === platform.failure_reason) score += 3;
-    if (item.status && item.status === platform.status) score += 2;
-    if (item.type && item.type === platform.type) score += 2;
-    if (getOutcome(item.id)?.outcome_status === outcome?.outcome_status) score += 1;
-    if (getTermsRisk(item.id)?.terms_status === terms?.terms_status) score += 1;
-    return { platform: item, score };
-  })
-  .filter((item) => item.score > 0)
-  .sort((a, b) => b.score - a.score || a.platform.canonical_name.localeCompare(b.platform.canonical_name))
-  .slice(0, 5);
+const sourceReviewEvidence = evidence.filter((source) => { const notes = text(source.notes); return notes.includes('verify') || notes.includes('replace') || notes.includes('stronger source') || notes.includes('source review'); });
+const pageUrl = `https://cya.badjoke-lab.com/platform/${platform.slug}/`;
+const jsonLd = { '@context':'https://schema.org','@type':'Article',headline:`${platform.canonical_name} platform record`,name:platform.canonical_name,description:platform.summary,url:pageUrl,isPartOf:{'@type':'WebSite',name:'Crypto Yield Archive',url:'https://cya.badjoke-lab.com/'},dateModified:platform.last_verified_at };
 ---
 <BaseLayout title={`${platform.canonical_name} | Crypto Yield Archive`} description={platform.summary}>
-  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
-
-  <nav class="record-breadcrumb" aria-label="Breadcrumb">
-    <a href="/">Registry</a><span>/</span><span>{platform.canonical_name}</span>
-  </nav>
-
-  <header class="platform-head">
-    <div>
-      <p class="kicker">{label(platform.type)} · {platform.country_or_origin || 'Origin unknown'}</p>
-      <h1>{platform.canonical_name}</h1>
-      <p class="platform-summary">{platform.summary}</p>
-      {platform.aliases?.length ? <p class="platform-aliases">Also known as: {platform.aliases.join(', ')}</p> : null}
-    </div>
-    <dl class="platform-status-grid" aria-label="Platform status summary">
-      <div><dt>Status</dt><dd>{label(platform.status)}</dd></div>
-      <div><dt>Outcome</dt><dd>{label(outcome?.outcome_status || 'unknown')}</dd></div>
-      <div><dt>Confidence</dt><dd>{label(platform.confidence || 'unknown')}</dd></div>
-      <div><dt>Last verified</dt><dd>{platform.last_verified_at || '—'}</dd></div>
-    </dl>
-  </header>
-
-  <section class="platform-record-strip" aria-label="Platform record facts">
-    <div><span>Launch</span><strong>{platform.launch_date || '—'}</strong></div>
-    <div><span>End</span><strong>{platform.end_date || '—'}</strong></div>
-    <div><span>Failure reason</span><strong>{label(platform.failure_reason)}</strong></div>
-    <div><span>Events</span><strong>{events.length}</strong></div>
-    <div><span>Evidence</span><strong>{evidence.length}</strong></div>
-    <div><span>Products</span><strong>{products.length}</strong></div>
-  </section>
-
-  {(lowEvidence.length || sourceReviewEvidence.length) ? (
-    <aside class="source-notice" aria-labelledby="source-notice-title">
-      <div>
-        <p class="kicker">Source quality notice</p>
-        <h2 id="source-notice-title">Use weaker sources with caution.</h2>
-        <p>This record includes evidence that needs stronger sourcing or source review. Treat those items as research leads rather than the strongest proof.</p>
-      </div>
-      <dl>
-        <div><dt>Low reliability</dt><dd>{lowEvidence.length}</dd></div>
-        <div><dt>Needs review</dt><dd>{sourceReviewEvidence.length}</dd></div>
-      </dl>
-    </aside>
-  ) : null}
-
-  <div class="platform-layout">
-    <article class="platform-main">
-      <section class="record-section" aria-labelledby="what-happened-title">
-        <div class="record-section-head"><p class="kicker">Case summary</p><h2 id="what-happened-title">What happened</h2></div>
-        <p class="record-prose">{platform.what_happened || platform.summary}</p>
-      </section>
-
-      <section class="record-section split-record" aria-labelledby="outcome-title">
-        <div class="record-section-head"><p class="kicker">Customer result</p><h2 id="outcome-title">Customer outcome</h2></div>
-        <div class="record-section-body">
-          <p class="record-state">{label(outcome?.outcome_status || 'unknown')}</p>
-          {outcome ? (
-            <>
-              <p>{outcome.notes}</p>
-              <dl class="record-ledger">
-                <div><dt>Estimated recovery</dt><dd>{label(outcome.estimated_recovery_rate)}</dd></div>
-                <div><dt>Repayment started</dt><dd>{outcome.repayment_started_at || '—'}</dd></div>
-                <div><dt>Repayment completed</dt><dd>{outcome.repayment_completed_at || '—'}</dd></div>
-                <div><dt>Confidence</dt><dd>{label(outcome.confidence)}</dd></div>
-              </dl>
-              {outcome.claim_process_url && <p><a class="archive-link" href={outcome.claim_process_url}>Claim or case process →</a></p>}
-            </>
-          ) : <p>Customer outcome has not been researched yet.</p>}
-        </div>
-      </section>
-
-      <section class="record-section split-record" aria-labelledby="terms-title">
-        <div class="record-section-head"><p class="kicker">Asset treatment</p><h2 id="terms-title">Terms risk</h2></div>
-        <div class="record-section-body">
-          <p class="record-state">{label(terms?.terms_status || 'unknown')}</p>
-          {terms ? (
-            <>
-              <p>{terms.notes}</p>
-              <dl class="record-ledger">
-                <div><dt>Affected product</dt><dd>{terms.affected_product || '—'}</dd></div>
-                <div><dt>Confidence</dt><dd>{label(terms.confidence)}</dd></div>
-              </dl>
-              {terms.asset_ownership_interpretation && <p>{terms.asset_ownership_interpretation}</p>}
-              {terms.source_evidence_id && evidenceById.has(terms.source_evidence_id) && (
-                <p><a class="archive-link" href={evidenceById.get(terms.source_evidence_id).url}>Source: {evidenceById.get(terms.source_evidence_id).title}</a></p>
-              )}
-            </>
-          ) : <p>Terms risk has not been researched yet.</p>}
-        </div>
-      </section>
-
-      <section class="record-section split-record" aria-labelledby="uncertainty-title">
-        <div class="record-section-head"><p class="kicker">Known unknowns</p><h2 id="uncertainty-title">Uncertainty</h2></div>
-        <div class="record-section-body"><p>{platform.uncertainty_notes || 'Uncertainty notes have not been added yet.'}</p></div>
-      </section>
-
-      <section class="record-section" aria-labelledby="timeline-title">
-        <div class="record-section-head"><p class="kicker">Chronology</p><h2 id="timeline-title">Historical record</h2></div>
-        {events.length ? (
-          <div class="platform-timeline">
-            {events.map((event) => {
-              const eventEvidence = evidenceByEvent.get(event.id) || [];
-              return (
-                <article class="platform-event">
-                  <time>{event.event_date}</time>
-                  <div>
-                    <div class="event-meta"><span>{label(event.event_type)}</span>{event.impact_level && <span>{label(event.impact_level)} impact</span>}<span>{eventEvidence.length} sources</span></div>
-                    <h3>{event.title}</h3>
-                    <p>{event.description}</p>
-                    {event.notes && <p class="muted detail-note">{event.notes}</p>}
-                    {eventEvidence.length ? (
-                      <div class="event-sources">
-                        {eventEvidence.map((source) => <a href={source.url}>{source.publisher} — {source.title}</a>)}
-                      </div>
-                    ) : <p class="muted detail-note">No direct evidence linked to this event yet.</p>}
-                  </div>
-                </article>
-              );
-            })}
-          </div>
-        ) : <p>No events yet.</p>}
-      </section>
-
-      <section class="record-section" aria-labelledby="evidence-title">
-        <div class="record-section-head"><p class="kicker">Source record</p><h2 id="evidence-title">Evidence dossier</h2></div>
-        <p class="muted detail-note">Filter by claim, reliability, source type, and whether evidence is linked to a specific event.</p>
-        <div class="controls evidence-controls" aria-label="Evidence filters">
-          <label class="control-field"><span>Claim</span><select id="evidenceClaimFilter"><option value="">All claims</option>{claimOptions.map((claim) => <option value={claim}>{label(claim)}</option>)}</select></label>
-          <label class="control-field"><span>Reliability</span><select id="evidenceReliabilityFilter"><option value="">All reliability</option>{reliabilityOptions.map((reliability) => <option value={reliability}>{label(reliability)}</option>)}</select></label>
-          <label class="control-field"><span>Source type</span><select id="evidenceSourceTypeFilter"><option value="">All source types</option>{sourceTypeOptions.map((sourceType) => <option value={sourceType}>{label(sourceType)}</option>)}</select></label>
-          <label class="control-field"><span>Event link</span><select id="evidenceEventLinkedFilter"><option value="">All evidence</option><option value="linked">Event-linked only</option><option value="unlinked">Unlinked only</option></select></label>
-          <button id="evidenceClearFilters" class="ghost-button" type="button">Clear</button>
-        </div>
-        <div class="registry-count" aria-live="polite">Showing <strong id="evidenceVisibleCount">{evidence.length}</strong> of <strong>{evidence.length}</strong> evidence records</div>
-        {evidenceByClaim.length ? (
-          <div class="evidence-register">
-            {evidenceByClaim.map(([claim, sources]) => (
-              <section class="evidence-claim-section">
-                <header><h3>{label(claim)}</h3><span>{sources.length} sources</span></header>
-                <div>
-                  {sources.map((source) => (
-                    <article class={`evidence-row evidence-${source.reliability || 'unknown'}`} data-evidence-item="true" data-claim={source.claim_scope || 'other'} data-reliability={source.reliability || 'unknown'} data-source-type={source.source_type || 'other'} data-event-linked={source.event_id ? 'linked' : 'unlinked'}>
-                      <div class="evidence-row-meta"><span>{label(source.source_type)}</span><span>{label(source.reliability)}</span>{source.event_id && <span>Event linked</span>}</div>
-                      <h3><a href={source.url}>{source.title}</a></h3>
-                      <p>{source.publisher}{source.published_at ? ` · ${source.published_at}` : ''}</p>
-                      <div class="evidence-row-links">{source.archived_url && <a href={source.archived_url}>Archived version</a>}</div>
-                      {source.notes && <p class="muted detail-note">{source.notes}</p>}
-                    </article>
-                  ))}
-                </div>
-              </section>
-            ))}
-          </div>
-        ) : <p>No evidence yet.</p>}
-        <p id="evidenceEmptyState" class="empty-state" hidden>No evidence records match the current filters.</p>
-      </section>
-
-      {relatedPlatforms.length ? (
-        <section class="record-section" aria-labelledby="related-title">
-          <div class="record-section-head"><p class="kicker">Comparative records</p><h2 id="related-title">Related platforms</h2></div>
-          <div class="related-grid">
-            {relatedPlatforms.map(({ platform: related, score }) => (
-              <a class="related-card" href={`/platform/${related.slug}/`}>
-                <strong>{related.canonical_name}</strong>
-                <span>{label(related.status)} · {label(related.failure_reason)}</span>
-                <small>relation score: {score}</small>
-              </a>
-            ))}
-          </div>
-        </section>
-      ) : null}
-    </article>
-
-    <aside class="platform-sidebar">
-      <section>
-        <p class="kicker">Platform facts</p>
-        <dl class="sidebar-ledger">
-          <div><dt>Launch</dt><dd>{platform.launch_date || '—'}</dd></div>
-          <div><dt>End</dt><dd>{platform.end_date || '—'}</dd></div>
-          <div><dt>Origin</dt><dd>{platform.country_or_origin || '—'}</dd></div>
-          <div><dt>Confidence</dt><dd>{label(platform.confidence)}</dd></div>
-          <div><dt>Domain</dt><dd>{platform.official_domain_original || '—'}</dd></div>
-          <div><dt>URL status</dt><dd>{label(platform.official_url_status)}</dd></div>
-        </dl>
-      </section>
-
-      <section>
-        <p class="kicker">URL history</p>
-        <div class="sidebar-links">
-          {platform.official_url_original && <a href={platform.official_url_original}>Original URL →</a>}
-          {platform.archived_url && <a href={platform.archived_url}>Web Archive →</a>}
-        </div>
-      </section>
-
-      <section>
-        <p class="kicker">Products</p>
-        {products.length ? (
-          <div class="sidebar-products">
-            {products.map((product) => (
-              <article><span>{label(product.product_type)}</span><strong>{product.product_name}</strong>{product.risk_notes && <p>{product.risk_notes}</p>}</article>
-            ))}
-          </div>
-        ) : <p>No product profiles yet.</p>}
-      </section>
-    </aside>
-  </div>
-
-  <script is:inline>
-    const evidenceClaimFilter = document.querySelector('#evidenceClaimFilter');
-    const evidenceReliabilityFilter = document.querySelector('#evidenceReliabilityFilter');
-    const evidenceSourceTypeFilter = document.querySelector('#evidenceSourceTypeFilter');
-    const evidenceEventLinkedFilter = document.querySelector('#evidenceEventLinkedFilter');
-    const evidenceClearButton = document.querySelector('#evidenceClearFilters');
-    const evidenceVisibleCount = document.querySelector('#evidenceVisibleCount');
-    const evidenceEmptyState = document.querySelector('#evidenceEmptyState');
-    const evidenceItems = Array.from(document.querySelectorAll('[data-evidence-item="true"]'));
-
-    function applyEvidenceFilters() {
-      const claim = evidenceClaimFilter.value;
-      const reliability = evidenceReliabilityFilter.value;
-      const sourceType = evidenceSourceTypeFilter.value;
-      const eventLinked = evidenceEventLinkedFilter.value;
-      let shown = 0;
-      for (const item of evidenceItems) {
-        const isVisible = (!claim || item.dataset.claim === claim) && (!reliability || item.dataset.reliability === reliability) && (!sourceType || item.dataset.sourceType === sourceType) && (!eventLinked || item.dataset.eventLinked === eventLinked);
-        item.hidden = !isVisible;
-        if (isVisible) shown += 1;
-      }
-      evidenceVisibleCount.textContent = String(shown);
-      evidenceEmptyState.hidden = shown !== 0;
-    }
-
-    evidenceClaimFilter?.addEventListener('change', applyEvidenceFilters);
-    evidenceReliabilityFilter?.addEventListener('change', applyEvidenceFilters);
-    evidenceSourceTypeFilter?.addEventListener('change', applyEvidenceFilters);
-    evidenceEventLinkedFilter?.addEventListener('change', applyEvidenceFilters);
-    evidenceClearButton?.addEventListener('click', () => {
-      evidenceClaimFilter.value = '';
-      evidenceReliabilityFilter.value = '';
-      evidenceSourceTypeFilter.value = '';
-      evidenceEventLinkedFilter.value = '';
-      applyEvidenceFilters();
-    });
-  </script>
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+<nav class="record-breadcrumb" aria-label="Breadcrumb"><a href="/">Registry</a><span>/</span><span>{platform.canonical_name}</span></nav>
+<header class="platform-head"><div><p class="kicker">{label(platform.type)} · {platform.country_or_origin || 'Origin unknown'}</p><h1>{platform.canonical_name}</h1><p class="platform-summary">{platform.summary}</p>{platform.aliases?.length ? <p class="platform-aliases">Also known as: {platform.aliases.join(', ')}</p> : null}</div><dl class="platform-status-grid" aria-label="Platform status summary"><div><dt>Status</dt><dd>{label(platform.status)}</dd></div><div><dt>Outcome</dt><dd>{label(outcome?.outcome_status || 'unknown')}</dd></div><div><dt>Confidence</dt><dd>{label(platform.confidence || 'unknown')}</dd></div><div><dt>Last verified</dt><dd>{platform.last_verified_at || '—'}</dd></div></dl></header>
+<section class="platform-record-strip" aria-label="Platform record facts"><div><span>Launch</span><strong>{platform.launch_date || '—'}</strong></div><div><span>End</span><strong>{platform.end_date || '—'}</strong></div><div><span>Failure reason</span><strong>{label(platform.failure_reason)}</strong></div><div><span>Events</span><strong>{events.length}</strong></div><div><span>Evidence</span><strong>{evidence.length}</strong></div><div><span>Products</span><strong>{products.length}</strong></div></section>
+<aside class="source-notice" aria-labelledby="material-concerns-title"><div><p class="kicker">Material concerns</p><h2 id="material-concerns-title">Status is not a safety endorsement.</h2><p>These flags are derived from reviewed canonical records. They identify material events or unresolved questions; they are not a proprietary safety score.</p></div><dl>{concerns.length ? concerns.map(([name,state]) => <div><dt>{name}</dt><dd>{state}</dd></div>) : <div><dt>Current derived flags</dt><dd>None. This is not a recommendation or finding of safety.</dd></div>}</dl></aside>
+{(lowEvidence.length || sourceReviewEvidence.length) ? <aside class="source-notice" aria-labelledby="source-notice-title"><div><p class="kicker">Source quality notice</p><h2 id="source-notice-title">Use weaker sources with caution.</h2><p>This record includes evidence that needs stronger sourcing or source review.</p></div><dl><div><dt>Low reliability</dt><dd>{lowEvidence.length}</dd></div><div><dt>Needs review</dt><dd>{sourceReviewEvidence.length}</dd></div></dl></aside> : null}
+<div class="platform-layout"><article class="platform-main">
+<section class="record-section" aria-labelledby="what-happened-title"><div class="record-section-head"><p class="kicker">Case summary</p><h2 id="what-happened-title">What happened</h2></div><p class="record-prose">{platform.what_happened || platform.summary}</p></section>
+<section class="record-section split-record" aria-labelledby="outcome-title"><div class="record-section-head"><p class="kicker">Customer result</p><h2 id="outcome-title">Customer outcome</h2></div><div class="record-section-body"><p class="record-state">{label(outcome?.outcome_status || 'unknown')}</p>{outcome ? <><p>{outcome.notes}</p><dl class="record-ledger"><div><dt>Estimated recovery</dt><dd>{label(outcome.estimated_recovery_rate)}</dd></div><div><dt>Repayment started</dt><dd>{outcome.repayment_started_at || '—'}</dd></div><div><dt>Repayment completed</dt><dd>{outcome.repayment_completed_at || '—'}</dd></div><div><dt>Confidence</dt><dd>{label(outcome.confidence)}</dd></div></dl>{outcome.claim_process_url && <p><a class="archive-link" href={outcome.claim_process_url}>Claim or case process →</a></p>}</> : <p>Customer outcome has not been researched yet.</p>}</div></section>
+<section class="record-section split-record" aria-labelledby="terms-title"><div class="record-section-head"><p class="kicker">Asset treatment</p><h2 id="terms-title">Terms risk</h2></div><div class="record-section-body"><p class="record-state">{label(terms?.terms_status || 'unknown')}</p>{terms ? <><p>{terms.notes}</p><dl class="record-ledger"><div><dt>Affected product</dt><dd>{terms.affected_product || '—'}</dd></div><div><dt>Confidence</dt><dd>{label(terms.confidence)}</dd></div></dl>{terms.asset_ownership_interpretation && <p>{terms.asset_ownership_interpretation}</p>}</> : <p>Terms risk has not been researched yet.</p>}</div></section>
+<section class="record-section split-record" aria-labelledby="uncertainty-title"><div class="record-section-head"><p class="kicker">Known unknowns</p><h2 id="uncertainty-title">Uncertainty</h2></div><div class="record-section-body"><p>{platform.uncertainty_notes || 'Uncertainty notes have not been added yet.'}</p></div></section>
+<section class="record-section" aria-labelledby="timeline-title"><div class="record-section-head"><p class="kicker">Chronology</p><h2 id="timeline-title">Historical record</h2></div>{events.length ? <div class="platform-timeline">{events.map((event) => <article class="timeline-entry"><time>{event.event_date || 'Date unknown'}</time><div><p class="kicker">{label(event.event_type)}</p><h3>{event.title}</h3><p>{event.description}</p></div></article>)}</div> : <p>No events recorded.</p>}</section>
+</article><aside class="platform-sidebar"><section class="sidebar-card"><p class="kicker">Record scope</p><h2>Evidence coverage</h2><dl class="record-ledger"><div><dt>Events</dt><dd>{events.length}</dd></div><div><dt>Evidence</dt><dd>{evidence.length}</dd></div><div><dt>Products</dt><dd>{products.length}</dd></div></dl></section></aside></div>
 </BaseLayout>
