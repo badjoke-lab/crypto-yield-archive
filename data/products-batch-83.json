@@ -1,0 +1,10 @@
+[
+  {
+    "platform_id": "cya_plat_000123",
+    "product_type": "centralized_yield",
+    "product_name": "CoinSwitch EARN",
+    "custody_model": "Current terms identify Bitcipher Labs LLP as provider and describe participation through third-party validators. Reviewed material does not establish one universal legal-title, segregation or insolvency-priority model across all assets and validators.",
+    "yield_source": "Proof-of-stake validation rewards generated through supported blockchain validators. CoinSwitch states user crypto is not lent or loaned to third parties.",
+    "risk_notes": "Validator and protocol risks apply; advertised reward ranges are product terms rather than verified realized returns."
+  }
+]
