@@ -81,22 +81,5 @@
     "notes": "Phase 10 identity review resolves the watchlist ORCA item to the live iOrca registration surface under dapp.ocagent.io. The official registration page requires username, affiliate code, wallet connection and acceptance of Terms of Service, Privacy Policy and Risk Disclosure, establishing an active financial-product surface but not the underlying economic contract. Current Japanese discovery/referral material consistently describes BNB-chain USDT deposits, minimum participation around 100 USDT, 10/90/180/360-day packages, principal lockups, daily USDT rewards sent to a wallet, check-in-based reward increases, referral ranks and a temporary doubled-deposit campaign; it attributes yield to AI agents exploiting price/probability differences across prediction markets. Those mechanics and rates remain discovery claims because the first-party Terms/Risk pages could not be retrieved reliably in this pass and no stable first-party documentation for package rates, custody, asset reuse, redemption, source of yield or operator identity was found. A claimed relationship to Nodepay is likewise unverified and must not be canonicalized. Resolve legal operator/jurisdiction, first-party Terms and Risk Disclosure, deposit/custody/asset-use treatment, package lock/redemption rules, reward calculation, withdrawal rights, launch chronology, source-of-yield claims and any campaign liabilities before add_now. Do not confuse this candidate with Orca's Solana AMM/xORCA staking product and do not convert advertised daily rates or campaign credits into verified realized return or principal repayment.",
     "first_seen_at": "2026-08-12",
     "last_reviewed_at": "2026-08-13"
-  },
-  {
-    "candidate_id": "cya_candidate_000146",
-    "canonical_name": "Mudrex Earn",
-    "aliases": ["Mudrex Earn", "Mudrex Earn Products", "Mudrex Vault"],
-    "domain": "mudrex.com",
-    "country_or_origin": "India / Global",
-    "platform_type_guess": "centralized_yield",
-    "status_guess": "active",
-    "major_event": "Mudrex launched Earn in June 2024 and subsequently transitioned legacy Vault users into Earn; current first-party product material continues to list Earn Products, while product mechanics vary by asset and should not be collapsed into a single staking-or-lending model.",
-    "primary_sources": ["https://mudrex.com/blog/how-to-earn-crypto-rewards-using-mudrex/", "https://mudrex.com/blog/mudrex-vault-is-moving-to-mudrex-earn/", "https://mudrex.com/blog/inr-native-crypto-trading-on-mudrex/"],
-    "secondary_sources": [],
-    "duplicate_check": {"checked_at": "2026-08-23", "matched_platform_ids": [], "notes": "Repository code search and PR-history precheck found no Mudrex canonical identity before staging. Hardened full-corpus scanner remains authoritative."},
-    "decision": "add_now",
-    "notes": "First-party materials support a live Mudrex Earn product and a June 2024 launch/transition chronology. Do not infer that every supported asset uses the same yield mechanism: reviewed Mudrex materials discuss staking and later educational material also discusses lending. Canonical review must preserve mechanism uncertainty at the product/asset level and must not turn advertised yields into realized returns or guarantees.",
-    "first_seen_at": "2026-08-23",
-    "last_reviewed_at": "2026-08-23"
   }
 ]

@@ -1,0 +1,47 @@
+[
+  {
+    "id": "cya_src_b89_0001",
+    "platform_id": "cya_plat_000124",
+    "event_id": "cya_ev_000360",
+    "source_type": "official_statement",
+    "title": "How to Use Mudrex Earn: Earn Additional Returns On Your Crypto Holdings",
+    "url": "https://mudrex.com/blog/how-to-earn-crypto-rewards-using-mudrex/",
+    "publisher": "Mudrex",
+    "published_at": "2024-06-11",
+    "archived_url": null,
+    "accessed_at": "2026-08-23",
+    "reliability": "high",
+    "claim_scope": "launch_date",
+    "notes": "First-party launch authority for Mudrex Earn and launch-era zero-lock-in/staking description."
+  },
+  {
+    "id": "cya_src_b89_0002",
+    "platform_id": "cya_plat_000124",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "Mudrex Vault: Upgrade Coming Soon",
+    "url": "https://mudrex.com/blog/mudrex-vault-upgrade-coming-soon/",
+    "publisher": "Mudrex",
+    "published_at": "2024-06-19",
+    "archived_url": null,
+    "accessed_at": "2026-08-23",
+    "reliability": "high",
+    "claim_scope": "terms_risk",
+    "notes": "First-party authority for Vault-to-Earn transition, variable yields and July 2024 automatic Vault redemption."
+  },
+  {
+    "id": "cya_src_b89_0003",
+    "platform_id": "cya_plat_000124",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "Mudrex Is Moving to an INR-Native Experience",
+    "url": "https://mudrex.com/blog/inr-native-experience-on-mudrex/",
+    "publisher": "Mudrex",
+    "published_at": null,
+    "archived_url": null,
+    "accessed_at": "2026-08-23",
+    "reliability": "high",
+    "claim_scope": "status",
+    "notes": "Current first-party product update listing Earn Products among continuing USDT-supported uses."
+  }
+]

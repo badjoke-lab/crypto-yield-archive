@@ -1,0 +1,11 @@
+[
+  {
+    "platform_id": "cya_plat_000124",
+    "terms_status": "unclear",
+    "asset_ownership_interpretation": "Reviewed first-party Earn material does not establish one universal legal-title, segregation, trust or insolvency-priority model across all supported assets.",
+    "affected_product": "Mudrex Earn",
+    "source_evidence_id": "cya_src_b89_0001",
+    "notes": "Mudrex states zero lock-in for the launch-era Earn flow and describes assets as remaining available in the Mudrex account, but this does not establish universal legal ownership or protection treatment. Yield mechanics vary by asset and are not collapsed into a single staking or lending model.",
+    "confidence": "medium"
+  }
+]
