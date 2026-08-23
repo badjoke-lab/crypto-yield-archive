@@ -1,0 +1,24 @@
+[
+  {
+    "id": "cya_plat_000124",
+    "slug": "mudrex-earn",
+    "canonical_name": "Mudrex Earn",
+    "aliases": ["Mudrex Earn", "Mudrex Earn Products", "Mudrex Vault"],
+    "type": "centralized_yield",
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": "2024-06-11",
+    "end_date": null,
+    "country_or_origin": "India / Global",
+    "summary": "Mudrex Earn is a centralized crypto yield feature launched in June 2024 for supported assets, with current Mudrex material continuing to list Earn Products.",
+    "what_happened": "Mudrex launched Earn on 2024-06-11 and announced the migration of legacy Vault users into Earn later that month. Reviewed first-party materials describe staking-oriented mechanics for some assets and later material also discusses lending, so no single yield mechanism is generalized across all assets.",
+    "official_url_original": "https://mudrex.com/blog/how-to-earn-crypto-rewards-using-mudrex/",
+    "official_domain_original": "mudrex.com",
+    "official_url_status": "live_verified",
+    "archived_url": null,
+    "confidence": "high",
+    "last_verified_at": "2026-08-23",
+    "uncertainty_notes": "Product mechanics vary by supported asset. Reviewed sources do not establish one universal legal-title, segregation, insolvency-priority or yield-source model across all Earn assets.",
+    "notes": "Promoted from duplicate-clear candidate cya_candidate_000146 after exact-head Candidate scan passed in PR #313."
+  }
+]
