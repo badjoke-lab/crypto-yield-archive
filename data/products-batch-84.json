@@ -1,0 +1,10 @@
+[
+  {
+    "platform_id": "cya_plat_000124",
+    "product_type": "centralized_yield",
+    "product_name": "Mudrex Earn",
+    "custody_model": "Reviewed first-party material describes Earn participation from assets held in the user's Mudrex account. It does not establish one universal legal-title, segregation or insolvency-priority model for all supported assets.",
+    "yield_source": "Mudrex describes staking-oriented rewards for supported assets and later educational material also discusses lending activities. Yield source must therefore remain product/asset-specific rather than generalized.",
+    "risk_notes": "Advertised or displayed yields are product terms, not verified realized returns or guarantees. Product mechanics and counterparty exposure may differ by supported asset."
+  }
+]
