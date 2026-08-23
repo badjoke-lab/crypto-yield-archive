@@ -1,0 +1,50 @@
+[
+  {
+    "id": "cya_ev_000362",
+    "platform_id": "cya_plat_000126",
+    "event_date": "2026-05-09",
+    "event_type": "yield_rate_changed",
+    "event_status_effect": "active",
+    "title": "IZAKA-YA advertised a seven-day 100% annualized lending campaign",
+    "description": "The operator announced that its normally advertised 12% annualized 10-day lending plan would be offered at 100% annualized for supported currencies during a seven-day campaign.",
+    "impact_level": "high",
+    "source_count": 1,
+    "confidence": "high"
+  },
+  {
+    "id": "cya_ev_000363",
+    "platform_id": "cya_plat_000126",
+    "event_date": "2026-06-01",
+    "event_type": "yield_rate_changed",
+    "event_status_effect": "active",
+    "title": "IZAKA-YA advertised a 500% annualized new-user lending campaign",
+    "description": "The operator announced an introductory lending campaign describing a special 500% annualized interest reward for users making their first lending placement.",
+    "impact_level": "high",
+    "source_count": 1,
+    "confidence": "high"
+  },
+  {
+    "id": "cya_ev_000364",
+    "platform_id": "cya_plat_000126",
+    "event_date": "2026-06-10",
+    "event_type": "yield_rate_changed",
+    "event_status_effect": "active",
+    "title": "IZAKA-YA advertised a 1000% APR-equivalent transfer campaign",
+    "description": "The operator announced a three-day transfer campaign targeting users moving assets from other exchanges, describing total rewards equivalent to 1000% APR with a 15,000 JPY-equivalent USDT cap. JPYR and IZKY were explicitly excluded from this campaign.",
+    "impact_level": "high",
+    "source_count": 1,
+    "confidence": "high"
+  },
+  {
+    "id": "cya_ev_000365",
+    "platform_id": "cya_plat_000126",
+    "event_date": "2026-08-10",
+    "event_type": "yield_rate_changed",
+    "event_status_effect": "active",
+    "title": "IZAKA-YA announced the 150 Festival campaign",
+    "description": "The operator announced an August 11–24 campaign offering 100% annualized lending across selected durations and an additional transfer bonus described as an effective 150% annualized rate for qualifying users.",
+    "impact_level": "high",
+    "source_count": 1,
+    "confidence": "high"
+  }
+]
