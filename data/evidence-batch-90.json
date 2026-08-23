@@ -1,0 +1,47 @@
+[
+  {
+    "id": "cya_src_b90_0001",
+    "platform_id": "cya_plat_000125",
+    "event_id": "cya_ev_000361",
+    "source_type": "official_statement",
+    "title": "Kinza Finance mainnet app",
+    "url": "https://app.kinza.finance/",
+    "publisher": "Kinza Finance",
+    "published_at": null,
+    "archived_url": null,
+    "accessed_at": "2026-08-23",
+    "reliability": "high",
+    "claim_scope": "status",
+    "notes": "First-party application surface. The contemporaneous trigger screenshot from this surface shows the restriction notice: new supply and borrow disabled, repay and withdraw remain open. The public crawl also returns an empty market table, so the app remains reachable but does not present normal market rows."
+  },
+  {
+    "id": "cya_src_b90_0002",
+    "platform_id": "cya_plat_000125",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "Kinza Finance official site",
+    "url": "https://kinza.finance/",
+    "publisher": "Kinza Finance",
+    "published_at": null,
+    "archived_url": null,
+    "accessed_at": "2026-08-23",
+    "reliability": "high",
+    "claim_scope": "status",
+    "notes": "First-party landing page remains online and continues to describe the Secure Money Market as LIVE NOW. This conflicts with the restricted/empty app state and is preserved as uncertainty rather than used to override the restriction signal."
+  },
+  {
+    "id": "cya_src_b90_0003",
+    "platform_id": "cya_plat_000125",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "Kinza Finance FAQ",
+    "url": "https://docs.kinza.finance/resources/faq",
+    "publisher": "Kinza Finance",
+    "published_at": null,
+    "archived_url": null,
+    "accessed_at": "2026-08-23",
+    "reliability": "high",
+    "claim_scope": "entity",
+    "notes": "First-party documentation identifies Kinza Finance as a decentralized lending protocol and documents normal lend/borrow behavior, supporting the product classification and showing what functionality the current restriction affects."
+  }
+]
