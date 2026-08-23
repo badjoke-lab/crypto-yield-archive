@@ -1,0 +1,24 @@
+[
+  {
+    "id": "cya_plat_000126",
+    "slug": "izaka-ya",
+    "canonical_name": "IZAKA-YA",
+    "aliases": ["IZAKA-YA Lending", "IZAKA-YA Wallet"],
+    "type": "centralized_yield",
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": null,
+    "end_date": null,
+    "country_or_origin": "Hong Kong",
+    "summary": "IZAKA-YA is an active provider-operated crypto wallet and lending service that advertises ordinary lending yields up to 12% and has repeatedly promoted much higher short-duration campaign rates.",
+    "what_happened": "Izakaya Limited states that the broader IZAKA-YA service began in December 2023. Current first-party pages describe provider-operated crypto lending integrated with a cloud wallet and Fireblocks infrastructure. During 2026 the operator published repeated promotional lending campaigns advertising annualized rates of 100%, 500%, 1000% equivalent and, in August, 100% plus a transfer bonus described as an effective 150% annualized rate. These are operator-advertised campaign terms, not evidence of realized or sustainable returns.",
+    "official_url_original": "https://izakaya.tech/",
+    "official_domain_original": "izakaya.tech",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://izakaya.tech/",
+    "confidence": "medium",
+    "last_verified_at": "2026-08-23",
+    "uncertainty_notes": "The reviewed material does not independently establish the economic source or sustainability of the advertised yields, universal asset segregation or insolvency priority, or a service-independent customer recovery path. The operator's current lending articles explicitly state that crypto lending principal is not guaranteed. Exact original lending-product launch date remains unresolved.",
+    "notes": "Canonical inclusion and active status are not safety endorsements. Campaign APR/APY figures are preserved as historical issuer terms and must not be presented as verified realized returns."
+  }
+]
