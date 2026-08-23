@@ -1,0 +1,12 @@
+[
+  {
+    "candidate_id": "cya_candidate_000146",
+    "canonical_platform_id": "cya_plat_000124",
+    "canonical_name": "Mudrex Earn",
+    "consumed_at": "2026-08-23",
+    "source_issue": 312,
+    "candidate_pr": 313,
+    "decision": "promoted",
+    "notes": "Promoted only after exact-head Candidate scan classified Mudrex Earn as duplicate-clear. Product-mechanism uncertainty is preserved at the asset/product level."
+  }
+]
