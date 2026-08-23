@@ -7,8 +7,8 @@
     "claim_process_url": "https://izakaya.tech/en/",
     "jurisdictions": ["Hong Kong", "Global"],
     "affected_products": ["IZAKA-YA Lending"],
-    "last_verified_at": "2026-08-13",
+    "last_verified_at": "2026-08-23",
     "confidence": "medium",
-    "notes": "Public lending instructions describe contractual product mechanics, including principal plus interest returning to the wallet after lock expiry, but those instructions are not evidence of universal realized repayment. No adverse customer outcome is inferred."
+    "notes": "Public lending instructions describe contractual product mechanics, including principal plus interest returning to the wallet after lock expiry, but those instructions are not evidence of universal realized repayment. A current first-party article explicitly warns that crypto-lending principal is not guaranteed. No adverse customer outcome is inferred merely from promotional yield levels or unresolved terms."
   }
 ]

@@ -13,5 +13,20 @@
     "sort_order": 1,
     "counterparty_name": null,
     "notes": "This event records an issuer-advertised promotional rate and its conditions. It is not evidence of verified realized customer returns, universal payout, platform solvency, or a change in active status."
+  },
+  {
+    "id": "cya_ev_000362",
+    "platform_id": "cya_plat_000102",
+    "event_type": "yield_rate_changed",
+    "event_date": "2026-08-10",
+    "title": "IZAKA-YA announced the August 150 Festival",
+    "description": "IZAKA-YA announced an August 11–24 campaign advertising 100% annualized lending on selected terms and an additional transfer bonus described as an effective 150% annualized rate for qualifying users.",
+    "confidence": "high",
+    "impact_level": "medium",
+    "event_status_effect": "none",
+    "source_count": 1,
+    "sort_order": 2,
+    "counterparty_name": null,
+    "notes": "The 100% and 150% figures are preserved as issuer-advertised campaign formulas, not verified realized customer returns or evidence of platform solvency."
   }
 ]

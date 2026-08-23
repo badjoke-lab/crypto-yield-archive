@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PlatformMaterialConcerns from '../../components/PlatformMaterialConcerns.astro';
 import { allPlatforms, getEvents, getEvidence, getOutcome, getProducts, getTermsRisk, label } from '../../lib/data';
 
 export function getStaticPaths() {
@@ -107,6 +108,8 @@ const relatedPlatforms = allPlatforms
     <div><span>Evidence</span><strong>{evidence.length}</strong></div>
     <div><span>Products</span><strong>{products.length}</strong></div>
   </section>
+
+  <PlatformMaterialConcerns platform={platform} events={events} outcome={outcome} terms={terms} />
 
   {(lowEvidence.length || sourceReviewEvidence.length) ? (
     <aside class="source-notice" aria-labelledby="source-notice-title">
