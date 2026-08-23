@@ -1,0 +1,12 @@
+[
+  {
+    "candidate_id": "cya_candidate_000145",
+    "canonical_platform_id": "cya_plat_000123",
+    "canonical_name": "CoinSwitch EARN",
+    "consumed_at": "2026-08-23",
+    "source_issue": 308,
+    "candidate_pr": 310,
+    "decision": "promoted",
+    "notes": "Promoted only after exact-head Candidate scan classified CoinSwitch EARN as duplicate-clear. Product is classified as staking/yield rather than lending, consistent with first-party terms."
+  }
+]
