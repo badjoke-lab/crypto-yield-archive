@@ -1,0 +1,11 @@
+[
+  {
+    "platform_id": "cya_plat_000123",
+    "terms_status": "unclear",
+    "asset_ownership": "Reviewed terms establish service-provider and validator participation but do not establish one universal legal-title model for all supported assets.",
+    "rehypothecation": "CoinSwitch states EARN does not lend or loan user crypto to third parties; reviewed material supports staking/validator use rather than lending-based rehypothecation.",
+    "withdrawal_terms": "CoinSwitch states users may unlock supported EARN assets, subject to product and blockchain mechanics.",
+    "counterparty_risk": "Exposure includes CoinSwitch/Bitcipher operational risk, validator risk and underlying protocol risk.",
+    "notes": "Do not generalize ordinary wallet custody protections or infer insolvency priority from the reviewed EARN materials."
+  }
+]
