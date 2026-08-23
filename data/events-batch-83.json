@@ -1,0 +1,13 @@
+[
+  {
+    "id": "cya_ev_000360",
+    "platform_id": "cya_plat_000124",
+    "event_date": "2024-06-11",
+    "event_type": "launched",
+    "status_effect": "none",
+    "title": "Mudrex launches Earn",
+    "description": "Mudrex announced Earn for supported crypto holdings, describing zero lock-in and staking-oriented rewards for supported assets.",
+    "source_ids": ["cya_src_b89_0001"],
+    "confidence": "high"
+  }
+]
