@@ -1,0 +1,24 @@
+[
+  {
+    "id": "cya_plat_000123",
+    "slug": "coinswitch-earn",
+    "canonical_name": "CoinSwitch EARN",
+    "aliases": ["CoinSwitch Earn", "CoinSwitch EARN"],
+    "type": "centralized_yield",
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": "2023-11-21",
+    "end_date": null,
+    "country_or_origin": "India",
+    "summary": "CoinSwitch EARN is a centralized proof-of-stake rewards service offered by Bitcipher Labs LLP, using third-party validators for supported assets and allowing user-initiated unlocks.",
+    "what_happened": "CoinSwitch launched EARN on 2023-11-21 for supported proof-of-stake assets. Current terms describe validator-based staking and CoinSwitch states user crypto is not lent or loaned to third parties.",
+    "official_url_original": "https://coinswitch.co/earn",
+    "official_domain_original": "coinswitch.co",
+    "official_url_status": "live_verified",
+    "archived_url": null,
+    "confidence": "high",
+    "last_verified_at": "2026-08-23",
+    "uncertainty_notes": "Reviewed sources do not establish one universal legal-title, segregation, insolvency-priority or custody model across all supported assets and validators.",
+    "notes": "Promoted from duplicate-clear candidate cya_candidate_000145 after exact-head Candidate scan passed in PR #310."
+  }
+]
