@@ -1,0 +1,47 @@
+[
+  {
+    "id": "cya_src_b88_0001",
+    "platform_id": "cya_plat_000123",
+    "event_id": "cya_ev_000359",
+    "source_type": "official_statement",
+    "title": "CoinSwitch launches EARN",
+    "url": "https://coinswitch.co/press/coinswitch-launches-earn-enabling-users-to-accrue-passive-income-on-crypto",
+    "publisher": "CoinSwitch",
+    "published_at": "2023-11-21",
+    "archived_url": null,
+    "accessed_at": "2026-08-23",
+    "reliability": "high",
+    "claim_scope": "launch_date",
+    "notes": "First-party launch authority for CoinSwitch EARN."
+  },
+  {
+    "id": "cya_src_b88_0002",
+    "platform_id": "cya_plat_000123",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "CoinSwitch EARN terms",
+    "url": "https://coinswitch.co/terms/earn",
+    "publisher": "CoinSwitch",
+    "published_at": null,
+    "archived_url": null,
+    "accessed_at": "2026-08-23",
+    "reliability": "high",
+    "claim_scope": "terms_risk",
+    "notes": "First-party terms identifying Bitcipher Labs LLP, third-party validators and staking mechanics."
+  },
+  {
+    "id": "cya_src_b88_0003",
+    "platform_id": "cya_plat_000123",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "CoinSwitch EARN product page",
+    "url": "https://coinswitch.co/earn",
+    "publisher": "CoinSwitch",
+    "published_at": null,
+    "archived_url": null,
+    "accessed_at": "2026-08-23",
+    "reliability": "high",
+    "claim_scope": "status",
+    "notes": "Current first-party product surface supporting active operation and unlock mechanics."
+  }
+]
