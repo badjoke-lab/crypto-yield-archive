@@ -1,0 +1,23 @@
+---
+const { platform, events = [], outcome, terms } = Astro.props;
+const normalize = (value) => String(value ?? '').toLowerCase();
+const eventText = events.map((event) => `${event.event_type ?? ''} ${event.title ?? ''} ${event.description ?? ''}`).join(' ').toLowerCase();
+const concerns = [];
+if (!outcome || !outcome.outcome_status || outcome.outcome_status === 'unknown') concerns.push(['Customer outcome', 'Unresolved']);
+if (!terms || !terms.terms_status || terms.terms_status === 'unknown') concerns.push(['Terms / asset treatment', 'Unresolved']);
+if (normalize(platform.uncertainty_notes) && !normalize(platform.uncertainty_notes).includes('no material')) concerns.push(['Known unknowns', 'Recorded']);
+if (/withdraw|suspend|freeze|halt/.test(eventText)) concerns.push(['Withdrawal / service restriction', 'Material event recorded']);
+if (/regulat|enforcement|\bsec\b|\bfca\b|\bfsa\b|order|fine/.test(eventText)) concerns.push(['Regulatory record', 'Material event recorded']);
+if (/bankrupt|insolven|liquidat|restructur|failure/.test(eventText)) concerns.push(['Failure / insolvency chain', 'Material event recorded']);
+if (/\bapy\b|\bapr\b|yield|interest|reward|promot/.test(eventText)) concerns.push(['Yield history', 'Material yield event recorded']);
+---
+<aside class="source-notice" aria-labelledby="material-concerns-title">
+  <div>
+    <p class="kicker">Material concerns</p>
+    <h2 id="material-concerns-title">Status is not a safety endorsement.</h2>
+    <p>These flags are derived from reviewed canonical records. They identify material events or unresolved questions and are not a proprietary safety score.</p>
+  </div>
+  <dl>
+    {concerns.length ? concerns.map(([name, state]) => <div><dt>{name}</dt><dd>{state}</dd></div>) : <div><dt>Current derived flags</dt><dd>None. This is not a recommendation or finding of safety.</dd></div>}
+  </dl>
+</aside>
