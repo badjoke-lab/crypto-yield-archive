@@ -1,0 +1,14 @@
+[
+  {
+    "id": "cya_ev_000361",
+    "platform_id": "cya_plat_000125",
+    "event_date": "2026-08-23",
+    "event_type": "deposits_suspended",
+    "status_effect": "limited",
+    "title": "Kinza restricts new supply and borrowing",
+    "description": "Kinza's market UI displayed that new supply and borrow functions were disabled while repay and withdraw functions remained open.",
+    "impact_level": "high",
+    "source_ids": ["cya_src_b90_0001", "cya_src_b90_0002", "cya_src_b90_0003"],
+    "confidence": "medium"
+  }
+]

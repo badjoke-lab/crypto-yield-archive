@@ -1,0 +1,24 @@
+[
+  {
+    "id": "cya_plat_000125",
+    "slug": "kinza-finance",
+    "canonical_name": "Kinza Finance",
+    "aliases": ["Kinza", "Kinza Finance Money Market"],
+    "type": "defi_lending",
+    "status": "limited",
+    "failure_reason": null,
+    "launch_date": null,
+    "end_date": null,
+    "country_or_origin": "Global / BNB Chain ecosystem",
+    "summary": "Kinza Finance is a decentralized lending protocol whose mainnet market entered a restricted state by 2026-08-23, with new supply and borrow disabled while repay and withdraw remained available.",
+    "what_happened": "On 2026-08-23 the Kinza market UI displayed a restriction notice stating that new supply and borrow functions were disabled while repay and withdraw remained open. The public app was still reachable but exposed no market rows in the public crawl, while the main Kinza landing page still described the Secure Money Market as LIVE NOW. CYA therefore records a limited-operation state, not a shutdown or insolvency conclusion.",
+    "official_url_original": "https://app.kinza.finance/",
+    "official_domain_original": "kinza.finance",
+    "official_url_status": "live_verified",
+    "archived_url": null,
+    "confidence": "medium",
+    "last_verified_at": "2026-08-23",
+    "uncertainty_notes": "No reviewed first-party shutdown, insolvency, loss, haircut, or withdrawal-suspension announcement has been found. Marketing copy and the restricted/empty app state are inconsistent, so the platform is kept at limited pending stronger authority.",
+    "notes": "Time-sensitive canonical addition from Issue #319 / #320 and PR #318. The trigger artifact is a contemporaneous Kinza market screenshot preserving the exact restriction notice."
+  }
+]

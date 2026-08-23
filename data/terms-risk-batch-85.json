@@ -1,0 +1,11 @@
+[
+  {
+    "platform_id": "cya_plat_000125",
+    "terms_status": "unclear",
+    "asset_ownership_interpretation": "First-party documentation describes a non-custodial lending protocol but does not establish one universal legal-title, insolvency-priority, or recovery framework for all supported assets and markets.",
+    "affected_product": "Kinza Finance Money Market",
+    "source_evidence_id": "cya_src_b90_0003",
+    "notes": "Protocol documentation explains supply, borrow, collateral, utilization and withdrawal mechanics. The current restriction signal is operational, not a basis to infer insolvency treatment or customer loss.",
+    "confidence": "medium"
+  }
+]

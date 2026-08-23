@@ -1,0 +1,10 @@
+[
+  {
+    "platform_id": "cya_plat_000125",
+    "product_type": "borrow_lend_platform",
+    "product_name": "Kinza Finance Money Market",
+    "custody_model": "Non-custodial smart-contract lending protocol. First-party documentation describes user-supplied assets being deposited into protocol markets and made available to borrowers, with protected-collateral options for isolated deposits.",
+    "yield_source": "Interest paid by borrowers to suppliers in Kinza lending markets, subject to protocol utilization and market parameters.",
+    "risk_notes": "As of 2026-08-23 new supply and borrowing are restricted while repay and withdraw remain open. This record does not infer insolvency, loss, or a withdrawal freeze."
+  }
+]
