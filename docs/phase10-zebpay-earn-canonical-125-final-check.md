@@ -1,1 +1,0 @@
-Final pre-PR check for platform 125: canonical files created, candidate consumed, active candidate removed, launch date intentionally unresolved, no launch event created. Exact-head CI remains authoritative before merge.
