@@ -1,0 +1,13 @@
+[
+  {
+    "id": "cya_ev_000359",
+    "platform_id": "cya_plat_000123",
+    "event_date": "2023-11-21",
+    "event_type": "launch",
+    "status_effect": "none",
+    "title": "CoinSwitch launches EARN",
+    "description": "CoinSwitch announced EARN for supported proof-of-stake assets, with blockchain-issued rewards and user unlock rights.",
+    "source_ids": ["cya_evsrc_000722"],
+    "confidence": "high"
+  }
+]
