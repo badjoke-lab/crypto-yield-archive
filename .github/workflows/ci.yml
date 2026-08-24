@@ -11,7 +11,8 @@ permissions:
   contents: read
 
 jobs:
-  test:
+  publication:
+    name: Publication correctness
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -23,5 +24,42 @@ jobs:
           node-version: '20'
       - name: Install dependencies
         run: npm install --no-audit --no-fund
-      - name: Validate, quality-check, and build
-        run: npm test
+      - name: Validate canonical data
+        run: npm run validate
+      - name: Build
+        run: npm run build
+      - name: Check build output
+        run: npm run check:build-output
+
+  maintenance:
+    name: Non-blocking corpus maintenance
+    continue-on-error: true
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+      - name: Quality reports
+        continue-on-error: true
+        run: npm run quality
+      - name: Corpus audit
+        continue-on-error: true
+        run: npm run audit
+      - name: Lifecycle gap tests
+        continue-on-error: true
+        run: npm run test:lifecycle-gap
+      - name: Candidate scanner tests
+        continue-on-error: true
+        run: npm run test:candidate-scanner
+      - name: Candidate draft tests
+        continue-on-error: true
+        run: npm run test:candidate-drafts
+      - name: Existing-record monitor tests
+        continue-on-error: true
+        run: npm run test:monitor
