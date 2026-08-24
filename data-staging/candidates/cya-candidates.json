@@ -44,7 +44,7 @@
     "major_event": "Active 9D Assets ecosystem is promoted and accessed through CoinChief with staking/yield participation; first-party 9D documentation attributes yield generation to BTC mining, DeFi lending, AI-managed funds and trading, while current CoinChief surfaces show an Earn section and official 9D Assets/CCP announcements",
     "primary_sources": ["https://9d-assets.gitbook.io/9d-assets-docs/what-is-9d", "https://9d-assets.gitbook.io/9d-assets-docs/what-is-9d/the-9-pillars-of-9d", "https://9d-assets.gitbook.io/9d-assets-docs/faqs", "https://9d-assets.gitbook.io/9d-assets-docs/roadmap", "https://www.coinchief.live/en_US/"],
     "secondary_sources": ["https://coinmarketcap.com/exchanges/coinchief/", "https://note.com/9dassets/n/n6c269c73a82d", "https://note.com/9dassets/n/n44c20c5960b8"],
-    "duplicate_check": {"checked_at": "2026-08-13", "matched_platform_ids": [], "notes": "Exact repository searches for 9D Assets, Coin Chief and coinchief returned no canonical CYA identity match before staging. Exact search found no prior use of cya_candidate_000111. The hardened full-corpus candidate scanner remains authoritative before any promotion."},
+    "duplicate_check": {"checked_at": "2026-08-13", "matched_platform_ids": [], "notes": "Exact repository searches for 9D Assets, Coin Chief and coinchief returned no canonical CYA identity match before staging. Exact search found no prior use of cya_candidate_000111. The hardened full-corpus candidate scanner remains authoritative."},
     "decision": "needs_research",
     "notes": "Phase 10 first pass confirms strong CYA adjacency but does not yet support canonical promotion. First-party 9D docs describe an RWA infrastructure that explicitly includes yield generation, BTC-mining yield, a DeFi-native lending protocol, AI-managed funds and trading. CoinChief's current official surface contains an Earn navigation item and multiple official 9D Assets/CCP announcements, supporting an operational relationship. Secondary user-facing material says 9D staking is performed inside CoinChief and describes daily rewards/asset-pack mechanics, but those referral/support pages are discovery evidence only and must not be used to establish canonical return or redemption terms. Resolve first-party staking product terms, exact deposit/lockup/redemption mechanics, the CoinChief/9D legal and contractual relationship, custody/asset ownership, whether StaX/9D token participation is a centralized Earn product versus token/RWA participation, and the launch date before add_now. Do not convert community claims such as daily 1% or monthly 20% into issuer-verified or realized yield. CoinChief's public site currently identifies Coin Chief Tech INC and is independently listed as an exchange, but licensing/safety claims must be separately verified before use as canonical protection claims.",
     "first_seen_at": "2026-08-12",
@@ -81,22 +81,5 @@
     "notes": "Phase 10 identity review resolves the watchlist ORCA item to the live iOrca registration surface under dapp.ocagent.io. The official registration page requires username, affiliate code, wallet connection and acceptance of Terms of Service, Privacy Policy and Risk Disclosure, establishing an active financial-product surface but not the underlying economic contract. Current Japanese discovery/referral material consistently describes BNB-chain USDT deposits, minimum participation around 100 USDT, 10/90/180/360-day packages, principal lockups, daily USDT rewards sent to a wallet, check-in-based reward increases, referral ranks and a temporary doubled-deposit campaign; it attributes yield to AI agents exploiting price/probability differences across prediction markets. Those mechanics and rates remain discovery claims because the first-party Terms/Risk pages could not be retrieved reliably in this pass and no stable first-party documentation for package rates, custody, asset reuse, redemption, source of yield or operator identity was found. A claimed relationship to Nodepay is likewise unverified and must not be canonicalized. Resolve legal operator/jurisdiction, first-party Terms and Risk Disclosure, deposit/custody/asset-use treatment, package lock/redemption rules, reward calculation, withdrawal rights, launch chronology, source-of-yield claims and any campaign liabilities before add_now. Do not confuse this candidate with Orca's Solana AMM/xORCA staking product and do not convert advertised daily rates or campaign credits into verified realized return or principal repayment.",
     "first_seen_at": "2026-08-12",
     "last_reviewed_at": "2026-08-13"
-  },
-  {
-    "candidate_id": "cya_candidate_000147",
-    "canonical_name": "ZebPay Earn",
-    "aliases": ["ZebPay Earn", "ZebPay Fixed-term Earn"],
-    "domain": "zebpay.com",
-    "country_or_origin": "India / Global",
-    "platform_type_guess": "centralized_yield",
-    "status_guess": "active",
-    "major_event": "Current ZebPay Earn offers fixed-term crypto deposit products with 30/60/90-day terms, maturity credit of invested crypto plus earnings, and early-exit mechanics that forfeit earnings without a principal penalty.",
-    "primary_sources": ["https://help.zebpay.com/support/solutions/articles/44002182887-zebpay-earn-faqs", "https://zebpay.com/earn"],
-    "secondary_sources": [],
-    "duplicate_check": {"checked_at": "2026-08-23", "matched_platform_ids": [], "notes": "Repository PR/code precheck found no ZebPay Earn identity before staging. Hardened full-corpus scanner remains authoritative."},
-    "decision": "add_now",
-    "notes": "Current first-party materials support active fixed-term Earn operation and maturity/early-exit mechanics. Do not use help-center creation metadata as an exact product launch date. Advertised annualized earning percentages remain issuer product terms, not verified realized returns or guarantees. Do not infer deposit insurance, segregation, insolvency priority or universal historical repayment.",
-    "first_seen_at": "2026-08-23",
-    "last_reviewed_at": "2026-08-23"
   }
 ]

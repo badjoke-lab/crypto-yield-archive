@@ -1,10 +1,10 @@
 [
   {
     "platform_id": "cya_plat_000125",
-    "product_type": "borrow_lend_platform",
-    "product_name": "Kinza Finance Money Market",
-    "custody_model": "Non-custodial smart-contract lending protocol. First-party documentation describes user-supplied assets being deposited into protocol markets and made available to borrowers, with protected-collateral options for isolated deposits.",
-    "yield_source": "Interest paid by borrowers to suppliers in Kinza lending markets, subject to protocol utilization and market parameters.",
-    "risk_notes": "As of 2026-08-23 new supply and borrowing are restricted while repay and withdraw remain open. This record does not infer insolvency, loss, or a withdrawal freeze."
+    "product_type": "centralized_yield",
+    "product_name": "ZebPay Earn",
+    "custody_model": "Reviewed first-party material documents fixed-term participation through ZebPay Earn but does not establish one universal legal-title, segregation, trust or insolvency-priority model for Earn balances.",
+    "yield_source": "ZebPay presents fixed-term crypto earning products; reviewed materials do not establish one universal underlying yield source across all supported assets and terms.",
+    "risk_notes": "Advertised annualized earning percentages are issuer product terms, not verified realized returns or guarantees. Early exit forfeits earnings under the reviewed FAQ."
   }
 ]
