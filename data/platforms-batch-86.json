@@ -1,0 +1,24 @@
+[
+  {
+    "id": "cya_plat_000126",
+    "slug": "zebpay-earn",
+    "canonical_name": "ZebPay Earn",
+    "aliases": ["ZebPay Earn", "ZebPay Fixed-term Earn"],
+    "type": "centralized_yield",
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": null,
+    "end_date": null,
+    "country_or_origin": "India / Global",
+    "summary": "ZebPay Earn is a current fixed-term crypto yield product with 30, 60 and 90 day options for supported assets.",
+    "what_happened": "Current ZebPay first-party materials document fixed-term Earn products with maturity credit of the invested crypto plus earnings and early-exit mechanics that forfeit earnings without a principal penalty. The exact original launch date remains unresolved.",
+    "official_url_original": "https://zebpay.com/earn",
+    "official_domain_original": "zebpay.com",
+    "official_url_status": "live_verified",
+    "archived_url": null,
+    "confidence": "high",
+    "last_verified_at": "2026-08-23",
+    "uncertainty_notes": "The exact original launch date is unresolved. Reviewed materials do not establish universal legal-title, segregation, insolvency-priority, insurance or guaranteed-principal treatment for Earn balances.",
+    "notes": "Promotion follows duplicate-clear candidate cya_candidate_000147; exact-head Candidate scan passed in candidate PR #316. Reallocated from stale PR #328 because current main already assigned platform 125 / batch 85 to Kinza Finance."
+  }
+]

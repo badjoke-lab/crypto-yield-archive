@@ -1,0 +1,32 @@
+[
+  {
+    "id": "cya_src_b91_0001",
+    "platform_id": "cya_plat_000126",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "ZebPay Earn FAQs",
+    "url": "https://help.zebpay.com/support/solutions/articles/44002182887-zebpay-earn-faqs",
+    "publisher": "ZebPay",
+    "published_at": null,
+    "archived_url": null,
+    "accessed_at": "2026-08-23",
+    "reliability": "high",
+    "claim_scope": "terms_risk",
+    "notes": "First-party authority for fixed-term options, maturity credit of invested crypto plus earnings, and early-exit mechanics. Help-center creation metadata is not used as an exact product launch date."
+  },
+  {
+    "id": "cya_src_b91_0002",
+    "platform_id": "cya_plat_000126",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "ZebPay Earn",
+    "url": "https://zebpay.com/earn",
+    "publisher": "ZebPay",
+    "published_at": null,
+    "archived_url": null,
+    "accessed_at": "2026-08-23",
+    "reliability": "high",
+    "claim_scope": "status",
+    "notes": "Current first-party product surface supporting continued ZebPay Earn availability."
+  }
+]

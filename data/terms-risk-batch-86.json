@@ -1,0 +1,11 @@
+[
+  {
+    "platform_id": "cya_plat_000126",
+    "terms_status": "unclear",
+    "asset_ownership_interpretation": "Reviewed first-party Earn material does not establish one universal legal-title, segregation, trust or insolvency-priority model for ZebPay Earn balances.",
+    "affected_product": "ZebPay Earn",
+    "source_evidence_id": "cya_src_b91_0001",
+    "notes": "Reviewed FAQ supports 30/60/90-day fixed terms, maturity credit of invested crypto plus earnings, and early exit with no earnings but no principal penalty. Do not infer deposit insurance, segregation, insolvency priority or guaranteed principal.",
+    "confidence": "medium"
+  }
+]

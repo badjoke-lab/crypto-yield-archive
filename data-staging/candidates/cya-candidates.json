@@ -81,22 +81,5 @@
     "notes": "Phase 10 identity review resolves the watchlist ORCA item to the live iOrca registration surface under dapp.ocagent.io. The official registration page requires username, affiliate code, wallet connection and acceptance of Terms of Service, Privacy Policy and Risk Disclosure, establishing an active financial-product surface but not the underlying economic contract. Current Japanese discovery/referral material consistently describes BNB-chain USDT deposits, minimum participation around 100 USDT, 10/90/180/360-day packages, principal lockups, daily USDT rewards sent to a wallet, check-in-based reward increases, referral ranks and a temporary doubled-deposit campaign; it attributes yield to AI agents exploiting price/probability differences across prediction markets. Those mechanics and rates remain discovery claims because the first-party Terms/Risk pages could not be retrieved reliably in this pass and no stable first-party documentation for package rates, custody, asset reuse, redemption, source of yield or operator identity was found. A claimed relationship to Nodepay is likewise unverified and must not be canonicalized. Resolve legal operator/jurisdiction, first-party Terms and Risk Disclosure, deposit/custody/asset-use treatment, package lock/redemption rules, reward calculation, withdrawal rights, launch chronology, source-of-yield claims and any campaign liabilities before add_now. Do not confuse this candidate with Orca's Solana AMM/xORCA staking product and do not convert advertised daily rates or campaign credits into verified realized return or principal repayment.",
     "first_seen_at": "2026-08-12",
     "last_reviewed_at": "2026-08-13"
-  },
-  {
-    "candidate_id": "cya_candidate_000147",
-    "canonical_name": "ZebPay Earn",
-    "aliases": ["ZebPay Earn", "ZebPay Fixed-term Earn"],
-    "domain": "zebpay.com",
-    "country_or_origin": "India / Global",
-    "platform_type_guess": "centralized_yield",
-    "status_guess": "active",
-    "major_event": "Current ZebPay Earn offers fixed-term crypto deposit products with 30/60/90-day terms, maturity credit of invested crypto plus earnings, and early-exit mechanics that forfeit earnings without a principal penalty.",
-    "primary_sources": ["https://help.zebpay.com/support/solutions/articles/44002182887-zebpay-earn-faqs", "https://zebpay.com/earn"],
-    "secondary_sources": [],
-    "duplicate_check": {"checked_at": "2026-08-23", "matched_platform_ids": [], "notes": "Repository PR/code precheck found no ZebPay Earn identity before staging. Hardened full-corpus scanner remains authoritative."},
-    "decision": "add_now",
-    "notes": "Current first-party materials support active fixed-term Earn operation and maturity/early-exit mechanics. Do not use help-center creation metadata as an exact product launch date. Advertised annualized earning percentages remain issuer product terms, not verified realized returns or guarantees. Do not infer deposit insurance, segregation, insolvency priority or universal historical repayment.",
-    "first_seen_at": "2026-08-23",
-    "last_reviewed_at": "2026-08-23"
   }
 ]

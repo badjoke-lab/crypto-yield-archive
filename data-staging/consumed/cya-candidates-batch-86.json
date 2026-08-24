@@ -1,0 +1,12 @@
+[
+  {
+    "candidate_id": "cya_candidate_000147",
+    "canonical_platform_id": "cya_plat_000126",
+    "canonical_name": "ZebPay Earn",
+    "consumed_at": "2026-08-23",
+    "source_issue": 315,
+    "candidate_pr": 316,
+    "decision": "promoted",
+    "notes": "Promoted only after exact-head Candidate scan classified ZebPay Earn as duplicate-clear. Exact original launch date remains unresolved and is not inferred from help-center metadata. Reallocated to canonical platform 126 / batch 86 because current main already assigned platform 125 / batch 85 to Kinza Finance."
+  }
+]

@@ -39,9 +39,9 @@ jobs:
         run: npm install --no-audit --no-fund
       - name: Validate canonical data
         run: npm run validate
-      - name: Validate Ledger Series adapter
-        run: node scripts/validate-ledger-series-phase9-adapter.mjs
       - name: Build
         run: npm run build
+      - name: Validate Ledger Series adapter
+        run: node scripts/validate-ledger-series-phase9-adapter.mjs
       - name: Check build output
         run: npm run check:build-output
