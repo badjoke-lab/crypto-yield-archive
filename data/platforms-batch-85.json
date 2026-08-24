@@ -19,6 +19,6 @@
     "confidence": "high",
     "last_verified_at": "2026-08-23",
     "uncertainty_notes": "The exact original launch date is unresolved. Reviewed materials do not establish universal legal-title, segregation, insolvency-priority, insurance or guaranteed-principal treatment for Earn balances.",
-    "notes": "Promoted from duplicate-clear candidate cya_candidate_000147 after exact-head Candidate scan passed in PR #316."
+    "notes": "Promotion follows duplicate-clear candidate cya_candidate_000147; exact-head Candidate scan passed in candidate PR #316."
   }
 ]
