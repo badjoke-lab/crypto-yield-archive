@@ -16,7 +16,6 @@ on:
       - 'package-lock.json'
       - 'tsconfig.json'
       - '.github/workflows/production-smoke.yml'
-      - '.github/workflows/sync-cloudflare-production.yml'
   workflow_dispatch:
   schedule:
     - cron: '17 3 * * *'
@@ -28,6 +27,12 @@ permissions:
 concurrency:
   group: cya-production-surface
   cancel-in-progress: true
+
+# Production authority:
+# - Cloudflare Pages Git integration deploys main.
+# - This workflow verifies that Cloudflare reports success and the custom-domain
+#   version.json serves the exact pushed commit before accepting production.
+# - No repository Cloudflare API token is required for normal publication.
 
 jobs:
   production-smoke:
