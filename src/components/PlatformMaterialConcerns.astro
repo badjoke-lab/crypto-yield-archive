@@ -10,12 +10,18 @@ if (/withdraw|suspend|freeze|halt/.test(eventText)) concerns.push(['Withdrawal /
 if (/regulat|enforcement|\bsec\b|\bfca\b|\bfsa\b|order|fine/.test(eventText)) concerns.push(['Regulatory record', 'Material event recorded']);
 if (/bankrupt|insolven|liquidat|restructur|failure/.test(eventText)) concerns.push(['Failure / insolvency chain', 'Material event recorded']);
 if (/\bapy\b|\bapr\b|yield|interest|reward|promot/.test(eventText)) concerns.push(['Yield history', 'Material yield event recorded']);
+const crossRegistryLinks = platform.slug === 'izaka-ya' ? [
+  { href: 'https://www.stableorgone.com/stablecoin/jpyr/', title: 'Stable or Gone — JPYR' },
+  { href: 'https://wlr.badjoke-lab.com/wallet/izaka-ya-wallet/', title: 'Wallet Lifecycle Registry — IZAKA-YA Wallet' },
+  { href: 'https://hei.badjoke-lab.com/exchange/izaka-ya/', title: 'Historical Exchange Index — IZAKA-YA' },
+] : [];
 ---
 <aside class="source-notice" aria-labelledby="material-concerns-title">
   <div>
     <p class="kicker">Material concerns</p>
     <h2 id="material-concerns-title">Status is not a safety endorsement.</h2>
     <p>These flags are derived from reviewed canonical records. They identify material events or unresolved questions and are not a proprietary safety score.</p>
+    {crossRegistryLinks.length > 0 && <p>Related registry records: {crossRegistryLinks.map((item, index) => <><a href={item.href}>{item.title}</a>{index < crossRegistryLinks.length - 1 ? ' · ' : ''}</>)}. These links identify separate public records concerning the same IZAKA-YA / JPYR product ecosystem; they do not assert common legal ownership, issuer status, custody, or safety.</p>}
   </div>
   <dl>
     {concerns.length ? concerns.map(([name, state]) => <div><dt>{name}</dt><dd>{state}</dd></div>) : <div><dt>Current derived flags</dt><dd>None. This is not a recommendation or finding of safety.</dd></div>}
