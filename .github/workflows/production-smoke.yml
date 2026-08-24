@@ -23,6 +23,7 @@ on:
 permissions:
   contents: read
   checks: read
+  issues: write
 
 concurrency:
   group: cya-production-surface
@@ -33,6 +34,7 @@ concurrency:
 # - This workflow verifies that Cloudflare reports success and the custom-domain
 #   version.json serves the exact pushed commit before accepting production.
 # - No repository Cloudflare API token is required for normal publication.
+# - The newest canonical platform must resolve on both human and machine routes.
 
 jobs:
   production-smoke:
@@ -94,6 +96,31 @@ jobs:
           CYA_SMOKE_DELAY_MS: 15000
         run: npm run check:production
 
+      - name: Verify newest canonical human and machine routes
+        shell: bash
+        env:
+          CYA_BASE_URL: https://cya.badjoke-lab.com
+        run: |
+          set -euo pipefail
+          latest_json="$(node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import path from 'node:path';
+          const files=fs.readdirSync('data').filter((f)=>f==='platforms.json'||(f.startsWith('platforms-batch-')&&f.endsWith('.json')));
+          const rows=files.flatMap((f)=>JSON.parse(fs.readFileSync(path.join('data',f),'utf8')));
+          rows.sort((a,b)=>Number(String(a.id).match(/(\d+)$/)?.[1]||0)-Number(String(b.id).match(/(\d+)$/)?.[1]||0));
+          const latest=rows.at(-1);
+          if(!latest?.slug||!latest?.id) process.exit(1);
+          console.log(JSON.stringify({id:latest.id,slug:latest.slug}));
+          NODE
+          )"
+          latest_id="$(jq -r '.id' <<<"$latest_json")"
+          latest_slug="$(jq -r '.slug' <<<"$latest_json")"
+          echo "Verifying newest canonical platform ${latest_id} / ${latest_slug}"
+          curl -fsS --max-time 30 -H 'Cache-Control: no-cache' "${CYA_BASE_URL}/platform/${latest_slug}/?production_audit=${GITHUB_RUN_ID}" >/tmp/latest-platform.html
+          curl -fsS --max-time 30 -H 'Cache-Control: no-cache' "${CYA_BASE_URL}/data/platform/${latest_slug}.json?production_audit=${GITHUB_RUN_ID}" >/tmp/latest-platform.json
+          jq -e --arg id "$latest_id" --arg slug "$latest_slug" '.canonical_only == true and .record_key.platform_id == $id and .record_key.slug == $slug and .record.id == $id and .record.slug == $slug' /tmp/latest-platform.json >/dev/null
+          grep -Fq "/data/platform/${latest_slug}.json" /tmp/latest-platform.html || grep -Fq "$latest_slug" /tmp/latest-platform.html
+
       - name: Install Chromium for production screenshots
         run: |
           npm install --no-save --ignore-scripts playwright@1.60.0
@@ -113,3 +140,15 @@ jobs:
           if-no-files-found: warn
           retention-days: 30
           compression-level: 0
+
+      - name: Report production publication result
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: 323,
+              body: `Production Surface Check finished.\n\n- Result: **${{ job.status }}**\n- Source commit: \`${context.sha}\`\n- Run: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`
+            })
