@@ -35,6 +35,7 @@ concurrency:
 #   version.json serves the exact pushed commit before accepting production.
 # - No repository Cloudflare API token is required for normal publication.
 # - The newest canonical platform must resolve on both human and machine routes.
+# - Production verification is intentionally exercised through a normal PR merge.
 
 jobs:
   production-smoke:
