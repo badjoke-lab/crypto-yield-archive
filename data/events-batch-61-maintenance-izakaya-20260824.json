@@ -1,0 +1,17 @@
+[
+  {
+    "id": "cya_ev_000363",
+    "platform_id": "cya_plat_000102",
+    "event_type": "withdrawals_suspended",
+    "event_date": "2026-08-24",
+    "title": "IZAKA-YA temporarily restricted transfers and withdrawals for some accounts",
+    "description": "IZAKA-YA stated that it had identified some transactions suspected of involving illicit fund inflows or money laundering and temporarily stopped transfers and withdrawals for affected accounts while conducting safety checks and investigations. The operator explicitly stated that this was not a platform-wide withdrawal halt and that ordinary transfers and withdrawals could also take longer during enhanced monitoring.",
+    "confidence": "high",
+    "impact_level": "high",
+    "event_status_effect": "limited",
+    "source_count": 1,
+    "sort_order": 3,
+    "counterparty_name": null,
+    "notes": "This records the operator's first-party explanation and the existence of account-level restrictions. It does not establish insolvency, a platform-wide freeze, customer loss, criminal activity by any specific user, or that the operator's AML explanation independently proves the cause of every reported withdrawal problem."
+  }
+]
