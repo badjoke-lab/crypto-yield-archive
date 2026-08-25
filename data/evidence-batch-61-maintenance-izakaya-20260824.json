@@ -1,0 +1,32 @@
+[
+  {
+    "id": "cya_src_b61_0016",
+    "platform_id": "cya_plat_000102",
+    "event_id": "cya_ev_000363",
+    "source_type": "official_statement",
+    "title": "送金・出金およびKYC認証に関するお知らせ",
+    "url": "https://izakaya.tech/news/news/",
+    "publisher": "Izakaya Limited",
+    "published_at": "2026-08-24",
+    "archived_url": "https://web.archive.org/*/https://izakaya.tech/news/news/",
+    "accessed_at": "2026-08-25",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "First-party notice states that transfers and withdrawals were temporarily stopped for some accounts under investigation after suspected illicit-fund or money-laundering signals, while explicitly denying a uniform platform-wide halt and warning that normal withdrawals may also take longer during enhanced monitoring. Used only for the existence and stated scope/reason of the restriction."
+  },
+  {
+    "id": "cya_src_b61_0017",
+    "platform_id": "cya_plat_000102",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "レンディングの利回りはどこから捻出されているのでしょうか？",
+    "url": "https://support-izakaya.zendesk.com/hc/ja/articles/5065658933662-%E3%83%AC%E3%83%B3%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%81%AE%E5%88%A9%E5%9B%9E%E3%82%8A%E3%81%AF%E3%81%A9%E3%81%93%E3%81%8B%E3%82%89%E6%8D%BB%E5%87%BA%E3%81%95%E3%82%8C%E3%81%A6%E3%81%84%E3%82%8B%E3%81%AE%E3%81%A7%E3%81%97%E3%82%87%E3%81%86%E3%81%8B",
+    "publisher": "IZAKA-YA",
+    "published_at": "2026-03-24",
+    "archived_url": "https://web.archive.org/*/https://support-izakaya.zendesk.com/hc/ja/articles/5065658933662-*",
+    "accessed_at": "2026-08-25",
+    "reliability": "high",
+    "claim_scope": "terms_risk",
+    "notes": "First-party support states that customer assets are operated through OTC and DEX activity and that part of the resulting operating profit is returned as lending yield. The public article does not provide independently verifiable trading volume, realized profit, counterparties, asset deployment balances, or a reconciliation showing that those profits fund ordinary or promotional rates. CYA therefore records the yield-source explanation as an operator claim, not as verified sustainability or realized return evidence."
+  }
+]
