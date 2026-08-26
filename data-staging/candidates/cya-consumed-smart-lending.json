@@ -1,0 +1,10 @@
+[
+  {
+    "candidate_id": "cya_candidate_000148",
+    "canonical_name": "Smart Lending",
+    "canonical_platform_id": "cya_plat_000127",
+    "decision": "promoted",
+    "reviewed_at": "2026-08-26",
+    "notes": "Duplicate-clear candidate PR #339 passed exact-head Candidate scan and required checks. Promoted with first-party service/terms evidence; launch date remains unresolved and GEMFOREX/IZAKA-YA affiliation claims remain unasserted."
+  }
+]
