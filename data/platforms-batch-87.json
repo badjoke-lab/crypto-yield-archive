@@ -4,7 +4,7 @@
     "slug": "smart-lending",
     "canonical_name": "Smart Lending",
     "aliases": ["SmartLending", "スマートレンディング"],
-    "type": "centralized_lending",
+    "type": "cefi_lending",
     "status": "active",
     "failure_reason": null,
     "launch_date": null,
