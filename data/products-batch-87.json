@@ -1,7 +1,7 @@
 [
   {
     "platform_id": "cya_plat_000127",
-    "product_type": "centralized_lending",
+    "product_type": "centralized_yield",
     "product_name": "Smart Lending",
     "custody_model": "First-party terms state that ownership of lent crypto transfers to Smart Lending Co., Ltd.; the exposure is unsecured and lent assets are outside statutory segregated management.",
     "yield_source": "Smart Lending states that funds are invested through selected domestic and overseas funds; this is an operator claim and not independently verified evidence of yield sustainability.",
