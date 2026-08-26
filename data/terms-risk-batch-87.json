@@ -1,0 +1,11 @@
+[
+  {
+    "platform_id": "cya_plat_000127",
+    "terms_status": "platform_owned",
+    "asset_ownership_interpretation": "Current Smart Lending terms state that ownership of lent crypto transfers to Smart Lending Co., Ltd.; the lending exposure is unsecured, the service is not a deposit, and lent assets are outside statutory segregated management.",
+    "affected_product": "Smart Lending",
+    "source_evidence_id": "cya_src_b92_0001",
+    "notes": "The terms warn that principal and interest may not be returned if the company fails. Advertised fixed annualized rates and return-preparation statements remain operator claims rather than independent guarantees or proof of solvency.",
+    "confidence": "high"
+  }
+]

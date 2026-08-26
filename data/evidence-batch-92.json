@@ -1,0 +1,32 @@
+[
+  {
+    "id": "cya_src_b92_0001",
+    "platform_id": "cya_plat_000127",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "Smart Lending Terms of Service",
+    "url": "https://smartlending.jp/policies/terms-of-service/",
+    "publisher": "Smart Lending Co., Ltd.",
+    "published_at": null,
+    "archived_url": null,
+    "accessed_at": "2026-08-26",
+    "reliability": "high",
+    "claim_scope": "terms_risk",
+    "notes": "First-party authority for crypto-asset consumption-loan treatment, ownership transfer, unsecured exposure, non-deposit status, exclusion from statutory segregated management and non-return risk on company failure."
+  },
+  {
+    "id": "cya_src_b92_0002",
+    "platform_id": "cya_plat_000127",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "Smart Lending service and company overview",
+    "url": "https://smartlending.jp/",
+    "publisher": "Smart Lending Co., Ltd.",
+    "published_at": null,
+    "archived_url": null,
+    "accessed_at": "2026-08-26",
+    "reliability": "high",
+    "claim_scope": "status",
+    "notes": "Current first-party service surface supporting live registration, deposit and lending application flows. Advertised 11%/13% annualized rates and yield-source/reserve statements are recorded only as operator claims."
+  }
+]
