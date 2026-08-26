@@ -81,5 +81,22 @@
     "notes": "Phase 10 identity review resolves the watchlist ORCA item to the live iOrca registration surface under dapp.ocagent.io. The official registration page requires username, affiliate code, wallet connection and acceptance of Terms of Service, Privacy Policy and Risk Disclosure, establishing an active financial-product surface but not the underlying economic contract. Current Japanese discovery/referral material consistently describes BNB-chain USDT deposits, minimum participation around 100 USDT, 10/90/180/360-day packages, principal lockups, daily USDT rewards sent to a wallet, check-in-based reward increases, referral ranks and a temporary doubled-deposit campaign; it attributes yield to AI agents exploiting price/probability differences across prediction markets. Those mechanics and rates remain discovery claims because the first-party Terms/Risk pages could not be retrieved reliably in this pass and no stable first-party documentation for package rates, custody, asset reuse, redemption, source of yield or operator identity was found. A claimed relationship to Nodepay is likewise unverified and must not be canonicalized. Resolve legal operator/jurisdiction, first-party Terms and Risk Disclosure, deposit/custody/asset-use treatment, package lock/redemption rules, reward calculation, withdrawal rights, launch chronology, source-of-yield claims and any campaign liabilities before add_now. Do not confuse this candidate with Orca's Solana AMM/xORCA staking product and do not convert advertised daily rates or campaign credits into verified realized return or principal repayment.",
     "first_seen_at": "2026-08-12",
     "last_reviewed_at": "2026-08-13"
+  },
+  {
+    "candidate_id": "cya_candidate_000133",
+    "canonical_name": "BITPOINT 貸して増やす",
+    "aliases": ["BITPOINT Lending", "BITPOINT 貸暗号資産", "貸して増やす"],
+    "domain": "bitpoint.co.jp",
+    "country_or_origin": "Japan",
+    "platform_type_guess": "cefi_lending",
+    "status_guess": "active",
+    "major_event": "BITPOINT launched its crypto-asset lending service on 2020-11-26; current first-party service materials describe a fixed-term consumption-loan product with return of the same type/equivalent quantity plus contractual lending fees.",
+    "primary_sources": ["https://www.bitpoint.co.jp/", "https://www.bitpoint.co.jp/service/lending/"],
+    "secondary_sources": [],
+    "duplicate_check": {"checked_at": "2026-08-27", "matched_platform_ids": [], "notes": "Current 127-platform repository search found no BITPOINT lending canonical identity before staging. Hardened full-corpus candidate scanner remains authoritative."},
+    "decision": "needs_research",
+    "notes": "First-party materials establish a fixed-term crypto-asset consumption-loan service, no mid-term cancellation, and exclusion of lent assets from statutory segregated management. Advertised rates are issuer terms, not independently verified realized returns. Do not generalize ordinary exchange custody protections to lent assets, and do not characterize the service as deposit-insurance covered. Exact-head candidate scanning is required before canonical allocation.",
+    "first_seen_at": "2026-08-17",
+    "last_reviewed_at": "2026-08-27"
   }
 ]
