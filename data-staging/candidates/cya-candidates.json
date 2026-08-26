@@ -81,5 +81,22 @@
     "notes": "Phase 10 identity review resolves the watchlist ORCA item to the live iOrca registration surface under dapp.ocagent.io. The official registration page requires username, affiliate code, wallet connection and acceptance of Terms of Service, Privacy Policy and Risk Disclosure, establishing an active financial-product surface but not the underlying economic contract. Current Japanese discovery/referral material consistently describes BNB-chain USDT deposits, minimum participation around 100 USDT, 10/90/180/360-day packages, principal lockups, daily USDT rewards sent to a wallet, check-in-based reward increases, referral ranks and a temporary doubled-deposit campaign; it attributes yield to AI agents exploiting price/probability differences across prediction markets. Those mechanics and rates remain discovery claims because the first-party Terms/Risk pages could not be retrieved reliably in this pass and no stable first-party documentation for package rates, custody, asset reuse, redemption, source of yield or operator identity was found. A claimed relationship to Nodepay is likewise unverified and must not be canonicalized. Resolve legal operator/jurisdiction, first-party Terms and Risk Disclosure, deposit/custody/asset-use treatment, package lock/redemption rules, reward calculation, withdrawal rights, launch chronology, source-of-yield claims and any campaign liabilities before add_now. Do not confuse this candidate with Orca's Solana AMM/xORCA staking product and do not convert advertised daily rates or campaign credits into verified realized return or principal repayment.",
     "first_seen_at": "2026-08-12",
     "last_reviewed_at": "2026-08-13"
+  },
+  {
+    "candidate_id": "cya_candidate_000148",
+    "canonical_name": "Smart Lending",
+    "aliases": ["SmartLending", "スマートレンディング"],
+    "domain": "smartlending.jp",
+    "country_or_origin": "Japan",
+    "platform_type_guess": "centralized_crypto_lending",
+    "status_guess": "active_public_surface",
+    "major_event": "Current first-party surface and terms describe a crypto-asset consumption-loan service with ordinary 30-day lending at principle 11% annualized and premium 365-day lending at principle 13% annualized, plus user registration, deposit and lending application flows.",
+    "primary_sources": ["https://smartlending.jp/", "https://smartlending.jp/overview/", "https://smartlending.jp/policies/terms-of-service/", "https://smartlending.jp/faq/"],
+    "secondary_sources": [],
+    "duplicate_check": {"checked_at": "2026-08-26", "matched_platform_ids": [], "notes": "Exact repository search for Smart Lending returned no indexed CYA identity before staging. Hardened full-corpus candidate scanner remains authoritative."},
+    "decision": "needs_research",
+    "notes": "First-party terms establish CYA scope strongly: crypto assets are lent to Smart Lending Co., Ltd.; ownership transfers to the company; exposure is unsecured; lent assets are outside statutory segregated management; the service is not a deposit; and principal/interest may not be returned if the company fails. Marketing states 11-13% fixed annualized rates, investment into selected domestic/overseas funds, security controls and internally accumulated return-preparation assets. Treat those as operator claims, not verified realized yield, proof of yield sustainability, proof of reserves or solvency. Parent research issue #337 separately tests GEMFOREX/IZAKA-YA linkage claims; no affiliation may be inferred from address, product or vendor similarity. Do not assign an exact service-launch date until dated first-party authority is obtained.",
+    "first_seen_at": "2026-08-26",
+    "last_reviewed_at": "2026-08-26"
   }
 ]
