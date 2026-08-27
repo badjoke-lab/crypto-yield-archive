@@ -1,0 +1,17 @@
+[
+  {
+    "id": "cya_ev_000364",
+    "platform_id": "cya_plat_000102",
+    "event_type": "withdrawals_suspended",
+    "event_date": "2026-08-27",
+    "title": "IZAKA-YA reported sequential transfer and withdrawal processing after individual reviews",
+    "description": "IZAKA-YA stated that it had not imposed a platform-wide transfer or withdrawal halt, that some reviewed transfers were completed on 2026-08-25, and that remaining cases continued to be processed after individual safety and transaction checks. This follows the operator's 2026-08-24 disclosure of temporary restrictions on some accounts.",
+    "confidence": "high",
+    "impact_level": "high",
+    "event_status_effect": "limited",
+    "source_count": 1,
+    "sort_order": 4,
+    "counterparty_name": null,
+    "notes": "This is a continuation/status update to the account-level withdrawal restriction rather than evidence that all restrictions have ended. It records the operator's statement and does not independently verify completion for every affected customer."
+  }
+]
