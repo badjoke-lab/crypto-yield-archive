@@ -1,0 +1,32 @@
+[
+  {
+    "id": "cya_src_b62_0006",
+    "platform_id": "cya_plat_000102",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "提携解消のお知らせ",
+    "url": "https://cryptopanda.app/osirase/",
+    "publisher": "CryptoPanda",
+    "published_at": "2026-08-25",
+    "archived_url": "https://web.archive.org/*/https://cryptopanda.app/osirase/",
+    "accessed_at": "2026-08-27",
+    "reliability": "high",
+    "claim_scope": "terms_risk",
+    "notes": "Counterparty first-party notice states that CryptoPanda ended its partnership with IZAKA-YA and disabled transactions through IZAKA-YA wallet connections while other-wallet transactions remained available. CryptoPanda cited information raising AML-related concerns about IZAKA-YA; CYA records that as CryptoPanda's stated rationale, not as an independently established AML finding. The notice is relevant to loss of a previously documented transaction/off-ramp integration, not proof of platform-wide IZAKA-YA withdrawal failure or insolvency."
+  },
+  {
+    "id": "cya_src_b62_0007",
+    "platform_id": "cya_plat_000102",
+    "event_id": "cya_ev_000364",
+    "source_type": "official_statement",
+    "title": "出金・送金に関する現在の対応状況およびSNS上の情報について",
+    "url": "https://izakaya.tech/news/news2/",
+    "publisher": "Izakaya Limited",
+    "published_at": "2026-08-27",
+    "archived_url": "https://web.archive.org/*/https://izakaya.tech/news/news2/",
+    "accessed_at": "2026-08-27",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "First-party follow-up states that no universal withdrawal/transfer halt is in place, that some reviewed transfers were completed on 2026-08-25, and that remaining cases are being processed after individual checks. This is operator-reported status evidence and does not establish that all reported withdrawal problems are resolved."
+  }
+]
