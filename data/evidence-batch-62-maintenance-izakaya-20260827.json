@@ -1,6 +1,6 @@
 [
   {
-    "id": "cya_src_b62_0001",
+    "id": "cya_src_b62_0006",
     "platform_id": "cya_plat_000102",
     "event_id": null,
     "source_type": "official_statement",
@@ -15,7 +15,7 @@
     "notes": "Counterparty first-party notice states that CryptoPanda ended its partnership with IZAKA-YA and disabled transactions through IZAKA-YA wallet connections while other-wallet transactions remained available. CryptoPanda cited information raising AML-related concerns about IZAKA-YA; CYA records that as CryptoPanda's stated rationale, not as an independently established AML finding. The notice is relevant to loss of a previously documented transaction/off-ramp integration, not proof of platform-wide IZAKA-YA withdrawal failure or insolvency."
   },
   {
-    "id": "cya_src_b62_0002",
+    "id": "cya_src_b62_0007",
     "platform_id": "cya_plat_000102",
     "event_id": "cya_ev_000364",
     "source_type": "official_statement",
