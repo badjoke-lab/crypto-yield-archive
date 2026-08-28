@@ -28,27 +28,28 @@
   },
   {
     "platform_id": "cya_plat_000058",
-    "outcome_status": "unknown",
-    "estimated_recovery_rate": "Not classified. Hotbit support notices show automatic redemption of selected investment products into users' Hotbit investment accounts, and the shutdown announcement gave users a deadline to withdraw remaining assets, but the reviewed evidence does not prove universal external withdrawal or full repayment.",
-    "repayment_started_at": null,
+    "outcome_status": "partial_repayment",
+    "estimated_recovery_rate": "No uniform recovery percentage established. A secondary archival/index reproduction of Hotbit's dated notices records multiple compensation rounds for DF asset users, but does not establish the amount actually received by every eligible holder or recovery for all other Hotbit balances.",
+    "repayment_started_at": "2023-08-31",
     "repayment_completed_at": null,
-    "repayment_method": "Product-level automatic redemption to Hotbit investment accounts followed by a separate platform-wide withdrawal window; completion not verified",
+    "repayment_method": "Class-scoped DF asset compensation announced in USDC/HTB after shutdown, separate from earlier product-level internal redemptions and the general withdrawal window",
     "claim_process_url": null,
     "affected_products": [
-      "Hotbit DeFi Farm investment products",
+      "Hotbit DeFi Farm and DF asset balances",
       "Hotbit staking investment products",
       "Other Hotbit Investment Center balances outstanding around the CEX shutdown"
     ],
     "claim_classes": [
-      "Hotbit investment-product users",
+      "Hotbit DF asset holders",
+      "Other Hotbit investment-product users whose recovery is not established by the DF compensation notices",
       "Hotbit customers with remaining platform balances at shutdown"
     ],
     "jurisdictions": [
       "Global"
     ],
-    "as_of": "2026-08-09",
-    "last_verified_at": "2026-08-09",
-    "notes": "Internal account redemption is not equivalent to an on-chain or external-platform withdrawal. The 21 June 2023 withdrawal deadline is preserved as an instruction, not as evidence that every customer completed withdrawal or received every asset owed.",
-    "confidence": "high"
+    "as_of": "2026-08-28",
+    "last_verified_at": "2026-08-28",
+    "notes": "First-party product notices establish internal redemptions before shutdown, but internal account redemption is not equivalent to external repayment. The 21 June 2023 withdrawal deadline likewise does not prove universal withdrawal. A secondary archival/index reproduction preserves later dated Hotbit notices stating that another DF-user compensation round would be conducted on 31 August 2023 and a final DF-account compensation round on 18 September. This supports `partial_repayment` for the DF-asset claimant class only. CYA does not infer full repayment, a universal recovery rate, completion for every DF holder, or resolution of other Hotbit investment/exchange balances.",
+    "confidence": "medium"
   }
 ]
