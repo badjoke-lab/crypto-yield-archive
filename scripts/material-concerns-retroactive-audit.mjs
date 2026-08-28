@@ -56,7 +56,7 @@ const hasUsablePrincipalLanguage = (statements) => statements
   .filter(Boolean)
   .map((statement) => String(statement).toLowerCase())
   .some((statement) => {
-    const unresolved = /does not (?:establish|confirm|show|prove|verify).{0,100}(?:\bprincipal\b|元本|capital (?:guarantee|protection))|(?:\bprincipal\b|元本|capital (?:guarantee|protection)).{0,100}(?:unknown|unclear|not established|not confirmed|not verified)/;
+    const unresolved = /do(?:es)? not (?:establish|confirm|show|prove|verify).{0,100}(?:\bprincipal\b|元本|capital (?:guarantee|protection))|(?:\bprincipal\b|元本|capital (?:guarantee|protection)).{0,100}(?:unknown|unclear|not established|not confirmed|not verified)/;
     if (unresolved.test(statement)) return false;
     return /\bprincipal\b|元本|元本保証|capital (?:guarantee|guaranteed|protection|protected)|(?:guarantee|guaranteed|protection|protected).{0,40}\bprincipal\b|unsecured|non-segregated|segregated management/.test(statement);
   });
