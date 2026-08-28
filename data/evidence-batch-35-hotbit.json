@@ -73,5 +73,20 @@
     "reliability": "medium",
     "claim_scope": "event",
     "notes": "Independent contemporaneous report quotes Hotbit's shutdown statement: CEX operations would stop from 04:00 UTC on 22 May and users were asked to withdraw remaining assets by 04:00 UTC on 21 June."
+  },
+  {
+    "id": "cya_src_b35_0011",
+    "platform_id": "cya_plat_000058",
+    "event_id": "cya_ev_000366",
+    "source_type": "database_reference",
+    "title": "Hotbit announcement archive reproduces DF asset compensation rounds",
+    "url": "https://blockspot.io/exchange/hotbit/",
+    "publisher": "Blockspot.io",
+    "published_at": null,
+    "archived_url": null,
+    "accessed_at": "2026-08-28",
+    "reliability": "medium",
+    "claim_scope": "customer_outcome",
+    "notes": "Secondary archival/index page reproduces dated Hotbit notices. The 30 June 2023 notice describes a proportional USDC/HTB compensation plan for DF asset holders; 31 August says a new compensation round would be conducted for all DF asset users that day; 18 September describes a final round for DF asset accounts. CYA uses this to establish that Hotbit announced multiple DF-account compensation rounds, not to establish a universal recovery percentage, full repayment, or completion for every eligible holder."
   }
 ]
