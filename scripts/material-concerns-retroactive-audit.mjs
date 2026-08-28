@@ -52,6 +52,15 @@ const textFor = (platform, platformEvents, platformEvidence, outcome, terms) => 
 
 const has = (text, expression) => expression.test(text);
 
+const hasUsablePrincipalLanguage = (statements) => statements
+  .filter(Boolean)
+  .map((statement) => String(statement).toLowerCase())
+  .some((statement) => {
+    const unresolved = /does not (?:establish|confirm|show|prove|verify).{0,100}(?:\bprincipal\b|元本|capital (?:guarantee|protection))|(?:\bprincipal\b|元本|capital (?:guarantee|protection)).{0,100}(?:unknown|unclear|not established|not confirmed|not verified)/;
+    if (unresolved.test(statement)) return false;
+    return /\bprincipal\b|元本|元本保証|capital (?:guarantee|guaranteed|protection|protected)|(?:guarantee|guaranteed|protection|protected).{0,40}\bprincipal\b|unsecured|non-segregated|segregated management/.test(statement);
+  });
+
 function classify(platform) {
   const platformEvents = eventsByPlatform.get(platform.id) || [];
   const platformEvidence = evidenceByPlatform.get(platform.id) || [];
@@ -69,7 +78,16 @@ function classify(platform) {
   const hasFailureEvent = platformEvents.some((event) => ['bankruptcy_filed', 'restructuring_started', 'restructuring_completed', 'operations_ended', 'asset_sale_announced', 'asset_sale_completed'].includes(event.event_type))
     || ['bankrupt', 'restructuring', 'operations_ended'].includes(platform.status)
     || Boolean(platform.failure_reason && platform.failure_reason !== 'unknown');
-  const hasPrincipalLanguage = has(text, /\bprincipal\b|元本|元本保証|capital (?:guarantee|guaranteed|protection|protected)|(?:guarantee|guaranteed|protection|protected).{0,40}\bprincipal\b|unsecured|non-segregated|segregated management/);
+  const principalStatements = [
+    platform.summary,
+    platform.what_happened,
+    platform.uncertainty_notes,
+    ...platformEvents.flatMap((event) => [event.title, event.description, event.notes]),
+    ...platformEvidence.flatMap((source) => [source.title, source.notes]),
+    terms?.notes,
+    terms?.asset_ownership_interpretation,
+  ];
+  const hasPrincipalLanguage = hasUsablePrincipalLanguage(principalStatements);
 
   return {
     platform_id: platform.id,
