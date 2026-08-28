@@ -69,7 +69,7 @@ function classify(platform) {
   const hasFailureEvent = platformEvents.some((event) => ['bankruptcy_filed', 'restructuring_started', 'restructuring_completed', 'operations_ended', 'asset_sale_announced', 'asset_sale_completed'].includes(event.event_type))
     || ['bankrupt', 'restructuring', 'operations_ended'].includes(platform.status)
     || Boolean(platform.failure_reason && platform.failure_reason !== 'unknown');
-  const hasPrincipalLanguage = has(text, /principal|元本|guarantee|guaranteed|保証|not guaranteed|no guarantee|unsecured|non-segregated|segregated management/);
+  const hasPrincipalLanguage = has(text, /\bprincipal\b|元本|元本保証|capital (?:guarantee|guaranteed|protection|protected)|(?:guarantee|guaranteed|protection|protected).{0,40}\bprincipal\b|unsecured|non-segregated|segregated management/);
 
   return {
     platform_id: platform.id,
