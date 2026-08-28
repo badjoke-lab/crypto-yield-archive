@@ -51,7 +51,7 @@
     "confidence": "high",
     "impact_level": "critical",
     "event_status_effect": "none",
-    "source_count": 1,
+    "source_count": 2,
     "sort_order": 4,
     "notes": "This is an administrative CVM decision and the sanctions were appealable with suspensive effect. It is not described as a criminal fraud conviction."
   },
@@ -67,7 +67,7 @@
     "event_status_effect": "none",
     "source_count": 1,
     "sort_order": 1,
-    "notes": "Automatic redemption into the Hotbit investment account is not treated as proof of successful external withdrawal."
+    "notes": "Automatic product redemption into the Hotbit investment account is not treated as proof of successful external withdrawal."
   },
   {
     "id": "cya_ev_000280",
