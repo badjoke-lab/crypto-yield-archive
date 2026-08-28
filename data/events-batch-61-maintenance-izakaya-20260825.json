@@ -1,0 +1,17 @@
+[
+  {
+    "id": "cya_ev_000365",
+    "platform_id": "cya_plat_000102",
+    "event_type": "other",
+    "event_date": "2026-08-25",
+    "title": "CryptoPanda ended its IZAKA-YA partnership and disabled IZAKA-YA-wallet-linked transactions",
+    "description": "CryptoPanda announced that it had ended its partnership with IZAKA-YA and that transactions routed through an IZAKA-YA wallet connection would no longer be available. CryptoPanda cited information raising AML-related concerns regarding IZAKA-YA as the reason for reviewing and ending the relationship, while stating that transactions using other wallets would remain available.",
+    "confidence": "high",
+    "impact_level": "high",
+    "event_status_effect": "limited",
+    "source_count": 1,
+    "sort_order": 4,
+    "counterparty_name": "CryptoPanda",
+    "notes": "This records the loss of a documented transaction/off-ramp path and the counterparty's stated reason for ending the partnership. It does not establish IZAKA-YA insolvency, fraud, a platform-wide withdrawal halt, or independent proof of the underlying AML concerns."
+  }
+]

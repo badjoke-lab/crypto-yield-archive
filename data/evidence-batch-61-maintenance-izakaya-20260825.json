@@ -1,0 +1,17 @@
+[
+  {
+    "id": "cya_src_b61_0018",
+    "platform_id": "cya_plat_000102",
+    "event_id": "cya_ev_000365",
+    "source_type": "official_statement",
+    "title": "提携解消のお知らせ",
+    "url": "https://cryptopanda.app/osirase/",
+    "publisher": "CryptoPanda",
+    "published_at": "2026-08-25",
+    "archived_url": "https://web.archive.org/web/*/https://cryptopanda.app/osirase/",
+    "accessed_at": "2026-08-27",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "First-party CryptoPanda notice states that it ended its partnership with IZAKA-YA after reviewing information raising AML-related concerns and that transactions through an IZAKA-YA wallet connection would no longer be available, while other-wallet transactions would remain available. Used for the partnership termination and transaction-path restriction only; the stated AML concern is a counterparty statement and is not treated as an independently proven finding about IZAKA-YA."
+  }
+]
