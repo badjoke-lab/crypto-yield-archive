@@ -58,5 +58,20 @@
     "reliability": "high",
     "claim_scope": "event",
     "notes": "Primary CVM notice reporting the unanimous 5 August 2025 administrative decision sanctioning Bluebenx Tecnologia Financeira S.A. for fraudulent securities-market operations and an unregistered public offering. The notice states the sanctions were appealable with suspensive effect. This is not described as a criminal fraud conviction."
+  },
+  {
+    "id": "cya_src_b35_0010",
+    "platform_id": "cya_plat_000057",
+    "event_id": "cya_ev_000278",
+    "source_type": "regulatory_notice",
+    "title": "CVM report records BlueBenx's stated DeFi yield mechanics",
+    "url": "https://www.gov.br/cvm/pt-br/assuntos/noticias/anexos/2025/20250519-pas-cvm-19957-004388-2023-41-relatorio-diretor-otto-lobo.pdf",
+    "publisher": "Comissão de Valores Mobiliários",
+    "published_at": "2025-05-19",
+    "archived_url": null,
+    "accessed_at": "2026-08-28",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "Primary CVM case report records BlueBenx's own explanation that its DeFi tokens were said to remunerate holders from liquidity generated in decentralized-finance systems and from staking, with yield determined by the DeFi platform and no guarantee as to that remuneration. The report also records BlueBenx's claimed 0.3% trading/intermediation commission and 1.25% exit fee. These are attributed product-mechanics statements preserved from the regulatory record; they do not establish principal protection, realized customer returns, segregation, or recovery after the 2022 suspension."
   }
 ]
