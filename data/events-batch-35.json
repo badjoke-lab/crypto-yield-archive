@@ -110,5 +110,19 @@
     "source_count": 2,
     "sort_order": 4,
     "notes": "The withdrawal deadline is not treated as proof that every customer successfully withdrew or that every investment balance was fully repaid."
+  },
+  {
+    "id": "cya_ev_000366",
+    "platform_id": "cya_plat_000058",
+    "event_type": "customer_repayment_started",
+    "event_date": "2023-08-31",
+    "title": "Hotbit announced another compensation round for DF asset users",
+    "description": "A secondary archival/index reproduction of dated Hotbit notices records Hotbit stating on 31 August 2023 that it would conduct a new compensation round for all DF asset users, followed by a 18 September notice describing a final compensation round for DF asset accounts.",
+    "confidence": "medium",
+    "impact_level": "high",
+    "event_status_effect": "operations_ended",
+    "source_count": 1,
+    "sort_order": 5,
+    "notes": "This supports a class-scoped partial-repayment event for DF asset holders only. It does not prove that every DF claimant received payment, that compensation restored the full original value, or that other Hotbit investment and exchange balances were fully resolved."
   }
 ]
