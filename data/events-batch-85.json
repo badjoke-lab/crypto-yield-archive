@@ -1,6 +1,6 @@
 [
   {
-    "id": "cya_ev_000364",
+    "id": "cya_ev_000366",
     "platform_id": "cya_plat_000128",
     "event_type": "withdrawals_suspended",
     "event_date": "2026-08-13",
@@ -13,7 +13,7 @@
     "notes": "This event records the operational restriction and reserve assessment. It does not establish insolvency, a realized loss, a hack or a smart-contract exploit."
   },
   {
-    "id": "cya_ev_000365",
+    "id": "cya_ev_000367",
     "platform_id": "cya_plat_000128",
     "event_type": "other",
     "event_date": "2026-08-29",
