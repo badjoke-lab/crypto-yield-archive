@@ -1,0 +1,10 @@
+[
+  {
+    "platform_id": "cya_plat_000128",
+    "product_type": "structured_yield",
+    "product_name": "NUSD / sNUSD",
+    "custody_model": "Protocol-based synthetic-dollar and staked-yield structure backed by protocol reserve and strategy positions; exact holder legal claim characterization remains source-specific.",
+    "yield_source": "Neutrl describes returns as generated through market-neutral and trading strategies including arbitrage, funding-rate inefficiencies, hedging and strategy positions. The August 2026 incident demonstrates that some positions can become illiquid; realized recovery is not assumed.",
+    "risk_notes": "Minting and redemptions were paused in August 2026. Neutrl later reported approximately USD 27 million in liquid assets while other strategy positions remained illiquid and their recoverable value and timing were unresolved."
+  }
+]
