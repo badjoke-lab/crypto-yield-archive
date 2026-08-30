@@ -4,7 +4,7 @@
     "slug": "neutrl",
     "canonical_name": "Neutrl",
     "aliases": ["Neutrl NUSD", "NUSD", "sNUSD"],
-    "type": "defi_yield_protocol",
+    "type": "defi_lending",
     "status": "withdrawals_suspended",
     "failure_reason": "liquidity_crisis",
     "launch_date": null,
