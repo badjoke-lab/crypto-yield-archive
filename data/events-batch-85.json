@@ -1,0 +1,28 @@
+[
+  {
+    "id": "cya_ev_000362",
+    "platform_id": "cya_plat_000128",
+    "event_type": "withdrawals_suspended",
+    "event_date": "2026-08-13",
+    "title": "Neutrl pauses minting, redemptions and protocol functions",
+    "description": "Neutrl paused NUSD minting, redemptions and other protocol functions after circumstances affected protocol reserves. The protocol said the pause followed legal advice while it assessed the impact and did not identify the affected asset, venue or counterparty at that time.",
+    "impact_level": "critical",
+    "event_status_effect": "withdrawals_suspended",
+    "confidence": "high",
+    "source_count": 2,
+    "notes": "This event records the operational restriction and reserve assessment. It does not establish insolvency, a realized loss, a hack or a smart-contract exploit."
+  },
+  {
+    "id": "cya_ev_000363",
+    "platform_id": "cya_plat_000128",
+    "event_type": "other",
+    "event_date": "2026-08-29",
+    "title": "Neutrl discloses USD 27 million liquid assets and plans early redemption",
+    "description": "Neutrl said a problem with a strategy position had impaired liquidity for part of protocol reserves, reported approximately USD 27 million in available liquid assets, and said additional strategy positions and associated PnL were not presently liquid. It said recovery timing, amount and recoverable value could not yet be confirmed and targeted an early-redemption mechanism for NUSD and sNUSD in early September subject to contract deployment, audit, legal review and financial review.",
+    "impact_level": "critical",
+    "event_status_effect": "withdrawals_suspended",
+    "confidence": "high",
+    "source_count": 2,
+    "notes": "The disclosure expressly leaves recoverable value and timing unresolved. Historical reserve totals and the later liquid-assets figure must not be subtracted to infer a proven loss amount."
+  }
+]
