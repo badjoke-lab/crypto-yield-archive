@@ -1,0 +1,12 @@
+[
+  {
+    "platform_id": "cya_plat_000131",
+    "product_type": "staking_like_yield",
+    "product_name": "Yay! ETH staking via Kelp / agETH",
+    "networks": ["Ethereum"],
+    "contract_addresses": [],
+    "custody_model": "Hybrid application/protocol path using Yay! as the user-facing staking campaign and Kelp's Always Gain agETH vault as an upstream yield component; exact legal custody and asset-treatment boundaries are not inferred here.",
+    "yield_source": "Partner-protocol staking/yield exposure through Kelp's Always Gain agETH vault and associated ETH/restaking strategies; realized return and risk depend on the upstream protocol and vault.",
+    "risk_notes": "The April-May 2026 incident showed dependency risk: Kelp contract/vault availability directly affected Yay! users' ability to unstake or withdraw through the affected path."
+  }
+]
