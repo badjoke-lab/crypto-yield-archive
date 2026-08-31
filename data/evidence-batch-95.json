@@ -1,0 +1,62 @@
+[
+  {
+    "id": "cya_src_b95_0001",
+    "platform_id": "cya_plat_000130",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "Yay! Staking introduction",
+    "url": "https://yay.gitbook.io/yay-staking/yay-staking-intro",
+    "publisher": "Yay!",
+    "published_at": null,
+    "archived_url": null,
+    "accessed_at": "2026-08-31",
+    "reliability": "high",
+    "claim_scope": "entity",
+    "notes": "First-party documentation establishing Yay! Staking as a staking/yield campaign using protocol partners including Kelp and StakeStone."
+  },
+  {
+    "id": "cya_src_b95_0002",
+    "platform_id": "cya_plat_000130",
+    "event_id": "cya_ev_000371",
+    "source_type": "community_reference",
+    "title": "Yay! Japan incident and recovery updates mirrored from @Yay_JP",
+    "url": "https://www.twstalker.com/Yay_JP",
+    "publisher": "TwStalker mirror of Yay! Japan",
+    "published_at": null,
+    "archived_url": null,
+    "accessed_at": "2026-08-31",
+    "reliability": "medium",
+    "claim_scope": "event",
+    "notes": "Indexed mirror reproduces Yay! Japan's April 19 incident notice, May 18 recovery-progress update, and later resolution notice stating that Kelp's Always Gain agETH vault reopened and Yay! Staking unstaking/withdrawals returned to normal. Used with attribution because the original X status URLs were not durably recovered during this review."
+  },
+  {
+    "id": "cya_src_b95_0003",
+    "platform_id": "cya_plat_000130",
+    "event_id": "cya_ev_000371",
+    "source_type": "community_reference",
+    "title": "Yay! Global incident resolution updates mirrored from @Yay_Global",
+    "url": "https://instalker.org/Yay_Global",
+    "publisher": "Instalker mirror of Yay! Global",
+    "published_at": null,
+    "archived_url": null,
+    "accessed_at": "2026-08-31",
+    "reliability": "medium",
+    "claim_scope": "event",
+    "notes": "Independent indexed mirror of the official English Yay! Global account, reproducing the May 18 agETH-vault reopening delay and the subsequent resolution statement."
+  },
+  {
+    "id": "cya_src_b95_0004",
+    "platform_id": "cya_plat_000130",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "Kelp Q1 2026 Report",
+    "url": "https://blogs.kerneldao.com/blog/kelp-q1-2026-report",
+    "publisher": "KernelDAO / Kelp",
+    "published_at": null,
+    "archived_url": null,
+    "accessed_at": "2026-08-31",
+    "reliability": "high",
+    "claim_scope": "entity",
+    "notes": "First-party Kelp report confirming the Always Gain agETH vault as a Kelp Gain product and providing product context. It is not used by itself to establish the Yay! incident chronology."
+  }
+]
