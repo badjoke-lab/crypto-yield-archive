@@ -1,0 +1,26 @@
+[
+  {
+    "id": "cya_plat_000130",
+    "slug": "tectonic",
+    "canonical_name": "Tectonic",
+    "aliases": ["Tectonic Finance", "TectonicFi"],
+    "type": "defi_lending",
+    "architecture": "defi",
+    "networks": ["Cronos"],
+    "status": "limited",
+    "failure_reason": "unknown",
+    "launch_date": null,
+    "end_date": null,
+    "country_or_origin": "Global / Cronos",
+    "summary": "Decentralized lending protocol on Cronos. In August 2026 it was affected by a major exploit in which contemporaneous reporting estimated roughly USD 74-75 million in affected or attacker-controlled assets before the Cronos network was halted.",
+    "what_happened": "On 2026-08-30, Tectonic was reported to have suffered an exploit on Cronos. Contemporary reporting described rapid manipulation of TONIC's price followed by borrowing against inflated collateral, but Tectonic had not published a final root-cause determination in the sources reviewed for this record. Roughly USD 6 million was reported bridged to Ethereum before the chain halt, while most remaining exploit-linked assets were stranded or frozen on Cronos. Frozen or stranded assets are not treated as recovered funds.",
+    "official_url_original": "https://tectonic.finance/",
+    "official_domain_original": "tectonic.finance",
+    "official_url_status": "live_verified",
+    "archived_url": null,
+    "confidence": "medium",
+    "last_verified_at": "2026-09-01",
+    "uncertainty_notes": "Final confirmed loss, formal root cause, bad-debt allocation, recovery amount, lender impact and final protocol-remediation outcome were not established in the reviewed sources. The approximately USD 74-75 million figure is retained as a contemporaneous estimate, not a final confirmed loss.",
+    "notes": "Canonicalized as a bounded current DeFi lending incident. Do not infer that Cronos, Crypto.com or the TONIC token itself was independently compromised beyond what incident evidence establishes."
+  }
+]
