@@ -1,0 +1,11 @@
+[
+  {
+    "platform_id": "cya_plat_000130",
+    "terms_status": "unclear",
+    "asset_ownership_interpretation": "Tectonic is a non-custodial DeFi lending protocol, so conventional centralized customer-versus-platform ownership labels do not map cleanly to supplied assets and protocol claims.",
+    "affected_product": "Tectonic lending markets",
+    "source_evidence_id": "cya_src_b95_0001",
+    "notes": "The principal bounded risk for this record is smart-contract/oracle-or-price-manipulation exposure in a DeFi lending market. Final legal loss allocation and any post-incident socialization, recapitalization or compensation mechanism were not established in the reviewed sources.",
+    "confidence": "medium"
+  }
+]
