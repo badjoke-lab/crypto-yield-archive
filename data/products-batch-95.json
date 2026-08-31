@@ -1,0 +1,12 @@
+[
+  {
+    "platform_id": "cya_plat_000130",
+    "product_type": "defi_lending_market",
+    "product_name": "Tectonic lending markets",
+    "networks": ["Cronos"],
+    "contract_addresses": [],
+    "custody_model": "Non-custodial smart-contract-based lending protocol on Cronos; assets are supplied to protocol markets rather than held in a conventional centralized interest account.",
+    "yield_source": "Borrower interest and protocol lending-market economics on Cronos.",
+    "risk_notes": "The August 2026 incident was reported to involve manipulation of TONIC's price followed by borrowing against inflated collateral. Final technical root cause and loss allocation remained unresolved as of this record."
+  }
+]
