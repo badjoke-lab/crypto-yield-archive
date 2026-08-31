@@ -1,0 +1,16 @@
+[
+  {
+    "id": "cya_ev_000371",
+    "platform_id": "cya_plat_000130",
+    "event_type": "withdrawals_suspended",
+    "event_date": "2026-04-18",
+    "title": "Kelp incident impairs Yay! Staking agETH withdrawal path",
+    "description": "A Kelp security incident beginning 2026-04-18 affected the Kelp-dependent ETH staking path used by Yay! Staking. Yay! paused new ETH staking and warned that unstaking could be delayed because it depended on Kelp contracts. On 2026-05-18 the Always Gain agETH vault remained closed even after rsETH resumed, and around 2026-05-25 Yay! reported the vault reopened and unstaking/withdrawals returned to normal.",
+    "impact_level": "high",
+    "event_status_effect": "limited",
+    "confidence": "medium",
+    "source_count": 3,
+    "networks": ["Ethereum"],
+    "notes": "This is a bounded product/path-level withdrawal and unstaking impairment with documented recovery. It must not be generalized into Yay!-wide insolvency, project shutdown, or permanent customer loss."
+  }
+]
