@@ -1,0 +1,18 @@
+[
+  {
+    "platform_id": "cya_plat_000128",
+    "outcome_status": "claims_ongoing",
+    "estimated_recovery_rate": "unknown",
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": "Neutrl announced an early-redemption mechanism for NUSD and sNUSD holders, but final terms, timing and recoverable value were not yet confirmed as of 2026-08-30.",
+    "claim_process_url": null,
+    "affected_products": ["NUSD", "sNUSD"],
+    "claim_classes": ["NUSD holders", "sNUSD holders"],
+    "jurisdictions": [],
+    "as_of": "2026-08-30",
+    "last_verified_at": "2026-08-30",
+    "notes": "Recovery remains unresolved. No universal haircut, recovery percentage, completed redemption process, bankruptcy or insolvency outcome is established by the reviewed sources.",
+    "confidence": "high"
+  }
+]

@@ -1,0 +1,11 @@
+[
+  {
+    "platform_id": "cya_plat_000128",
+    "terms_status": "unclear",
+    "asset_ownership_interpretation": "Neutrl's reviewed public materials establish that NUSD and sNUSD are exposed to protocol reserve and strategy-position liquidity, but the reviewed August 2026 incident sources do not establish a simple customer-owned versus platform-owned legal characterization for all holder claims.",
+    "affected_product": "NUSD / sNUSD",
+    "source_evidence_id": "cya_src_b93_0003",
+    "notes": "The key bounded risk is reserve/strategy liquidity impairment with redemption suspended and recovery value unresolved. Earlier reserve-dashboard totals are dated snapshots and must not be converted into an inferred loss by subtracting the later USD 27 million liquid-asset figure.",
+    "confidence": "medium"
+  }
+]

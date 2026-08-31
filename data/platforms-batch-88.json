@@ -1,0 +1,24 @@
+[
+  {
+    "id": "cya_plat_000128",
+    "slug": "neutrl",
+    "canonical_name": "Neutrl",
+    "aliases": ["Neutrl NUSD", "NUSD", "sNUSD"],
+    "type": "structured_yield",
+    "status": "withdrawals_suspended",
+    "failure_reason": "liquidity_crisis",
+    "launch_date": null,
+    "end_date": null,
+    "country_or_origin": "unknown",
+    "summary": "DeFi protocol associated with NUSD and sNUSD that paused protocol functions in August 2026 after identifying an issue affecting a strategy position and the liquidity of part of protocol reserves.",
+    "what_happened": "Neutrl said it paused relevant smart contracts after identifying a reserve-liquidity issue affecting a strategy position. In a later update it reported approximately USD 27 million in available liquid assets, said additional positions and associated PnL remained illiquid, and said the timing, amount and recovery value of those positions could not yet be confirmed. It announced work on an early-redemption mechanism for NUSD and sNUSD holders while warning users against trading during the assessment period.",
+    "official_url_original": "https://www.neutrl.finance/",
+    "official_domain_original": "neutrl.finance",
+    "official_url_status": "live_verified",
+    "archived_url": null,
+    "confidence": "high",
+    "last_verified_at": "2026-08-30",
+    "uncertainty_notes": "The final recoverable value of illiquid positions, any holder haircut, the exact redemption date, and the final outcome for NUSD and sNUSD holders were not established in the reviewed August 2026 sources. The incident should not be classified as a hack, smart-contract exploit, bankruptcy or completed insolvency event on current evidence.",
+    "notes": "Added as a bounded current incident record. Historical reserve snapshots are date-specific and must not be arithmetically treated as a proven loss amount against the later USD 27 million liquid-assets disclosure."
+  }
+]
