@@ -19,17 +19,18 @@ const FILE_GROUPS = {
 const ENUMS = {
   platformStatus: new Set(['active','limited','withdrawals_suspended','restructuring','bankrupt','acquired','rebranded','operations_ended','inactive','unknown']),
   platformType: new Set(['cefi_lending','crypto_interest_account','centralized_yield','borrow_lend_platform','institutional_lending','exchange_earn','defi_lending','yield_aggregator','structured_yield','unknown']),
+  architecture: new Set(['cefi','defi','hybrid','unknown']),
   failureReason: new Set(['insolvency','liquidity_crisis','counterparty_exposure','misconduct','regulatory_action','market_collapse','risk_mismanagement','voluntary_shutdown','acquisition','restructuring','unknown']),
   confidence: new Set(['high','medium','low']),
   officialUrlStatus: new Set(['live_verified','live_unverified','dead_domain','redirected','repurposed','unsafe','unknown']),
-  eventType: new Set(['launched','yield_program_started','yield_rate_changed','deposits_suspended','withdrawals_suspended','bankruptcy_filed','restructuring_started','restructuring_completed','asset_sale_announced','asset_sale_completed','customer_repayment_started','customer_repayment_completed','regulatory_action','lawsuit','operations_ended','rebranded','acquired','other']),
+  eventType: new Set(['launched','yield_program_started','yield_rate_changed','deposits_suspended','withdrawals_suspended','bankruptcy_filed','restructuring_started','restructuring_completed','asset_sale_announced','asset_sale_completed','customer_repayment_started','customer_repayment_completed','regulatory_action','lawsuit','operations_ended','rebranded','acquired','exploit','oracle_manipulation','price_manipulation','protocol_paused','market_paused','bad_debt_created','emergency_governance_action','contract_migration','fund_recovery','other']),
   impactLevel: new Set(['low','medium','high','critical']),
   eventStatusEffect: new Set(['none','active','limited','withdrawals_suspended','restructuring','bankrupt','operations_ended']),
   sourceType: new Set(['official_statement','court_document','bankruptcy_document','regulatory_notice','news_article','archive_capture','database_reference','community_reference','other']),
   reliability: new Set(['high','medium','low']),
   claimScope: new Set(['entity','event','status','failure_reason','customer_outcome','terms_risk','launch_date','end_date','url_history','ownership']),
   outcomeStatus: new Set(['full_repayment','partial_repayment','claims_ongoing','no_recovery','unknown','not_applicable']),
-  productType: new Set(['interest_account','borrow_lend_platform','exchange_earn','staking_like_yield','defi_yield_aggregator','structured_yield','institutional_lending','centralized_yield']),
+  productType: new Set(['interest_account','borrow_lend_platform','exchange_earn','staking_like_yield','defi_lending_market','defi_yield_aggregator','structured_yield','institutional_lending','centralized_yield']),
   termsStatus: new Set(['customer_owned','platform_owned','unclear','varies_by_product','unknown']),
 };
 
@@ -96,6 +97,10 @@ for (const [records, field, group] of [
 for (const r of platforms) {
   required(r, ['id','slug','canonical_name','type','status','summary','confidence','last_verified_at'], 'platforms');
   enumField(r, 'type', ENUMS.platformType, 'platforms');
+  enumField(r, 'architecture', ENUMS.architecture, 'platforms', true);
+  if (r.type === 'defi_lending' && r.architecture !== 'defi') fail(`defi_lending requires architecture=defi in ${label(r, 'platforms')}`);
+  if (['cefi_lending','crypto_interest_account','centralized_yield','exchange_earn'].includes(r.type) && r.architecture === 'defi') fail(`CeFi-oriented type cannot use architecture=defi in ${label(r, 'platforms')}`);
+  if (r.networks !== undefined && !Array.isArray(r.networks)) fail(`networks must be an array in ${label(r, 'platforms')}`);
   enumField(r, 'status', ENUMS.platformStatus, 'platforms');
   enumField(r, 'failure_reason', ENUMS.failureReason, 'platforms', true);
   enumField(r, 'confidence', ENUMS.confidence, 'platforms');
@@ -111,6 +116,9 @@ for (const r of events) {
   enumField(r, 'event_status_effect', ENUMS.eventStatusEffect, 'events', true);
   enumField(r, 'confidence', ENUMS.confidence, 'events');
   dateField(r, 'event_date', 'events');
+  if (r.networks !== undefined && !Array.isArray(r.networks)) fail(`networks must be an array in ${label(r, 'events')}`);
+  if (r.exploit_amount_usd !== undefined && (typeof r.exploit_amount_usd !== 'number' || r.exploit_amount_usd < 0)) fail(`exploit_amount_usd must be a non-negative number in ${label(r, 'events')}`);
+  if (r.bad_debt_usd !== undefined && (typeof r.bad_debt_usd !== 'number' || r.bad_debt_usd < 0)) fail(`bad_debt_usd must be a non-negative number in ${label(r, 'events')}`);
   if (r.source_count !== undefined) {
     const linked = evidence.filter((source) => source.event_id === r.id).length;
     if (linked > r.source_count) fail(`Linked evidence exceeds source_count for ${r.id}: declared ${r.source_count}, linked ${linked}`);
@@ -147,6 +155,8 @@ for (const r of products) {
   required(r, ['platform_id','product_type','product_name'], 'products');
   if (!platformIds.has(r.platform_id)) fail(`Invalid platform_id=${r.platform_id} in ${label(r, 'products')}`);
   enumField(r, 'product_type', ENUMS.productType, 'products');
+  if (r.networks !== undefined && !Array.isArray(r.networks)) fail(`networks must be an array in ${label(r, 'products')}`);
+  if (r.contract_addresses !== undefined && !Array.isArray(r.contract_addresses)) fail(`contract_addresses must be an array in ${label(r, 'products')}`);
 }
 for (const r of termsRisk) {
   required(r, ['platform_id','terms_status','notes','confidence'], 'terms-risk');
