@@ -1,0 +1,11 @@
+[
+  {
+    "platform_id": "cya_plat_000129",
+    "terms_status": "unclear",
+    "asset_ownership_interpretation": "MORE Markets is non-custodial and smart-contract based, but the reviewed incident evidence does not by itself establish a complete legal characterization of lender claims or loss allocation after the exploit.",
+    "affected_product": "mFlowWFLOW lending market",
+    "source_evidence_id": "cya_src_b94_0001",
+    "notes": "Protocol design is non-custodial, but exploit-loss allocation, any resulting bad debt and any recovery or compensation mechanism remain unresolved as of 2026-08-31.",
+    "confidence": "medium"
+  }
+]
