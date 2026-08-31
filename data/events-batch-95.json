@@ -1,0 +1,16 @@
+[
+  {
+    "id": "cya_ev_000371",
+    "platform_id": "cya_plat_000130",
+    "event_type": "exploit",
+    "event_date": "2026-08-30",
+    "title": "Tectonic exploit affects Cronos lending protocol",
+    "description": "Tectonic was reported to have suffered a major exploit on Cronos. Contemporary reporting estimated approximately USD 74-75 million in affected or attacker-controlled assets and described TONIC price manipulation followed by borrowing against inflated collateral. Roughly USD 6 million was reported bridged to Ethereum before Cronos validators halted the network; most remaining exploit-linked assets were reported stranded or frozen on Cronos. Final loss, formal root cause and recovery remain unresolved.",
+    "networks": ["Cronos"],
+    "exploit_amount_usd": 75000000,
+    "impact_level": "critical",
+    "event_status_effect": "limited",
+    "source_count": 4,
+    "confidence": "medium"
+  }
+]
