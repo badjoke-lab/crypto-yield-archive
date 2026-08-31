@@ -1,0 +1,11 @@
+[
+  {
+    "platform_id": "cya_plat_000130",
+    "terms_status": "unclear",
+    "asset_ownership_interpretation": "The reviewed public material establishes a user-facing Yay! staking campaign connected to partner protocols, but does not establish a complete legal characterization of custody, beneficial ownership, insolvency treatment, or loss allocation across Yay!, Kelp and the agETH vault.",
+    "affected_product": "Yay! ETH staking via Kelp / agETH",
+    "source_evidence_id": "cya_src_b95_0001",
+    "notes": "The incident demonstrates upstream dependency and withdrawal-availability risk. CYA does not infer principal protection, platform custody, or a guaranteed recovery right from the campaign documentation.",
+    "confidence": "medium"
+  }
+]
