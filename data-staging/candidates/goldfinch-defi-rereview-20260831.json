@@ -1,6 +1,7 @@
 [
   {
-    "candidate_id": "cya_candidate_000010",
+    "candidate_id": "cya_defi_candidate_20260831_003",
+    "prior_candidate_id": "cya_candidate_000010",
     "canonical_name": "Goldfinch",
     "aliases": ["Goldfinch Protocol", "Goldfinch Prime", "Goldfinch V1"],
     "domain": "goldfinch.finance",
@@ -17,10 +18,10 @@
     "duplicate_check": {
       "checked_at": "2026-08-31",
       "matched_platform_ids": [],
-      "notes": "Previously rejected solely under the former CeFi-focused scope. Reopened for review after the DeFi scope correction; hardened duplicate scan remains required before promotion."
+      "notes": "Previously rejected solely under the former CeFi-focused scope. Reopened as a new rereview record linked back through prior_candidate_id; hardened canonical duplicate scan remains required before promotion."
     },
     "decision": "needs_research",
-    "notes": "This candidate was previously classified out_of_scope because Goldfinch is a DeFi lending protocol. That scope rationale is superseded by the 2026-08-31 CYA DeFi correction. The prior evidence remains useful but canonical promotion requires a fresh review under the corrected architecture/type schema and current evidence state.",
+    "notes": "This rereview supersedes only the former out_of_scope rationale. The original rejected-ledger record remains immutable historical decision evidence under prior_candidate_id. Canonical promotion requires a fresh review under the corrected architecture/type schema and current evidence state.",
     "first_seen_at": "2026-07-25",
     "last_reviewed_at": "2026-08-31"
   }
