@@ -1,0 +1,23 @@
+{
+  "generated_at": "2026-08-31",
+  "purpose": "Seed systematic DeFi lending/yield omission review after CYA scope correction. Presence in this file is not canonical inclusion.",
+  "candidates": [
+    {"canonical_name":"Tectonic","category":"defi_lending","priority":"immediate","reason":"2026-08-30 exploit and Cronos halt; time-sensitive incident under separate detailed review"},
+    {"canonical_name":"Goldfinch","category":"defi_lending","priority":"high","reason":"previously rejected solely because of former CeFi-focused scope; historical wind-down/recovery events already evidenced"},
+    {"canonical_name":"Euler","category":"defi_lending","priority":"high","reason":"major historical exploit and recovery lifecycle candidate"},
+    {"canonical_name":"Cream Finance","category":"defi_lending","priority":"high","reason":"multiple historically significant exploit/loss events candidate"},
+    {"canonical_name":"Radiant Capital","category":"defi_lending","priority":"high","reason":"major lending-protocol security incident candidate"},
+    {"canonical_name":"Venus Protocol","category":"defi_lending","priority":"high","reason":"historically significant liquidation/bad-debt and protocol risk events candidate"},
+    {"canonical_name":"Compound","category":"defi_lending","priority":"medium","reason":"major governance, market and protocol lifecycle events candidate"},
+    {"canonical_name":"Aave","category":"defi_lending","priority":"medium","reason":"major protocol, market-pause, risk-parameter and incident history candidate"},
+    {"canonical_name":"Silo Finance","category":"defi_lending","priority":"medium","reason":"lending protocol requiring historical event review under corrected scope"},
+    {"canonical_name":"Morpho","category":"defi_lending","priority":"medium","reason":"major lending protocol requiring lifecycle/event review under corrected scope"}
+  ],
+  "review_rules": [
+    "Do not promote by fame, TVL, or current popularity alone.",
+    "Require a historically significant lending/yield lifecycle event and evidence-backed platform-level relevance.",
+    "Run duplicate and identity checks before allocating canonical IDs.",
+    "Separate exploit amount, bad debt, recovery, protocol status, and user/lender outcome.",
+    "Do not infer final loss or recovery from preliminary incident reporting."
+  ]
+}
