@@ -1,0 +1,18 @@
+[
+  {
+    "platform_id": "cya_plat_000130",
+    "outcome_status": "not_applicable",
+    "estimated_recovery_rate": "not_applicable",
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": null,
+    "claim_process_url": null,
+    "affected_products": ["Yay! ETH staking via Kelp / agETH"],
+    "claim_classes": [],
+    "jurisdictions": [],
+    "as_of": "2026-08-31",
+    "last_verified_at": "2026-08-31",
+    "notes": "Reviewed evidence documents temporary impairment followed by restoration of unstaking and withdrawals. It does not establish a bankruptcy/claims process, platform-wide customer loss, or a repayment program, so CYA does not assign a recovery percentage.",
+    "confidence": "medium"
+  }
+]
