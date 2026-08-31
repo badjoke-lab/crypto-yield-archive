@@ -9,7 +9,7 @@
     "impact_level": "high",
     "event_status_effect": "limited",
     "confidence": "medium",
-    "source_count": 3,
+    "source_count": 2,
     "networks": ["Ethereum"],
     "notes": "This is a bounded product/path-level withdrawal and unstaking impairment with documented recovery. It must not be generalized into Yay!-wide insolvency, project shutdown, or permanent customer loss."
   }
