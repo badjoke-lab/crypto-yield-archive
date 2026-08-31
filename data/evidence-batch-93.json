@@ -2,7 +2,7 @@
   {
     "id": "cya_src_b93_0001",
     "platform_id": "cya_plat_000128",
-    "event_id": "cya_ev_000366",
+    "event_id": "cya_ev_000368",
     "source_type": "news_article",
     "title": "Neutrl halts NUSD redemptions over reserve concerns",
     "url": "https://crypto.news/neutrl-halts-nusd-redemptions-over-reserve-concerns/",
@@ -17,7 +17,7 @@
   {
     "id": "cya_src_b93_0002",
     "platform_id": "cya_plat_000128",
-    "event_id": "cya_ev_000366",
+    "event_id": "cya_ev_000368",
     "source_type": "news_article",
     "title": "DeFi protocol Neutrl suspends redemptions and minting as it assesses reserve issue",
     "url": "https://cryptobriefing.com/defi-protocol-neutrl-suspends-redemptions-and-minting-as-it-assesses-reserve-issue/",
@@ -32,7 +32,7 @@
   {
     "id": "cya_src_b93_0003",
     "platform_id": "cya_plat_000128",
-    "event_id": "cya_ev_000367",
+    "event_id": "cya_ev_000369",
     "source_type": "news_article",
     "title": "Neutrl has suspended contracts due to position issues affecting liquidity, planning to open redemptions in September",
     "url": "https://www.chaincatcher.com/en/article/2286401",
@@ -47,7 +47,7 @@
   {
     "id": "cya_src_b93_0004",
     "platform_id": "cya_plat_000128",
-    "event_id": "cya_ev_000367",
+    "event_id": "cya_ev_000369",
     "source_type": "news_article",
     "title": "Partial reserve liquidity affected; Neutrl plans to open early redemption for NUSD and sNUSD in early September",
     "url": "https://www.odaily.com.cn/en/newsflash/513889",

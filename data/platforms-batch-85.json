@@ -5,6 +5,7 @@
     "canonical_name": "Kinza Finance",
     "aliases": ["Kinza", "Kinza Finance Money Market"],
     "type": "defi_lending",
+    "architecture": "defi",
     "status": "limited",
     "failure_reason": null,
     "launch_date": null,

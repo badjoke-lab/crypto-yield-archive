@@ -5,6 +5,7 @@
     "canonical_name": "JBank",
     "aliases": ["JBANK", "JBank Protocol", "JBank Staking", "JUC (JBank)", "JUB Staking"],
     "type": "defi_lending",
+    "architecture": "defi",
     "status": "limited",
     "failure_reason": null,
     "launch_date": null,

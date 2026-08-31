@@ -1,0 +1,28 @@
+[
+  {
+    "candidate_id": "cya_defi_candidate_20260831_003",
+    "prior_candidate_id": "cya_candidate_000010",
+    "canonical_name": "Goldfinch",
+    "aliases": ["Goldfinch Protocol", "Goldfinch Prime", "Goldfinch V1"],
+    "domain": "goldfinch.finance",
+    "country_or_origin": "Global / United States",
+    "platform_type_guess": "defi_lending",
+    "architecture_guess": "defi",
+    "status_guess": "limited",
+    "major_event": "Goldfinch Prime wind-down, full Prime investor redemption, contract pause, and transition of the legacy protocol to maintenance mode for borrower recoveries",
+    "primary_sources": [
+      "https://gov.goldfinch.finance/t/gip-87-maintenance-mode-of-goldfinch-operations-and-wind-down-goldfinch-prime/2202",
+      "https://www.goldfinch.finance/"
+    ],
+    "secondary_sources": [],
+    "duplicate_check": {
+      "checked_at": "2026-08-31",
+      "matched_platform_ids": [],
+      "notes": "Previously rejected solely under the former CeFi-focused scope. Reopened as a new rereview record linked back through prior_candidate_id; hardened canonical duplicate scan remains required before promotion."
+    },
+    "decision": "needs_research",
+    "notes": "This rereview supersedes only the former out_of_scope rationale. The original rejected-ledger record remains immutable historical decision evidence under prior_candidate_id. Canonical promotion requires a fresh review under the corrected architecture/type schema and current evidence state.",
+    "first_seen_at": "2026-07-25",
+    "last_reviewed_at": "2026-08-31"
+  }
+]

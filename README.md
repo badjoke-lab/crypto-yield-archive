@@ -8,7 +8,7 @@ Public site:
 https://cya.badjoke-lab.com/
 ```
 
-It records what happened after users deposited assets into yield platforms: launches, withdrawal suspensions, insolvencies, bankruptcies, restructurings, repayments, acquisitions, shutdowns, and customer outcomes.
+It records what happened after users committed assets to crypto lending and yield systems: launches, withdrawal or market suspensions, exploits, insolvencies, bankruptcies, restructurings, repayments, recoveries, acquisitions, shutdowns, and customer or lender outcomes.
 
 ## Positioning
 
@@ -25,12 +25,12 @@ CYA is:
 
 - a historical registry
 - an evidence-first archive
-- a record of platform failures, restructurings, and outcomes
-- a way to compare what happened to customer funds across crypto yield platforms
+- a record of lending/yield platform failures, incidents, restructurings, recoveries, and outcomes
+- a way to compare what happened to user funds across custodial and non-custodial crypto yield systems
 
 ## Scope
 
-CYA focuses on CeFi lending and yield platforms.
+CYA covers historically significant crypto lending and yield systems across both CeFi and DeFi.
 
 Included:
 
@@ -38,15 +38,20 @@ Included:
 - crypto interest accounts
 - centralized yield platforms
 - borrowing/lending services
-- historically significant Earn or staking products when they have major regulatory, suspension, outcome, or failure relevance
+- DeFi lending protocols
+- DeFi lending markets and historically significant yield aggregators
+- historically significant Earn or staking products when they have major regulatory, suspension, exploit, recovery, outcome, or failure relevance
 
-Not prioritized in the initial registry scope:
+Architecture is distinct from product type. Canonical platform records may explicitly identify `cefi`, `defi`, `hybrid`, or `unknown` architecture, while the platform `type` records the product/system class such as `cefi_lending`, `defi_lending`, or `centralized_yield`.
+
+DeFi records are still platform/protocol-level by default. Pool-, market-, chain-deployment-, or contract-level records are added only when needed to explain a historically significant event; they are not used for indiscriminate inventory growth.
+
+Not prioritized:
 
 - generic Exchange Earn products without major historical events
-- DeFi lending protocols
-- yield aggregators
-- pool-level records
-- chain deployments
+- generic staking/token reward programs without historically significant access, exploit, regulatory, failure, or outcome events
+- pool-level inventory without historical significance
+- chain deployments as standalone records
 - real-time APY data
 
 ## Core data pillars
@@ -54,9 +59,11 @@ Not prioritized in the initial registry scope:
 - platform entity
 - platform event
 - platform evidence
-- customer outcome
+- customer/lender outcome
 - product profile
 - terms risk
+
+For DeFi, event records may additionally carry network, exploit amount, bad debt, protocol pause, oracle/price manipulation, emergency governance, contract migration, and recovery context when supported by evidence.
 
 ## Stack
 

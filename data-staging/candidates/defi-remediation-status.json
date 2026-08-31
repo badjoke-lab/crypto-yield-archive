@@ -1,0 +1,14 @@
+[
+  {
+    "as_of": "2026-08-31",
+    "status": "active",
+    "current_incident": "More Markets",
+    "current_incident_priority": "immediate",
+    "scope_corrected": true,
+    "schema_support_added": true,
+    "canonical_changes_in_this_lane": false,
+    "historical_backfill_status": "seeded",
+    "first_scope_rejection_reopened": "Goldfinch",
+    "next_gate": "review More Markets first-party evidence and prepare a bounded canonical promotion package if evidence is sufficient"
+  }
+]

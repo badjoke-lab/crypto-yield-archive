@@ -1,0 +1,49 @@
+[
+  {
+    "candidate_id": "cya_defi_candidate_20260831_001",
+    "canonical_name": "Tectonic",
+    "aliases": ["Tectonic Finance", "TectonicFi"],
+    "domain": "tectonic.finance",
+    "country_or_origin": "Global / Cronos",
+    "platform_type_guess": "defi_lending",
+    "status_guess": "incident_under_review",
+    "major_event": "2026-08-30 exploit affecting Tectonic on Cronos, followed by a Cronos network halt. Contemporary reporting estimated approximately USD 74-75 million in attacker-controlled or affected assets, with roughly USD 6 million bridged to Ethereum before the halt and most remaining exploit-linked assets stranded on Cronos.",
+    "primary_sources": [],
+    "secondary_sources": [
+      "https://www.theblock.co/news/defi/2026-08-30-crypto-com-linked-cronos-network-halts-after-tectonic-exploit-estimated-at-75-million-413069",
+      "https://www.coindesk.com/tech/2026/08/31/cronos-halts-blockchain-after-usd75-million-lending-exploit-hits-lending-app-tectonic",
+      "https://financefeeds.com/tectonic-exploited-on-cronos-for-estimated-75-million-as-validators-halt-entire-network/"
+    ],
+    "duplicate_check": {
+      "checked_at": "2026-08-31",
+      "matched_platform_ids": [],
+      "notes": "Immediate incident staging. Full hardened canonical duplicate scan remains required before promotion."
+    },
+    "decision": "needs_research",
+    "scope_review": {
+      "previous_boundary": "DeFi lending protocols were not prioritized by the initial CeFi-focused CYA scope.",
+      "current_action": "Do not reject solely because Tectonic is DeFi. Review as part of the CYA DeFi omission remediation.",
+      "canonical_promotion": "blocked_pending_scope_and_evidence_review"
+    },
+    "incident_review": {
+      "incident_date": "2026-08-30",
+      "network": "Cronos",
+      "amount_status": "preliminary",
+      "estimated_affected_usd": "approximately 74-75 million",
+      "bridged_to_ethereum_usd": "approximately 6 million",
+      "root_cause_status": "preliminary",
+      "preliminary_mechanism": "Contemporary on-chain reporting described manipulation of the low-liquidity TONIC token price followed by borrowing against inflated collateral.",
+      "funds_status": "Most exploit-linked assets were reported as stranded/frozen on Cronos after the network halt; stranded or frozen must not be described as recovered without later evidence.",
+      "unresolved": [
+        "final confirmed loss amount",
+        "formal root cause",
+        "final recovery amount",
+        "customer/lender loss allocation",
+        "protocol restart and remediation outcome"
+      ]
+    },
+    "notes": "Time-sensitive incident candidate. Preserve preliminary wording. Do not infer insolvency, permanent customer loss, completed recovery, or a final exploit amount. Obtain first-party Tectonic/Cronos incident statements and durable evidence before canonical promotion.",
+    "first_seen_at": "2026-08-31",
+    "last_reviewed_at": "2026-08-31"
+  }
+]
