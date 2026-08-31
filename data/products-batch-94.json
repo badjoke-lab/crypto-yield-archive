@@ -1,0 +1,12 @@
+[
+  {
+    "platform_id": "cya_plat_000129",
+    "product_type": "defi_lending_market",
+    "product_name": "mFlowWFLOW lending market",
+    "networks": ["Flow EVM"],
+    "contract_addresses": [],
+    "custody_model": "Non-custodial smart-contract lending market on Flow EVM.",
+    "yield_source": "Supplier yield is generated from borrower interest and protocol lending-market activity; realized returns depend on market utilization and protocol risk.",
+    "risk_notes": "The 2026-08-31 incident affected the mFlowWFLOW reserve. Blockaid linked the exploit path to an Ankr bonded liquid-staking token and E-Mode configuration, but final root cause, bad debt and lender loss remained under investigation."
+  }
+]

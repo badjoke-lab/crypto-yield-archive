@@ -1,0 +1,26 @@
+[
+  {
+    "id": "cya_plat_000129",
+    "slug": "more-markets",
+    "canonical_name": "MORE Markets",
+    "aliases": ["More Markets", "MORE"],
+    "type": "defi_lending",
+    "architecture": "defi",
+    "networks": ["Flow EVM"],
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": null,
+    "end_date": null,
+    "country_or_origin": "Global / Flow ecosystem",
+    "summary": "Non-custodial DeFi lending protocol on Flow EVM. On 2026-08-31, Blockaid reported an exploit affecting the mFlowWFLOW lending reserve and estimated detector impact near USD 9.3 million; MORE Markets said it was investigating the claim.",
+    "what_happened": "Blockaid reported that an attacker used an Ankr bonded liquid-staking token together with MORE Markets' E-Mode configuration to remove approximately 15.5 million WFLOW from the mFlowWFLOW lending reserve. MORE Markets publicly said it was investigating a claim that it had been exploited and would publish findings. CYA records the incident without treating the initial USD estimate, technical mechanism, bad debt, user loss or recovery as final until the protocol or a technical post-mortem confirms them.",
+    "official_url_original": "https://more.markets/",
+    "official_domain_original": "more.markets",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://more.markets/",
+    "confidence": "medium",
+    "last_verified_at": "2026-08-31",
+    "uncertainty_notes": "MORE Markets had not confirmed a final loss amount, final root cause, bad-debt amount, lender loss allocation, recovered-fund amount or compensation plan in the reviewed same-day material. The reported approximately USD 9.3 million figure is Blockaid's initial detector-impact estimate, not a final audited loss.",
+    "notes": "Time-sensitive DeFi canonical addition. Status remains active because the reviewed evidence establishes an incident and investigation, but not a platform-wide shutdown, insolvency, bankruptcy or permanent suspension."
+  }
+]

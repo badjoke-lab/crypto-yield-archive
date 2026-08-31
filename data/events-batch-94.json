@@ -1,0 +1,19 @@
+[
+  {
+    "id": "cya_ev_000370",
+    "platform_id": "cya_plat_000129",
+    "event_type": "exploit",
+    "event_date": "2026-08-31",
+    "title": "MORE Markets investigates Flow EVM lending-reserve exploit",
+    "description": "Blockaid reported that approximately 15.5 million WFLOW left MORE Markets' mFlowWFLOW lending reserve on Flow EVM in an exploit involving an Ankr bonded liquid-staking token and the protocol's E-Mode configuration. Blockaid estimated approximately USD 9.3 million of detector impact. MORE Markets said it was investigating the exploit claim and would publish findings.",
+    "impact_level": "critical",
+    "event_status_effect": "none",
+    "confidence": "medium",
+    "source_count": 3,
+    "networks": ["Flow EVM"],
+    "exploit_amount_usd": 9300000,
+    "amount_status": "preliminary_detector_impact",
+    "affected_market": "mFlowWFLOW",
+    "notes": "The USD value is Blockaid's preliminary detector-impact estimate and must not be presented as a final confirmed protocol or user loss. Root cause, bad debt, recovery and user compensation remained unresolved in the reviewed same-day evidence."
+  }
+]

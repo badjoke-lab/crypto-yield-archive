@@ -1,0 +1,18 @@
+[
+  {
+    "platform_id": "cya_plat_000129",
+    "outcome_status": "unknown",
+    "estimated_recovery_rate": "unknown",
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": null,
+    "claim_process_url": null,
+    "affected_products": ["mFlowWFLOW lending market"],
+    "claim_classes": ["lenders / liquidity suppliers, if losses are later confirmed"],
+    "jurisdictions": [],
+    "as_of": "2026-08-31",
+    "last_verified_at": "2026-08-31",
+    "notes": "No final user-loss allocation, bad-debt amount, recovery amount, repayment process or compensation plan was established in the reviewed same-day evidence. The incident remains under investigation.",
+    "confidence": "medium"
+  }
+]
