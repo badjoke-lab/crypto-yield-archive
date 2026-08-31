@@ -1,0 +1,52 @@
+[
+  {
+    "candidate_id": "cya_defi_candidate_20260831_002",
+    "canonical_name": "MORE Markets",
+    "aliases": ["More Markets", "MORE"],
+    "domain": "more.markets",
+    "country_or_origin": "Global / Flow EVM",
+    "platform_type_guess": "defi_lending",
+    "architecture_guess": "defi",
+    "status_guess": "incident_under_review",
+    "major_event": "2026-08-31 reported exploit affecting the mFlowWFLOW lending reserve on Flow EVM. Blockaid-linked reporting described approximately 15.5 million WFLOW leaving the reserve and an initial detector-impact estimate near USD 9.3 million. MORE Markets said it was investigating the exploit claim; final loss, root cause, recovery and lender outcome remain unresolved.",
+    "primary_sources": [
+      "https://github.com/MoreLabsXYZ/more-markets",
+      "https://docs.more.markets/more-markets/editor-1"
+    ],
+    "secondary_sources": [
+      "https://beincrypto.com/more-markets-exploit-flow-evm-wflow/",
+      "https://crypto.news/more-markets-suffers-9-3m-wflow-exploit-on-flow-evm/"
+    ],
+    "duplicate_check": {
+      "checked_at": "2026-08-31",
+      "matched_platform_ids": [],
+      "notes": "Immediate DeFi incident staging under corrected CYA scope. Hardened canonical duplicate scan remains required before promotion."
+    },
+    "decision": "needs_research",
+    "scope_review": {
+      "current_action": "Eligible for CYA review as a historically significant DeFi lending incident under the corrected CeFi+DeFi scope.",
+      "canonical_promotion": "blocked_pending_first_party_incident_evidence_and_full_review"
+    },
+    "incident_review": {
+      "incident_date": "2026-08-31",
+      "network": "Flow EVM",
+      "affected_market": "mFlowWFLOW",
+      "reported_drained_amount": "approximately 15.5 million WFLOW",
+      "reported_impact_usd": "approximately 9.3 million detector-impact estimate",
+      "amount_status": "preliminary",
+      "root_cause_status": "preliminary",
+      "preliminary_mechanism": "Blockaid-linked reporting connected the incident to an Ankr bonded liquid-staking token and MORE Markets E-Mode; this must not be treated as a final root-cause finding until first-party or technical postmortem evidence is available.",
+      "unresolved": [
+        "final confirmed loss amount",
+        "formal root cause",
+        "whether the reported USD figure represents realized economic loss",
+        "final recovery amount",
+        "lender/user loss allocation",
+        "market pause, restart and remediation outcome"
+      ]
+    },
+    "notes": "Do not describe the preliminary USD estimate as a confirmed final loss. MORE Markets is a decentralized non-custodial lending protocol on Flow EVM; DeFi architecture is not an exclusion reason under the corrected CYA scope.",
+    "first_seen_at": "2026-08-31",
+    "last_reviewed_at": "2026-08-31"
+  }
+]
