@@ -1,0 +1,62 @@
+[
+  {
+    "id": "cya_src_b94_0001",
+    "platform_id": "cya_plat_000129",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "MORE Markets documentation",
+    "url": "https://docs.more.markets/more-markets/editor-1",
+    "publisher": "MORE Markets",
+    "published_at": null,
+    "archived_url": null,
+    "accessed_at": "2026-08-31",
+    "reliability": "high",
+    "claim_scope": "entity",
+    "notes": "First-party documentation supporting platform identity and lending-market context. It is not used as evidence for the final exploit amount or root cause."
+  },
+  {
+    "id": "cya_src_b94_0002",
+    "platform_id": "cya_plat_000129",
+    "event_id": "cya_ev_000370",
+    "source_type": "news_article",
+    "title": "Blockaid Traces $9.3 Million Exploit at Flow Lender More Markets",
+    "url": "https://beincrypto.com/more-markets-exploit-flow-evm-wflow/",
+    "publisher": "BeInCrypto",
+    "published_at": "2026-08-31",
+    "archived_url": null,
+    "accessed_at": "2026-08-31",
+    "reliability": "medium",
+    "claim_scope": "event",
+    "notes": "Contemporaneous report reproducing Blockaid's 15.5 million WFLOW / approximately USD 9.3 million detector-impact disclosure and MORE Markets' statement that it was investigating the exploit claim."
+  },
+  {
+    "id": "cya_src_b94_0003",
+    "platform_id": "cya_plat_000129",
+    "event_id": "cya_ev_000370",
+    "source_type": "news_article",
+    "title": "More Markets Hacked for $9.3M on Flow EVM, 15.5M WFLOW Drained",
+    "url": "https://www.cryptotimes.io/2026/08/31/more-markets-hacked-for-9-3m-on-flow-evm-15-5m-wflow-drained/",
+    "publisher": "The Crypto Times",
+    "published_at": "2026-08-31",
+    "archived_url": null,
+    "accessed_at": "2026-08-31",
+    "reliability": "medium",
+    "claim_scope": "event",
+    "notes": "Independent contemporaneous coverage of the Blockaid finding, affected mFlowWFLOW reserve and unresolved final loss/root-cause state."
+  },
+  {
+    "id": "cya_src_b94_0004",
+    "platform_id": "cya_plat_000129",
+    "event_id": "cya_ev_000370",
+    "source_type": "news_article",
+    "title": "Attackers drain 15.5M WFLOW from More Markets in suspected $9.3M Flow exploit",
+    "url": "https://www.cryptopolitan.com/attackers-drain-more-markets-flow-exploit/",
+    "publisher": "Cryptopolitan",
+    "published_at": "2026-08-31",
+    "archived_url": null,
+    "accessed_at": "2026-08-31",
+    "reliability": "medium",
+    "claim_scope": "event",
+    "notes": "Corroborates that MORE Markets had not confirmed the final loss and that Blockaid described the reported USD amount as detector impact while tracing the incident."
+  }
+]
