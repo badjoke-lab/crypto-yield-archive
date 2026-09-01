@@ -1,0 +1,26 @@
+[
+  {
+    "id": "cya_plat_000132",
+    "slug": "goldfinch",
+    "canonical_name": "Goldfinch",
+    "aliases": ["Goldfinch Protocol", "Goldfinch V1", "Goldfinch Prime"],
+    "type": "defi_lending",
+    "architecture": "defi",
+    "networks": ["Ethereum"],
+    "status": "limited",
+    "failure_reason": "restructuring",
+    "launch_date": null,
+    "end_date": null,
+    "country_or_origin": "Global / United States",
+    "summary": "Decentralized credit protocol centered on USDC-funded borrower pools and real-world credit. By mid-2026, Goldfinch Prime had been wound down and fully redeemed while the legacy Goldfinch protocol shifted to maintenance focused on borrower recoveries and user access to repayments.",
+    "what_happened": "Goldfinch's official governance materials describe the original protocol as having enabled approximately USD 100 million of loans before multiple legacy borrower pools experienced serious performance issues. In 2026 the project proposed and began an orderly wind-down of Goldfinch Prime, stopped accepting new Prime deposits, redeemed Prime investors in full, paused the Prime contract, and retained the legacy Goldfinch app for ongoing borrower recoveries and collection of remaining repayments.",
+    "official_url_original": "https://www.goldfinch.finance/",
+    "official_domain_original": "goldfinch.finance",
+    "official_url_status": "live_verified",
+    "archived_url": null,
+    "confidence": "high",
+    "last_verified_at": "2026-09-01",
+    "uncertainty_notes": "Goldfinch Prime's investor redemption is documented as completed, but legacy Goldfinch V1 borrower-pool recoveries remain unresolved and may continue for years. CYA therefore does not treat the entire Goldfinch protocol as fully shut down or all legacy lender claims as recovered.",
+    "notes": "Previously rejected only because CYA's former scope excluded DeFi lending. Re-reviewed and promoted after the scope correction. Goldfinch Prime wind-down and legacy Goldfinch recovery status are kept distinct."
+  }
+]
