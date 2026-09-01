@@ -1,0 +1,47 @@
+[
+  {
+    "id": "cya_src_b97_0001",
+    "platform_id": "cya_plat_000132",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "Goldfinch V1 overview",
+    "url": "https://docs.goldfinch.finance/goldfinch/goldfinch-v1/goldfinch-overview",
+    "publisher": "Goldfinch",
+    "published_at": null,
+    "archived_url": null,
+    "accessed_at": "2026-09-01",
+    "reliability": "high",
+    "claim_scope": "entity",
+    "notes": "First-party documentation establishing Goldfinch as a decentralized credit protocol using USDC-funded borrower pools, Senior Pool liquidity and off-chain collateralized credit exposure."
+  },
+  {
+    "id": "cya_src_b97_0002",
+    "platform_id": "cya_plat_000132",
+    "event_id": "cya_ev_000373",
+    "source_type": "official_statement",
+    "title": "GIP-87 maintenance mode and Goldfinch Prime wind-down",
+    "url": "https://gov.goldfinch.finance/t/gip-87-maintenance-mode-of-goldfinch-operations-and-wind-down-goldfinch-prime/2202",
+    "publisher": "Goldfinch Governance Forum",
+    "published_at": "2026-06-12",
+    "archived_url": null,
+    "accessed_at": "2026-09-01",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "Official governance thread describing the maintenance-mode plan and containing the July 7 project update that Prime investors were fully redeemed, new deposits disabled and the Prime contract paused, while legacy V1 deals remained in repayment or recovery."
+  },
+  {
+    "id": "cya_src_b97_0003",
+    "platform_id": "cya_plat_000132",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "Goldfinch borrower-pool default process",
+    "url": "https://docs.goldfinch.finance/goldfinch/goldfinch-v1/protocol-mechanics/default-process",
+    "publisher": "Goldfinch",
+    "published_at": null,
+    "archived_url": null,
+    "accessed_at": "2026-09-01",
+    "reliability": "high",
+    "claim_scope": "terms_risk",
+    "notes": "First-party documentation describing borrower-pool default handling and the interaction between smart-contract pool terms and off-chain legal agreements."
+  }
+]

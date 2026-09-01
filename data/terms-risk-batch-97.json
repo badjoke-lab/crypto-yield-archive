@@ -1,0 +1,11 @@
+[
+  {
+    "platform_id": "cya_plat_000132",
+    "terms_status": "varies_by_product",
+    "asset_ownership_interpretation": "Goldfinch combines on-chain pool positions with borrower-specific off-chain legal agreements. Investor rights and recovery treatment therefore depend on the specific pool or product rather than fitting a single centralized-custody ownership model.",
+    "affected_product": "Goldfinch borrower pools and Senior Pool",
+    "source_evidence_id": "cya_src_b97_0003",
+    "notes": "Official documentation states that default parameters are reflected both in off-chain legal agreements and pool smart contracts. CYA therefore avoids assigning a universal ownership or recovery characterization across all Goldfinch positions.",
+    "confidence": "high"
+  }
+]

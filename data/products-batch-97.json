@@ -1,0 +1,12 @@
+[
+  {
+    "platform_id": "cya_plat_000132",
+    "product_type": "defi_lending_market",
+    "product_name": "Goldfinch borrower pools and Senior Pool",
+    "networks": ["Ethereum"],
+    "contract_addresses": [],
+    "custody_model": "Smart-contract-based credit protocol in which investors supply USDC to borrower pools directly or through the Senior Pool; underlying credit performance depends on off-chain borrowers and legal agreements as well as on-chain pool mechanics.",
+    "yield_source": "Interest and principal payments from real-world borrowers financed through Goldfinch borrower pools, with junior/senior tranche structures and protocol incentives.",
+    "risk_notes": "Borrower default and recovery risk can produce prolonged illiquidity or loss. Goldfinch's 2026 maintenance-mode plan explicitly focuses on resolving legacy borrower pools rather than originating new growth."
+  }
+]
