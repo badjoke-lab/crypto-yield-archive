@@ -10,7 +10,7 @@
     "exploit_amount_usd": 197000000,
     "impact_level": "critical",
     "event_status_effect": "limited",
-    "source_count": 4,
+    "source_count": 3,
     "confidence": "high",
     "notes": "Aggregate fund recovery, user redemption and the later V2 relaunch are related but distinct facts. This event does not equate the V2 system with uninterrupted V1 operation."
   }
