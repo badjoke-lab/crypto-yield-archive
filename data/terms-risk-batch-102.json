@@ -1,0 +1,9 @@
+[
+  {
+    "platform_id": "cya_plat_000137",
+    "terms_status": "customer_owned",
+    "source_evidence_id": "cya_src_b102_0006",
+    "notes": "Compound is modeled as non-custodial DeFi lending rather than a platform-owned account balance. Historical incidents demonstrate that non-custodial architecture does not remove oracle, governance-upgrade, liquidation, reward-accounting or market-availability risk.",
+    "confidence": "high"
+  }
+]
