@@ -1,0 +1,17 @@
+[
+  {
+    "platform_id": "cya_plat_000135",
+    "outcome_status": "claims_ongoing",
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "claim_process_url": "https://medium.com/@RadiantCapital/radiant-capital-dao-community-remediation-plan-196c8366b4da",
+    "claim_classes": ["October 2024 affected lending-market depositors", "Users affected through open-ended token approvals"],
+    "jurisdictions": ["Global"],
+    "affected_products": ["Radiant core lending markets", "Wallet positions with affected approvals"],
+    "estimated_recovery_rate": null,
+    "as_of": "2026-09-01",
+    "last_verified_at": "2026-09-01",
+    "notes": "The January 2024 communal bad debt was addressed through DAO/OpEx recapitalization under RFP-27, but that is separate from the October 2024 user-loss remediation process. Radiant's June 2026 wind-down notice states that affected October 2024 users had not been remediated through recovered exploit funds, that no meaningful recovery had been obtained via zeroShadow, and that the remediation portal and claims infrastructure would remain available. Any future recovered funds are intended for affected users. No universal realized recovery percentage is asserted.",
+    "confidence": "high"
+  }
+]
