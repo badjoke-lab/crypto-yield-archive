@@ -1,0 +1,11 @@
+[
+  {
+    "platform_id": "cya_plat_000134",
+    "terms_status": "customer_owned",
+    "asset_ownership_interpretation": "C.R.E.A.M. Finance describes its lending protocol as non-custodial. User positions are represented through smart-contract lending markets rather than a centralized custodial yield account, although users remain exposed to protocol, collateral, oracle and smart-contract risk.",
+    "affected_product": "C.R.E.A.M. Finance lending markets",
+    "source_evidence_id": "cya_src_b99_0004",
+    "notes": "The non-custodial protocol model does not eliminate loss risk. The October 2021 exploit demonstrated that smart-contract and market-design failures can still impair user positions materially.",
+    "confidence": "high"
+  }
+]
