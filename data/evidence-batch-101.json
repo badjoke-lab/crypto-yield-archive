@@ -1,0 +1,57 @@
+[
+  {
+    "id": "cya_src_b101_0001",
+    "platform_id": "cya_plat_000136",
+    "event_id": "cya_ev_000379",
+    "source_type": "official_statement",
+    "title": "Venus Protocol Weekly Update W40/2021 & Shortfall Recovery Report",
+    "url": "https://community.venus.io/t/venus-protocol-weekly-update-w40-2021-shortfall-recovery-report/1890",
+    "publisher": "Venus Protocol",
+    "published_at": "2021-10-11",
+    "accessed_at": "2026-09-01",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "Reports the May 18 shortfall as 2,008 BTC and nearly 6,000 ETH across two major accounts and describes the bailout/recovery mechanics and September 2021 progress."
+  },
+  {
+    "id": "cya_src_b101_0002",
+    "platform_id": "cya_plat_000136",
+    "event_id": "cya_ev_000379",
+    "source_type": "official_statement",
+    "title": "VIP-29 Add Grant Program and Bailout Feature",
+    "url": "https://community.venus.io/t/vip-29-add-grant-program-and-bailout-feature/924",
+    "publisher": "Venus Protocol Governance",
+    "published_at": "2021-06-16",
+    "accessed_at": "2026-09-01",
+    "reliability": "high",
+    "claim_scope": "customer_outcome",
+    "notes": "Documents the proposed bailout feature used in the shortfall recovery path."
+  },
+  {
+    "id": "cya_src_b101_0003",
+    "platform_id": "cya_plat_000136",
+    "event_id": "cya_ev_000380",
+    "source_type": "official_statement",
+    "title": "THE Market Incident Post-Mortem",
+    "url": "https://community.venus.io/t/the-market-incident-post-mortem/5712",
+    "publisher": "Venus Protocol / Allez Labs",
+    "published_at": "2026-03-17",
+    "accessed_at": "2026-09-01",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "Provides attack flow, supply-cap-bypass root cause, roughly USD 14.9M gross borrowing, approximately USD 2.15M bad debt, affected-market boundaries and remediation steps."
+  },
+  {
+    "id": "cya_src_b101_0004",
+    "platform_id": "cya_plat_000136",
+    "source_type": "official_statement",
+    "title": "Venus Monthly Report: July 2026",
+    "url": "https://community.venus.io/t/venus-monthly-report-july-2026/5896",
+    "publisher": "Venus Protocol / Allez Labs",
+    "published_at": "2026-08-07",
+    "accessed_at": "2026-09-01",
+    "reliability": "high",
+    "claim_scope": "status",
+    "notes": "Shows continued active protocol operation after the March 2026 incident, including BNB Core Pool supply and debt metrics for July 2026."
+  }
+]
