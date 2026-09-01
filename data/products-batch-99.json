@@ -1,0 +1,12 @@
+[
+  {
+    "platform_id": "cya_plat_000134",
+    "product_type": "defi_lending_market",
+    "product_name": "C.R.E.A.M. Finance lending markets",
+    "networks": ["Ethereum", "Arbitrum", "Base", "BNB Chain", "Polygon"],
+    "contract_addresses": [],
+    "custody_model": "Permissionless non-custodial smart-contract lending markets in which users supply supported assets and may use supplied collateral to borrow other supported assets.",
+    "yield_source": "Borrower interest paid through overcollateralized DeFi lending markets, with rates determined by market utilization and protocol parameters.",
+    "risk_notes": "Smart-contract, oracle and collateral-market risks can create severe loss events. The 2021-10-27 exploit specifically affected Ethereum V1 markets; current and other historical market deployments must not be treated as identical to that affected deployment."
+  }
+]

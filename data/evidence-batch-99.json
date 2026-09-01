@@ -1,0 +1,62 @@
+[
+  {
+    "id": "cya_src_b99_0001",
+    "platform_id": "cya_plat_000134",
+    "event_id": "cya_ev_000375",
+    "source_type": "official_statement",
+    "title": "C.R.E.A.M. Finance Post Mortem: Flash Loan Exploit Oct 27",
+    "url": "https://medium.com/cream-finance/post-mortem-exploit-oct-27-507b12bb6f8e",
+    "publisher": "C.R.E.A.M. Finance",
+    "published_at": "2021-10-31",
+    "archived_url": null,
+    "accessed_at": "2026-09-01",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "First-party post-mortem states that approximately USD 130 million was removed from Ethereum V1 markets, that interactions with those markets were suspended, and that other C.R.E.A.M. V1 markets and Iron Bank were not impacted by this specific exploit."
+  },
+  {
+    "id": "cya_src_b99_0002",
+    "platform_id": "cya_plat_000134",
+    "event_id": "cya_ev_000375",
+    "source_type": "official_statement",
+    "title": "Moving Forward: Post Exploit Next Steps for C.R.E.A.M. Finance",
+    "url": "https://creamdotfinance.medium.com/moving-forward-post-exploit-next-steps-for-c-r-e-a-m-finance-1ad05e2066d5",
+    "publisher": "C.R.E.A.M. Finance",
+    "published_at": "2021-11-13",
+    "archived_url": null,
+    "accessed_at": "2026-09-01",
+    "reliability": "high",
+    "claim_scope": "customer_outcome",
+    "notes": "First-party follow-up announces allocation of 1,453,415 CREAM tokens to impacted users and a one-year claim process. It does not establish a universal realized recovery percentage."
+  },
+  {
+    "id": "cya_src_b99_0003",
+    "platform_id": "cya_plat_000134",
+    "event_id": "cya_ev_000375",
+    "source_type": "news_article",
+    "title": "CREAM V1 Exploit: Loss Event Details & Claims Filing",
+    "url": "https://medium.com/nexus-mutual/cream-v1-exploit-loss-event-details-claims-filing-b35f77e02cb6",
+    "publisher": "Nexus Mutual",
+    "published_at": "2021-10-30",
+    "archived_url": null,
+    "accessed_at": "2026-09-01",
+    "reliability": "medium",
+    "claim_scope": "event",
+    "notes": "Independent ecosystem reporting contemporaneously corroborating the October 27 CREAM V1 loss event and approximately USD 130 million removed from the lending market."
+  },
+  {
+    "id": "cya_src_b99_0004",
+    "platform_id": "cya_plat_000134",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "C.R.E.A.M. Finance documentation overview",
+    "url": "https://docs.cream.finance/",
+    "publisher": "C.R.E.A.M. Finance",
+    "published_at": null,
+    "archived_url": null,
+    "accessed_at": "2026-09-01",
+    "reliability": "high",
+    "claim_scope": "entity",
+    "notes": "Current first-party documentation describes C.R.E.A.M. Finance as a permissionless, transparent and non-custodial lending protocol and documents live protocol markets."
+  }
+]

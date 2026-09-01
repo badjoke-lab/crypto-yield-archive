@@ -1,0 +1,26 @@
+[
+  {
+    "id": "cya_plat_000134",
+    "slug": "cream-finance",
+    "canonical_name": "C.R.E.A.M. Finance",
+    "aliases": ["CREAM Finance", "C.R.E.A.M."],
+    "type": "defi_lending",
+    "architecture": "defi",
+    "networks": ["Ethereum", "Arbitrum", "Base", "BNB Chain", "Polygon"],
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": null,
+    "end_date": null,
+    "country_or_origin": "Global",
+    "summary": "Permissionless non-custodial DeFi lending protocol. Its Ethereum V1 markets suffered a major exploit on 2021-10-27, while other markets were reported unaffected and C.R.E.A.M. later continued operating lending interfaces and documentation across multiple networks.",
+    "what_happened": "On 2021-10-27, an attacker exploited C.R.E.A.M. Finance's Ethereum V1 markets and removed approximately USD 130 million of assets. C.R.E.A.M. suspended interactions with the affected Ethereum V1 markets, locked their crTokens, patched the identified vulnerability and later announced a compensation mechanism allocating 1,453,415 CREAM tokens to impacted users. The incident is recorded as a severe historical impairment of the affected V1 deployment rather than as permanent termination of the entire protocol.",
+    "official_url_original": "https://cream.finance/",
+    "official_domain_original": "cream.finance",
+    "official_url_status": "live_verified",
+    "archived_url": null,
+    "confidence": "high",
+    "last_verified_at": "2026-09-01",
+    "uncertainty_notes": "CYA has first-party evidence for the exploit, affected-market suspension and announced CREAM-token compensation process, but not for a universal realized recovery percentage across all affected positions. Current official surfaces remain live, so the historical Ethereum V1 exploit is not treated as proof of protocol-wide shutdown.",
+    "notes": "DeFi backfill record. The affected Ethereum V1 deployment, unaffected contemporaneous markets and later/current protocol surfaces are kept distinct."
+  }
+]

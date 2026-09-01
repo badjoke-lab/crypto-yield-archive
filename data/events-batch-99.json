@@ -1,0 +1,17 @@
+[
+  {
+    "id": "cya_ev_000375",
+    "platform_id": "cya_plat_000134",
+    "event_type": "exploit",
+    "event_date": "2021-10-27",
+    "title": "C.R.E.A.M. Finance Ethereum V1 exploit removes approximately USD 130 million",
+    "description": "C.R.E.A.M. Finance reported that its Ethereum V1 markets were exploited on 2021-10-27, allowing an attacker to remove approximately USD 130 million of assets. The protocol suspended interactions with the affected Ethereum V1 markets and locked their crTokens. C.R.E.A.M. stated that other V1 markets and Iron Bank were not affected by this specific exploit and later announced a CREAM-token compensation mechanism for impacted users.",
+    "networks": ["Ethereum"],
+    "exploit_amount_usd": 130000000,
+    "impact_level": "critical",
+    "event_status_effect": "limited",
+    "source_count": 3,
+    "confidence": "high",
+    "notes": "The USD 130 million figure is the reported value removed from the affected Ethereum V1 markets, not a universal final customer-loss or recovery figure. The event is bounded to the affected deployment."
+  }
+]
