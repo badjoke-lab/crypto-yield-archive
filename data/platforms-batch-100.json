@@ -1,0 +1,26 @@
+[
+  {
+    "id": "cya_plat_000135",
+    "slug": "radiant-capital",
+    "canonical_name": "Radiant Capital",
+    "aliases": ["Radiant", "Radiant Capital DAO", "RDNT"],
+    "type": "defi_lending",
+    "architecture": "defi",
+    "networks": ["Arbitrum", "BNB Chain", "Ethereum", "Base"],
+    "status": "limited",
+    "failure_reason": "voluntary_shutdown",
+    "launch_date": null,
+    "end_date": null,
+    "country_or_origin": "Global",
+    "summary": "Omnichain non-custodial DeFi lending protocol that suffered two major security incidents in 2024 and entered an orderly maintenance-mode wind-down in 2026. Users retain access to withdraw, repay and manage positions while active development and new borrowing have ceased and recovery/remediation infrastructure remains in place.",
+    "what_happened": "On 2024-01-02, Radiant's newly launched native USDC market on Arbitrum was exploited through a flash-loan/loss-of-precision mechanism, resulting in unauthorized borrowing of approximately 1,900 WETH and communal bad debt that the DAO later recapitalized. On 2024-10-16, a separate compromise of the protocol's multisig signing process enabled attackers to drain approximately USD 50 million from core markets on Arbitrum and BNB Chain and abuse open user approvals. Recovery and remediation efforts continued into 2026. On 2026-06-01, Radiant announced an orderly wind-down: active development ceased, borrowing was disabled across Core and RIZv1 markets, RDNT emissions were discontinued, and the protocol shifted to maintenance, withdrawals/repayments, user support and recovery work.",
+    "official_url_original": "https://radiant.capital/",
+    "official_domain_original": "radiant.capital",
+    "official_url_status": "live_verified",
+    "archived_url": null,
+    "confidence": "high",
+    "last_verified_at": "2026-09-01",
+    "uncertainty_notes": "Radiant's June 2026 announcement explicitly says the protocol is not being shut down immediately: front-end functionality, immutable contracts, position management and remediation/recovery support remain. CYA therefore uses status=limited rather than operations_ended. No universal realized recovery percentage is asserted for users affected by the October 2024 exploit.",
+    "notes": "DeFi backfill record. January 2024 bad debt, October 2024 user losses, and the 2026 maintenance-mode wind-down are modeled as distinct lifecycle stages."
+  }
+]
