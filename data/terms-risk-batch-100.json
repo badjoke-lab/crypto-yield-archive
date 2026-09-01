@@ -1,0 +1,9 @@
+[
+  {
+    "platform_id": "cya_plat_000135",
+    "terms_status": "customer_owned",
+    "source_evidence_id": "cya_src_b100_0003",
+    "notes": "Radiant is modeled as non-custodial DeFi lending rather than a platform-owned account balance. The October 2024 incident nevertheless demonstrates material administrative-control and approval risk: compromised multisig signing enabled hostile contract control, and open-ended token approvals allowed additional unauthorized transfers from user wallets. The June 2026 wind-down further limits new borrowing while preserving user-directed withdrawals, repayments and position management.",
+    "confidence": "high"
+  }
+]
