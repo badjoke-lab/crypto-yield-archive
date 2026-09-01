@@ -1,0 +1,26 @@
+[
+  {
+    "id": "cya_plat_000133",
+    "slug": "euler",
+    "canonical_name": "Euler",
+    "aliases": ["Euler Finance", "Euler Protocol", "Euler V1", "Euler V2"],
+    "type": "defi_lending",
+    "architecture": "defi",
+    "networks": ["Ethereum"],
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": null,
+    "end_date": null,
+    "country_or_origin": "Global",
+    "summary": "Decentralized lending protocol whose Euler V1 deployment suffered a major exploit on 2023-03-13. Recoverable stolen assets were subsequently returned and a user-asset redemption process followed. The project later rebuilt and relaunched as the modular Euler V2 lending system.",
+    "what_happened": "Euler V1 was exploited on 2023-03-13 for approximately USD 197 million in assets. Euler reported that negotiations over the following weeks resulted in recovery of the stolen funds available for recovery, after which the community established a redemption process for affected users. Rather than treating the exploited V1 deployment as uninterrupted, CYA records the exploit and recovery as a distinct lifecycle event and the later Euler V2 launch as the project's rebuilt successor architecture.",
+    "official_url_original": "https://www.euler.finance/",
+    "official_domain_original": "euler.finance",
+    "official_url_status": "live_verified",
+    "archived_url": null,
+    "confidence": "high",
+    "last_verified_at": "2026-09-01",
+    "uncertainty_notes": "The return of exploit-linked assets and the subsequent redemption mechanism are well documented, but CYA does not infer identical economic outcomes for every historical position from the aggregate recovery statement alone. Euler V2 is a rebuilt protocol architecture rather than evidence that Euler V1 operated continuously through the incident.",
+    "notes": "Promoted in the DeFi omission-remediation lane after CYA scope was corrected to include historically significant DeFi lending and yield systems."
+  }
+]
