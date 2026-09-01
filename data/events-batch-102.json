@@ -1,0 +1,44 @@
+[
+  {
+    "id": "cya_ev_000381",
+    "platform_id": "cya_plat_000137",
+    "event_type": "other",
+    "event_date": "2020-11-26",
+    "title": "Compound DAI market experiences approximately 85.2 million DAI of liquidations",
+    "description": "An unexpected increase in the DAI price on Coinbase Pro triggered large liquidations in Compound's DAI market. Later Compound governance discussion quantified approximately 85.2 million DAI of liquidations and considered, but did not automatically establish, compensation for affected accounts.",
+    "networks": ["Ethereum"],
+    "impact_level": "critical",
+    "event_status_effect": "none",
+    "source_count": 1,
+    "confidence": "high",
+    "notes": "The 85.2 million DAI figure is a liquidation volume cited in Compound governance discussion, not a universal final loss, protocol bad-debt figure, or realized compensation amount."
+  },
+  {
+    "id": "cya_ev_000382",
+    "platform_id": "cya_plat_000137",
+    "event_type": "other",
+    "event_date": "2021-09-29",
+    "title": "Compound Proposal 62 bug enables excessive COMP reward claims",
+    "description": "A bug introduced through Compound governance Proposal 62 caused incorrect COMP reward accounting and enabled certain users to claim excessive COMP. Compound governance subsequently prepared and executed patches, including Proposal 64, and temporarily restricted COMP claims for potentially affected users while correcting accrual state.",
+    "networks": ["Ethereum"],
+    "impact_level": "high",
+    "event_status_effect": "limited",
+    "source_count": 3,
+    "confidence": "high",
+    "notes": "Community analysis later described roughly USD 50 million worth of COMP as lost through the exploit. This is treasury/reward-token loss and is not modeled as a universal customer-principal loss figure."
+  },
+  {
+    "id": "cya_ev_000383",
+    "platform_id": "cya_plat_000137",
+    "event_type": "market_paused",
+    "event_date": "2022-08-30",
+    "title": "Compound cETH price-feed incident temporarily freezes withdrawals and liquidations",
+    "description": "A cETH price-feed upgrade introduced an invalid price path that effectively froze withdrawals and liquidations in the cETH market. Compound V2 markets other than cETH and Compound III remained functional. Proposal 119 reverted the problematic upgrade and restored cETH price feeds on 2022-09-07.",
+    "networks": ["Ethereum"],
+    "impact_level": "high",
+    "event_status_effect": "limited",
+    "source_count": 1,
+    "confidence": "high",
+    "notes": "The incident was a temporary market-specific denial of service and is not treated as protocol-wide shutdown or evidence of universal user loss."
+  }
+]
