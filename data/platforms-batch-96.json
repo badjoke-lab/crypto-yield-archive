@@ -1,0 +1,26 @@
+[
+  {
+    "id": "cya_plat_000131",
+    "slug": "yay-staking",
+    "canonical_name": "Yay! Staking",
+    "aliases": ["Yay Staking"],
+    "type": "centralized_yield",
+    "architecture": "hybrid",
+    "networks": ["Ethereum"],
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": "2024-08-28",
+    "end_date": null,
+    "country_or_origin": "Japan / global crypto ecosystem",
+    "summary": "Yield and staking campaign operated through Yay! that routes users into partner protocols including Kelp. A Kelp security incident beginning 2026-04-18 impaired the affected agETH unstaking/withdrawal path until Kelp's Always Gain vault reopened around 2026-05-25.",
+    "what_happened": "Yay! reported that a security incident affecting Kelp, one of the protocols used by Yay! Staking, led Yay! to pause new ETH staking and warned that unstaking could be delayed because it depended on Kelp contracts. On 2026-05-18, Yay! said Kelp's rsETH protocol had resumed but the Always Gain agETH vault used by Yay! Staking was still awaiting reopening. Around 2026-05-25, Yay! reported that the agETH vault had reopened and that unstaking and withdrawals were again operating normally.",
+    "official_url_original": "https://portal.yay.space/stake",
+    "official_domain_original": "yay.space",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://portal.yay.space/stake",
+    "confidence": "medium",
+    "last_verified_at": "2026-08-31",
+    "uncertainty_notes": "Reviewed evidence supports a temporary product/path-level impairment and later service restoration. It does not establish Yay! insolvency, project shutdown, permanent customer loss, a platform-wide withdrawal freeze across every Yay! staking path, or a universal customer recovery percentage.",
+    "notes": "Yay! Staking is recorded as a historically significant staking/yield product rather than as an exchange. The Kelp dependency and incident boundary are kept distinct from the Yay! operating entity."
+  }
+]
