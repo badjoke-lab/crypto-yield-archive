@@ -1,0 +1,12 @@
+[
+  {
+    "platform_id": "cya_plat_000137",
+    "product_type": "defi_lending_market",
+    "product_name": "Compound lending markets",
+    "networks": ["Ethereum", "Arbitrum", "Base", "Optimism", "Polygon", "Linea", "Mantle", "Unichain", "Ronin", "Scroll"],
+    "custody_model": "non_custodial_smart_contract",
+    "yield_source": "borrower_interest",
+    "contract_addresses": [],
+    "notes": "Compound operates non-custodial lending markets across Compound V2 and Compound III deployments. This record is platform-level and intentionally does not enumerate every market or collateral asset."
+  }
+]

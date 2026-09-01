@@ -1,0 +1,26 @@
+[
+  {
+    "id": "cya_plat_000137",
+    "slug": "compound",
+    "canonical_name": "Compound",
+    "aliases": ["Compound Protocol", "Compound Finance", "COMP"],
+    "type": "defi_lending",
+    "architecture": "defi",
+    "networks": ["Ethereum", "Arbitrum", "Base", "Optimism", "Polygon", "Linea", "Mantle", "Unichain", "Ronin", "Scroll"],
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": null,
+    "end_date": null,
+    "country_or_origin": "Global",
+    "summary": "Non-custodial DeFi lending protocol with Compound V2 and Compound III markets. Compound has remained operational through several historically significant incidents, including a November 2020 DAI liquidation event, a September 2021 COMP reward-distribution bug, and an August 2022 cETH price-feed freeze.",
+    "what_happened": "On 2020-11-26, an abrupt DAI price increase on Coinbase Pro triggered approximately 85.2 million DAI of liquidations in Compound's DAI market. On 2021-09-29, a bug introduced through Proposal 62 allowed excessive COMP reward claims, prompting emergency governance patches and temporary restrictions on affected COMP claims. On 2022-08-30, a cETH price-feed upgrade caused a temporary denial of service that effectively froze cETH withdrawals and liquidations until Proposal 119 restored the prior oracle path. Compound continued operating and maintains active lending markets in 2026.",
+    "official_url_original": "https://compound.finance/",
+    "official_domain_original": "compound.finance",
+    "official_url_status": "live_verified",
+    "archived_url": null,
+    "confidence": "high",
+    "last_verified_at": "2026-09-01",
+    "uncertainty_notes": "The reviewed incidents have different economic meanings: 2020 liquidations are not equivalent to protocol bad debt, 2021 excess COMP distribution is not customer-principal loss, and the 2022 cETH incident was a temporary market-specific availability failure. CYA does not infer a universal compensation or recovery percentage across them.",
+    "notes": "DeFi backfill record. Historical incidents are modeled separately while current platform status remains active."
+  }
+]

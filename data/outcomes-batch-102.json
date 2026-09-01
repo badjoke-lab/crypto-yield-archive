@@ -1,0 +1,17 @@
+[
+  {
+    "platform_id": "cya_plat_000137",
+    "outcome_status": "unknown",
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "claim_process_url": null,
+    "claim_classes": ["Accounts liquidated in the November 2020 DAI event", "Accounts affected by the September 2021 COMP accrual bug"],
+    "jurisdictions": ["Global"],
+    "affected_products": ["Compound V2 DAI market", "COMP reward distribution"],
+    "estimated_recovery_rate": null,
+    "as_of": "2026-09-01",
+    "last_verified_at": "2026-09-01",
+    "notes": "The reviewed governance sources document proposed and implemented fixes for protocol mechanics but do not establish one universal customer-outcome percentage across the 2020 liquidation event, the 2021 COMP distribution bug and the 2022 cETH availability incident. CYA therefore leaves aggregate customer outcome unknown rather than inferring compensation or recovery.",
+    "confidence": "high"
+  }
+]
