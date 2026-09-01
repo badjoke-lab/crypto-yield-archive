@@ -1,0 +1,9 @@
+[
+  {
+    "platform_id": "cya_plat_000138",
+    "terms_status": "customer_owned",
+    "source_evidence_id": "cya_src_b103_0007",
+    "notes": "Aave is modeled as non-custodial smart-contract lending rather than a platform-owned account balance. The 2022 CRV event demonstrates liquidity and market-concentration risk that can create protocol bad debt, while the 2023 incident demonstrates governance/guardian controls that can temporarily pause or freeze markets to mitigate a reported vulnerability. These controls do not imply centralized custody of supplied assets.",
+    "confidence": "high"
+  }
+]
