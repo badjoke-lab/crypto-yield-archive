@@ -1,0 +1,12 @@
+[
+  {
+    "platform_id": "cya_plat_000138",
+    "product_type": "defi_lending_market",
+    "product_name": "Aave lending markets",
+    "networks": ["Ethereum", "Avalanche", "Arbitrum", "Optimism", "Polygon", "Base", "BNB Chain", "Gnosis", "Linea", "Scroll", "Metis", "Sonic", "ZKsync"],
+    "custody_model": "non_custodial_smart_contract",
+    "yield_source": "borrower_interest",
+    "contract_addresses": [],
+    "notes": "Aave operates non-custodial supply and borrowing markets across multiple protocol generations and networks. The historical CRV and 2023 security events are represented at protocol/event level; this record intentionally does not enumerate every individual reserve or deployment."
+  }
+]
