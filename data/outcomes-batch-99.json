@@ -1,0 +1,18 @@
+[
+  {
+    "platform_id": "cya_plat_000134",
+    "outcome_status": "unknown",
+    "estimated_recovery_rate": "unknown",
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": "C.R.E.A.M. Finance announced a claim process allocating 1,453,415 CREAM tokens to impacted users, funded from remaining treasury and team allocations.",
+    "claim_process_url": "https://app.cream.finance/claim",
+    "affected_products": ["C.R.E.A.M. Finance Ethereum V1 markets"],
+    "claim_classes": ["Users impacted by the 2021-10-27 Ethereum V1 exploit"],
+    "jurisdictions": [],
+    "as_of": "2026-09-01",
+    "last_verified_at": "2026-09-01",
+    "notes": "The compensation mechanism and one-year claim window are documented, but CYA does not have sufficient evidence to assign a universal realized recovery percentage or to conclude that every affected user was made whole. Token allocation value also should not be equated mechanically with the USD value removed during the exploit.",
+    "confidence": "high"
+  }
+]
