@@ -1,0 +1,18 @@
+[
+  {
+    "platform_id": "cya_plat_000132",
+    "outcome_status": "claims_ongoing",
+    "estimated_recovery_rate": "unknown",
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": "Legacy Goldfinch borrower pools continue through repayments, distributions and recovery processes; Goldfinch Prime investors were separately reported as fully redeemed in July 2026.",
+    "claim_process_url": null,
+    "affected_products": ["Goldfinch V1 borrower pools", "Goldfinch Prime"],
+    "claim_classes": ["Legacy Goldfinch V1 investors"],
+    "jurisdictions": [],
+    "as_of": "2026-09-01",
+    "last_verified_at": "2026-09-01",
+    "notes": "Prime redemption must not be generalized into full recovery for legacy V1 pools. Official materials state that legacy deals remained either awaiting payments or under active recovery.",
+    "confidence": "high"
+  }
+]
