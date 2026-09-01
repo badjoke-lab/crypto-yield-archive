@@ -1,0 +1,25 @@
+[
+  {
+    "id": "cya_plat_000136",
+    "slug": "venus-protocol",
+    "canonical_name": "Venus Protocol",
+    "aliases": ["Venus", "XVS"],
+    "type": "defi_lending",
+    "architecture": "defi",
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": null,
+    "end_date": null,
+    "country_or_origin": "Global",
+    "summary": "Non-custodial DeFi lending protocol with a long-running BNB Chain money market and later multi-chain deployments. Venus experienced a major XVS-linked liquidation shortfall in May 2021 and a separate THE-market manipulation and supply-cap-bypass incident in March 2026, while continuing active protocol operations afterward.",
+    "what_happened": "On 2021-05-18, extreme XVS price movement and resulting liquidations left two major Venus accounts with a shortfall reported later as 2,008 BTC and nearly 6,000 ETH. Venus implemented a treasury/XVS bailout recovery process rather than treating the shortfall as a protocol shutdown. On 2026-03-15, a separate attacker targeted the THE market on BNB Chain, combining direct-token donation that bypassed the normal supply-cap path, exchange-rate inflation, thin-liquidity price manipulation and borrowing. The attack left roughly USD 2.15 million of bad debt. Venus paused affected markets and introduced remediation measures but remained operational. A July 2026 protocol report continued to show active lending-market supply and debt.",
+    "official_url_original": "https://venus.io/",
+    "official_domain_original": "venus.io",
+    "official_url_status": "live_verified",
+    "archived_url": null,
+    "confidence": "high",
+    "last_verified_at": "2026-09-01",
+    "uncertainty_notes": "CYA does not infer a final universal recovery percentage for the 2021 shortfall from the published bailout progress reports. The 2026 THE event is bounded to the affected markets and its roughly USD 14.9 million gross borrowing during the attack is kept distinct from the roughly USD 2.15 million final bad debt reported by the protocol.",
+    "notes": "DeFi backfill record. The 2021 shortfall lifecycle and 2026 THE-market incident are modeled as distinct events; no per-market inventory expansion is introduced."
+  }
+]

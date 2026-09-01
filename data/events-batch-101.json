@@ -1,0 +1,31 @@
+[
+  {
+    "id": "cya_ev_000379",
+    "platform_id": "cya_plat_000136",
+    "event_type": "bad_debt_created",
+    "event_date": "2021-05-18",
+    "title": "Venus XVS-linked liquidations create major BTC and ETH shortfall",
+    "description": "Following extreme XVS price movement and insolvent liquidations, Venus Protocol later reported a shortfall across two major accounts of 2,008 BTC and nearly 6,000 ETH. The protocol developed a bailout mechanism using treasury-distributed XVS and other reserve resources to repay the shortfall over time.",
+    "networks": ["BNB Chain"],
+    "impact_level": "critical",
+    "event_status_effect": "limited",
+    "source_count": 2,
+    "confidence": "high",
+    "notes": "The BTC and ETH figures are protocol shortfall quantities reported by Venus, not a universal customer-loss amount. CYA does not mark the recovery complete without first-party evidence establishing completion."
+  },
+  {
+    "id": "cya_ev_000380",
+    "platform_id": "cya_plat_000136",
+    "event_type": "price_manipulation",
+    "event_date": "2026-03-15",
+    "title": "Venus THE market attack bypasses supply cap and leaves approximately USD 2.15 million bad debt",
+    "description": "An attacker targeted the THE market on Venus Protocol's BNB Chain core pool by combining direct token donations that bypassed the normal mint-time supply-cap check with exchange-rate inflation, thin-liquidity price manipulation and repeated borrowing. The attacker borrowed roughly USD 14.9 million in assets during the attack. After liquidation and unwinding, Venus reported approximately USD 2.15 million in bad debt, primarily in CAKE and THE. Borrowing and withdrawals in affected markets were paused and risk parameters were tightened while the protocol remained operational.",
+    "networks": ["BNB Chain"],
+    "bad_debt_usd": 2150000,
+    "impact_level": "high",
+    "event_status_effect": "limited",
+    "source_count": 1,
+    "confidence": "high",
+    "notes": "Gross assets borrowed during the attack and final bad debt are distinct metrics. The official post-mortem bounds the operational impact to affected markets rather than a protocol-wide shutdown."
+  }
+]
