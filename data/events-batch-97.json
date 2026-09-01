@@ -1,0 +1,16 @@
+[
+  {
+    "id": "cya_ev_000373",
+    "platform_id": "cya_plat_000132",
+    "event_type": "other",
+    "event_date": "2026-07-07",
+    "title": "Goldfinch Prime redemption completes as legacy protocol remains in recovery mode",
+    "description": "Goldfinch reported that Goldfinch Prime investors had been fully redeemed, no new deposits would be accepted and the Prime contract had been paused. The same update distinguished Prime from the legacy Goldfinch V1 deals, where repayments and recovery work remained ongoing. This marks a product wind-down and platform-wide transition to limited maintenance rather than a completed shutdown of all Goldfinch activity.",
+    "networks": ["Ethereum"],
+    "impact_level": "high",
+    "event_status_effect": "limited",
+    "source_count": 1,
+    "confidence": "high",
+    "notes": "The event is intentionally bounded to the documented Prime wind-down plus legacy recovery transition. It does not mark all legacy pools repaid or the protocol fully terminated."
+  }
+]
