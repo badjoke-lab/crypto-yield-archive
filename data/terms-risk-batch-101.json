@@ -1,0 +1,9 @@
+[
+  {
+    "platform_id": "cya_plat_000136",
+    "terms_status": "customer_owned",
+    "source_evidence_id": "cya_src_b101_0004",
+    "notes": "Venus is modeled as non-custodial DeFi lending rather than a platform-owned account balance. Non-custodial custody does not eliminate economic and protocol risk: the 2021 shortfall exposed collateral-price/liquidation risk, while the 2026 THE incident demonstrated that direct-token donation, supply-cap enforcement gaps, thin-liquidity collateral and oracle-price behavior can combine to create protocol bad debt even without platform custody of user balances.",
+    "confidence": "high"
+  }
+]
