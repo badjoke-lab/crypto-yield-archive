@@ -1,0 +1,18 @@
+[
+  {
+    "platform_id": "cya_plat_000133",
+    "outcome_status": "not_applicable",
+    "estimated_recovery_rate": "not_applicable",
+    "repayment_started_at": "2023-04-12",
+    "repayment_completed_at": null,
+    "repayment_method": "Euler published a post-exploit redemption mechanism for distributing recovered assets to affected users after the V1 protocol was disabled.",
+    "claim_process_url": "https://forum.euler.finance/t/plan-for-redemption-of-euler-funds-v2/947",
+    "affected_products": ["Euler V1 lending markets"],
+    "claim_classes": ["Affected Euler V1 users"],
+    "jurisdictions": [],
+    "as_of": "2026-09-01",
+    "last_verified_at": "2026-09-01",
+    "notes": "This was an exploit recovery and protocol redemption process rather than a bankruptcy claims process. Euler states that users' assets were fully recovered at the aggregate protocol level, but CYA does not assign a universal per-position recovery percentage without position-level evidence.",
+    "confidence": "high"
+  }
+]

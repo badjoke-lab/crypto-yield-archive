@@ -1,0 +1,12 @@
+[
+  {
+    "platform_id": "cya_plat_000133",
+    "product_type": "defi_lending_market",
+    "product_name": "Euler lending markets",
+    "networks": ["Ethereum"],
+    "contract_addresses": [],
+    "custody_model": "Non-custodial smart-contract lending. Euler V1 pooled lending positions through protocol contracts; Euler V2 was rebuilt around modular vault and connector infrastructure for permissionless lending markets.",
+    "yield_source": "Interest paid by borrowers using on-chain lending markets and vaults.",
+    "risk_notes": "Smart-contract and market-design risk can cause severe losses or protocol-wide impairment. The March 2023 V1 exploit demonstrates that code-level vulnerabilities can affect otherwise overcollateralized lending positions; the later V2 architecture should be treated as a rebuilt successor rather than evidence that V1 risk was unchanged."
+  }
+]

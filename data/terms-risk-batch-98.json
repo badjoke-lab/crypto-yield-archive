@@ -1,0 +1,11 @@
+[
+  {
+    "platform_id": "cya_plat_000133",
+    "terms_status": "varies_by_product",
+    "asset_ownership_interpretation": "Euler positions are represented through non-custodial smart contracts rather than a centralized account claim. User economic exposure depends on the specific lending market, collateral and liability configuration, and protocol code governing the position.",
+    "affected_product": "Euler lending markets",
+    "source_evidence_id": "cya_src_b98_0004",
+    "notes": "Euler V2 uses a modular architecture built around vault and connector infrastructure. CYA therefore avoids projecting V1 contract behavior or exploit mechanics onto every V2 market and records product-level terms and smart-contract risk separately from the historical V1 incident.",
+    "confidence": "high"
+  }
+]

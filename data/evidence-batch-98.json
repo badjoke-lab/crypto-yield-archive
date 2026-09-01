@@ -1,0 +1,62 @@
+[
+  {
+    "id": "cya_src_b98_0001",
+    "platform_id": "cya_plat_000133",
+    "event_id": "cya_ev_000374",
+    "source_type": "official_statement",
+    "title": "Special Announcement — exploited funds successfully recovered",
+    "url": "https://forum.euler.finance/t/special-announcement/900",
+    "publisher": "Euler DAO Foundation",
+    "published_at": "2023-04-04",
+    "archived_url": null,
+    "accessed_at": "2026-09-01",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "First-party announcement states that the 2023-03-13 exploit extracted approximately USD 200 million and that all recoverable funds were returned following negotiations."
+  },
+  {
+    "id": "cya_src_b98_0002",
+    "platform_id": "cya_plat_000133",
+    "event_id": "cya_ev_000374",
+    "source_type": "official_statement",
+    "title": "Plan for Redemption of Euler Funds V2",
+    "url": "https://forum.euler.finance/t/plan-for-redemption-of-euler-funds-v2/947",
+    "publisher": "Euler Governance Forum",
+    "published_at": "2023-04-12",
+    "archived_url": null,
+    "accessed_at": "2026-09-01",
+    "reliability": "high",
+    "claim_scope": "customer_outcome",
+    "notes": "First-party community redemption plan describing how recovered assets would be distributed to Euler users after the protocol was disabled."
+  },
+  {
+    "id": "cya_src_b98_0003",
+    "platform_id": "cya_plat_000133",
+    "event_id": "cya_ev_000374",
+    "source_type": "news_article",
+    "title": "Euler hacker returns remaining funds, ending recovery effort",
+    "url": "https://www.theblock.co/news/regulation/2023-04-04-euler-hacker-returns-funds-224705",
+    "publisher": "The Block",
+    "published_at": "2023-04-04",
+    "archived_url": null,
+    "accessed_at": "2026-09-01",
+    "reliability": "medium",
+    "claim_scope": "event",
+    "notes": "Independent contemporary reporting corroborating the approximately USD 197 million exploit and return of the outstanding recoverable funds."
+  },
+  {
+    "id": "cya_src_b98_0004",
+    "platform_id": "cya_plat_000133",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "Introducing Euler V2: The Credit Layer for Programmable Finance",
+    "url": "https://www.euler.finance/blog/euler-v2-the-new-modular-age-of-defi",
+    "publisher": "Euler Finance",
+    "published_at": null,
+    "archived_url": null,
+    "accessed_at": "2026-09-01",
+    "reliability": "high",
+    "claim_scope": "entity",
+    "notes": "First-party Euler V2 launch material establishing that Euler relaunched with a new modular lending architecture rather than continuing the affected V1 codebase unchanged."
+  }
+]
