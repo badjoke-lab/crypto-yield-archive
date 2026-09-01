@@ -1,0 +1,17 @@
+[
+  {
+    "platform_id": "cya_plat_000136",
+    "outcome_status": "unknown",
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "claim_process_url": null,
+    "claim_classes": ["Liquidity providers exposed to the May 2021 shortfall"],
+    "jurisdictions": ["Global"],
+    "affected_products": ["Venus BNB Chain lending markets"],
+    "estimated_recovery_rate": null,
+    "as_of": "2026-09-01",
+    "last_verified_at": "2026-09-01",
+    "notes": "Venus published an active bailout/recovery process for the May 2021 shortfall and reported partial repayment progress in 2021, but the evidence reviewed for this batch does not establish a universal final recovery percentage or a definitive completion date. The March 2026 THE incident produced protocol bad debt that Venus stated would be covered by the protocol; this is not treated as evidence of direct customer claims or a completed recovery outcome.",
+    "confidence": "high"
+  }
+]
