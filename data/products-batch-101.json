@@ -1,0 +1,11 @@
+[
+  {
+    "platform_id": "cya_plat_000136",
+    "product_type": "defi_lending_market",
+    "product_name": "Venus lending markets",
+    "custody_model": "non_custodial_smart_contract",
+    "yield_source": "borrower_interest",
+    "contract_addresses": [],
+    "notes": "Venus operates overcollateralized smart-contract lending markets in which suppliers earn borrower-funded interest. This canonical product record is intentionally platform-level and does not enumerate every historical pool or listed asset. The 2021 XVS shortfall and 2026 THE incident demonstrate collateral-liquidity, oracle/price-manipulation, liquidation and market-parameter risks within otherwise non-custodial lending markets."
+  }
+]
