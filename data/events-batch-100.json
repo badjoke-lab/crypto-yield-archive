@@ -1,0 +1,46 @@
+[
+  {
+    "id": "cya_ev_000376",
+    "platform_id": "cya_plat_000135",
+    "event_type": "exploit",
+    "event_date": "2024-01-02",
+    "title": "Radiant Arbitrum native USDC market exploit creates approximately 1,900 WETH bad debt",
+    "description": "Radiant Capital's newly introduced native USDC market on Arbitrum was exploited through a flash-loan/loss-of-precision attack that manipulated the liquidityIndex while reserves were effectively empty. The attacker borrowed approximately 1,900 WETH. Radiant paused lending pools, later resumed unaffected markets, and used DAO/OpEx resources under RFP-27 to recapitalize the resulting communal bad debt.",
+    "networks": ["Arbitrum"],
+    "exploit_amount_usd": 4500000,
+    "impact_level": "high",
+    "event_status_effect": "limited",
+    "source_count": 2,
+    "confidence": "high",
+    "notes": "The approximately USD 4.5 million value is a contemporaneous valuation of roughly 1,900 ETH/WETH and is distinct from the later October 2024 exploit. DAO repayment of communal bad debt is not treated as evidence about outcomes of the October incident."
+  },
+  {
+    "id": "cya_ev_000377",
+    "platform_id": "cya_plat_000135",
+    "event_type": "exploit",
+    "event_date": "2024-10-16",
+    "title": "Radiant multisig compromise drains approximately USD 50 million from Arbitrum and BNB Chain markets",
+    "description": "A targeted compromise of Radiant Capital's multisig signing workflow enabled attackers to obtain malicious signatures and take control of core lending contracts on Arbitrum and BNB Chain. Approximately USD 50 million was drained from core markets, and open-ended user token approvals were also abused to withdraw assets from user wallets. Recovery, tracking and remediation efforts followed, but Radiant later reported that affected users had not been fully remediated and that exploited funds remained unrecovered.",
+    "networks": ["Arbitrum", "BNB Chain"],
+    "exploit_amount_usd": 50000000,
+    "impact_level": "critical",
+    "event_status_effect": "limited",
+    "source_count": 3,
+    "confidence": "high",
+    "notes": "Official Radiant materials describe approximately USD 50M or USD 50M+; CYA records USD 50M as a conservative event metric and does not infer a universal final customer-loss figure."
+  },
+  {
+    "id": "cya_ev_000378",
+    "platform_id": "cya_plat_000135",
+    "event_type": "other",
+    "event_date": "2026-06-01",
+    "title": "Radiant DAO begins orderly wind-down and shifts protocol to maintenance and recovery mode",
+    "description": "After prolonged post-exploit recovery efforts failed to restore a viable operating runway, Radiant Capital DAO announced an orderly wind-down. Active development stopped, borrowing was disabled across Core and RIZv1 markets by setting caps to 1, RDNT emissions were discontinued, and treasury usage was restricted to essential operations. The protocol was not immediately shut down: the front end, immutable contracts, withdrawals, repayments, position management, remediation portal and recovery work were retained in a reduced maintenance state.",
+    "networks": ["Arbitrum", "BNB Chain", "Ethereum", "Base"],
+    "impact_level": "critical",
+    "event_status_effect": "limited",
+    "source_count": 2,
+    "confidence": "high",
+    "notes": "This is a wind-down transition rather than completed operations_ended. CYA should revisit the record after the announced front-end support window and if recovery/remediation infrastructure changes materially."
+  }
+]

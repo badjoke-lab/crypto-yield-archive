@@ -1,0 +1,12 @@
+[
+  {
+    "platform_id": "cya_plat_000135",
+    "product_type": "defi_lending_market",
+    "product_name": "Radiant lending markets",
+    "networks": ["Arbitrum", "BNB Chain", "Ethereum", "Base"],
+    "custody_model": "non_custodial_smart_contract",
+    "yield_source": "borrower_interest",
+    "contract_addresses": [],
+    "notes": "Radiant operated cross-chain lending markets with deposits, borrowing and smart-contract-managed collateral. In June 2026 the DAO disabled new borrowing across Core and RIZv1 markets by setting borrow caps to 1 while retaining withdrawals, repayments and position management during the maintenance-mode wind-down. This record intentionally does not enumerate every historical market deployment."
+  }
+]
