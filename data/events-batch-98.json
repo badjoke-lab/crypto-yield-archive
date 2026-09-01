@@ -1,0 +1,17 @@
+[
+  {
+    "id": "cya_ev_000374",
+    "platform_id": "cya_plat_000133",
+    "event_type": "exploit",
+    "event_date": "2023-03-13",
+    "title": "Euler V1 exploit leads to protocol pause, fund recovery and redemption process",
+    "description": "Euler V1 was exploited on 2023-03-13 for approximately USD 197 million in assets. Euler later reported that all recoverable funds had been returned following negotiations with the exploiter, and the community published a mechanism for restoring assets to affected users. The incident ended the normal lifecycle of the affected V1 deployment; the project subsequently rebuilt and relaunched under the Euler V2 architecture.",
+    "networks": ["Ethereum"],
+    "exploit_amount_usd": 197000000,
+    "impact_level": "critical",
+    "event_status_effect": "limited",
+    "source_count": 4,
+    "confidence": "high",
+    "notes": "Aggregate fund recovery, user redemption and the later V2 relaunch are related but distinct facts. This event does not equate the V2 system with uninterrupted V1 operation."
+  }
+]
