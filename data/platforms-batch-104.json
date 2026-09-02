@@ -1,0 +1,26 @@
+[
+  {
+    "id": "cya_plat_000139",
+    "slug": "silo-finance",
+    "canonical_name": "Silo Finance",
+    "aliases": ["Silo", "Silo Protocol", "Silo v3"],
+    "type": "defi_lending",
+    "architecture": "defi",
+    "networks": ["Ethereum", "Arbitrum", "Avalanche"],
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": null,
+    "end_date": null,
+    "country_or_origin": "Global",
+    "summary": "Risk-isolated non-custodial DeFi lending protocol. Silo experienced a November 2023 GRAIL/USD oracle mispricing event that liquidated three users, while the protocol remained operational and later advanced to Silo v3, live on Ethereum, Arbitrum, and Avalanche in 2026.",
+    "what_happened": "On 2023-11-22, GRAIL/USD pricing used by a Silo Arbitrum market deviated after anomalous HTX trading data entered DIA's feed. Three users became insolvent and were liquidated, with Silo governance reporting roughly USD 21,000 in liquidation losses/fees. DIA removed HTX as a source and tightened deviation controls. A later proposal to compensate the affected users in SILO tokens was defeated. Silo continued operating and Silo v3 remained live in 2026.",
+    "official_url_original": "https://www.silo.finance/",
+    "official_domain_original": "silo.finance",
+    "official_url_status": "live_verified",
+    "archived_url": null,
+    "confidence": "high",
+    "last_verified_at": "2026-09-02",
+    "uncertainty_notes": "The roughly USD 21,000 figure is the governance post's estimate of losses associated with the three liquidations, not a protocol-wide bad-debt figure. The defeated compensation proposal is not treated as realized recovery.",
+    "notes": "DeFi backfill record. The historically significant oracle incident is modeled separately while current platform status remains active."
+  }
+]
