@@ -1,0 +1,12 @@
+[
+  {
+    "platform_id": "cya_plat_000139",
+    "product_type": "defi_lending_market",
+    "product_name": "Silo lending markets",
+    "networks": ["Ethereum", "Arbitrum", "Avalanche"],
+    "custody_model": "non_custodial_smart_contract",
+    "yield_source": "borrower_interest",
+    "contract_addresses": [],
+    "notes": "Silo v3 exposes isolated lending markets and lender vaults. This record intentionally does not enumerate every individual market. The November 2023 GRAIL incident demonstrates oracle and liquidation risk in an isolated market without implying protocol-wide insolvency."
+  }
+]
