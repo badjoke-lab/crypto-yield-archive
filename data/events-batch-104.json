@@ -1,0 +1,16 @@
+[
+  {
+    "id": "cya_ev_000386",
+    "platform_id": "cya_plat_000139",
+    "event_type": "price_manipulation",
+    "event_date": "2023-11-22",
+    "title": "Silo GRAIL oracle deviation liquidates three users",
+    "description": "The DIA GRAIL/USD feed used by a Silo Arbitrum market incorporated anomalous HTX trading data during a broader exchange incident, causing the reported price to deviate materially from the perceived market value. Three users became insolvent and were liquidated. Silo governance estimated roughly USD 21,000 in losses associated with the liquidations. DIA removed HTX as a source and tightened deviation thresholds after the incident.",
+    "networks": ["Arbitrum"],
+    "impact_level": "medium",
+    "event_status_effect": "limited",
+    "source_count": 2,
+    "confidence": "high",
+    "notes": "This is an oracle-data incident, not evidence of a protocol-wide exploit or insolvency. The approximately USD 21,000 figure is not represented as protocol bad debt."
+  }
+]
