@@ -1,0 +1,31 @@
+[
+  {
+    "id": "cya_ev_000387",
+    "platform_id": "cya_plat_000140",
+    "event_type": "other",
+    "event_date": "2025-04-10",
+    "title": "Morpho App configuration error misroutes token approvals",
+    "description": "A Morpho App update contained an SDK configuration error that sent exact-amount token approvals to Bundler3 instead of the intended adapters. One bundled transaction was intercepted by a whitehat MEV bot, which later returned the funds. Morpho rolled back the frontend update within minutes of being alerted, and the protocol's smart contracts were not affected.",
+    "networks": ["Ethereum"],
+    "impact_level": "medium",
+    "event_status_effect": "limited",
+    "source_count": 1,
+    "confidence": "high",
+    "notes": "Application-layer configuration incident. The intercepted funds were returned; no protocol-wide contract loss is inferred."
+  },
+  {
+    "id": "cya_ev_000388",
+    "platform_id": "cya_plat_000140",
+    "event_type": "price_manipulation",
+    "event_date": "2025-05-25",
+    "title": "cUSDO/USDC LP oracle manipulation creates approximately 49.3k USDC bad debt",
+    "description": "An attacker manipulated the oracle used by a Base Morpho lending market for Aerodrome cUSDO/USDC LP collateral. The attack created approximately 49.3k USDC of market bad debt. The market curator covered the shortfall internally within hours, after which no external lender loss remained and the affected market was moved to close-only allocation from the curator's vault.",
+    "networks": ["Base"],
+    "bad_debt_usd": 49303,
+    "impact_level": "medium",
+    "event_status_effect": "limited",
+    "source_count": 1,
+    "confidence": "high",
+    "notes": "The root cause was the market oracle design and curation, not a Morpho core-contract exploit. The bad debt was fully covered by the curator."
+  }
+]
