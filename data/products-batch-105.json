@@ -1,0 +1,12 @@
+[
+  {
+    "platform_id": "cya_plat_000140",
+    "product_type": "defi_lending_market",
+    "product_name": "Morpho lending markets and vaults",
+    "networks": ["Ethereum", "Base"],
+    "custody_model": "non_custodial_smart_contract",
+    "yield_source": "borrower_interest",
+    "contract_addresses": [],
+    "notes": "Morpho provides permissionless isolated lending markets and vault infrastructure. This platform-level record intentionally avoids exhaustive market, vault, curator, or chain inventory; historically significant application and market incidents are modeled in the event layer."
+  }
+]
