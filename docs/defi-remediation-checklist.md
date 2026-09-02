@@ -6,8 +6,11 @@
 - [x] Stage Tectonic immediately.
 - [x] Reopen Goldfinch for review.
 - [x] Seed historical DeFi backfill queue.
-- [ ] Review first-party Tectonic/Cronos incident evidence.
-- [ ] Run repository validation on the correction PR.
-- [ ] Merge scope/schema correction.
-- [ ] Prepare Tectonic canonical promotion if evidence is sufficient.
-- [ ] Continue historical DeFi backfill batches.
+- [x] Review first-party Tectonic/Cronos incident evidence.
+- [x] Run repository validation on the correction PR.
+- [x] Merge scope/schema correction.
+- [x] Promote Tectonic canonically after evidence review.
+- [x] Review and promote the documented historical DeFi backfill queue through Morpho where evidence and significance thresholds were met.
+- [x] Preserve event/evidence/outcome boundaries and avoid indiscriminate per-market inventory.
+
+The omission-remediation lane is complete. Future DeFi additions return to normal CYA record-growth policy rather than this corrective checklist.
