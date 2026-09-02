@@ -1,0 +1,26 @@
+[
+  {
+    "id": "cya_plat_000138",
+    "slug": "aave",
+    "canonical_name": "Aave",
+    "aliases": ["Aave Protocol", "Aave V2", "Aave V3", "Aave V4"],
+    "type": "defi_lending",
+    "architecture": "defi",
+    "networks": ["Ethereum", "Avalanche", "Arbitrum", "Optimism", "Polygon", "Base", "BNB Chain", "Gnosis", "Linea", "Scroll", "Metis", "Sonic", "ZKsync"],
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": null,
+    "end_date": null,
+    "country_or_origin": "Global",
+    "summary": "Non-custodial DeFi lending protocol spanning multiple generations and networks. Aave remained operational through a November 2022 CRV bad-debt event and a November 2023 precautionary security pause, and launched Aave V4 on Ethereum and Avalanche in 2026.",
+    "what_happened": "On 2022-11-22, a large CRV short position on Aave V2 Ethereum was liquidated and left approximately USD 1.7 million of protocol bad debt, later repaid through a DAO treasury process. On 2023-11-04, a vulnerability reported through Aave's security process led the Guardian to pause or freeze affected V2 and V3 pools and assets as a precaution. The affected markets were progressively restored and all V2/V3 pools were operating normally again by 2023-11-16. Aave continued expanding and launched V4 on Ethereum in March 2026 and Avalanche in July 2026.",
+    "official_url_original": "https://aave.com/",
+    "official_domain_original": "aave.com",
+    "official_url_status": "live_verified",
+    "archived_url": null,
+    "confidence": "high",
+    "last_verified_at": "2026-09-01",
+    "uncertainty_notes": "The 2022 CRV event created protocol bad debt but is not treated as a universal customer-loss amount. The 2023 security response was precautionary and temporary; no protocol-wide customer loss is inferred from the pause itself.",
+    "notes": "DeFi backfill record. Historically significant incidents are modeled separately while current platform status remains active."
+  }
+]

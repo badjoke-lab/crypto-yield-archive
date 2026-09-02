@@ -1,0 +1,17 @@
+[
+  {
+    "platform_id": "cya_plat_000138",
+    "outcome_status": "unknown",
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "claim_process_url": null,
+    "claim_classes": [],
+    "jurisdictions": ["Global"],
+    "affected_products": ["Aave V2 Ethereum CRV market", "Temporarily paused or frozen Aave V2/V3 markets and assets"],
+    "estimated_recovery_rate": null,
+    "as_of": "2026-09-01",
+    "last_verified_at": "2026-09-01",
+    "notes": "The 2022 CRV reserve deficit was addressed through DAO treasury actions that cleared the protocol's excess debt. That protocol-level recapitalization is not converted into a universal customer recovery percentage. The 2023 security response was precautionary and temporary; reviewed evidence confirms restoration of all affected markets but does not establish a customer compensation process requiring aggregate recovery modeling.",
+    "confidence": "high"
+  }
+]

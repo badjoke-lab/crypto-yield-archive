@@ -1,0 +1,31 @@
+[
+  {
+    "id": "cya_ev_000384",
+    "platform_id": "cya_plat_000138",
+    "event_type": "bad_debt_created",
+    "event_date": "2022-11-22",
+    "title": "Aave V2 CRV liquidation leaves approximately USD 1.7 million bad debt",
+    "description": "A large CRV short position on Aave V2 Ethereum was liquidated after CRV price rebounded. The collateral position was fully liquidated, with approximately USD 63 million USDC liquidated and roughly USD 1.7 million of residual CRV-denominated protocol bad debt. The DAO later approved a treasury-funded repayment path that cleared the remaining excess debt.",
+    "networks": ["Ethereum"],
+    "bad_debt_usd": 1700000,
+    "impact_level": "high",
+    "event_status_effect": "limited",
+    "source_count": 3,
+    "confidence": "high",
+    "notes": "Liquidation volume and residual protocol bad debt are distinct metrics. Treasury repayment of the reserve deficit is not treated as evidence of a universal customer recovery percentage."
+  },
+  {
+    "id": "cya_ev_000385",
+    "platform_id": "cya_plat_000138",
+    "event_type": "protocol_paused",
+    "event_date": "2023-11-04",
+    "title": "Aave pauses and freezes affected V2 and V3 markets after reported vulnerability",
+    "description": "Following a vulnerability reported through Aave's security process, the Aave Guardian paused Aave V2 Ethereum and froze or paused affected assets across several V3 deployments as a precaution. Governance and service providers introduced fixes and a liquidation grace mechanism, then progressively unpaused affected markets. By 2023-11-16 all Aave V2 and V3 pools were reported operating normally again.",
+    "networks": ["Ethereum", "Polygon", "Arbitrum", "Optimism", "Avalanche"],
+    "impact_level": "high",
+    "event_status_effect": "limited",
+    "source_count": 3,
+    "confidence": "high",
+    "notes": "This event records precautionary availability restrictions and restoration. It does not infer a protocol-wide exploit loss or permanent shutdown."
+  }
+]
