@@ -1,0 +1,17 @@
+[
+  {
+    "platform_id": "cya_plat_000139",
+    "outcome_status": "unknown",
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "claim_process_url": null,
+    "claim_classes": ["Users liquidated during the November 22, 2023 GRAIL/USD oracle deviation"],
+    "jurisdictions": ["Global"],
+    "affected_products": ["Silo Arbitrum GRAIL lending market"],
+    "estimated_recovery_rate": null,
+    "as_of": "2026-09-02",
+    "last_verified_at": "2026-09-02",
+    "notes": "Silo governance discussed compensating the three affected users with SILO tokens, but the proposal was defeated. CYA therefore does not record realized compensation or a recovery percentage. The incident did not establish a protocol-wide claims process.",
+    "confidence": "high"
+  }
+]

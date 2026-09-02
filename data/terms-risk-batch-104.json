@@ -1,0 +1,9 @@
+[
+  {
+    "platform_id": "cya_plat_000139",
+    "terms_status": "customer_owned",
+    "source_evidence_id": "cya_src_b104_0003",
+    "notes": "Silo is modeled as non-custodial smart-contract lending rather than a platform-owned account balance. The November 2023 event demonstrates third-party oracle and liquidation risk in isolated lending markets; non-custodial architecture does not remove those economic risks or guarantee compensation for oracle-driven liquidations.",
+    "confidence": "high"
+  }
+]
