@@ -1,0 +1,54 @@
+[
+  {
+    "id": "cya_src_b105_0001",
+    "platform_id": "cya_plat_000140",
+    "event_id": "cya_ev_000387",
+    "source_type": "official_statement",
+    "title": "Morpho App Incident: April 10, 2025",
+    "url": "https://morpho.org/blog/morpho-app-incident-april-10-2025/",
+    "publisher": "Morpho",
+    "published_at": "2025-04-17",
+    "accessed_at": "2026-09-02",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "Official incident report documenting the frontend SDK misconfiguration, whitehat interception and return of funds, rapid rollback, and unaffected Morpho smart contracts."
+  },
+  {
+    "id": "cya_src_b105_0002",
+    "platform_id": "cya_plat_000140",
+    "event_id": "cya_ev_000388",
+    "source_type": "community_reference",
+    "title": "Post Mortem - Aerodrome cUSDO/USDC AMM LP Oracle Manipulation on Morpho Lending Market",
+    "url": "https://forum.morpho.org/t/post-mortem-aerodrome-cusdo-usdc-amm-lp-oracle-manipulation-on-morpho-lending-market/1794",
+    "publisher": "Morpho Governance Forum / Clearstar Labs",
+    "published_at": "2025-05-26",
+    "accessed_at": "2026-09-02",
+    "reliability": "medium",
+    "claim_scope": "event",
+    "notes": "Curator post-mortem documenting the Base oracle manipulation, approximately 49,303 USDC bad debt, internal coverage within hours, no remaining external lender loss, and close-only treatment."
+  },
+  {
+    "id": "cya_src_b105_0003",
+    "platform_id": "cya_plat_000140",
+    "source_type": "official_statement",
+    "title": "Risk & Security Documentation",
+    "url": "https://docs.morpho.org/learn/resources/risks/",
+    "publisher": "Morpho",
+    "accessed_at": "2026-09-02",
+    "reliability": "high",
+    "claim_scope": "status",
+    "notes": "Current Morpho documentation describing active protocol risk controls and explicit oracle-risk boundaries for permissionless markets."
+  },
+  {
+    "id": "cya_src_b105_0004",
+    "platform_id": "cya_plat_000140",
+    "source_type": "official_statement",
+    "title": "Morpho Blog",
+    "url": "https://morpho.org/blog/",
+    "publisher": "Morpho",
+    "accessed_at": "2026-09-02",
+    "reliability": "high",
+    "claim_scope": "status",
+    "notes": "Current official product and protocol release stream confirming active Morpho development and deployments through August 2026."
+  }
+]
