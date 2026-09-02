@@ -1,0 +1,43 @@
+[
+  {
+    "id": "cya_src_b104_0001",
+    "platform_id": "cya_plat_000139",
+    "event_id": "cya_ev_000386",
+    "source_type": "community_reference",
+    "title": "DIA Oracle misreported GRAIL/USD price - November 22nd 2023",
+    "url": "https://gov.silo.finance/t/dia-oracle-misreported-grail-usd-price-november-22nd-2023/421",
+    "publisher": "Silo Governance",
+    "published_at": "2023-11-27",
+    "accessed_at": "2026-09-02",
+    "reliability": "medium",
+    "claim_scope": "event",
+    "notes": "Primary Silo governance incident thread documenting the November 22 GRAIL/USD feed deviation, three liquidated users, roughly USD 21K in losses, DIA mitigation, and the later defeated compensation proposal."
+  },
+  {
+    "id": "cya_src_b104_0002",
+    "platform_id": "cya_plat_000139",
+    "event_id": "cya_ev_000386",
+    "source_type": "official_statement",
+    "title": "CDR #042: Silo Finance | Price Feeds",
+    "url": "https://forum.diadata.org/t/cdr-042-silo-finance-price-feeds/1010",
+    "publisher": "DIA",
+    "published_at": "2023-11-23",
+    "accessed_at": "2026-09-02",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "Oracle-provider disclosure describing the GRAIL feed deviation, removal of HTX as a data source, and tightened deviation thresholds."
+  },
+  {
+    "id": "cya_src_b104_0003",
+    "platform_id": "cya_plat_000139",
+    "source_type": "official_statement",
+    "title": "Introduction to Silo v3",
+    "url": "https://docs.silo.finance/docs/users/intro/",
+    "publisher": "Silo Finance",
+    "published_at": "2026-04-02",
+    "accessed_at": "2026-09-02",
+    "reliability": "high",
+    "claim_scope": "status",
+    "notes": "Current Silo documentation stating Silo v3 is live on Ethereum, Arbitrum, and Avalanche."
+  }
+]
