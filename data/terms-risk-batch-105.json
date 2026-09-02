@@ -1,0 +1,9 @@
+[
+  {
+    "platform_id": "cya_plat_000140",
+    "terms_status": "customer_owned",
+    "source_evidence_id": "cya_src_b105_0003",
+    "notes": "Morpho is modeled as non-custodial smart-contract lending infrastructure. Permissionless market creation leaves oracle, collateral, curator, and market-configuration risk with each market context; the April 2025 App incident also shows application-layer transaction-construction risk. These risks do not imply centralized custody of supplied assets.",
+    "confidence": "high"
+  }
+]
