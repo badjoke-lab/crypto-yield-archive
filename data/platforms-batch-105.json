@@ -1,0 +1,26 @@
+[
+  {
+    "id": "cya_plat_000140",
+    "slug": "morpho",
+    "canonical_name": "Morpho",
+    "aliases": ["Morpho Protocol", "Morpho Blue", "Morpho Vaults"],
+    "type": "defi_lending",
+    "architecture": "defi",
+    "networks": ["Ethereum", "Base"],
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": null,
+    "end_date": null,
+    "country_or_origin": "Global",
+    "summary": "Permissionless non-custodial DeFi lending infrastructure with isolated markets and vaults. Morpho remained operational through a 2025 application-layer configuration incident and a separate 2025 Base market oracle-manipulation event, while continuing active product and protocol releases in 2026.",
+    "what_happened": "On 2025-04-10, a Morpho App SDK configuration error sent exact-amount token approvals to the Bundler3 contract instead of its adapters. One bundled transaction was intercepted by a whitehat MEV bot, the funds were returned, and the frontend was rolled back within minutes; Morpho smart contracts were unaffected. On 2025-05-25, an oracle design flaw in a curator-created Base cUSDO/USDC LP lending market was manipulated, creating approximately 49.3k USDC of bad debt. The curator covered the shortfall within hours, leaving no external lender losses in that market. Morpho continued operating and releasing products in 2026.",
+    "official_url_original": "https://morpho.org/",
+    "official_domain_original": "morpho.org",
+    "official_url_status": "live_verified",
+    "archived_url": null,
+    "confidence": "high",
+    "last_verified_at": "2026-09-02",
+    "uncertainty_notes": "The April 2025 event was an application-layer configuration failure rather than a core-contract exploit. The May 2025 event was isolated to a curator-created market and oracle design; approximately 49.3k USDC market bad debt was fully covered by the curator and is not treated as protocol-wide customer loss.",
+    "notes": "DeFi backfill record. Historically significant application and market-level incidents are modeled separately while current platform status remains active."
+  }
+]
