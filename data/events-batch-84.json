@@ -9,6 +9,7 @@
     "description": "Kinza's market UI displayed that new supply and borrow functions were disabled while repay and withdraw functions remained open.",
     "impact_level": "high",
     "source_ids": ["cya_src_b90_0001", "cya_src_b90_0002", "cya_src_b90_0003"],
+    "source_count": 3,
     "confidence": "medium"
   }
 ]
