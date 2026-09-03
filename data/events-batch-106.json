@@ -1,0 +1,16 @@
+[
+  {
+    "id": "cya_ev_000389",
+    "platform_id": "cya_plat_000141",
+    "event_type": "price_manipulation",
+    "event_date": "2026-08-27",
+    "title": "MAMO Core Market exploit on Base",
+    "description": "Moonwell's post-mortem describes an exploit of the Base MAMO Core Market that combined collateral-accounting inflation with MAMO oracle-price manipulation. Emergency mitigation sharply reduced relevant borrow and supply caps. External reporting estimated approximately USD 8.7 million of losses, while the protocol separately reported approximately USD 9.131 million of remaining borrower obligations after liquidations; these metrics are not treated as interchangeable.",
+    "networks": ["Base"],
+    "impact_level": "high",
+    "event_status_effect": "limited",
+    "source_count": 2,
+    "confidence": "high",
+    "notes": "Market-level incident. No single canonical loss_usd or bad_debt_usd value is assigned because the reviewed sources describe different metrics and scopes."
+  }
+]
