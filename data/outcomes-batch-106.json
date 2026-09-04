@@ -1,0 +1,17 @@
+[
+  {
+    "platform_id": "cya_plat_000141",
+    "outcome_status": "unknown",
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "claim_process_url": null,
+    "claim_classes": [],
+    "jurisdictions": ["Japan"],
+    "affected_products": ["Smart Lending crypto lending service"],
+    "estimated_recovery_rate": null,
+    "as_of": "2026-09-04",
+    "last_verified_at": "2026-09-04",
+    "notes": "The official closure notice establishes that the service site and My Page close on 2026-09-04, but this evidence does not establish customer loss, an outstanding claims process, or a repayment outcome.",
+    "confidence": "high"
+  }
+]
