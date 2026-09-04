@@ -1,0 +1,26 @@
+[
+  {
+    "id": "cya_plat_000141",
+    "slug": "smart-lending-jp",
+    "canonical_name": "Smart Lending",
+    "aliases": ["スマートレンディング"],
+    "type": "cefi_lending",
+    "architecture": "cefi",
+    "networks": [],
+    "status": "operations_ended",
+    "failure_reason": "voluntary_shutdown",
+    "launch_date": null,
+    "end_date": "2026-09-04",
+    "country_or_origin": "Japan",
+    "summary": "Japanese crypto lending service that advertised fixed annual rates of approximately 11–13% and announced on 2026-09-02 that its official website and My Page would close on 2026-09-04.",
+    "what_happened": "Smart Lending published an official notice dated 2026-09-02 stating that, following a comprehensive review of its future service policy, the official website and My Page would be closed on 2026-09-04. The lifecycle record therefore treats the platform as operations ended from that date. No insolvency, customer-loss, or withdrawal-impairment cause is asserted by this record.",
+    "official_url_original": "https://smartlending.jp/",
+    "official_domain_original": "smartlending.jp",
+    "official_url_status": "live_verified",
+    "archived_url": null,
+    "confidence": "high",
+    "last_verified_at": "2026-09-04",
+    "uncertainty_notes": "The official closure notice establishes the shutdown date. Public pages contained inconsistent indications about whether lending had fully commenced before closure, so this record does not assert funded customer lending, insolvency, or withdrawal failure without separate evidence.",
+    "notes": "Lifecycle status is operations_ended. CYA has no literal failed/dead status enum; voluntary_shutdown records the supported closure reason without overstating an unverified insolvency or loss event."
+  }
+]
