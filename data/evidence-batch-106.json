@@ -1,0 +1,16 @@
+[
+  {
+    "id": "cya_src_b106_0001",
+    "platform_id": "cya_plat_000141",
+    "event_id": "cya_ev_000389",
+    "source_type": "official_statement",
+    "title": "サービスに関するお知らせ",
+    "url": "https://smartlending.jp/",
+    "publisher": "スマートレンディング株式会社",
+    "published_at": "2026-09-02",
+    "accessed_at": "2026-09-04",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "First-party notice stating that the official website and My Page would close on 2026-09-04 after a comprehensive review of future service policy."
+  }
+]

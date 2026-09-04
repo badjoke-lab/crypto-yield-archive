@@ -1,0 +1,12 @@
+[
+  {
+    "platform_id": "cya_plat_000141",
+    "product_type": "interest_account",
+    "product_name": "Smart Lending crypto lending service",
+    "networks": [],
+    "custody_model": "custodial",
+    "yield_source": "borrower_interest",
+    "contract_addresses": [],
+    "notes": "The public service materials advertised fixed annual rates around 11–13%. This record does not assert that funded lending contracts were actually opened before the shutdown unless separately evidenced."
+  }
+]
