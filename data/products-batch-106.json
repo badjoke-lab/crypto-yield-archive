@@ -1,0 +1,12 @@
+[
+  {
+    "platform_id": "cya_plat_000141",
+    "product_name": "Moonwell Core Markets",
+    "product_type": "defi_lending_market",
+    "networks": ["Base", "Optimism", "Moonbeam", "Moonriver"],
+    "custody_model": "non_custodial_smart_contract",
+    "yield_source": "borrower_interest",
+    "status": "active",
+    "notes": "Platform-level product profile. Individual asset markets are not exhaustively inventoried; the August 2026 MAMO incident is modeled as a historically significant market event."
+  }
+]

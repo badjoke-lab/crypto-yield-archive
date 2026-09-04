@@ -1,0 +1,26 @@
+[
+  {
+    "id": "cya_plat_000141",
+    "slug": "moonwell",
+    "canonical_name": "Moonwell",
+    "aliases": ["Moonwell Protocol", "Moonwell Lending", "Moonwell Core Markets"],
+    "type": "defi_lending",
+    "architecture": "defi",
+    "networks": ["Base", "Optimism", "Moonbeam", "Moonriver"],
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": null,
+    "end_date": null,
+    "country_or_origin": "Global",
+    "summary": "Non-custodial DeFi lending protocol operating isolated lending markets across multiple networks. In August 2026, Moonwell's Base MAMO Core Market suffered a market-level exploit combining collateral-accounting inflation and MAMO oracle-price manipulation. Emergency controls sharply restricted affected borrowing and supply parameters while Moonwell continued operating.",
+    "what_happened": "On 2026-08-27, Moonwell disclosed a Base incident involving the MAMO Core Market. The post-mortem describes a combined path in which collateral accounting and MAMO price manipulation enabled excessive borrowing against the affected market. Moonwell's emergency response included setting Base Core Market borrow caps to 1 wei and MAMO/WELL supply caps to 1 wei. External security reporting estimated losses around USD 8.7 million, while Moonwell's own post-mortem separately reported remaining borrower obligations around USD 9.131 million after liquidations; CYA preserves those as different metrics rather than collapsing them into a single loss figure. Moonwell remained operational after the incident.",
+    "official_url_original": "https://moonwell.fi/",
+    "official_domain_original": "moonwell.fi",
+    "official_url_status": "live_verified",
+    "archived_url": null,
+    "confidence": "high",
+    "last_verified_at": "2026-09-03",
+    "uncertainty_notes": "The August 2026 incident is bounded to the Base MAMO Core Market and associated risk controls. CYA does not treat the external USD 8.7M estimate and the protocol's approximately USD 9.131M remaining borrower obligations as equivalent. No protocol-wide insolvency, universal customer loss, or completed recovery percentage is inferred.",
+    "notes": "Added from candidate issue #357 after the 140-platform checkpoint. Market-level incident modeling does not imply that every Moonwell market or deployment was impaired."
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "platform_id": "cya_plat_000141",
+    "outcome_status": "unknown",
+    "estimated_recovery_rate": "Not classified. Reviewed sources establish a bounded market exploit and emergency mitigation but do not establish a completed uniform lender recovery or final recovery percentage.",
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": "Incident remediation and market risk controls; no verified universal repayment process",
+    "claim_process_url": null,
+    "affected_products": ["Moonwell Base MAMO Core Market"],
+    "claim_classes": ["Lenders and borrowers exposed to the affected MAMO Core Market"],
+    "jurisdictions": ["Global"],
+    "as_of": "2026-09-03",
+    "last_verified_at": "2026-09-03",
+    "notes": "No protocol-wide recovery percentage is inferred. Different loss/obligation figures in reviewed sources are preserved as distinct metrics.",
+    "confidence": "high"
+  }
+]

@@ -1,0 +1,9 @@
+[
+  {
+    "platform_id": "cya_plat_000141",
+    "terms_status": "customer_owned",
+    "source_id": "cya_src_b106_0003",
+    "confidence": "high",
+    "notes": "Moonwell is modeled as non-custodial smart-contract lending infrastructure. This does not remove oracle, collateral, liquidity, liquidation, market-configuration or governance risk, and does not imply that every isolated market has equivalent risk."
+  }
+]

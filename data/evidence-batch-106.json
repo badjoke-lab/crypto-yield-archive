@@ -1,0 +1,54 @@
+[
+  {
+    "id": "cya_src_b106_0001",
+    "platform_id": "cya_plat_000141",
+    "event_id": "cya_ev_000389",
+    "source_type": "community_reference",
+    "title": "Post-Mortem: MAMO Market Incident on Base",
+    "url": "https://forum.moonwell.fi/t/post-mortem-mamo-market-incident-on-base/2208",
+    "publisher": "Moonwell Governance Forum / Anthias Labs",
+    "published_at": "2026-08-31",
+    "accessed_at": "2026-09-03",
+    "reliability": "medium",
+    "claim_scope": "event",
+    "notes": "Protocol governance post-mortem describing the exploit path, emergency mitigation, exact onchain amounts and remaining borrower obligations after liquidations."
+  },
+  {
+    "id": "cya_src_b106_0002",
+    "platform_id": "cya_plat_000141",
+    "event_id": "cya_ev_000389",
+    "source_type": "community_reference",
+    "title": "Weekly Governance Update: Week of Aug 24th, 2026",
+    "url": "https://forum.moonwell.fi/t/weekly-governance-recaps/786/134",
+    "publisher": "Moonwell Governance Forum / Boardroom",
+    "published_at": "2026-08-31",
+    "accessed_at": "2026-09-03",
+    "reliability": "medium",
+    "claim_scope": "event",
+    "notes": "Moonwell governance recap confirming the August 27 exploit of the MAMO Core Market on Base and publication of the full post-mortem."
+  },
+  {
+    "id": "cya_src_b106_0003",
+    "platform_id": "cya_plat_000141",
+    "source_type": "official_statement",
+    "title": "Moonwell Yield Backend",
+    "url": "https://github.com/moonwell-fi/yield-backend",
+    "publisher": "Moonwell",
+    "accessed_at": "2026-09-03",
+    "reliability": "high",
+    "claim_scope": "status",
+    "notes": "Official Moonwell repository providing current Base core-market and vault information, including market caps and live APR/APY data; supports continuing active operation after the incident."
+  },
+  {
+    "id": "cya_src_b106_0004",
+    "platform_id": "cya_plat_000141",
+    "source_type": "official_statement",
+    "title": "MIP-B48: Add MAMO Market to Moonwell on Base",
+    "url": "https://github.com/moonwell-fi/moonwell-contracts-v2/blob/main/proposals/mips/mip-b48/MIP-B48.md",
+    "publisher": "Moonwell",
+    "accessed_at": "2026-09-03",
+    "reliability": "high",
+    "claim_scope": "entity",
+    "notes": "Official Moonwell governance proposal documenting the Base MAMO market design and initial risk parameters before the later incident."
+  }
+]
