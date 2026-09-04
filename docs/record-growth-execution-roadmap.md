@@ -1,8 +1,8 @@
 # CYA record growth execution roadmap
 
-Status: post-remediation checkpoint audit / re-baseline active  
+Status: normal CeFi/DeFi growth authorized after 140-platform checkpoint closeout  
 Project: Crypto Yield Archive (CYA)  
-Last baseline review: 2026-09-02
+Last baseline review: 2026-09-04
 
 ## Purpose
 
@@ -22,15 +22,15 @@ Permanent operating rules remain in `docs/record-growth-plan.md` and `docs/devel
 - Existing-record monitoring remains review-only and continues in parallel with growth.
 - Pool, market, vault, deployment, and product-level records are added only when historically significant; they are not inventory targets.
 
-## Superseded Phase 10 baseline
+## Superseded baselines
 
-The previous snapshot in this file described a 101-platform corpus after the XORA sufficiency audit and proposed `cya_plat_000102` / `cya_ev_000341` as the next identifiers. That snapshot is superseded and must not be used for allocation or capacity planning.
+The former 101-platform Phase 10 allocation snapshot is permanently superseded.
 
-Since that snapshot, canonical growth and the DeFi omission-remediation lane materially advanced the corpus. The remediation queue has now been completed through Morpho.
+The later 140-platform checkpoint baseline was used for the required full-corpus audit and closeout. That checkpoint is now complete via #384 and the follow-up metadata repairs merged in #385.
 
-## Verified post-Morpho corpus baseline
+## Verified checkpoint closeout
 
-The normal repository validation/audit suite executed against the Morpho PR merge state and reported:
+The 140-platform checkpoint closed with:
 
 ```text
 Platforms:          140
@@ -40,82 +40,75 @@ Customer outcomes:  140
 Product profiles:   181
 Terms risk:         140
 Claims ongoing:      21
-Active candidates:    5
 Corpus blockers:      0
-Quality debt:         30
+Quality debt:        27
 ```
 
-The same run reported `primary_records: 140` and generated 140 record-level JSON entries. This is a count from canonical discovery/build output, not an inference from identifier suffixes.
+The quality-debt reduction from 30 to 27 came only from repairing three missing event `source_count` fields. The remaining 27 findings are retained as evidence/research debt or historical/preservation limitations and must not be suppressed by inference.
 
-Current allocated identifiers reach:
+## Current post-checkpoint main edge
+
+Moonwell / MAMO was added after checkpoint closeout through PR #386.
+
+Current canonical allocation reaches:
 
 ```text
-Platform ID:       cya_plat_000140
-Event ID:          cya_ev_000388
-Evidence batch:    105
+Platform ID:       cya_plat_000141
+Event ID:          cya_ev_000389
+Evidence batch:    106
 ```
 
-Event count and maximum event ID differ because IDs are not assumed contiguous.
+The next provisional allocation edge is:
 
-### Current audit observations
+```text
+Platform ID:       cya_plat_000142
+Event ID:          cya_ev_000390
+Evidence batch:    107
+```
 
-The corpus audit reported zero blockers and 30 quality-debt findings. The quality-debt set includes repurposed historical URLs, four platforms with fewer than three evidence records, three events missing `source_count`, unresolved exact end dates, and unresolved/unknown terms classifications. These are maintenance findings and must not be silently rewritten merely to lower the metric.
-
-The lifecycle-gap report also reported 25 unresolved inventory rows, including six next-review rows, while the material-concerns audit retained a broad research queue. Those outputs are evidence/review work queues rather than proof that the canonical corpus is invalid.
+These are provisional only. Every new canonical batch must re-read actual `main` immediately before allocation so concurrent work cannot reuse an identifier.
 
 ## DeFi omission-remediation closeout
 
-The former CeFi-only scope assumption has been corrected. The bounded remediation queue documented in `docs/defi-backfill-review-order.md` was reviewed through:
+The former CeFi-only scope assumption is invalid. CYA covers both CeFi and DeFi lending/yield systems.
 
-1. Tectonic
-2. Goldfinch
-3. Euler
-4. Cream Finance
-5. Radiant Capital
-6. Venus Protocol
-7. Compound
-8. Aave
-9. Silo Finance
-10. Morpho
+The bounded DeFi omission-remediation queue was completed through Morpho. Future DeFi candidates use the same normal record-growth gate as CeFi candidates: duplicate review, identity resolution, historical significance, source quality, event/evidence/outcome boundaries, and repository validation.
 
-The remediation lane is complete. Future DeFi candidates return to the same normal record-growth gate as CeFi candidates: duplicate review, identity resolution, historical significance, source quality, event/evidence/outcome boundaries, and repository validation. Completion does not authorize automatic inclusion of additional DeFi protocols or exhaustive market inventories.
-
-## Checkpoint state
-
-`docs/record-growth-plan.md` requires growth to stop at the 125-record checkpoint for a full-corpus audit before a later growth tier is authorized. The corpus reached 140 before this stale roadmap was corrected, so that policy checkpoint cannot be treated as satisfied merely because the numeric threshold was passed.
-
-The repository audit suite now gives a verified 140-record mechanical baseline with zero blockers, but growth remains paused for checkpoint closeout until the audit state, quality-debt disposition, next-ID baseline, and exact-SHA production verification are recorded consistently.
-
-No new canonical platform should be allocated from the old 101-platform roadmap while this checkpoint closeout is active.
+Completion of the remediation lane does not authorize exhaustive protocol, pool, vault, market, or deployment inventories.
 
 ## Current operating lanes
 
-### Lane A — checkpoint audit closeout and re-baseline
+### Lane A — normal canonical growth
 
-Immediate work:
+Canonical growth is authorized again after checkpoint closeout.
 
-1. preserve the verified 140 / 383 / 790 / 140 / 181 / 140 corpus baseline;
-2. review the 30 quality-debt findings and distinguish accepted historical limitations from actionable defects;
-3. confirm duplicate-ID, slug/domain identity, cross-layer referential-integrity, and six-layer coverage checks remain clear;
-4. confirm highest allocated platform/event IDs and the next evidence batch from canonical files;
-5. run exact-head repository validation and production verification for the checkpoint closeout;
-6. publish the next authorized growth baseline only after that closeout is complete.
+For each new platform:
+
+1. recheck actual main allocation edge;
+2. clear duplicate identity/domain/alias review;
+3. establish historical significance and CYA scope;
+4. build the six-layer package where applicable: platform, event, evidence, outcome, product, terms-risk;
+5. preserve unknowns rather than infer favorable or adverse facts;
+6. run exact-head repository checks before merge;
+7. verify the resulting main state separately from PR validation.
 
 ### Lane B — candidate research
 
-Candidate discovery and evidence recovery may continue without allocating canonical IDs. CeFi and DeFi candidates remain eligible when they satisfy normal CYA scope and evidence rules. Candidate-only research must not be converted into canonical growth merely to increase counts.
+Candidate discovery and evidence recovery continue without automatic canonical allocation. CeFi and DeFi candidates remain eligible when they satisfy normal CYA scope and evidence rules.
+
+Candidate-only research must not be promoted merely to increase counts.
 
 ### Lane C — mature-corpus maintenance
 
-Continue evidence, terms, identity, chronology, and customer-outcome improvements where stronger sources exist. Do not change records merely to improve an audit metric.
+Continue evidence, terms, identity, chronology, and customer-outcome improvements where stronger sources exist.
 
-Current high-signal maintenance classes from the audit include:
+Current high-signal maintenance classes include:
 
-- fewer than three evidence records;
-- missing event `source_count`;
+- platforms with fewer than three evidence records;
 - exact end-date gaps;
-- unknown terms classification;
-- repurposed original URLs where preservation can be improved without overwriting history.
+- unresolved terms classifications;
+- repurposed historical URLs where preservation can be improved without overwriting history;
+- unresolved lifecycle and material-concerns research queues.
 
 ### Lane D — monitoring
 
@@ -124,10 +117,9 @@ Keep existing-record monitoring operational. New findings enter manual review an
 ## Immediate next action
 
 ```text
-1. Merge the DeFi remediation/source-of-truth documentation closeout only after its current-head CI is green.
-2. Treat 140 platforms as the verified checkpoint baseline; do not return to the stale 101-platform allocation plan.
-3. Close the checkpoint audit by classifying the 30 quality-debt findings as actionable or accepted historical limitations.
-4. Confirm exact next IDs from canonical allocation state rather than from the old roadmap.
-5. Run exact-SHA production verification for the checkpoint closeout.
-6. Record the post-audit growth authorization and only then resume normal CeFi/DeFi canonical additions.
+1. Treat cya_plat_000141 / cya_ev_000389 / batch 106 as the current verified allocation edge.
+2. Recheck main before the next allocation; provisional next edge is 000142 / 000390 / batch 107.
+3. Resume normal CeFi/DeFi candidate review and canonical growth.
+4. Continue mature-corpus maintenance and monitoring in parallel.
+5. Do not reopen the completed 140-platform checkpoint unless a new corpus-level blocker is discovered.
 ```
