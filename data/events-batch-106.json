@@ -1,0 +1,16 @@
+[
+  {
+    "id": "cya_ev_000389",
+    "platform_id": "cya_plat_000141",
+    "event_type": "operations_ended",
+    "event_date": "2026-09-04",
+    "title": "Smart Lending closes official website and My Page",
+    "description": "Smart Lending announced on 2026-09-02 that its official website and My Page would be closed on 2026-09-04 following a comprehensive review of its future service policy.",
+    "networks": [],
+    "impact_level": "high",
+    "event_status_effect": "operations_ended",
+    "source_count": 1,
+    "confidence": "high",
+    "notes": "This event records the official closure itself. It does not infer insolvency, customer losses, or a Smart Lending withdrawal suspension beyond what the first-party notice states."
+  }
+]
