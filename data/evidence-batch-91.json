@@ -28,5 +28,20 @@
     "reliability": "high",
     "claim_scope": "status",
     "notes": "Current first-party product surface supporting continued ZebPay Earn availability."
+  },
+  {
+    "id": "cya_src_b91_0003",
+    "platform_id": "cya_plat_000126",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "Earn From Crypto Coins | Fixed Returns",
+    "url": "https://zebpay.com/in/features/earn",
+    "publisher": "ZebPay India",
+    "published_at": null,
+    "archived_url": null,
+    "accessed_at": "2026-09-05",
+    "reliability": "high",
+    "claim_scope": "status",
+    "notes": "Current first-party India product surface confirming continuing fixed-term Earn availability, 30/60/90-day term options, supported assets, maturity wallet credit mechanics and current advertised annualized rates. Advertised rates are issuer terms, not verified realized returns or guarantees."
   }
 ]
