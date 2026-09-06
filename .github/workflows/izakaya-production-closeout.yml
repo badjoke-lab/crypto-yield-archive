@@ -25,29 +25,43 @@ jobs:
       - name: Verify IZAKA-YA human and machine publication
         shell: bash
         env:
+          GH_TOKEN: ${{ github.token }}
           EXPECTED_COMMIT: ${{ github.sha }}
         run: |
           set -euo pipefail
           ok=0
+          verified_commit=""
           for attempt in $(seq 1 40); do
             html="$(curl -fsS --max-time 20 -H 'Cache-Control: no-cache' 'https://cya.badjoke-lab.com/platform/izaka-ya/?publication_closeout='"${attempt}" 2>/dev/null || true)"
             record="$(curl -fsS --max-time 20 -H 'Cache-Control: no-cache' 'https://cya.badjoke-lab.com/data/platform/izaka-ya.json?publication_closeout='"${attempt}" 2>/dev/null || true)"
             version="$(curl -fsS --max-time 20 -H 'Cache-Control: no-cache' 'https://cya.badjoke-lab.com/version.json?publication_closeout='"${attempt}" 2>/dev/null || true)"
+            deployed_commit="$(jq -r '.build.commit // empty' <<<"$version" 2>/dev/null || true)"
+            relation="missing"
+            if [[ -n "$deployed_commit" ]]; then
+              if [[ "$deployed_commit" == "$EXPECTED_COMMIT" ]]; then
+                relation="identical"
+              else
+                relation="$(gh api "/repos/${GITHUB_REPOSITORY}/compare/${EXPECTED_COMMIT}...${deployed_commit}" --jq '.status' 2>/dev/null || true)"
+              fi
+            fi
+            echo "IZAKA-YA source=${EXPECTED_COMMIT} deployed=${deployed_commit:-missing} relation=${relation:-missing} (${attempt}/40)."
             if grep -Fq 'Stable or Gone — JPYR' <<<"$html" \
               && grep -Fq 'Wallet Lifecycle Registry — IZAKA-YA Wallet' <<<"$html" \
               && grep -Fq 'Historical Exchange Index — IZAKA-YA' <<<"$html" \
               && jq -e '.record.id == "cya_plat_000102" or .record_key.platform_id == "cya_plat_000102" or .platform.id == "cya_plat_000102"' <<<"$record" >/dev/null 2>&1 \
-              && jq -e --arg sha "$EXPECTED_COMMIT" '.build.commit == $sha' <<<"$version" >/dev/null 2>&1; then
+              && [[ "$relation" == "identical" || "$relation" == "ahead" ]]; then
+              verified_commit="$deployed_commit"
               ok=1
               break
             fi
             sleep 15
           done
           test "$ok" = 1
+          echo "CYA_IZAKAYA_VERIFIED_COMMIT=${verified_commit}" >> "$GITHUB_ENV"
 
       - name: Report closeout
         if: success()
         uses: actions/github-script@v7
         with:
           script: |
-            await github.rest.issues.createComment({owner: context.repo.owner, repo: context.repo.repo, issue_number: 323, body: `CYA IZAKA-YA production closeout passed at exact main \`${context.sha}\`. Human page, machine record, and all three cross-registry links are live. Run: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`});
+            await github.rest.issues.createComment({owner: context.repo.owner, repo: context.repo.repo, issue_number: 323, body: `CYA IZAKA-YA production closeout passed. Trigger main \`${context.sha}\` is contained in verified production commit \`${process.env.CYA_IZAKAYA_VERIFIED_COMMIT}\`. Human page, machine record, and all three cross-registry links are live. Run: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`});
