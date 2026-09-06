@@ -22,13 +22,17 @@
     if (target instanceof HTMLAnchorElement) {
       const href = target.getAttribute('href') || '';
       const text = (target.textContent || '').trim().slice(0, 120);
+      const evidenceContext = Boolean(target.closest('.evidence-row, .event-sources'));
 
-      if (/web\.archive\.org/i.test(href) || /archived version/i.test(text)) {
-        send('archive_click', { link_url: href, link_text: text });
-      } else if (/\/corrections\/?$/.test(href)) {
-        send('correction_click', { link_url: href, link_text: text });
+      if (/web\.archive\.org/i.test(href) || /archived version/i.test(text) || target.classList.contains('archive-link')) {
+        send('archive_click', { link_url: href, page_path: path });
+      } else if (/\/corrections\/?(?:[?#].*)?$/.test(href)) {
+        send('correction_click', { page_path: path });
       } else if (/^https?:\/\//i.test(href) && !href.includes('cya.badjoke-lab.com')) {
-        send('outbound_evidence_click', { link_url: href, link_text: text });
+        send(evidenceContext ? 'outbound_evidence_click' : 'outbound_link_click', {
+          link_url: href,
+          page_path: path,
+        });
       }
     }
 
@@ -47,15 +51,20 @@
     });
   });
 
+  const searchTimers = new WeakMap();
   document.addEventListener('input', (event) => {
     const target = event.target;
     if (!(target instanceof HTMLInputElement)) return;
     if (target.type !== 'search' && !/search/i.test(`${target.id} ${target.name} ${target.placeholder}`)) return;
-    clearTimeout(target.__cyaSearchTimer);
-    target.__cyaSearchTimer = setTimeout(() => {
-      const query = target.value.trim();
-      if (query.length < 2) return;
-      send('registry_search', { search_term: query.slice(0, 100), page_path: path });
+
+    const previousTimer = searchTimers.get(target);
+    if (previousTimer) clearTimeout(previousTimer);
+
+    const timer = setTimeout(() => {
+      const queryLength = target.value.trim().length;
+      if (queryLength < 2) return;
+      send('registry_search', { search_length: queryLength, page_path: path });
     }, 700);
+    searchTimers.set(target, timer);
   });
 })();
