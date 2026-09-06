@@ -1,0 +1,44 @@
+[
+  {
+    "id": "cya_ev_000390",
+    "platform_id": "cya_plat_000142",
+    "event_type": "yield_program_started",
+    "event_date": "2023-12-07",
+    "title": "XRPH staking launches inside XRPH Wallet",
+    "description": "XRP Healthcare launched fixed-term XRPH staking inside XRPH Wallet with advertised 20% APR for six-month terms and 25% APR for twelve-month terms.",
+    "networks": ["XRP Ledger"],
+    "impact_level": "medium",
+    "event_status_effect": "active",
+    "source_count": 1,
+    "confidence": "high",
+    "notes": "APR figures are recorded as advertised product terms only and are not treated as verified realized returns."
+  },
+  {
+    "id": "cya_ev_000391",
+    "platform_id": "cya_plat_000142",
+    "event_type": "deposits_suspended",
+    "event_date": "2024-07-23",
+    "title": "XRP Healthcare stops accepting new XRPH stakes",
+    "description": "XRP Healthcare announced that it would stop accepting new XRPH staking contracts while allowing existing stakes to continue until their contractual terms expired.",
+    "networks": ["XRP Ledger"],
+    "impact_level": "medium",
+    "event_status_effect": "limited",
+    "source_count": 1,
+    "confidence": "high",
+    "notes": "This is a stop-new-stakes event, not a verified same-day termination of all existing staking positions."
+  },
+  {
+    "id": "cya_ev_000392",
+    "platform_id": "cya_plat_000142",
+    "event_type": "other",
+    "event_date": "2026-09-05",
+    "title": "Forensic review discloses server-side seed transmission in staking flows",
+    "description": "XRPL.to reported from decompiled and runtime-reviewed XRPH Wallet code that staking and unstaking flows transmitted user seed material to an XRP Healthcare server. The finding materially changes the historical custody/key-control risk profile of the yield facility.",
+    "networks": ["XRP Ledger"],
+    "impact_level": "high",
+    "event_status_effect": "none",
+    "source_count": 1,
+    "confidence": "high",
+    "notes": "CYA does not assert that this staking path caused the full September 2026 XRPH Wallet drain; the forensic investigation states that most drained wallets had never staked."
+  }
+]

@@ -1,0 +1,9 @@
+[
+  {
+    "platform_id": "cya_plat_000142",
+    "terms_status": "unclear",
+    "source_evidence_id": "cya_src_b107_0004",
+    "confidence": "medium",
+    "notes": "The reviewed first-party launch and cessation materials establish the advertised staking terms and lifecycle but do not fully resolve asset ownership, custody, or key-control treatment. A later forensic review found that staking and unstaking flows transmitted user seed material to an XRP Healthcare server, making a simple non-custodial characterization unsafe. This record does not infer that the staking path caused every September 2026 wallet drain."
+  }
+]
