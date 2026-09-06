@@ -1,0 +1,56 @@
+[
+  {
+    "id": "cya_src_b107_0001",
+    "platform_id": "cya_plat_000142",
+    "event_id": "cya_ev_000390",
+    "source_type": "official_statement",
+    "title": "XRP Healthcare Launches XRPH Token Staking Feature on Our Decentralized Wallet and App!",
+    "url": "https://xrphtoken.com/blog/xrp-healthcare-launches-xrph-token-staking-feature-on-our-decentralized-wallet-and-app",
+    "publisher": "XRP Healthcare",
+    "published_at": "2023-12-07",
+    "accessed_at": "2026-09-07",
+    "reliability": "high",
+    "claim_scope": "launch_date",
+    "notes": "First-party launch announcement documenting the in-wallet staking feature and advertised 20% APR for six-month terms and 25% APR for twelve-month terms."
+  },
+  {
+    "id": "cya_src_b107_0002",
+    "platform_id": "cya_plat_000142",
+    "event_id": "cya_ev_000391",
+    "source_type": "official_statement",
+    "title": "XRP Healthcare Halts New Staking of XRPH Token to Preserve Finite Supply, Shifts Focus to Real-World Healthcare Ventures",
+    "url": "https://www.prnewswire.com/news-releases/xrp-healthcare-halts-new-staking-of-xrph-token-to-preserve-finite-supply-shifts-focus-to-real-world-healthcare-ventures-302203541.html",
+    "publisher": "XRP Healthcare / PR Newswire",
+    "published_at": "2024-07-23",
+    "accessed_at": "2026-09-07",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "Company press release stating that no new staking contracts would be offered while existing stakes would continue until their terms expired."
+  },
+  {
+    "id": "cya_src_b107_0003",
+    "platform_id": "cya_plat_000142",
+    "source_type": "official_statement",
+    "title": "XRP Healthcare Roadmap",
+    "url": "https://xrphtoken.com/roadmap",
+    "publisher": "XRP Healthcare",
+    "accessed_at": "2026-09-07",
+    "reliability": "high",
+    "claim_scope": "status",
+    "notes": "Current first-party roadmap describing the XRPH staking facility as discontinued. The page does not establish a precise final end date for every pre-existing stake."
+  },
+  {
+    "id": "cya_src_b107_0004",
+    "platform_id": "cya_plat_000142",
+    "event_id": "cya_ev_000392",
+    "source_type": "community_reference",
+    "title": "The XRPH Wallet Hack: 4,011 Wallets Emptied in Three Hours",
+    "url": "https://xrpl.to/insights/xrph-wallet-hack-4011-wallets",
+    "publisher": "XRPL.to",
+    "published_at": "2026-09-05",
+    "accessed_at": "2026-09-07",
+    "reliability": "medium",
+    "claim_scope": "terms_risk",
+    "notes": "Forensic investigation reporting that reviewed staking and unstaking code transmitted user seed material to an XRP Healthcare server. The same investigation also states that most drained wallets had never staked, so CYA does not infer that this path caused the full compromise."
+  }
+]
