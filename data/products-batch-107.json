@@ -1,0 +1,13 @@
+[
+  {
+    "platform_id": "cya_plat_000142",
+    "product_name": "XRPH Wallet Staking",
+    "product_type": "staking_like_yield",
+    "networks": ["XRP Ledger"],
+    "custody_model": "wallet-integrated staking flow; later forensic review found seed transmission to an operator server during staking and unstaking",
+    "yield_source": "XRPH staking rewards as advertised by XRP Healthcare; underlying economic source not independently verified",
+    "status": "operations_ended",
+    "contract_addresses": [],
+    "notes": "Launch terms advertised 20% APR for six-month stakes and 25% APR for twelve-month stakes. These are historical advertised terms, not verified realized returns."
+  }
+]
