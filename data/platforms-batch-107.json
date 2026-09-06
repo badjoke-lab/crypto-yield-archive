@@ -1,0 +1,26 @@
+[
+  {
+    "id": "cya_plat_000142",
+    "slug": "xrph-wallet-staking",
+    "canonical_name": "XRPH Wallet Staking",
+    "aliases": ["XRPH Staking", "XRP Healthcare Staking", "XRPH Token Staking"],
+    "type": "centralized_yield",
+    "architecture": "hybrid",
+    "networks": ["XRP Ledger"],
+    "status": "operations_ended",
+    "failure_reason": "voluntary_shutdown",
+    "launch_date": "2023-12-07",
+    "end_date": null,
+    "country_or_origin": "Global / operator jurisdiction unresolved",
+    "summary": "Wallet-integrated fixed-term XRPH yield facility launched by XRP Healthcare in December 2023 with advertised 20% APR for six-month terms and 25% APR for twelve-month terms. New staking contracts stopped in July 2024 while existing positions were allowed to continue, and XRP Healthcare's current roadmap describes the staking facility as discontinued.",
+    "what_happened": "XRP Healthcare launched XRPH staking inside XRPH Wallet on 2023-12-07. The launch announcement advertised 20% APR for six-month terms and 25% APR for twelve-month terms. On 2024-07-23, XRP Healthcare announced that no new staking contracts would be accepted while existing stakes would continue to their contractual expiry. The current roadmap later describes the staking facility as discontinued, but the reviewed sources do not establish a precise final end date for all existing positions. A 2026-09-05 forensic investigation of XRPH Wallet found that staking and unstaking code transmitted user seed material to an XRP Healthcare server; CYA records that finding as a material product/terms risk and does not assert that it caused the full wallet-wide compromise.",
+    "official_url_original": "https://xrphtoken.com/",
+    "official_domain_original": "xrphtoken.com",
+    "official_url_status": "live_verified",
+    "archived_url": null,
+    "confidence": "high",
+    "last_verified_at": "2026-09-07",
+    "uncertainty_notes": "The exact final end date for all pre-existing staking positions is not established by the reviewed sources. Advertised APR values are preserved as marketing/product terms, not verified realized returns. The 2026 forensic seed-transmission finding is not treated as proof that staking caused all XRPH Wallet drains because most drained wallets had not used staking.",
+    "notes": "CYA scope is the historical yield facility. The broader XRPH Wallet compromise belongs primarily in WLR."
+  }
+]
