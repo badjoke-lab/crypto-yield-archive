@@ -1,0 +1,18 @@
+[
+  {
+    "platform_id": "cya_plat_000142",
+    "outcome_status": "not_applicable",
+    "estimated_recovery_rate": null,
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": null,
+    "claim_process_url": null,
+    "affected_products": ["XRPH Wallet Staking"],
+    "claim_classes": [],
+    "jurisdictions": ["Global"],
+    "as_of": "2026-09-07",
+    "last_verified_at": "2026-09-07",
+    "notes": "CYA records a discontinued yield-product lifecycle rather than a verified platform-wide insolvency or uniform repayment process. The September 2026 wallet compromise is primarily a WLR incident and does not establish a staking-specific recovery percentage or universal staker loss outcome.",
+    "confidence": "high"
+  }
+]
