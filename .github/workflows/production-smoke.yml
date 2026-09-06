@@ -31,8 +31,11 @@ concurrency:
 
 # Production authority:
 # - Cloudflare Pages Git integration deploys main.
-# - This workflow verifies that Cloudflare reports success and the custom-domain
-#   version.json serves the exact pushed commit before accepting production.
+# - This workflow accepts the triggering main commit or a successfully deployed
+#   descendant that contains it. A later main deploy must not strand an older
+#   smoke run waiting for an exact SHA that production has already superseded.
+# - After resolving the deployed commit, verification checks out that exact
+#   revision so local canonical counts/routes match the live production build.
 # - No repository Cloudflare API token is required for normal publication.
 # - The newest canonical platform must resolve on both human and machine routes.
 # - Production verification is intentionally exercised through a normal PR merge.
@@ -42,7 +45,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 50
     steps:
-      - name: Checkout production source revision
+      - name: Checkout trigger source revision
         uses: actions/checkout@v6
         with:
           ref: ${{ github.sha }}
@@ -51,9 +54,6 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: 24
-
-      - name: Install dependencies
-        run: npm install --no-audit --no-fund
 
       - name: Wait for Cloudflare main deployment
         env:
@@ -64,38 +64,58 @@ jobs:
           set -euo pipefail
           ready=0
           for attempt in $(seq 1 120); do
-            check_json="$(gh api "/repos/${GITHUB_REPOSITORY}/commits/${SOURCE_SHA}/check-runs?per_page=100" --jq '[.check_runs[] | select(.name == "Cloudflare Pages")] | sort_by(.started_at) | last // {}')"
-            check_status="$(jq -r '.status // "missing"' <<<"${check_json}")"
-            check_conclusion="$(jq -r '.conclusion // "pending"' <<<"${check_json}")"
             deployed_commit="$(curl --fail --silent --show-error --max-time 20 -H 'Cache-Control: no-cache' "${PRODUCTION_VERSION_URL}?audit=${attempt}" 2>/dev/null | jq -r '.build.commit // empty' 2>/dev/null || true)"
-            echo "Cloudflare main ${SOURCE_SHA}: status=${check_status} conclusion=${check_conclusion} deployed_commit=${deployed_commit:-missing} (${attempt}/120)."
+            relation="missing"
+            check_status="missing"
+            check_conclusion="pending"
 
-            if [[ "${check_status}" == "completed" && "${check_conclusion}" == "success" && "${deployed_commit}" == "${SOURCE_SHA}" ]]; then
-              ready=1
-              break
+            if [[ -n "${deployed_commit}" ]]; then
+              if [[ "${deployed_commit}" == "${SOURCE_SHA}" ]]; then
+                relation="identical"
+              else
+                relation="$(gh api "/repos/${GITHUB_REPOSITORY}/compare/${SOURCE_SHA}...${deployed_commit}" --jq '.status' 2>/dev/null || true)"
+              fi
+
+              if [[ "${relation}" == "identical" || "${relation}" == "ahead" ]]; then
+                check_json="$(gh api "/repos/${GITHUB_REPOSITORY}/commits/${deployed_commit}/check-runs?per_page=100" --jq '[.check_runs[] | select(.name == "Cloudflare Pages")] | sort_by(.started_at) | last // {}')"
+                check_status="$(jq -r '.status // "missing"' <<<"${check_json}")"
+                check_conclusion="$(jq -r '.conclusion // "pending"' <<<"${check_json}")"
+              fi
             fi
 
-            if [[ "${check_status}" == "completed" && "${check_conclusion}" != "success" ]]; then
-              echo "Cloudflare main deployment failed with conclusion ${check_conclusion}." >&2
-              exit 1
+            echo "Cloudflare source=${SOURCE_SHA} deployed=${deployed_commit:-missing} relation=${relation:-missing} status=${check_status} conclusion=${check_conclusion} (${attempt}/120)."
+
+            if [[ ("${relation}" == "identical" || "${relation}" == "ahead") && "${check_status}" == "completed" && "${check_conclusion}" == "success" ]]; then
+              echo "CYA_DEPLOYED_COMMIT=${deployed_commit}" >> "$GITHUB_ENV"
+              ready=1
+              break
             fi
 
             sleep 15
           done
 
           if [[ "${ready}" != "1" ]]; then
-            echo "Cloudflare custom domain did not serve the expected main commit before timeout." >&2
+            echo "Cloudflare custom domain did not serve the triggering main commit or a verified deployed descendant before timeout." >&2
             exit 1
           fi
+
+      - name: Checkout deployed production revision
+        run: |
+          set -euo pipefail
+          git fetch --no-tags --depth=1 origin "${CYA_DEPLOYED_COMMIT}"
+          git checkout --detach "${CYA_DEPLOYED_COMMIT}"
+          test "$(git rev-parse HEAD)" = "${CYA_DEPLOYED_COMMIT}"
+
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
 
       - name: Check current production surface
         env:
           CYA_BASE_URL: https://cya.badjoke-lab.com
-          CYA_EXPECTED_COMMIT: ${{ github.sha }}
           CYA_EXPECTED_SOURCE_COMMIT: ''
           CYA_SMOKE_ATTEMPTS: 12
           CYA_SMOKE_DELAY_MS: 15000
-        run: npm run check:production
+        run: CYA_EXPECTED_COMMIT="${CYA_DEPLOYED_COMMIT}" npm run check:production
 
       - name: Verify newest canonical human and machine routes
         shell: bash
@@ -151,5 +171,5 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: 323,
-              body: `Production Surface Check finished.\n\n- Result: **${{ job.status }}**\n- Source commit: \`${context.sha}\`\n- Run: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`
+              body: `Production Surface Check finished.\n\n- Result: **${{ job.status }}**\n- Trigger commit: \`${context.sha}\`\n- Verified deployed commit: \`${process.env.CYA_DEPLOYED_COMMIT || 'unresolved'}\`\n- Run: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`
             })
