@@ -81,22 +81,5 @@
     "notes": "Phase 10 identity review resolves the watchlist ORCA item to the live iOrca registration surface under dapp.ocagent.io. The official registration page requires username, affiliate code, wallet connection and acceptance of Terms of Service, Privacy Policy and Risk Disclosure, establishing an active financial-product surface but not the underlying economic contract. Current Japanese discovery/referral material consistently describes BNB-chain USDT deposits, minimum participation around 100 USDT, 10/90/180/360-day packages, principal lockups, daily USDT rewards sent to a wallet, check-in-based reward increases, referral ranks and a temporary doubled-deposit campaign; it attributes yield to AI agents exploiting price/probability differences across prediction markets. Those mechanics and rates remain discovery claims because the first-party Terms/Risk pages could not be retrieved reliably in this pass and no stable first-party documentation for package rates, custody, asset reuse, redemption, source of yield or operator identity was found. A claimed relationship to Nodepay is likewise unverified and must not be canonicalized. Resolve legal operator/jurisdiction, first-party Terms and Risk Disclosure, deposit/custody/asset-use treatment, package lock/redemption rules, reward calculation, withdrawal rights, launch chronology, source-of-yield claims and any campaign liabilities before add_now. Do not confuse this candidate with Orca's Solana AMM/xORCA staking product and do not convert advertised daily rates or campaign credits into verified realized return or principal repayment.",
     "first_seen_at": "2026-08-12",
     "last_reviewed_at": "2026-08-13"
-  },
-  {
-    "candidate_id": "cya_candidate_000118",
-    "canonical_name": "XRPH Wallet Staking",
-    "aliases": ["XRPH Staking", "XRP Healthcare Staking", "XRPH Token Staking"],
-    "domain": "xrphtoken.com",
-    "country_or_origin": "Global / XRP Healthcare operator jurisdiction to be resolved at canonical promotion",
-    "platform_type_guess": "wallet_integrated_staking_yield",
-    "status_guess": "discontinued",
-    "major_event": "XRP Healthcare launched fixed-term XRPH staking inside XRPH Wallet on 2023-12-07 with advertised 20% APR for six months and 25% APR for twelve months, stopped accepting new staking contracts on 2024-07-23 while allowing existing positions to run to term, and later describes the staking facility as discontinued; a 2026 forensic investigation found the wallet's staking/unstaking code transmitted user seed material to an XRP Healthcare server",
-    "primary_sources": ["https://xrphtoken.com/blog/xrp-healthcare-launches-xrph-token-staking-feature-on-our-decentralized-wallet-and-app", "https://www.prnewswire.com/news-releases/xrp-healthcare-halts-new-staking-of-xrph-token-to-preserve-finite-supply-shifts-focus-to-real-world-healthcare-ventures-302203541.html", "https://xrphtoken.com/roadmap"],
-    "secondary_sources": ["https://xrpl.to/insights/xrph-wallet-hack-4011-wallets"],
-    "duplicate_check": {"checked_at": "2026-09-07", "matched_platform_ids": [], "notes": "Exact repository/code searches for XRPH returned no canonical CYA identity match before staging. Candidate ID 000118 is unused across candidates, consumed and rejected ledgers on fresh main. Canonical platform/product IDs must still be allocated from fresh main during promotion."},
-    "decision": "add_now",
-    "notes": "CYA relevance is the historical yield-product lifecycle, not the entire 2026 wallet compromise. Treat 20% and 25% as advertised APR terms only; do not infer realized yield. The 2024 announcement establishes cessation of new staking, not immediate termination of existing positions. The later seed-transmission finding is material terms/custody-risk evidence for the staking feature, but it must not be asserted as the root cause of the full 2026 drain because most drained wallets had never staked. Canonical promotion should model the product launch, advertised 6-/12-month terms, stop-new-stakes event, eventual discontinued lifecycle state, and later-disclosed key-management/custody risk. Cross-reference WLR after the XRPH Wallet incident record is canonicalized.",
-    "first_seen_at": "2026-09-06",
-    "last_reviewed_at": "2026-09-07"
   }
 ]
