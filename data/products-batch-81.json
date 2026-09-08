@@ -3,8 +3,8 @@
     "platform_id": "cya_plat_000121",
     "product_type": "centralized_yield",
     "product_name": "BitMEX EARN",
-    "custody_model": "Reviewed first-party launch and product notices establish a fixed-term yield product but do not provide sufficient dedicated authority to characterize EARN balances as segregated, insured, trust-protected or otherwise insulated from BitMEX counterparty exposure. Historical insurance-fund backing language is preserved only as an operator claim.",
+    "custody_model": "BitMEX's Terms of Service define BitMEX EARN as a Service and state that digital assets deposited to BitMEX are transferred with all right, title and interest to the Company, with balances maintained as BitMEX book records rather than user wallets. Service-specific terms may supplement or prevail in a conflict, so CYA records operator ownership/counterparty exposure without inferring EARN-specific segregation or insolvency priority beyond reviewed authority.",
     "yield_source": "BitMEX published fixed-term EARN products with contractual interest. Published APRs are issuer product terms and are not independently verified realized returns or evidence of underlying economic performance.",
-    "risk_notes": "Current operational status is unresolved. Contractual principal-plus-interest at maturity does not establish universal historical repayment performance, and ordinary exchange custody protections are not generalized to EARN balances."
+    "risk_notes": "Current EARN operating status remains unresolved. Historical insurance-fund backing and guaranteed-return wording remain operator claims rather than independent proof of solvency, enforceable insurance or universal repayment."
   }
 ]
