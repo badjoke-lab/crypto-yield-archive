@@ -13,5 +13,35 @@
     "reliability": "high",
     "claim_scope": "launch_date",
     "notes": "First-party launch authority for BitMEX EARN and fixed-term USDT products. Historical insurance-fund backing language is treated only as an operator claim."
+  },
+  {
+    "id": "cya_src_b86_0002",
+    "platform_id": "cya_plat_000121",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "Introducing Our Two New BitMEX EARN Products",
+    "url": "https://www.bitmex.com/blog/introducing-new-bitmex-earn-products",
+    "publisher": "BitMEX",
+    "published_at": "2022-01-04",
+    "archived_url": "https://web.archive.org/web/*/https://www.bitmex.com/blog/introducing-new-bitmex-earn-products",
+    "accessed_at": "2026-09-08",
+    "reliability": "high",
+    "claim_scope": "terms_risk",
+    "notes": "First-party product notice documenting additional fixed-term USDT EARN products, subscription windows, maturity dates and issuer-advertised APRs. APRs remain product terms rather than verified realized returns."
+  },
+  {
+    "id": "cya_src_b86_0003",
+    "platform_id": "cya_plat_000121",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "Earn Interest on Bitcoin with BitMEX EARN",
+    "url": "https://www.bitmex.com/blog/earn-interest-on-bitcoin-with-bitmex-earn",
+    "publisher": "BitMEX",
+    "published_at": "2022-01-18",
+    "archived_url": "https://web.archive.org/web/*/https://www.bitmex.com/blog/earn-interest-on-bitcoin-with-bitmex-earn",
+    "accessed_at": "2026-09-08",
+    "reliability": "high",
+    "claim_scope": "terms_risk",
+    "notes": "First-party product notice documenting XBT and USDT EARN support, lock-up periods and principal-plus-interest maturity mechanics. Historical insurance-fund backing and guaranteed-return language remain operator marketing claims, not independent proof of solvency, enforceability or universal repayment."
   }
 ]
