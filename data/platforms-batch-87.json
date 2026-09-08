@@ -5,20 +5,20 @@
     "canonical_name": "Smart Lending",
     "aliases": ["SmartLending", "スマートレンディング"],
     "type": "cefi_lending",
-    "status": "active",
-    "failure_reason": null,
+    "status": "operations_ended",
+    "failure_reason": "voluntary_shutdown",
     "launch_date": null,
-    "end_date": null,
+    "end_date": "2026-09-04",
     "country_or_origin": "Japan",
-    "summary": "Smart Lending is a Japanese crypto-asset lending service whose current first-party terms describe unsecured consumption-loan contracts with fixed lending periods and stated annualized interest rates.",
-    "what_happened": "Current first-party materials identify Smart Lending Co., Ltd. as operator and describe 30-day ordinary and 365-day premium crypto lending. The terms state that ownership of lent crypto transfers to the company, lent assets are outside statutory segregated management, and repayment may fail if the company becomes insolvent.",
+    "summary": "Smart Lending was a Japanese crypto-asset lending service whose first-party terms described unsecured consumption-loan contracts with fixed lending periods and stated annualized interest rates. The operator announced on 2026-09-02 that the official website and My Page would close on 2026-09-04.",
+    "what_happened": "First-party materials had described 30-day ordinary and 365-day premium crypto lending and stated that ownership of lent crypto transferred to Smart Lending Co., Ltd., with lent assets outside statutory segregated management. On 2026-09-02 the operator announced a comprehensive review of future service policy and stated that the official website and My Page would close on 2026-09-04. This record therefore treats the service as operations ended from 2026-09-04 without inferring insolvency, customer loss or a withdrawal suspension that the notice does not establish.",
     "official_url_original": "https://smartlending.jp/",
     "official_domain_original": "smartlending.jp",
     "official_url_status": "live_verified",
     "archived_url": null,
     "confidence": "high",
-    "last_verified_at": "2026-08-26",
-    "uncertainty_notes": "The exact original service-launch date is unresolved. Advertised 11%/13% annualized rates, yield-source explanations and reserve/return-preparation statements are operator claims and are not independently verified realized returns, proof of sustainability, reserves or solvency.",
-    "notes": "Promotion follows duplicate-clear candidate cya_candidate_000148 and candidate PR #339. No GEMFOREX or IZAKA-YA affiliation is asserted; relationship claims remain separately bounded under Issue #337."
+    "last_verified_at": "2026-09-09",
+    "uncertainty_notes": "The exact original service-launch date remains unresolved. The closure notice establishes the website/My Page shutdown date but does not establish insolvency, customer loss, a claims process or universal repayment outcome. Advertised 11%/13% annualized rates, yield-source explanations and reserve/return-preparation statements remain operator claims.",
+    "notes": "Promotion originally followed duplicate-clear candidate cya_candidate_000148 and candidate PR #339. Lifecycle status was corrected from active to operations_ended after the 2026-09-02 first-party closure notice. No GEMFOREX or IZAKA-YA affiliation is asserted."
   }
 ]

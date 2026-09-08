@@ -27,6 +27,21 @@
     "accessed_at": "2026-08-26",
     "reliability": "high",
     "claim_scope": "status",
-    "notes": "Current first-party service surface supporting live registration, deposit and lending application flows. Advertised 11%/13% annualized rates and yield-source/reserve statements are recorded only as operator claims."
+    "notes": "First-party service surface that supported registration, deposit and lending application flows before closure. Advertised 11%/13% annualized rates and yield-source/reserve statements are recorded only as operator claims."
+  },
+  {
+    "id": "cya_src_b92_0003",
+    "platform_id": "cya_plat_000127",
+    "event_id": "cya_ev_000393",
+    "source_type": "official_statement",
+    "title": "サービスに関するお知らせ",
+    "url": "https://smartlending.jp/",
+    "publisher": "スマートレンディング株式会社",
+    "published_at": "2026-09-02",
+    "archived_url": null,
+    "accessed_at": "2026-09-09",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "First-party notice stating that, following a comprehensive review of future service policy, the official website and My Page would close on 2026-09-04. The notice does not establish insolvency, customer loss, a claims process or a withdrawal suspension."
   }
 ]
