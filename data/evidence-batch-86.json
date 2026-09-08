@@ -43,5 +43,20 @@
     "reliability": "high",
     "claim_scope": "terms_risk",
     "notes": "First-party product notice documenting XBT and USDT EARN support, lock-up periods and principal-plus-interest maturity mechanics. Historical insurance-fund backing and guaranteed-return language remain operator marketing claims, not independent proof of solvency, enforceability or universal repayment."
+  },
+  {
+    "id": "cya_src_b86_0004",
+    "platform_id": "cya_plat_000121",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "BitMEX Terms of Service — June 2025",
+    "url": "https://static.bitmex.com/documents/Terms_of_Service__June_2025.pdf",
+    "publisher": "BitMEX",
+    "published_at": "2025-06-01",
+    "archived_url": null,
+    "accessed_at": "2026-09-09",
+    "reliability": "high",
+    "claim_scope": "terms_risk",
+    "notes": "First-party Terms of Service explicitly include BitMEX EARN within the defined Services. The deposit terms require users to transfer all right, title and interest in deposited digital assets to BitMEX, with account balances represented on BitMEX books rather than as user wallets. Service-specific terms may supplement or prevail in a conflict, so this evidence supports platform ownership/counterparty exposure without asserting EARN-specific segregation, insurance enforceability or insolvency priority beyond the reviewed terms."
   }
 ]
