@@ -43,5 +43,20 @@
     "reliability": "high",
     "claim_scope": "terms_risk",
     "notes": "First-party authority that customer-requested mid-term cancellation is unavailable under the current lending product rules."
+  },
+  {
+    "id": "cya_src_b85_0004",
+    "platform_id": "cya_plat_000120",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "定期貸しコインサービスに関するご利用規約",
+    "url": "https://bitflyer.com/pub/terms/ja-jp/usepolicy-for-lending-ja.pdf",
+    "publisher": "bitFlyer",
+    "published_at": null,
+    "archived_url": null,
+    "accessed_at": "2026-09-09",
+    "reliability": "high",
+    "claim_scope": "terms_risk",
+    "notes": "Dedicated first-party lending terms define the service as crypto-asset consumption lending to bitFlyer. Current first-party disclosures state lent assets are not subject to segregated management, customers have no priority right over other creditors for lent assets, and repayment depends on bitFlyer credit with non-return risk in insolvency."
   }
 ]
