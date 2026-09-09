@@ -1,11 +1,11 @@
 [
   {
     "platform_id": "cya_plat_000121",
-    "terms_status": "unknown",
-    "asset_ownership_interpretation": "Reviewed first-party launch materials establish a fixed-term product but do not prove segregation, trust protection, enforceable insurance coverage or insolvency priority for EARN balances. BitMEX insurance-fund backing language is recorded only as an operator claim.",
+    "terms_status": "platform_owned",
+    "asset_ownership_interpretation": "BitMEX's Terms of Service explicitly include BitMEX EARN within the defined Services and state that users transferring digital assets to BitMEX deposit addresses transfer all right, title and interest in those assets to the Company. Account balances are BitMEX book-record balances rather than user wallets. Service-specific terms may supplement or prevail if they conflict, so CYA records operator ownership/counterparty exposure without inferring EARN-specific segregation, insurance enforceability or insolvency priority beyond reviewed authority.",
     "affected_product": "BitMEX EARN",
-    "source_evidence_id": "cya_src_b86_0001",
-    "notes": "Published APRs are issuer terms rather than verified realized returns. Contractual maturity mechanics do not prove universal historical repayment. Current operational status remains unresolved.",
-    "confidence": "medium"
+    "source_evidence_id": "cya_src_b86_0004",
+    "notes": "Historical insurance-fund and guaranteed-return wording remains operator marketing language. Platform-owned classifies legal/counterparty structure, not solvency, principal guarantee, enforceable insurance or universal historical repayment. Current EARN operating status remains unresolved.",
+    "confidence": "high"
   }
 ]
