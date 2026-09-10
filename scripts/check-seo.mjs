@@ -17,7 +17,9 @@ for(const f of html){
 
   const canonical=t.match(/<link[^>]+rel="canonical"[^>]+href="([^"]+)"/i)?.[1];
   ok(canonical,'canonical href '+f);
-  canonicalUrls.add(canonical);
+  const robots=t.match(/<meta[^>]+name="robots"[^>]+content="([^"]*)"/i)?.[1] ?? '';
+  ok(robots,'robots meta '+f);
+  if(!/\bnoindex\b/i.test(robots)) canonicalUrls.add(canonical);
 
   const description=t.match(/<meta[^>]+name="description"[^>]+content="([^"]*)"/i)?.[1] ?? '';
   ok(description.length>0,'meta description '+f);
@@ -25,6 +27,8 @@ for(const f of html){
 }
 const home=fs.readFileSync('dist/index.html','utf8');
 ok(home.includes('<title>Crypto Lending &amp; Yield Platform History | Crypto Yield Archive</title>')||home.includes('<title>Crypto Lending & Yield Platform History | Crypto Yield Archive</title>'),'homepage search-intent title');
+const notFound=fs.readFileSync('dist/404.html','utf8');
+ok(/name="robots"[^>]+content="noindex,follow"/i.test(notFound),'404 must be noindex,follow');
 const expectedEvents=['platform_view','registry_search','filter_change','archive_click','outbound_evidence_click','correction_click'];
 const analyticsFile=js.find((f)=>{const t=fs.readFileSync(f,'utf8');return expectedEvents.every((eventName)=>t.includes(eventName))});
 ok(analyticsFile,'analytics bundle');
@@ -44,4 +48,4 @@ for(const f of ['dist/index.html','dist/stats/index.html','dist/version.json','d
   ok(!/Platforms:\s*20\b/.test(t),'old count '+f);
   ok(!/"(?:platforms|primary_records)"\s*:\s*20\b/.test(t),'old json '+f);
 }
-console.log(JSON.stringify({html_pages:html.length,canonical_urls:canonicalUrls.size,sitemap_urls:sitemapUrls.size,ga4:true,analytics_bundle:analyticsHref,analytics_events:true,seo_metadata:true,ok:true}));
+console.log(JSON.stringify({html_pages:html.length,indexable_canonical_urls:canonicalUrls.size,sitemap_urls:sitemapUrls.size,ga4:true,analytics_bundle:analyticsHref,analytics_events:true,seo_metadata:true,ok:true}));
