@@ -29,6 +29,15 @@ const home=fs.readFileSync('dist/index.html','utf8');
 ok(home.includes('<title>Crypto Lending &amp; Yield Platform History | Crypto Yield Archive</title>')||home.includes('<title>Crypto Lending & Yield Platform History | Crypto Yield Archive</title>'),'homepage search-intent title');
 const notFound=fs.readFileSync('dist/404.html','utf8');
 ok(/name="robots"[^>]+content="noindex,follow"/i.test(notFound),'404 must be noindex,follow');
+const platformHtml=html.filter((f)=>f.includes(`${path.sep}platform${path.sep}`));
+ok(platformHtml.length>0,'platform HTML pages');
+for(const f of platformHtml){
+  const t=fs.readFileSync(f,'utf8');
+  ok(t.includes('"@type":"WebPage"'),'platform WebPage schema '+f);
+  ok(t.includes('"@type":"Thing"'),'platform subject Thing schema '+f);
+  ok(!t.includes('"@type":"Article"'),'platform pages must not claim Article schema '+f);
+  ok(!t.includes('"datePublished"'),'platform pages must not fabricate publication dates '+f);
+}
 const expectedEvents=['platform_view','registry_search','filter_change','archive_click','outbound_evidence_click','correction_click'];
 const analyticsFile=js.find((f)=>{const t=fs.readFileSync(f,'utf8');return expectedEvents.every((eventName)=>t.includes(eventName))});
 ok(analyticsFile,'analytics bundle');
@@ -48,4 +57,4 @@ for(const f of ['dist/index.html','dist/stats/index.html','dist/version.json','d
   ok(!/Platforms:\s*20\b/.test(t),'old count '+f);
   ok(!/"(?:platforms|primary_records)"\s*:\s*20\b/.test(t),'old json '+f);
 }
-console.log(JSON.stringify({html_pages:html.length,indexable_canonical_urls:canonicalUrls.size,sitemap_urls:sitemapUrls.size,ga4:true,analytics_bundle:analyticsHref,analytics_events:true,seo_metadata:true,ok:true}));
+console.log(JSON.stringify({html_pages:html.length,indexable_canonical_urls:canonicalUrls.size,sitemap_urls:sitemapUrls.size,platform_schema:'WebPage',ga4:true,analytics_bundle:analyticsHref,analytics_events:true,seo_metadata:true,ok:true}));
