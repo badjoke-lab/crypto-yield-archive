@@ -17,14 +17,19 @@ const terms = getTermsRisk(platform.id);
 const pageUrl = `https://cya.badjoke-lab.com/platform/${platform.slug}/`;
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline: `${platform.canonical_name} platform record`,
-  name: platform.canonical_name,
+  '@type': 'WebPage',
+  '@id': `${pageUrl}#record`,
+  name: `${platform.canonical_name} historical platform record`,
   description: platform.summary,
   url: pageUrl,
-  isPartOf: { '@type': 'WebSite', name: 'Crypto Yield Archive', url: 'https://cya.badjoke-lab.com/' },
+  isPartOf: {
+    '@type': 'WebSite',
+    '@id': 'https://cya.badjoke-lab.com/#website',
+    name: 'Crypto Yield Archive',
+    url: 'https://cya.badjoke-lab.com/',
+  },
   about: {
-    '@type': 'Organization',
+    '@type': 'Thing',
     name: platform.canonical_name,
     url: platform.official_url_original || undefined,
     sameAs: platform.archived_url ? [platform.archived_url] : undefined,
