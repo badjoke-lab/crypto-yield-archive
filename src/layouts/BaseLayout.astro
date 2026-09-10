@@ -11,6 +11,7 @@ import { projectNetwork } from '../lib/project-network';
 interface Props {
   title?: string;
   description?: string;
+  robots?: string;
 }
 
 const counts = getRecordCounts();
@@ -21,6 +22,7 @@ const defaultDescription = `Evidence-based historical registry with ${counts.pla
 const {
   title = defaultTitle,
   description = defaultDescription,
+  robots = 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1',
 } = Astro.props;
 const normalizedDescription = String(description || defaultDescription).replace(/\s+/g, ' ').trim();
 const metaDescription = normalizedDescription.length > 160
@@ -143,7 +145,7 @@ const structuredData = [websiteJsonLd, ...(currentPath === '/' ? [datasetJsonLd]
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#f3efe5" />
-    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+    <meta name="robots" content={robots} />
     <title>{title}</title>
     <meta name="description" content={metaDescription} />
     <link rel="icon" href="/og/cya-og.svg" type="image/svg+xml" />
