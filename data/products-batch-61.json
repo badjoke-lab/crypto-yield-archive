@@ -4,7 +4,7 @@
     "product_name": "IZAKA-YA Lending",
     "product_type": "centralized_yield",
     "advertised_yield_range": "Normal public surface up to 12% APY; temporary 2026 campaigns advertised 33%, 100%, 500%, 1000% APR-equivalent rewards, and an August transfer-linked campaign described as effectively 150% annualized, subject to term, eligibility, and reward-cap conditions.",
-    "lockup_or_withdrawal_terms": "Public lending flows allow selection of lending amount and period and state that principal plus interest return to the IZAKA-YA wallet after the lock period. Campaign-specific conditions may require completing a term or additional eligibility steps to receive promotional rewards.",
+    "lockup_or_withdrawal_terms": "Public lending flows historically allowed selection of lending amount and period and stated that principal plus interest return to the IZAKA-YA wallet after the lock period. On 2026-09-17 IZAKA-YA announced that new lending would stop for Japan residents and Japanese nationals abroad and directed affected customers seeking return of held assets to a dedicated withdrawal application process. Completion timing and universal payout status are not independently established.",
     "custody_or_counterparty_model": "Account-based IZAKA-YA wallet using provider-operated service infrastructure; reviewed public sources do not fully resolve the exact lending counterparty, legal ownership transfer, service-independent recovery path, asset deployment, or rehypothecation mechanics.",
     "source_ids": [
       "cya_src_b61_0001",
@@ -17,8 +17,8 @@
       "cya_src_b61_0011",
       "cya_src_b61_0012"
     ],
-    "last_verified_at": "2026-08-23",
+    "last_verified_at": "2026-09-20",
     "confidence": "medium",
-    "notes": "Headline promotional annualized rates are issuer-advertised campaign formulas and are not treated as verified realized customer returns. A current first-party lending article explicitly warns that crypto-lending principal is not guaranteed."
+    "notes": "Headline promotional annualized rates are issuer-advertised campaign formulas and are not treated as verified realized customer returns. A current first-party lending article explicitly warns that crypto-lending principal is not guaranteed. The September 2026 Japan-facing service termination makes this product regionally limited; CYA does not infer a global product shutdown."
   }
 ]
