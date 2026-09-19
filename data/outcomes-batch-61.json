@@ -1,14 +1,20 @@
 [
   {
     "platform_id": "cya_plat_000102",
-    "outcome_status": "not_applicable",
-    "estimated_recovery_rate": "not_applicable",
-    "repayment_method": "Not applicable; IZAKA-YA remains an active platform and no failure, insolvency, withdrawal freeze, or customer-claims process is established by the reviewed sources.",
-    "claim_process_url": "https://izakaya.tech/en/",
-    "jurisdictions": ["Hong Kong", "Global"],
-    "affected_products": ["IZAKA-YA Lending"],
-    "last_verified_at": "2026-08-23",
+    "outcome_status": "unknown",
+    "estimated_recovery_rate": "unknown; operator-directed withdrawal process announced for affected Japan-facing customers",
+    "repayment_method": "Affected customers are directed to submit withdrawals through the IZAKA-YA withdrawal application form; completion timing and universal return are not independently established.",
+    "claim_process_url": "https://izakaya.tech/izakaya-withdrawal-form/index.html",
+    "jurisdictions": [
+      "Japan",
+      "Japanese nationals abroad"
+    ],
+    "affected_products": [
+      "IZAKA-YA Lending",
+      "IZAKA-YA wallet balances"
+    ],
+    "last_verified_at": "2026-09-20",
     "confidence": "medium",
-    "notes": "Public lending instructions describe contractual product mechanics, including principal plus interest returning to the wallet after lock expiry, but those instructions are not evidence of universal realized repayment. A current first-party article explicitly warns that crypto-lending principal is not guaranteed. No adverse customer outcome is inferred merely from promotional yield levels or unresolved terms."
+    "notes": "The operator announced a dedicated asset-withdrawal process while ending service for Japan residents and Japanese nationals abroad. CYA records the customer-outcome state as unknown because the reviewed sources do not establish that all affected balances have been returned, a recovery percentage, a haircut, insolvency, bankruptcy, or a formal creditor-claims process."
   }
 ]
