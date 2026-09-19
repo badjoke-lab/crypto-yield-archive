@@ -1,0 +1,47 @@
+[
+  {
+    "id": "cya_src_b109_0001",
+    "platform_id": "cya_plat_000102",
+    "event_id": "cya_ev_000394",
+    "source_type": "regulatory_notice",
+    "title": "Izakaya Limitedに対する警告書の発出について",
+    "url": "https://www.fsa.go.jp/recent/recent2026.html",
+    "publisher": "Financial Services Agency, Japan",
+    "published_at": "2026-09-01",
+    "archived_url": "https://web.archive.org/web/*/https://www.fsa.go.jp/recent/recent2026.html",
+    "accessed_at": "2026-09-20",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "Official FSA publication index records the 2026-09-01 warning concerning Izakaya Limited for unregistered crypto-asset exchange business."
+  },
+  {
+    "id": "cya_src_b109_0002",
+    "platform_id": "cya_plat_000102",
+    "event_id": "cya_ev_000395",
+    "source_type": "official_statement",
+    "title": "出金・送金に関する確認状況およびコンプライアンス対応について",
+    "url": "https://izakaya.tech/news/news3/",
+    "publisher": "Izakaya Limited",
+    "published_at": "2026-09-07",
+    "archived_url": "https://web.archive.org/web/*/https://izakaya.tech/news/news3/",
+    "accessed_at": "2026-09-20",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "First-party update states that some withdrawals and transfers remained under enhanced individual review and that withdrawals were not uniformly stopped for all users."
+  },
+  {
+    "id": "cya_src_b109_0003",
+    "platform_id": "cya_plat_000102",
+    "event_id": "cya_ev_000396",
+    "source_type": "official_statement",
+    "title": "〖重要〗日本居住者の皆様へのサービス提供終了および預かり資産の出金手続きについて",
+    "url": "https://izakaya.tech/news/end-of-service-japan-residents/",
+    "publisher": "Izakaya Limited",
+    "published_at": "2026-09-17",
+    "archived_url": "https://web.archive.org/web/*/https://izakaya.tech/news/end-of-service-japan-residents/",
+    "accessed_at": "2026-09-20",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "First-party notice establishes the Japan-resident/Japanese-national service termination scope, stop on new registration and new lending for affected users, planned Japanese-site closure, and continued withdrawal procedure. It does not establish a global IZAKA-YA shutdown."
+  }
+]
