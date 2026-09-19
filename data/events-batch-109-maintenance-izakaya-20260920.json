@@ -1,0 +1,47 @@
+[
+  {
+    "id": "cya_ev_000394",
+    "platform_id": "cya_plat_000102",
+    "event_type": "regulatory_action",
+    "event_date": "2026-09-01",
+    "title": "Japan FSA published warning concerning Izakaya Limited",
+    "description": "Japan's Financial Services Agency published that it had issued a warning to Izakaya Limited concerning unregistered crypto-asset exchange business in Japan. CYA records the regulatory development because IZAKA-YA's lending product is integrated with the same provider-operated account and wallet service surface.",
+    "confidence": "high",
+    "impact_level": "high",
+    "event_status_effect": "limited",
+    "source_count": 1,
+    "sort_order": 5,
+    "counterparty_name": null,
+    "notes": "The warning is a regulatory fact. It is not by itself evidence of insolvency, loss of customer assets, fraud, a global shutdown, or completed customer repayment."
+  },
+  {
+    "id": "cya_ev_000395",
+    "platform_id": "cya_plat_000102",
+    "event_type": "other",
+    "event_date": "2026-09-07",
+    "title": "IZAKA-YA reported continued enhanced review of some withdrawals",
+    "description": "IZAKA-YA stated that some customer transfers and withdrawals remained subject to additional KYC, transaction-history, destination-address, source-of-funds and related checks while reviewed cases were processed individually. The operator again said that withdrawals were not uniformly stopped for all customers.",
+    "confidence": "high",
+    "impact_level": "high",
+    "event_status_effect": "limited",
+    "source_count": 1,
+    "sort_order": 6,
+    "counterparty_name": null,
+    "notes": "Operator-reported status evidence only. It does not independently establish completion times for affected customers or that all reported withdrawal problems were resolved."
+  },
+  {
+    "id": "cya_ev_000396",
+    "platform_id": "cya_plat_000102",
+    "event_type": "other",
+    "event_date": "2026-09-17",
+    "title": "IZAKA-YA announced Japan-facing service termination and withdrawal-only transition",
+    "description": "IZAKA-YA announced that service would end for all customers residing in Japan and for Japanese nationals living abroad. It said new registration and new lending would stop for the affected population, the Japanese-language site would close at the end of September, and the withdrawal procedure would remain available until asset-return handling was completed.",
+    "confidence": "high",
+    "impact_level": "critical",
+    "event_status_effect": "limited",
+    "source_count": 1,
+    "sort_order": 7,
+    "counterparty_name": null,
+    "notes": "This is a regional and nationality-scoped service exit, not evidence that IZAKA-YA has ended globally. CYA keeps the platform limited and records customer outcome as unknown pending evidence of actual return completion."
+  }
+]
