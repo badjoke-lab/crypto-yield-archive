@@ -6,10 +6,10 @@
     "governing_law_or_jurisdiction": "The public website terms state Cayman Islands governing law, while the first-party company page identifies Izakaya Limited and a Hong Kong operating address. The logged-in lending flow appears to present separate contract content that was not available in the reviewed public sources.",
     "asset_ownership_interpretation": "The reviewed public pages do not clearly establish whether lending transfers legal or beneficial ownership of customer assets, the exact lending counterparty, or how lent assets are deployed, rehypothecated, segregated, or treated in an insolvency.",
     "bankruptcy_treatment": "Not established by the reviewed public terms.",
-    "withdrawal_limitations": "Lending contracts use selected lock periods and campaign rewards may require specified term completion, eligibility checks, or KYC/application steps. No platform-wide withdrawal suspension is established by the reviewed sources.",
+    "withdrawal_limitations": "Lending contracts historically used selected lock periods and campaign rewards could require term completion, eligibility checks, or KYC/application steps. In August 2026 the operator disclosed temporary transfer/withdrawal restrictions for some accounts under enhanced review. On 2026-09-17 it announced an end to service for Japan residents and Japanese nationals abroad and directed affected customers to a dedicated withdrawal application process. Universal withdrawal completion is not established.",
     "source_evidence_id": "cya_src_b61_0012",
-    "last_verified_at": "2026-08-23",
+    "last_verified_at": "2026-09-20",
     "confidence": "medium",
-    "notes": "A current first-party lending article explicitly states that crypto-lending principal is not guaranteed. Generic website terms are not treated as complete lending-product terms. The Hong Kong operator identity and Cayman governing-law clause are preserved separately rather than reconciled by inference. Reverify if IZAKA-YA publishes public lending-contract terms that resolve counterparty, ownership, custody deployment, insolvency treatment, insurance, regulatory authorization, or the economic source of promotional yields."
+    "notes": "A current first-party lending article explicitly states that crypto-lending principal is not guaranteed. Generic website terms are not treated as complete lending-product terms. The Hong Kong operator identity and Cayman governing-law clause are preserved separately rather than reconciled by inference. September 2026 regulatory and regional-service-exit developments increase operational uncertainty but do not by themselves establish insolvency, ownership treatment, claim priority, or a global shutdown."
   }
 ]
