@@ -1,0 +1,18 @@
+[
+  {
+    "platform_id": "cya_plat_000143",
+    "outcome_status": "not_applicable",
+    "estimated_recovery_rate": null,
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": null,
+    "claim_process_url": null,
+    "affected_products": ["Worldcoin Vault", "Dollar Vault", "World Money Earn"],
+    "claim_classes": [],
+    "jurisdictions": ["Global"],
+    "as_of": "2026-09-20",
+    "last_verified_at": "2026-09-20",
+    "notes": "This is a product/provider migration rather than a verified insolvency, customer-loss or claims event. Legacy Vault balances remain on-chain until users move them; CYA does not infer a recovery percentage or universal customer outcome.",
+    "confidence": "high"
+  }
+]
