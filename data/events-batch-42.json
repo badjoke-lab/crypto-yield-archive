@@ -54,5 +54,19 @@
     "source_count": 1,
     "sort_order": 2,
     "notes": "The exact formal rename date from Financial Account to Flexible Savings remains unresolved."
+  },
+  {
+    "id": "cya_ev_000400",
+    "platform_id": "cya_plat_000071",
+    "event_type": "other",
+    "event_date": "2026-09-15",
+    "title": "CoinEx announces orderly cessation of Earn and other non-spot services",
+    "description": "CoinEx announced an orderly cessation process, stopped accepting new Earn and Staking subscriptions/orders, and scheduled all non-spot services to cease on 2026-09-22.",
+    "confidence": "high",
+    "impact_level": "critical",
+    "event_status_effect": "limited",
+    "source_count": 2,
+    "sort_order": 3,
+    "notes": "This is a wind-down announcement and immediate stop-new-business event. It does not establish completed cessation, insolvency, customer loss, or a claims process."
   }
 ]
