@@ -1,0 +1,44 @@
+[
+  {
+    "id": "cya_ev_000397",
+    "platform_id": "cya_plat_000143",
+    "event_type": "yield_program_started",
+    "event_date": "2024-10-17",
+    "title": "World App 3.0 introduces Vault",
+    "description": "World announced World App 3.0 with a Vault feature that let users earn rewards on assets held through the app.",
+    "networks": ["World Chain"],
+    "impact_level": "medium",
+    "event_status_effect": "active",
+    "source_count": 1,
+    "confidence": "high",
+    "notes": "The launch establishes the user-facing Vault era. It does not prove that every Vault asset used one identical yield mechanism."
+  },
+  {
+    "id": "cya_ev_000398",
+    "platform_id": "cya_plat_000143",
+    "event_type": "other",
+    "event_date": "2025-04-30",
+    "title": "Morpho Mini App brings lending and vault rewards into World App",
+    "description": "World launched a Morpho Mini App for World App, giving users access to Morpho-powered lending, borrowing and vault rewards on World Chain.",
+    "networks": ["World Chain"],
+    "impact_level": "high",
+    "event_status_effect": "active",
+    "source_count": 1,
+    "confidence": "high",
+    "notes": "Morpho is modeled separately as cya_plat_000140. This event records the historically significant World-side distribution/access layer."
+  },
+  {
+    "id": "cya_ev_000399",
+    "platform_id": "cya_plat_000143",
+    "event_type": "other",
+    "event_date": "2026-09-17",
+    "title": "Earn replaces the WLD and USDC Vaults in World Money",
+    "description": "World documented that Earn replaced the legacy WLD and USDC Vaults. Legacy users can move balances into Earn or back to spending, while current Earn uses Morpho-selected on-chain lending protocols.",
+    "networks": ["World Chain"],
+    "impact_level": "high",
+    "event_status_effect": "active",
+    "source_count": 4,
+    "confidence": "high",
+    "notes": "This is a product/mechanism migration, not a platform failure. The legacy USDC Dollar Vault used Sky/sDAI; CYA does not generalize that mechanism to the historical WLD Vault."
+  }
+]
