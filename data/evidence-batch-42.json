@@ -118,5 +118,35 @@
     "reliability": "high",
     "claim_scope": "status",
     "notes": "Current first-party evidence confirming Flexible Savings operation in 2026 and warning that redemption can be delayed when idle Flexible Savings assets are insufficient until borrowers return coins."
+  },
+  {
+    "id": "cya_src_b42_0009",
+    "platform_id": "cya_plat_000071",
+    "event_id": "cya_ev_000400",
+    "source_type": "official_statement",
+    "title": "Important Notice on CoinEx’s Orderly Cessation of Operations",
+    "url": "https://www.coinex.com/en/announcements/detail/53539656293908",
+    "publisher": "CoinEx",
+    "published_at": "2026-09-15",
+    "archived_url": "https://web.archive.org/web/*/https://www.coinex.com/en/announcements/detail/53539656293908",
+    "accessed_at": "2026-09-20",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "First-party final cessation notice stating that new Earn and Staking subscriptions/orders stop from the announcement and that all non-spot services are scheduled to cease on 2026-09-22."
+  },
+  {
+    "id": "cya_src_b42_0010",
+    "platform_id": "cya_plat_000071",
+    "event_id": "cya_ev_000400",
+    "source_type": "news_article",
+    "title": "Hong Kong crypto exchange CoinEx to cease operations after 9 years in business",
+    "url": "https://www.coindesk.com/business/2026/09/15/hong-kong-crypto-exchange-coinex-to-cease-operations-after-9-years-in-business",
+    "publisher": "CoinDesk",
+    "published_at": "2026-09-15",
+    "archived_url": "https://web.archive.org/web/*/https://www.coindesk.com/business/2026/09/15/hong-kong-crypto-exchange-coinex-to-cease-operations-after-9-years-in-business",
+    "accessed_at": "2026-09-20",
+    "reliability": "medium",
+    "claim_scope": "event",
+    "notes": "Independent reporting corroborating CoinEx's announced orderly closure."
   }
 ]
