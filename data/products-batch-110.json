@@ -1,0 +1,13 @@
+[
+  {
+    "platform_id": "cya_plat_000143",
+    "product_name": "World Money Earn",
+    "product_type": "defi_yield_aggregator",
+    "networks": ["World Chain"],
+    "custody_model": "self-custodial wallet-integrated flow into on-chain lending protocols",
+    "yield_source": "on-chain lending protocols selected through Morpho; rates and liquidity vary by market conditions",
+    "status": "active",
+    "contract_addresses": [],
+    "notes": "Earn replaced the legacy WLD and USDC Vaults. Supported examples include WLD, USDC, wETH and wBTC. Availability varies by region; no universal APY or instant withdrawal assumption is made."
+  }
+]
