@@ -1,0 +1,9 @@
+[
+  {
+    "platform_id": "cya_plat_000143",
+    "terms_status": "varies_by_product",
+    "source_evidence_id": "cya_src_b110_0004",
+    "confidence": "high",
+    "notes": "The historical USDC Dollar Vault and current Earn use different mechanisms. The legacy Dollar Vault converted USDC into sDAI and followed the Sky Protocol Dai Savings Rate; current Earn routes supported assets through Morpho-selected on-chain lending protocols. Withdrawal timing can depend on on-chain liquidity and protocol conditions, and product availability varies by region."
+  }
+]
