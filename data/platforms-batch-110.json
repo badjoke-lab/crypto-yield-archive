@@ -1,0 +1,26 @@
+[
+  {
+    "id": "cya_plat_000143",
+    "slug": "world-money-earn",
+    "canonical_name": "World Money Earn",
+    "aliases": ["World App Vault", "Worldcoin Vault", "Dollar Vault", "World Money Earn"],
+    "type": "yield_aggregator",
+    "architecture": "defi",
+    "networks": ["World Chain"],
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": "2024-10-17",
+    "end_date": null,
+    "country_or_origin": "Global",
+    "summary": "Wallet-integrated self-custodial yield lineage in World App / World Money. The product began with Vault features and, in September 2026, moved to Earn, which routes supported assets into Morpho-selected on-chain lending protocols.",
+    "what_happened": "World App 3.0 introduced Vault in October 2024. In April 2025, World added a Morpho Mini App that exposed Morpho lending, borrowing and vault rewards on World Chain. In September 2026, World Money replaced the legacy WLD and USDC Vaults with Earn. Current World documentation says Earn supports assets including WLD, USDC, wETH and wBTC and uses Morpho to source on-chain lending rates. The legacy USDC Dollar Vault used a different mechanism: USDC was converted into sDAI and yield followed the Sky Protocol Dai Savings Rate. Legacy balances remain on-chain until moved, and users can move them either into Earn or back to spending.",
+    "official_url_original": "https://world.org/",
+    "official_domain_original": "world.org",
+    "official_url_status": "live_verified",
+    "archived_url": null,
+    "confidence": "high",
+    "last_verified_at": "2026-09-20",
+    "uncertainty_notes": "CYA does not infer that the historical WLD Vault used the same Sky/sDAI mechanism as the USDC Dollar Vault. Earn availability varies by region, withdrawal timing depends on on-chain liquidity and protocol conditions, and no universal APY, principal guarantee or customer outcome is inferred.",
+    "notes": "Modeled as one historically significant wallet-integrated yield lineage rather than treating World Money itself as a lending protocol. Morpho remains a separate canonical protocol record at cya_plat_000140."
+  }
+]
