@@ -85,10 +85,24 @@ jobs:
 
             echo "Cloudflare source=${SOURCE_SHA} deployed=${deployed_commit:-missing} relation=${relation:-missing} status=${check_status} conclusion=${check_conclusion} (${attempt}/120)."
 
-            if [[ ("${relation}" == "identical" || "${relation}" == "ahead") && "${check_status}" == "completed" && "${check_conclusion}" == "success" ]]; then
-              echo "CYA_DEPLOYED_COMMIT=${deployed_commit}" >> "$GITHUB_ENV"
-              ready=1
-              break
+            if [[ "${relation}" == "identical" || "${relation}" == "ahead" ]]; then
+              if [[ "${check_status}" == "completed" && "${check_conclusion}" == "success" ]]; then
+                echo "CYA_DEPLOYED_COMMIT=${deployed_commit}" >> "$GITHUB_ENV"
+                ready=1
+                break
+              fi
+
+              # The custom-domain version endpoint is itself production evidence.
+              # Cloudflare's GitHub check can remain stuck in_progress even after
+              # the deployed commit is already being served. Continue to the
+              # full HTTP/route smoke checks instead of timing out on stale
+              # provider metadata.
+              if [[ -n "${deployed_commit}" && "${attempt}" -ge 4 ]]; then
+                echo "Cloudflare check metadata is not complete, but production version.json already serves ${deployed_commit}; continuing to surface verification."
+                echo "CYA_DEPLOYED_COMMIT=${deployed_commit}" >> "$GITHUB_ENV"
+                ready=1
+                break
+              fi
             fi
 
             sleep 15
