@@ -1,7 +1,7 @@
 [
   {
     "platform_id": "cya_plat_000144",
-    "outcome_status": "not_applicable",
+    "outcome_status": "unknown",
     "estimated_recovery_rate": null,
     "repayment_started_at": null,
     "repayment_completed_at": null,
@@ -18,7 +18,7 @@
     ],
     "as_of": "2026-10-08",
     "last_verified_at": "2026-10-08",
-    "notes": "This is an orderly protocol/network wind-down rather than a verified insolvency or claims process. Blast instructs users to exit to Ethereum and says assets remain withdrawable after the normal interface deadline through L1 bridge contracts. CYA therefore does not assign a recovery percentage.",
+    "notes": "Blast is in an orderly network/yield wind-down with withdrawals temporarily interrupted during the Lido unwind. No insolvency, claims process, fixed recovery percentage, or customer-loss outcome is established, so CYA keeps the terminal outcome unknown rather than not_applicable.",
     "confidence": "high"
   }
 ]
