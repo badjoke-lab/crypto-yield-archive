@@ -1,0 +1,9 @@
+[
+  {
+    "platform_id": "cya_plat_000144",
+    "terms_status": "varies_by_product",
+    "source_evidence_id": "cya_src_b111_0001",
+    "confidence": "high",
+    "notes": "Blast's native-yield mechanics differ between ETH and stablecoin balances. During the wind-down, withdrawal timing also depends on the Lido unwind and bridge operation. CYA does not infer guaranteed yield continuity, instant withdrawals, principal protection, or a universal post-shutdown interface."
+  }
+]

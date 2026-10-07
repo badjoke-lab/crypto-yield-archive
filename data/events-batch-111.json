@@ -1,0 +1,36 @@
+[
+  {
+    "id": "cya_ev_090001",
+    "platform_id": "cya_plat_000144",
+    "event_type": "yield_program_started",
+    "event_date": "2024-02-29",
+    "title": "Blast mainnet launches with protocol-native yield",
+    "description": "Blast mainnet introduced protocol-native yield for bridged ETH and stablecoin balances as part of the L2's core design.",
+    "networks": [
+      "Blast",
+      "Ethereum"
+    ],
+    "impact_level": "high",
+    "event_status_effect": "active",
+    "source_count": 1,
+    "confidence": "high",
+    "notes": "Launch event establishes the yield mechanism's historical start on mainnet."
+  },
+  {
+    "id": "cya_ev_090002",
+    "platform_id": "cya_plat_000144",
+    "event_type": "other",
+    "event_date": "2026-10-02",
+    "title": "Blast announces network wind-down and native-yield unwind",
+    "description": "Blast announced an orderly L2 wind-down, directed users to withdraw to Ethereum, and said withdrawals would be temporarily unavailable while Blast's Lido assets were withdrawn before the exit process resumed with a 24-hour delay.",
+    "networks": [
+      "Blast",
+      "Ethereum"
+    ],
+    "impact_level": "critical",
+    "event_status_effect": "withdrawals_suspended",
+    "source_count": 2,
+    "confidence": "high",
+    "notes": "The announcement is a wind-down transition, not evidence of insolvency or a completed customer-loss event. Blast said normal interface withdrawals would remain available through October 26 and direct L1 bridge-contract withdrawals afterward."
+  }
+]

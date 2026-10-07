@@ -1,0 +1,24 @@
+[
+  {
+    "platform_id": "cya_plat_000144",
+    "outcome_status": "unknown",
+    "estimated_recovery_rate": null,
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": null,
+    "claim_process_url": null,
+    "affected_products": [
+      "Blast Native Yield",
+      "Blast bridged ETH",
+      "Blast USDB native yield"
+    ],
+    "claim_classes": [],
+    "jurisdictions": [
+      "Global"
+    ],
+    "as_of": "2026-10-08",
+    "last_verified_at": "2026-10-08",
+    "notes": "Blast is in an orderly network/yield wind-down with withdrawals temporarily interrupted during the Lido unwind. No insolvency, claims process, fixed recovery percentage, or customer-loss outcome is established, so CYA keeps the terminal outcome unknown rather than not_applicable.",
+    "confidence": "high"
+  }
+]
