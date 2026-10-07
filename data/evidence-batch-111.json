@@ -2,7 +2,7 @@
   {
     "id": "cya_src_b111_0001",
     "platform_id": "cya_plat_000144",
-    "event_id": "cya_ev_000400",
+    "event_id": "cya_ev_090001",
     "source_type": "official_statement",
     "title": "Blast — native yield for ETH and stablecoins",
     "url": "https://blast.io/en/about",
@@ -17,7 +17,7 @@
   {
     "id": "cya_src_b111_0002",
     "platform_id": "cya_plat_000144",
-    "event_id": "cya_ev_000401",
+    "event_id": "cya_ev_090002",
     "source_type": "news_article",
     "title": "Ethereum layer-2 Blast is shutting down",
     "url": "https://www.theblock.co/news/business/2026-10-02-blast-ethereum-layer-2-shutting-down-417583",
@@ -32,7 +32,7 @@
   {
     "id": "cya_src_b111_0003",
     "platform_id": "cya_plat_000144",
-    "event_id": "cya_ev_000401",
+    "event_id": "cya_ev_090002",
     "source_type": "news_article",
     "title": "Ethereum Layer-2 Blast Is Shutting Down",
     "url": "https://decrypt.co/379972/ethereum-layer-2-blast-shutting-down",
