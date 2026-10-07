@@ -1,0 +1,47 @@
+[
+  {
+    "id": "cya_src_b111_0001",
+    "platform_id": "cya_plat_000144",
+    "event_id": "cya_ev_000400",
+    "source_type": "official_statement",
+    "title": "Blast — native yield for ETH and stablecoins",
+    "url": "https://blast.io/en/about",
+    "publisher": "Blast",
+    "published_at": null,
+    "archived_url": "https://web.archive.org/web/*/https://blast.io/en/about",
+    "accessed_at": "2026-10-08",
+    "reliability": "high",
+    "claim_scope": "entity",
+    "notes": "First-party product material documenting Blast's native-yield design and protocol context."
+  },
+  {
+    "id": "cya_src_b111_0002",
+    "platform_id": "cya_plat_000144",
+    "event_id": "cya_ev_000401",
+    "source_type": "news_article",
+    "title": "Ethereum layer-2 Blast is shutting down",
+    "url": "https://www.theblock.co/news/business/2026-10-02-blast-ethereum-layer-2-shutting-down-417583",
+    "publisher": "The Block",
+    "published_at": "2026-10-02",
+    "archived_url": "https://web.archive.org/web/*/https://www.theblock.co/news/business/2026-10-02-blast-ethereum-layer-2-shutting-down-417583",
+    "accessed_at": "2026-10-08",
+    "reliability": "medium",
+    "claim_scope": "event",
+    "notes": "Reports the official Blast wind-down announcement, Lido unwind, temporary withdrawal interruption, 24-hour delay, October 26 interface boundary, and later L1 bridge-contract withdrawal path."
+  },
+  {
+    "id": "cya_src_b111_0003",
+    "platform_id": "cya_plat_000144",
+    "event_id": "cya_ev_000401",
+    "source_type": "news_article",
+    "title": "Ethereum Layer-2 Blast Is Shutting Down",
+    "url": "https://decrypt.co/379972/ethereum-layer-2-blast-shutting-down",
+    "publisher": "Decrypt",
+    "published_at": "2026-10-02",
+    "archived_url": "https://web.archive.org/web/*/https://decrypt.co/379972/ethereum-layer-2-blast-shutting-down",
+    "accessed_at": "2026-10-08",
+    "reliability": "medium",
+    "claim_scope": "event",
+    "notes": "Independent coverage corroborating Blast's orderly shutdown and user exit process."
+  }
+]
