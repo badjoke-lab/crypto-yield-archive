@@ -1,0 +1,33 @@
+[
+  {
+    "id": "cya_plat_000144",
+    "slug": "blast-native-yield",
+    "canonical_name": "Blast Native Yield",
+    "aliases": [
+      "Blast native yield",
+      "Blast L2 native yield",
+      "Blast USDB native yield"
+    ],
+    "type": "structured_yield",
+    "architecture": "defi",
+    "networks": [
+      "Blast",
+      "Ethereum"
+    ],
+    "status": "withdrawals_suspended",
+    "failure_reason": "voluntary_shutdown",
+    "launch_date": "2024-02-29",
+    "end_date": null,
+    "country_or_origin": "Global / Blast ecosystem",
+    "summary": "Blast L2's protocol-native yield system for ETH and stablecoins. Blast announced an orderly network wind-down on October 2, 2026 and began unwinding Lido-linked assets, temporarily interrupting withdrawals while directing users to exit to Ethereum.",
+    "what_happened": "Blast embedded yield into bridged ETH and stablecoin balances. On October 2, 2026, Blast announced that L2 operating costs exceeded revenue and that no credible route to economic sustainability remained. The team directed users to withdraw to Ethereum, reduced the withdrawal delay to 24 hours, and said withdrawals would be temporarily unavailable while Blast's Lido assets were withdrawn, a process expected to take about one week. Normal interface withdrawals are planned through October 26, after which users can still interact directly with Blast bridge contracts on Ethereum L1.",
+    "official_url_original": "https://blast.io/",
+    "official_domain_original": "blast.io",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://blast.io/",
+    "confidence": "high",
+    "last_verified_at": "2026-10-08",
+    "uncertainty_notes": "CYA does not infer a customer loss, insolvency, fixed recovery rate, or that October 26 is a final asset-recovery deadline. The exact completion time of the Lido unwind and the effective end of all native-yield accrual require follow-up.",
+    "notes": "Canonical CYA record added because Blast's native yield is a material on-chain yield mechanism with an explicit wind-down and withdrawal transition."
+  }
+]
