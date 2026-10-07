@@ -1,0 +1,16 @@
+[
+  {
+    "platform_id": "cya_plat_000144",
+    "product_name": "Blast Native Yield",
+    "product_type": "structured_yield",
+    "networks": [
+      "Blast",
+      "Ethereum"
+    ],
+    "custody_model": "protocol and bridge-mediated on-chain yield routing for bridged ETH and stablecoin balances",
+    "yield_source": "ETH staking/yield infrastructure including Lido-linked assets, plus stablecoin reserve-yield mechanisms described by Blast",
+    "status": "withdrawals_suspended",
+    "contract_addresses": [],
+    "notes": "Blast announced the network wind-down and a temporary withdrawal interruption during the Lido unwind. The product is not classified as permanently inaccessible; a staged Ethereum exit path remains."
+  }
+]
