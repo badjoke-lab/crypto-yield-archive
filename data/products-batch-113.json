@@ -1,0 +1,28 @@
+[
+  {
+    "platform_id": "cya_plat_000148",
+    "product_name": "Extra Finance Lending Pools",
+    "product_type": "defi_lending_market",
+    "networks": [
+      "Optimism",
+      "Base"
+    ],
+    "custody_model": "on-chain lending pools controlled by smart contracts",
+    "yield_source": "Interest paid by leveraged farmers borrowing pool liquidity",
+    "status": "limited",
+    "notes": "New borrowing pause announced effective 2026-10-14 08:00 UTC. Do not interpret as an announced halt to all existing repayments or lenders' withdrawals."
+  },
+  {
+    "platform_id": "cya_plat_000148",
+    "product_name": "Extra Finance Leveraged Yield Farming",
+    "product_type": "defi_yield_aggregator",
+    "networks": [
+      "Optimism",
+      "Base"
+    ],
+    "custody_model": "smart-contract-managed leveraged farming vaults using associated AMM liquidity pools",
+    "yield_source": "DEX farming incentive emissions and auto-compounding, offset by borrowing interest",
+    "status": "limited",
+    "notes": "Legacy AERO/VELO reward emissions are scheduled to end on 2026-10-22 00:00 UTC. Affected positions were advised to close early; this is not a completed full-protocol shutdown."
+  }
+]

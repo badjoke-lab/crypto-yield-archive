@@ -1,0 +1,33 @@
+[
+  {
+    "id": "cya_plat_000148",
+    "slug": "extra-finance",
+    "canonical_name": "Extra Finance",
+    "aliases": [
+      "ExtraFi",
+      "Extra Finance Protocol",
+      "EXTRA"
+    ],
+    "type": "defi_lending",
+    "architecture": "defi",
+    "networks": [
+      "Optimism",
+      "Base"
+    ],
+    "status": "limited",
+    "failure_reason": null,
+    "launch_date": null,
+    "end_date": null,
+    "country_or_origin": "Optimism and Base ecosystems",
+    "summary": "DeFi lending and leveraged yield-farming protocol on Optimism and Base. In October 2026 it announced a pause in new borrowing from October 14 at 08:00 UTC and an end to legacy AERO/VELO reward emissions on October 22 at 00:00 UTC as part of the Aero upgrade.",
+    "what_happened": "Extra Finance published an Aero upgrade notice recommending that affected legacy farming positions be closed early. It scheduled new borrowing on Extra Finance to pause starting October 14, 2026 at 08:00 UTC and legacy AERO and VELO emissions to end October 22, 2026 at 00:00 UTC. Extra Finance operates separate lending pools and leveraged farming positions; the announcement alone does not establish a permanent shutdown of the protocol or inability to repay, unwind positions or withdraw unaffected assets.",
+    "official_url_original": "https://app.extrafi.io/",
+    "official_domain_original": "extrafi.io",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://app.extrafi.io/",
+    "confidence": "high",
+    "last_verified_at": "2026-10-15",
+    "uncertainty_notes": "The exact operational enforcement of the announced 2026-10-14 new-borrowing pause was not transaction-tested. The 2026-10-22 reward cutoff remains scheduled, not completed as of this review. No insolvency, security exploit, irrecoverable loss, final protocol shutdown, or universal withdrawal restriction is inferred.",
+    "notes": "Canonical CYA record covers both protocol lending and leveraged yield farming. Product-level changes are recorded under one platform, not duplicate platform records."
+  }
+]
