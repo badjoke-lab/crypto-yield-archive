@@ -1,0 +1,30 @@
+[
+  {
+    "id": "cya_src_b114_0001",
+    "platform_id": "cya_plat_000149",
+    "event_id": "cya_ev_090007",
+    "source_type": "official_statement",
+    "title": "BIP-928 orderly Balancer wind-down and treasury distribution proposal",
+    "url": "https://forum.balancer.fi/t/bip-928-orderly-winddown-of-balancer-and-distribution-of-the-treasury/7107/1",
+    "publisher": "Balancer Governance Forum",
+    "published_at": "2026-09-14",
+    "accessed_at": "2026-10-16",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "Official governance proposal defines pool phases, noncustodial withdrawals and v3 exceptions."
+  },
+  {
+    "id": "cya_src_b114_0002",
+    "platform_id": "cya_plat_000149",
+    "event_id": "cya_ev_090007",
+    "source_type": "official_statement",
+    "title": "BIP-928 vote result: passed September 29",
+    "url": "https://forum.balancer.fi/t/bip-928-orderly-winddown-of-balancer-and-distribution-of-the-treasury/7107/23",
+    "publisher": "Balancer Governance Forum",
+    "published_at": "2026-09-29",
+    "accessed_at": "2026-10-16",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "Proposal author's vote conclusion confirms BIP-928 approved and enumerates October 16, October 30, November 30 and May 2027 milestones."
+  }
+]
