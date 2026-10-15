@@ -1,0 +1,62 @@
+[
+  {
+    "platform_id": "cya_plat_000145",
+    "outcome_status": "unknown",
+    "estimated_recovery_rate": null,
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": null,
+    "claim_process_url": "https://relay.link/vaults",
+    "affected_products": [
+      "Relay Vaults"
+    ],
+    "claim_classes": [],
+    "jurisdictions": [
+      "Global"
+    ],
+    "as_of": "2026-10-15",
+    "last_verified_at": "2026-10-15",
+    "notes": "The vault withdrawal UI is scheduled to close December 31 while direct contract withdrawal remains possible. No independently verified universal redemption completion, loss rate or customer impairment is asserted.",
+    "confidence": "high"
+  },
+  {
+    "platform_id": "cya_plat_000146",
+    "outcome_status": "not_applicable",
+    "estimated_recovery_rate": null,
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": null,
+    "claim_process_url": null,
+    "affected_products": [
+      "Blend NFT-Backed Loans"
+    ],
+    "claim_classes": [],
+    "jurisdictions": [
+      "Global"
+    ],
+    "as_of": "2026-10-15",
+    "last_verified_at": "2026-10-15",
+    "notes": "The announced future stop to new lending matches is not evidence of insolvency, borrower loss or creditor recovery proceedings. Existing loan settlements require separate follow-up.",
+    "confidence": "high"
+  },
+  {
+    "platform_id": "cya_plat_000147",
+    "outcome_status": "not_applicable",
+    "estimated_recovery_rate": null,
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": null,
+    "claim_process_url": null,
+    "affected_products": [
+      "Yield Yak Autocompounding Vaults"
+    ],
+    "claim_classes": [],
+    "jurisdictions": [
+      "Global"
+    ],
+    "as_of": "2026-10-15",
+    "last_verified_at": "2026-10-15",
+    "notes": "A shutdown and treasury-distribution proposal is pending governance discussion/vote. No approved claims process, completed disbursement, protocol loss or universal recovery rate is asserted.",
+    "confidence": "high"
+  }
+]

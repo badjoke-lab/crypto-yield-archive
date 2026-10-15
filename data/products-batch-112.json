@@ -1,0 +1,45 @@
+[
+  {
+    "platform_id": "cya_plat_000145",
+    "product_name": "Relay Vaults",
+    "product_type": "structured_yield",
+    "networks": [
+      "Ethereum",
+      "Arbitrum",
+      "Optimism",
+      "Base",
+      "Blast",
+      "ZKsync Era"
+    ],
+    "custody_model": "on-chain smart-contract vault",
+    "yield_source": "ERC-4626 tokenized yield-vault strategies",
+    "status": "limited",
+    "notes": "New deposits retired; normal withdrawal UI planned to end 2026-12-31, after which direct contract withdrawal remains available."
+  },
+  {
+    "platform_id": "cya_plat_000146",
+    "product_name": "Blend NFT-Backed Loans",
+    "product_type": "defi_lending_market",
+    "networks": [
+      "Ethereum"
+    ],
+    "custody_model": "smart-contract NFT-backed borrowing and lending",
+    "yield_source": "NFT-collateralized lending interest",
+    "status": "active",
+    "notes": "November 12 new-loan-matching shutdown is planned but not effective as of October 15."
+  },
+  {
+    "platform_id": "cya_plat_000147",
+    "product_name": "Yield Yak Autocompounding Vaults",
+    "product_type": "defi_yield_aggregator",
+    "networks": [
+      "Avalanche",
+      "Arbitrum",
+      "Mantle"
+    ],
+    "custody_model": "smart-contract vaults and strategies",
+    "yield_source": "DeFi farming, staking and on-chain strategy yields",
+    "status": "active",
+    "notes": "Shutdown remains a governance proposal; no final vault end state is asserted."
+  }
+]

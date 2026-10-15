@@ -1,0 +1,95 @@
+[
+  {
+    "id": "cya_plat_000145",
+    "slug": "relay-vaults",
+    "canonical_name": "Relay Vaults",
+    "aliases": [
+      "Relay Protocol Vaults"
+    ],
+    "type": "structured_yield",
+    "architecture": "defi",
+    "networks": [
+      "Ethereum",
+      "Arbitrum",
+      "Optimism",
+      "Base",
+      "Blast",
+      "ZKsync Era"
+    ],
+    "status": "limited",
+    "failure_reason": "voluntary_shutdown",
+    "launch_date": null,
+    "end_date": null,
+    "country_or_origin": "Global / multi-chain",
+    "summary": "ERC-4626 yield vault service offered by Relay. In October 2026 Relay declared Vaults retired for new deposits and directed users to withdraw; the normal withdrawal interface is scheduled to close December 31 while direct smart-contract withdrawals remain available afterward.",
+    "what_happened": "Relay Vaults is a yield-vault component, not the entire Relay cross-chain protocol. Its operator announced the service wind-down, stopped new deposits and asked users to withdraw through the dedicated vault UI. After December 31, 2026 the normal UI is planned to close, though direct contract withdrawals remain technically available.",
+    "official_url_original": "https://relay.link/vaults",
+    "official_domain_original": "relay.link",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://relay.link/vaults",
+    "confidence": "high",
+    "last_verified_at": "2026-10-15",
+    "uncertainty_notes": "Do not classify all Relay operations as ended, assume users cannot access assets after December 31 or infer a completion date ahead of the announced milestone.",
+    "notes": "CYA is tracking Relay Vaults' yield-product retirement specifically, not the Relay transaction/bridge service."
+  },
+  {
+    "id": "cya_plat_000146",
+    "slug": "blend-nft-lending",
+    "canonical_name": "Blend NFT Lending",
+    "aliases": [
+      "Blur Blend",
+      "Blend by Blur"
+    ],
+    "type": "defi_lending",
+    "architecture": "defi",
+    "networks": [
+      "Ethereum"
+    ],
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": null,
+    "end_date": null,
+    "country_or_origin": "Ethereum ecosystem",
+    "summary": "NFT-collateral lending protocol associated with Blur. Blur announced October 12, 2026 that Blend would stop matching new loans on November 12, while allowing borrowers to repay or default and planning a dedicated withdrawal interface afterward.",
+    "what_happened": "On October 12, 2026 Blur announced a future end to new Blend loan matching on November 12. As of the October 15 review it was a scheduled restriction, not confirmed completed shutdown; after the deadline Blur said an asset-withdrawal frontend would be provided.",
+    "official_url_original": "https://blur.io/",
+    "official_domain_original": "blur.io",
+    "official_url_status": "live_unverified",
+    "archived_url": "https://web.archive.org/web/*/https://blur.io/",
+    "confidence": "high",
+    "last_verified_at": "2026-10-15",
+    "uncertainty_notes": "The new-loan cutoff is not a claim that all Blend contracts, open loan positions, repayments or customer withdrawals cease on November 12.",
+    "notes": "Blur's NFT marketplace frontend and protocol belong in MAG; CYA tracks the Blend lending-product lifecycle."
+  },
+  {
+    "id": "cya_plat_000147",
+    "slug": "yield-yak",
+    "canonical_name": "Yield Yak",
+    "aliases": [
+      "YieldYak",
+      "Yak Vaults"
+    ],
+    "type": "yield_aggregator",
+    "architecture": "defi",
+    "networks": [
+      "Avalanche",
+      "Arbitrum",
+      "Mantle"
+    ],
+    "status": "active",
+    "failure_reason": null,
+    "launch_date": null,
+    "end_date": null,
+    "country_or_origin": "Avalanche ecosystem",
+    "summary": "Avalanche-origin DeFi yield optimizer with compounding vaults. On October 12, 2026 a core contributor proposed an orderly shutdown, including potential withdrawal-only vaults and distribution of the treasury, but the proposal explicitly required subsequent DAO approval and stated ordinary operations would continue in the meantime.",
+    "what_happened": "The proposed plan would halt deposits in vaults and farms later in October, distribute treasury to YAK tokenholders in stages in November and December, and support the frontend at least until Q2 2027. These steps are conditional and were not recorded as adopted or completed as of October 15.",
+    "official_url_original": "https://yieldyak.com/",
+    "official_domain_original": "yieldyak.com",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://yieldyak.com/",
+    "confidence": "high",
+    "last_verified_at": "2026-10-15",
+    "uncertainty_notes": "The official communication is a proposal subject to discussion and Snapshot voting, not verified approval or a settled final operational status.",
+    "notes": "Do not mark this platform limited or ended solely because a sunset proposal has been published."
+  }
+]
