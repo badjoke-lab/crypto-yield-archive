@@ -32,7 +32,7 @@
     ],
     "impact_level": "high",
     "event_status_effect": "none",
-    "source_count": 2,
+    "source_count": 3,
     "confidence": "high",
     "notes": "A future effective-status change requires follow-up; Blur NFT marketplace frontend is separately tracked by MAG."
   },
