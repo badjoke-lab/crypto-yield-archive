@@ -82,5 +82,19 @@
     "reliability": "high",
     "claim_scope": "entity",
     "notes": "First-party platform information corroborates Yield Yak's vault/strategy identity, separate from whether the sunset proposal passes."
+  },
+  {
+    "id": "cya_src_b112_0007",
+    "platform_id": "cya_plat_000146",
+    "event_id": "cya_ev_090004",
+    "source_type": "official_statement",
+    "title": "Blur official Blend loan-matching wind-down announcement",
+    "url": "https://x.com/blur_io/status/2109735810857861203",
+    "publisher": "Blur (@blur_io)",
+    "published_at": "2026-10-12",
+    "accessed_at": "2026-10-16",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "Primary official Blur announcement thread states Blend will stop matching new loans on November 12, 2026, borrowers can repay or default before that date, and a withdrawal interface is planned afterward. This is an announcement, not completed cessation or proof of funds loss."
   }
 ]
