@@ -1,0 +1,32 @@
+[
+  {
+    "id": "cya_plat_000149",
+    "slug": "balancer-liquidity-vaults",
+    "canonical_name": "Balancer Liquidity Pools and Vaults",
+    "aliases": [
+      "Balancer Pools",
+      "Balancer v2 Pools",
+      "Balancer v3 Vault"
+    ],
+    "type": "structured_yield",
+    "architecture": "defi",
+    "networks": [
+      "Ethereum"
+    ],
+    "status": "limited",
+    "failure_reason": "voluntary_shutdown",
+    "launch_date": null,
+    "end_date": null,
+    "country_or_origin": "Ethereum DeFi ecosystem",
+    "summary": "Balancer liquidity pools and vaults, whose liquidity-provider fee income is part of DeFi yield infrastructure, are subject to a DAO-approved phased wind-down under BIP-928. Approval occurred September 29, 2026; withdrawals-only for applicable pools is scheduled October 30 with v3 extension cases until November 30.",
+    "what_happened": "BIP-928 passed on September 29, approving a voluntary shutdown plan following the earlier Balancer Labs corporate wind-down. On October 30 pausable pools move to withdrawals-only and bug bounty coverage ends; requested qualifying v3 pools may continue until November 30. Withdrawals via smart contracts remain available, and certain non-pausable pools may keep running with fee changes. These future actions are not recorded as already executed as of October 16.",
+    "official_url_original": "https://balancer.fi/",
+    "official_domain_original": "balancer.fi",
+    "official_url_status": "live_verified",
+    "archived_url": "https://web.archive.org/web/*/https://balancer.fi/",
+    "confidence": "high",
+    "last_verified_at": "2026-10-16",
+    "uncertainty_notes": "Exact pool-by-pool pauses, LP exits, withdrawal completions, and treasury disbursements cannot be inferred from the governance vote. BIP-928 approval and future execution dates are distinct facts.",
+    "notes": "CYA scope is liquidity-provider/pool yield and vault wind-down; the DEX identity and trading market lifecycle are recorded independently in HEI."
+  }
+]

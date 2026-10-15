@@ -1,0 +1,18 @@
+[
+  {
+    "id": "cya_ev_090007",
+    "platform_id": "cya_plat_000149",
+    "event_type": "other",
+    "event_date": "2026-09-29",
+    "title": "Balancer DAO passes BIP-928 phased pool and vault sunset",
+    "description": "Balancer governance approved BIP-928 on September 29, 2026. Most pausable pools are scheduled to transition to withdrawals-only October 30, with qualifying v3 partner exceptions through November 30; bug bounty coverage ends October 30. Protocol contract withdrawal paths remain available after the frontend-related changes.",
+    "networks": [
+      "Ethereum"
+    ],
+    "impact_level": "critical",
+    "event_status_effect": "limited",
+    "source_count": 2,
+    "confidence": "high",
+    "notes": "Approval is confirmed; implementation at October 30 and November 30 remains future as of the October 16 review."
+  }
+]

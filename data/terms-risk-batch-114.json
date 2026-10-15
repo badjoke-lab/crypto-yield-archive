@@ -1,0 +1,9 @@
+[
+  {
+    "platform_id": "cya_plat_000149",
+    "terms_status": "unknown",
+    "source_evidence_id": "cya_src_b114_0001",
+    "confidence": "medium",
+    "notes": "The official proposal calls contracts noncustodial and provides exit paths, but does not establish one legal ownership/terms arrangement for every v2/v3 LP product and strategy. Do not infer universal protection or redemption outcomes."
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "platform_id": "cya_plat_000149",
+    "outcome_status": "unknown",
+    "estimated_recovery_rate": null,
+    "repayment_started_at": null,
+    "repayment_completed_at": null,
+    "repayment_method": null,
+    "claim_process_url": null,
+    "affected_products": [
+      "Balancer liquidity pool positions",
+      "Balancer v3 Vault positions"
+    ],
+    "claim_classes": [],
+    "jurisdictions": [
+      "Global"
+    ],
+    "as_of": "2026-10-16",
+    "last_verified_at": "2026-10-16",
+    "notes": "BIP-928 specifies non-custodial LP exits and treasury governance distributions. It is not an insolvency adjudication or universal LP recovery program; pool-by-pool withdrawal results remain unknown.",
+    "confidence": "high"
+  }
+]
