@@ -1,0 +1,55 @@
+[
+  {
+    "id": "cya_ev_090003",
+    "platform_id": "cya_plat_000145",
+    "event_type": "other",
+    "event_date": "2026-10-09",
+    "title": "Relay announces Vaults retirement and withdrawal-interface deadline",
+    "description": "Relay stated that its Vaults yield service was being retired, new deposits were no longer accepted, and users should withdraw from relay.link/vaults. The withdrawal interface is planned to close December 31, 2026; users can still withdraw directly from contracts afterward.",
+    "networks": [
+      "Ethereum",
+      "Arbitrum",
+      "Optimism",
+      "Base",
+      "Blast",
+      "ZKsync Era"
+    ],
+    "impact_level": "high",
+    "event_status_effect": "limited",
+    "source_count": 2,
+    "confidence": "high",
+    "notes": "Do not interpret as complete shutdown of Relay's cross-chain services or permanent inaccessibility after December 31."
+  },
+  {
+    "id": "cya_ev_090004",
+    "platform_id": "cya_plat_000146",
+    "event_type": "other",
+    "event_date": "2026-10-12",
+    "title": "Blur announces November 12 cutoff for new Blend loan matching",
+    "description": "Blur announced on October 12 that Blend will stop matching new NFT-backed loans on November 12, 2026. Borrowers can repay or default, and a withdrawal tool is planned afterward. No completed lending-service shutdown is asserted on the announcement date.",
+    "networks": [
+      "Ethereum"
+    ],
+    "impact_level": "high",
+    "event_status_effect": "none",
+    "source_count": 2,
+    "confidence": "high",
+    "notes": "A future effective-status change requires follow-up; Blur NFT marketplace frontend is separately tracked by MAG."
+  },
+  {
+    "id": "cya_ev_090005",
+    "platform_id": "cya_plat_000147",
+    "event_type": "other",
+    "event_date": "2026-10-12",
+    "title": "Yield Yak core contributor proposes orderly protocol sunset",
+    "description": "A Yield Yak core contributor proposed a conditional sunset process, with vaults potentially moving to withdrawal-only, a YAK treasury distribution in two stages, and frontend support through at least Q2 2027. The official statement says normal operations continue while questions, discussion and a Snapshot vote are pending.",
+    "networks": [
+      "Avalanche"
+    ],
+    "impact_level": "high",
+    "event_status_effect": "none",
+    "source_count": 2,
+    "confidence": "high",
+    "notes": "This is a governance proposal, not a successful vote or completed service termination."
+  }
+]
