@@ -1,0 +1,23 @@
+[
+  {
+    "platform_id": "cya_plat_000145",
+    "terms_status": "unknown",
+    "source_evidence_id": "cya_src_b112_0001",
+    "confidence": "medium",
+    "notes": "Relay's primary notice establishes that vaults are on-chain, deposits retired, and contract withdrawals remain after UI shutdown. It does not establish universal legal customer-ownership terms across deposits or strategies."
+  },
+  {
+    "platform_id": "cya_plat_000146",
+    "terms_status": "unknown",
+    "source_evidence_id": "cya_src_b112_0003",
+    "confidence": "medium",
+    "notes": "The October 2026 planned Blend loan matching cutoff does not establish legal ownership, lien treatment or terms for specific NFT loan positions. Preserve unknown absent a reviewed primary loan-terms document."
+  },
+  {
+    "platform_id": "cya_plat_000147",
+    "terms_status": "unknown",
+    "source_evidence_id": "cya_src_b112_0005",
+    "confidence": "medium",
+    "notes": "A conditional proposal to distribute YAK treasury balances and stop vault deposits is not a complete adjudication of individual vault depositor rights or underlying protocol liquidation terms."
+  }
+]
