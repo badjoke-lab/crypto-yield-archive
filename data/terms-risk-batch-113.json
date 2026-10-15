@@ -1,0 +1,9 @@
+[
+  {
+    "platform_id": "cya_plat_000148",
+    "terms_status": "varies_by_product",
+    "source_evidence_id": "cya_src_b113_0002",
+    "confidence": "high",
+    "notes": "Lending-pool liquidity and withdrawal times may depend on pool utilization, while leveraged farming faces debt, liquidation and incentive-change risks. CYA does not infer guaranteed access, instant exits or any principal-recovery percentage from the upgrade announcement."
+  }
+]

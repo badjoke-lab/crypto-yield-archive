@@ -1,0 +1,72 @@
+[
+  {
+    "id": "cya_src_b113_0001",
+    "platform_id": "cya_plat_000148",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "Extra Finance protocol introduction",
+    "url": "https://docs.extrafi.io/extra_finance",
+    "publisher": "Extra Finance",
+    "published_at": null,
+    "accessed_at": "2026-10-15",
+    "reliability": "high",
+    "claim_scope": "entity",
+    "notes": "First-party documentation identifies Extra Finance as a Superchain leveraged yield-farming and lending protocol."
+  },
+  {
+    "id": "cya_src_b113_0002",
+    "platform_id": "cya_plat_000148",
+    "event_id": null,
+    "source_type": "official_statement",
+    "title": "Extra Finance lending mechanics and withdrawal conditions",
+    "url": "https://docs.extrafi.io/extra_finance/lending/introduction-to-lending",
+    "publisher": "Extra Finance",
+    "published_at": null,
+    "accessed_at": "2026-10-15",
+    "reliability": "high",
+    "claim_scope": "terms_risk",
+    "notes": "First-party explanation of lending-pool interest and potential withdrawal delay when utilization is high."
+  },
+  {
+    "id": "cya_src_b113_0003",
+    "platform_id": "cya_plat_000148",
+    "event_id": "cya_ev_090006",
+    "source_type": "official_statement",
+    "title": "Aero upgrade notice shown on Extra Finance application",
+    "url": "https://app.extrafi.io/",
+    "publisher": "Extra Finance",
+    "published_at": null,
+    "accessed_at": "2026-10-15",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "Official application displays the Aero Upgrade: Important Notice for Extra Finance Users banner; this alone does not provide all dates."
+  },
+  {
+    "id": "cya_src_b113_0004",
+    "platform_id": "cya_plat_000148",
+    "event_id": "cya_ev_090006",
+    "source_type": "official_statement",
+    "title": "Aero Upgrade: Important Notice for Extra Finance Users",
+    "url": "https://medium.com/@ExtraFinance/aero-upgrade-important-notice-for-extra-finance-users-13527f93bf65",
+    "publisher": "Extra Finance",
+    "published_at": null,
+    "accessed_at": "2026-10-15",
+    "reliability": "high",
+    "claim_scope": "event",
+    "notes": "Notice linked from the protocol's official social announcement; the full Medium body was not independently retrievable, while its public announcement gives the two UTC milestones."
+  },
+  {
+    "id": "cya_src_b113_0005",
+    "platform_id": "cya_plat_000148",
+    "event_id": "cya_ev_090006",
+    "source_type": "news_article",
+    "title": "Extra Finance scheduled borrowing pause and rewards transition",
+    "url": "https://coindar.org/es/event/extra-finance-to-conduct-scheduled-maintenance-on-october-14th-155078",
+    "publisher": "Coindar",
+    "published_at": "2026-10-13",
+    "accessed_at": "2026-10-15",
+    "reliability": "medium",
+    "claim_scope": "event",
+    "notes": "Secondary reproduction of Extra Finance official announcement, including the 2026-10-14 08:00 UTC and 2026-10-22 00:00 UTC milestones."
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "id": "cya_ev_090006",
+    "platform_id": "cya_plat_000148",
+    "event_type": "other",
+    "event_date": "2026-10-13",
+    "title": "Extra Finance announces pause in new borrowing and legacy AERO/VELO emissions cutoff",
+    "description": "Extra Finance announced that new borrowing would be paused on October 14, 2026 at 08:00 UTC in preparation for the Aero upgrade. It scheduled legacy AERO and VELO emissions to end on October 22, 2026 at 00:00 UTC and advised users to close affected legacy farming positions early. The notice does not state that the whole protocol shuts down or that user assets are lost.",
+    "networks": [
+      "Optimism",
+      "Base"
+    ],
+    "impact_level": "high",
+    "event_status_effect": "limited",
+    "source_count": 3,
+    "confidence": "high",
+    "notes": "Recorded as an announcement dated 2026-10-13 rather than a future completed-shutdown event. Follow-up required to confirm actual borrowing restrictions and October 22 effective reward cessation."
+  }
+]
