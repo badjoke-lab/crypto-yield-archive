@@ -1,0 +1,14 @@
+[
+  {
+    "platform_id": "cya_plat_000149",
+    "product_name": "Balancer v2/v3 Liquidity Pools and Vaults",
+    "product_type": "structured_yield",
+    "networks": [
+      "Ethereum"
+    ],
+    "custody_model": "non-custodial AMM/Vault smart contracts",
+    "yield_source": "AMM liquidity-provider trading fees and pool strategy economics",
+    "status": "limited",
+    "notes": "Pool-by-pool exit rules vary. BIP-928 provides withdrawals-only windows and continuing non-pausable contracts; no universal final exit date is inferred."
+  }
+]
