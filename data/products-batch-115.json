@@ -2,7 +2,7 @@
   {
     "platform_id": "cya_plat_000150",
     "product_name": "Echo Lending",
-    "product_type": "defi_lending",
+    "product_type": "defi_lending_market",
     "networks": [
       "Aptos"
     ],
@@ -26,7 +26,7 @@
   {
     "platform_id": "cya_plat_000150",
     "product_name": "Echo Liquid Staking",
-    "product_type": "liquid_staking",
+    "product_type": "staking_like_yield",
     "networks": [
       "Aptos"
     ],
