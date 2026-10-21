@@ -1,0 +1,31 @@
+[
+  {
+    "id": "cya_plat_000150",
+    "slug": "echo-protocol",
+    "canonical_name": "Echo Protocol",
+    "aliases": [
+      "Echo BTCFi",
+      "Echo Protocol on Aptos"
+    ],
+    "type": "defi_lending",
+    "architecture": "defi",
+    "networks": [
+      "Aptos"
+    ],
+    "status": "limited",
+    "failure_reason": "voluntary_shutdown",
+    "launch_date": null,
+    "end_date": null,
+    "country_or_origin": "Aptos ecosystem",
+    "summary": "Aptos BTC-focused lending, strategy and liquid-staking protocol that announced an orderly wind-down on October 19, 2026, immediately closing new borrowing, deposits and staking while retaining temporary user exit routes.",
+    "what_happened": "Reports reproducing Echo Protocol's October 19 notice say that new lending deposits and borrowing, new strategy deposits, and new liquid staking stopped. Borrowers were directed to repay by November 14; remaining users were told to withdraw, repay or unstake by November 19 at 23:59 UTC. Liquidation and settlement may continue thereafter; an Aptos-to-B² aBTC redemption bridge is expected to remain available.",
+    "official_url_original": "https://echo-protocol.xyz/",
+    "official_domain_original": "echo-protocol.xyz",
+    "official_url_status": "live_unverified",
+    "archived_url": "https://web.archive.org/web/*/https://echo-protocol.xyz/",
+    "confidence": "medium",
+    "last_verified_at": "2026-10-22",
+    "uncertainty_notes": "No permanent independently retrievable Echo official notice URL was obtained during this review; the cited reports reproduce or paraphrase the operator's announcement. Do not infer a completed November shutdown, completed withdrawal, insolvency, or loss outcome. Echo Protocol is distinct from Echo.xyz; prior Monad incident is not established as the cause of this wind-down.",
+    "notes": "Canonical record is for Echo Protocol's yield/lending products, not a generalized declaration that its Aptos-to-B² bridge is closed."
+  }
+]
