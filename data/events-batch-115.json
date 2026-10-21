@@ -1,0 +1,18 @@
+[
+  {
+    "id": "cya_ev_090008",
+    "platform_id": "cya_plat_000150",
+    "event_type": "other",
+    "event_date": "2026-10-19",
+    "title": "Echo Protocol announces wind-down of lending, strategy and liquid staking",
+    "description": "Echo Protocol announced that core products would cease new deposits, borrowing and staking and began phased exits. Borrower repayment was directed by November 14, 2026, followed by a November 19, 2026 23:59 UTC exit deadline. Residual positions and the aBTC redemption bridge require separate follow-up rather than assuming all services have already terminated.",
+    "networks": [
+      "Aptos"
+    ],
+    "impact_level": "critical",
+    "event_status_effect": "limited",
+    "source_count": 3,
+    "confidence": "medium",
+    "notes": "Reviewed from contemporaneous reports of the operator announcement. November deadlines are prospective as of October 22; later liquidation and distributions are undetermined."
+  }
+]
