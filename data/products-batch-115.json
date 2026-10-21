@@ -1,0 +1,38 @@
+[
+  {
+    "platform_id": "cya_plat_000150",
+    "product_name": "Echo Lending",
+    "product_type": "defi_lending_market",
+    "networks": [
+      "Aptos"
+    ],
+    "custody_model": "smart-contract-based",
+    "yield_source": "lending-market borrower interest, historically",
+    "status": "limited",
+    "notes": "New lending and borrowing reportedly stopped; existing loans may be repaid and collateral released within the announced exit window. No exact lender recovery rate asserted."
+  },
+  {
+    "platform_id": "cya_plat_000150",
+    "product_name": "Echo Strategy",
+    "product_type": "structured_yield",
+    "networks": [
+      "Aptos"
+    ],
+    "custody_model": "protocol strategy contracts; exact terms not verified",
+    "yield_source": "strategy-dependent; not independently verified",
+    "status": "limited",
+    "notes": "New deposits reportedly closed; redemption and completion depend on strategy settlement."
+  },
+  {
+    "platform_id": "cya_plat_000150",
+    "product_name": "Echo Liquid Staking",
+    "product_type": "staking_like_yield",
+    "networks": [
+      "Aptos"
+    ],
+    "custody_model": "protocol liquid-staking contracts; exact terms not verified",
+    "yield_source": "staking rewards, historically",
+    "status": "limited",
+    "notes": "New staking reportedly stopped; unstaking and claim timing depend on underlying requests."
+  }
+]

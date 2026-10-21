@@ -1,0 +1,44 @@
+[
+  {
+    "id": "cya_src_b115_0001",
+    "platform_id": "cya_plat_000150",
+    "event_id": "cya_ev_090008",
+    "source_type": "news_article",
+    "title": "Echo Protocol Begins Wind-Down, Sets Nov. 14 Loan Repayment Deadline",
+    "url": "https://www.cryptotimes.io/2026/10/19/echo-protocol-begins-wind-down-sets-nov-14-loan-repayment-deadline/",
+    "publisher": "Crypto Times",
+    "published_at": "2026-10-19",
+    "accessed_at": "2026-10-22",
+    "reliability": "medium",
+    "claim_scope": "event",
+    "notes": "Reproduces excerpt of operator's wind-down announcement; specifies November 19 23:59 UTC final exit window; does not independently verify contract status."
+  },
+  {
+    "id": "cya_src_b115_0002",
+    "platform_id": "cya_plat_000150",
+    "event_id": "cya_ev_090008",
+    "source_type": "news_article",
+    "title": "Echo Protocol Begins Wind-Down, Halting New Deposits Across Services",
+    "url": "https://www.tokenpost.com/news/technology/34990",
+    "publisher": "TokenPost",
+    "published_at": "2026-10-19",
+    "accessed_at": "2026-10-22",
+    "reliability": "medium",
+    "claim_scope": "event",
+    "notes": "Separate summary of lending/strategy/liquid-staking restriction and continuing aBTC bridge redemption."
+  },
+  {
+    "id": "cya_src_b115_0003",
+    "platform_id": "cya_plat_000150",
+    "event_id": "cya_ev_090008",
+    "source_type": "news_article",
+    "title": "Echo Protocol winds down: Aptos BTCfi borrowers should repay by 14 November, final withdrawals by 19 November",
+    "url": "https://www.coindaro.com/echo-protocol-shutdown/",
+    "publisher": "Coindaro",
+    "published_at": "2026-10-19",
+    "accessed_at": "2026-10-22",
+    "reliability": "medium",
+    "claim_scope": "event",
+    "notes": "Secondary independent timeline review; notes original X notice was not directly opened. May 2026 incident is historical context, not an established cause of shutdown."
+  }
+]
